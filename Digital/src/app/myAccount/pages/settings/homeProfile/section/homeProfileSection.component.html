@@ -1,0 +1,8 @@
+<div class="homeprofile-section" [ngClass]="{ 'homeprofile-section--clickable': allowEdit }">
+    <div *ngFor="let surveyPage of surveyPages" class="homeprofile-section-icon"
+        [ngClass]="{ 'homeprofile-section-icon--clickable': allowEdit }" (click)="edit(surveyPage.page)">
+        <div class="homeprofile-section-icon-{{surveyPage.icon}}"></div>
+        <div class="homeprofile-section-icon__description">{{surveyPage.desc}}</div>
+        <div *ngIf="allowEdit" class="homeprofile-section-icon__link">Edit</div>
+    </div>
+</div>

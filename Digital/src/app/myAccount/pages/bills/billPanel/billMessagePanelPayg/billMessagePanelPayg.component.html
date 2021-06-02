@@ -1,0 +1,29 @@
+<div class="bill-panel-message-panel">
+    <div *ngIf="noBalance && !contract.showOutstandingBillPayg">
+        <div class="bill-panel-message-panel__icon">
+            <mat-icon svgIcon={{svgIconPayg}}></mat-icon>
+        </div>
+        <div id="bill-panel-message-header-{{contract.contractNumber}}" class="bill-panel-message-panel__title">
+            {{contextualMessageHeader}}
+        </div>
+        <div class="bill-panel-message-panel__subtext" *ngIf="!hideContextMessage">
+            <span *ngIf="!showDDMessage"> {{contextualMessage}}</span>
+            <span *ngIf="showDDMessage">{{content.directDebitMessage1}}
+                <div class="bill-panel-message-panel__subtext__directdebit">{{content.directDebitMessage2}}</div>
+                 </span>
+        </div>
+    </div>
+    <div *ngIf="contract.showOutstandingBillPayg">
+        <div class="bill-panel-message-panel__heading">Kickstart your new prepaid plan</div>
+        <div class="bill-panel-message-panel__content first">
+            <span> Combine the <strong>{{contract.outstandingBill | aglCurrency}}</strong> you owe from your old plan WITH </span>
+        </div>
+        <div class="bill-panel-message-panel__content second">
+            <span> The first top-up amount you choose from the <strong>bonus breakdown</strong> AND</span>
+        </div>
+        <div class="bill-panel-message-panel__content third">
+            <span> Make <strong>one easy payment</strong> by <strong>{{firstPrepaymentDueDate}}</strong> to maximise your bonus credits</span>
+        </div>
+    </div>
+
+</div>

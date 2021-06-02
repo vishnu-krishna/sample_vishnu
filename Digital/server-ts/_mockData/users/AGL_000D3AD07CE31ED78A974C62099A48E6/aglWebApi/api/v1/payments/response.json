@@ -1,0 +1,36 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "account": "7025466058",
+            "contract": "9401430437",
+            "overdue": 0,
+            "dueDate": null,
+            "currentBalance": 0,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": false
+        },
+        {
+            "account": "7025466058",
+            "contract": "9401430438",
+            "overdue": 119.81,
+            "dueDate": null,
+            "currentBalance": 0,
+            "totalPayment": 119.81,
+            "billSmoothing": false,
+            "directDebit": false
+        },
+        {
+            "account": "7025466058",
+            "contract": "9402638730",
+            "overdue": 0,
+            "dueDate": null,
+            "currentBalance": 0,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": false
+        }
+    ]
+}

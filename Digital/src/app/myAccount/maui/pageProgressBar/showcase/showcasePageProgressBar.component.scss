@@ -1,0 +1,31 @@
+@import '../../_showcase';
+
+.example-wrapper {
+    width: 100%;
+
+    @media #{$agl-layout-mobile} {
+        width: auto;
+    }
+}
+
+.progress-bar-showcase {
+    &__customise {
+
+        & input {
+            width: 100%;
+        }
+
+        & label {
+            margin-top: $space-01;
+        }
+
+        &-heading {
+            margin-top: $space-04;
+            margin-bottom: $space-04;
+        }
+
+        &-button {
+            margin-bottom: $space-03;
+        }
+    }
+}

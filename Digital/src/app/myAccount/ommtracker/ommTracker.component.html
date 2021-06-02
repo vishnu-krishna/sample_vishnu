@@ -1,0 +1,21 @@
+<div class="omm-tracker" *ngIf="isLoaded">
+    <agl-omm-tracker-header [referenceCode]="referenceCode"></agl-omm-tracker-header>
+    <div class="omm-tracker__content" *ngIf="trackerMode === trackerModeEnum.Track">
+        <agl-status-header [trackerMode]="trackerMode" [headerStatus]="headerStatus" [whatHappensNextContent]="whatHappensNextContent"></agl-status-header>
+        <agl-track-progress [progressStatus]="requestStatus" [progressContent]="progressContent"></agl-track-progress>
+        <agl-omm-tracker-wrapper>
+            <agl-track-connection-container 
+            [scContent]="connectionContent"
+            [connectionData]="connectionData">
+            </agl-track-connection-container>
+            <agl-track-did-you-know [didYouKnowViewModel]="didYouKnowViewModel"></agl-track-did-you-know>
+            <agl-track-need-to-make-change [needToMakeChangeViewModel]="needToMakeChangeViewModel" [accountNumber]="accountNumber"></agl-track-need-to-make-change>
+        </agl-omm-tracker-wrapper>
+    </div>
+    <div id="welcome-home" class="omm-tracker__content" *ngIf="trackerMode === trackerModeEnum.WelcomeHome">
+        <agl-omm-tracker-wrapper [topPixels]="385">
+            <agl-tracker-welcome-home [accountName]="accountName" [referenceCode]="referenceCode" [trackerMode]="trackerMode" [headerStatus]="headerStatus"></agl-tracker-welcome-home>
+        </agl-omm-tracker-wrapper>
+    </div>
+</div>
+<agl-error [error]="errorModel" *ngIf="isError"></agl-error>

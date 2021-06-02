@@ -1,0 +1,83 @@
+[
+    {
+        "dataGroup": "Account",
+        "status": "Complete",
+        "lastUpdated": "2017-03-13T23:26:19.5595608+00:00",
+        "failed": false
+    },
+    {
+        "dataGroup": "BillingHistory",
+        "status": "Complete",
+        "lastUpdated": "2017-03-13T23:26:20.1391148+00:00",
+        "failed": true,
+        "errors": [
+            {
+                "dataType": "TransactionHistory",
+                "account": "7036967672",
+                "contract": "9403165457",
+                "message": "Sorry, we were unable to retrieve your information. Please try again later.",
+                "hasRfcError": true,
+                "errorId": "ZISS002",
+                "errorNumber": "3"
+            },
+            {
+                "dataType": "TransactionHistory",
+                "account": "7036967672",
+                "contract": "9403165458",
+                "message": "Sorry, we were unable to retrieve your information. Please try again later.",
+                "hasRfcError": true,
+                "errorId": "ZISS002",
+                "errorNumber": "3"
+            }
+        ]
+    },
+    {
+        "dataGroup": "Dashboard",
+        "status": "Complete",
+        "lastUpdated": "2017-03-11T01:10:35.865273+00:00",
+        "failed": false
+    },
+    {
+        "dataGroup": "Payments",
+        "status": "Complete",
+        "lastUpdated": "2017-03-13T23:26:19.4434506+00:00",
+        "failed": true,
+        "errors": [
+            {
+                "dataType": "Payments",
+                "account": "7036967672",
+                "contract": "",
+                "message": "Sorry, we were unable to retrieve your current billing information. Please try again later.",
+                "hasRfcError": true,
+                "errorId": "ZISS015",
+                "errorNumber": "5"
+            }
+        ]
+    },
+    {
+        "dataGroup": "Usage",
+        "status": "Complete",
+        "lastUpdated": "2017-03-13T23:26:20.0440225+00:00",
+        "failed": true,
+        "errors": [
+            {
+                "dataType": "Usage13Months",
+                "account": "7036967672",
+                "contract": "9403165457",
+                "message": "Sorry, we were unable to retrieve your information. Please try again later.",
+                "hasRfcError": true,
+                "errorId": "ZICONTRACT001",
+                "errorNumber": "3"
+            },
+            {
+                "dataType": "Usage13Months",
+                "account": "7036967672",
+                "contract": "9403165458",
+                "message": "Sorry, we were unable to retrieve your information. Please try again later.",
+                "hasRfcError": true,
+                "errorId": "ZICONTRACT001",
+                "errorNumber": "3"
+            }
+        ]
+    }
+]

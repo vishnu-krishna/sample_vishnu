@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\forms\storeCreditCardForm\storeCreditCardForm.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/myAccount/forms/storeCreditCardForm/</a> storeCreditCardForm.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">23.15% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>25/108</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>24/48</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">8.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">22.55% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>23/102</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { IPaymentArrangementStateService } from '../../../shared/component/paymentArrangement/paymentArrangementState.service';
+import { PaymentMethodName } from '../../../shared/globals/paygConstants';
+import { AddCreditCardResultMessage } from '../../../shared/messages/addCreditCardResult.message';
+import { BasePaymentArrangementResultMessage } from '../../../shared/messages/basePaymentArrangementResult.message';
+import { SetUpPaymentArrangementResultMessage } from '../../../shared/messages/setUpPaymentArrangementResultMessage';
+import { SwitchPaymentArrangementResultMessage } from '../../../shared/messages/switchPaymentArrangementResult.message';
+import { PaymentArrangementContent } from '../../../shared/model/domain/paymentArrangement/paymentArrangementContent.model';
+import { IMessageBusService } from '../../../shared/service/contract/imessageBus.service';
+import { DataLayerService } from '../../../shared/service/dataLayer.service';
+import { PaymentArrangementType } from '../../common/enums';
+import { ModalService } from '../../modal/modal.service';
+import { CreatePaymentMethodRequest } from '../../services/settings/model/createPaymentMethodRequest';
+import { CreditCard } from '../../services/settings/model/creditCard';
+import { IPaymentMethodsService } from '../../services/settings/paymentMethods.service.interface';
+&nbsp;
+@Component({
+    selector: 'agl-store-credit-card-form',
+    template: require('./storeCreditCardForm.component.html'),
+    styles: [require('./storeCreditCardForm.component.scss')]
+})
+export class StoreCreditCardFormComponent implements OnInit {
+&nbsp;
+    public content: PaymentArrangementContent;
+    @Input() public data;
+    @Input() public <span class="cstat-no" title="statement not covered" >isSwitchingPaymentArrangements: boolean = false;</span>
+    @Output() public <span class="cstat-no" title="statement not covered" >returnToPreviousPage = new EventEmitter();</span>
+&nbsp;
+    constructor(
+        private <span class="cstat-no" title="statement not covered" >_paymentMethodService: IPaymentMethodsService,</span>
+        private <span class="cstat-no" title="statement not covered" >_modal: ModalService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >_messageBusService: IMessageBusService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >_addCreditCardResultMessage: AddCreditCardResultMessage<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >switchPaymentArrangementResult: SwitchPaymentArrangementResultMessage<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >_dataLayer: DataLayerService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >stateService: IPaymentArrangementStateService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" ></span></span></span>
+    ) { }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public ngOnInit() {</span>
+<span class="cstat-no" title="statement not covered" >        this.content = new PaymentArrangementContent();</span>
+        // Set the labels **no need for sitecore**.
+<span class="cstat-no" title="statement not covered" >        this.content.creditCardExpiresLabelText = 'Expiry date';</span>
+<span class="cstat-no" title="statement not covered" >        this.content.creditCardExpiryDateError = 'A valid expiry is required';</span>
+<span class="cstat-no" title="statement not covered" >        this.content.creditCardExpiryDateLabelText = 'Expiry date';</span>
+<span class="cstat-no" title="statement not covered" >        this.content.creditCardExpiryDateRequired = 'A valid expiry is required';</span>
+<span class="cstat-no" title="statement not covered" >        this.content.creditCardFootnote = '';</span>
+<span class="cstat-no" title="statement not covered" >        this.content.creditCardInfoMessage = '';</span>
+        // CC Name
+<span class="cstat-no" title="statement not covered" >        this.content.creditCardNameOnCardError = 'Card holder name is required';</span>
+<span class="cstat-no" title="statement not covered" >        this.content.creditCardNameOnCardLabelText = 'Card holder name';</span>
+        // CC Number
+<span class="cstat-no" title="statement not covered" >        this.content.creditCardNumberLabelText = 'Card number';</span>
+<span class="cstat-no" title="statement not covered" >        this.content.creditCardNumberError = 'A valid card number is required';</span>
+        // Save button
+<span class="cstat-no" title="statement not covered" >        if (this.data.isDirectDebit || this.data.isSmsPay) {</span>
+<span class="cstat-no" title="statement not covered" >            this.content.paymentArrangementSaveButtonText = 'SET UP';</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.content.paymentArrangementSaveButtonText = 'SAVE';</span>
+        }
+        // Terms and Conditions
+<span class="cstat-no" title="statement not covered" >        this.content.paymentArrangementTermsAndConditionError = 'Please accept the terms and conditions';</span>
+<span class="cstat-no" title="statement not covered" >        this.content.storedPaymentArrangementText = this.data.paymentMethodReference;</span>
+    }
+&nbsp;
+    // taken from deleteOrSwitchPaymentArrangement.component.ts
+    // TODO: refactor into service
+<span class="cstat-no" title="statement not covered" >    public changePaymentMethod(paymentArrangementType: PaymentArrangementType<span class="fstat-no" title="function not covered" >) {</span></span>
+&nbsp;
+        const contractNumber = <span class="cstat-no" title="statement not covered" >this.data.contractAccountNumber;</span>
+<span class="cstat-no" title="statement not covered" >        this.stateService.updateStarted(contractNumber);</span>
+<span class="cstat-no" title="statement not covered" >        this.stateService.isUpdatingPaymentArrangement = true;</span>
+        let paymentArrangementResult: BasePaymentArrangementResultMessage;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this._paymentMethodService.attachPaymentArrangementToPaymentMethod(this.data.paymentArrangementPaymentMethodId, contractNumber, paymentArrangementType)</span>
+            .finally(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.stateService.updateCompleted(contractNumber);</span>
+<span class="cstat-no" title="statement not covered" >                paymentArrangementResult.contractAccountNumber = contractNumber;</span>
+<span class="cstat-no" title="statement not covered" >                this._messageBusService.broadcast(paymentArrangementResult);</span>
+<span class="cstat-no" title="statement not covered" >                this._modal.close();</span>
+            })
+            .subscribe(
+            (data<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                if (this.data.paymentArrangementPaymentMethodId) {</span>
+<span class="cstat-no" title="statement not covered" >                    paymentArrangementResult = new SwitchPaymentArrangementResultMessage();</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    paymentArrangementResult = new SetUpPaymentArrangementResultMessage();</span>
+                }
+<span class="cstat-no" title="statement not covered" >                paymentArrangementResult.isSwitchPaymentArrangement = this.isSwitchingPaymentArrangements;</span>
+            },
+            (error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                if (this.data.paymentArrangementPaymentMethodId) {</span>
+<span class="cstat-no" title="statement not covered" >                    console.error('Error within the store credit card - change payment method', error);</span>
+<span class="cstat-no" title="statement not covered" >                    paymentArrangementResult = new SwitchPaymentArrangementResultMessage();</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    console.error('Error within the store credit card - setup payment method', error);</span>
+<span class="cstat-no" title="statement not covered" >                    paymentArrangementResult = new SetUpPaymentArrangementResultMessage();</span>
+                }
+<span class="cstat-no" title="statement not covered" >                paymentArrangementResult.message = 'error';</span>
+<span class="cstat-no" title="statement not covered" >                paymentArrangementResult.isSwitchPaymentArrangement = this.isSwitchingPaymentArrangements;</span>
+            });
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    public saveCreditCard(event: CreditCard<span class="fstat-no" title="function not covered" >) {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.data.isSmsPay &amp;&amp; this.data.paymentArrangementPaymentMethodId) {</span>
+<span class="cstat-no" title="statement not covered" >            this.changePaymentMethod(PaymentArrangementType.SmsPay);</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
+        }
+&nbsp;
+        let newCreditCardRequest = <span class="cstat-no" title="statement not covered" >new CreatePaymentMethodRequest();</span>
+        let creditCardPayment = <span class="cstat-no" title="statement not covered" >new CreditCard();</span>
+&nbsp;
+        let name = <span class="cstat-no" title="statement not covered" >event.cardHolderName;</span>
+        let cardType = <span class="cstat-no" title="statement not covered" >event.cardType;</span>
+        let ref = <span class="cstat-no" title="statement not covered" >event.creditCardReference;</span>
+        let expDateYearAsYYYY = <span class="cstat-no" title="statement not covered" >new Date(event.expiryDateYear).getFullYear().toString().substr(-4);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        creditCardPayment.cardHolderName = name;</span>
+<span class="cstat-no" title="statement not covered" >        creditCardPayment.cardType = cardType;</span>
+<span class="cstat-no" title="statement not covered" >        creditCardPayment.creditCardReference = ref;</span>
+<span class="cstat-no" title="statement not covered" >        creditCardPayment.expiryDate = `${expDateYearAsYYYY}-${event.expiryDateMonth}`;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        newCreditCardRequest.creditCard = creditCardPayment;</span>
+        const contractAccountNumber = <span class="cstat-no" title="statement not covered" >!!this.data.contractAccountNumber ? Number(this.data.contractAccountNumber) : null;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this._addCreditCardResultMessage = new AddCreditCardResultMessage();</span>
+<span class="cstat-no" title="statement not covered" >        if (event.paymentArrangementType === PaymentArrangementType.DirectDebit) {</span>
+<span class="cstat-no" title="statement not covered" >            newCreditCardRequest.directDebitContractAccount = contractAccountNumber;</span>
+<span class="cstat-no" title="statement not covered" >            this._addCreditCardResultMessage.paymentArrangementSetup = true;</span>
+        } else <span class="cstat-no" title="statement not covered" >if (event.paymentArrangementType === PaymentArrangementType.SmsPay) {</span>
+<span class="cstat-no" title="statement not covered" >            newCreditCardRequest.oneTouchPayContractAccount = contractAccountNumber;</span>
+<span class="cstat-no" title="statement not covered" >            this._addCreditCardResultMessage.paymentArrangementSetup = true;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        this._addCreditCardResultMessage.contractAccountNumber = contractAccountNumber;</span>
+<span class="cstat-no" title="statement not covered" >        this._addCreditCardResultMessage.isSwitchPaymentArrangement = this.data.isSwitchPaymentArrangement;</span>
+<span class="cstat-no" title="statement not covered" >        this.stateService.isUpdatingPaymentArrangement = true;</span>
+<span class="cstat-no" title="statement not covered" >        this.stateService.updateStarted(String(contractAccountNumber));</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this._paymentMethodService.createPaymentMethod(newCreditCardRequest)</span>
+        .finally(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            this.stateService.updateCompleted(String(contractAccountNumber));</span>
+<span class="cstat-no" title="statement not covered" >            this._messageBusService.broadcast(this._addCreditCardResultMessage);</span>
+<span class="cstat-no" title="statement not covered" >            this._modal.close();</span>
+        })
+        .subscribe(
+            (data<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this._addCreditCardResultMessage.message = creditCardPayment;</span>
+            },
+            (error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                console.error('Error within saveCreditCard', error);</span>
+<span class="cstat-no" title="statement not covered" >                this._addCreditCardResultMessage.message = 'error';</span>
+<span class="cstat-no" title="statement not covered" >                this._dataLayer.pushPaymentError(`Payment outcome – Card Failure`, 'Error occured while save the card', PaymentMethodName.CreditCard, [this.data.contractAccountNumber]);</span>
+<span class="cstat-no" title="statement not covered" >                this._messageBusService.broadcast(this._addCreditCardResultMessage);</span>
+<span class="cstat-no" title="statement not covered" >                this._modal.close();</span>
+            }
+        );
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public goBack() {</span>
+<span class="cstat-no" title="statement not covered" >        this.returnToPreviousPage.emit(true);</span>
+    }
+&nbsp;
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

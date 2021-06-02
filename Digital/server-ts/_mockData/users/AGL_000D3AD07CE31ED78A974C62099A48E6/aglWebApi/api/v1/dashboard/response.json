@@ -1,0 +1,54 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "account": "7025466058",
+            "contract": "9401430437",
+            "currentBillStartDate": "0001-01-01T00:00:00",
+            "currentBillEndDate": "2017-01-10T00:00:00",
+            "costToDate": 0,
+            "projectedBill": 0,
+            "usageCostThisWeek": 0,
+            "usageCostLastWeek": 0,
+            "usageThisWeek": null,
+            "usageLastWeek": null,
+            "balance": 0,
+            "dueDate": "0001-01-01T00:00:00",
+            "isSmartMeter": false,
+            "estimatedReads": false
+        },
+        {
+            "account": "7025466058",
+            "contract": "9401430438",
+            "currentBillStartDate": "0001-01-01T00:00:00",
+            "currentBillEndDate": "2017-02-10T00:00:00",
+            "costToDate": 0,
+            "projectedBill": 0,
+            "usageCostThisWeek": 0,
+            "usageCostLastWeek": 0,
+            "usageThisWeek": null,
+            "usageLastWeek": null,
+            "balance": 0,
+            "dueDate": "0001-01-01T00:00:00",
+            "isSmartMeter": false,
+            "estimatedReads": false
+        },
+        {
+            "account": "7025466058",
+            "contract": "9402638730",
+            "currentBillStartDate": "0001-01-01T00:00:00",
+            "currentBillEndDate": "2016-05-10T00:00:00",
+            "costToDate": 0,
+            "projectedBill": 0,
+            "usageCostThisWeek": 0,
+            "usageCostLastWeek": 0,
+            "usageThisWeek": null,
+            "usageLastWeek": null,
+            "balance": 0,
+            "dueDate": "0001-01-01T00:00:00",
+            "isSmartMeter": false,
+            "estimatedReads": false
+        }
+    ]
+}

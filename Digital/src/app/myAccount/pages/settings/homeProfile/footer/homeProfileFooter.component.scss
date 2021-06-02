@@ -1,0 +1,28 @@
+@import '../../../../maui/maui';
+@import '../homeProfile';
+
+.homeprofile-footer {
+    @include horizontally-center-in-parent;
+
+    width: $homeprofile-survey-page-body-width;
+    box-sizing: border-box;
+
+    @media #{$agl-layout-mobile} {
+        padding-left: $space-03;
+        padding-right: $space-03;
+        width: 100%;
+    }
+
+    &__error {
+        margin-top: $space-03;
+    }
+
+    &__navigation {
+        margin-top: $space-06;
+        text-align: center;
+
+        &-next {
+            margin-bottom: $space-04;
+        }
+    }
+}

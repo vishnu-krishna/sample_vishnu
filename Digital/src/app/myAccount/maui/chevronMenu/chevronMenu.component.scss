@@ -1,0 +1,26 @@
+@import '../maui';
+
+.maui-chevron-menu {
+    @include link-styling;
+
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    font-weight: bold;
+
+    &__icon {
+        background-image: url('svg/maui/chevronMenu/chevron.svg');
+        display: inline-block;
+        width: 12px;
+        height: 8px;
+        margin-left: 5px;
+
+        &--up {
+            transform: rotate(180deg);
+        }
+    }
+
+    &.hidden {
+        display: none;
+    }
+}

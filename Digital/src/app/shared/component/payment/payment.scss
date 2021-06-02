@@ -1,0 +1,59 @@
+@import '../../style/variables';
+@import '../../style/mixins';
+
+.bonus-box {
+    background-color: $brand-white;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 112px;
+    height: 190px;
+    margin-right: 10px;
+    text-align: center;
+
+    &:last-child {
+        margin-right: 0px !important;
+    }
+
+    &__topupamount {
+        font-family: $primary-font-stack;
+        margin-top: 16px;
+        line-height: 29px;
+        color: $brand-sky;
+
+        &__dollar {
+            font-weight: normal;
+            font-size: 25px;
+        }
+
+        &__value {
+            font-weight: bold;
+            font-size: 32px;
+        }
+    }
+
+    &__bonusamount {
+        margin-top: 16px;
+        margin-bottom: 22px;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 20px;
+        color: $brand-grey-g1;
+    }
+
+    &__button {
+        width: 100%;
+        height: 36px;
+        font-weight: bold;
+        font-size: 14px;
+        border-radius: 4px;
+        background-color: $brand-sky;
+    }
+}
+
+.bluelink {
+    color: $brand-sky;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+}

@@ -1,0 +1,123 @@
+
+@import '../../../../shared/style/variables';
+@import '../../../../shared/style/mixins';
+@import '../../../../shared/style/tempdls';
+
+.meter-information {
+
+    &__title {
+        width: 198px;
+        height: 26px;
+        font-family: $primary-font-stack;
+        font-size: 16px;
+        font-weight: bold;
+        color: $font-colour-black;
+        margin-bottom: 30px;
+    }
+
+    &__icons {
+        display: inline-block;
+        position: absolute;
+        top: 8px;
+
+        .icon_size {
+            width: 69px;
+            height: 94px;
+        }
+        @media #{$agl-layout-mobile} {
+            display: none;
+        }
+    }
+
+    &__icons--mobile {
+        display: none;
+        @media #{$agl-layout-mobile} {
+            width: 20%;
+            display: inline-block;
+        }
+    }
+
+    .estimate-fuel {
+        margin-left: 100px;
+        width: 226px;
+        height: 68px;
+        font-family: $primary-font-stack;
+        font-size: 22px;
+        font-weight: bold;
+        color: $brand-grey-g1;
+        display: inline-block;
+
+        .title--mobile {
+            @media #{$agl-layout-mobile} {
+                width: 80%;
+                float: right;
+                display: inline-block;
+            }
+        }
+
+        &__content {
+            display: inline-block;
+            padding-top: 25px;
+            width: 357.57px;
+            height: 88px;
+            font-family: $secondary-font-stack;
+            font-size: 14px;
+            color: $brand-grey-g1;
+            font-weight: normal;
+            @media #{$agl-layout-tablet-and-smaller} {
+                width: auto;
+            }
+        }
+        @media #{$agl-layout-mobile} {
+            margin-left: 0px;
+            width: 100%;
+        }
+    }
+
+    .meter-number-date {
+        height: 34px;
+        font-family: $primary-font-stack;
+        font-size: 22px;
+        font-weight: bold;
+        color: $brand-grey-g1;
+        margin-bottom: 15px;
+    }
+
+    .meter-read-subHeading {
+        padding-top: 7px;
+        font-family: $secondary-font-stack;
+        font-size: 14px;
+        color: $brand-grey-g1;
+    }
+
+    .tempdls-button {
+        width: 260px;
+        height: 36px;
+        box-shadow: 0 2px 4px 0 rgba(74, 74, 74, 0.3);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: 4px;
+        @media #{$agl-layout-mobile} {
+            width: 100%;
+        }
+
+    }
+
+    .how-to-read-your-meter {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .more-info {
+        font-family: $primary-font-stack;
+        font-size: 16px;
+        font-weight: bold;
+        color: $brand-sky;
+    }
+
+    .meter-read-information {
+        @media #{$agl-layout-mobile} {
+            padding-top: 25px;
+        }
+    }
+}
+

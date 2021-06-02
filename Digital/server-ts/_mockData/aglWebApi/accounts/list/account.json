@@ -1,0 +1,29 @@
+[
+    {
+        "number": "7015646602",
+        "firstName": "Simone",
+        "lastName": "Boughen",
+        "contracts": [
+            {
+                "address": "U2/15 Twelfth Avenue|BRIGHTON QLD 4017",
+                "accountNumber": "7015646602",
+                "fuelType": "Gas",
+                "nameId": "AGL_0000C99D7ADE1ED49EF1BF6ACD6EE551",
+                "number": "9138824851",
+                "planName": "Select 6%",
+                "inFlight": false,
+                "isRestricted": false
+            },
+            {
+                "address": "U2/15 Twelfth Avenue|BRIGHTON QLD 4017",
+                "accountNumber": "7015646602",
+                "fuelType": "Electricity",
+                "nameId": "AGL_0000C99D7ADE1ED49EF1BF6ACD6EE551",
+                "number": "9138824922",
+                "planName": "Select 8%",
+                "inFlight": false,
+                "isRestricted": false
+            }
+        ]
+    }
+]

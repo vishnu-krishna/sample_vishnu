@@ -1,0 +1,16 @@
+<div class="account-details">
+    <div class="account-details-number">Account no: {{model.contractAccountNumber | aglAddSpaces}}</div>
+    <div class="account-details-fuel-icon">
+        <mat-icon
+            *ngFor="let i of elecIcons"
+            svgIcon="icon-elec-enabled" alt="electricity icon"
+            class="account-details-fuel-icon__elec">
+        </mat-icon>
+        <mat-icon
+            *ngFor="let i of gasIcons"
+            svgIcon="icon-gas-enabled" alt="gas icon"
+            class="account-details-fuel-icon__gas">
+        </mat-icon>
+    </div>
+    <div class="account-details-address" *ngFor="let supplyAddress of model.supplyAddresses">{{supplyAddress | aglAddressFormatter}}</div>
+</div>

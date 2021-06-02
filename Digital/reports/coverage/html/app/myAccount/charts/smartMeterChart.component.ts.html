@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\charts\smartMeterChart.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/myAccount/charts/</a> smartMeterChart.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">17.89% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>22/123</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">28.07% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>16/57</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.11% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">17.09% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>20/117</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import * as moment from 'moment';
+import { PrePaymentBalanceTopUpUrgency } from '../../shared/globals/prePaymentBalanceTopUpUrgency';
+import { ContentService } from '../../shared/service/content.service';
+import { DataLayerService } from '../../shared/service/dataLayer.service';
+import { DocumentService } from '../../shared/service/document.service';
+import { Now } from '../../shared/service/now.service';
+import { ContractViewModel } from '../services/account.service';
+&nbsp;
+@Component({
+    selector: 'agl-smart-meter-chart',
+    template: require('./smartMeterChart.component.html'),
+    styles: [require('./smartMeterChart.component.scss')]
+})
+&nbsp;
+export class SmartMeterChartComponent implements OnInit {
+    @Input() public width: number;
+    @Input() public lineWidth: number;
+    @Input() public backgroundColor;
+    @Input() public contract: ContractViewModel;
+&nbsp;
+    @ViewChild('canvas') public canvasElement: ElementRef;
+&nbsp;
+    public hasElectricVehicle: Boolean;
+    public percent: number;
+    public <span class="cstat-no" title="statement not covered" >showProjection: Boolean = true;</span>
+    // PayG Logic
+    public <span class="cstat-no" title="statement not covered" >pendingPayment: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >isOverdue: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >isShowToolTip: boolean = true;</span>
+    public toolTipHeader: string;
+    public toolTipBody: string;
+    public usageToolTip: Array&lt;{ [key: string]: string }&gt;;
+    public _canvas: any;
+    public _ctx: CanvasRenderingContext2D;
+    public <span class="cstat-no" title="statement not covered" >_animationStep: number = 2;</span>
+    public <span class="cstat-no" title="statement not covered" >_animationFrameMs: number = 1000 / 60;</span>
+&nbsp;
+    public costChange: number;
+    public costSign: number;
+    public billingPeriod: string;
+    public daysToGo: string;
+    public costToDate: number;
+    public currentBillStartDate: string;
+    public currentBillEndDate: string;
+&nbsp;
+    constructor(public <span class="cstat-no" title="statement not covered" >_now: Now,</span>
+                public <span class="cstat-no" title="statement not covered" >_element: ElementRef<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+                public <span class="cstat-no" title="statement not covered" >_dom: DocumentService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+                public <span class="cstat-no" title="statement not covered" >_contentService: ContentService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+                public <span class="cstat-no" title="statement not covered" >_dataLayer: DataLayerService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >)</span> {</span></span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public ngOnInit() {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.contract.isPayg) {</span>
+<span class="cstat-no" title="statement not covered" >            this._dataLayer.pushPayg(this.checkPaygBand());</span>
+        }
+<span class="cstat-no" title="statement not covered" >        this._contentService.getContent().subscribe((result<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (result.selfService !== undefined &amp;&amp;</span>
+                result.selfService.toolTips !== undefined) {
+<span class="cstat-no" title="statement not covered" >                this.usageToolTip = result.selfService.toolTips.usageTooltip;</span>
+<span class="cstat-no" title="statement not covered" >                if (this.usageToolTip) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.toolTipHeader = this.usageToolTip['header'];</span>
+<span class="cstat-no" title="statement not covered" >                    this.toolTipBody = this.usageToolTip['description'];</span>
+                }
+            }
+        });
+<span class="cstat-no" title="statement not covered" >        this._canvas = this.canvasElement.nativeElement;</span>
+<span class="cstat-no" title="statement not covered" >        this._ctx = this._canvas.getContext('2d');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this._canvas.width = this.width * 2;</span>
+<span class="cstat-no" title="statement not covered" >        this._canvas.height = 205 * 2;</span>
+<span class="cstat-no" title="statement not covered" >        this._ctx.scale(2, 2);</span>
+<span class="cstat-no" title="statement not covered" >        this.costToDate = this.baselineAmount(this.contract.costToDate);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.costToDate === this.contract.projectedBill) {</span>
+<span class="cstat-no" title="statement not covered" >            this.showProjection = false;</span>
+        }
+&nbsp;
+        let change = <span class="cstat-no" title="statement not covered" >this.contract.usageCostThisWeek - this.contract.usageCostLastWeek;</span>
+<span class="cstat-no" title="statement not covered" >        this.costSign = Math.sign(change);</span>
+<span class="cstat-no" title="statement not covered" >        this.costChange = Math.abs(change);</span>
+&nbsp;
+        let todayDate = <span class="cstat-no" title="statement not covered" >this._now.date();</span>
+        let currentBillStartDate = <span class="cstat-no" title="statement not covered" >moment(this.contract.currentBillStartDate).startOf('day');</span>
+        let currentBillEndDate = <span class="cstat-no" title="statement not covered" >moment(this.contract.currentBillEndDate).startOf('day');</span>
+        let startDateFormat = <span class="cstat-no" title="statement not covered" >currentBillStartDate.year() === currentBillEndDate.year() ? 'D MMM' : 'D MMM YY';</span>
+<span class="cstat-no" title="statement not covered" >        this.currentBillStartDate = currentBillStartDate.format('D MMM');</span>
+<span class="cstat-no" title="statement not covered" >        this.currentBillEndDate = currentBillEndDate.format('D MMM');</span>
+<span class="cstat-no" title="statement not covered" >        this.billingPeriod = currentBillStartDate.format(startDateFormat) + ' - ' + currentBillEndDate.format('D MMM YY');</span>
+&nbsp;
+        let billingPeriodDays = <span class="cstat-no" title="statement not covered" >currentBillEndDate.diff(currentBillStartDate, 'days');</span>
+        let billingPeriodElapsed = <span class="cstat-no" title="statement not covered" >todayDate.diff(currentBillStartDate, 'days');</span>
+        let percent = <span class="cstat-no" title="statement not covered" >Math.round((billingPeriodElapsed / billingPeriodDays) * 100);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (percent &gt; 100) { <span class="cstat-no" title="statement not covered" >percent = 100; </span>}</span>
+<span class="cstat-no" title="statement not covered" >        if (percent &lt; 0) { <span class="cstat-no" title="statement not covered" >percent = 0; </span>}</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.percent = percent;</span>
+        let animDisabled = <span class="cstat-no" title="statement not covered" >localStorage.getItem('selfService.disableAnimation') === 'true';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (animDisabled) {</span>
+<span class="cstat-no" title="statement not covered" >            this.drawChart(this.percent);</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.animateToPercentage(0, 0, this.percent);</span>
+        }
+&nbsp;
+        let daysDelta: number = <span class="cstat-no" title="statement not covered" >currentBillEndDate.diff(todayDate, 'days');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (daysDelta &gt; 0) {</span>
+            let pluralise = <span class="cstat-no" title="statement not covered" >Math.abs(daysDelta) === 1 ? '' : 's';</span>
+<span class="cstat-no" title="statement not covered" >            this.daysToGo = `${daysDelta} day${pluralise} to go`;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.contract.hasElectricVehicle) {</span>
+<span class="cstat-no" title="statement not covered" >            this.hasElectricVehicle = true;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.hasElectricVehicle = false;</span>
+        }
+    }
+&nbsp;
+    public baselineAmount(amount: number<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        return amount &lt; 0 ? 0 : amount;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    public animateToPercentage(startValue: number, currentValue: number, endValue: number<span class="fstat-no" title="function not covered" >) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (currentValue &lt;= endValue) {</span>
+<span class="cstat-no" title="statement not covered" >            this.drawChart(currentValue);</span>
+<span class="cstat-no" title="statement not covered" >            currentValue += this._animationStep;</span>
+<span class="cstat-no" title="statement not covered" >            setTimeout(<span class="fstat-no" title="function not covered" >() =&gt;</span></span>
+<span class="cstat-no" title="statement not covered" >                this.animateToPercentage(startValue, currentValue, endValue),</span>
+            this._animationFrameMs);
+        }
+    }
+&nbsp;
+    public drawChart(percentValue<span class="fstat-no" title="function not covered" >) {</span>
+        let gradientStart = <span class="cstat-no" title="statement not covered" >'#001CB0';</span>
+        let gradientEnd = <span class="cstat-no" title="statement not covered" >'#26DEEA';</span>
+        let backgroundColor = <span class="cstat-no" title="statement not covered" >'#F1F1F1';</span>
+&nbsp;
+        let lineWidth = <span class="cstat-no" title="statement not covered" >15;</span>
+        let startAngle = <span class="cstat-no" title="statement not covered" >0.9 * Math.PI;</span>
+        let endAngle = <span class="cstat-no" title="statement not covered" >2.1 * Math.PI;</span>
+&nbsp;
+        let width = <span class="cstat-no" title="statement not covered" >this.width || 250;</span>
+        let centreX = <span class="cstat-no" title="statement not covered" >width / 2;</span>
+        let centreY = <span class="cstat-no" title="statement not covered" >centreX;</span>
+        let radius = <span class="cstat-no" title="statement not covered" >(width / 2) - (lineWidth / 2);</span>
+        let isAnticlockwise = <span class="cstat-no" title="statement not covered" >false;</span>
+&nbsp;
+        let valueAngle = <span class="cstat-no" title="statement not covered" >(startAngle + ((endAngle - startAngle) * (percentValue / 100))) % (2 * Math.PI);</span>
+&nbsp;
+        let ctx = <span class="cstat-no" title="statement not covered" >this._ctx;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        ctx.clearRect(0, 0, this._canvas.width, this._canvas.height);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        ctx.lineWidth = lineWidth;</span>
+<span class="cstat-no" title="statement not covered" >        ctx.lineCap = 'round';</span>
+<span class="cstat-no" title="statement not covered" >        ctx.strokeStyle = backgroundColor;</span>
+<span class="cstat-no" title="statement not covered" >        ctx.beginPath();</span>
+<span class="cstat-no" title="statement not covered" >        ctx.arc(centreX, centreY, radius, startAngle, endAngle, isAnticlockwise);</span>
+<span class="cstat-no" title="statement not covered" >        ctx.stroke();</span>
+<span class="cstat-no" title="statement not covered" >        ctx.closePath();</span>
+&nbsp;
+        // Don't draw the line
+<span class="cstat-no" title="statement not covered" >        if (percentValue &lt;= 0) {</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
+        }
+&nbsp;
+        let gradient = <span class="cstat-no" title="statement not covered" >ctx.createLinearGradient(0, 0, 200, 0);</span>
+<span class="cstat-no" title="statement not covered" >        gradient.addColorStop(0, gradientStart);</span>
+<span class="cstat-no" title="statement not covered" >        gradient.addColorStop(1, gradientEnd);</span>
+<span class="cstat-no" title="statement not covered" >        ctx.strokeStyle = gradient;</span>
+<span class="cstat-no" title="statement not covered" >        ctx.beginPath();</span>
+<span class="cstat-no" title="statement not covered" >        ctx.arc(centreX, centreY, radius, startAngle, valueAngle, isAnticlockwise);</span>
+        // Call the function to fix the date in right position based on the arc.
+<span class="cstat-no" title="statement not covered" >        ctx.stroke();</span>
+<span class="cstat-no" title="statement not covered" >        ctx.closePath();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public checkPaygBand() {</span>
+<span class="cstat-no" title="statement not covered" >        switch (this.contract.paygBand) {</span>
+            case PrePaymentBalanceTopUpUrgency.Unavailable:
+<span class="cstat-no" title="statement not covered" >                return 'Unavailable';</span>
+            case PrePaymentBalanceTopUpUrgency.High:
+<span class="cstat-no" title="statement not covered" >                return 'Debit';</span>
+            case PrePaymentBalanceTopUpUrgency.Medium:
+<span class="cstat-no" title="statement not covered" >                return 'Low Credit';</span>
+            case PrePaymentBalanceTopUpUrgency.Low:
+<span class="cstat-no" title="statement not covered" >                return 'High Credit';</span>
+            default:
+<span class="cstat-no" title="statement not covered" >                return '';</span>
+        }
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

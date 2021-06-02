@@ -1,0 +1,15 @@
+[{
+	"contractNumber": 9403551883,
+	"isEligible": false,
+	"ineligibleReason": {
+		"message": "Non-elec site. not eligible for energy insight registration",
+		"internal": {
+			"id": "ZIDM_ENERGY_INSIGHT",
+			"number": "023",
+			"description": "Unable to Register for Energy Insights as your service is not active until 28102020. Please try again after this date"
+		}
+	},
+	"subscribedToMidBillEnergyBreakdown": false,
+    "subscribedToEndBillEnergyBreakdown": false,
+    "availableUsageBreakdownBillPeriods": []
+}]

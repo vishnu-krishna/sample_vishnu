@@ -1,0 +1,61 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": {
+        "isValid": true,
+        "isSuccess": true,
+        "screenCode": "SSMR_EX1",
+        "currentBill": {
+            "amount": 123.00,
+            "startDate": "2017-01-01T00:00:00",
+            "endDate": "2017-03-01T00:00:00"
+        },
+        "projectedBill": {
+            "amount": 321.00,
+            "startDate": "2017-01-01T00:00:00",
+            "endDate": "2017-03-01T00:00:00"
+        },
+        "lastInvoice": {
+            "amount": 234.00,
+            "startDate": "2016-09-01T00:00:00",
+            "endDate": "2016-12-31T00:00:00"
+        },
+        "adjustment": {
+            "preAdjustmentBalance:": 123.00,
+            "postAdjustmentBalance:": 100.00,
+            "startDate": "2017-01-01T00:00:00",
+            "endDate": "2017-03-01T00:00:00"
+        },
+        "meters": [
+            {
+                "meterSerial": "SSMR_MRE1",
+                "photoUploadRequired": true,
+                "registers": [
+                    {
+                        "registerId": "001",
+                        "reading": "1790824",
+                        "isValid": true,
+                        "status": "string"
+                    },
+                    {
+                        "registerId": "002",
+                        "reading": "1790824",
+                        "isValid": true,
+                        "status": "string"
+                    }
+                ]
+            },
+            {
+                "meterSerial": "SSMR_MRE2",
+                "registers": [
+                    {
+                        "register": "001",
+                        "reading": "5678123A",
+                        "isValid": true,
+                        "status": "string"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,55 @@
+@import './styleGuide/settings/vars';
+@import './styleGuide/vendor/materialize/variables';
+// colors
+$omm-blue: $col-ocean; //#001cb0
+$omm-light-blue: $col-sky; //#00dfed
+$omm-yellow: $col-sun; //#ffe344
+$omm-vlight-grey: $col-g6; //#f5f5f5
+$omm-grey: $col-g6; //#f5f5f5
+$omm-grey-border: $col-g4; //#cccccc
+$omm-grey-text: $col-g2; //#666666
+$omm-vdark-grey: $col-g1; //#333333
+$omm-vvlight-grey: #D9D9D9;
+$omm-error-red: $col-waratah--dark; //#fd334c
+$omm-white: #FFFFFF;
+$omm-black: #000000;
+$omm-yellow-dark: $col-sun--dark; //#f6a623
+$omm-light-blue: $col-sky; //#00dfed
+$omm-purple: #7A88D5;
+//font
+$displayStack: 'Titillium Web',
+sans-serif;
+$headerStack: 'Titillium Web',
+sans-serif;
+$bodyStack: 'Open Sans',
+sans-serif;
+$fw-ultra-light: 100;
+$fw-light: 200;
+$fw-book: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semi-bold: 600;
+$fw-bold: 700;
+$fw-black: 800;
+$omm-font-desktop-large: 46px;
+$omm-font-mobile-large: 26px;
+$omm-input-font-desktop-large: 43px;
+$omm-input-font-mobile-large: 20px;
+//sizes
+$omm-header-desktop-height: 130px;
+$omm-header-tablet-height: 130px;
+$omm-header-mobile-height: 50px;
+$omm-logo-desktop-height: 60px;
+$omm-logo-mobile-height: 25px;
+$omm-footer-mobile-height: 50px;
+//form elements css
+$omm-desktop-form-input-height: 60px;
+$omm-mobile-form-input-height: 60px;
+$omm-desktop-form-input-font-size: 17px;
+$omm-form-back-btn-font-size: 20px;
+$omm-mobile-form-input-font-size: 15px;
+$omm-text-small: 13px;
+// date picker
+$omm-date-picker-height: 280px;
+$omm-date-picker-padding-desktop: 18px;
+$omm-date-picker-padding-mobile: 0;

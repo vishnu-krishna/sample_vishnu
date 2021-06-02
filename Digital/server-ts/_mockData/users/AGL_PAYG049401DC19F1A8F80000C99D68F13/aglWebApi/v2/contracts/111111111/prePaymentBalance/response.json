@@ -1,0 +1,12 @@
+ {
+     "status": 404,
+     "body": {
+         "contractNumber": 222222222,
+         "balance": 50,
+         "balanceType": "Credit",
+         "balanceTopUpUrgency": "Medium",
+         "calculationDate": "2017-01-20T01:00:00Z",
+         "expirationDate": "2017-01-31T23:59:59Z",
+         "remainingDays": 11.12
+     }
+ }

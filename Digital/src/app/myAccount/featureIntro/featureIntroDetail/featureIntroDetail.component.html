@@ -1,0 +1,18 @@
+<div class="intro-image">
+    <div class="image-wrapper">
+        <img [src]="featureIntro.content.image" /> 
+    </div>
+</div>
+<div class="intro-copy">
+    <div class="cta-spacer" *ngIf="featureIntro.content.showCta"></div>
+    <div class="intro-heading">
+        {{ featureIntro.content.heading }}
+    </div>
+    <p>
+        {{ featureIntro.content.description }}
+    </p>
+    <div class="feature-intro-cta" *ngIf="featureIntro.content.showCta">
+        <agl-maui-button (clicked)="ctaPositiveAction()" class="feature-intro-positive-cta">{{ featureIntro.content.positiveCtaText }}</agl-maui-button>
+        <div class="feature-intro-negative-cta" (click)="ctaNegativeAction()">{{ featureIntro.content.negativeCtaText }}</div>
+    </div>
+</div>

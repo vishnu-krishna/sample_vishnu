@@ -1,0 +1,41 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": {
+            "adjustment": {
+                "preAdjustmentBalance": 999,
+                "postAdjustmentBalance": 777,
+                "startDate": "2017-02-28T00:00:00",
+                "endDate": "2017-03-28T00:00:00"
+            },
+            "screenCode": "SSMR_ADJ1",
+            "currentBill": {
+                "amount": 123,
+                "startDate": "2017-02-28T00:00:00",
+                "endDate": "2017-03-28T00:00:00"
+            },
+            "numberOfDaysTillNextBill": "2",
+            "invoiceDueDate": "2017-04-28T00:00:00",
+            "meters": [
+                {
+                    "meterSerial": "12345",
+                    "registers": [
+                        {
+                            "registerId": "001",
+                            "dialFormat": "5",
+                            "currentMeterRead": "1790824",
+                            "lastMeterRead": "02180",
+                            "lastReadQuality": "Actual Read by MDP",
+                            "lastReadDate": "2017-02-28T00:00:00"
+                        }
+                    ]
+                }
+            ],
+            "error": {
+                "internalError": {
+                    "errorNumber": "068"
+                }
+            }
+    }
+}
+

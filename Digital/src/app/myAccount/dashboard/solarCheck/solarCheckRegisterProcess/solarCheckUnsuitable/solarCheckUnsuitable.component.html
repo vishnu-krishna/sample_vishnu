@@ -1,0 +1,61 @@
+<div class="solar-check-unsuitable agl-modal-body-overall-settings agl-modal-body">
+    <div class="row modal-navi no-horizontal-padding">
+        <span id="solar-check-unsuitable-close-button" class="close-button" (click)="closeModal()" #cancelButtonTopRight>
+            <img src="svg/scc_modal_close.svg" alt="Exit Solar Check registration">
+        </span>
+    </div>
+    <div class="visible-xs row no-horizontal-padding">
+        <div class="center-image-horizontally-cropped-outer">
+            <div class="center-image-horizontally-cropped-inner">
+                <img src="svg/scc-houseonhill-intro-mb-768px.svg" alt="Solar Check Prerequisite Registration Step">
+            </div>
+        </div>
+    </div>    
+    <div class="row prereq-content no-horizontal-padding">
+        <div class="battery-details-capture">
+
+            <!--title-->
+            <div class="content-area battery-title">
+                <div>
+                    <div class="battery-title-text">
+                        Nice one, you're really making the most of your solar energy.
+                    </div>
+                </div>
+            </div>
+            
+            <!--yes and no buttons-->
+            <div class="content-area option-button-outer-padding">
+                <div class="option-button-layout">
+                    <button mat-raised-button color="warning" class="option-button-size option-button-button-padding option-button-yes mat-raised-button mat-warning option-button-selected">
+                        <img src="svg/scc_prereq_battery_yes_reverse.svg" class="option-button-yes-img-size" alt="Yes I have a battery">
+                        <div class="option-button-text option-button-text-pos">
+                            Yes, I do.
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!--copy text-->
+            <div class="content-area info-message-padding">
+                <div class="info-message-font-details">
+                    While Solar Command Check is for those without a battery, we're working on a solar monitoring service that will be perfect for you. So keep an eye out and in the meantime, enjoy the benefits of your solar battery.
+                </div>
+            </div>
+
+            <div class="content-area next-button-padding">
+                <button mat-raised-button class="dls-button dls-button-override next-button" color="accent" (click)="closeModal()">
+                    RETURN TO MY ACCOUNT
+                </button>
+            </div>
+            <div class="link">
+                <a (click)="previous()">I don't have a battery</a>
+            </div>
+        </div>
+    </div>
+   
+    <div class="no-horizontal-padding">
+        <div class="visible-sm visible-md visible-lg visible-xl">
+            <img src="svg/scc-houseonhill-intro-wd-tb-white.svg" alt="Solar Check Prerequisite Registration Step">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+@import '../../../../../maui/maui';
+
+.payment-assistance-plan-options-total {
+    padding-bottom: $space-04;
+    border-bottom: 1px solid $neutral-04;
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+
+        div {
+            line-height: $line-height-short;
+
+            &:last-child {
+                text-align: right;
+            }
+        }
+    }
+
+    &__tip {
+        @extend .text-smallest-long;
+        padding-top: $space-04;
+
+        span {
+            font-weight: bold;
+        }
+    }
+}

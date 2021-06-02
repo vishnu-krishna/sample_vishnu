@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="526px" height="417px" viewBox="0 0 526 417" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>pool_graphic</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="82.3936819%" gradientTransform="translate(0.500000,0.000000),scale(0.363118,1.000000),rotate(90.000000),scale(1.000000,2.008246),translate(-0.500000,-0.000000)" id="radialGradient-1">
+            <stop stop-color="#E2E2E2" offset="0%"></stop>
+            <stop stop-color="#F5F5F5" stop-opacity="0" offset="100%"></stop>
+        </radialGradient>
+        <path d="M72.9597222,53.6225 C73.0711111,52.62125 73.1825,51.50875 73.1825,50.5075 C73.1825,39.3825 64.16,30.4825 53.1325,30.4825 C41.9936111,30.4825 33.0825,39.49375 33.0825,50.5075 C33.0825,50.61875 33.0825,50.61875 33.0825,50.73 C29.4066667,51.06375 26.1763889,53.06625 24.1713889,56.07 C21.7208333,54.5125 18.8247222,53.51125 15.8172222,53.51125 C7.35166667,53.51125 0.556944444,60.2975 0.556944444,68.7525 C0.556944444,77.2075 7.35166667,83.99375 15.8172222,83.99375 L70.8433333,83.99375 C79.3088889,83.99375 86.1036111,77.2075 86.1036111,68.7525 C86.1036111,61.07625 80.3113889,54.735 72.9597222,53.6225 Z M44.6669444,68.7525 L44.3327778,68.7525 C44.3327778,68.7525 44.3327778,68.64125 44.4441667,68.64125 C44.5555556,68.64125 44.6669444,68.7525 44.6669444,68.7525 Z" id="path-2"></path>
+        <filter x="-21.0%" y="-33.6%" width="142.1%" height="167.3%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.2   0 0 0 0 0.2   0 0 0 0 0.2  0 0 0 0.06 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="pool-and-spa" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-597.000000, -389.000000)">
+        <g id="pool_graphic" transform="translate(597.000000, 389.000000)">
+            <g id="Group-6" transform="translate(0.000000, 260.000000)" fill="url(#radialGradient-1)">
+                <g id="animation/shading">
+                    <rect id="Rectangle-2" x="0" y="0" width="526" height="191"></rect>
+                </g>
+            </g>
+            <g id="animation/pool-360px" transform="translate(122.000000, 0.000000)">
+                <g id="Group-7">
+                    <rect id="Rectangle-path" x="0" y="0" width="401" height="356"></rect>
+                    <g id="Group-9" transform="translate(1.113889, 0.000000)">
+                        <ellipse id="Oval" fill="#FFE344" cx="100.806944" cy="60.075" rx="60.15" ry="60.075"></ellipse>
+                        <g id="Shape" fill-rule="nonzero">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                        </g>
+                    </g>
+                    <g id="Group" transform="translate(18.936111, 54.512500)">
+                        <path d="M172.43,301.4875 C130.547778,301.4875 90.6705556,294.47875 60.15,281.79625 C8.35416667,260.21375 0.556944444,229.62 0.556944444,213.26625 C0.556944444,196.9125 8.24277778,166.31875 60.15,144.73625 C90.5591667,132.05375 130.436389,125.045 172.43,125.045 C214.312222,125.045 254.189444,132.05375 284.71,144.73625 C336.505833,166.31875 344.303056,196.9125 344.303056,213.26625 C344.303056,229.62 336.617222,260.21375 284.71,281.79625 C254.189444,294.47875 214.423611,301.4875 172.43,301.4875 Z" id="Shape" fill="#F5F5F5"></path>
+                        <ellipse id="Oval" fill="#DBDBDB" cx="172.43" cy="213.3775" rx="143.134722" ry="59.51875"></ellipse>
+                        <ellipse id="Oval" fill="#00DEEC" cx="172.43" cy="220.4975" rx="142.132222" ry="52.39875"></ellipse>
+                        <path d="M304.425833,173.7725 C289.499722,173.7725 275.241944,171.325 264.437222,166.76375 C245.946667,159.0875 243.161944,148.185 243.161944,142.28875 C243.161944,136.50375 245.946667,125.49 264.437222,117.81375 C275.241944,113.2525 289.499722,110.805 304.425833,110.805 C319.351944,110.805 333.609722,113.2525 344.414444,117.81375 C362.905,125.49 365.689722,136.3925 365.689722,142.28875 C365.689722,148.07375 362.905,159.0875 344.414444,166.76375 C333.609722,171.21375 319.351944,173.7725 304.425833,173.7725 Z" id="Shape" fill="#F5F5F5"></path>
+                        <g transform="translate(258.422222, 97.900000)" fill-rule="nonzero" id="Shape">
+                            <polygon fill="#DBDBDB" points="92.0072222 54.0675 70.5091667 44.945 70.5091667 35.8225 92.0072222 44.945"></polygon>
+                            <polygon fill="#DBDBDB" points="59.7044444 40.38375 38.2063889 31.26125 38.2063889 22.13875 59.7044444 31.26125"></polygon>
+                            <polygon fill="#DBDBDB" points="59.7044444 31.26125 38.2063889 22.13875 47.8972222 0.6675 69.3952778 9.79"></polygon>
+                            <polygon fill="#CCCCCC" points="21.4980556 43.8325 0 34.71 38.2063889 22.13875 59.7044444 31.26125"></polygon>
+                            <polygon fill="#DBDBDB" points="21.4980556 52.955 0 43.8325 0 34.71 21.4980556 43.8325"></polygon>
+                            <polygon fill="#DBDBDB" points="92.0072222 44.945 70.5091667 35.8225 80.0886111 14.35125 101.586667 23.47375"></polygon>
+                            <polygon fill="#CCCCCC" points="53.8008333 57.51625 32.3027778 48.39375 70.5091667 35.8225 92.0072222 44.945"></polygon>
+                            <polygon fill="#DBDBDB" points="53.8008333 66.63875 32.3027778 57.51625 32.3027778 48.39375 53.8008333 57.51625"></polygon>
+                        </g>
+                        <path d="M84.3213889,166.31875 L66.4991667,173.21625" id="Shape" stroke="#001CB0" stroke-width="2.4578"></path>
+                        <path d="M85.9922222,161.535 L46.5605556,177.555" id="Shape"></path>
+                        <path d="M84.3213889,175.44125 L66.4991667,182.33875" id="Shape" stroke="#001CB0" stroke-width="2.4578"></path>
+                        <path d="M84.3213889,184.56375 L66.4991667,191.46125" id="Shape" stroke="#001CB0" stroke-width="2.4578"></path>
+                        <path d="M95.0147222,185.45375 L55.6944444,201.47375" id="Shape"></path>
+                        <path d="M95.0147222,196.4675 L55.6944444,212.37625" id="Shape"></path>
+                        <path d="M75.1875,166.09625 L75.1875,160.8675 C75.1875,158.30875 77.1925,156.30625 79.7544444,156.30625 C82.3163889,156.30625 84.3213889,158.30875 84.3213889,160.8675 L84.3213889,190.015" id="Shape" stroke="#001CB0" stroke-width="2.4578"></path>
+                        <path d="M66.4991667,196.9125 L66.4991667,167.765 C66.4991667,165.20625 64.4941667,163.20375 61.9322222,163.20375 C59.3702778,163.20375 57.3652778,165.20625 57.3652778,167.765 L57.3652778,172.99375" id="Shape" stroke="#001CB0" stroke-width="2.4578"></path>
+                        <g opacity="0.5" transform="translate(65.719444, 189.125000)" id="Shape" stroke="#001CB0" stroke-width="2.4578">
+                            <path d="M18.6019444,4.56125 L0.779722222,11.45875"></path>
+                            <path d="M0.779722222,18.69 L0.779722222,7.7875"></path>
+                            <path d="M18.6019444,0.89 L18.6019444,11.90375"></path>
+                        </g>
+                        <g transform="translate(237.258333, 0.000000)">
+                            <path d="M5.68083333,15.90875 C10.9161111,1.44625 34.4191667,-3.22625 58.0336111,5.34 C81.7594444,13.90625 96.6855556,32.59625 91.4502778,47.05875" id="Shape" fill="#001CB0" fill-rule="nonzero"></path>
+                            <ellipse id="Oval" fill="#6677D0" fill-rule="nonzero" transform="translate(48.682525, 31.503041) rotate(-70.001229) translate(-48.682525, -31.503041) " cx="48.682525" cy="31.5030408" rx="13.7008339" ry="45.6125021"></ellipse>
+                            <ellipse id="Oval" fill="#FFFFFF" fill-rule="nonzero" cx="40.7683333" cy="99.0125" rx="13.7008333" ry="4.11625"></ellipse>
+                            <polyline id="Shape" stroke="#001CB0" stroke-width="2.4578" stroke-linecap="round" stroke-linejoin="round" points="48.3427778 31.92875 40.7683333 52.51 40.7683333 98.1225"></polyline>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

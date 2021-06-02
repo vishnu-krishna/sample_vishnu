@@ -1,0 +1,314 @@
+
+[
+    {
+        "number": "1200000000",
+        "firstName": "Kitty",
+        "lastName": "Pryde",
+        "contracts": [
+            {
+                "address": "8a ARMSTRONG STREET|SPRINGVALE VIC 3171|[Eligible Due]",
+                "accountNumber": "1200000000",
+                "fuelType": "Electricity",
+                "nameId": "AGL_E395B7CDAFFF04F18C2A000011111114",
+                "number": "1211111111",
+                "planName": "Standard Energy Plan",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false,
+                "regionId": "VIC"
+            },
+            {
+                "address": "8a ARMSTRONG STREET|SPRINGVALE VIC 3171|[005]",
+                "accountNumber": "1200000000",
+                "fuelType": "Electricity",
+                "nameId": "AGL_E395B7CDAFFF04F18C2A000011111114",
+                "number": "1222222222",
+                "planName": "Standard Energy Plan",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false,
+                "regionId": "VIC"
+            },
+            {
+                "address": "8a ARMSTRONG STREET|SPRINGVALE VIC 3171|[008]",
+                "accountNumber": "1200000000",
+                "fuelType": "Electricity",
+                "nameId": "AGL_E395B7CDAFFF04F18C2A000011111114",
+                "number": "1233333333",
+                "planName": "Standard Energy Plan",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false,
+                "regionId": "VIC"
+            },
+            {
+                "address": "8a ARMSTRONG STREET|SPRINGVALE VIC 3171|[009]",
+                "accountNumber": "1200000000",
+                "fuelType": "Electricity",
+                "nameId": "AGL_E395B7CDAFFF04F18C2A000011111114",
+                "number": "1244444444",
+                "planName": "Standard Energy Plan",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false,
+                "regionId": "VIC"
+            },
+            {
+                "address": "8a ARMSTRONG STREET|SPRINGVALE VIC 3171|[010]",
+                "accountNumber": "1200000000",
+                "fuelType": "Electricity",
+                "nameId": "AGL_E395B7CDAFFF04F18C2A000011111114",
+                "number": "1255555555",
+                "planName": "Standard Energy Plan",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false,
+                "regionId": "VIC"
+            },
+            {
+                "address": "8a ARMSTRONG STREET|SPRINGVALE VIC 3171|[011-bills due in future]",
+                "accountNumber": "1200000000",
+                "fuelType": "Electricity",
+                "nameId": "AGL_E395B7CDAFFF04F18C2A000011111114",
+                "number": "1266666666",
+                "planName": "Standard Energy Plan",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false,
+                "regionId": "VIC",
+                "bills": [
+                    {
+                        "billIssued": "2018-07-13T00:00:00",
+                        "newCharges": 52.16,
+                        "totalDue": -70.28,
+                        "dueDate": "2018-08-03T00:00:00",
+                        "printDoc": "1211",
+                        "startDate": "2018-03-05T00:00:00",
+                        "endDate": "2018-06-06T00:00:00",
+                        "consumptionNetAmount": 312.14,
+                        "consumptionUsage": 1329,
+                        "generatedNetAmount": -364.3,
+                        "generatedUsage": 714
+                    },
+                    {
+                        "billIssued": "2018-03-07T00:00:00",
+                        "newCharges": 28.37,
+                        "totalDue": -439.96,
+                        "dueDate": "2018-03-29T00:00:00",
+                        "printDoc": "1212",
+                        "startDate": "2018-04-04T00:00:00",
+                        "endDate": "2018-05-04T00:00:00",
+                        "consumptionNetAmount": 390.67,
+                        "consumptionUsage": 1633,
+                        "generatedNetAmount": -419.04,
+                        "generatedUsage": 819
+                    }
+                ]
+            },
+            {
+                "address": "8a ARMSTRONG STREET|SPRINGVALE VIC 3171|[012-No bills]",
+                "accountNumber": "1200000000",
+                "fuelType": "Electricity",
+                "nameId": "AGL_E395B7CDAFFF04F18C2A000011111114",
+                "number": "1277777777",
+                "planName": "Standard Energy Plan",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false,
+                "regionId": "VIC"
+            },
+            {
+                "address": "8a ARMSTRONG STREET|SPRINGVALE VIC 3171|[013-bills overdue]",
+                "accountNumber": "1200000000",
+                "fuelType": "Electricity",
+                "nameId": "AGL_E395B7CDAFFF04F18C2A000011111114",
+                "number": "1288888888",
+                "planName": "Standard Energy Plan",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false,
+                "regionId": "VIC"
+            },
+            {
+                "address": "8a ARMSTRONG STREET|SPRINGVALE VIC 3171|[014]",
+                "accountNumber": "1200000000",
+                "fuelType": "Electricity",
+                "nameId": "AGL_E395B7CDAFFF04F18C2A000011111114",
+                "number": "1299999999",
+                "planName": "Standard Energy Plan",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false,
+                "regionId": "VIC"
+            }
+        ]
+    },
+    {
+        "number": "1300000000",
+        "firstName": "Kitty",
+        "lastName": "Pryde",
+        "contracts": [
+            {
+                "address": "4 CLOVELLY DRIVE|CRAIGIEBURN VIC 3064|[015]",
+                "accountNumber": "1300000000",
+                "fuelType": "Electricity",
+                "nameId": "AGL_0000C99D63321EE581CEFE7BF2AEFF09",
+                "number": "1311111111",
+                "planName": "Savers",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false
+            },
+            {
+                "address": "4 CLOVELLY DRIVE|CRAIGIEBURN VIC 3064[016-a]",
+                "accountNumber": "1300000000",
+                "fuelType": "Gas",
+                "nameId": "AGL_0000C99D63321EE581CEFE7BF2AEFF09",
+                "number": "1322222222",
+                "planName": "Savers",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false
+            },
+            {
+                "address": "4 CLOVELLY DRIVE|CRAIGIEBURN VIC 3064[016-b]",
+                "accountNumber": "1300000000",
+                "fuelType": "Gas",
+                "nameId": "AGL_0000C99D63321EE581CEFE7BF2AEFF09",
+                "number": "1333333333",
+                "planName": "Savers",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false
+            },
+            {
+                "address": "4 CLOVELLY DRIVE|CRAIGIEBURN VIC 3064[016-c]",
+                "accountNumber": "1300000000",
+                "fuelType": "Gas",
+                "nameId": "AGL_0000C99D63321EE581CEFE7BF2AEFF09",
+                "number": "1344444444",
+                "planName": "Savers",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false
+            },
+            {
+                "address": "4 CLOVELLY DRIVE|CRAIGIEBURN VIC 3064[017-no bills]",
+                "accountNumber": "1300000000",
+                "fuelType": "Gas",
+                "nameId": "AGL_0000C99D63321EE581CEFE7BF2AEFF09",
+                "number": "1355555555",
+                "planName": "Savers",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false
+            },
+            {
+                "address": "4 CLOVELLY DRIVE|CRAIGIEBURN VIC 3064[021]",
+                "accountNumber": "1300000000",
+                "fuelType": "Gas",
+                "nameId": "AGL_0000C99D63321EE581CEFE7BF2AEFF09",
+                "number": "1366666666",
+                "planName": "Savers",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false
+            },
+            {
+                "address": "4 CLOVELLY DRIVE|CRAIGIEBURN VIC 3064[027a]",
+                "accountNumber": "1300000000",
+                "fuelType": "Gas",
+                "nameId": "AGL_0000C99D63321EE581CEFE7BF2AEFF09",
+                "number": "1377777777",
+                "planName": "Savers",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false
+            },
+            {
+                "address": "4 CLOVELLY DRIVE|CRAIGIEBURN VIC 3064[027b]",
+                "accountNumber": "1300000000",
+                "fuelType": "Gas",
+                "nameId": "AGL_0000C99D63321EE581CEFE7BF2AEFF09",
+                "number": "1388888888",
+                "planName": "Savers",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false
+            },
+            {
+                "address": "4 CLOVELLY DRIVE|CRAIGIEBURN VIC 3064[028]",
+                "accountNumber": "1300000000",
+                "fuelType": "Gas",
+                "nameId": "AGL_0000C99D63321EE581CEFE7BF2AEFF09",
+                "number": "1399999999",
+                "planName": "Savers",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false
+            }
+        ]
+    },
+    {
+        "number": "1400000000",
+        "firstName": "Kitty",
+        "lastName": "Pryde",
+        "contracts": [
+            {
+                "address": "57 BLYTH ST|BRUNSWICK VIC 3056|[030]",
+                "accountNumber": "1400000000",
+                "fuelType": "Electricity",
+                "nameId": "AGL_0000C99D63321EE581CEFE7BF2AEFF09",
+                "number": "1411111111",
+                "planName": "Savers",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false
+            },
+            {
+                "address": "57 BLYTH ST|BRUNSWICK VIC 3056|[031]",
+                "accountNumber": "1400000000",
+                "fuelType": "Gas",
+                "nameId": "AGL_0000C99D63321EE581CEFE7BF2AEFF09",
+                "number": "1422222222",
+                "planName": "Savers",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false
+            },
+            {
+                "address": "8a ARMSTRONG STREET|SPRINGVALE VIC 3171|[Eligible Overdue]",
+                "accountNumber": "1400000000",
+                "fuelType": "Gas",
+                "nameId": "AGL_E395B7CDAFFF04F18C2A000011111114",
+                "number": "1433333333",
+                "planName": "Standard Energy Plan",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false,
+                "regionId": "VIC"
+            }
+        ]
+    }
+]

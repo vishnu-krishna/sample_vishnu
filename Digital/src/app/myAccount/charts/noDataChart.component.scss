@@ -1,0 +1,137 @@
+@import '../../shared/style/variables';
+@import '../../shared/style/mixins';
+
+.dashboard-billing {
+    min-height: 300px;
+    padding-bottom: 14px;
+
+    &__title {
+        margin: 0 0 20px 0;
+        color: $brand-grey-g1;
+        font-size: 16px;
+        font-family: $secondary-font-stack;
+        font-weight: bold;
+        display: inline-block;
+    }
+}
+
+.dashboard-billing-summary {
+
+    &__no-bills-container {
+        position: relative;
+        text-align: center;
+        min-height: 343px;
+        margin-left: -40px;
+        margin-top: 0;
+        @media #{$agl-layout-mobile} {
+            min-height: 220px;
+            margin-top: 60px;
+            margin-left: 0;
+        }
+
+        svg {
+            display: block;
+            margin: 0 auto;
+        }
+
+        &--centered {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            width: 100%;
+        }
+    }
+
+    &__icon-svg {
+        z-index: 99;
+        margin-top: 40px;
+        width: 135px;
+        height: 135px;
+        margin-left: auto;
+        margin-right: auto;
+        background-repeat: no-repeat;
+        background-size: 135px;
+        margin-bottom: 40px;
+        position: relative;
+        top: 0;
+    }
+
+    &__icon-elec-svg {
+        @extend .dashboard-billing-summary__icon-svg;
+        background-image: url('svg/icon_elec.svg');
+    }
+
+    &__icon-gas-svg {
+        @extend .dashboard-billing-summary__icon-svg;
+        background-image: url('svg/icon_gas.svg');
+    }
+
+    &__fuel-pulse {
+        margin-top: -187px;
+        width: 155px;
+        height: 155px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 80px;
+        animation: pulsate 4s ease-out;
+        animation-iteration-count: infinite;
+        opacity: 0.0;
+    }
+
+    &__elec-pulse {
+        @extend .dashboard-billing-summary__fuel-pulse;
+        background: $brand-aqua;
+    }
+
+    &__gas-pulse {
+        @extend .dashboard-billing-summary__fuel-pulse;
+        background: $brand-sun;
+    }
+
+    &__no-bills-message {
+        padding-top: 20px;
+        color: $brand-grey-g1;
+        font-family: $secondary-font-stack;
+        font-size: 16px;
+        display: block;
+    }
+
+    &__in-flight-main-header {
+        color: $brand-grey-g1;
+        font-family: $secondary-font-stack;
+        margin-top: 30px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    &__in-flight-sub-header {
+        padding: 0 20px;
+    }
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(0.1, 0.1);
+        opacity: 0.0;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+
+    75% {
+        transform: scale(1.1, 1.1);
+        opacity: 0.0;
+    }
+
+    100% {
+        transform: scale(0.1, 0.1);
+        opacity: 0.0;
+    }
+}
+
+// DLS Fixes till re-done
+// TODO: Remove and fix.
+.contract-inflight {
+    margin-top: -50px;
+}

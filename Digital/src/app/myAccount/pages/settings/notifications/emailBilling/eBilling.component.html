@@ -1,0 +1,97 @@
+<div class="main-card-options__header">
+    <h4>eBilling</h4>
+    <h5 *ngIf="!isEbillDataError && eBillingModels.length > 0">Receive your energy bills via email.</h5>
+</div>
+
+<!-- Information Flash Message for Multi-BP customers as they are unable to modify bill delivery preferences  -->
+<agl-ebilling-multi-business-partner-web-chat
+    class="ebill-container__message--multi-bp"
+    *ngIf="showMultiBpMessage()"
+    [isEmptyOrInvalidEmailAddress]="eBillingModels[0]?.isEmailAddressEmptyOrInvalid">
+</agl-ebilling-multi-business-partner-web-chat>
+
+<div *ngFor="let eBillingModel of eBillingModels" class="ebill-container">
+    <div class="account" *ngIf="eBillingModels.length > 1">
+        <div class="account__number">
+            Account no: {{eBillingModel.accountNumber | aglAddSpaces}}
+            <div class="account__icons">
+                <span *ngFor="let contract of eBillingModel.ebillingContracts">
+                    <mat-icon *ngIf="contract.isElectricity" class="account__icon--elec account__icon" svgIcon="icon-elec-enabled" alt="electricity icon"></mat-icon>
+                    <mat-icon *ngIf="contract.isGas" class="account__icon--gas account__icon" svgIcon="icon-gas-enabled"  alt="gas icon"></mat-icon>
+                </span>
+            </div>
+        </div>
+        <div class="account__address">
+            <div *ngFor="let address of eBillingModel.accountAddresses">
+                {{address}}
+            </div>
+        </div>
+    </div>
+
+    <div class="main-card-options__toggle" *ngIf="eBillingModel.canManageBillDeliveryPreferences">
+        <p class="main-card-options__toggle__label">{{eBillingModel.billDeliveryMessage}}
+            <a *ngIf="!eBillingModel.hasMultipleBusinessPartners && eBillingModel.isContactDetailsEnabled"
+                class="main-card-options__toggle__link"
+                [routerLink]="['/settings/contactdetails', 'ebilling', eBillingModel.accountNumber]">
+                {{eBillingModel.updateContactDetailsMessage}}
+            </a>
+        </p>
+
+        <agl-maui-toggle
+            *ngIf="!eBillingModel.isMandatoryEbilling"
+            [(toggleValue)]="eBillingModel.isEmailBillingSetup"
+            [isLoading]="eBillingModel.isBillDeliveryUpdateLoading"
+            [isDisabled]="eBillingModel.isEbillToggleDisabled"
+            (toggleValueChange)="requestEbill(eBillingModel, $event)">
+        </agl-maui-toggle>
+    </div>
+
+    <!-- All non-dismissable flash messages that can only show up one at a time -->
+    <agl-maui-flash-message
+        class="ebill-container__message"
+        *ngIf="eBillingModel.showNonEbillingFlashMessage"
+        [type]="eBillingModel.billDeliveryFlashMessageComponent.flashMessageType"
+        [dismissable]="false">
+        <div heading *ngIf="eBillingModel.billDeliveryFlashMessageComponent.heading">{{eBillingModel.billDeliveryFlashMessageComponent.heading}}</div>
+        <div subheading>{{eBillingModel.billDeliveryFlashMessageComponent.subheading}}</div>
+    </agl-maui-flash-message>
+
+    <!-- Results flash message: Success or Error dismissable flash messages -->
+    <agl-maui-flash-message
+        class="ebill-container__message"
+        *ngIf="eBillingModel.showUpdateEbillingResultsMessage"
+        [type]="eBillingModel.resultsFlashMessageComponent.flashMessageType"
+        [dismissable]="true"
+        (dismiss)="eBillingModel.resetUpdateEbillingResultsMessage()">
+        <div heading *ngIf="eBillingModel.resultsFlashMessageComponent.heading">{{eBillingModel.resultsFlashMessageComponent.heading}}</div>
+        <div subheading>{{eBillingModel.resultsFlashMessageComponent.subheading}}</div>
+    </agl-maui-flash-message>
+
+    <!-- Contact details section -->
+    <div *ngIf="eBillingModel.isContactDetailsEnabled">
+        <agl-maui-flash-message
+            class="ebill-container__message"
+            *ngIf="eBillingModel.eBillDeliveryMethodHasInvalidEmailAddress"
+            type="Warning"
+            [dismissable]="false">
+            <div heading>It looks like we're missing a valid email address.</div>
+            <div subheading>Please provide an email address to finish setting up eBilling.</div>
+        </agl-maui-flash-message>
+
+        <agl-contact-details-update-confirmation
+            contextId="{{eBillingModel.accountNumber}}"
+            confirmationType="Email"
+            class="ebill-container__message">
+        </agl-contact-details-update-confirmation>
+    </div>
+</div>
+
+<!-- API get error handling -->
+<agl-maui-flash-message
+    *ngIf="isEbillDataError || !eBillingModels.length"
+    class="ebill-container__message"
+    type="Error"
+    [dismissable]="false">
+    <div heading>Sorry, we're unable to process your request right now. Please try again.</div>
+    <div subheading>If the issue persists, you can get in touch with us <a href="https://www.agl.com.au/residential/contact-us" target="_blank">here</a> and we'll sort it out.</div>
+</agl-maui-flash-message>

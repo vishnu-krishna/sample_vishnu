@@ -1,0 +1,7 @@
+<div class="bs-message">
+    <div *ngIf="!hasDirectDebit">
+        We noticed you have been making your payments manually. Have you considered setting up a
+        <a [routerLink]="['/settings/directdebit']" class="bs-message__link">Direct Debit</a>? 
+        Automatically pay your Bill Smoothing on time, every time.
+    </div>
+</div>

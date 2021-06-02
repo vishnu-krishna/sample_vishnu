@@ -1,0 +1,23 @@
+@import '../homeProfile';
+
+.homeprofile-hotwater {
+    @include homeprofile-survey-page-styling();
+
+    &-body  {
+        @include homeprofile-body-styling();
+
+        @media #{$agl-layout-tablet-and-greater} {
+            background-image: url('svg/homeprofile/bath.svg');
+            background-position: right 20px top 66px;
+        }
+    }
+
+    &-questionnaire {
+        @include homeprofile-survey-questionnaire-styling();
+
+        &__heading {
+            @include homeprofile-heading-styling();
+        }
+    }
+
+}

@@ -1,0 +1,86 @@
+@import '../homeProfile';
+
+.homeprofile-fridge {
+    @include homeprofile-survey-page-styling();
+
+    &-body  {
+        @include homeprofile-body-styling();
+
+        @media #{$agl-layout-tablet-and-greater} {
+            background-image: url('svg/homeprofile/fridge.svg');
+            background-position: right 22px top 85px;
+        }
+    }
+
+    &-questionnaire {
+        @include homeprofile-survey-questionnaire-styling();
+
+        &__heading {
+            @include homeprofile-heading-styling();
+
+            &-no-margin {
+                @include homeprofile-heading-styling();
+                margin: 0;
+            }
+        }
+
+        &__item {
+            margin-bottom: $space-04;
+
+            &-header {
+                font-size: $body-font-size-normal;
+                margin-bottom: $space-03;
+            }
+        }
+
+        &__subsection {
+            margin-bottom: $space-04;
+        }
+    }
+
+    &__segmented-button {
+        @include homeprofile-segmented-buttons-styling();
+    }
+
+    &__secondary-fridge {
+        margin-top: $space-04;
+
+        &-header {
+            color: $primary-dark;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &-icon {
+                font-size: 24px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__add-secondary-fridge {
+        color: $primary-dark;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        font-weight: bold;
+        margin-bottom: $space-03;
+        margin-top: $space-04;
+
+        &--disabled {
+            color: $neutral-04;
+            cursor: default;
+        }
+
+        &-text {
+            font-size: $body-font-size-small;
+            margin-left: $space-04;
+        }
+
+        &-icon {
+            position: absolute;
+            font-size: 24px;
+        }
+    }
+}

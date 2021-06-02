@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\bills\paymentAssistance\services\fuelChipFilter\eligibleFuelChipFilter.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/bills/paymentAssistance/services/fuelChipFilter/</a> eligibleFuelChipFilter.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">41.38% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>12/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">30.77% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">36% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>9/25</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { CurrencyPipe } from '@angular/common';
+import { FuelChipDataModel } from '../../models';
+import { MauiFuelChipState, FuelChipMessage, MauiSecondaryMessageStatusType } from '../../../../../maui/fuelChip';
+import { FuelChipFilterService } from './fuelChipFilter.service';
+import { Now } from '../../../../../../shared/service/now.service';
+&nbsp;
+@Injectable()
+export class EligibleFuelChipFilterService extends FuelChipFilterService {
+    constructor(now: Now, private <span class="cstat-no" title="statement not covered" >currencyPipe: CurrencyPipe<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >)</span> {</span></span>
+<span class="cstat-no" title="statement not covered" >        super(now);</span>
+    }
+<span class="cstat-no" title="statement not covered" >    public filter(fuelChipDetails: FuelChipDataModel[]<span class="fstat-no" title="function not covered" >): Observable&lt;FuelChipDataModel[]&gt; {</span></span>
+&nbsp;
+        const eligibleFuelChipData = <span class="cstat-no" title="statement not covered" >fuelChipDetails.reduce((results: FuelChipDataModel[], fuelChipDetail: FuelChipDataModel<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (fuelChipDetail.eligibility.isEligible) {</span>
+                let daysOverdue: number = <span class="cstat-no" title="statement not covered" >this.daysBeforeNow(fuelChipDetail.eligibility.dueDate);</span>
+                const primaryMessage = <span class="cstat-no" title="statement not covered" >`Total to pay: ${this.currencyPipe.transform(fuelChipDetail.eligibility.totalAmountDue, 'AUD', true )}`;</span>
+                let secondaryMessage<span class="cstat-no" title="statement not covered" >: string;</span>
+                let secondaryStatus<span class="cstat-no" title="statement not covered" >: MauiSecondaryMessageStatusType;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if (daysOverdue &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                    secondaryMessage = `Overdue by ${daysOverdue} day` + (daysOverdue === 1 ? '' : 's');</span>
+<span class="cstat-no" title="statement not covered" >                    secondaryStatus = MauiSecondaryMessageStatusType.Warning;</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    secondaryMessage = `Due ${this.formatDate(fuelChipDetail.eligibility.dueDate)}`;</span>
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                fuelChipDetail.setClassification(MauiFuelChipState.PreSetup,</span>
+                    new FuelChipMessage(primaryMessage, undefined,
+                        secondaryMessage, secondaryStatus));
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                return results.concat(fuelChipDetail);</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                return results;</span>
+            }
+&nbsp;
+        }, []);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return Observable.of(this.sort(eligibleFuelChipData));</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../../sorter.js"></script>
+</body>
+</html>

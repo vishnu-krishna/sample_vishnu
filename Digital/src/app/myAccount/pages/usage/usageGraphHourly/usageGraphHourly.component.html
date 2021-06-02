@@ -1,0 +1,113 @@
+<div class="usage-graph">
+    <div 
+        class="usage-unavailable"
+        *ngIf="isNoHourly"
+        >
+        Sorry <span class="firstName">{{name.firstName}}</span>, we can only show you hourly usage for up to 14 days.
+        <br><br>
+        Rest assured, we receive automated hourly reads from your very clever smart meter.
+    </div>
+    <div 
+        class="usage-unavailable"
+        *ngIf="isNoDaily"
+        >
+        Sorry <span class="firstName">{{name.firstName}}</span>, we can only show you up to three months of daily usage.
+        <br><br>
+        Don't panic, if you ever need this information you can always <br> contact us.
+    </div>
+    <div *ngIf="showHourlyGraph">
+        <div class="insight">
+            {{maxTimeOfDay?.message}}
+        </div>
+        <div class="times-of-day">
+            <div class="time-quadrant">
+                <div class="icon-container">
+                    <img src="svg/usage_night-icon.svg">
+                </div>
+                <div class="time-quadrant__cost">
+                    <span class="time-of-day_dollar-sign">$ </span>{{timeOfDayUsage['night']}}
+                </div>
+                Night
+            </div>
+            <div class="time-quadrant secondary">
+                <div class="icon-container">       
+                    <img src="svg/usage_morning-icon.svg">
+                </div>
+                <div class="time-quadrant__cost">
+                    <span class="time-of-day_dollar-sign">$ </span>{{timeOfDayUsage['morning']}}
+                </div>
+                Morning
+            </div>
+            <div class="time-quadrant">
+                <div class="icon-container">
+                    <img src="svg/usage_noon-icon.svg">
+                </div>
+                <div class="time-quadrant__cost">
+                    <span class="time-of-day_dollar-sign">$ </span>{{timeOfDayUsage['noon']}}
+                </div>
+                Afternoon
+            </div>
+            <div class="time-quadrant secondary">
+                <div class="icon-container">
+                    <img src="svg/usage_evening-icon.svg">
+                </div>
+                <div class="time-quadrant__cost">
+                    <span class="time-of-day_dollar-sign">$ </span>{{timeOfDayUsage['evening']}}
+                </div>
+                Evening
+            </div>
+        </div>
+
+        <div class="yaxis" [class.isGraphLoading]="isGraphLoading" >
+            
+            <div class="labelgroup">
+                <div class="labelgroup__label">${{yAxisLabels[1]}}</div>
+                <div class="labelgroup__label">${{yAxisLabels[0]}}</div>
+            </div>
+
+            <div class="gridlines">
+                <div class="gridlines__line"></div>
+                <div class="gridlines__line"></div>
+            </div>
+
+        </div>
+
+        <div class="viewport" 
+            #chartViewPort 
+            [class.isGraphLoading]="isGraphLoading" 
+            id="viewport" >
+
+            <div class="items" 
+                #chartViewPortItems 
+                >
+
+                <div class="item" 
+                    *ngFor="let usageGraphItem of chartData?.graphItems; let i = index;"
+                    (click)="graphItemSelected(usageGraphItem)"
+                    >
+
+                    <div class="graph" 
+                        [style.height.px]="calculateGraphItemSize(usageGraphItem)"
+                        [class.secondary]="(i>5&&i<12)||i>17"
+                        [class.estimatedRead]="usageGraphItem?.usageDatum?.estimatedRead"
+                        >
+
+                    </div>
+                    
+                    <div class="dateRange" 
+                        *ngIf="isDesktop()" >
+                        <div class="dateRange--dayOfMonth">{{usageGraphItem?.startDateTime | date:'d'}}</div>
+                        <div class="dateRange--dayOfWeek">{{usageGraphItem?.startDateTime | date:'E'}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="xaxis">
+            <div class="label">12am</div>
+            <div class="label">6am</div>
+            <div class="label">12pm</div>
+            <div class="label">6pm</div>
+            <div class="label">12am</div>
+        </div>
+    </div>
+</div>

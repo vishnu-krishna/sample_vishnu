@@ -1,0 +1,33 @@
+<div class="settings-container">
+    <div class="row">
+        <div class="col-md-12">
+            <mat-card>
+                <div class="main-card-header">Offers</div>
+                <div class="main-card-message">
+                    We are busy working hard on the new My Account and this page isn't quite finished. <br/>
+                    The below sections will open in a new window on the existing site.
+                </div>
+                <div *ngIf="!isWa" class="main-card-options">
+                    <div class="main-card-options__edit">
+                        <h4>flybuys</h4>
+                        <!--<a routerLink="."></a>-->
+                        <a href="{{flyBuysUrl}}" target="_blank">flybuys</a>
+                    </div>
+                    <div class="main-card-options__content">
+                        Collect flybuys points every time you pay a bill.
+                    </div>
+                </div>
+                <div class="main-card-options">
+                    <div class="main-card-options__edit">
+                        <h4>AGL Rewards</h4>
+                        <!--<a routerLink="."></a>-->
+                        <a id="flybuys_link" href="http://www.aglrewards.com.au/" target="_blank">Visit AGL Rewards</a>
+                    </div>
+                    <div class="main-card-options__content">
+                        Special offers, discounts and benefits exclusively for AGL customers.
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

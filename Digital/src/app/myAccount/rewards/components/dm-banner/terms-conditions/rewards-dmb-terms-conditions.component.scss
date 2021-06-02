@@ -1,0 +1,44 @@
+@import '../../../../maui/maui';
+@import '../../../rewards';
+
+$hover-grey: #8E8E8E;
+$custom-grey-2: #B1B1B1;
+
+:host {
+    position: relative;
+    display: block;
+    padding:  45px 26px;
+
+    @media #{$agl-layout-tablet-and-greater} {
+        max-width: 825px;
+    }
+
+    @media #{$agl-layout-mobile} {
+        padding: 35px 0 25px 0;
+    }
+}
+
+pre {
+    font-family: $body-font-stack;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    margin: 0;
+}
+
+.btn-close {
+    @include modal-btn-close;
+
+    @media #{$agl-layout-mobile} {
+        color: $custom-grey-2;
+        top: -10px;
+        right: -15px;
+        font-size: 32px;
+        background: none;
+        height: auto;
+        width: auto;
+
+        &:hover {
+            color: $hover-grey;
+        }
+    }
+}

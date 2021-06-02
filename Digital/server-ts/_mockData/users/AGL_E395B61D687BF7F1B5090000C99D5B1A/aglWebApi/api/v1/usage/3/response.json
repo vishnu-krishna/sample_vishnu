@@ -1,0 +1,45 @@
+{
+    "status": 200,
+    "body": [
+        {
+            "account": "20804027",
+            "contract": "9402779865",
+            "costs": [],
+            "consumption": [],
+            "hasNoBill": false
+        },
+        {
+            "account": "20804027",
+            "contract": "9402779867",
+            "costs": [
+                {
+                    "value": 10.23,
+                    "startDateTime": "2017-01-12T00:00:00",
+                    "endDateTime": "2017-01-23T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 47.1,
+                    "startDateTime": "2017-01-24T00:00:00",
+                    "endDateTime": "2017-03-22T00:00:00",
+                    "estimatedRead": false
+                }
+            ],
+            "consumption": [
+                {
+                    "value": 626.030152,
+                    "startDateTime": "2017-01-12T00:00:00",
+                    "endDateTime": "2017-01-23T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 3057.8922871068,
+                    "startDateTime": "2017-01-24T00:00:00",
+                    "endDateTime": "2017-03-22T00:00:00",
+                    "estimatedRead": false
+                }
+            ],
+            "hasNoBill": false
+        }
+    ]
+}

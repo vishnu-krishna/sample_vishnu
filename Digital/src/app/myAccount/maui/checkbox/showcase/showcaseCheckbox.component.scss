@@ -1,0 +1,37 @@
+@import '../../maui';
+@import '../../showcase';
+
+.showcase-checkbox {
+    @extend .text-normal;
+    padding-bottom: $space-06;
+
+    h4 {
+        margin: 0;
+        margin-bottom: $space-03;
+        font-weight: normal;
+    }
+
+    agl-maui-checkbox {
+        padding-bottom: $space-04;
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+
+    &__content {
+        max-width: $content-width;
+
+        &-heading {
+            @extend .text-small;
+            font-weight: bold;
+            padding-bottom: $space-03;
+            color: $neutral-02;
+        }
+    }
+
+    &__tnc {
+        @extend .text-small-long;
+        @include anchor-styling;
+    }
+}

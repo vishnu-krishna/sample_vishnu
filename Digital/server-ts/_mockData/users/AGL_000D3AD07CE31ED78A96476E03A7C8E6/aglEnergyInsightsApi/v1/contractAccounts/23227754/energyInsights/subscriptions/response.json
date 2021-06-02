@@ -1,0 +1,31 @@
+[{
+	"contractNumber": 9002212353,
+	"isEligible": true,
+	"subscribedToMidBillEnergyBreakdown": false,
+	"subscribedToEndBillEnergyBreakdown": true,
+	"availableUsageBreakdownBillPeriods": [
+		{
+			"billStartDate": "2016-05-28",
+			"billEndDate": "2016-09-14"
+		},
+		{
+			"billStartDate": "2015-11-28",
+			"billEndDate": "2016-02-28"
+		}
+	]
+}, {
+	"contractNumber": 9002212354,
+	"isEligible": true,
+	"subscribedToMidBillEnergyBreakdown": true,
+	"subscribedToEndBillEnergyBreakdown": false,
+	"availableUsageBreakdownBillPeriods": [
+		{
+			"billStartDate": "2018-02-01",
+			"billEndDate": "2018-02-28"
+		},
+		{
+			"billStartDate": "2018-03-01",
+			"billEndDate": "2018-03-31"
+		}
+	]
+}]

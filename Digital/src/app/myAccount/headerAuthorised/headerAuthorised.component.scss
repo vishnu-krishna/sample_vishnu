@@ -1,0 +1,70 @@
+@import '../../shared/style/variables';
+@import '../../shared/style/mixins';
+
+.agl-mobile-wrapper {
+    position: fixed;
+    width: 100%;
+    z-index: 998;
+}
+
+.agl-mobile-header {
+    background-color: $brand-white;
+    height: 50px;
+    position: relative;
+    box-shadow: $agl-box-shadow;
+    padding-right: 15px;
+    padding-left: 15px;
+    z-index: 1;
+
+    &-agl-logo {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 30px;
+        left: 50%;
+        margin-left: -35px;
+    }
+
+    &-menu {
+        color: $brand-sky;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 21px;
+    }
+
+    &-page {
+        position: absolute;
+        right: 80px;
+        color: $brand-sky;
+        font-size: 14px;
+        text-transform: uppercase;
+        top: 15px;
+    }
+
+    &-user {
+        float: right;
+        color: $brand-sky;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 10px 0 10px 0;
+        cursor: pointer;
+
+        &__person-icon {
+            display: inline-block;
+            height: 16px;
+            width: 16px;
+            position: relative;
+            top: -2px;
+            right: -8px;
+        }
+
+        &__dropdown-icon {
+            display: inline-block;
+            height: 18px;
+            position: relative;
+            top: 1px;
+        }
+    }
+}

@@ -1,0 +1,204 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "account": "7032112521",
+            "contract": "9402239719",
+            "costs": [
+                {
+                    "value": 18.394436,
+                    "startDateTime": "2017-01-01T00:00:00",
+                    "endDateTime": "2017-01-31T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 42.449972,
+                    "startDateTime": "2017-02-01T00:00:00",
+                    "endDateTime": "2017-02-28T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 44.715774,
+                    "startDateTime": "2017-03-01T00:00:00",
+                    "endDateTime": "2017-03-31T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 32.977048,
+                    "startDateTime": "2017-04-01T00:00:00",
+                    "endDateTime": "2017-04-30T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 39.491506,
+                    "startDateTime": "2017-05-01T00:00:00",
+                    "endDateTime": "2017-05-31T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 38.582874,
+                    "startDateTime": "2017-06-01T00:00:00",
+                    "endDateTime": "2017-06-30T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 34.84119,
+                    "startDateTime": "2017-07-01T00:00:00",
+                    "endDateTime": "2017-07-31T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 31.78535,
+                    "startDateTime": "2017-08-01T00:00:00",
+                    "endDateTime": "2017-08-31T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 26.752636,
+                    "startDateTime": "2017-09-01T00:00:00",
+                    "endDateTime": "2017-09-30T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 38.584408,
+                    "startDateTime": "2017-10-01T00:00:00",
+                    "endDateTime": "2017-10-31T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 40.677654,
+                    "startDateTime": "2017-11-01T00:00:00",
+                    "endDateTime": "2017-11-30T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 35.209624,
+                    "startDateTime": "2017-12-01T00:00:00",
+                    "endDateTime": "2017-12-31T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 44.590674,
+                    "startDateTime": "2018-01-01T00:00:00",
+                    "endDateTime": "2018-01-31T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 20.19911,
+                    "startDateTime": "2018-02-01T00:00:00",
+                    "endDateTime": "2018-02-28T00:00:00",
+                    "estimatedRead": false
+                }
+            ],
+            "consumption": [
+                {
+                    "value": 114.412,
+                    "startDateTime": "2017-01-01T00:00:00",
+                    "endDateTime": "2017-01-31T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 304.233,
+                    "startDateTime": "2017-02-01T00:00:00",
+                    "endDateTime": "2017-02-28T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 317.93,
+                    "startDateTime": "2017-03-01T00:00:00",
+                    "endDateTime": "2017-03-31T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 232.514,
+                    "startDateTime": "2017-04-01T00:00:00",
+                    "endDateTime": "2017-04-30T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 281.402,
+                    "startDateTime": "2017-05-01T00:00:00",
+                    "endDateTime": "2017-05-31T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 274.812,
+                    "startDateTime": "2017-06-01T00:00:00",
+                    "endDateTime": "2017-06-30T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 248.049,
+                    "startDateTime": "2017-07-01T00:00:00",
+                    "endDateTime": "2017-07-31T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 225.992,
+                    "startDateTime": "2017-08-01T00:00:00",
+                    "endDateTime": "2017-08-31T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 184.324,
+                    "startDateTime": "2017-09-01T00:00:00",
+                    "endDateTime": "2017-09-30T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 207.647,
+                    "startDateTime": "2017-10-01T00:00:00",
+                    "endDateTime": "2017-10-31T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 290.931,
+                    "startDateTime": "2017-11-01T00:00:00",
+                    "endDateTime": "2017-11-30T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 251.774,
+                    "startDateTime": "2017-12-01T00:00:00",
+                    "endDateTime": "2017-12-31T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 273.633,
+                    "startDateTime": "2018-01-01T00:00:00",
+                    "endDateTime": "2018-01-31T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 69.646,
+                    "startDateTime": "2018-02-01T00:00:00",
+                    "endDateTime": "2018-02-28T00:00:00",
+                    "estimatedRead": false
+                }
+            ],
+            "hasNoBill": false
+        },
+        {
+            "account": "7032112521",
+            "contract": "9404760834",
+            "costs": [
+                {
+                    "value": 3.974976,
+                    "startDateTime": "2018-02-01T00:00:00",
+                    "endDateTime": "2018-02-28T00:00:00",
+                    "estimatedRead": true
+                }
+            ],
+            "consumption": [
+                {
+                    "value": 13.6992,
+                    "startDateTime": "2018-02-01T00:00:00",
+                    "endDateTime": "2018-02-28T00:00:00",
+                    "estimatedRead": true
+                }
+            ],
+            "hasNoBill": false
+        }
+    ]
+}

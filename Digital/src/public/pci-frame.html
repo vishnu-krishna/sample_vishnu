@@ -1,0 +1,135 @@
+<html>
+    <!-- This is a hacked together ver of the iframe just for testing purposes. -->
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet'>
+        <style>
+            body {margin: 0px;} input {padding: 0; border: none;}
+            #txtCreditCard {height: 43px;width: 100%;background-color: white; padding: 8px; font-size: 16px;color: #333;font-family: 'Open Sans', sans-serif;}
+        </style>
+    </head>
+    <body>
+        <input id="txtCreditCard" type="tel" maxlength="19">
+
+        <script type="text/javascript">
+            window.onload = function() {
+                // Helper variables
+                var input = document.getElementById('txtCreditCard');
+                window.parentUri = document.location.href.split('?')[1];
+                parentUri = parentUri.split('#')[0];
+
+                // On receive of a message
+                function receiveMessage(event) {
+                    if (event.data.runFunction === 'generateToken') {
+                        generateToken();
+                    }
+
+                    if (event.data.changeStyle) {
+                        var css = document.createElement('style');
+                        var styles = event.data.changeStyle;
+                        css.type = 'text/css';
+                        css.appendChild(document.createTextNode(styles));
+                        document.getElementsByTagName('head')[0].appendChild(css);
+                    }
+
+                    if (event.data.changeInput) {
+                        input.value = event.data.changeInput;
+                    }
+                }
+
+                // Basic entry checking
+                input.onkeypress = function(event) {
+                    var code = (event.which) ? event.which : event.keyCode;
+
+                    if ((code < 48 || code > 57) && (code > 31)) {
+                        return false;
+                    }
+
+                    return true;
+                };
+
+                // Format the card to display as xxxx xxxx xxxx xxxx
+                function ccFormat(value) {
+                    var v = value.replace(/\s+/g, '').replace(/[^0-9]/gi, '')
+                    var matches = v.match(/\d{4,16}/g);
+                    var match = matches && matches[0] || ''
+                    var parts = []
+
+                    for (i=0, len=match.length; i<len; i+=4) {
+                        parts.push(match.substring(i, i+4))
+                    }
+
+                    if (parts.length) {
+                        return parts.join(' ')
+                    } else {
+                        return value
+                    }
+                }
+
+                // This runs the above function on input.
+                input.oninput = function() {
+                    this.value = ccFormat(this.value);
+                }
+
+                // Basic Luhn Check
+                function luhnCheck(inp) {
+                    var sum = 0;
+                    if (inp != "" && inp.indexOf("#") == -1) {
+                        var nextdigit;
+                        var alt = false;
+                        var input = parseInt(inp);
+
+                        while (input != 0) {
+                            nextdigit = parseInt(input % 10);
+                            if (alt) {
+                                nextdigit *= 2;
+                                nextdigit -= (nextdigit > 9) ? 9 : 0;
+                            }
+                            sum += nextdigit;
+                            alt = !alt;
+                            input = parseInt(input / 10);
+                        }
+                        var a = parseInt(sum % 10);
+                        return (a == 0);
+                    } else {
+                        return false;
+                    }
+                };
+
+                function generateToken() {
+                    var ccNumber = input.value.replace(/\D+/g, '');
+                    if (luhnCheck(ccNumber)) {
+
+                        // This is just here to fake a 3s delay.
+                        setTimeout(function() {
+                            parent.postMessage(ccNumber, parentUri);
+                        }, 3000);
+
+                        // Below is what is on prod
+                        // var xhr = new XMLHttpRequest();
+                        // var url = '/PCIDSSWeb/PCIDSS/CallTokenizer';
+                        // var data = JSON.stringify({
+                        //     'CreditCard': ccNumber
+                        // });
+
+                        // xhr.open('POST', url, true);
+
+                        // xhr.addEventListener('readystatechange', function () {
+                        //     if (this.readyState === 4) {
+                        //         parent.postMessage(this.responseText, parentUri);
+                        //     } else {
+                        //         parent.postMessage('Please enter a valid credit/debit card number.', parentUri);
+                        //     }
+                        // });
+
+                        // xhr.setRequestHeader("content-type", "application/json");
+                        // xhr.send(data);
+                    } else {
+                        parent.postMessage('Please enter a valid credit/debit card number.', parentUri);
+                    }
+                }
+
+                window.addEventListener('message', receiveMessage);
+            };
+        </script>
+    </body>
+</html>

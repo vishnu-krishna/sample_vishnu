@@ -1,0 +1,57 @@
+{
+    "status": 200,
+    "headers": {},
+    "body":
+        {
+            "contractAccountNumber": 1400000000,
+            "extensionOptions": [
+                {
+                    "contractNumber": 1411111111,
+                    "isEligible": true,
+                    "dueDate": "2017-12-08T14:00:00Z",
+                    "totalDueAmount": 114.75,
+                    "dueDateExtensions": [
+                        {
+                            "numberOfDays": 7,
+                            "date": "2017-12-15T14:00:00Z"
+                        },
+                        {
+                            "numberOfDays": 14,
+                            "date": "2017-12-23T14:00:00Z"
+                        }
+                    ]
+                },
+                {
+                    "contractNumber": 1422222222,
+                    "isEligible": true,
+                    "dueDate": "2017-12-08T14:00:00Z",
+                    "totalDueAmount": 114.75,
+                    "dueDateExtensions": [
+                        {
+                            "numberOfDays": 7,
+                            "date": "2017-12-15T14:00:00Z"
+                        }
+                    ]
+                },
+                {
+                    "contractNumber": 1433333333,
+                    "isEligible": true,
+                    "dueDate": "2017-12-08T14:00:00Z",
+                    "totalDueAmount": 114.75,
+                    "dueDateExtensions": [
+                        {
+                            "numberOfDays": 7,
+                            "date": "2017-12-15T14:00:00Z"
+                        },
+                        {
+                            "numberOfDays": 14,
+                            "date": "2017-12-22T14:00:00Z"
+                        },
+                        {
+                            "numberOfDays": 21
+                        }
+                    ]
+                }
+            ]
+        }
+}

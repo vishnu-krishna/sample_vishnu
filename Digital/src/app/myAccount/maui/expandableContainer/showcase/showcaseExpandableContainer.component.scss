@@ -1,0 +1,38 @@
+@import '../../maui';
+@import '../../progressTracker/progressItems/verticalProgressItem/verticalProgressItemBase';
+
+@mixin dummy {
+    width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $neutral-02;
+    display: flex;
+    height: 220px;
+
+    @media #{$agl-layout-mobile} {
+        width: 250px;
+    }
+}
+
+.showcase-expandable-container {
+    &__dummy {
+        &--collapsable {
+            @include dummy;
+
+            ul {
+                margin: 0;
+            }
+        }
+
+        &--non-collapsable {
+            @include dummy;
+            align-items: center;
+            text-align: center;
+
+            p {
+                width: 100%;
+                font-size: $display-font-size-alpha;
+            }
+        }
+    }
+}

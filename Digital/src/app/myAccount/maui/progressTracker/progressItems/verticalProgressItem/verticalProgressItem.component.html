@@ -1,0 +1,8 @@
+<li [class]="itemClasses">
+    <div [class]="leftPaneClasses">
+        <ng-content select="[leftPane]"></ng-content>
+    </div>
+    <div [class]="rightPaneClasses">
+        <ng-content select="[rightPane]"></ng-content>
+    </div>
+</li>

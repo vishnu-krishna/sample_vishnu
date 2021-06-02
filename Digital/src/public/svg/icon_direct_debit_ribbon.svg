@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="143px" height="35px" viewBox="0 0 143 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ribbon_directdebit</title>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="card/my_wallet3" transform="translate(-215.000000, -197.000000)">
+            <g id="ribbon_directdebit" transform="translate(215.000000, 197.000000)">
+                <polygon id="Rectangle" fill="#F6A623" points="135 0 143 4 135 4"></polygon>
+                <polygon id="ribbon_smspay" fill="#FFE344" fill-rule="nonzero" points="143 4 0 4.00162559 9.71478261 19.4983744 0 35 143 35"></polygon>
+                <text id="DIRECT-DEBIT" font-family="TitilliumWeb-Bold, Titillium Web" font-size="11" font-weight="bold" line-spacing="14" letter-spacing="0.916666687" fill="#333333">
+                    <tspan x="46" y="24">DIRECT DEBIT</tspan>
+                </text>
+                <path d="M32,26 C28.6862915,26 26,23.3137085 26,20 C26,16.6862915 28.6862915,14 32,14 C35.3137085,14 38,16.6862915 38,20 C38,23.3137085 35.3137085,26 32,26 Z M34.2708551,17.3333333 L31.0748993,20.5292891 L29.7376417,19.1914785 L28.7600098,20.1691105 L30.0972674,21.5063681 L31.0748993,22.484 L35.248487,18.3109653 L34.2708551,17.3333333 Z" id="icon_tick" fill="#333333"></path>
+            </g>
+        </g>
+    </g>
+</svg>

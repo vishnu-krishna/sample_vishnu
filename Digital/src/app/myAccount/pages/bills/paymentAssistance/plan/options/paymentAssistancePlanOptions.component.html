@@ -1,0 +1,53 @@
+<div class="payment-assistance-plan-options__loader" *ngIf="showLoader">
+    <agl-loader loadingSubMessage="We're looking into your options, please stand by."></agl-loader>
+</div>
+<agl-maui-secondary-navigation display="true" displayBackButton="true" text="Payment assistance" textMobile="Payment assistance"
+    (click)="backClicked()"></agl-maui-secondary-navigation>
+<div *ngIf="!showLoader" class="payment-assistance-plan-options">
+    <agl-maui-heading
+        heading="Set up your instalment plan"
+        [subheading]="subheading">
+    </agl-maui-heading>
+    <agl-maui-container [hasShadow]="true">
+        <div class="payment-assistance-plan-options-wrapper">
+            <agl-maui-fuel-chip
+                [fuelChipState]="mauiFuelChipState.Display"
+                [fuelType]="fuelChip.fuelType"
+                [fuelContext]="mauiFuelChipFuelContext.None"
+                [contractAccountDetails]="fuelChip.accountDetails"
+                [contractNumber]="fuelChip.contractNumber">
+            </agl-maui-fuel-chip>
+            <agl-payment-assistance-plan-options-total [optionsTotalModel]="optionsTotalModel"></agl-payment-assistance-plan-options-total>
+
+            <div class="payment-assistance-plan-options__options">
+                <agl-payment-assistance-plan-options-frequency [optionsFrequencyModel]="optionsFrequencyModel"
+                (frequencyOptionChanged)="onFrequencyOptionChanged($event, fuelChip.contractNumber)"
+                (dateOptionChanged)="onDateOptionChanged($event, fuelChip.contractNumber)"></agl-payment-assistance-plan-options-frequency>
+                <div class="payment-assistance-plan-options__options-suggestions">
+                    <agl-payment-assistance-plan-options-suggestions
+                        *ngIf="!isSuggestionsLoading"
+                        [suggestionsModel]="suggestionsModel"
+                        (selectedNumberOfInstalmentsChanged)="onSelectedNumberOfInstalmentsChanged($event)"></agl-payment-assistance-plan-options-suggestions>
+                    <div *ngIf="isSuggestionsLoading" class="payment-assistance-plan-options__options-suggestions-loader">
+                        <agl-loader loadingSubMessage="We're looking into your options, please stand by."></agl-loader>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </agl-maui-container>
+
+    <div class="payment-assistance-plan-options__instalments-error" *ngIf="showInstalmentsError">
+        <agl-maui-flash-message [type]="flashMessageType.Error" [dismissable]="true">
+            <div heading>That wasn't supposed to happen.</div>
+            <div subheading>Please press continue to try again, or <agl-link [href]="'https://www.agl.com.au/residential/contact-us'" size="linkSize.large">contact us</agl-link> if this error persists.</div>
+        </agl-maui-flash-message>
+    </div>
+    <div class="payment-assistance-plan-options__cta">
+        <agl-maui-button class="payment-assistance-plan-options__cta-continue" [disabled]="!continueButtonEnabled" (clicked)="onContinueButtonClicked()" [loading]="continueButtonLoading">
+            Continue
+        </agl-maui-button>
+        <agl-maui-button class="payment-assistance-plan-options__cta-cancel" type="link" (clicked)="onCancelClicked()">
+            cancel
+        </agl-maui-button>
+    </div>
+</div>

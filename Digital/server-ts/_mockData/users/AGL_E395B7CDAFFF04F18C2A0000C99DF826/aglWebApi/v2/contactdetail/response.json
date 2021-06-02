@@ -1,0 +1,18 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": {
+        "hasMultipleBusinessPartners": false,
+        "businessPartners": [
+        {
+            "firstName": "Richard",
+            "lastName": "Munt",
+            "businessPartnerNumber": "BP0001",
+            "phone": "03 8663 6721",
+            "mobile": "0438 770 119",
+            "hasDateOfBirth": false,
+            "email": "richard.munt@gmail.com"
+        }
+        ]
+    }
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="59px" height="49px" viewBox="0 0 59 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>Wallet</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="50.4008 0.283 0 0.283 0 48.999824 50.4008 48.999824"></polygon>
+        <polygon id="path-3" points="0 0.6998 0 40.9998 56.4008 40.9998 56.4008 0.6998"></polygon>
+    </defs>
+    <g id="DD-Single-Address" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ma2-/-dd-bank-setup-bill-smoothing-wb" transform="translate(-372.000000, -595.000000)">
+            <g id="Wallet" transform="translate(372.000000, 594.000000)">
+                <g id="Page-1">
+                    <g id="Group-3" transform="translate(0.000000, 0.717300)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-2"></g>
+                        <path d="M50.2998,1.4567 C50.2998,0.7567 49.6998,0.1627 48.9008,0.3037 L1.4008,8.6787 C0.6998,8.8027 -0.0002,9.5257 -0.0002,10.3257 L-0.0002,47.8267 C-0.0002,48.5257 0.5998,49.1207 1.4008,48.9787 L48.9998,40.5857 C49.6998,40.4617 50.4008,39.7397 50.4008,38.9387 L50.2998,1.4567 Z" id="Fill-1" fill="#00E3F2" mask="url(#mask-2)"></path>
+                    </g>
+                    <g id="Group-6" transform="translate(0.000000, 8.717300)">
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <g id="Clip-5"></g>
+                        <path d="M56.2998,2.0998 C56.2998,1.3998 55.6998,0.6998 54.9008,0.6998 L1.4008,0.6998 C0.6998,0.6998 -0.0002,1.2998 -0.0002,2.0998 L-0.0002,39.5998 C-0.0002,40.2998 0.5998,40.9998 1.4008,40.9998 L54.9998,40.9998 C55.6998,40.9998 56.4008,40.3998 56.4008,39.5998 L56.2998,2.0998 Z" id="Fill-4" fill="#0110B8" mask="url(#mask-4)"></path>
+                    </g>
+                    <path d="M46.7998,35.8171 C43.3258,35.8171 40.4998,32.9911 40.4998,29.5171 C40.4998,26.0441 43.3258,23.2171 46.7998,23.2171 L57.0998,23.2171 C58.1478,23.2171 58.9998,24.0701 58.9998,25.1171 L58.9998,33.9181 C58.9998,34.9641 58.1478,35.8171 57.0998,35.8171 L46.7998,35.8171 Z" id="Fill-7" fill="#00E3F2"></path>
+                    <path d="M49.7998,29.5173 C49.7998,28.1173 48.6998,27.1173 47.4008,27.1173 C46.0998,27.1173 44.9998,28.2173 44.9998,29.5173 C44.9998,30.9173 46.0998,31.9173 47.4008,31.9173 C48.6998,31.9173 49.7998,30.9173 49.7998,29.5173" id="Fill-9" fill="#0110B8"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,41 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "number": "62055272",
+            "firstName": "LEIGH",
+            "lastName": "RING",
+            "contracts": [
+                {
+                    "address": "7 Boonga Street|HALLETT COVE SA 5158",
+                    "accountNumber": "62055272",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_000D3AD07CE31ED78A9654FF312468E6",
+                    "number": "9035268282",
+                    "planName": "Savers",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "AGLMKTRE2415082",
+                    "regionId": "SA"
+                },
+                {
+                    "address": "7 Boonga Street|HALLETT COVE SA 5158",
+                    "accountNumber": "62055272",
+                    "fuelType": "Gas",
+                    "nameId": "AGL_000D3AD07CE31ED78A9654FF312468E6",
+                    "number": "9102254408",
+                    "planName": "",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "140081RG24",
+                    "regionId": "SA"
+                }
+            ]
+        }
+    ]
+}

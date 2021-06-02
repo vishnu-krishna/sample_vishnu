@@ -1,0 +1,232 @@
+{
+    "status": 200,
+    "body": [
+        {
+            "number": "7018263504",
+            "firstName": "Iain",
+            "lastName": "Sanders",
+            "contracts": [
+                {
+                    "address": "10 On Track Instalment Plan st|ROSEBUD VIC 3939",
+                    "accountNumber": "7018263504",
+                    "fuelType": "Gas",
+                    "nameId": "AGL_0000C99D7ADE1EE492A42E1ADEF8A5A8",
+                    "number": "9400902583",
+                    "planName": "Savers",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "hasSolar": true,
+                    "solarCheckRegistered": false,
+                    "productId": "AGLMKTRE1216249",
+                    "regionId": "VIC"
+                },
+                {
+                    "address": "10 Overdue Instalment Plan st|ROSEBUD VIC 3939",
+                    "accountNumber": "7018263504",
+                    "fuelType": "Gas",
+                    "nameId": "AGL_0000C99D7ADE1EE492A42E1ADEF8A5A8",
+                    "number": "9400902584",
+                    "planName": "Savers",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "hasSolar": true,
+                    "solarCheckRegistered": false,
+                    "productId": "AGLMKTRE1216249",
+                    "regionId": "VIC"
+                },
+                {
+                    "address": "10 Overdue but no new bill issued st|ROSEBUD VIC 3939",
+                    "accountNumber": "7018263504",
+                    "fuelType": "Gas",
+                    "nameId": "AGL_0000C99D7ADE1EE492A42E1ADEF8A5A8",
+                    "number": "9400902585",
+                    "planName": "Savers",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "hasSolar": true,
+                    "solarCheckRegistered": false,
+                    "productId": "AGLMKTRE1216249",
+                    "regionId": "VIC"
+                },
+                {
+                    "address": "10 Account balance in Credit st|ROSEBUD VIC 3939",
+                    "accountNumber": "7018263504",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_0000C99D7ADE1EE492A42E1ADEF8A5A8",
+                    "number": "9400921596",
+                    "planName": "Savers",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "hasSolar": false,
+                    "solarCheckRegistered": false,
+                    "productId": "AGLMKTRE1216249",
+                    "regionId": "VIC"
+                },
+                {
+                    "address": "10 Zero Balance st|ROSEBUD VIC 3939",
+                    "accountNumber": "7018263504",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_0000C99D7ADE1EE492A42E1ADEF8A5A8",
+                    "number": "9400921597",
+                    "planName": "Savers",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "hasSolar": true,
+                    "solarCheckRegistered": false,
+                    "productId": "AGLMKTRE1216249",
+                    "regionId": "VIC"
+                },
+                {
+                    "address": "10 Elec In Flight st|ROSEBUD VIC 3939",
+                    "accountNumber": "7018263504",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_0000C99D7ADE1EE492A42E1ADEF8A5A8",
+                    "number": "9400921501",
+                    "planName": "Savers",
+                    "inFlight": true,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "hasSolar": true,
+                    "solarCheckRegistered": false,
+                    "productId": "AGLMKTRE1216249",
+                    "regionId": "VIC"
+                }
+            ]
+        },
+        {
+            "number": "7014235472",
+            "firstName": "Iain",
+            "lastName": "Sanders",
+            "contracts": [
+                {
+                    "address": "10 Overdue and new bill issued st|MOONEE PONDS VIC 3039",
+                    "accountNumber": "7014235472",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_0000C99D7ADE1EE492A42E1ADEF8A5A8",
+                    "number": "9401005102",
+                    "planName": "Employee Freedom",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "AGLMKTRE1216249",
+                    "regionId": "VIC"
+                },
+                {
+                    "address": "10 No bill issued st|MOONEE PONDS VIC 3039",
+                    "accountNumber": "7014235472",
+                    "fuelType": "Gas",
+                    "nameId": "AGL_0000C99D7ADE1EE492A42E1ADEF8A5A8",
+                    "number": "9401005103",
+                    "planName": "Employee Freedom",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "AGLMKTRE1216249",
+                    "regionId": "VIC"
+                }
+            ]
+        },
+        {
+            "number": "7035252860",
+            "firstName": "Iain",
+            "lastName": "Sanders",
+            "contracts": [
+                {
+                    "address": "10 Bill due st|BRUNSWICK VIC 3056",
+                    "accountNumber": "7035252860",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_0000C99D7ADE1EE492A42E1ADEF8A5A8",
+                    "number": "9402766055",
+                    "planName": "Employee Freedom",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "AGLMKTRE1216249",
+                    "regionId": "VIC"
+                },
+                {
+                    "address": "10 Restricted/Inactive st|BRUNSWICK VIC 3056",
+                    "accountNumber": "7035252860",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_0000C99D7ADE1EE492A42E1ADEF8A5A8",
+                    "number": "9402766060",
+                    "planName": "Employee Freedom",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": true,
+                    "hasElectricVehicle": false,
+                    "productId": "AGLMKTRE1216249",
+                    "regionId": "VIC"
+                },
+                {
+                    "address": "10 Payment extension st|BRUNSWICK VIC 3056",
+                    "accountNumber": "7035252860",
+                    "fuelType": "Gas",
+                    "nameId": "AGL_0000C99D7ADE1EE492A42E1ADEF8A5A8",
+                    "number": "9402766056",
+                    "planName": "Employee Freedom",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "AGLMKTRE1216249",
+                    "regionId": "VIC"
+                },
+                {
+                    "address": "10 Bill smoothing st|BRUNSWICK VIC 3056",
+                    "accountNumber": "7035252860",
+                    "fuelType": "Gas",
+                    "nameId": "AGL_0000C99D7ADE1EE492A42E1ADEF8A5A8",
+                    "number": "9402766057",
+                    "planName": "Employee Freedom",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "AGLMKTRE1216249",
+                    "regionId": "VIC"
+                },
+                {
+                    "address": "32 Payg street|ROSEBUD VIC 3939",
+                    "fuelType": "Electricity",
+                    "accountNumber": "7035252860",
+                    "nameId": "AGL_PAYG049401DC19F1A8F80000C99D68E7",
+                    "number": "9402766058",
+                    "planName": "Select 6%",
+                    "inFlight": false,
+                    "isRestricted": false,
+                    "productId": "AGLMKTREPP1",
+                    "regionId": "VIC"
+                },
+                {
+                    "address": "10 Gas In Flight st|ROSEBUD VIC 3939",
+                    "accountNumber": "7035252860",
+                    "fuelType": "Gas",
+                    "nameId": "AGL_0000C99D7ADE1EE492A42E1ADEF8A5A8",
+                    "number": "9400921500",
+                    "planName": "Savers",
+                    "inFlight": true,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "AGLMKTRE1216249",
+                    "regionId": "VIC"
+                }
+            ]
+        }
+    ]
+}

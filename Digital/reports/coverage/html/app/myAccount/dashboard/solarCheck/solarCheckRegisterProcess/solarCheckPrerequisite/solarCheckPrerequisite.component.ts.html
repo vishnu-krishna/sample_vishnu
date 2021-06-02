@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\dashboard\solarCheck\solarCheckRegisterProcess\solarCheckPrerequisite\solarCheckPrerequisite.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/dashboard/solarCheck/solarCheckRegisterProcess/solarCheckPrerequisite/</a> solarCheckPrerequisite.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">42% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>21/50</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">70.59% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>12/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">42.22% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>19/45</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ModalService } from '../../../../modal/modal.service';
+import { ISolarCheckService } from '../../../../services/contract/isolarCheck.service';
+&nbsp;
+import { SolarCheckEligibilityContract } from '../../../../../shared/model/solar/solarCheckEligibility.model';
+import { IMessageBusService } from '../../../../../shared/service/contract/imessageBus.service';
+import { DataLayerService } from '../../../../../shared/service/dataLayer.service';
+import { SolarCheckEvents, SolarCheckMessage } from '../../../../services/solarCheck.service';
+import { SolarCheckRegisterState } from '../solarCheckRegisterProcess.component';
+import { SolarCheckPrerequisiteViewModel } from './solarCheckPrerequisiteView.model';
+&nbsp;
+@Component({
+    selector: 'agl-solar-check-prequisite',
+    template: require('./solarCheckPrerequisite.component.html'),
+    styles: [require('./solarCheckPrerequisite.component.scss')]
+})
+&nbsp;
+export class SolarCheckPrerequisiteComponent {
+&nbsp;
+    @Input() public contract: SolarCheckEligibilityContract;
+    @Output() public <span class="cstat-no" title="statement not covered" >next = new EventEmitter&lt;SolarCheckRegisterState&gt;();</span>
+    @Output() public <span class="cstat-no" title="statement not covered" >back = new EventEmitter&lt;SolarCheckRegisterState&gt;();</span>
+&nbsp;
+    public model: SolarCheckPrerequisiteViewModel;
+    public submitInProgress: Boolean;
+&nbsp;
+    constructor(
+        private <span class="cstat-no" title="statement not covered" >solarCheckService: ISolarCheckService,</span>
+        private <span class="cstat-no" title="statement not covered" >modalService: ModalService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >dataLayer: DataLayerService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >messageBusService: IMessageBusService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" ></span></span></span>
+    ) {
+<span class="cstat-no" title="statement not covered" >        this.model = new SolarCheckPrerequisiteViewModel();</span>
+<span class="cstat-no" title="statement not covered" >        this.submitInProgress = false;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public submit() {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.submitInProgress = true;</span>
+<span class="cstat-no" title="statement not covered" >        this.solarCheckService.setHasBattery(this.contract.contractNumber, this.model.hasBattery).subscribe(</span>
+<span class="fstat-no" title="function not covered" >            () =&gt; {</span>
+                // successful
+<span class="cstat-no" title="statement not covered" >                if (this.model.hasBattery) {</span>
+                    // Assign contract to be unsuitable (hides offer)
+<span class="cstat-no" title="statement not covered" >                    this.contract.eligible = false;</span>
+<span class="cstat-no" title="statement not covered" >                    this.next.emit(SolarCheckRegisterState.UNSUITABLE);</span>
+<span class="cstat-no" title="statement not covered" >                    this.dataLayer.pushSccRegisterHasBattery();</span>
+<span class="cstat-no" title="statement not covered" >                    this.broadcastUpdateHasBattery();</span>
+                } else {
+                    // Assign contract to be unsuitable (hides offer)
+<span class="cstat-no" title="statement not covered" >                    this.contract.eligible = true;</span>
+<span class="cstat-no" title="statement not covered" >                    this.next.emit(SolarCheckRegisterState.SOLAR_DETAILS);</span>
+<span class="cstat-no" title="statement not covered" >                    this.dataLayer.pushSccRegisterSolarDetails();</span>
+                }
+            },
+            (error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+                // ToDo: inform user if there was an error
+<span class="cstat-no" title="statement not covered" >                console.error('battery registration: error while trying to submit', error);</span>
+<span class="cstat-no" title="statement not covered" >                this.submitInProgress = false;</span>
+<span class="cstat-no" title="statement not covered" >                this.dataLayer.pushSccRegisterBatteryError();</span>
+            },
+<span class="fstat-no" title="function not covered" >            () =&gt; {</span>
+                // completed
+<span class="cstat-no" title="statement not covered" >                this.submitInProgress = false;</span>
+            });
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public previous() {</span>
+<span class="cstat-no" title="statement not covered" >        this.back.emit(SolarCheckRegisterState.WELCOME);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public closeModal() {</span>
+<span class="cstat-no" title="statement not covered" >        this.modalService.close();</span>
+    }
+&nbsp;
+    public hasBatterySelected(isBattery: boolean<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.model.UpdateHasBattery(isBattery);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private broadcastUpdateHasBattery() {</span>
+        let solarCheckMessage = <span class="cstat-no" title="statement not covered" >new SolarCheckMessage();</span>
+<span class="cstat-no" title="statement not covered" >        solarCheckMessage.solarCheckEvent = SolarCheckEvents.hasBattery;</span>
+<span class="cstat-no" title="statement not covered" >        this.messageBusService.broadcast(solarCheckMessage);</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

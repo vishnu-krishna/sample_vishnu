@@ -1,0 +1,117 @@
+@import '../../../style/settings';
+@import '../../../maui/maui';
+
+.main-card-body {
+    padding-top: 0;
+}
+
+.main-card-options {
+
+    &__header {
+
+        margin-bottom: $space-04;
+
+        h4,
+        h5 {
+            line-height: $line-height-heading;
+            font-size: $body-font-size-normal;
+            font-family: $body-font-stack;
+            color: $neutral-01;
+        }
+
+        h4 {
+            margin: 0;
+            display: inline;
+        }
+
+        h5 {
+            display: block;
+            margin-top: $space-01;
+            font-weight: normal;
+        }
+
+        agl-maui-tooltip {
+            position: relative;
+            bottom: 1px;
+        }
+    }
+
+    &__edit {
+
+        h4 {
+            display: inline;
+            font-weight: normal;
+            margin-right: 70px;
+        }
+    }
+
+    &__toggle {
+        display: block;
+        overflow: hidden;
+
+        &__label {
+            font-family: $body-font-stack;
+            color: $neutral-01;
+            margin-right: 70px;
+            font-size: $body-font-size-normal;
+            padding-top: $space-01;
+            float: left;
+        }
+
+        agl-maui-toggle {
+            min-height: 50px;
+            padding-top: $space-02;
+            position: absolute;
+            right: 0;
+            margin-top: $space-03;
+        }
+    }
+
+    &__error {
+        margin-bottom: $space-04;
+    }
+}
+
+.account {
+    font-size: $body-font-size-smallest;
+    line-height: $line-height-short;
+    font-weight: bold;
+    margin-bottom: $space-02;
+
+    &__number {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    &__icons {
+        display: inline-block;
+        width: $space-05;
+        margin-left: $space-02;
+        vertical-align: top;
+    }
+
+    &__icon {
+        display: inline-block;
+
+        &--elec {
+            height: 12px;
+            width: 8px;
+            position: relative;
+            top: 1px;
+        }
+
+        &--gas {
+            height: 11px;
+            width: 8px;
+        }
+    }
+
+    &__address {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    &:last-child {
+        margin-bottom: $space-04;
+    }
+}

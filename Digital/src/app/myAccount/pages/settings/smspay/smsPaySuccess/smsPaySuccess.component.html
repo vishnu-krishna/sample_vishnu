@@ -1,0 +1,37 @@
+<div class="sms-pay-success">
+    <div class="top">
+        <div class="icon">
+            <div>
+                <img class="icon_size" src="svg/tick_icon.svg">
+            </div>
+        </div>
+        <div class="heading">SMS Pay has been set up</div>
+    </div>
+    <div class="bottom">
+        <div class="header">
+            You can now pay for all your services on this account via SMS
+        </div>
+        <div class="content">
+            We've just sent you a text to
+            <span class="mobile-number">{{args.mobileNumber}}</span> with your SMS Pay details and payment instructions.
+        </div>
+        <div class="buttons">
+            <div class="close">
+                <button mat-raised-button class="dls-button" color="accent" (click)="onClickClose()">CLOSE</button>
+            </div>
+        </div>
+        <div class="instructions">
+            <div class="row">
+                <div class="chat-instructions">
+                    If you don't receive a text within a minute or two, chat with us.
+                </div>
+            </div>
+            <div class="row">
+                <div class="chat col-sm-offset-3 col-sm-6">
+                    <!-- Liveperson chat button injection -->
+                    <agl-webchat chatButtonId="smspaysmsfailure"></agl-webchat>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

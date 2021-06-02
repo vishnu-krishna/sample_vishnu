@@ -1,0 +1,31 @@
+@mixin angled-background($ypos, $xpos, $angle) {
+    @if $ypos == 'top' {
+        &::before {
+            bottom: 100%;
+            @if $xpos == 'left' {
+                transform-origin: bottom left;
+                left: 0;
+            } @else if $xpos == 'right' {
+                transform-origin: bottom right;
+                right: 0;
+                $angle: -$angle;
+            }
+            background: #FFFFFF;
+            transform: rotate($angle + deg) skew($angle + deg);
+        }
+    } @else if $ypos == 'bottom' {
+        &::before {
+            top: 100%;
+            @if $xpos == 'left' {
+                transform-origin: top left;
+                left: 0;
+                $angle: -$angle;
+            } @else if $xpos == 'right' {
+                transform-origin: top right;
+                right: 0;
+            }
+            background: #FFFFFF;
+            transform: rotate($angle + deg) skew($angle + deg);
+        }
+    }
+}

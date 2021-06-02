@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\bills\paymentAssistance\extend\confirmation\paymentExtensionConfirmation.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/bills/paymentAssistance/extend/confirmation/</a> paymentExtensionConfirmation.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">29.58% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>21/71</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>16/32</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">6.25% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">28.79% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>19/66</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnDestroy, OnInit } from '@angular/core';
+import { NavigationStart, Router } from '@angular/router';
+import * as moment from 'moment';
+import { Subscription } from 'rxjs/Subscription';
+import { CalendarAppointmentService, CalendarType } from '../../../../../../shared/service/calendarAppointment.service';
+import { DataLayerService } from '../../../../../../shared/service/dataLayer.service';
+import { FuelChipContract, FuelChipContractAccountDetails } from '../../../../../maui/fuelChip';
+import { FuelChipData } from '../eligibility/fuelChipData';
+import { IPaymentExtensionStateService } from '../services/paymentExtensionState.service';
+import { DeviceDetectorService } from '../../../../../../shared/service/deviceDetector.service';
+&nbsp;
+@Component({
+    selector: 'agl-payment-extension-confirmation',
+    template: require('./paymentExtensionConfirmation.component.html'),
+    styles: [require('./paymentExtensionConfirmation.component.scss')]
+})
+&nbsp;
+export class PaymentExtensionConfirmationComponent implements OnInit, OnDestroy {
+    public <span class="cstat-no" title="statement not covered" >CalendarType = CalendarType;</span>
+    public selectedCalendarType: CalendarType;
+    public isIOS: boolean;
+    public fuelChipData: FuelChipData;
+    public eligibleFuelChips: FuelChipData[];
+    public isVicRegion: boolean;
+    public <span class="cstat-no" title="statement not covered" >isReady: boolean = false;</span>
+    private <span class="cstat-no" title="statement not covered" >subscriptions: Subscription[] = [];</span>
+<span class="fstat-no" title="function not covered" >    public get hasMoreEligibleFuelChips(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return !!this.eligibleFuelChips.length;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public get buttonType(): string {</span>
+<span class="cstat-no" title="statement not covered" >        return this.hasMoreEligibleFuelChips ? 'secondary' : 'primary';</span>
+    }
+    constructor(
+        private <span class="cstat-no" title="statement not covered" >paymentExtensionStateService: IPaymentExtensionStateService,</span>
+        private <span class="cstat-no" title="statement not covered" >router: Router<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >calendarAppointmentService: CalendarAppointmentService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >dataLayerService: DataLayerService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >deviceDetectorService: DeviceDetectorService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" ></span></span></span>
+    ) { }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public ngOnInit() {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.isIOS = this.deviceDetectorService.isIOS;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.fuelChipData = this.paymentExtensionStateService.getExtendedFuelChip();</span>
+<span class="cstat-no" title="statement not covered" >        if (this.fuelChipData) {</span>
+<span class="cstat-no" title="statement not covered" >            this.eligibleFuelChips = this.paymentExtensionStateService.getEligibleFuelChips();</span>
+<span class="cstat-no" title="statement not covered" >            this.assignIsVicRegion();</span>
+&nbsp;
+            // Subscribe to change of route - Lean Engage Survey will trigger if the user navigates away from the page
+<span class="cstat-no" title="statement not covered" >            this.subscriptions.push(</span>
+                this.router.events
+                    .filter((event<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >event instanceof NavigationStart)</span></span>
+                    .subscribe((val<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        this.triggerLeanEngageSurvey();</span>
+                    })
+            );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            this.isReady = true;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.goToOverview();</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public ngOnDestroy() {</span>
+        // Clean up subscriptions - we don't want these to persist after the page is destroyed
+<span class="cstat-no" title="statement not covered" >        for (const subscription<span class="cstat-no" title="statement not covered" ></span> of this.subscriptions) {</span>
+<span class="cstat-no" title="statement not covered" >            subscription.unsubscribe();</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public goToOverview() {</span>
+<span class="cstat-no" title="statement not covered" >        this.router.navigate(['/overview']);</span>
+    }
+&nbsp;
+    public onFuelChipSelected(accountNumber: string, contractNumber: string<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.paymentExtensionStateService.selectChip(contractNumber);</span>
+<span class="cstat-no" title="statement not covered" >        this.router.navigate([`/bills/paymentassistance/extend/confirm/${accountNumber}/${contractNumber}`]);</span>
+    }
+&nbsp;
+    public addEventToCalendar(calendarType: string<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.selectedCalendarType = CalendarType[calendarType];</span>
+&nbsp;
+        // if not an apple device (which will prevent auto-calendar opening)
+<span class="cstat-no" title="statement not covered" >        if (!this.isIOS) {</span>
+<span class="cstat-no" title="statement not covered" >            this.openCalendarEvent();</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public openCalendarEvent() {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (!this.selectedCalendarType) {</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
+        }
+&nbsp;
+        // note the '%208:00' relates to the time of the event
+        const start = <span class="cstat-no" title="statement not covered" >moment(this.fuelChipData.eligibility.dueDate).format('YYYY/MM/DD') + '%208:00';</span>
+&nbsp;
+        // TODO: consider moving timezone to the CalendarService (or having it as a default)
+        const timezone = <span class="cstat-no" title="statement not covered" >'Australia/Sydney';</span>
+        const icsFileName = <span class="cstat-no" title="statement not covered" >'AGL bill reminder';</span>
+&nbsp;
+        // refer to DSP-23037
+        const latePaymentFeeText = (<span class="cstat-no" title="statement not covered" >!this.fuelChipData.isVicRegion() ? 'avoid late payment fees and ' : '')</span>;
+        const title = <span class="cstat-no" title="statement not covered" >`AGL ${this.fuelChipData.fuelType} bill due`;</span>
+        const body = <span class="cstat-no" title="statement not covered" >`A reminder that your extended AGL ${this.fuelChipData.fuelType} bill payment is due today.&lt;br&gt;&lt;br&gt;` +</span>
+            `Amount due: $${this.fuelChipData.eligibility.totalAmountDue}.&lt;br&gt;&lt;br&gt;` +
+            `To make a payment, simply visit https://agl.com.au/login and log into My Account.&lt;br&gt;&lt;br&gt;` +
+            `Please note: it’s important to pay by the extended due date to ${latePaymentFeeText}prevent any collections activities by AGL.&lt;br&gt;&lt;br&gt;` +
+            `If you need assistance or have any questions, feel free to call us anytime 24/7 on 131 245.`;
+&nbsp;
+        const link = <span class="cstat-no" title="statement not covered" >this.calendarAppointmentService.add(icsFileName, start, timezone, title, this.selectedCalendarType, body);</span>
+<span class="cstat-no" title="statement not covered" >        this.dataLayerService.trackAddCalendarForExtendedDueDate(link);</span>
+        // Trigger the Lean Engage Survey once the appointment has been added
+<span class="cstat-no" title="statement not covered" >        this.triggerLeanEngageSurvey();</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    private assignIsVicRegion() {</span></span>
+        const contracts = <span class="cstat-no" title="statement not covered" >this.fuelChipData.accountDetails.reduce((total: FuelChipContract[], current: FuelChipContractAccountDetails<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            return total.concat(current.contracts);</span>
+        }, []);
+&nbsp;
+        const contract = <span class="cstat-no" title="statement not covered" >contracts.find((c: FuelChipContract<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            return c.contractNumber === this.fuelChipData.contractNumber;</span>
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.isVicRegion = contract.IsVicRegion;</span>
+    }
+&nbsp;
+    /**
+     * Based on business logic optionally open the lean engage survey
+     */
+<span class="fstat-no" title="function not covered" >    private triggerLeanEngageSurvey() {</span>
+        // Only show the survey when there are no other eligible fuel chips and how not previously been shown
+<span class="cstat-no" title="statement not covered" >        if (this.paymentExtensionStateService.shouldLeanEngageSurveyBeShown()) {</span>
+<span class="cstat-no" title="statement not covered" >            this.paymentExtensionStateService.showLeanEngageSurveyOnSuccessfulSetup();</span>
+<span class="cstat-no" title="statement not covered" >            this.paymentExtensionStateService.setLeanEngageSurveyShown(true);</span>
+        }
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../../sorter.js"></script>
+</body>
+</html>

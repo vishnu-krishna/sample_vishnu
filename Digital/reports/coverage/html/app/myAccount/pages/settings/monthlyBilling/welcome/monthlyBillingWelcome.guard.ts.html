@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\settings\monthlyBilling\welcome\monthlyBillingWelcome.guard.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/settings/monthlyBilling/welcome/</a> monthlyBillingWelcome.guard.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">37.78% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>17/45</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">61.54% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>16/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">8.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">35.71% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>15/42</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+&nbsp;
+import { Observer } from 'rxjs';
+import { AglAuthTokenProvider } from '../../../../../shared/repository/aglAuthTokenProvider';
+import { ConfigService } from '../../../../../shared/service/config.service';
+import { FeatureFlagTypes } from '../../../../services/featureFlag.constants';
+import { FeatureFlagService } from '../../../../services/featureFlag.service';
+import { MonthlyBillingService } from '../../../../services/monthlyBilling.service';
+import { MonthlyBillingRoutes } from '../monthlyBillingRoutes.const';
+&nbsp;
+@Injectable()
+export class MonthlyBillingWelcomeRoutingGuard implements CanActivate {
+&nbsp;
+    constructor(
+        private <span class="cstat-no" title="statement not covered" >router: Router,</span>
+        private <span class="cstat-no" title="statement not covered" >configService: ConfigService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >featureFlagService: FeatureFlagService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >aglAuthTokenProvider: AglAuthTokenProvider<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >monthlyBillingService: MonthlyBillingService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" ></span></span></span>
+    ) { }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    public canActivate(activatedRouteSnapshot: ActivatedRouteSnapshot, state: RouterStateSnapshot<span class="fstat-no" title="function not covered" >): Observable&lt;boolean&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        return new Observable((observer: Observer&lt;boolean&gt;<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (this.aglAuthTokenProvider.getToken()) {</span>
+<span class="cstat-no" title="statement not covered" >                this.featureFlagService.featureFlagged(FeatureFlagTypes.monthlyBillingEnabled).subscribe(</span>
+                    (isFeatureOn: boolean<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        if (isFeatureOn) {</span>
+<span class="cstat-no" title="statement not covered" >                            this.monthlyBillingService.isSingleAccountCustomer().subscribe((result<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                                if (result) {</span>
+<span class="cstat-no" title="statement not covered" >                                    this.router.navigate([MonthlyBillingRoutes.ChooseService]);</span>
+                                } else {
+<span class="cstat-no" title="statement not covered" >                                    this.router.navigate(['/settings/billing']);</span>
+                                }
+                            },
+                            (error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                                this.goToOverview();</span>
+<span class="cstat-no" title="statement not covered" >                                observer.next(false);</span>
+                            });
+<span class="cstat-no" title="statement not covered" >                            observer.next(true);</span>
+                        } else {
+<span class="cstat-no" title="statement not covered" >                            this.goToOverview();</span>
+<span class="cstat-no" title="statement not covered" >                            observer.next(false);</span>
+                        }
+                    },
+                    (error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        this.goToOverview();</span>
+<span class="cstat-no" title="statement not covered" >                        observer.next(false);</span>
+                    },
+<span class="fstat-no" title="function not covered" >                    () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        observer.complete();</span>
+                    }
+                );
+            } else {
+<span class="cstat-no" title="statement not covered" >                this.goToLogin();</span>
+            }
+        });
+    }
+&nbsp;
+    // TODO: haven't found a way to mock window.location.replace, this function is for assisting unit test
+    public replaceWindowLocation(newLocation: string<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        window.location.replace(newLocation);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private goToOverview() {</span>
+<span class="cstat-no" title="statement not covered" >        this.router.navigate(['/overview']);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private goToLogin() {</span>
+        const siteCoreUrl = <span class="cstat-no" title="statement not covered" >this.configService.current.aglSiteCoreWebsiteBaseUrl;</span>
+        const loginPage = `${<span class="cstat-no" title="statement not covered" >siteCoreUrl}/sts/account/login?returnApp=MyAccount&amp;returnPath=${encodeURIComponent('/settings/monthlybilling/welcome')}`;</span>
+<span class="cstat-no" title="statement not covered" >        this.replaceWindowLocation(loginPage);</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<div *ngIf="fuelChipsModel" class="payment-assistance-plan-success-fuel-chips">
+    <div class="payment-assistance-plan-success-fuel-chips__heading">
+        <agl-maui-heading subheading="You have other bills that are eligible for payment assistance."></agl-maui-heading>
+        <agl-maui-heading class="payment-assistance-plan-success-fuel-chips__heading-secondline" subheading="Do you want any further assistance?"></agl-maui-heading>
+    </div>
+    <div *ngFor="let fuelChip of fuelChipsModel.classifiedFuelChips.eligibleFuelChips; let first = first; let last = last">
+        <agl-maui-container [hasShadow]="false" class="payment-assistance-plan-success-fuel-chips__fuel-chip"
+            [class.payment-assistance-plan-success-fuel-chips__fuel-chip--first]="first"
+            [class.payment-assistance-plan-success-fuel-chips__fuel-chip--last]="last">
+            <agl-maui-fuel-chip
+                [fuelChipState]="fuelChip.state"
+                [fuelType]="fuelChip.fuelType"
+                [fuelContext]="mauiFuelChipFuelContext.None"
+                [contractNumber]="fuelChip.contractNumber"
+                [contractAccountDetails]="fuelChip.accountDetails"
+                (selectorClick)="onFuelChipSelected(fuelChip.contractNumber)">
+                <agl-maui-fuel-chip-message *ngIf="fuelChip.statusMessage[0].primaryMessage"
+                    [primaryMessage]="fuelChip.statusMessage[0].primaryMessage"
+                    [secondaryMessage]="fuelChip.statusMessage[0].secondaryMessage"
+                    [secondaryMessageStatus]="fuelChip.statusMessage[0].secondaryMessageStatus">
+                </agl-maui-fuel-chip-message>
+            </agl-maui-fuel-chip>
+        </agl-maui-container>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+{
+    "screenCode": "SSMR_EX4",
+    "meters": [],
+    "error": {
+        "message": "Customer Own Read already present for today. Can't allow COR",
+        "internalError": {
+            "errorId": "ZIBI105",
+            "errorNumber": "065",
+            "description": "Customer Own Read already present for today. Can't allow COR"
+        }
+    }
+}

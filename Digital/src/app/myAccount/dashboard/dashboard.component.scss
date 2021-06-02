@@ -1,0 +1,310 @@
+@import '../../shared/style/variables';
+@import '../../shared/style/mixins';
+@import '../address-header';
+@import '../maui/progressTracker/progressItems/verticalProgressItem/verticalProgressItemBase.scss';
+
+.dashboard {
+    padding: 30px 0;
+
+    @media #{$agl-layout-mobile} {
+        padding: 0;
+
+        &__accounts {
+            padding: 0;
+        }
+    }
+
+    h2 {
+        font-family: $primary-font-stack;
+        font-weight: bold;
+        font-size: 20px;
+        color: $brand-white;
+        margin-top: 0;
+    }
+
+    .contract {
+        margin-bottom: 24px;
+        padding-right: 20px;
+        padding-bottom: 15px;
+        float: left;
+    }
+
+    .ungrouped-contract {
+        @media #{$agl-layout-mobile} {
+            padding-right: 15px;
+        }
+    }
+
+    .grouped-contract {
+        @media #{$agl-layout-mobile} {
+            padding-right: 0;
+        }
+    }
+
+    .solar-command-check-row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .billing-summary {
+        min-height: 300px;
+        padding-bottom: 15px;
+        padding-top: 1px;
+
+        .dashboard-billing__title {
+            margin: 0 0 20px 0;
+            color: $font-colour-black;
+            font-size: 16px;
+            font-family: $primary-font-stack;
+            font-weight: bold;
+        }
+    }
+
+    .billing-background {
+        background-color: $brand-white;
+        padding-top: 1px;
+    }
+
+    .dashboard-grouped-col-md-6 {
+        padding: 0;
+    }
+
+    .row-flex,
+    .row-flex > div[class*='col-'] {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex: 0 1 auto;
+    }
+
+    .row-flex-wrap {
+        flex-flow: row wrap;
+        align-content: flex-start;
+        flex: 0;
+        margin-top: 2px;
+    }
+
+    .row-flex > div[class*='col-'],
+    .container-flex > div[class*='col-'] {
+        margin: -.2px; /* hack adjust for wrapping */
+    }
+
+    .flex-col {
+        display: flex;
+        display: -webkit-flex;
+        flex: 1 100%;
+        flex-flow: column nowrap;
+    }
+
+    .flex-grow {
+        display: flex;
+        -webkit-flex: 2;
+        flex: 2;
+    }
+
+    .dashboard-right-panel {
+        padding: 57px 0 50px;
+
+        @media #{$agl-layout-tablet} {
+            padding: 50px 15px 0;
+
+            .col-sm-6 {
+                padding-right: 20px;
+
+                &:first-child {
+                    padding-left: 0;
+                }
+
+                &:last-child {
+                    padding-right: 0;
+                }
+
+                &.promo-area {
+                    padding-right: 5px;
+                }
+            }
+        }
+
+        @media #{$agl-layout-mobile} {
+            padding-top: 35px;
+            padding-bottom: 0;
+        }
+    }
+
+    .contract-background {
+        background-color: $brand-white;
+        padding-bottom: 20px;
+        box-shadow: $agl-box-shadow;
+    }
+
+    .dashboard-billing-history__link {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 20px;
+        text-decoration: underline;
+        font-size: 14px;
+        font-family: $secondary-font-stack;
+    }
+
+    .promo-area {
+        margin-bottom: 15px;
+    }
+
+    .restricted-account-re-sign {
+        float: left;
+        padding-right: 20px;
+        padding-top: 20px;
+        padding-bottom: 45px;
+
+        @media #{$agl-layout-mobile} {
+            padding-right: 3px;
+        }
+
+        &.pad-fix {
+            padding-left: 0;
+        }
+    }
+
+    .contract-fuel {
+        display: inline-block;
+        margin-bottom: 7px;
+
+        &__inactive {
+            @include bill-pill($brand-grey-darker);
+            border-radius: 14px;
+            display: inline-block;
+            padding: 2px 10px;
+            margin-left: 8px;
+            vertical-align: top;
+            font-weight: normal;
+            font-size: 12px;
+            margin-top: 7px;
+        }
+
+        &__new-connection {
+            @include bill-pill(#0778FF);
+            color: $brand-white;
+            border-radius: 14px;
+            display: inline-block;
+            padding: 2px 10px;
+            margin-left: 8px;
+            vertical-align: top;
+            font-weight: normal;
+            font-size: 12px;
+            margin-top: 0px;
+        }
+    }
+
+    .solar-check-row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .overview {
+        &--header {
+            span {
+                font-weight: bold;
+            }
+        }
+
+        &--account {
+            box-shadow: $agl-box-shadow;
+            margin-bottom: 25px;
+            display: flex;
+            position: relative;
+
+            @media #{$agl-layout-mobile} {
+                display: block;
+            }
+
+            &__right {
+                background-color: $brand-white;
+                padding: 45px 0 45px 45px;
+                flex: 1;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    height: calc(100% - 152px);
+                    top: 107px;
+                    right: -4px;
+                    border-right: 2px solid $brand-grey-g5;
+                    z-index: 1;
+                }
+
+                @media #{$agl-layout-mobile} {
+                    flex: none;
+                    padding: 30px 15px;
+
+                    &::after {
+                        content: '';
+                        display: block;
+                        border-bottom: 2px solid $brand-grey-g5;
+                        border-right: none;
+                        width: calc(100% - 30px);
+                        left: 15px;
+                        top: 100%;
+                        height: 0;
+                    }
+                }
+            }
+
+            &__left {
+                background-color: $brand-white;
+                padding: 95px 25px 30px;
+                flex: 1;
+
+                @media #{$agl-layout-mobile} {
+                    flex: none;
+                    padding: 30px 15px 0;
+                }
+            }
+        }
+    }
+
+    $instalmentDesktopConfig: (
+        lineHeight: 67px,
+        lineThickness: 3px,
+        bulletHeight: 16px,
+        bulletWidth: 16px,
+        bulletBorderWidth: 2px,
+        // leftPaneHeight is usually sum of lineHeight and bulletHeight
+        leftPaneHeight: 83px,
+        // leftPaneLeftPadding needs to be equal or greater than lineThickness, because the way it's styled
+        leftPaneLeftPadding: 15px,
+        leftPaneRightPadding: 30px,
+        // leftPaneHeight is usually sum of lineHeight and bulletHeight
+        rightPaneHeight: 83px,
+        rightPaneLeftPadding: 30px,
+        rightPaneRightPadding: 15px
+    );
+
+    $instalmentMobileConfig: (
+        lineHeight: 88px,
+        lineThickness: 3px,
+        bulletHeight: 16px,
+        bulletWidth: 16px,
+        bulletBorderWidth: 2px,
+        // leftPaneHeight is usually sum of lineHeight and bulletHeight
+        leftPaneHeight: 104px,
+        leftPaneLeftPadding: 15px,
+        leftPaneRightPadding: 15px,
+        // leftPaneHeight is usually sum of lineHeight and bulletHeight
+        rightPaneHeight: 104px,
+        rightPaneLeftPadding: 15px,
+        rightPaneRightPadding: 15px
+    );
+
+    @include all-styling($instalmentDesktopConfig, $instalmentMobileConfig);
+}
+
+.tooltip-billsmoothing {
+    font-size: 14px;
+    color: $brand-grey-g2;
+    text-align: center;
+    padding-top: 10px;
+    font-weight: bold;
+}

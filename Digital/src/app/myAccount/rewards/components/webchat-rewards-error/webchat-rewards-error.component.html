@@ -1,0 +1,10 @@
+<div #rewardsChatButton *ngIf="!contentNotLoaded" id="{{chatButtonId}}" class="rewards-error-webchat">
+</div>
+<div *ngIf="contentNotLoaded" class="rewards-error-webchat rewards-error-webchat--missing-content">
+    <div class="redemption-error-desktop">
+        Need help?  Call us 24/7 on 131 245
+    </div>
+    <div class="redemption-error-mobile">
+        Need help?  Call us 24/7 on <a href="tel:131 245">131 245</a>
+    </div>
+</div>

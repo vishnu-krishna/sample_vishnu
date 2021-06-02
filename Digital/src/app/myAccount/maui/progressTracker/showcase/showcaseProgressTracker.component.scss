@@ -1,0 +1,48 @@
+@import '../../maui';
+@import '../progressItems/verticalProgressItem/verticalProgressItemBase';
+
+.showcase-progress-tracker {
+    &__overview {
+        width: 380px;
+
+        @media #{$agl-layout-mobile} {
+            width: 250px;
+        }
+    }
+}
+
+$instalmentDesktopConfig: (
+    lineHeight: 67px,
+    lineThickness: 3px,
+    bulletHeight: 16px,
+    bulletWidth: 16px,
+    bulletBorderWidth: 2px,
+    // leftPaneHeight is usually sum of lineHeight and bulletHeight
+    leftPaneHeight: 83px,
+    // leftPaneLeftPadding needs to be equal or greater than lineThickness, because the way it's styled
+    leftPaneLeftPadding: 15px,
+    leftPaneRightPadding: 30px,
+    // leftPaneHeight is usually sum of lineHeight and bulletHeight
+    rightPaneHeight: 83px,
+    rightPaneLeftPadding: 30px,
+    rightPaneRightPadding: 15px
+);
+
+$instalmentMobileConfig: (
+    lineHeight: 88px,
+    lineThickness: 3px,
+    bulletHeight: 16px,
+    bulletWidth: 16px,
+    bulletBorderWidth: 2px,
+    // leftPaneHeight is usually sum of lineHeight and bulletHeight
+    leftPaneHeight: 104px,
+    leftPaneLeftPadding: 15px,
+    leftPaneRightPadding: 15px,
+    // leftPaneHeight is usually sum of lineHeight and bulletHeight
+    rightPaneHeight: 104px,
+    rightPaneLeftPadding: 15px,
+    rightPaneRightPadding: 15px
+);
+
+@include all-styling($instalmentDesktopConfig, $instalmentMobileConfig);
+

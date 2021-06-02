@@ -1,0 +1,70 @@
+[{
+    "number": "123456789",
+    "firstName": "Monica",
+    "lastName": "Green",
+    "contracts": [{
+        "address": "32 Brewery Ln, North Willoughby, Sydney, NSW 2023",
+        "fuelType": "Electricity",
+        "accountNumber": "123456789",
+        "nameId": "AGL_PAYG049401DC19F1A8F80000C99D68E13",
+        "number": "111111111",
+        "planName": "Select 6%",
+        "inFlight": false,
+        "isRestricted": false,
+        "productId": "AGLMKTREPP1",
+        "regionId": "VIC"
+    }, {
+        "address": "32/102 Cook St, Parramatta, Sydney, NSW 2150",
+        "fuelType": "Electricity",
+        "accountNumber": "123456789",
+        "nameId": "AGL_PAYG049401DC19F1A8F80000C99D68E13",
+        "number": "222222222",
+        "planName": "Select 6%",
+        "inFlight": false,
+        "isRestricted": false,
+        "productId": "AGLMKTRE1216301",
+        "regionId": "VIC"
+    }, {
+        "address": "32/102 Cook St, Parramatta, Sydney, NSW 2150",
+        "fuelType": "Electricity",
+        "accountNumber": "123456789",
+        "nameId": "AGL_PAYG049401DC19F1A8F80000C99D68E13",
+        "number": "333333333",
+        "planName": "Select 6%",
+        "inFlight": false,
+        "isRestricted": false,
+        "productId": "AGLMKTREPP1",
+        "regionId": "VIC"
+    }, {
+        "address": "32 Brewery Ln, North Willoughby, Sydney, NSW 2023",
+        "fuelType": "Electricity",
+        "accountNumber": "123456789",
+        "nameId": "AGL_PAYG049401DC19F1A8F80000C99D68E13",
+        "number": "444444444",
+        "planName": "Select 6%",
+        "inFlight": false,
+        "isRestricted": false,
+        "productId": "AGLMKTREPP1",
+        "regionId": "VIC"
+    }, {
+        "address": "32/102 Cook St, Parramatta, Sydney, NSW 2150",
+        "fuelType": "Gas",
+        "accountNumber": "123456789",
+        "nameId": "AGL_PAYG049401DC19F1A8F80000C99D68E13",
+        "number": "555555555",
+        "planName": "Select 6%",
+        "inFlight": false,
+        "isRestricted": false
+
+    }, {
+        "address": "32/102 Cook St, Parramatta, Sydney, NSW 2150",
+        "fuelType": "Gas",
+        "accountNumber": "123456789",
+        "nameId": "AGL_PAYG049401DC19F1A8F80000C99D68E13",
+        "number": "666666666",
+        "planName": "Select 6%",
+        "inFlight": false,
+        "isRestricted": false
+
+    }]
+}]

@@ -1,0 +1,17 @@
+@import '../maui';
+
+.maui-expandable-container {
+    overflow: hidden;
+    transition: max-height 500ms ease-in;
+    position: relative;
+
+    &__gradient {
+        position: absolute;
+        z-index: $expandable-container-z-index;
+        left: 0;
+        pointer-events: none;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 90%);
+        transition: top 500ms ease-in;
+        width: 100%;
+    }
+}

@@ -1,0 +1,16 @@
+<div class="failed-loading-container">
+    <div class="failed-loading-container__top">
+        <h1>Welcome, My Account gives you quick access to:</h1>
+        <div class="failed-loading-container__top-slides">
+            <div *ngFor="let image of images" class="failed-loading-container__top-slides--slide">
+                <h2>{{image.title}}</h2>
+                <img src="{{image.url}}"/>
+            </div>
+        </div>
+    </div>
+    <div class="failed-loading-container__bottom">
+        <img class="failed-loading-container__bottom--image-spin" src="img/long-load-loader.png"/>
+        <h3>Thanks for being patient. We are supercharging your account.</h3>
+        <h4>Actually we're doing boring data syncing stuff but you'll be taking control of your energy in no time.</h4>
+    </div>
+</div>

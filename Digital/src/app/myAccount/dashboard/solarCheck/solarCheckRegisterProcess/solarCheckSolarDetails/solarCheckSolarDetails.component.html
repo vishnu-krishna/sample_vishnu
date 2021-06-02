@@ -1,0 +1,98 @@
+<div class="solar-check-solar-details agl-modal-body agl-modal-body-overall-settings no-padding">
+    <div class="row modal-navi no-horizontal-padding">
+        <span id="solar-check-solar-details-back-button" tabindex="0" class="back-button" (keypress)="tabPrevious($event)" (click)="previous()" #backButtonTopLeft>
+            <img src="svg/scc_modal_back_arrow.svg" alt="Navigate to previous step">
+        </span>
+        <span id="solar-check-solar-details-close-button" tabindex="0" class="close-button" (keypress)="tabCloseModal($event)" (click)="closeModal()" #cancelButtonTopRight>
+            <img src="svg/scc_modal_close.svg" alt="Exit Solar Check Registration Process">
+        </span>
+    </div>
+    <div class="visible-xs row no-horizontal-padding">
+        <div class="center-image-horizontally-cropped-outer">
+            <div class="center-image-horizontally-cropped-inner">
+                <img src="svg/scc_houseonhill_systeminfo_mb.svg" [class.hidden]="isUpdate" alt="Solar Check Details Step">
+            </div>
+        </div>
+    </div>
+    <div class="row prereq-content no-horizontal-padding">
+        <div class="battery-details-capture">
+
+            <!-- title-->
+            <div class="solar-details-title">
+                <!-- edit title -->
+                <div class="solar-details-title-text" >{{getTitleText()}}</div>
+            </div>
+
+            <!--System Details questions-->
+            <form [formGroup]="solarDetailsForm" (submit)="submitSolarDetails()" class="content-area" novalidate (aglClickOnEnter)="submitSolarDetails()">
+                <fieldset class="content-area">
+                    <div class="question-section">
+                        <label class="question-text">How many panels do you have?</label>
+                        <agl-usage-tooltip class="question-tooltip" id="tooltip-section" [tooltipHtml]="panelQuantityToolTipBody" [tooltipHeader]="panelQuantiyToolTipHeader" [size]="solarCheckToolTipSize" [position]="solarCheckToolTipPosition" [secondaryIconColour]="true"></agl-usage-tooltip>
+                    </div>
+                    <input autofocus tabindex="1" class="row question-input-size panel-quantity-answer" type="text" pattern="\d{1,2}" name="panelsQuantity" (keypress)="onlyNumericCharacters($event)" placeholder="0" step="1" maxLength="2" (blur)="convertToIntegerElseReset($event)" formControlName="panelsQuantity"
+                           [class.invalid]="isPanelValidationErrorTextDisplayed()" />
+                    <div class="warning panel-quantity-error" *ngIf="isPanelValidationErrorTextDisplayed()">{{getPanelQuantiyValidationText()}}</div>
+                </fieldset>
+                <fieldset class="row content-area">
+                    <div class="question-section">
+                        <label class="question-text">What is the size of your system?</label>
+                        <agl-usage-tooltip class="question-tooltip" id="tooltip-section" [tooltipHtml]="systemSizeToolTipBody" [tooltipHeader]="systemSizeToolTipHeader" [size]="solarCheckToolTipSize" [position]="solarCheckToolTipPosition" [secondaryIconColour]="true"></agl-usage-tooltip>
+                    </div>
+                    <div>
+                        <input type="text" tabindex="2"  class="question-input-size system-size-answer" name="systemSize" placeholder="00.00 kW" step=".01" maxlength="5" (keypress)="onlyDecimalOrNumericCharacters($event)" (blur)="convertToTwoDecimalPlacesElseReset($event)" formControlName="systemSize" [class.invalid]="isSystemSizeError()" />
+                    </div>
+                    <div class="warning system-size-error" *ngIf="isDefaultSystemSizeErrorTextDisplayed()">{{getDefaultSystemSizeValidationText()}}</div>
+                    <div class="warning system-size-error" *ngIf="isCalculatedSystemSizeErrorTextDisplayed()">{{getCalculatedSystemSizeValidationText()}}</div>
+                    <div class="advice system-size-advice" *ngIf="isSystemSizeHintErrorTextDisplayed()">{{getSystemSizeHintText()}}</div>
+                </fieldset>
+                <fieldset class="row content-area" [class.hidden]="isUpdateSystemChange">
+                    <div class="question-section">
+                        <label class="question-text">What year was your system installed?</label>
+                        <agl-usage-tooltip class="question-tooltip" id="tooltip-section" [tooltipHtml]="installationYearToolTipBody" [tooltipHeader]="installationYearToolTipHeader" [size]="solarCheckToolTipSize" [position]="solarCheckToolTipPosition" [secondaryIconColour]="true"></agl-usage-tooltip>
+                    </div>
+                    <input class="question-input-size installation-year-answer" tabindex="3"  type="text" name="installationYear" placeholder="YYYY" (blur)="convertToIntegerElseReset($event)" (keypress)="onlyNumericCharacters($event)" minLength="4" maxlength="4" pattern="\d{4}" formControlName="installationYear"
+                           [class.invalid]="isInstallationYearErrorTextDisplayed()" />
+                    <div class="warning installation-year-error" *ngIf="isInstallationYearErrorTextDisplayed()">{{getInstallationYearValidationText()}}</div>
+                </fieldset>
+                <fieldset class="row content-area" [class.hidden]="!isUpdateSystemChange">
+                    <div class="question-section">
+                        <label class="question-text">When was your system change implemented?</label>
+                        <agl-usage-tooltip class="question-tooltip" id="tooltip-section" [tooltipHtml]="upgradeDateToolTipBody" [tooltipHeader]="upgradeDateToolTipHeader" [size]="solarCheckToolTipSize" [position]="solarCheckToolTipPosition" [secondaryIconColour]="true"></agl-usage-tooltip>
+                    </div>
+                    <div>
+                        <input placeholder="Choose a date" [class.invalid]="isSystemChangeDateValidationErrorTextDisplayed()" #datepickerinput class="system-changed-datepicker question-datepicker-size" id="systemChangeDate" (click)="openDatePickerAndMarkOpened($event)" matInput [matDatepicker]="picker" [min]="getMinDate()" [max]="getMaxDate()" readonly="readonly" />
+                        <mat-datepicker-toggle tabindex="3" matSuffix [for]="picker" (click)="markDatePickerOpened($event)" #datetoggle></mat-datepicker-toggle>
+                        <mat-datepicker (selectedChanged)="updateDatePickerValue($event)" #picker></mat-datepicker>
+                    </div>
+                    <div class="warning system-change-date" *ngIf="isSystemChangeDateValidationErrorTextDisplayed()">{{getSystemChangeDateValidationText()}}</div>
+                    <div class="warning system-change-amended-details-required" *ngIf="showExistingDetailsUnchangedErrorText() === true">{{getSystemChangeDetailsUnchangedErrorText()}}</div>
+                </fieldset>
+            </form>
+
+            <div class="content-area next-button-padding">
+                <!--Next button-->
+                <button [disabled]="!solarDetailsForm.valid" tabindex="5"  [class.hidden]="isUpdate" mat-raised-button class="mat-raised-button dls-button dls-button-override next-button" color="accent" (click)="submitSolarDetails()">
+                    NEXT
+                </button>
+                <!--Update button-->
+                <button [disabled]="!validUpdateForm()" tabindex="5"  [class.is-loading]="submitInProgress" [class.hidden]="!isUpdate" mat-raised-button class="mat-raised-button dls-button dls-button-override next-button" color="accent" (click)="submitSolarDetails()">
+                    SAVE
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="no-horizontal-padding">
+        <div class="visible-sm visible-md visible-lg visible-xl">
+            <img src="svg/scc_houseonhill_systeminfo_lg.svg" [class.hidden]="isUpdate" alt="Solar Check Details Step">
+            <img src="svg/scc-houseonhill-intro-wd-tb-white.svg" [class.hidden]="!isUpdate" alt="Solar Check Details Step">
+        </div>
+        <div class="visible-xs center-image-horizontally-cropped-outer">
+            <div class="center-image-horizontally-cropped-inner">
+                <img src="svg/scc-houseonhill-intro-mb-768px.svg" [class.hidden]="!isUpdate" alt="Solar Check Details Step">
+            </div>
+        </div>
+    </div>
+</div>

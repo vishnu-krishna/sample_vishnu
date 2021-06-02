@@ -1,0 +1,29 @@
+[
+    {
+        "account": "123456789",
+        "contract": "111111111",
+        "bills": [
+          {
+            "billIssued": "2016-03-01T00:00:00",
+            "newCharges": 13.96,
+            "totalDue": 0.0,
+            "dueDate": "2016-03-14T00:00:00",
+            "printDoc": "3379772201"
+          },
+          {
+            "billIssued": "2016-05-01T00:00:00",
+            "newCharges": 37.37,
+            "totalDue": 63.63,
+            "dueDate": "2016-05-14T00:00:00",
+            "printDoc": "3379772202"
+          },
+          {
+            "billIssued": "2016-07-01T00:00:00",
+            "newCharges": 26.26,
+            "totalDue": 26.26,
+            "dueDate": "2016-07-25T00:00:00",
+            "printDoc": "3379772203"
+          }
+        ]
+    }
+]

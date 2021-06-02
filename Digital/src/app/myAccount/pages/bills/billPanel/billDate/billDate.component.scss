@@ -1,0 +1,51 @@
+@import '../../../../../shared/style/variables';
+@import '../../../../../shared/style/mixins';
+
+:host {
+    display: none;
+
+    &.isVisible {
+        display: block;
+    }
+}
+
+.bill-date {
+    font-family: $secondary-font-stack;
+    font-size: 16px;
+    color: $brand-grey-g1;
+
+    &__heading {
+        font-weight: bold;
+    }
+
+    &__details {
+        &-date-range {
+            margin-right: 5px;
+        }
+
+        &-pill {
+            position: relative;
+            margin-top: 2px; /* for when the pill wraps onto the next line */
+            padding-top: 2px;
+            top: -2px;
+
+            &--warning {
+                @include bill-pill-small($brand-fire, 85px);
+                @include bill-pill-small-spacing(-2px);
+            }
+
+            &--info {
+                &-not-direct-debit {
+                    @include bill-pill-small($brand-sky, 105px);
+                    @include bill-pill-small-spacing(-2px);
+                }
+
+                &-direct-debit {
+                    @include bill-pill-small($brand-sky, 125px);
+                    @include bill-pill-small-spacing(-2px);
+                }
+            }
+
+        }
+    }
+}

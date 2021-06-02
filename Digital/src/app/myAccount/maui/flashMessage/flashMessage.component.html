@@ -1,0 +1,26 @@
+<div class="maui-flash-message maui-flash-message--{{FlashMessageType[type] | lowercase}}" *ngIf="!dismissed">
+    <div class="maui-flash-message__top">
+        <span class="maui-flash-message__icon" *ngIf="!dismissable"></span>
+        <div class="maui-flash-message__content" [class.icon-margin]="!dismissable">
+            <div class="maui-flash-message__heading" [class.maui-flash-message__heading--with-subheading]="subHeading.children.length > 0"><ng-content select="[heading]"></ng-content></div>
+            <div class="maui-flash-message__subheading" #subHeading><ng-content select="[subheading]"></ng-content></div>
+            <div class="maui-flash-message__dismiss" *ngIf="dismissable && !dismissed" (click)="onDismiss()"></div>
+            <div class="maui-accordion__more" (click)="toggleExpanded()" *ngIf="accordion">
+                <div *ngIf="!accordionExpanded">
+                    <span>Show more</span>
+                    <div class="maui-accordion__icon">&#43;</div>
+                </div>
+                <div *ngIf="accordionExpanded">
+                    <span>Show less</span>
+                    <div class="maui-accordion__icon">&#8722;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="maui-accordion" [class.icon-margin]="!dismissable" *ngIf="accordion" [hidden]="!accordionExpanded">
+        <hr [hidden]="!accordionExpanded" class="maui-accordion__divider">
+        <div class="maui-accordion__body" >
+            <ng-content select="[body]"></ng-content>
+        </div>
+    </div>
+</div>

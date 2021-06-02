@@ -1,0 +1,88 @@
+<div class="card-detail">
+    <div class="card-detail__heading">
+        <agl-maui-heading heading="Enter your card number"></agl-maui-heading>
+    </div>
+
+    <agl-maui-container>
+        <div class="card-detail__form-wrapper">
+            <form class="card-detail__form" [formGroup]="cardNumberForm" novalidate autocomplete="off">
+                <mat-icon class="card-detail__form-card-icon" [svgIcon]="cardIconName" alt="concession card"></mat-icon>
+                <div class="card-detail__form-card-number">
+                    <input class="card-detail__form-card-number-textbox" type="text" formControlName="cardNumber" maxlength="20"
+                           placeholder="Enter your card number" [ngClass]="{'error': submissionResult === submissionResultEnum.InvalidCardFormat}"/>
+                    <div class="card-detail__form-card-number--error" *ngIf="submissionResult === submissionResultEnum.InvalidCardFormat">
+                        That looks like an invalid format
+                    </div>
+                </div>
+            </form>
+        </div>
+    </agl-maui-container>
+
+    <div class="card-detail__consent">
+        <div class="card-detail__consent-heading">Concession consent terms</div>
+        <div class="card-detail__consent-body">
+            By registering my concession details with AGL I authorise the exchange of my personal information with my concession provider to verify my eligibility for concession. I agree to these terms of this consent which will remain in place for the duration of my energy plan.
+        </div>
+        <agl-maui-terms-and-conditions class="card-detail__consent-checkbox" (checked)="termsAndConditionChecked($event)">
+            I have read, understood and agree to the concession consent criteria and understand and agree that AGL will retain a record of this consent.
+        </agl-maui-terms-and-conditions>
+    </div>
+
+    <div #submissionError [class.card-detail__submission-error]="submissionError.children.length > 0">
+        <agl-maui-flash-message type="Error" *ngIf="submissionResult === submissionResultEnum.CardFromDifferentRegionId">
+            <div heading>Sorry, there is an issue with the concession card information.</div>
+            <div subheading>
+                The concession card cannot be applied to your service address. Please provide a concession card from the same state as your service.
+            </div>
+        </agl-maui-flash-message>
+
+        <agl-maui-flash-message type="Error" *ngIf="submissionResult === submissionResultEnum.CardAlreadyInUse">
+            <div heading>Sorry, there is an issue with the concession card information.</div>
+            <div subheading>
+                <agl-webchat #concessionChat
+                             chatButtonId="LPConcessionUpdateFailure"
+                             [contentIsHostedInLivePerson]="false"
+                             [autoScanForWebChatAvailability]="true">
+                    <div agent-status-unresolved>
+                        The concession card number you provided is already in use.<br>&nbsp;<!-- reserve some space to reduce the popping effect -->
+                    </div>
+                    <div agent-offline>
+                        The concession card number you provided is already in use.
+                        Contact us 24/7 on <a href="tel:131 245">131 245</a>.
+                        Calling from overseas? You can call us on <a href="tel:+61386336000">+61 3 8633 6000</a>.
+                    </div>
+                    <div agent-online>
+                        The concession card number you provided is already in use.
+                        <a (click)="concessionChat.requestChat()">Chat with us now</a> to confirm your details.
+                    </div>
+                </agl-webchat>
+            </div>
+        </agl-maui-flash-message>
+
+        <agl-maui-flash-message type="Error" *ngIf="submissionResult === submissionResultEnum.UnknownError">
+            <div heading>Sorry, we're unable to process your request right now. Please try again.</div>
+            <div subheading>
+                <agl-webchat #concessionChat
+                             chatButtonId="LPConcessionUpdateFailure"
+                             [contentIsHostedInLivePerson]="false"
+                             [autoScanForWebChatAvailability]="true">
+                    <div agent-status-unresolved>&nbsp;<!-- reserve some space to reduce the popping effect --></div>
+                    <div agent-offline>
+                        If the issue persists, you can contact us 24/7 on <a href="tel:131 245">131 245</a>.
+                        Calling from overseas? You can call us on <a href="tel:+61386336000">+61 3 8633 6000</a>.
+                    </div>
+                    <div agent-online>
+                        If the issue persists, you can
+                        <a (click)="concessionChat.requestChat()">chat with us now</a> and we'll sort it out.
+                    </div>
+                </agl-webchat>
+            </div>
+        </agl-maui-flash-message>
+    </div>
+
+    <agl-concession-continue-or-cancel
+        (continueButtonClicked)="continue()"
+        [continueButtonEnabled]="continueButtonEnabled"
+        [continueButtonClickInProgress]="continueButtonClickInProgress">
+    </agl-concession-continue-or-cancel>
+</div>

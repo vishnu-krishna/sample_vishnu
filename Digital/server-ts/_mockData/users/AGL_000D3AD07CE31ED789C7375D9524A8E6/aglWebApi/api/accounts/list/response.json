@@ -1,0 +1,27 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "number": "59553974",
+            "firstName": "P",
+            "lastName": "HOW",
+            "contracts": [
+                {
+                    "address": "9 Rundle Court|GREENWITH SA 5125",
+                    "accountNumber": "59553974",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_000D3AD07CE31ED789C7375D9524A8E6",
+                    "number": "9035268231",
+                    "planName": "MUT",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "LG0701RE00",
+                    "regionId": "SA"
+                }
+            ]
+        }
+    ]
+}

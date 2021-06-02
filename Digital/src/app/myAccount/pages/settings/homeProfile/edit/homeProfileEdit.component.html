@@ -1,0 +1,15 @@
+<div class="homeprofile-edit">
+    <agl-maui-secondary-navigation display="true" displayBackButton="true" text="Home Profile" textMobile="Home Profile"
+        (click)="backClick()"></agl-maui-secondary-navigation>
+    <agl-maui-heading class="homeprofile-edit__header" heading="Your Home profile"></agl-maui-heading>
+    <agl-maui-container class="homeprofile-edit__container">
+        <div class="homeprofile-edit__content">
+            <div class="homeprofile-edit__content-description">Your Home Profile helps AGL develop and tailor products for your specific needs.</div>
+            <agl-home-profile-section allowEdit="true" [accountNumber]="accountNumber" [contractNumber]="contractNumber"></agl-home-profile-section>
+            <div class="homeprofile-edit__address">
+                <div class="homeprofile-edit__address-header">Your profile is based on</div>
+                <div class="homeprofile-edit__address-description">{{address}}</div>
+            </div>
+        </div>
+    </agl-maui-container>
+</div>

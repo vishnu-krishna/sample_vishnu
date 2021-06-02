@@ -1,0 +1,208 @@
+@import '../../../../../shared/style/variables';
+@import '../../../../../shared/style/mixins';
+@import '../../../../../shared/style/tempdls';
+
+:host {
+    position: relative;
+    height: 2000px;
+    margin-bottom: 100px;
+}
+
+.meter-entry-wrapper {
+    height: 508px;
+}
+
+.meter-heading {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+
+    @media #{$agl-layout-tablet-and-smaller} {
+        font-size: 25px;
+    }
+}
+
+.content {
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    margin: 20px auto 0px;
+    width: 300px;
+
+    .meter-serial-number {
+        text-align: center;
+
+        span {
+            font-weight: bold;
+        }
+    }
+
+    .fuel-icon {
+        position: relative;
+        text-align: center;
+        margin-top: 20px;
+
+        .icon {
+            cursor: pointer;
+            height: 40px;
+
+            &--disabled {
+                opacity: 0.5;
+                height: 40px;
+            }
+        }
+
+    }
+
+    .submit-meter__message {
+        margin: 10px;
+        font-family: $primary-font-stack;
+        font-weight: bold;
+        font-size: 22px;
+        height: 40px;
+        margin-bottom: 0px;
+
+        &--register {
+            color: $brand-blue;
+        }
+
+        &--invalid {
+            color: $brand-error-red;
+        }
+
+        &--valid {
+            color: $brand-leaf;
+        }
+
+        .meter-separator {
+            border-bottom: 2px solid $brand-grey-g4;
+            width: 20px;
+            display: inline-block;
+        }
+    }
+
+    .last-read {
+
+        &__heading {
+            margin-top: 15px;
+            font-size: 14px;
+            color: $brand-grey-g3;
+        }
+
+        &__value {
+            letter-spacing: 20px;
+            font-weight: bold;
+            color: $brand-grey-g2;
+            margin-left: 18px;
+        }
+    }
+
+    .meter-input {
+        display: inline-block;
+        background: url('img/ssmr-box.png');
+        background-repeat: repeat-x;
+
+        input {
+            letter-spacing: 20px;
+        }
+
+        &.responseInvalid {
+            background: url('img/ssmr-box-invalid.png');
+        }
+    }
+
+    .rectangle {
+        display: inline-block;
+        height: 40px;
+        margin: 1px;
+        border-radius: $agl-border-radius;
+        border: 0px;
+        color: $brand-white;
+        margin-left: -50px;
+        padding-left: 59px;
+        background: transparent;
+        font-size: 18px;
+        font-weight: bold;
+        letter-spacing: 20px;
+    }
+
+    .error-state {
+        background-color: $brand-error-red;
+    }
+
+    .entry-instructions {
+        margin-top: 20px;
+        font-size: 16px;
+        color: $brand-grey-g2;
+    }
+
+    .error-message {
+        color: $brand-error-red;
+    }
+}
+
+.button__continue {
+    text-align: center;
+    margin-top: 25px;
+
+    a {
+        height: 50px;
+        width: 290px;
+        padding: 7px 50px;
+        border-radius: $agl-border-radius;
+    }
+}
+
+.skip-meter {
+    margin: auto;
+    width: 60px;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: $brand-grey-g3;
+    text-align: center;
+    cursor: pointer;
+
+    mat-icon {
+        vertical-align: middle;
+    }
+}
+
+.dismiss-link {
+    text-align: center;
+    margin-top: 32px;
+
+    a {
+        color: $brand-grey-g3;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+.footer {
+
+    @media #{$agl-layout-tablet-and-smaller} {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .footer__content {
+        width: 200px;
+        margin: 70px auto;
+        color: $brand-sky;
+        background-color: $brand-grey-g6;
+        font-size: 16px;
+        font-weight: bold;
+        font-family: $primary-font-stack;
+        cursor: pointer;
+        text-align: center;
+
+        a {
+            color: $brand-sky;
+        }
+
+        img {
+            margin-right: 8px;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+[
+    {
+        "account": "7016135894",
+        "contract": "9139723694",
+        "overdue": 238.42,
+        "currentBalance": 0,
+        "totalPayment": 238.42,
+        "billSmoothing": false,
+        "directDebit": false
+    },
+    {
+        "account": "7016135894",
+        "contract": "9139723699",
+        "overdue": 0,
+        "currentBalance": -0.11,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false
+    },
+    {
+        "account": "7029521254",
+        "contract": "9401786227",
+        "overdue": 0,
+        "currentBalance": 0,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false
+    },
+    {
+        "account": "7029521254",
+        "contract": "9401786228",
+        "overdue": 0,
+        "currentBalance": 0,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false
+    }
+]

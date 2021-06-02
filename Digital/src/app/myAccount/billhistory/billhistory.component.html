@@ -1,0 +1,74 @@
+<div class="col-md-12 col-xs-12 no-pad bill-history" [class.bill-history__single-bill]="billList?.length === 1">
+    <div class="bill-history__header">
+        <div class="bill-history__header--heading">
+            Bill history
+        </div>
+    </div>
+    <div *ngIf="nextBillIssued && !thereAreNoBills()" class="bill-issued--active">
+        {{nextBillIssued}}
+        <div *ngIf="contract.isBillSmoothingV2" class="bill-issued--active--bill-smoothing">
+            With your bill you will also get a summary reviewing how your Bill Smoothing payments are tracking against your usage forecast.
+            <span class="bill-issued--active--bill-smoothing--link" (click)="openLearnMoreModal()">Learn more</span>
+        </div>
+    </div>
+    <div class="bill-history__container">
+        <div class="bill-history-bills" [style.height.px]="height">
+            <div *ngFor="let bill of billList; let i = index" class="bill-history-bills__row">
+                <div class="bill-history-bills__row--left-wrap">
+                    <div class="bill-history-bills__row--date">{{bill.dateRange}}</div>
+                    <div class="bill-history-bills__row--days-grey">
+                        <span>{{bill.days}}</span>
+                    </div>
+                    <div class="bill-history-bills__row--pay-status" [attr.data-bill-isincredit]="bill.isInCredit" [attr.id]="bill.billId">
+                        <span *ngIf="bill.billStatus == 'Pay now'" class="bill-history-bills__row--pay-status-paynow" (click)="openPaymentPopup()">{{bill.billStatus}}</span>
+                        <span *ngIf="bill.billStatus == 'Paid'" class="bill-history-bills__row--pay-status-paid">{{bill.billStatus}}</span>
+                    </div>
+                    <div class="bill-history-bills__row--pay-status-mob" [attr.data-bill-isincredit]="bill.isInCredit" [attr.id]="bill.billId">
+                        <span *ngIf="bill.billStatus == 'Paid'" class="bill-history-bills__row--pay-status-mob-paid"></span>
+                    </div>
+                </div>
+                <div class="bill-history-bills__row--right-wrap">
+                    <div class="bill-history-bills__row--payment-amount" [class.credit]="bill.isInCredit" [class.overdue]="bill.isOverdue">
+                        ${{bill.totalDue}}
+                    </div>
+                    <div class="bill-history-bills__row--pdf" *ngIf="bill.fxPrintDoc">
+                        <div class="pdf-button" (click)="openBillPdfInNewWindow(bill)" *ngIf="!bill.showEllipses || !isEnergyInsightsDisagEnabled">
+                            PDF
+                        </div>
+                        <div class="ellipses-button" (click)="toggleEllipsesButton($event, i)" *ngIf="bill.showEllipses && isEnergyInsightsDisagEnabled">
+                            ...
+                        </div>
+                        <div class="ellipses-button-content--{{positionClass}} ellipses-button__content"
+                             *ngIf="bill.showEllipsesContent">
+                            <div class="ellipses-button-content__row" (click)="openBillPdfInNewWindow(bill)">
+                                <a>Download PDF Bill</a>
+                            </div>
+                            <div class="ellipses-button-content__row">
+                                <a (click)="onClickViewBill(bill)">View bill breakdown</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bill-history-bills__row--pdf" *ngIf="!bill.fxPrintDoc">
+                        <div class="pdf-button-na">
+                            PDF
+                        </div>
+                    </div>
+                </div>
+                <div class="bill-history-bills__row--bottom-wrap" [class.credit]="bill.isInCredit" [class.overdue]="bill.isOverdue">
+                    ${{bill.totalDue}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="showMoreBillsButton()" class="bill-history-bills__row--see-more" (click)="showMoreBills()" [ngClass]="{'click-disabled': loadAllBills}">
+        {{actionText}}
+        <div class="pdf-message" [ngClass]="{'pdf-unavailable': loadAllBills}">PDF bills are unavailable for some older bills.</div>
+        <svg *ngIf="!loadAllBills" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1683 808l-742 741q-19 19-45 19t-45-19l-742-741q-19-19-19-45.5t19-45.5l166-165q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 165q19 19 19 45.5t-19 45.5z"/>
+        </svg>
+    </div>
+
+    <div *ngIf="thereAreNoBills()" class="bill-history-bills__row--see-more click-disabled">
+        Your first bill will be issued {{firstBillMessage}}.
+    </div>
+</div>

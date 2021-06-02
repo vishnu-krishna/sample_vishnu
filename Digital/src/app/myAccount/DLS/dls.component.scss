@@ -1,0 +1,284 @@
+// sass-lint:disable-all
+@import '../../shared/style/variables';
+@import '../../shared/style/mixins';
+
+.dls-areas {
+    margin-bottom: 20px;
+}
+
+.contained-heading {
+    font-size: 30px;
+    padding: 20px 0px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #CCC;
+}
+
+.controls {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: $agl-box-shadow;
+    h5 {
+        margin-bottom: 20px;
+        margin-top: 0px;
+        border-bottom: 1px solid #CCC;
+    }
+}
+
+.example-header-image {
+    background-image: url('/img/shiba1.jpg');
+    background-size: cover;
+}
+
+.example-button-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.row {
+    margin-top: 20px;
+}
+
+.card-header {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.profile-card-header {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    padding-bottom: 20px;
+}
+
+.profile-card-edit-row {
+    display: block;
+    margin-top: 15px;
+    h4, a {
+        display: inline-block;
+    }
+    a {
+        text-align: right;
+        float: right;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: right;
+        line-height: 18px;
+        color: $brand-sky;
+    }
+    h4 {
+        font-family: $secondary-font-stack;
+        font-size: 14px;
+        line-height: 18px;
+        color: #333333;
+        margin: 0;
+    }
+
+    &-only-one {
+        margin-bottom: 15px;
+    }
+}
+
+.profile-card-content-row {
+    font-family: $secondary-font-stack;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 18px;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+.profile-card-person {
+    margin: 15px 0;
+    &-face {
+        vertical-align: bottom;
+        color: #999999;
+        font-size: 36px;
+        width: 36px;
+        height: 36px;
+        margin-right: 10px;
+    }
+    &-help {
+        float: right;
+        color: #999999;
+    }
+    &-name {
+        display: inline-block;
+        font-size: 36px;
+        font-weight: bold;
+        line-height: 36px;
+        color: #333333;
+        @media #{$agl-layout-mobile} {
+            font-size: 30px;
+        }
+    }
+}
+
+// Toggle Styling
+.dls-toggle-list {
+    border-radius: $agl-border-radius;
+}
+
+// Overview styling
+
+.overview-card-header {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    padding-bottom: 40px;
+}
+
+.dashboard-information-panel {
+    height: 130px;
+    width: 100%;
+    display: inline-block;
+    border-bottom: 2px solid #D9D9D9;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    // border
+    &:last-child {
+        border-bottom: none;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+    &--charges {
+        height: 100%;
+        padding: 0px;
+        .fuel-icon {
+            height: 100%;
+            float: left;
+            padding-right: 15px;
+            width: 35px;
+        }
+    }
+    &--graphs {
+        height: 100%;
+        padding: 0px;
+
+        // Electricty
+        &-elec-charges {
+            .graphs-elec-charges--background {
+                background-color: #F4EFEF;
+                border-radius: 6px;
+                width: 100%;
+                height: 18px;
+                .graphs-elec-charges--due {
+                    background-color: #0888FF;
+                    background: linear-gradient(90deg, rgb(0, 108, 229) 0%, #559ded 100%);
+                    border-radius: 6px 0 0 6px;
+                    width: 293.93px;
+                    height: 18px;
+                    animation: grow-in 3s infinite;
+                }
+            }
+            .graphs-elec-charges--amount {
+                font-family: $secondary-font-stack;
+                font-size: 12px;
+                line-height: 24px;
+                color: #333333;
+            }
+        }
+
+        // Gas
+        &-gas-charges {
+            .graphs-gas-charges--background {
+                background-color: #F4EFEF;
+                border-radius: 6px;
+                width: 100%;
+                height: 18px;
+                .graphs-gas-charges--due {
+                    background: linear-gradient(208.57deg, #FBD249 0%, #F5A623 100%);
+                    border-radius: 6px 0 0 6px;
+                    width: 93.93px;
+                    height: 18px;
+                    animation: grow-in 3s infinite;
+                }
+            }
+            .graphs-gas-charges--amount {
+                font-family: $secondary-font-stack;
+                font-size: 12px;
+                line-height: 24px;
+                color: #333333;
+            }
+        }
+    }
+
+    // Mobile
+    @media #{$agl-layout-mobile} {
+        height: auto;
+    }
+
+    // animation
+    @keyframes grow-in {
+        0% {
+            width: 0%;
+        }
+    }
+
+    // Actual Styling
+    .price {
+        line-height: 36px;
+        &-symbol {
+            display: inline;
+            font-size: 28px;
+            color: #999999;
+        }
+        &-whole-value {
+            display: inline;
+            font-size: 50px;
+            font-weight: bold;
+            color: #333333;
+        }
+        &-decimal-value {
+            display: inline;
+            font-size: 28px;
+            color: #333333;
+            font-weight: bold;
+        }
+    }
+    .fuel-title {
+        font-family: $secondary-font-stack;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 20px;
+        color: #333333;
+        &-date {
+            font-size: 12px;
+            font-weight: normal;
+        }
+    }
+    .due-date {
+        font-family: $secondary-font-stack;
+        font-size: 12px;
+        line-height: 18px;
+        color: #999999;
+        position: absolute;
+        bottom: 5px;
+        left: 35px;
+    }
+    .pay-fuel {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        &-button-link {
+            mat-icon {
+                font-size: 18px;
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+}
+
+.mat-menu-item {
+    font-family: $secondary-font-stack;
+}
+
+// Bill Smoothing Overrides
+.bs-setup-intro-panel {
+    .mat-menu-content {
+        padding: 0;
+    }
+}

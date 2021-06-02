@@ -1,0 +1,9 @@
+<div class="fuel-title">
+    <div id="fuel-type-electricity-icon" *ngIf="contract.isElectricity" class="fuel-title-icon__elec">
+        <mat-icon svgIcon="icon-elec-enabled"></mat-icon>
+    </div>
+    <div id="fuel-type-gas-icon" *ngIf="contract.isGas" class="fuel-title-icon__gas">
+        <mat-icon svgIcon="icon-gas-enabled"></mat-icon>
+    </div>
+    <div id="fuel-type-title" class="fuel-type-title">{{contract.fuelType}}</div>
+</div>

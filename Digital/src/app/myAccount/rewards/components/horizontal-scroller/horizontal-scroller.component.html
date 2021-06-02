@@ -1,0 +1,16 @@
+<div class="horizontal-scroller__content" #scroller>
+    <div class="horizontal-scroller__content-container">
+        <div class="horizontal-scroller-spacer__left" #spacerLeft></div>
+        <div class="horizontal-scroller__content-items" #scrollerItems>
+            <ng-content></ng-content>
+        </div>
+        <div class="horizontal-scroller-spacer__right" #spacerRight></div>
+    </div>
+</div>
+
+<div class="horizontal-scroller__indicators" *ngIf="indicatorCount > 0 && isScrollable">
+    <div class="horizontal-scroller__indicator" *ngFor="let indicator of indicators" [class.active]="indicator == activeIndicator" (click)="setActiveIndicator(indicator)"></div>
+
+    <div class="scroll-item-btn scroll-prev-item-btn" (click)="showPreviousItem()" *ngIf="showNavButtons && activeIndicator != 0"></div>
+    <div class="scroll-item-btn scroll-next-item-btn" (click)="showNextItem()" *ngIf="showNavButtons && activeIndicator != indicatorCount-1"></div>
+</div>

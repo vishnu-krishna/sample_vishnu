@@ -1,0 +1,25 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "number": "7019079511",
+            "firstName": "Lauren",
+            "lastName": "Ferguson",
+            "contracts": [
+                {
+                    "address": "U C105/460 Victoria Street|BRUNSWICK VIC 3056",
+                    "accountNumber": "7019079511",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_0000C99DF8261ED582B680F41CDC4EDF",
+                    "number": "9400307029",
+                    "planName": "Set and Forget",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\settings\smspay\smspay.settings.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/settings/smspay/</a> smspay.settings.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">27.5% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>33/120</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">62.75% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>64/102</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.88% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">26.55% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>30/113</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* tslint:disable:no-access-missing-member */
+import { Component, OnInit } from '@angular/core';
+import { IAccountServiceMA } from '../../../services/account.service';
+import { PaymentArrangementSettingsViewModel } from './../../../../shared/component/paymentArrangement/paymentArrangement.settings.service';
+import { SurveyType } from './../../../services/survey.service';
+import { DeleteSmsPayComponent } from './deleteSmsPay/deleteSmsPay.component';
+import { SMSPaySuccessComponent } from './smsPaySuccess/smsPaySuccess.component';
+&nbsp;
+import { IPaymentMethodsService } from '../../../services/settings/paymentMethods.service.interface';
+import { AccountDetailComponentModel } from '../../../settings/accountDetail/accountDetail.component';
+&nbsp;
+import { ActivatedRoute, Router } from '@angular/router';
+import { PaymentArrangementComponent } from '../../../../shared/component/paymentArrangement/paymentArrangement.component';
+import { IPaymentArrangementSettingsService } from '../../../../shared/component/paymentArrangement/paymentArrangement.settings.service.interface';
+import { IPaymentArrangementStateService } from '../../../../shared/component/paymentArrangement/paymentArrangementState.service';
+import { ApiService, ContactDetailModel } from '../../../../shared/service/api.service';
+import { ConfigService } from '../../../../shared/service/config.service';
+import { ContentService } from '../../../../shared/service/content.service';
+import { IMessageBusService } from '../../../../shared/service/contract/imessageBus.service';
+import { DataLayerService } from '../../../../shared/service/dataLayer.service';
+import { PaymentArrangementType } from '../../../common/enums';
+import { ModalService } from '../../../modal/modal.service';
+import { FeatureFlagService } from '../../../services/featureFlag.service';
+import { IMyWalletService } from '../myWallet/myWallet.service.interface';
+&nbsp;
+import { BasePaymentArrangementResultMessage } from '../../../../shared/messages/basePaymentArrangementResult.message';
+&nbsp;
+import { IDecisioningService } from '../../../services/contract/idecisioning.service';
+import { FeatureFlagTypes } from '../../../services/featureFlag.constants';
+import { SurveyService } from '../../../services/survey.service';
+&nbsp;
+declare let leanengage: any;
+declare let lpTag;
+&nbsp;
+@Component({
+    selector: 'agl-settings-smspay',
+    template: require('./smspay.settings.component.html'),
+    styles: [ require('./smspay.settings.component.scss') ]
+})
+export class SMSPaySettingsComponent extends PaymentArrangementComponent implements OnInit {
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >isUpdatingPaymentArrangement: boolean = false;</span>
+    public mobileNumber: string;
+    public isSMSPayEnabled: boolean;
+    public <span class="cstat-no" title="statement not covered" >isContactDetailsEnabled: boolean = false;</span>
+&nbsp;
+    public paymentArrangementSetupSuccessHeader: string;
+    public paymentArrangementSetupSuccessBody: string;
+    public paymentArrangementUpdatedSuccessHeader: string;
+    public paymentArrangementUpdatedSuccessBody: string;
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >mobileNumberInvalidHeading: string = `We don't have a valid mobile contact number for you`;</span>
+&nbsp;
+    // LivePerson Chat Injection
+    public <span class="cstat-no" title="statement not covered" >mobileNumberInvalidBody: string = `&lt;span id="smspayupdatemobilenew"&gt;&lt;/span&gt;`;</span>
+&nbsp;
+    public mobileNumberValid: boolean;
+    public <span class="cstat-no" title="statement not covered" >VALID_MOBILE_PHONE_NUMBER_REGEX = new RegExp('(0|\\+61)4[0-9]{8}');</span>
+&nbsp;
+    constructor(
+        public <span class="cstat-no" title="statement not covered" >featureFlagService: FeatureFlagService,</span>
+        public <span class="cstat-no" title="statement not covered" >contentService: ContentService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >paymentArrangementService: IPaymentArrangementSettingsService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >myWalletService: IMyWalletService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >messageBusService: IMessageBusService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >modalService: ModalService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >accountService: IAccountServiceMA<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >apiService: ApiService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >paymentMethodService: IPaymentMethodsService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >route: ActivatedRoute<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >config: ConfigService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >_dataLayer: DataLayerService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >stateService: IPaymentArrangementStateService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >configService: ConfigService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >surveyService: SurveyService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >decisioningService: IDecisioningService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >router: Router<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" ></span></span></span>
+    ) {
+<span class="cstat-no" title="statement not covered" >        super(</span>
+            featureFlagService,
+            contentService,
+            paymentArrangementService,
+            myWalletService,
+            messageBusService,
+            modalService,
+            accountService,
+            apiService,
+            paymentMethodService,
+            route,
+            config,
+            _dataLayer,
+            stateService,
+            PaymentArrangementType.SmsPay,
+            surveyService
+        );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.paymentArrangementSetupSuccessHeader = `You've successfully set up SMS Pay`;</span>
+<span class="cstat-no" title="statement not covered" >        this.paymentArrangementSetupSuccessBody = `We'll text you a few days before payment is due, simply reply "Pay" and we'll debit your account on the due date.`;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.paymentArrangementUpdatedSuccessHeader = `You've successfully updated SMS Pay with a new payment method`;</span>
+<span class="cstat-no" title="statement not covered" >        this.paymentArrangementUpdatedSuccessBody = ``;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.directDebitUrl = `${this.config.current.aglSiteCoreWebsiteBaseUrl}/aeo/home/paymentoptions/direct-debit`;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public ngOnInit() {</span></span>
+<span class="cstat-no" title="statement not covered" >        super.ngOnInit();</span>
+<span class="cstat-no" title="statement not covered" >        this.isLoading = true;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.decisioningService.isSmsPayEntryPointAvailableForCustomer()</span>
+        .finally(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+            // TODO investigate is this is even required - web chat components are doing their own scans for lpTag.newPage
+<span class="cstat-no" title="statement not covered" >            if (lpTag &amp;&amp; lpTag.newPage) {</span>
+<span class="cstat-no" title="statement not covered" >                lpTag.newPage(document.URL);</span>
+            }
+        }).subscribe(
+                (featureIsEnabled: boolean<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    this.isSMSPayEnabled = featureIsEnabled;</span>
+<span class="cstat-no" title="statement not covered" >                    this.apiService.getContactDetail()</span>
+                        .subscribe(
+                            (data: ContactDetailModel<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+                                // we do not handle sms pay customers with multi BP
+<span class="cstat-no" title="statement not covered" >                                this.showContactUs = data.hasMultipleBusinessPartners;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                                if (!data.hasMultipleBusinessPartners) {</span>
+<span class="cstat-no" title="statement not covered" >                                    this.messageBusListener();</span>
+<span class="cstat-no" title="statement not covered" >                                    this.aggregateModels();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                                    if (data.businessPartners &amp;&amp; data.businessPartners.length) {</span>
+<span class="cstat-no" title="statement not covered" >                                        this.mobileNumber = data.businessPartners[0].mobile;</span>
+<span class="cstat-no" title="statement not covered" >                                        this.mobileNumberValid = this.isMobileNumberValid(this.mobileNumber);</span>
+                                    }
+&nbsp;
+                                } else {
+<span class="cstat-no" title="statement not covered" >                                    this.isLoading = false;</span>
+                                }
+                            },
+                            (err<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                                console.error('ERROR: apiService.getContactDetail()', err);</span>
+<span class="cstat-no" title="statement not covered" >                                this.showContactUs = true;</span>
+<span class="cstat-no" title="statement not covered" >                                this.isLoading = false;</span>
+                            }
+                        );
+                }
+            );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.featureFlagService.featureFlagged(FeatureFlagTypes.contactDetailsEnabled).subscribe((result<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            this.isContactDetailsEnabled = result;</span>
+        });
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public updateContactDetails() {</span>
+<span class="cstat-no" title="statement not covered" >        this.router.navigate(['/settings/contactdetails', 'SMSPay']);</span>
+    }
+&nbsp;
+    public isMobileNumberValid(value: string<span class="fstat-no" title="function not covered" >): boolean {</span>
+        const mobileNumber = <span class="cstat-no" title="statement not covered" >value.replace(/\s/g, '');</span>
+<span class="cstat-no" title="statement not covered" >        return !!mobileNumber.match(this.VALID_MOBILE_PHONE_NUMBER_REGEX);</span>
+    }
+&nbsp;
+    public cancelPaymentArrangement(paymentArrangementSettingsViewModel: PaymentArrangementSettingsViewModel<span class="fstat-no" title="function not covered" >) {</span>
+        let data = <span class="cstat-no" title="statement not covered" >{</span>
+            paymentArrangementSettingsViewModel,
+            isMultiAccount: this.isMultiAccount
+        };
+<span class="cstat-no" title="statement not covered" >        this.modalService.activate({</span>
+            title: ' ',
+            cancelText: '',
+            okText: '',
+            modalType: 'component',
+            component: DeleteSmsPayComponent,
+            componentData: data,
+            fullScreen: false
+        });
+    }
+&nbsp;
+    public hasNonRestrictedContracts(account: AccountDetailComponentModel<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        if (account &amp;&amp; account.contracts) {</span>
+<span class="cstat-no" title="statement not covered" >            return account.contracts.some((contract<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >!contract.isRestricted)</span></span>;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    public setAddPAAlertMessage(result: BasePaymentArrangementResultMessage<span class="fstat-no" title="function not covered" >) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (result.message !== 'error') {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (!result.isSwitchPaymentArrangement) {</span>
+<span class="cstat-no" title="statement not covered" >                setTimeout(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+                    let account = <span class="cstat-no" title="statement not covered" >this.viewModel.find((x<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >+x.accountDetailModel.contractAccountNumber === result.contractAccountNumber)</span></span>;</span>
+                    let data = <span class="cstat-no" title="statement not covered" >{</span>
+                        mobileNumber: this.mobileNumber,
+                        account: account
+                    };
+<span class="cstat-no" title="statement not covered" >                    this.modalService.activate({</span>
+                        title: ' ',
+                        cancelText: '',
+                        okText: '',
+                        modalType: 'component',
+                        component: SMSPaySuccessComponent,
+                        componentData: data,
+                        fullScreen: true
+                    }).then((value<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        this.surveyService.showFeedbackSurvey(SurveyType.smsPaySurvey);</span>
+<span class="cstat-no" title="statement not covered" >                        this.resetAlertMessageFlags();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                        if (result.message !== 'error') {</span>
+<span class="cstat-no" title="statement not covered" >                            this.alertMessageType = 'success';</span>
+<span class="cstat-no" title="statement not covered" >                            this.alertMessageHeader = this.paymentArrangementSetupSuccessHeader;</span>
+<span class="cstat-no" title="statement not covered" >                            this.alertMessageBody = this.paymentArrangementSetupSuccessBody;</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        this.showAddPAAlertMessage = true;</span>
+<span class="cstat-no" title="statement not covered" >                        this.updatedContractAccountNumber = result.contractAccountNumber;</span>
+<span class="cstat-no" title="statement not covered" >                        this.aggregateModels(result.contractAccountNumber);</span>
+                    });
+                }, 500);
+            } else {
+<span class="cstat-no" title="statement not covered" >                this.surveyService.showFeedbackSurvey(SurveyType.smsPaySurvey);</span>
+<span class="cstat-no" title="statement not covered" >                this.resetAlertMessageFlags();</span>
+<span class="cstat-no" title="statement not covered" >                this.alertMessageHeader = this.paymentArrangementUpdatedSuccessHeader;</span>
+<span class="cstat-no" title="statement not covered" >                this.alertMessageBody = this.paymentArrangementUpdatedSuccessBody;</span>
+<span class="cstat-no" title="statement not covered" >                this.showAddPAAlertMessage = true;</span>
+<span class="cstat-no" title="statement not covered" >                this.updatedContractAccountNumber = result.contractAccountNumber;</span>
+<span class="cstat-no" title="statement not covered" >                this.aggregateModels(result.contractAccountNumber);</span>
+            }
+&nbsp;
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.resetAlertMessageFlags();</span>
+            // Show Error Panel Message if not 200 response result from API
+<span class="cstat-no" title="statement not covered" >            this.updatedContractAccountNumber = result.contractAccountNumber;</span>
+<span class="cstat-no" title="statement not covered" >            this.alertMessageType = 'error';</span>
+<span class="cstat-no" title="statement not covered" >            this.alertMessageHeader = 'Sorry, we’re unable to process your request right now. Please try again later.';</span>
+<span class="cstat-no" title="statement not covered" >            this.showAddPAErrorMessage = true;</span>
+        }
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

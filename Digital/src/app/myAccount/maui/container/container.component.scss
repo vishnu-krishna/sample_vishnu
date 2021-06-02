@@ -1,0 +1,19 @@
+@import '../maui';
+
+@include maui-component-reset();
+
+:host {
+    background-color: $neutral-08;
+    display: block;
+    margin: 0 auto;
+
+    @media #{$agl-layout-mobile} {
+        margin: 0 (-$container-side-space);
+    }
+}
+
+.maui-container {
+    &__shadow {
+        box-shadow: $shadow-01;
+    }
+}

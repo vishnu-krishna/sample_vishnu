@@ -1,0 +1,134 @@
+@import '../../../../maui/maui';
+@import '../../../../../shared/style/mixins';
+
+$settingsComponentWidth: 898px;
+$containerMaxWidth: 600px;
+
+.monthly-billing-confirmation {
+    margin-top: -20px;
+
+    @media #{$agl-layout-desktop-medium-and-greater} {
+        width: 100vw;
+        margin-top: -60px;
+        margin-left: calc((#{$settingsComponentWidth} - 100vw) / 2);
+    }
+
+    @media #{$agl-layout-tablet} {
+        margin-top: -60px;
+        margin-left: -16px;
+        margin-right: -16px;
+    }
+
+    &__container--top {
+        margin-top: -30px;
+        max-width: $content-width;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__container--bottom {
+        margin-bottom: $space-03;
+    }
+
+    &__wrapper {
+        padding: $space-04;
+        @media #{$agl-layout-mobile} {
+            padding: $space-04 $space-03 $space-03 $space-03;
+        }
+    }
+
+    &__header {
+        border-bottom: 1px solid $neutral-04;
+    }
+
+    &__heading-text {
+        font-family: $display-font-stack;
+        font-size: 22px;
+        color: $primary-dark;
+        line-height: 27px;
+    }
+
+    &__disclaimer-message {
+        color: $neutral-01;
+        font-family: $body-font-stack;
+        font-size: 12px;
+        line-height: 18px;
+        padding-top: 0px;
+
+        &__disclaimer-terms-text {
+            color: $primary-dark;
+            cursor: pointer;
+        }
+    }
+
+    &__summary {
+        font-family: $body-font-stack;
+        font-size: 16px;
+        margin-bottom: $space-03;
+
+        &-body {
+            padding: $space-03 0px 10px 0px;
+        }
+    }
+
+    &__upcoming {
+        margin: 10px (-$space-07) 24px (-$space-07);
+        max-width: $content-width;
+
+        font-family: $body-font-stack;
+        font-size: 16px;
+
+        @media #{$agl-layout-mobile} {
+            max-width: 290px;
+            margin: 10px 0px 24px 0px;
+            padding: 0px;
+            padding-left: 15px;
+        }
+
+        &-body {
+            padding: 10px 0px;
+        }
+    }
+
+    &__whats-next {
+        margin-top: $space-03;
+        font-family: $body-font-stack;
+        font-size: 16px;
+
+        &-body {
+            padding: 10px 0px;
+        }
+
+        &-link {
+            color: $primary-dark;
+            cursor: pointer;
+        }
+    }
+
+    &__more-contracts {
+
+        display: block;
+        margin: 0 auto;
+        max-width: $containerMaxWidth;
+
+        @media #{$agl-layout-mobile} {
+            max-width: initial;
+        }
+
+        &__question {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    }
+
+    &__button-container {
+
+        display: block;
+        margin: $space-04 auto;
+        max-width: $containerMaxWidth;
+        text-align: center;
+
+    }
+
+}

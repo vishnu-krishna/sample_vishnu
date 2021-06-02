@@ -1,0 +1,80 @@
+{
+    "id": "AGLMKTRE1216249",
+    "description": "Savers",
+    "fuelType": "Electricity",
+    "invalid": false,
+    "attributes": [
+        {
+            "id": "ZBRAND_TYP",
+            "description": "Brand",
+            "dataType": "String",
+            "value": "AGL",
+            "valueDescription": "AGL"
+        },
+        {
+            "id": "ZCNTRCTTYPE",
+            "description": "Contract Type",
+            "dataType": "String",
+            "value": "RGCN",
+            "valueDescription": "Fixed Benefit Period Contract"
+        },
+        {
+            "id": "ZCONTRACTLEN",
+            "description": "Contract Term",
+            "dataType": "Numeric",
+            "value": "12",
+            "valueDescription": "12 months",
+            "unitOfMeasure": "Month"
+        },
+        {
+            "id": "ZCUST_TYP",
+            "description": "Customer Type",
+            "dataType": "String",
+            "value": "RESI",
+            "valueDescription": "Residential"
+        },
+        {
+            "id": "ZPIES",
+            "description": "PIES",
+            "dataType": "Numeric",
+            "value": "4",
+            "valueDescription": "Prior Notice"
+        },
+        {
+            "id": "ZPOT_AMT",
+            "description": "Pay on time Discount",
+            "dataType": "Numeric",
+            "value": "19",
+            "valueDescription": "19%",
+            "unitOfMeasure": "Percentage"
+        },
+        {
+            "id": "ZPOT_TYP",
+            "description": "Pay on time Discount Type",
+            "dataType": "String",
+            "value": "USAGE",
+            "valueDescription": "usage"
+        },
+        {
+            "id": "ZPRICING_OPTION",
+            "description": "Rate Type",
+            "dataType": "String",
+            "value": "VR",
+            "valueDescription": "Variable rate"
+        },
+        {
+            "id": "ZPROD_TYPE",
+            "description": "Product Type",
+            "dataType": "Numeric",
+            "value": "MKT",
+            "valueDescription": "Market Product"
+        },
+        {
+            "id": "ZSOLAR",
+            "description": "Solar",
+            "dataType": "String",
+            "value": "A",
+            "valueDescription": "All"
+        }
+    ]
+}

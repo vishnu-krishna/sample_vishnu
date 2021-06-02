@@ -1,0 +1,46 @@
+@import '../../../../shared/style/omm/_omm_variables.scss';
+@import '../../../../shared/style/omm/_omm_mixins';
+.agl-omm-error {
+    overflow-y: hidden;
+
+    &__header {
+        background-color: $omm-blue;
+        padding: 20px 0px 21px 11px;
+        margin: 0 auto;
+        height: 50px;
+        @media #{$medium-and-down} {
+            padding: 15px 0px 0px 5px !important;
+        }
+    }
+
+    &__body {
+        padding-top: $omm-header-desktop-height;
+        height: 100vh;
+        @media #{$medium-and-down} {
+            padding-top: 75px !important;
+        }
+
+        &__btncontainer {
+            margin-top: 30px;
+            text-align: center;
+        }
+    }
+
+    &__logo {
+        height: 54px;
+        width: 50px;
+        @media #{$medium-and-down} {
+            display: none;
+        }
+    }
+
+    &__mobilelogo {
+        display: none;
+        float: left;
+        height: 30px;
+        width: 50px;
+        @media #{$medium-and-down} {
+            display: block;
+        }
+    }
+}

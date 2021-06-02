@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\settings\contactDetails\contactDetailsContext.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/settings/contactDetails/</a> contactDetailsContext.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">35.42% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>17/48</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/33</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">31.82% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>14/44</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { ValidatorFn, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+&nbsp;
+import { BusinessPartnerModel } from '../../../../shared/service/api.service';
+import { AglValidators } from './../../../../shared/validators/aglValidators';
+import { ContactDetailsContext } from './contactDetailsContext.enum';
+&nbsp;
+<span class="fstat-no" title="function not covered" >export abstract class IContactDetailsContextService {</span>
+    /**
+     * The contract or contract account id for which the change to contact details was initialed for (if applicable)
+     */
+    public abstract get contextId(): string | null;
+    public abstract get heading(): string;
+    public abstract get subHeading(): string;
+    public abstract getValidators(field: string, initialContactDetails: BusinessPartnerModel): ValidatorFn[];
+    public abstract shouldRunValidationOnLoad(field: string): boolean;
+}
+&nbsp;
+@Injectable()
+export class ContactDetailsContextService implements IContactDetailsContextService {
+    public contextId: string | null;
+    public heading: string;
+    public subHeading: string;
+&nbsp;
+    private context: ContactDetailsContext;
+&nbsp;
+    constructor(private <span class="cstat-no" title="statement not covered" >activatedRoute: ActivatedRoute<span class="fstat-no" title="function not covered" >)</span> {</span>
+<span class="cstat-no" title="statement not covered" >        this.resolveContactDetailsContextFromRoute();</span>
+<span class="cstat-no" title="statement not covered" >        this.setHeaders();</span>
+    }
+&nbsp;
+    public shouldRunValidationOnLoad(field: string<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return (field === 'email' &amp;&amp; this.context === ContactDetailsContext.EBilling) ||</span>
+                (field === 'mobile' &amp;&amp; (this.context === ContactDetailsContext.SMSPay || this.context === ContactDetailsContext.MonthlyBilling));
+    }
+&nbsp;
+    public getValidators(field: string, initialContactDetails: BusinessPartnerModel<span class="fstat-no" title="function not covered" >): ValidatorFn[] {</span>
+        let validators: ValidatorFn[] = <span class="cstat-no" title="statement not covered" >[];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (field === 'email') {</span>
+<span class="cstat-no" title="statement not covered" >            validators.push(AglValidators.email);</span>
+        } else <span class="cstat-no" title="statement not covered" >if (field === 'mobile') {</span>
+<span class="cstat-no" title="statement not covered" >            validators.push(AglValidators.mobile);</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.setRequiredValidator(field, initialContactDetails, validators);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return validators;</span>
+    }
+&nbsp;
+    private setRequiredValidator(field: string, initialContactDetails: BusinessPartnerModel, validators: ValidatorFn[]<span class="fstat-no" title="function not covered" >) {</span>
+        // once set, values cannot be removed/blanked out
+        let initialValueWasNotEmpty: boolean = <span class="cstat-no" title="statement not covered" >(initialContactDetails[field] || '').length &gt; 0;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (field === 'email') {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.context === ContactDetailsContext.EBilling || initialValueWasNotEmpty) {</span>
+<span class="cstat-no" title="statement not covered" >                validators.push(Validators.required );</span>
+            }
+        } else <span class="cstat-no" title="statement not covered" >if (field === 'mobile') {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.context === ContactDetailsContext.SMSPay || initialValueWasNotEmpty) {</span>
+<span class="cstat-no" title="statement not covered" >                validators.push(Validators.required );</span>
+            }
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private resolveContactDetailsContextFromRoute(): void {</span>
+<span class="cstat-no" title="statement not covered" >        this.contextId = this.activatedRoute.snapshot.paramMap.get('contextId');</span>
+&nbsp;
+        let routeParam = <span class="cstat-no" title="statement not covered" >this.activatedRoute.snapshot.paramMap.get('context') || '';</span>
+        let matchingEnumVal = <span class="cstat-no" title="statement not covered" >Object.keys(ContactDetailsContext).find((k<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >k.toLowerCase() === routeParam.toLowerCase())</span></span>;</span>
+        let context: ContactDetailsContext = <span class="cstat-no" title="statement not covered" >ContactDetailsContext[matchingEnumVal];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (context === undefined) {</span>
+<span class="cstat-no" title="statement not covered" >            if (routeParam) {</span>
+<span class="cstat-no" title="statement not covered" >                console.warn('Unknown contact details context in route');</span>
+            }
+<span class="cstat-no" title="statement not covered" >            context = ContactDetailsContext.GeneralContactDetails; </span>// set a sensible default
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.context = context;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private setHeaders() {</span>
+        let map = {
+            [ContactDetailsContext.EBilling]: 'Now we\'ll need your email address',
+            [ContactDetailsContext.SMSPay]: 'Now we\'ll need your mobile number'
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.heading = map[this.context] || 'Update your contact details';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        map = {</span>
+            [ContactDetailsContext.EBilling]: 'Enter it below to set up eBilling',
+            [ContactDetailsContext.SMSPay]: 'Enter it below to set up SMS Pay'
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.subHeading = map[this.context] || 'One easy place to update your contact details at any time';</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

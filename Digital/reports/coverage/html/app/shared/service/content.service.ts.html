@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\shared\service\content.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/shared/service/</a> content.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">19.18% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>14/73</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">36.36% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>8/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.69% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">17.65% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>12/68</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Inject, Injectable }     from '@angular/core';
+import { Http, RequestOptions } from '@angular/http';
+import { Observable }     from 'rxjs/Observable';
+import { ReplaySubject }  from 'rxjs/ReplaySubject';
+import { ApiService }     from '../../shared/service/api.service';
+import { ConfigService }  from './config.service';
+import { IContentService } from './contract/icontent.service';
+&nbsp;
+/**
+ * Provides static mock content to the application.
+ * Useful as a test dependency or local development when a Sitecore instance is not available.
+ *
+ * @export
+ * @class ContentMockService
+ */
+@Injectable()
+export class ContentService implements IContentService {
+&nbsp;
+    public content: Observable&lt;any&gt;;
+    public isLightMode: Observable&lt;boolean&gt;;
+    public <span class="cstat-no" title="statement not covered" >contentLoaded: ReplaySubject&lt;any&gt; = new ReplaySubject(1);</span>
+&nbsp;
+    protected <span class="cstat-no" title="statement not covered" >_isLoading: boolean = false;</span>
+    protected _contentSubject: ReplaySubject&lt;any&gt;;
+    protected <span class="cstat-no" title="statement not covered" >_isLightModeLoading: boolean = false;</span>
+    protected _lightModeSubject: ReplaySubject&lt;any&gt;;
+&nbsp;
+    constructor(
+        protected <span class="cstat-no" title="statement not covered" >_http: Http,</span>
+        @Inject('AppContentBranch') protected <span class="cstat-no" title="statement not covered" >appContentBranch: string,</span>
+        protected <span class="cstat-no" title="statement not covered" >_api: ApiService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        protected <span class="cstat-no" title="statement not covered" >_configService: ConfigService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" ></span></span></span>
+    ) {
+<span class="cstat-no" title="statement not covered" >        this._contentSubject = new ReplaySubject(1);</span>
+<span class="cstat-no" title="statement not covered" >        this.content = this._contentSubject.share();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this._lightModeSubject = new ReplaySubject(1);</span>
+<span class="cstat-no" title="statement not covered" >        this.isLightMode = this._lightModeSubject.share();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public load(): Observable&lt;any&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (this._isLoading) { <span class="cstat-no" title="statement not covered" >return this.content; </span>}</span>
+<span class="cstat-no" title="statement not covered" >        this._isLoading = true;</span>
+        let mockStorageKey = `${<span class="cstat-no" title="statement not covered" >this.appContentBranch}.mock.sitecore:file`;</span>
+        let testData = <span class="cstat-no" title="statement not covered" >localStorage.getItem(mockStorageKey);</span>
+<span class="cstat-no" title="statement not covered" >        if (testData) {</span>
+<span class="cstat-no" title="statement not covered" >            console.warn(`Mock content is set to "${testData}". To disable, clear local storage flag "${mockStorageKey}"`);</span>
+&nbsp;
+            let url = <span class="cstat-no" title="statement not covered" >`/_mockData/sitecore/${testData}.json`;</span>
+<span class="cstat-no" title="statement not covered" >            this.loadContentFromUrl(url);</span>
+<span class="cstat-no" title="statement not covered" >            return this.content;</span>
+&nbsp;
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.loadContentFromUrl(`./config/content.json`);</span>
+<span class="cstat-no" title="statement not covered" >            return this.content;</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public getLightMode(): Observable&lt;boolean&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (this._isLightModeLoading) {</span>
+<span class="cstat-no" title="statement not covered" >            return this.isLightMode;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        this._isLightModeLoading = true;</span>
+        let mockStorageKey = `${<span class="cstat-no" title="statement not covered" >this.appContentBranch}.mock.lightMode:file`;</span>
+        let testData = <span class="cstat-no" title="statement not covered" >localStorage.getItem(mockStorageKey);</span>
+<span class="cstat-no" title="statement not covered" >        if (testData) {</span>
+<span class="cstat-no" title="statement not covered" >            console.warn(`Mock content is set to "${testData}". To disable, clear local storage flag "${mockStorageKey}"`);</span>
+            let url = <span class="cstat-no" title="statement not covered" >`/_mockData/sitecore/${testData}.json`;</span>
+<span class="cstat-no" title="statement not covered" >            this.loadLightModeFromUrl(url);</span>
+<span class="cstat-no" title="statement not covered" >            return this.isLightMode;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.loadLightModeFromUrl(this._configService.current.aglSiteCoreWebsiteBaseUrl + `/svc/app/IsLightMode`);</span>
+<span class="cstat-no" title="statement not covered" >            return this.isLightMode;</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public getContent(): Observable&lt;any&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this.content;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    protected loadContentFromUrl(url: string<span class="fstat-no" title="function not covered" >) {</span></span>
+&nbsp;
+        // TODO: No handling here for failure for content to load?
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this._http</span>
+            .get(url)
+            .map((r<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+&nbsp;
+                let stringData = <span class="cstat-no" title="statement not covered" >r.text();</span>
+&nbsp;
+                let siteCoreUrl = <span class="cstat-no" title="statement not covered" >this._configService.current.aglSiteCoreWebsiteBaseUrl;</span>
+&nbsp;
+                // Fixes media URLs
+<span class="cstat-no" title="statement not covered" >                stringData = stringData.replace(new RegExp(`/-/media`, 'ig'), `${siteCoreUrl}/-/media`);</span>
+&nbsp;
+                // Fixes links to AEO
+<span class="cstat-no" title="statement not covered" >                stringData = stringData.replace(new RegExp(`"/aeo/`, 'ig'), `"${siteCoreUrl}/aeo/`);</span>
+&nbsp;
+                // Fixes links to the signup funnel
+<span class="cstat-no" title="statement not covered" >                stringData = stringData.replace(new RegExp(`/signup#`, 'ig'), `${siteCoreUrl}/signup#`);</span>
+&nbsp;
+                // Fixes all calls to services in the SiteCore website
+<span class="cstat-no" title="statement not covered" >                stringData = stringData.replace(new RegExp(`/svc/`, 'ig'), `${siteCoreUrl}/svc/`);</span>
+&nbsp;
+                // Fixes links to omm tracker
+<span class="cstat-no" title="statement not covered" >                stringData = stringData.replace(new RegExp(`/tracker`, 'ig'), `${siteCoreUrl}/tracker`);</span>
+&nbsp;
+                // Fixes any links that go to MyAccount routes
+<span class="cstat-no" title="statement not covered" >                stringData = stringData.replace(new RegExp(`/apps/my-account/`, 'ig'), `/`);</span>
+&nbsp;
+                let data = <span class="cstat-no" title="statement not covered" >JSON.parse(stringData);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                return data;</span>
+&nbsp;
+            })
+            .subscribe((response<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this._contentSubject.next(response);</span>
+<span class="cstat-no" title="statement not covered" >                if (this._api &amp;&amp; this._api.allContentLoaded) {</span>
+<span class="cstat-no" title="statement not covered" >                    this._api.allContentLoaded.subscribe((loaded<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                        this.contentLoaded.next(true);</span>
+                    });
+                }
+<span class="cstat-no" title="statement not covered" >                this._contentSubject.complete();</span>
+            },
+            (error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                console.error('Error in loading the content!', error);</span>
+            });
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    protected loadLightModeFromUrl(url: string<span class="fstat-no" title="function not covered" >) {</span></span>
+<span class="cstat-no" title="statement not covered" >        this._http</span>
+            .get(url, new RequestOptions({ withCredentials: true}))
+            .map((r<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >r.json())</span></span>
+            .subscribe((response<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this._lightModeSubject.next(response);</span>
+<span class="cstat-no" title="statement not covered" >                this._lightModeSubject.complete();</span>
+            });
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

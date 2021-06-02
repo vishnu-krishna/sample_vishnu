@@ -1,0 +1,155 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="heading">AGL Identity Emulation</h2>
+
+            <p class="heading">
+                Please select a customer below. A fake login token will be generated for
+                this customer, which can then be used for data claims on mock servers.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="tags col-md-6">
+            <div class="tags__heading">+ Tagged with:</div>
+            <div *ngFor="let tag of tags">
+                <input id="tag-{{tag.key}}" type="checkbox" [value]="tag.key" [checked]="tag.isSelected" (change)="tagChanged(tag, $event)">
+                <label for="tag-{{tag.key}}">{{tag.displayName}}</label>
+            </div>
+        </div>
+        <div class="tags col-md-6">
+            <div class="tags__heading">+ Dynamic Mocking:</div>
+            <div *ngFor="let dm of dynamicMocks; let first = first;" [class.tags--new-tag-group]="!first">
+                <div class="tags__description" *ngIf="dm.description">{{dm.description}}</div>
+                <div class="tags--horizontal" *ngFor="let dms of dm.states">
+                    <input id="dm-{{dms.key}}" type="radio" [name]="dms.groupKey" [value]="dms.key" [checked]="dms.isSelected" (change)="dynamicMockChanged(dms, $event)">
+                    <label for="dm-{{dms.key}}">{{dms.displayName}}</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="mockBusinessPartners">
+                <table>
+                    <tr>
+                        <th>Login:</th>
+                        <th style="width: 300px;">Customer:</th>
+                        <th>NAME ID:</th>
+                        <th style="width: 200px;">Accounts:</th>
+
+                        <th>ELEC:</th>
+                        <th>GAS:</th>
+
+                        <th>EV:</th>
+                        <th>SOLAR:</th>
+
+                        <th>Inflight:</th>
+                        <th>Restricted:</th>
+
+                        <th>Region:</th>
+                        <!-- <th>NameID:</th> -->
+                        <th>Description:</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>
+                            <input type="text" style="width: 280px;" (keyup)="nameFilterEvents.next($event)" />
+                        </th>
+                        <th>
+                            <input type="text" style="width: 280px;" (keyup)="nameIdFilterEvents.next($event)" />
+                        </th>
+                        <th>
+                            <select (change)="onChangeFilterAccountComparison($event)">
+                                <option
+                                *ngFor="let nct of numericalComparisonTypes">{{nct}}</option>
+                            </select>
+                            <select *ngIf="filterControlAccountLengthEnabled" (change)="onChangeFilterAccountLength($event)">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </th>
+                        <th>
+                            <select (change)="onChangeFilterElec($event)">
+                                <option
+                                    *ngFor="let bct of booleanComparisonTypes" [value]="bct">
+                                    {{bct}}
+                                </option>
+                            </select>
+                        </th>
+                        <th>
+                            <select (change)="onChangeFilterGas($event)">
+                                <option
+                                    *ngFor="let bct of booleanComparisonTypes" [value]="bct">
+                                    {{bct}}
+                                </option>
+                            </select>
+                        </th>
+                        <th>
+                            <select (change)="onChangeFilterEv($event)">
+                                <option
+                                    *ngFor="let bct of booleanComparisonTypes" [value]="bct">
+                                    {{bct}}
+                                </option>
+                            </select>
+                        </th>
+                        <th>
+                            <select (change)="onChangeFilterSolar($event)">
+                                <option
+                                    *ngFor="let bct of booleanComparisonTypes" [value]="bct">
+                                    {{bct}}
+                                </option>
+                            </select>
+                        </th>
+                        <th>
+                            <select (change)="onChangeFilterInflight($event)">
+                                <option
+                                    *ngFor="let bct of booleanComparisonTypes" [value]="bct">
+                                    {{bct}}
+                                </option>
+                            </select>
+                        </th>
+                        <th>
+                            <select (change)="onChangeFilterRestricted($event)">
+                                <option
+                                    *ngFor="let bct of booleanComparisonTypes" [value]="bct">
+                                    {{bct}}
+                                </option>
+                            </select>
+                        </th>
+                        <th colspan="2">
+
+                        </th>
+                    </tr>
+                    <tr
+                        [class.selected]="mockCustomer === customer"
+                        *ngFor="let customer of filteredMockCustomers">
+                            <td><input type="button" value="Login" (click)="onClickLogin(customer)"
+                                class="businessPartnerNumber" attr.data-business-partner-number="{{customer.businessPartnerNumber}}">
+                            </td>
+                            <td>{{customer.title}}</td>
+                            <td>{{customer.businessPartnerNumber}}</td>
+                            <td>{{customer?.accounts.length}}</td>
+
+                            <td><img width="20" *ngIf="customer.hasElecContract" src="./img/energy-icon.png" /> </td>
+                            <td><img width="20" *ngIf="customer.hasGasContract" src="./img/gas-icon.png" /></td>
+                            <td><img width="20" *ngIf="customer.hasEvContract" src="./svg/image_evVehicle_car.svg" ></td>
+                            <td><img width="20" *ngIf="customer.hasSolarContract" src="./svg/scs_icon_normal.svg" /></td>
+
+                            <td>{{customer.hasInflight}}</td>
+                            <td>{{customer.hasRestricted}}</td>
+
+                            <td>{{customer?.accounts[0]?.contracts[0]?.regionId}}</td>
+                            <!-- <td>{{customer.businessPartnerNumber}}</td> -->
+                            <td>{{customer.description}}</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="results">{{this.filteredMockCustomers.length}} matching customer(s)</div>
+        </div>
+    </div>
+</div>

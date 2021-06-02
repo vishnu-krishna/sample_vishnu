@@ -1,0 +1,56 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "dataGroup": "Account",
+            "status": "Complete",
+            "lastUpdated": "2017-05-10T04:03:45.6785729+00:00",
+            "failed": false
+        },
+        {
+            "dataGroup": "BillingHistory",
+            "status": "Complete",
+            "lastUpdated": "2017-05-10T04:03:44.8267641+00:00",
+            "failed": false
+        },
+        {
+            "dataGroup": "Dashboard",
+            "status": "Complete",
+            "lastUpdated": "2017-04-24T06:51:29.3789702+00:00",
+            "failed": false
+        },
+        {
+            "dataGroup": "Payments",
+            "status": "Complete",
+            "lastUpdated": "2017-04-24T06:51:29.5420993+00:00",
+            "failed": false
+        },
+        {
+            "dataGroup": "Usage",
+            "status": "Complete",
+            "lastUpdated": "2017-04-24T06:51:29.4980645+00:00",
+            "failed": true,
+            "errors": [
+                {
+                    "dataType": "Usage13Months",
+                    "account": "7025466058",
+                    "contract": "9402638730",
+                    "message": "Sorry, we were unable to retrieve your information. Please try again later.",
+                    "hasRfcError": true,
+                    "errorId": "002",
+                    "errorNumber": ""
+                },
+                {
+                    "dataType": "Usage13Months",
+                    "account": "7025466058",
+                    "contract": "9402638730",
+                    "message": "Sorry, we were unable to retrieve your information. Please try again later.",
+                    "hasRfcError": true,
+                    "errorId": "002",
+                    "errorNumber": ""
+                }
+            ]
+        }
+    ]
+}

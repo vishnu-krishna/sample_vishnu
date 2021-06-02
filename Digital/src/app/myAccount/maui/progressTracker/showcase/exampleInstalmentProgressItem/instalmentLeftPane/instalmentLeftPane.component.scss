@@ -1,0 +1,22 @@
+@import '../../../../maui';
+
+.instalment-left-pane {
+    &__primary-message {
+        font-family: $body-font-stack;
+        font-size: $body-font-size-small;
+        font-weight: bold;
+        line-height: $line-height-short;
+        color: $neutral-01;
+    }
+
+    &__secondary-message {
+        font-family: $body-font-stack;
+        font-size: $body-font-size-small;
+        line-height: $line-height-short;
+        color: $neutral-01;
+    }
+
+    &__message--grey {
+        color: $neutral-02 !important;
+    }
+}

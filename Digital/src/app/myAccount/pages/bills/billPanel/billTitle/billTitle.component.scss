@@ -1,0 +1,12 @@
+@import '../../../../../shared/style/variables';
+
+.bill-panel-title {
+    display: block;
+
+    &__title {
+        font-size: 16px;
+        font-family: $secondary-font-stack;
+        line-height: 20px;
+        font-weight: normal;
+    }
+}

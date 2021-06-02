@@ -1,0 +1,46 @@
+@import '../../../../../shared/style/variables';
+
+.credit-card {
+    &__logo {
+        padding-top: 9px;
+
+        .mat-icon {
+            height: 18px;
+            width: 30px;
+        }
+
+        &-text {
+            font-size: 12px;
+            font-weight: normal;
+            line-height: 17px;
+            display: inline-block;
+            vertical-align: top;
+            padding-left: 5px;
+        }
+    }
+
+    &__alert {
+        padding-top: 10px;
+    }
+
+    &__iFrame {
+        margin-top: 20px;
+
+        &-loader {
+            margin-top: 30px;
+        }
+
+        .paymentIframe {
+            height: 420px;
+            width: 100%;
+        }
+
+        .not-loaded {
+            height: 0px;
+        }
+
+        .has-errors {
+            height: 456px;
+        }
+    }
+}

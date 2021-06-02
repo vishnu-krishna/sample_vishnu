@@ -1,0 +1,28 @@
+@import '../../maui';
+@import '../../showcase';
+
+.showcase-toggle {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    width: 100%;
+    padding-bottom: $space-01;
+    border-bottom: 1px solid $neutral-04;
+
+    &__subtext {
+        display: inline-flex;
+
+        p {
+            min-width: $space-09;
+        }
+
+        agl-maui-toggle {
+            position: absolute;
+            right: 0;
+        }
+    }
+
+    h4 {
+        margin-bottom: $space-02;
+    }
+}

@@ -1,0 +1,51 @@
+@import '../homeProfile';
+
+$svgIconChevronHeight: 23px;
+$svgIconChevronWidth: 12px;
+
+.homeprofile-select {
+
+    &__header {
+        padding-top: $space-08;
+        @media #{$agl-layout-mobile} {
+            padding-top: $space-07;
+        }
+    }
+
+    &__subheader {
+        margin-bottom: $space-04;
+    }
+
+
+    &__body {
+        max-width: $content-width;
+        margin: 0 auto 75px auto;
+    }
+
+    &__address {
+        background-color: $neutral-08;
+        padding: $space-04;
+        margin-bottom: $space-03;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: $shadow-01;
+
+        &:hover {
+            box-shadow: $shadow-01-hover;
+            cursor: pointer;
+        }
+
+        &-selector {
+            margin-left: $space-01;
+
+            .with-arrow & {
+                @include maui-icon('svg/maui/fuelChip/icon_chevron_regular.svg', $svgIconChevronWidth, $svgIconChevronHeight);
+            }
+
+            :hover > & {
+                @include maui-icon('svg/maui/fuelChip/icon_chevron_hover.svg', $svgIconChevronWidth, $svgIconChevronHeight);
+            }
+        }
+    }
+}

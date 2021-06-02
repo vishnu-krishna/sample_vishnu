@@ -1,0 +1,82 @@
+<agl-maui-secondary-navigation
+    *ngIf="!isLoading"
+    display="true"
+    [displayBackButton]="displayBackButton"
+    text="Energy Insights subscription"
+    (clicked)="goBack()">
+</agl-maui-secondary-navigation>
+
+<div class="choose-service">
+    <div class="choose-service__loader" *ngIf="isLoading">
+        <img src="svg/button-spinner-white.svg" alt="loading">
+    </div>
+    <div>
+        <agl-maui-heading
+            heading="Choose your service">
+        </agl-maui-heading>
+
+        <div class="choose-service__subscribed" *ngIf="hasPostSetupContracts">
+            <agl-maui-heading class="choose-service__subheading"
+                subheading="Manage your services subscribed to Energy Insights emails">
+            </agl-maui-heading>
+
+            <div *ngFor="let contractDetails of energyInsightsService.energyInsightsContractsPostSetup">
+                <agl-maui-container [hasShadow]="true">
+                    <agl-maui-fuel-chip class="fuelchip"
+                        [fuelChipState]="MauiFuelChipState.PostSetupManage"
+                        [fuelType]="getMauiFuelChipFuelType(contractDetails.contract)"
+                        [fuelContext]="MauiFuelChipFuelContext.None"
+                        [contractAccountDetails]="CreateFuelChipContractAccountDetails(contractDetails)"
+                        [contractNumber]="contractDetails.contract.contractNumber"
+                        (selectorClick)="contractClicked(contractDetails)">
+                        <agl-maui-fuel-chip-message
+                            [primaryMessage]="getFuelChipMessage(contractDetails)"
+                            [primaryMessageLink]="changeButton"
+                            (linkClick)="contractClicked(contractDetails)">
+                        </agl-maui-fuel-chip-message>
+                    </agl-maui-fuel-chip>
+                </agl-maui-container>
+            </div>
+        </div>
+
+        <div class="choose-service__eligible" *ngIf="hasPreSetupContracts">
+            <agl-maui-heading class="choose-service__subheading"
+                [subheading]="preSetupHeading">
+            </agl-maui-heading>
+            <div *ngFor="let contractDetails of preSetupContracts()">
+                <agl-maui-container [hasShadow]="true">
+                    <agl-maui-fuel-chip class="fuelchip"
+                        [fuelChipState]="MauiFuelChipState.PreSetup"
+                        [fuelType]="getMauiFuelChipFuelType(contractDetails.contract)"
+                        [fuelContext]="MauiFuelChipFuelContext.None"
+                        [contractAccountDetails]="CreateFuelChipContractAccountDetails(contractDetails)"
+                        [contractNumber]="contractDetails.contract.contractNumber"
+                        (selectorClick)="contractClicked(contractDetails)">
+                        <agl-maui-fuel-chip-message
+                            [primaryMessage]="getFuelChipMessage(contractDetails)">
+                        </agl-maui-fuel-chip-message>
+                    </agl-maui-fuel-chip>
+                </agl-maui-container>
+            </div>
+        </div>
+        <div class="choose-service__ineligible" *ngIf="hasIneligibleContracts">
+            <agl-maui-heading class="choose-service__subheading"
+                subheading="Energy Insights is unavailable for these services">
+            </agl-maui-heading>
+            <div *ngFor="let contractDetails of energyInsightsService.energyInsightsContractsIneligible">
+                <agl-maui-container [hasShadow]="true">
+                    <agl-maui-fuel-chip class="fuelchip"
+                        [fuelChipState]="MauiFuelChipState.Ineligible"
+                        [fuelType]="getMauiFuelChipFuelType(contractDetails.contract)"
+                        [fuelContext]="MauiFuelChipFuelContext.None"
+                        [contractAccountDetails]="CreateFuelChipContractAccountDetails(contractDetails)"
+                        [contractNumber]="contractDetails.contract.contractNumber">
+                        <agl-maui-fuel-chip-message
+                            [primaryMessage]="getFuelChipMessage(contractDetails)">
+                        </agl-maui-fuel-chip-message>
+                    </agl-maui-fuel-chip>
+                </agl-maui-container>
+            </div>
+        </div>
+    </div>
+</div>

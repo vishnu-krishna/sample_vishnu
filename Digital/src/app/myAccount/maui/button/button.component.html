@@ -1,0 +1,44 @@
+<button #button
+        *ngIf="!isLink"
+        class="maui-button"
+        (click)="onButtonClicked()"
+        [disabled]="isDisabled || isLoading"
+        [ngClass]="{
+            'maui-button--animation': buttonClicked,
+            'maui-button--primary': isPrimary,
+            'maui-button--secondary': isSecondary,
+            'maui-button--tertiary': isTertiary,
+            'maui-button--disabled': isDisabled,
+            'maui-button--loading': isLoading,
+            'maui-button--large': isLarge && !isTertiary,
+            'maui-button--small': isSmall && !isTertiary,
+            'maui-button--large-tertiary': isLarge && isTertiary,
+            'maui-button--small-tertiary': isSmall && isTertiary
+        }">
+    <div *ngIf="isLoading" class="maui-button__loader">
+        <img *ngIf="!isSecondary" src="svg/button-spinner.svg" alt="loading">
+        <img *ngIf="isSecondary" src="svg/button-spinner-white.svg" alt="loading">
+    </div>
+    <div class="maui-button__content-wrapper">
+        <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
+    </div>
+</button>
+
+<!-- separate component since button in firefox doesn't permit
+     pointer-events override for desired link styling -->
+<div
+    *ngIf="isLink"
+    class="maui-button--link maui-button--small"
+    [ngClass]="{
+        'maui-button--link__disabled': isDisabled,
+        'maui-button--animation': buttonClicked,
+        'maui-button--loading': isLoading
+    }">
+    <div *ngIf="isLoading" class="maui-button__loader">
+        <img src="svg/button-spinner.svg" alt="loading">
+    </div>
+    <div class="maui-button__content-wrapper">
+        <a (click)="onButtonClicked()"><ng-container *ngTemplateOutlet="contentTemplate"></ng-container></a>
+    </div>
+</div>
+<ng-template #contentTemplate><ng-content></ng-content></ng-template>

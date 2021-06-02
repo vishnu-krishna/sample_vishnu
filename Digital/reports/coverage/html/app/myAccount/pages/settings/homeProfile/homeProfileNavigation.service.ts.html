@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\settings\homeProfile\homeProfileNavigation.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/settings/homeProfile/</a> homeProfileNavigation.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">47.95% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>35/73</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">6.67% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/30</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">13.04% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">46.38% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>32/69</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+&nbsp;
+<span class="fstat-no" title="function not covered" >export class HomeProfileUrls {</span>
+    public readonly <span class="cstat-no" title="statement not covered" >homePageUrl = '/settings/homeprofile';</span>
+    public readonly <span class="cstat-no" title="statement not covered" >surveyCompletionPageUrl = '/settings/homeprofile/thankYou';</span>
+    public readonly <span class="cstat-no" title="statement not covered" >surveyPageUrls = [</span>
+        '/settings/homeprofile/yourHome',
+        '/settings/homeprofile/cooling',
+        '/settings/homeprofile/heating',
+        '/settings/homeprofile/hotWater',
+        '/settings/homeprofile/fridgesAndFreezers',
+        '/settings/homeprofile/cooking',
+        '/settings/homeprofile/otherElectricalItems',
+        '/settings/homeprofile/poolAndSpa',
+    ];
+    public readonly <span class="cstat-no" title="statement not covered" >title = 'Home profile';</span>
+}
+&nbsp;
+export enum HomeProfilePage {
+    YourHome = 1,
+    Cooling,
+    Heating,
+    HotWater,
+    FridgesAndFreezers,
+    Cooking,
+    OtherElectricalItems,
+    PoolAndSpa
+}
+&nbsp;
+@Injectable()
+export class HomeProfileNavigationService {
+&nbsp;
+    private readonly surveyUrlsInLowerCase: string[];
+&nbsp;
+    constructor(
+        private <span class="cstat-no" title="statement not covered" >router: Router,</span>
+        private <span class="cstat-no" title="statement not covered" >hp: HomeProfileUrls<span class="fstat-no" title="function not covered" ></span></span>
+    ) {
+<span class="cstat-no" title="statement not covered" >        this.surveyUrlsInLowerCase = this.hp.surveyPageUrls.map((value<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >value.toLowerCase())</span></span>;</span>
+    }
+    /**
+     * Gets the Home Profile survey page that the current URL is pointing to.
+     */
+<span class="fstat-no" title="function not covered" >    public get currentPage(): number {</span>
+<span class="cstat-no" title="statement not covered" >        return this.surveyUrlsInLowerCase.indexOf(this.router.url.toLowerCase()) + 1;</span>
+    }
+    /**
+     * Gets the total number of Home Profile survey pages.
+     */
+<span class="fstat-no" title="function not covered" >    public get totalPages(): number {</span>
+<span class="cstat-no" title="statement not covered" >        return this.hp.surveyPageUrls.length;</span>
+    }
+    /**
+     * Gets the page text relevant to the current Home Profile survey page (e.g. 'Page x of y').
+     * @returns { boolean } Empty string if not inside Home Profile survey
+     */
+<span class="fstat-no" title="function not covered" >    public get pageText(): string {</span>
+<span class="cstat-no" title="statement not covered" >        return this.currentPage &gt; 0 ? `Page ${this.currentPage} of ${this.totalPages}` : '';</span>
+    }
+    /**
+     * Gets the secondary navigation text for Home Profile on non-mobile screens.
+     * @returns { string }
+     */
+<span class="fstat-no" title="function not covered" >    public get secondaryNavigationTitleForDesktop(): string {</span>
+<span class="cstat-no" title="statement not covered" >        return this.hp.title;</span>
+    }
+    /**
+     * Gets the secondary navigation text for Home Profile on a mobile screen. Returns null if the current location is not Home Profile.
+     * @returns { string }
+     */
+<span class="fstat-no" title="function not covered" >    public get secondaryNavigationTitleForMobile(): string {</span>
+<span class="cstat-no" title="statement not covered" >        return this.hp.title;</span>
+    }
+    /**
+     * Checks if the current URL is part of Home Profile survey (which excludes the Home Profile completion page)
+     * @returns { boolean }
+     */
+<span class="fstat-no" title="function not covered" >    public isInSurvey(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.surveyUrlsInLowerCase.indexOf(this.router.url.toLowerCase()) &gt; -1;</span>
+    }
+    /**
+     * Routes to the starting page of the Home Profile survey
+     * @returns { Promise&lt;boolean&gt; }
+     */
+<span class="fstat-no" title="function not covered" >    public startClick(): Promise&lt;boolean&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this.router.navigate([this.pageLink(1)]);</span>
+    }
+    /**
+     * Checks if the next button is to be displayed in relation to Home Profile
+     * @returns { boolean } True if the next button is to be displayed
+     */
+<span class="fstat-no" title="function not covered" >    public displayNext(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.currentPage &gt; 0</span>
+            &amp;&amp; this.currentPage &lt;= this.totalPages; // Last survey page can move next to completion page.
+    }
+    /**
+     * Checks if the back button is to be displayed in relation to Home Profile
+     * @returns { boolean } True if the back button is to be displayed
+     */
+<span class="fstat-no" title="function not covered" >    public displayBack(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.currentPage &gt; 0; </span>// Allow back button on Page 1 of the Home Profile survey
+    }
+    /**
+     * Handles the routing after the Home Profile survey is closed
+     * @returns { Promise&lt;boolean&gt; } A rejected Promise if Close operation does not apply to the current location
+     */
+<span class="fstat-no" title="function not covered" >    public closeClick(): Promise&lt;boolean&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this.closeLink &amp;&amp; this.router.navigate([this.closeLink])</span>
+            || Promise.reject(new Error('Invalid operation.'));
+    }
+    /**
+     * Routes to the next page relevant to the current Home Profile survey page
+     * @returns { Promise&lt;boolean&gt; } A rejected Promise if Next operation does not apply to the current location
+     */
+<span class="fstat-no" title="function not covered" >    public nextClick(): Promise&lt;boolean&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this.nextLink &amp;&amp; this.router.navigate([this.nextLink])</span>
+            || Promise.reject(new Error('Invalid operation.'));
+    }
+    /**
+     * Routes to the previous page relevant to the current Home Profile survey page
+     * @returns { Promise&lt;boolean&gt; } A rejected Promise if Back operation does not apply to the current location
+     */
+<span class="fstat-no" title="function not covered" >    public backClick(): Promise&lt;boolean&gt;  {</span>
+<span class="cstat-no" title="statement not covered" >        return this.previousLink &amp;&amp; this.router.navigate([this.previousLink])</span>
+            || Promise.reject(new Error('Invalid operation.'));
+    }
+    /**
+     * Routes to a specific page of the Home Profile survey
+     * @returns { Promise&lt;boolean&gt; } A rejected Promise if page number is invalid
+     */
+    public gotoSurveyPage(pageNumber: number<span class="fstat-no" title="function not covered" >): Promise&lt;boolean&gt; {</span>
+        const link = <span class="cstat-no" title="statement not covered" >this.pageLink(pageNumber);</span>
+<span class="cstat-no" title="statement not covered" >        return link &amp;&amp; this.router.navigate([this.pageLink(pageNumber)])</span>
+            || Promise.reject(new Error('Invalid operation.'));
+    }
+    /**
+     * Gets the link for the previous page in the Home Profile survey
+     * @returns { string | null } null if current location is not Home Profile survey
+     */
+<span class="fstat-no" title="function not covered" >    private get previousLink(): string | null {</span>
+<span class="cstat-no" title="statement not covered" >        if (!this.isInSurvey()) {</span>
+<span class="cstat-no" title="statement not covered" >            return null;</span>
+        }
+        let page = <span class="cstat-no" title="statement not covered" >this.currentPage;</span>
+<span class="cstat-no" title="statement not covered" >        if (page === 1) {</span>
+<span class="cstat-no" title="statement not covered" >            return this.hp.homePageUrl;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return this.pageLink(--page);</span>
+        }
+    }
+    /**
+     * Gets the link for the next page in the Home Profile survey
+     * @returns { string | null } null if current location is not Home Profile survey
+     */
+<span class="fstat-no" title="function not covered" >    private get nextLink(): string | null {</span>
+<span class="cstat-no" title="statement not covered" >        if (!this.isInSurvey()) {</span>
+<span class="cstat-no" title="statement not covered" >            return null;</span>
+        }
+        let page = <span class="cstat-no" title="statement not covered" >this.currentPage;</span>
+<span class="cstat-no" title="statement not covered" >        if (page === this.totalPages) {</span>
+<span class="cstat-no" title="statement not covered" >            return this.hp.surveyCompletionPageUrl;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return this.pageLink(++page);</span>
+        }
+    }
+    /**
+     * Gets the link to go to after Home Profile survey is closed
+     * @returns { string | null } null if current location is not Home Profile survey or completion page
+     */
+<span class="fstat-no" title="function not covered" >    private get closeLink(): string | null {</span>
+<span class="cstat-no" title="statement not covered" >        if (!this.isInSurvey()</span>
+            &amp;&amp; this.router.url.toLocaleLowerCase() !== this.hp.surveyCompletionPageUrl.toLocaleLowerCase()) {
+<span class="cstat-no" title="statement not covered" >            return null;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return this.hp.homePageUrl;</span>
+    }
+    /**
+     * Gets the link for a specific Home Profile survey page
+     * @param { number } pageNumber The page number
+     * @returns { string | null } null if page number is invalid
+     */
+    private pageLink(pageNumber: number<span class="fstat-no" title="function not covered" >): string | null {</span>
+<span class="cstat-no" title="statement not covered" >        return this.hp.surveyPageUrls[pageNumber - 1]; </span>// Page 1 would be zero index.
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

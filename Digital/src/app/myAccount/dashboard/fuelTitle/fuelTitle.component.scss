@@ -1,0 +1,36 @@
+@import '../../../shared/style/variables';
+@import '../../../shared/style/mixins';
+
+.fuel-title {
+    font-family: $primary-font-stack;
+    font-weight: bold;
+    font-size: 22px;
+    color: $brand-grey-g1;
+    line-height: 35px;
+    float: left;
+    width: 100%;
+
+    &-icon__elec {
+        float: left;
+
+        .mat-icon {
+            width: 25px;
+            height: 40px;
+        }
+    }
+
+    &-icon__gas {
+        float: left;
+        padding-bottom: 5px;
+
+        .mat-icon {
+            width: 25px;
+            height: 35px;
+        }
+    }
+
+    .fuel-type-title {
+        float: left;
+        margin-left: 14px;
+    }
+}

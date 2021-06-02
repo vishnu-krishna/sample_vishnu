@@ -1,0 +1,99 @@
+@import '../../../../maui/maui';
+@import '../../../../../shared/style/mixins';
+
+.monthly-billing-choose-date {
+    margin-top: 50px;
+    max-width: $content-width;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media #{$agl-layout-mobile} {
+        margin-top: $space-06;
+    }
+
+    .date-picker-container {
+        margin-top: $space-04;
+
+        &-wrapper {
+            padding-top: $space-04;
+        }
+    }
+
+    .upcoming-billings {
+        max-width: $content-width;
+        margin: 0 auto;
+        padding: 25px;
+
+        @media #{$agl-layout-mobile} {
+            max-width: 290px;
+            margin: 0 auto;
+            padding-top: 30px;
+            padding-left: 25px;
+        }
+
+        &--title {
+            color:  $primary-dark;
+            font-family: $display-font-stack;
+            font-size: $display-font-size-delta;
+            line-height: 28px;
+            text-align: center;
+            margin-bottom: $space-03;
+        }
+    }
+
+    .content-separator {
+        width: 80%;
+        margin: auto;
+        border-bottom: 1px solid $neutral-06;
+    }
+
+    .disclaimer-message {
+        color: $neutral-01;
+        font-family: $body-font-stack;
+        font-size: $body-font-size-smallest;
+        line-height: 18px;
+        padding: $space-04;
+        padding-top: 0px;
+
+        @media #{$agl-layout-mobile} {
+            padding: $space-03;
+            padding-top: 0px;
+        }
+
+        .disclaimer-terms-text {
+            color: $primary-dark;
+            cursor: pointer;
+        }
+    }
+
+    .flash-message-container {
+        margin-top: $space-03;
+    }
+
+    .terms-and-conditions-container {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 48px;
+        max-width: $content-width;
+    }
+
+    .button-container {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 35px;
+        max-width: $content-width;
+        text-align: center;
+
+        .cancel-button {
+            padding-top: $space-04;
+            color: $primary-dark;
+            font-family: $display-font-stack;
+            font-size: $body-font-size-small;
+            font-weight: bold;
+            letter-spacing: 1px;
+            line-height: 14px;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+}

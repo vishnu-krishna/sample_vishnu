@@ -1,0 +1,56 @@
+I confirm that I have read and agree to the
+<a id="paymentAssistanceTermsAndCondtionsLink" (click)="showTermsAndConditions()">instalment plan terms and conditions</a>.
+
+<agl-maui-lightbox #termsAndConditionsLightBox [title]="'Instalment Plan Terms and Conditions'" 
+    [buttonPrimaryText]="'ACCEPT AND CLOSE'"
+    (clickButtonPrimary)="onClickButtonPrimary()"
+    [buttonDismissText]="'CLOSE'"
+    (clickButtonDismiss)="onClickButtonDismiss()">
+    <div class="terms-and-conditions">
+        <div class="row">
+            <div class="col-xs-12 point-message">
+                1. For the duration of the instalment plan term, you must pay the instalment amounts as agreed by you.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 point-message">
+                2. Payments due under your instalment plan are in addition to amounts due for your continuing energy consumption. 
+                If you fail to adhere to your Instalment payment plan, 
+                AGL may terminate the agreed instalment plan and demand immediate payment of all outstanding amounts.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 point-message">
+                3. If you face difficulty in making the required payments under the instalment plan, you must contact AGL. Additional assistance 
+                may be available to you under AGL's Customer Hardship Policy. A copy of AGL's Customer Hardship Policy is available at <agl-link href="https://www.agl.com.au" size="smallest">agl.com.au</agl-link> or on request. 
+                You may make early repayment of the total amount of the remaining instalments to AGL in order to discharge your payment obligations under the plan. 
+                To arrange for early repayment of an instalment plan, please contact AGL on <agl-link href="tel:131 245" size="smallest">131 245</agl-link> any time 24 hours a day, 7 days a week. 
+                Early repayment of your instalment plan does not affect your obligation to pay invoices for your continuing energy consumption.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 point-message">
+                4. AGL may cancel an instalment plan if AGL has not received payment of an instalment, after the date on which that payment falls due.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 point-message">
+                5. If AGL cancels an instalment plan due to non-payment of an amount due, AGL will notify you of this in writing and you must pay the remaining balance of arrears immediately as required by AGL. 
+                If you fail to repay the remaining arrears, AGL may seek to recover the amounts owing through debt collection action and your details may be listed with a Credit Reporting Agency which could affect your ability to obtain credit in the future. 
+                If AGL cancels an instalment plan, AGL may reinstate the instalment plan at its discretion.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 point-message">
+                6. The terms and conditions outlined in this document do not apply to Bill Smoothing plans.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 point-message">
+                7. If you wish to dispute any aspect of the instalment plan, you should contact AGL on 
+                <agl-link href="tel:131 245" size="smallest">131 245</agl-link>, any time 24 hours a day, 7 days a week or write to us at AGL Customer Advocacy, Locked Bag 14120 
+                MCMC, Melbourne VIC 8001.
+            </div>
+        </div>
+    </div>
+</agl-maui-lightbox>

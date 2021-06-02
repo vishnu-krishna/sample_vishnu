@@ -1,0 +1,43 @@
+@import '../../../shared/style/variables';
+@import '../../../shared/style/mixins';
+@import '../../style/settings';
+
+.account-details {
+    font-family: $secondary-font-stack;
+    font-weight: bold;
+    font-size: 14px;
+
+    &-number {
+        display: inline-block;
+        padding-right: 3px;
+    }
+
+    &-address {
+        font-weight: normal;
+    }
+
+    &-fuel-icon {
+        display: inline-block;
+        vertical-align: middle;
+
+        mat-icon {
+            height: 18px;
+            width: 18px;
+            margin-left: -3px;
+
+            &:first-child {
+                margin-left: 0px;
+            }
+        }
+
+        img {
+            vertical-align: top;
+            margin-left: -3px;
+
+            &:first-child {
+                margin-left: 0px;
+            }
+        }
+    }
+}
+

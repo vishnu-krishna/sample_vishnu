@@ -1,0 +1,56 @@
+<div class="ssmr-wrapper" >
+
+    <div class="ssmr">
+
+        <div class="toolbar">
+            <div *ngIf="ssmrService?.isBackButtonAvailable()" class="toolbar--left" (click)="ssmrService?.onClickBack()">
+                <img src="svg/scc_modal_back_arrow.svg">
+            </div>
+            <div class="toolbar--right" (click)="ssmrService?.onClickClose()">
+                <img src="svg/scc_modal_close.svg">
+            </div>
+        </div>
+
+        <div class="content">
+            <agl-ssmr-safety
+                *ngIf="ssmrService?.currentStep==='Safety'">
+            </agl-ssmr-safety>
+            <div class="content--narrow">
+                <agl-ssmr-choose-service
+                    *ngIf="ssmrService?.currentStep==='ChooseService'">
+                </agl-ssmr-choose-service>
+                <agl-ssmr-meter-entry
+                    *ngIf="ssmrService?.currentStep==='MeterEntry'">
+                </agl-ssmr-meter-entry>
+                <agl-ssmr-submitting
+                    *ngIf="ssmrService?.currentStep==='Submitting'">
+                </agl-ssmr-submitting>
+                <agl-ssmr-oops
+                    *ngIf="ssmrService?.currentStep==='Oops'">
+                </agl-ssmr-oops>
+                <agl-ssmr-adjustment
+                    *ngIf="ssmrService?.currentStep==='Adjustment'">
+                </agl-ssmr-adjustment>
+                <agl-ssmr-chat
+                    *ngIf="ssmrService?.currentStep==='Chat'">
+                </agl-ssmr-chat>
+                <agl-ssmr-multi-meter-intro
+                    *ngIf="ssmrService?.currentStep==='MultiMeterIntro'" >
+                </agl-ssmr-multi-meter-intro>
+                <agl-ssmr-multi-register-onboard
+                    *ngIf="ssmrService?.currentStep==='MultiRegisterOnboard'" >
+                </agl-ssmr-multi-register-onboard>
+                <agl-ssmr-summary
+                    *ngIf="ssmrService?.currentStep==='Summary'" >
+                </agl-ssmr-summary>
+                <agl-ssmr-attach-photo
+                    *ngIf="ssmrService?.currentStep==='AttachPhoto'" >
+                </agl-ssmr-attach-photo>
+                <agl-ssmr-photo-intro
+                    *ngIf="ssmrService?.currentStep==='PhotoIntro'" >
+                </agl-ssmr-photo-intro>
+            </div>
+        </div>
+    </div>
+
+</div>

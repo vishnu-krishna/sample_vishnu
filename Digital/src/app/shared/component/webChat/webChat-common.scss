@@ -1,0 +1,138 @@
+@import '../../../myAccount/maui/maui';
+
+
+$unresolved-agent-status-background: $neutral-05;
+
+@mixin unresolved-agentstatus {
+    background-color: $unresolved-agent-status-background;
+    animation: fade 0.3s ease;
+    @keyframes fade {
+        from {
+            background-color: $neutral-08;
+        }
+
+        to {
+            background-color: $unresolved-agent-status-background;
+        }
+    }
+}
+
+@mixin resolved-agentstatus {
+    opacity: 1;
+    background-color: initial;
+    animation: fadeout 0.3s ease;
+    @keyframes fadeout {
+        from {
+            background-color: $unresolved-agent-status-background;
+        }
+
+        to {
+            background-color: initial;
+        }
+    }
+    animation: fadein 1.0s ease;
+    @keyframes fadein {
+        from {
+            opacity: 0.3;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+}
+
+@mixin wrapper-padding {
+    padding: $space-04;
+    @media #{$agl-layout-mobile} {
+        padding: $space-03;
+    }
+}
+
+.web-chat-padding-for-container {
+    @include wrapper-padding;
+}
+
+.web-chat {
+    $hide-icon-breakpoint: $agl-layout-mobile;
+
+    position: relative;
+
+    &-icon {
+        @include maui-icon('svg/webchat/web-chat.svg', 40px, 35px, 0, true);
+
+        @media #{$hide-icon-breakpoint} {
+            display: none;
+        }
+    }
+
+    agl-webchat {
+        display: inline-block;
+        margin-left: 70px; /* to make the gap between this and the icon appear even */
+        margin-top: -10px; /* to make the gap between this and the boarders appear even */
+        position: relative;
+        top: 3px; /* to account for the font appearing lower than desired */
+        max-width: 420px;
+        width: 100%;
+
+        @media #{$hide-icon-breakpoint} {
+            top: 0; /* reset - to account for the font appearing lower than desired */
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+
+    &-title {
+        @extend .text-normal;
+        @include resolved-agentstatus;
+        color: $neutral-01;
+        font-family: $display-font-stack;
+        font-weight: 600;
+
+        &--unresolved-agent-status {
+            @include unresolved-agentstatus;
+            font-size: $body-font-size-small; /* slightly smaller that the actual font */
+
+            @media #{$hide-icon-breakpoint} {
+                margin-top: 2px; /* keeps the div at the same height as the resolved agent status state */
+            }
+        }
+    }
+
+    &-button {
+        @extend .text-normal;
+        @include resolved-agentstatus;
+        @include anchor-styling;
+
+        &--unresolved-agent-status {
+            @include unresolved-agentstatus;
+            $gap-between-grey-boxes: 5px;
+
+            max-width: 140px;
+            margin-top: $gap-between-grey-boxes;
+            font-size: $body-font-size-small; /* slightly smaller that the actual font */
+
+            @media #{$hide-icon-breakpoint} {
+                display: block;
+                text-align: center;
+                margin: $gap-between-grey-boxes auto 0;
+            }
+        }
+    }
+
+    &-agent-offline-message,
+    &-agent-offline-message-bottom {
+        @extend .text-small-long;
+        @include resolved-agentstatus;
+        @include anchor-styling;
+
+        a {
+            white-space: nowrap;
+        }
+    }
+
+    &-agent-offline-message-bottom {
+        margin-top: $space-01;
+    }
+}

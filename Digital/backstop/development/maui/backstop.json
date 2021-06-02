@@ -1,0 +1,59 @@
+{
+  "id": "my-account-maui",
+  "viewports": [
+    {
+      "label": "phone",
+      "width": 320,
+      "height": 3072
+    },
+    {
+      "label": "tablet",
+      "width": 768,
+      "height": 3072
+    },
+    {
+      "label": "desktop",
+      "width": 992,
+      "height": 3072
+    }
+  ],
+  "onBeforeScript": "chromy/onBefore.js",
+  "onReadyScript": "chromy/onReady.js",
+  "scenarios": [
+    {
+      "label": "maui-components",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "url": "https://localhost:8080/maui",
+      "referenceUrl": "",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 0,
+      "hideSelectors": [],
+      "removeSelectors": [".example-code-container"],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": "",
+      "selectors": [".component"],
+      "selectorExpansion": true,
+      "misMatchThreshold" : 0.1,
+      "requireSameDimensions": true
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "report": ["CI"],
+  "resembleOutputOptions": {
+    "ignoreAntialiasing": true
+  },
+  "engine": "chrome",
+  "engineFlags": ["--no-sandbox", "--disable-web-security"],
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": true
+}

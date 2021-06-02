@@ -1,0 +1,52 @@
+[
+    {
+      "dataGroup": "Account",
+      "status": "Complete",
+      "lastUpdated": "2017-10-19T04:22:36.7603032+00:00",
+      "failed": false
+    },
+    {
+      "dataGroup": "BillingHistory",
+      "status": "Complete",
+      "lastUpdated": "2017-12-13T03:34:49.4934908+00:00",
+      "failed": false
+    },
+    {
+      "dataGroup": "Dashboard",
+      "status": "Complete",
+      "lastUpdated": "2017-10-19T04:22:36.7603032+00:00",
+      "failed": false
+    },
+    {
+      "dataGroup": "Payments",
+      "status": "Complete",
+      "lastUpdated": "2017-10-19T04:22:36.7803221+00:00",
+      "failed": false
+    },
+    {
+      "dataGroup": "Usage",
+      "status": "Complete",
+      "lastUpdated": "2017-10-19T04:22:31.1940382+00:00",
+      "failed": true,
+      "errors": [
+        {
+          "dataType": "Usage13Months",
+          "account": "7042397252",
+          "contract": "9403881265",
+          "message": "Sorry, we were unable to retrieve your usage charges. Please try again later.",
+          "hasRfcError": true,
+          "errorId": "002",
+          "errorNumber": ""
+        },
+        {
+          "dataType": "Usage13Months",
+          "account": "7042397252",
+          "contract": "9403881265",
+          "message": "Sorry, we were unable to retrieve your usage charges. Please try again later.",
+          "hasRfcError": true,
+          "errorId": "002",
+          "errorNumber": ""
+        }
+      ]
+    }
+  ]

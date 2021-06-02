@@ -1,0 +1,10 @@
+<div #collapsableContainer class="maui-expandable-container">
+    <div #gradient class="maui-expandable-container__gradient"></div>
+    <ng-content></ng-content>
+</div>
+<agl-maui-chevron-menu
+    [isUp]="!isCollapsed"
+    [upMessage]="expandedMessage"
+    [downMessage]="collapsedMessage"
+    (toggled)="toggleCollapse()">
+</agl-maui-chevron-menu>

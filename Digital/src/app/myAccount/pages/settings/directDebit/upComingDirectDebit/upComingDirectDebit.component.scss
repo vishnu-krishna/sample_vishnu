@@ -1,0 +1,112 @@
+@import '../../../../../shared/style/variables';
+
+.upcoming {
+
+    &__header {
+        font-weight: bold;
+        line-height: 18px;
+    }
+
+    &__text {
+        color: $brand-grey-g1;
+        font-family: $secondary-font-stack;
+        margin-top: 15px;
+        font-size: 14px;
+        line-height: 20px;
+
+        &__container {
+            padding-left: 3px;
+        }
+
+        &__icon {
+            display: inline-block;
+            vertical-align: top;
+            width: 12px;
+            height: 17px;
+            margin-right: 6px;
+            margin-top: 2px;
+
+            .ddfuelicon {
+                display: inline-block;
+                width: 12px;
+                height: 17px;
+            }
+        }
+
+        &__header {
+            vertical-align: top;
+            font-weight: bold;
+            display: inline-block;
+            width: 80px;
+        }
+
+        &__balance {
+            display: inline-block;
+            margin-right: 5px;
+            line-height: 20px;
+
+            &__amount {
+                font-weight: bold;
+
+                &-red {
+                    font-weight: bold;
+                    color: $brand-fire;
+                }
+            }
+
+            &__duedate {
+                display: block;
+                @media #{$agl-layout-mobile} {
+                    width: 85px;
+                }
+            }
+
+            &__date {
+                display: inline;
+                @media #{$agl-layout-mobile} {
+                    display: block;
+                }
+                @media #{$agl-layout-xs} {
+                    display: block;
+                    width: 120px;
+                }
+            }
+        }
+
+        &__extended__duedate {
+            display: inline;
+            @media #{$agl-layout-mobile} {
+                display: block;
+                width: 150px;
+            }
+        }
+    }
+}
+
+.space {
+    margin-bottom: 15px;
+}
+
+.grey {
+    color: $brand-grey-g3;
+}
+
+.block {
+    display: block;
+}
+
+.dd-divider {
+    width: 100%;
+    margin: auto;
+    border-width: 2px;
+    border-color: $brand-grey-g4;
+}
+
+.bill-smoothing-container {
+    width: 55%;
+    margin-left: 20px;
+}
+
+.float-left {
+    float: left;
+}

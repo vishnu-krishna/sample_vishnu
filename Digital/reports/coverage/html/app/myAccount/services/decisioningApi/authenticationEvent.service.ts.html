@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\services\decisioningApi\authenticationEvent.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/myAccount/services/decisioningApi/</a> authenticationEvent.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.33% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>15/45</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">36.36% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>8/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.5% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">32.5% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>13/40</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { CookieService } from '../../../shared/service/cookie.service';
+import { BusinessPartnerNumber } from '../../services/businessPartnerNumber/model/businessPartnerNumber';
+import { IDecisioningApiService } from '../../services/contract/idecisioningApi.service';
+import { DecisioningEventChannel } from '../../services/decisioningApi/model/decisioningEventChannel';
+import { DecisioningEventType, DecisioningEventTypeStorageKey } from '../../services/decisioningApi/model/decisioningEventType';
+import { IAuthenticationEventService } from '../contract/iauthenticationEvent.service';
+import { IBusinessPartnerNumberService } from '../contract/ibusinessPartnerNumber.service';
+import { UserAuthenticatedEventRequest, UserAuthenticatedEventRequestData } from './model/userAuthenticatedEventRequest';
+&nbsp;
+@Injectable()
+export class AuthenticationEventService implements IAuthenticationEventService {
+&nbsp;
+    constructor(
+        private <span class="cstat-no" title="statement not covered" >_decisioningService: IDecisioningApiService,</span>
+        private <span class="cstat-no" title="statement not covered" >_businessPartnerNumberService: IBusinessPartnerNumberService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >_cookieService: CookieService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >)</span> {</span></span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public sendAuthenticationEvent(): void {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (sessionStorage.getItem('Bearer') &amp;&amp; !sessionStorage.getItem(DecisioningEventTypeStorageKey.Authenticated.toString())) {</span>
+<span class="cstat-no" title="statement not covered" >            this._businessPartnerNumberService.getBusinessPartnerNumber().subscribe((bp<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                this.checkAuthenticationEventCookieAvailability(1, bp);</span>
+            });
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public clearAuthenticatedEventFlag(): void {</span>
+<span class="cstat-no" title="statement not covered" >        sessionStorage.removeItem(DecisioningEventTypeStorageKey.Authenticated.toString());</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    private checkAuthenticationEventCookieAvailability(attempt: number, bp: BusinessPartnerNumber<span class="fstat-no" title="function not covered" >): string {</span></span>
+        let cookieCheckRetryTimeout: number = <span class="cstat-no" title="statement not covered" >500;</span>
+        let maximumTimeoutMilliseconds: number = <span class="cstat-no" title="statement not covered" >20000;</span> // 20 seconds caters slow internet
+        let maximumAttempts: number = <span class="cstat-no" title="statement not covered" >maximumTimeoutMilliseconds / cookieCheckRetryTimeout;</span>
+<span class="cstat-no" title="statement not covered" >        if (attempt &gt;= maximumAttempts) {</span>
+<span class="cstat-no" title="statement not covered" >            this.sendAuthenticationEventInternal('', bp);</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
+         }
+        let gaId = <span class="cstat-no" title="statement not covered" >this._cookieService.getCookie('_ga');</span>
+<span class="cstat-no" title="statement not covered" >        if (gaId) {</span>
+<span class="cstat-no" title="statement not covered" >            this.sendAuthenticationEventInternal(gaId, bp);</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
+         }
+<span class="cstat-no" title="statement not covered" >        attempt++;</span>
+<span class="cstat-no" title="statement not covered" >        setTimeout(<span class="fstat-no" title="function not covered" >() =&gt; { <span class="cstat-no" title="statement not covered" >this.checkAuthenticationEventCookieAvailability(attempt, bp); </span>},</span> cookieCheckRetryTimeout);</span>
+    }
+&nbsp;
+    private sendAuthenticationEventInternal(gaId: string, bp: BusinessPartnerNumber<span class="fstat-no" title="function not covered" >) {</span>
+        let marketingCloudVisitorId: string;
+        let visitor = <span class="cstat-no" title="statement not covered" >window['visitor'];</span>
+<span class="cstat-no" title="statement not covered" >        if (visitor) {</span>
+<span class="cstat-no" title="statement not covered" >            marketingCloudVisitorId = visitor.getMarketingCloudVisitorID();</span>
+<span class="cstat-no" title="statement not covered" >            if (marketingCloudVisitorId) {</span>
+                let userAuthenticatedEventData = <span class="cstat-no" title="statement not covered" >new UserAuthenticatedEventRequestData(bp.bpId, bp.hashed, marketingCloudVisitorId, gaId);</span>
+                let userAuthenticatedEventRequest: UserAuthenticatedEventRequest = <span class="cstat-no" title="statement not covered" >{</span>
+                            channel: DecisioningEventChannel.MyAccount.toString(),
+                            type: DecisioningEventType.Authenticated.toString(),
+                            timeStamp: new Date().toJSON(),
+                            data: userAuthenticatedEventData,
+                        };
+<span class="cstat-no" title="statement not covered" >                this._decisioningService.sendUserAuthenticatedEvent(userAuthenticatedEventRequest);</span>
+<span class="cstat-no" title="statement not covered" >                sessionStorage.setItem(DecisioningEventTypeStorageKey.Authenticated.toString(), true.toString());</span>
+            }
+        }
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

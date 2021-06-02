@@ -1,0 +1,24 @@
+{
+    "status": 200,
+    "body": [
+        {
+            "number": "7027368187",
+            "firstName": "Barry",
+            "lastName": "McClinton",
+            "contracts": [
+                {
+                    "address": "74 Progress Road|Eltham North VIC 3095",
+                    "accountNumber": "7027368187",
+                    "fuelType": "Gas",
+                    "nameId": "AGL_0000C99DF8261EE5B6A22DE24E25C86B",
+                    "number": "9401726602",
+                    "planName": "Employee Freedom",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false
+                }
+            ]
+        }
+    ]
+}

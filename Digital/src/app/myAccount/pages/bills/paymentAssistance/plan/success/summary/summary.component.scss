@@ -1,0 +1,34 @@
+@import '../../../../../../maui/maui';
+
+.payment-assistance-plan-success-summary {
+    &__body {
+        padding: $space-04;
+
+        &-header {
+            font-family: $display-font-stack;
+            font-size: $display-font-size-delta;
+            line-height: $line-height-short;
+            color: $primary-dark;
+        }
+
+        &-header2 {
+            font-family: $display-font-stack;
+            font-size: $display-font-size-delta;
+            line-height: $line-height-short;
+            color: $primary-dark;
+            padding: $space-04 0;
+        }
+
+        &-table {
+            &-row {
+                display: flex;
+                justify-content: space-between;
+
+                div {
+                    line-height: $line-height-short;
+                    margin-top: $space-04;
+                }
+            }
+        }
+    }
+}

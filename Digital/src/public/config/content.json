@@ -1,0 +1,531 @@
+{
+    "selfService": {
+        "isEnabled": true,
+        "isNewLogo": true,
+        "isProxyPayPal": true,
+        "menuTitle": "SelfService",
+        "title": "SelfService",
+        "menu": {
+            "overview": {
+                "icon": "icon_overview_white",
+                "isEnabled": true,
+                "label": "Overview",
+                "route": "/overview"
+            },
+            "bills": {
+                "icon": "icon_bills_white",
+                "isEnabled": true,
+                "label": "Billing",
+                "route": "/bills"
+            },
+            "usage": {
+                "icon": "icon_usage_white",
+                "isEnabled": true,
+                "label": "Usage",
+                "route": "/usage"
+            },
+            "rewards": {
+                "icon": "icon_rewards_white",
+                "isEnabled": true,
+                "label": "Rewards",
+                "route": "/rewards"
+            },
+            "settings": {
+                "icon": "icon_settings_white",
+                "isEnabled": true,
+                "label": "Manage Account",
+                "route": "/settings",
+                "personal": {
+                    "icon": "icon_settings_white",
+                    "isEnabled": true,
+                    "isSubItem": true,
+                    "label": "Personal",
+                    "route": "/settings/personal",
+                    "seperatorAfter": false
+                },
+                "offers": {
+                    "icon": "icon_settings_white",
+                    "isEnabled": true,
+                    "isSubItem": true,
+                    "label": "Offers",
+                    "route": "/settings/offers",
+                    "seperatorAfter": true
+                },
+                "billing": {
+                    "icon": "icon_settings_white",
+                    "isEnabled": true,
+                    "isSubItem": true,
+                    "label": "Billing",
+                    "route": "/settings/billing",
+                    "seperatorAfter": false
+                },
+                "billSmoothing": {
+                    "icon": "icon_settings_white",
+                    "isEnabled": true,
+                    "isSubItem": true,
+                    "label": "Bill Smoothing",
+                    "route": "/settings/billsmoothing",
+                    "seperatorAfter": false
+                },
+                "myWallet": {
+                    "icon": "icon_settings_white",
+                    "isEnabled": true,
+                    "isSubItem": true,
+                    "label": "My Wallet",
+                    "route": "/settings/mywallet",
+                    "seperatorAfter": false
+                },
+                "directDebit": {
+                    "icon": "icon_settings_white",
+                    "isEnabled": true,
+                    "isSubItem": true,
+                    "label": "Direct Debit",
+                    "route": "/settings/directdebit",
+                    "seperatorAfter": false
+                },
+                "homeProfile": {
+                    "icon": "icon_settings_white",
+                    "isEnabled": true,
+                    "isSubItem": true,
+                    "label": "Home Profile",
+                    "route": "/settings/homeprofile",
+                    "seperatorAfter": false
+                },
+                "solar": {
+                    "icon": "icon_settings_solarCheck",
+                    "isEnabled": true,
+                    "isSubItem": true,
+                    "label": "Solar",
+                    "route": "/settings/solar",
+                    "seperatorAfter": false
+                }
+            },
+            "logout": {
+                "isEnabled": true,
+                "isSubItem": true,
+                "label": "Logout",
+                "route": "/svc/Authorization/LogoutAndRedirect"
+            }
+        },
+        "directDebit": {
+            "bankAccountBSBRequiredError": "Please enter a valid BSB number",
+            "bankAccountNameError": "Account name is required",
+            "bankAccountNameLabelText": "Account name",
+            "bankAccountNumberError": "A valid account number is required",
+            "bankAccountNumberLabelText": "Account number",
+            "bSBInvalidError": "A valid BSB number is required",
+            "bSBNumberLabelText": "BSB number",
+            "creditCardExpiresLabelText": "Expires",
+            "creditCardExpiryDateError": "Please select a valid expiry date",
+            "creditCardExpiryDateLabelText": "Expiry date",
+            "creditCardFootnote": "Please note: Credit card payments may incur a processing fee of up to 0.55% (inc GST).",
+            "creditCardNameOnCardError": "Cardholder’s name is required",
+            "creditCardNameOnCardLabelText": "Card holder name",
+            "creditCardNumberError": "A valid card number is required",
+            "creditCardNumberLabelText": "Card number",
+            "directDebitDescription": "Link your bank account, credit card or PayPal account to ensure you get any pay on time or direct debit discounts.",
+            "directDebitAddNewButtonText": "Add Payment Method",
+            "directDebitAddNewReplaceExistingInfo": "Adding a new direct debit method will replace the existing method.",
+            "directDebitAlreadySetupLinkText": "\"Keep this direct debit method",
+            "directDebitAlreadySetupText": "Adding a new direct debit will replace the existing method on file:",
+            "directDebitCloseButtonText": "Close",
+            "directDebitGenericErrorBody": "Sorry, we couldn't set up your direct debit. Please give it another try or <a target='_blank' href='https://www.agl.com.au/residential/contact-us'>contact us</a>.",
+            "directDebitGenericErrorHeader": "Well that didn’t go to plan.",
+            "directDebitHeaderText": "Direct Debit",
+            "directDebitSaveButtonText": "Save",
+            "directDebitTermsAndConditionCheckBox": "I understand that this bank account will be stored for future payments in My Wallet.",
+            "directDebitTermsAndConditionError": "Please accept the terms and conditions",
+            "directDebitTypeLabelText": "Payment method",
+            "paypalButtonLabelText": "Proceed to Paypal",
+            "paypalDescription": "<p>PayPal supports payments via bank transfer, credit card, debit card and AMEX.</p><p>The best thing is that we don’t charge any fees for payments via PayPal. And don’t worry if you don’t have an account, you can sign up at the same time.</p>",
+            "paypalGenericError": "Sorry, we couldn't set up your direct debit with PayPal. Please give it another try or <a target='_blank' href='https://www.agl.com.au/residential/contact-us'>contact us</a>."
+        },
+        "featureFlags": {
+            "oneMinuteMoveMvp": false
+        },
+        "jumpLinks": {
+            "moveHome": {
+                "code": "omm",
+                "image": "/-/media/AGL/SelfService/icon_move_home.svg",
+                "isFeatured": true,
+                "label": "MOVE HOME",
+                "note": "Move home online and manage your plan. ",
+                "url": "/sts/account/login?returnApp=OneMinuteMove&returnPath=%2Fsignup%23connection%2FrequestType%2FMI"
+            },
+            "rateMyMove": {
+                "code": "omm",
+                "image": "/-/media/AGL/SelfService/icon_rate_move.svg",
+                "isFeatured": true,
+                "label": "RATE MY MOVE",
+                "note": "Tell us about your move experience.",
+                "url": "/tracker"
+            },
+            "trackMyMove": {
+                "code": "omm",
+                "image": "/-/media/AGL/SelfService/icon_track_move.svg",
+                "isFeatured": true,
+                "label": "TRACK MY MOVE",
+                "note": "Check the status of your move.",
+                "url": "/tracker"
+            },
+            "addPlan": {
+                "isFeatured": false,
+                "label": "Add plan",
+                "url": "/sts/account/login?returnApp=OneMinuteMove&returnPath=%2Fsignup%23connection%2FrequestType%2Faf"
+            },
+            "changePlan": {
+                "isFeatured": false,
+                "label": "Change plan",
+                "url": "/sts/account/login?returnApp=OneMinuteMove&returnPath=%2Fsignup%23connection%2FrequestType%2Faf"
+            },
+            "addProperty": {
+                "isFeatured": false,
+                "label": "Add property",
+                "url": "/sts/account/login?returnApp=OneMinuteMove&returnPath=%2Fsignup%23connection%2FrequestType%2Fap"
+            }
+        },
+        "marketingTiles": {
+            "askJane": {
+                "details": "You deserve to know what concessions and rebates you're eligible for.",
+                "heading": "We can help",
+                "link": "https://www.agl.com.au/heretohelp",
+                "tileImage": "img/ask-jane-hero-billing.jpg",
+                "linkLabel": "CHECK NOW",
+                "showOn": [
+                    "/bills"
+                ]
+            },
+            "summer2016": {
+                "details": "Need help? Get the answers you're looking for at Community. Our online forum is your place to chat energy.",
+                "heading": "Community Support",
+                "link": "https://community.agl.com.au/?utm_source=My%20Account%20tile&utm_medium=Banner",
+                "tileImage": "img/Community_MyAccount_lowres.jpg",
+                "showOn": [
+                    "/overview"
+                ]
+            }
+        },
+        "oMMTracker": {
+            "connectionStatuses": {
+                "Requested": "Requested",
+                "Confirmed": "Confirmed",
+                "Checking": "Checking"
+            },
+            "connectionTitle": "Connection dates",
+            "didYouKnowTitle": "Did you know?",
+            "disconnectionTitle": "Disconnection dates",
+            "headerStatuses": {
+                "RequestReceived": "We're underway",
+                "ProcessingTenPercent": "We're underway",
+                "ProcessingNinetyPercent": "We're almost done",
+                "ReadyToConnect": "Ready to connect",
+                "WelcomeHome": "Welcome home",
+                "Checking": "An expert is looking into your connection."
+            },
+            "mismatchedAddressMessage": "Your disconnections will occur on the dates below.",
+            "needToMakeAChangeSubtitle": "An AGL expert is waiting to help you.",
+            "needToMakeAChangeTitle": "Need to make a change?",
+            "progressBar": {
+                "0": "Request received",
+                "1": "Processing",
+                "2": "Ready to connect"
+            },
+            "showTracker": true,
+            "singleFuelConnectionTitle": "Connection date",
+            "singleFuelDisconnectionTitle": "Disconnection date",
+            "welcomeHomeSubtitle": "We hope you’re settling in.",
+            "whatHappensNextItems": [
+                "welcome",
+                "next",
+                "information"
+            ],
+            "whatHappensNextTitle": "What happens next?",
+            "errorPageDescription": "Please try again in 5 minutes or call us on <strong>1300 134 245</strong>.",
+            "whatHappensNextReference": {
+                "information": {
+                    "description": "It's a good idea to view your tracker to keep an eye on your account and the progress of your move. Remember to read the 'Did you know?' section to avoid common problems that can delay your move. If your circumstances change, let us know so that we can adjust your move.",
+                    "heading": "What you need to do",
+                    "icon": "/-/media/AGL/OMM-Tracker/icon_KeepEye_orange.svg"
+                },
+                "next": {
+                    "description": "We'll be managing your energy connection on your behalf and we'll send you an email when we've confirmed we can supply you with AGL energy. We're taking care to make sure your account, plan and payment preferences move with you, to help ensure your move is as simple as possible. If we need to  make any changes, we'll email you.",
+                    "heading": "What we'll do next",
+                    "icon": "/-/media/AGL/OMM-Tracker/icon_email_orange.svg"
+                },
+                "welcome": {
+                    "description": "Your tracker contains all the information you'll need during your move. It shows updates on how your move is progressing and enables you to edit your move details if you need to (e.g. change your move date). Your tracker also includes some helpful tips for preventing common problems that can cause delays during a move.",
+                    "heading": "Welcome to your tracker",
+                    "icon": "/-/media/AGL/OMM-Tracker/icon_welcome_orange.svg"
+                }
+            },
+            "didYouKnow": {
+                "dualFuel": {
+                    "nSW": {
+                        "list": [
+                            "poweroff",
+                            "accessgaselectricity",
+                            "specialassistance"
+                        ]
+                    },
+                    "qLD": {
+                        "list": [
+                            "accessgaselectricity",
+                            "specialassistance"
+                        ]
+                    },
+                    "qLDVI": {
+                        "list": [
+                            "visualinspection",
+                            "accessgaselectricity",
+                            "specialassistance"
+                        ]
+                    },
+                    "sA": {
+                        "list": [
+                            "poweroff",
+                            "accessgaselectricity",
+                            "specialassistance"
+                        ]
+                    },
+                    "vIC": {
+                        "list": [
+                            "poweroff",
+                            "notifyus",
+                            "accessgaselectricity",
+                            "specialassistance"
+                        ]
+                    }
+                },
+                "electricity": {
+                    "nSW": {
+                        "list": [
+                            "poweroff",
+                            "accesselectricity",
+                            "specialassistance"
+                        ]
+                    },
+                    "qLD": {
+                        "list": [
+                            "accesselectricity",
+                            "specialassistance"
+                        ]
+                    },
+                    "qLDVI": {
+                        "list": [
+                            "visualinspection",
+                            "mainswitch",
+                            "specialassistance"
+                        ]
+                    },
+                    "sA": {
+                        "list": [
+                            "poweroff",
+                            "accesselectricity",
+                            "specialassistance"
+                        ]
+                    },
+                    "vIC": {
+                        "list": [
+                            "poweroff",
+                            "notifyus",
+                            "accesselectricity",
+                            "specialassistance"
+                        ]
+                    }
+                },
+                "gas": {
+                    "aLL": {
+                        "list": [
+                            "accessgas",
+                            "specialassistance"
+                        ]
+                    }
+                }
+            },
+            "didYouKnowReference": {
+                "accesselectricity": {
+                    "description": "Things that might restrict access to your meter include security gates, locks on the outside of your meter, or hazards on your property.",
+                    "heading": "Electricity meter access is required on your connection day.",
+                    "icon": "/-/media/AGL/OMM-Tracker/icon_access_meter.svg"
+                },
+                "accessgas": {
+                    "description": "Things that might restrict access to your meter include security gates, locks on the outside of your meter, or hazards on your property.",
+                    "heading": "Gas meter access is required on your connection day.",
+                    "icon": "/-/media/AGL/OMM-Tracker/icon_access_meter_gas.svg"
+                },
+                "accessgaselectricity": {
+                    "description": "Things that might restrict access to your meter include security gates, locks on the outside of your meter, or hazards on your property.",
+                    "heading": "Electricity and gas meter access is required on your connection day.",
+                    "icon": "/-/media/AGL/OMM-Tracker/icon_access_meter.svg"
+                },
+                "mainswitch": {
+                    "description": "Please ensure your main switch is in the off position and there is clear access to your electricity meter.",
+                    "heading": "Meter access on connection day.",
+                    "icon": "/-/media/AGL/OMM-Tracker/icon_access_meter.svg"
+                },
+                "notifyus": {
+                    "description": "Please notify us immediately if any electrical work at your new property may have affected its wiring since the property was last disconnected.",
+                    "heading": "Electrical work can stop us from connecting your property on time.",
+                    "icon": "/-/media/AGL/OMM-Tracker/icon_no_electrical_work.svg"
+                },
+                "poweroff": {
+                    "description": "Please ensure your main switch is in the off position. This is so your energy can be connected safely.",
+                    "heading": "Is your power off?",
+                    "icon": "/-/media/AGL/OMM-Tracker/icon_turn_off.svg"
+                },
+                "specialassistance": {
+                    "description": "If you have a known access issue that could impact your move, chat to us now so we can make the necessary arrangements on your behalf.",
+                    "heading": "Need special access assistance?",
+                    "icon": "/-/media/AGL/OMM-Tracker/icon_need_assistance.svg"
+                },
+                "visualinspection": {
+                    "description": "• If personal items are at the premises an adult over 18 years of age must be in attendance.\r\n• If the premises are completely empty (meaning no furniture or items of any kind, excluding fixtures and fittings), a key can be left to access the property. If this applies to you, chat to us now so we can make the necessary arrangements.",
+                    "heading": "About your visual safety inspection.",
+                    "icon": "/-/media/AGL/OMM-Tracker/icon_access_meter.svg"
+                }
+            },
+            "disconnectionSubtext": {
+                "dualFuel": {
+                    "ALL": "dualfuel2"
+                },
+                "electricity": {
+                    "ALL": "electricity2"
+                },
+                "gas": {
+                    "ALL": "gas"
+                }
+            },
+            "connectionSubtext": {
+                "dualFuel": {
+                    "VIC": "dualfuel1",
+                    "NSW": "dualfuel1",
+                    "SA": "dualfuel1",
+                    "QLDVI": "visualinsp",
+                    "QLD": "dualfuel2"
+                },
+                "electricity": {
+                    "VIC": "electricity1",
+                    "NSW": "electricity1",
+                    "SA": "electricity1",
+                    "QLDVI": "visualinsp",
+                    "QLD": "electricity2"
+                },
+                "gas": {
+                    "ALL": "gas"
+                }
+            },
+            "connectionSubtextReference": {
+                "gas": "Please ensure there is clear access to your gas meter.",
+                "electricity1": "Please ensure there is clear access to your electricity meter. If your power is off, it's important that your main switch is in the off position.",
+                "electricity2": "Please ensure there is clear access to your electricity meter.",
+                "visualinsp": "Your visual safety inspection is scheduled for [date] date, between [from]am and [to]pm.",
+                "dualfuel1": "Please ensure there is clear access to your electricity and gas meters. If your power is off, it's important that your main switch is in the off position.",
+                "dualfuel2": "Please ensure there is clear access to your electricity and gas meters."
+            }
+        },
+        "payg": {
+            "buttonText": {
+                "High": "Top Up",
+                "Medium": "Top Up",
+                "Low": "Top Up",
+                "Unavailable": "Top Up"
+            },
+            "contextualMessageContent": {
+                "High": "Top up to get back in credit.",
+                "Medium": "Don't forget to top up soon so you get a bonus credit.",
+                "Low": "Keep topping up so you stay in credit and receive bonus credits.",
+                "Unavailable": "We are either calculating your opening balance or experiencing technical difficulties."
+            },
+            "contextualMessageHeader": {
+                "High": "You've run out of credit.",
+                "Medium": "You're running out of credit.",
+                "Low": "Your account is looking good.",
+                "Unavailable": "Sorry your balance isn't available."
+            },
+            "directDebitMessage1": "Receive bonuses by topping up your account and keeping it in credit.",
+            "directDebitMessage2": "We’ll only direct debit from this account if and when a bill is due and your balance is in debit. ",
+            "estimatedReadTooltip": "Your prepaid balance shown contains estimated data based on your previous usage and will be updated when actual data becomes available.",
+            "highUrgencyTopupMessage": "<span style=\"color: #000000;\">Looks like you&rsquo;ve fallen behind. Top up to get back in credit and receive bonus credits.</span>",
+            "isActive": true,
+            "prepaidBalanceLabelText": "Prepaid balance",
+            "usageToolTipBody": "Usage charge is indicative only and you should refer to your bill for actual amount. This excludes concessions, conditional discounts, fixed charges and other adjustments.",
+            "usageToolTipHeader": "Usage charges"
+        },
+        "payment": {
+            "bonusEnterCustomAmountText": "Or enter another amount",
+            "bonusEnterStandardTopuptText": "Choose a standard top up",
+            "bonusTextDebit": "An applicable bonus will be applied once any debit balance is settled.",
+            "bonusUnavailableContent": "Top up as usual and we'll make sure any applicable bonus is added once your balance is in credit.",
+            "bonusUnavailableHeading": "We can't calculate your bonus right now.",
+            "creditCardInformation": "Use Mastercard or Visa – 0.55% transaction fee applies to direct debit and credit card payments.  ",
+            "creditStateProcessPaymentContent": "Please allow up to 2 business days for your recent payment to update your balance.",
+            "creditStateProcessPaymentHeader": "Processing your payment",
+            "debitStateBonusPendingHeader": "Checking bonus eligibility",
+            "debitStateBonusPendingMessage": "An applicable bonus will be applied once any debit balance is settled, this may take up to 2 business days.",
+            "emailFieldInvalidError": "Please enter a valid email address",
+            "emailReceiptErrorTextBody": "It probably got stuck in our outbox. Please give it another try.",
+            "emailReceiptErrorTextHeader": "Sorry, your email receipt was not sent.",
+            "emailReceiptSentTextBody": "We’ve emailed your receipt, it will be in your inbox shortly.",
+            "emailReceiptSentTextHeader": "Receipt sent",
+            "iframePaymentFailureContentMessage": "Don’t worry, you weren’t charged. Please give it another try.",
+            "iframePaymentFailureHeaderMessage": "Sorry, your payment was unsuccessful.",
+            "iframePaymentPageUnavailableContentMessage": "Please pay via PayPal or try again later.",
+            "iframePaymentPageUnavailableHeaderMessage": "Credit card payments are unavailable right now.",
+            "paymentAmountCreditMaxValidationError": "Enter an amount less than $100,000",
+            "paymentAmountMinValidationError": "Please enter a minimum of $10",
+            "paymentAmountPaypalMaxValidationError": "Enter an amount less than $10,000",
+            "paymentLoadingModalText": "Payment processing",
+            "paypalDescription": "<p>PayPal supports payments via bank transfer, credit card, debit card and AMEX.</p>\n<p>The best thing is that we don&rsquo;t charge any fees for payments via PayPal. And don&rsquo;t worry if you don&rsquo;t have an account, you can sign up at the same time.</p>",
+            "payPalUnavailableContent": "We recommend using the latest version of Chrome, Edge, Firefox or Safari.",
+            "payPalUnavailableHeader": "We’re working on supporting PayPal payments with your browser.",
+            "prepaidBalanceUnavailableAlertContent": "Top up as usual and we’ll make sure any applicable bonus is added once your balance is in credit.",
+            "prepaidBalanceUnavailableAlertHeading": "Sorry, your prepaid balance isn't available."
+        },
+        "pilotBanner": {
+            "betaButtonLabel": "Try new My Account",
+            "body": "We're building a better My Account to make it faster and easier to use. While we do this, for certain tasks you'll leave the new site. Your feedback will help us build a better My Account, so if we show you a survey, we'd love to hear your feedback.",
+            "isEnabled": true,
+            "oldButtonLabel": "Leave new website",
+            "oldSiteLink": "/aeo/myaccount/index",
+            "title": "You're on the new My Account"
+        },
+        "termsAndConditions": {
+            "bodyText": "<h6>How to understand this information</h6><p>The estimates and projections in My Account don’t replace your energy bills, which you can download from the Billing tab.</p><p>There may be significant differences between the projected cost and your actual bill for several reasons, including changes in your behaviour, conditional discounts and bill adjustments.</p><p>Data displayed in My Account (except historical bills) may be delayed, estimated or incomplete depending on the data we have received from your meter to date.</p><p>“Usage charges” don’t include fees or supply, green or demand charges, which will appear separately on your bill if they apply.</p>",
+            "headerText": "Terms and Conditions",
+            "versionNumber": "2"
+        },
+        "toolTips": {
+            "usageTooltip": {
+                "header": "Usage charges",
+                "description": "Usage charge is indicative only and you should refer to your bill for actual amount. This excludes concessions, conditional discounts, fixed charges and other adjustments."
+            }
+        },
+        "vasLinks": {
+            "setUpDirectDebit": {
+                "image": "/-/media/AGL/SelfService/iconExp_bill.png",
+                "isFeatured": true,
+                "label": "Setup Direct Debit",
+                "note": "Pay your bills with no fuss on time everytime.",
+                "url": "/apps/my-account/settings/directdebit"
+            },
+            "monthlyBilling": {
+                "isFeatured": false,
+                "label": "Set up Monthly Billing",
+                "title": "monthlyBilling",
+                "url": "/settings/monthlybilling",
+                "isRouteLink": true
+            },
+            "switchToEBilling": {
+                "isFeatured": false,
+                "label": "Switch to eBilling",
+                "url": "/settings/billing",
+                "isRouteLink": true
+            },
+            "viewPaymentOptions": {
+                "isFeatured": false,
+                "label": "View plan",
+                "url": "/aeo/energyplans/energy-plan"
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1170px" height="118px" viewBox="0 0 1170 118" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>foreground/full</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-2.0%" y="-5.6%" width="103.9%" height="111.2%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="responsive_full" transform="translate(15.000000, -297.000000)" fill="#F6A623">
+            <g filter="url(#filter-1)" id="foreground/full">
+                <g transform="translate(-161.000000, 310.000000)">
+                    <path d="M1462.51687,72.0956603 C1462.51687,72.0956603 1384.05157,16.6468544 1236.53683,16.6468544 C1089.02208,16.6468544 1066.00559,53.2639903 864.088243,53.2639903 C662.170894,53.2639903 633.923389,2 496.87068,2 C359.817971,2 324.247039,50.1253787 165.224048,50.1253787 L0,50.1253787 L0,90.1088181 L1460.42446,88.8349224" id="Path-3" fill-opacity="0.5"></path>
+                    <path d="M86,74.8712795 C86,74.8712795 151.35503,28.3014614 274.222486,28.3014614 C397.089942,28.3014614 416.260751,59.0551149 584.441028,59.0551149 C752.621305,59.0551149 776.149116,16 890.302568,16 C1004.45602,16 1034.08363,56.4190874 1166.53649,56.4190874 L1304.15432,56.4190874 L1304.15432,90 L86,90 L86,74.8712795 Z" id="Path-3"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

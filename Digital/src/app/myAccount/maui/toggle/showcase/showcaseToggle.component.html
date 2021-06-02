@@ -1,0 +1,74 @@
+<agl-maui-showcase-template heading="Toggle ON/OFF">
+    <div description>
+        <p>A toggle element that can be used in forms:</p> 
+        <ul>
+            <li>To allow users to enable or disable an online service (eBill/energy insights).</li>
+            <li>To enable a True/False or On/Off selection</li>
+        </ul>
+        <p>A loading spinner can be displayed if the action or request takes time.</p>
+
+        <div class="showcase-attributes">
+            <div class="header">Attributes</div>
+            <table>
+                <tr><td>toggleValue</td> <td>boolean</td> <td>Sets the toggle value to 'On' or 'Off'</td></tr>
+                <tr><td>isLoading</td> <td>boolean</td> <td>Determines the loading state of the toggle</td></tr>
+                <tr><td>isDisabled</td> <td>boolean</td> <td>Makes the toggle unclickable and displays a cursor style of 'not-allowed'</td></tr>
+            </table>
+        </div>
+    </div>
+    <div exampleCodeUsage>
+        {{codeUsage}}
+    </div>
+    <div exampleImplementation>
+        <agl-maui-showcase-example label="Basic Toggle setting ON/OFF value">
+            <div class="showcase-toggle">
+                <h4>Basic Toggle</h4>
+                <div class="showcase-toggle__subtext">
+                    <p>Toggle value is: {{isBasicToggleOn}}</p>
+                    <agl-maui-toggle
+                        [(toggleValue)]="isBasicToggleOn">
+                    </agl-maui-toggle>
+                </div>
+            </div>
+        </agl-maui-showcase-example>
+
+        <agl-maui-showcase-example label="Toggle with a spinner and toggle value changes">
+            <div class="showcase-toggle">
+                <h4>Energy Insights</h4>
+                <div class="showcase-toggle__subtext">
+                    <p>Set Mid Bill Update</p>
+                    <agl-maui-toggle
+                        [isLoading]="isLoading"
+                        (toggleValueChange)="toggleWithSpinner('withSpinner')">
+                    </agl-maui-toggle>
+                </div>
+            </div>
+        </agl-maui-showcase-example>
+
+        <agl-maui-showcase-example label="Toggle Value reverts back to its original value (e.g. Error happens)">
+            <div class="showcase-toggle">
+                <h4>Toggle Always Off</h4>
+                <div class="showcase-toggle__subtext">
+                    <p>Toggle value is: {{alwaysOffToggleValue}}</p>
+                    <agl-maui-toggle
+                        [(toggleValue)]="alwaysOffToggleValue"
+                        [isLoading]="isAlwaysOffToggleLoading"
+                        (toggleValueChange)="toggleWithSpinner('isAlwaysOff')">
+                    </agl-maui-toggle>
+                </div>
+            </div>
+        </agl-maui-showcase-example>
+
+        <agl-maui-showcase-example label="Toggle is disabled and unclickable">
+            <div class="showcase-toggle">
+                <h4>Disabled toggle</h4>
+                <div class="showcase-toggle__subtext">
+                    <p>Toggle value is: false</p>
+                    <agl-maui-toggle
+                        [isDisabled]="true">
+                    </agl-maui-toggle>
+                </div>
+            </div>
+        </agl-maui-showcase-example>
+    </div>
+</agl-maui-showcase-template>

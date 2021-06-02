@@ -1,0 +1,113 @@
+@import '../../../maui/maui';
+
+$homeprofile-survey-page-width: 100%;
+$homeprofile-survey-page-body-width: 900px;
+$homeprofile-progress-bar-max-width: 620px;
+$homeprofile-questionnaire-max-width: 380px;
+$homeprofile-questionnaire-min-height: 400px;
+
+$homeprofile-section-icons:
+'icon-yourhome.svg' 'icon-cooling.svg' 'icon-heating.svg' 'icon-hotwater.svg'
+'icon-fridgefreezer.svg' 'icon-cooking.svg' 'icon-entertainment.svg' 'icon-poolspa.svg';
+
+@mixin horizontally-center-in-parent {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin homeprofile-survey-page-styling() {
+    @include horizontally-center-in-parent();
+    @media #{$agl-layout-mobile} {
+        width: 100%;
+    }
+    width: $homeprofile-survey-page-width;
+    padding: 0;
+    font-weight: normal;
+}
+
+@mixin homeprofile-survey-title-styling() {
+    padding-top: $space-07;
+}
+
+@mixin homeprofile-progress-bar-styling() {
+    @include horizontally-center-in-parent();
+    margin-top: $space-04;
+    margin-bottom: $space-04;
+    text-align: center;
+    max-width: $homeprofile-progress-bar-max-width;
+}
+
+/* Styling for body (container) */
+@mixin homeprofile-body-styling() {
+    @include horizontally-center-in-parent();
+
+    @media #{$agl-layout-mobile} {
+        padding: $space-03;
+        width: 100%;
+    }
+
+    width: $homeprofile-survey-page-body-width;
+    box-sizing: border-box;
+    background-color: $neutral-08;
+    background-repeat: no-repeat;
+    box-shadow: $shadow-01;
+    font-family: $body-font-stack;
+    font-size: $body-font-size-big;
+    margin-top: $space-04;
+    margin-bottom: $space-04;
+    min-height: $homeprofile-questionnaire-min-height;
+    padding: $space-04;
+    padding-bottom: $space-05;
+}
+
+/* Styling for questionnaire. This is the container for the questions */
+@mixin homeprofile-survey-questionnaire-styling() {
+    margin-left: 0px;
+    max-width: $homeprofile-questionnaire-max-width;
+    min-height: $homeprofile-questionnaire-min-height;
+
+    @media #{$agl-layout-mobile} {
+        max-width: 100%;
+    }
+}
+
+/* Styling for headings within the questionnare */
+@mixin homeprofile-heading-styling() {
+    font-size: $display-font-size-delta;
+    font-family: $display-font-stack;
+    color: $primary-dark;
+    margin-bottom: $space-04;
+}
+
+/* Styling for stacked segments where there are (horizontal) borders between them */
+@mixin homeprofile-stack-segment-styling() {
+    border-bottom:  1px solid $neutral-05;
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+@mixin homeprofile-question-stack-segment-styling() {
+    @include homeprofile-stack-segment-styling();
+    margin-top: $space-01;
+    padding-top: $space-02;
+    padding-bottom: $space-04;
+}
+
+@mixin homeprofile-segmented-buttons-styling() {
+    height: 40px;
+}
+
+@mixin homeprofile-survey-question-styling() {
+    font-size: $body-font-size-normal;
+    margin-bottom: $space-03;
+}
+
+
+
+
+a {
+    @include link-styling;
+    font-size: $body-font-size-normal;
+}

@@ -1,0 +1,76 @@
+@import '../../_maui';
+
+@include maui-component-reset();
+
+:host {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+    color: $neutral-02;
+    line-height: $line-height-short;
+    padding: 14px 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    background-color: $neutral-08;
+
+    &:after {
+        position: absolute;
+        content: '';
+        width: 1px;
+        height: 62.5%;
+        border-left: 1px solid $neutral-03;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &:first-child {
+        &:after {
+            border-left: 0;
+        }
+    }
+
+    &:hover {
+        color: $primary-dark;
+    }
+}
+
+:host(.selected) {
+    background: $gradient-toggle;
+    color: $neutral-08;
+    cursor: default;
+    pointer-events: none;
+
+    &:after {
+        border-color: transparent;
+    }
+
+    &:hover {
+        color: $neutral-08;
+    }
+}
+
+.maui-segbtn {
+    &__button-text {
+        @media #{$agl-layout-tablet-and-smaller} {
+            display: none;
+        }
+
+        &-mobile {
+            @media #{$agl-layout-desktop-medium-and-greater} {
+                display: none;
+            }
+        }
+    }
+}
+
+.selected {
+    & + :host {
+        &:after {
+            border-color: transparent;
+        }
+    }
+}

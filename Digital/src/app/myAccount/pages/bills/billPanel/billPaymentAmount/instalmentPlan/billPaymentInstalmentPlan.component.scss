@@ -1,0 +1,12 @@
+@import '../../../../../maui/_maui.scss';
+
+.instalment-plan {
+    &__owing-balance {
+        font-size: $body-font-size-small;
+        padding: $space-03 0 0 0;
+
+        &--currency {
+            font-weight: bold;
+        }
+    }
+}

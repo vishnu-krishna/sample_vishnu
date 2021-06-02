@@ -1,0 +1,36 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "account": "7032112521",
+            "contract": "9402239719",
+            "overdue": 0,
+            "dueDate": null,
+            "currentBalance": 0,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": true
+        },
+        {
+            "account": "7032112521",
+            "contract": "9402273534",
+            "overdue": 0,
+            "dueDate": "01/03/2018",
+            "currentBalance": 84.47,
+            "totalPayment": 84.47,
+            "billSmoothing": false,
+            "directDebit": true
+        },
+        {
+            "account": "7032112521",
+            "contract": "9404760834",
+            "overdue": 0,
+            "dueDate": null,
+            "currentBalance": 0,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": true
+        }
+    ]
+}

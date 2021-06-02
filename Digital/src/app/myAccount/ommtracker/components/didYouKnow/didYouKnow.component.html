@@ -1,0 +1,21 @@
+<div class="row" *ngIf="didYouKnowViewModel && didYouKnowViewModel.didYouKnowMsgList.length!=0">
+    <div>
+        <div class="didyouknow">
+            <div class="didyouknow__header">{{didYouKnowViewModel.didYouKnowTitle}}</div>
+            <div class="didyouknow__row">
+                <div *ngFor="let container of didYouKnowViewModel.didYouKnowMsgList; let i = index" class="didyouknow__container">
+                    <div class="didyouknow__container__row">
+                        <div class="didyouknow__container__row__icon col s12" >
+                            <img [src]="container.icon">
+                        </div>
+                        <div class="didyouknow__container__row__content col s12">
+                            <div class="didyouknow__container__row__content__heading">{{container.heading}}</div>
+                            <div class="didyouknow__container__row__content__description" *ngIf="container.description !== undefined || ''" [innerHtml]="container?.description| aglSafeHtml"></div>
+                            <div class="didyouknow__container__divider" [class.no-border]="i === didYouKnowViewModel.didYouKnowMsgList.length - 1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

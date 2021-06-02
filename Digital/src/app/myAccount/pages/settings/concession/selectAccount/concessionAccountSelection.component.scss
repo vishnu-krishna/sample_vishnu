@@ -1,0 +1,122 @@
+@import '../../../../maui/maui';
+
+$chevronIconHeight: 23px;
+$chevronIconWidth: 12px;
+$svgIconFuelHeight: 30px;
+$svgIconFuelWidth: 20px;
+
+.concession-accounts {
+    padding-top: 50px;
+    max-width: $content-width;
+    margin: 0 auto;
+
+    @media #{$agl-layout-mobile} {
+        padding-left: $space-03;
+        padding-right: $space-03;
+    }
+
+    &__spinner {
+        margin-top: 125px;
+    }
+
+    &__heading {
+        margin-top: $space-06;
+        margin-bottom: $space-04;
+
+        @media #{$agl-layout-mobile} {
+            margin-top: $space-04;
+        }
+    }
+
+    &__account {
+        margin-bottom: $space-03;
+
+        &-wrapper {
+            display: flex;
+            justify-content: space-between;
+
+            padding: $space-04;
+            @media #{$agl-layout-mobile} {
+                padding: $space-03;
+            }
+
+            &:hover {
+                box-shadow: $shadow-01-hover;
+                cursor: pointer;
+            }
+        }
+
+        &-address {
+            display: flex;
+            padding-right: $space-03;
+
+            &:not(:last-child) {
+                padding-bottom: $space-04;
+                @media #{$agl-layout-mobile} {
+                    padding-bottom: $space-03;
+                }
+            }
+
+            &-fueltype {
+                min-width: $svgIconFuelWidth + 5;
+                margin-top: $space-01;
+
+                &-electricity {
+                    @include maui-icon('svg/maui/fuelChip/icon_elec.svg', $svgIconFuelWidth, $svgIconFuelHeight);
+                }
+
+                &-gas {
+                    @include maui-icon('svg/maui/fuelChip/icon_gas.svg', $svgIconFuelWidth, $svgIconFuelHeight);
+                }
+            }
+
+            &-details {
+                color: $neutral-01;
+                font-family: $body-font-stack;
+                font-size: $display-font-size-delta;
+                padding-left: $space-02;
+
+                &-address {
+                    font-family: $body-font-stack;
+                    font-size: $display-font-size-delta;
+
+                    @media #{$agl-layout-mobile} {
+                        font-size: $body-font-size-big;
+                    }
+
+                    &-no-wrap {
+                        white-space: nowrap;
+                    }
+                }
+
+                &-account-number {
+                    @extend .text-normal;
+                    font-family: $body-font-stack;
+                    color: $neutral-02;
+                    margin-top: $space-01;
+
+                    @media #{$agl-layout-mobile} {
+                        font-size: $body-font-size-smallest;
+                    }
+                }
+            }
+        }
+
+        &-chevron {
+            &-regular-icon {
+                @include maui-icon('svg/maui/fuelChip/icon_chevron_regular.svg', $chevronIconWidth, $chevronIconHeight);
+            }
+
+            &-hover-icon {
+                @include maui-icon('svg/maui/fuelChip/icon_chevron_hover.svg', $chevronIconWidth, $chevronIconHeight);
+            }
+
+            &-regular-icon,
+            &-hover-icon {
+                position: relative;
+                top: 50%;
+                margin-top: -$chevronIconHeight / 2;
+            }
+        }
+    }
+}

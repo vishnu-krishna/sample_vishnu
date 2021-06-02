@@ -1,0 +1,204 @@
+@import '../../../maui/maui';
+@import '../../rewards';
+
+$brand-black: #000000;
+
+:host {
+    &.cta-tile--no-margin {
+        .cta-tile-module {
+            margin-bottom: 0;
+        }
+    }
+
+    .cta-tile-module {
+        background-color: $neutral-08;
+        box-shadow: $rewards-tile-shadow;
+        background-position: center;
+        background-size: fill;
+        padding: 40px 20px 20px;
+        text-align: center;
+        margin: 0 auto;
+        position: relative;
+        margin-bottom: 30px;
+
+        &:after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(-180deg, rgba($brand-black, 0) 0%, rgba($brand-black, 0.97) 100%);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        &__image-container {
+            display: none;
+            padding-bottom: 15px;
+
+            svg {
+                height: 100%;
+            }
+
+            img {
+                max-height: 100px;
+            }
+        }
+
+        &__inner {
+            max-width: 100%;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+        }
+
+        &__buttons {
+            width: 100%;
+
+            agl-maui-button {
+                margin-bottom: 10px;
+                max-width: 320px;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
+        }
+
+        .gamma {
+            max-width: 340px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        p {
+            max-width: 400px;
+            margin: 0 auto 30px;
+        }
+
+        &--light-text {
+            .gamma,
+            p {
+                color: $neutral-08;
+            }
+        }
+
+        &--dark-text {
+            .gamma,
+            p {
+                color: $brand-black;
+            }
+        }
+
+        &--image {
+            padding-top: 25px;
+
+            &::after {
+                content: none;
+            }
+
+            & .cta-tile-module__image-container {
+                display: block;
+
+                .cta-tile-module__image--horizontal {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @media #{$agl-layout-mobile} {
+        .cta-tile-module__image-container {
+
+            img {
+                max-height: 60px;
+            }
+        }
+    }
+
+    @media #{$agl-layout-tablet-and-greater} {
+        .cta-tile-module {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 30px;
+            height: 450px;
+
+            &__buttons {
+                text-align: center;
+
+                agl-maui-button {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    clear: both;
+                }
+            }
+
+            &--image {
+                padding-top: 0;
+
+                & .cta-tile-module__image-container {
+                    margin-top: 40px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                }
+            }
+        }
+    }
+
+    @media #{$agl-layout-desktop-medium-and-greater} {
+        .cta-tile-module {
+            height: 420px;
+        }
+
+        &.cta-tile--row {
+            display: block;
+            width: 100%;
+
+            .cta-tile-module {
+                flex-direction: row;
+                height: auto;
+                min-height: 295px;
+
+                &__inner {
+                    flex: 1;
+                    text-align: left;
+                    padding: 0 10px 0 40px;
+                }
+
+                &__buttons {
+                    width: auto;
+                    flex: 1;
+
+                    agl-maui-button {
+                        margin-bottom: 0;
+                    }
+                }
+
+                &--image {
+                    padding-bottom: 0;
+                    padding-top: 0;
+
+                    & .cta-tile-module__image-container {
+                        display: block;
+                        max-width: 26%;
+                        flex: 1;
+                        padding-left: 20px;
+                        padding-bottom: 0;
+                        margin-top: 0px;
+                        height: auto;
+
+                        .cta-tile-module__image--vertical {
+                            display: none;
+                        }
+
+                        .cta-tile-module__image--horizontal {
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

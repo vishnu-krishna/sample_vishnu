@@ -1,0 +1,18 @@
+@import '../../../../../../maui/maui';
+@import '../../../../../../../shared/style/variables';
+
+.terms-and-conditions {
+    font-size: $body-font-size-smallest;
+    color: $brand-grey-g1;
+    font-family: $secondary-font-stack;
+    margin-top: 20px;
+    text-align: left;
+
+    .point-message {
+        padding-bottom: $space-03;
+
+        &-link {
+            font-size: $body-font-size-smallest;
+        }
+    }
+}

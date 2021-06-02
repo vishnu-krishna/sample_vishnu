@@ -1,0 +1,20 @@
+<div class="homeprofile-thankyou">
+
+    <div class="homeprofile-thankyou-header">
+        <agl-maui-confirmation-banner text="Thank you for setting up your home profile" [withOverlapContainer]="true">
+        </agl-maui-confirmation-banner>
+    </div>
+
+    <div class="homeprofile-thankyou-body">
+        <agl-maui-container [hasShadow]="true">
+            <div class="homeprofile-thankyou-body__content">
+                <agl-home-profile-summary></agl-home-profile-summary>
+            </div>
+        </agl-maui-container>
+    </div>
+
+    <div class="homeprofile-thankyou-footer">
+        <agl-maui-button (clicked)="close()" type="primary">Close</agl-maui-button>
+    </div>
+
+</div>

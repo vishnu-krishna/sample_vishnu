@@ -1,0 +1,2606 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\shared\service\dataLayer.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/shared/service/</a> dataLayer.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">53.17% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>176/331</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">53.52% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>38/71</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">18.75% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>15/80</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">54.38% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>174/320</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+690
+691
+692
+693
+694
+695
+696
+697
+698
+699
+700
+701
+702
+703
+704
+705
+706
+707
+708
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746
+747
+748
+749
+750
+751
+752
+753
+754
+755
+756
+757
+758
+759
+760
+761
+762
+763
+764
+765
+766
+767
+768
+769
+770
+771
+772
+773
+774
+775
+776
+777
+778
+779
+780
+781
+782
+783
+784
+785
+786
+787
+788
+789
+790
+791
+792
+793
+794
+795
+796
+797
+798
+799
+800
+801
+802
+803
+804
+805
+806
+807
+808
+809
+810
+811
+812
+813
+814
+815
+816
+817
+818
+819
+820
+821
+822
+823
+824
+825
+826
+827
+828
+829
+830
+831
+832
+833
+834
+835
+836
+837
+838
+839
+840
+841
+842
+843
+844
+845
+846
+847
+848</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable, NgZone } from '@angular/core';
+import { IBusinessPartnerNumberService } from '../../myAccount/services/contract/ibusinessPartnerNumber.service';
+import { PaymentMethodName } from './../globals/paygConstants';
+import { ApiService } from './api.service';
+import { JwtDecoderService } from './jwt.decoder.service';
+&nbsp;
+declare let utag: any;
+&nbsp;
+export enum EventTypes {
+    Payment =  'payment',
+    OmmSuccess =  'omm-success',
+    OmmError =  'omm-error',
+    PaygButton =  'PAYGButton',
+&nbsp;
+    SccRegisterBatteryError =  'scc-register-battery-error',
+    SccRegisterHasBattery =  'scc-register-has-battery',
+    SccRegisterSolarDetails =  'scc-register-solar-details',
+    SccRegisterSuccess =  'scc-register-success',
+    SccRegisterError =  'scc-register-error',
+    SccSettingsHasBattery =  'scc-settings-has-battery',
+    SccSettingsHasBatteryError =  'scc-settings-has-battery-error',
+    SccSettingsDeregister =  'scc-settings-deregister',
+    SccSettingsDeregisterError =  'scc-settings-deregister-error',
+    SccSettingsSolarDetails =  'scc-settings-update-solar-details',
+    SccSettingsSolarDetailsError =  'scc-settings-update-solar-details-error',
+    SccUpdateSystemDetailsCorrection =  'scc-update-system-details-correction',
+    SccUpdateSystemDetailsCorrectionError =  'scc-update-system-details-correction-error',
+    SccUpdateSystemDetailsModification =  'scc-update-system-details-modification',
+    SccUpdateSystemDetailsModificationError =  'scc-update-system-details-modification-error',
+&nbsp;
+    ContractAccountsReturned =  'Contract Accounts returned',
+&nbsp;
+    SccMonthlyEmailPreferencesYes =  'scc-monthly-email-preference-yes',
+    SccMonthlyEmailPreferencesYesError =  'scc-monthly-email-preference-yes-error',
+    SccMonthlyEmailPreferencesNo =  'scc-monthly-email-preference-no',
+    SccMonthlyEmailPreferencesNoError =  'scc-monthly-email-preference-no-error',
+&nbsp;
+    SccStatusChangeEmailPreferenceYes =  'scc-status-change-email-preference-yes',
+    SccStatusChangeEmailPreferenceYesError =  'scc-status-change-email-preference-yes-error',
+    SccStatusChangeEmailPreferenceNo =  'scc-status-change-email-preference-no',
+    SccStatusChangeEmailPreferenceNoError =  'scc-status-change-email-preference-no-error',
+    SccBannerOfferDisplayed =  'scc-banner-offer-displayed',
+    SccBannerOfferDismissed =  'scc-banner-offer-dismissed',
+}
+&nbsp;
+type PaymentTypes = 'credit-card' | 'paypal';
+&nbsp;
+const CURRENCY_AUD = 'AUD';
+const LANGUAGE_CODE_EN = 'EN';
+const SITE_NAME_MY_ACCOUNT = 'MyAccount';
+&nbsp;
+/** Important: Since `utag` methods can take a while to complete, it is essential you run them outside
+ *  of angular zones.  In particular, this can cause protractor tests to fail to detect the completion
+ *  of angular async tasks and timeout waiting for synchronisation.
+ */
+@Injectable()
+export class DataLayerService {
+    private <span class="cstat-no" title="statement not covered" >optionalPageVariables: OptionalPageVariable[] = [];</span>
+&nbsp;
+    constructor(
+        private <span class="cstat-no" title="statement not covered" >jwtDecoderService: JwtDecoderService,</span>
+        private <span class="cstat-no" title="statement not covered" >apiService: ApiService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >ngZone: NgZone<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >businessPartnerNumberService: IBusinessPartnerNumberService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >)</span> {</span></span>
+&nbsp;
+        // Typically set "noview" flag (no first page automatic view event) to true for Single Page Apps (SPAs)
+        (&lt;any&gt; <span class="cstat-no" title="statement not covered" >window).utag_cfg_ovrd = {noview: true};</span>
+        (&lt;any&gt; <span class="cstat-no" title="statement not covered" >window).utag_data = {};</span>
+    }
+&nbsp;
+    /**
+     * Sends a dayalayer push for payments
+     * @param {PageChannel} page
+     * @param paymentType
+     * @param {PageType} pageType
+     * @param receiptNumber
+     * @param reference
+     * @param {SiteSubSection} siteSubSection
+     * @param {boolean} storeDetails
+     * @param {boolean} paymentSuccessful
+     * @param amount
+     */
+    public pushPayment(page: PageChannel,
+                       paymentType: any,
+                       pageType: PageType,
+                       receiptNumber: any,
+                       reference: any,
+                       siteSubSection: SiteSubSection,
+                       storeDetails: boolean,
+                       paymentSuccessful: boolean,
+                       amount: any<span class="fstat-no" title="function not covered" >) {</span>
+&nbsp;
+        let event = <span class="cstat-no" title="statement not covered" >{</span>
+            payment_method: paymentType,
+            payment_successful: paymentSuccessful,
+            store_details: storeDetails
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.pushNewPageEvent(ModalName.PaymentModal, page, pageType, siteSubSection, [''], event);</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for SCC pushSccBannerOfferDisplayed
+     */
+<span class="fstat-no" title="function not covered" >    public pushSccBannerOfferDisplayed() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.SccBannerOfferDisplayed});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for pushSccBannerOfferDismissed
+     */
+<span class="fstat-no" title="function not covered" >    public pushSccBannerOfferDismissed() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.SccBannerOfferDismissed});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for SCC Status Deregister Error
+     */
+<span class="fstat-no" title="function not covered" >    public pushSccSettingsHasBattery() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.SccSettingsHasBattery});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for SCC Status Deregister Error
+     */
+<span class="fstat-no" title="function not covered" >    public pushSccSettingsHasBatteryError() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.SccSettingsHasBatteryError});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for SCC Update System Details Correction
+     */
+<span class="fstat-no" title="function not covered" >    public pushSccUpdateSystemDetailsCorrection() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.SccUpdateSystemDetailsCorrection});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for SCC Update System Details Correction Error
+     */
+<span class="fstat-no" title="function not covered" >    public pushSccUpdateSystemDetailsCorrectionError() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.SccUpdateSystemDetailsCorrectionError});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for SCC Update System Details Modification
+     */
+<span class="fstat-no" title="function not covered" >    public pushSccUpdateSystemDetailsModification() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.SccUpdateSystemDetailsModification});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for SCC Update System Details Modification
+     */
+<span class="fstat-no" title="function not covered" >    public pushSccUpdateSystemDetailsModificationError() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.SccUpdateSystemDetailsModificationError});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for SCC Status Deregister Error
+     */
+<span class="fstat-no" title="function not covered" >    public pushSccSettingsDeregisterError() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.SccSettingsDeregisterError});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for SCC Status Deregister
+     */
+<span class="fstat-no" title="function not covered" >    public pushSccSettingsDeregister() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.SccSettingsDeregister});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for SCC Status Change Email No Error
+     */
+<span class="fstat-no" title="function not covered" >    public pushSccStatusChangeEmailPreferenceNoError() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.SccStatusChangeEmailPreferenceNoError});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for SCC Status Change Email No
+     */
+<span class="fstat-no" title="function not covered" >    public pushSccStatusChangeEmailPreferenceNo() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.SccStatusChangeEmailPreferenceNo});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for SCC Status Change Email Yes
+     */
+<span class="fstat-no" title="function not covered" >    public pushSccStatusChangeEmailPreferenceYes() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.SccStatusChangeEmailPreferenceYes});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for SCC Status Change Email Yes Error
+     */
+<span class="fstat-no" title="function not covered" >    public pushSccStatusChangeEmailPreferenceYesError() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.SccStatusChangeEmailPreferenceYesError});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for SCC Monthly Email No Error
+     */
+<span class="fstat-no" title="function not covered" >    public pushSccMonthlyEmailPreferencesNoError() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.SccMonthlyEmailPreferencesNoError});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for SCC Monthly Email No
+     */
+<span class="fstat-no" title="function not covered" >    public pushSccMonthlyEmailPreferencesNo() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.SccMonthlyEmailPreferencesNo});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for SCC Monthly Email Yes Error
+     */
+<span class="fstat-no" title="function not covered" >    public pushSccMonthlyEmailPreferencesYesError() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.SccMonthlyEmailPreferencesYesError});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for SCC Monthly Email Yes
+     */
+<span class="fstat-no" title="function not covered" >    public pushSccMonthlyEmailPreferencesYes() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.SccMonthlyEmailPreferencesYes});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for SCC Registration Has Battery
+     */
+<span class="fstat-no" title="function not covered" >    public pushSccRegisterHasBattery() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.SccRegisterHasBattery});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for SCC Registration Battery Errors
+     */
+<span class="fstat-no" title="function not covered" >    public pushSccRegisterBatteryError() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.SccRegisterBatteryError});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for SCC when Solar Details screen is displayed
+     */
+<span class="fstat-no" title="function not covered" >    public pushSccRegisterSolarDetails() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.SccRegisterSolarDetails});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for SCC when registration fails
+     */
+<span class="fstat-no" title="function not covered" >    public pushSccRegisterError() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.SccRegisterError});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for SCC when registration successful
+     */
+<span class="fstat-no" title="function not covered" >    public pushSccRegisterSuccess() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.SccRegisterSuccess});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for OMM Success
+     */
+<span class="fstat-no" title="function not covered" >    public pushOmmSuccess() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.OmmSuccess});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for PAYG button
+     */
+<span class="fstat-no" title="function not covered" >    public pushPaygButton() {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({event: EventTypes.PaygButton});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for PAYG button
+     */
+    public pushPayg(paygBand: string<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushSingleEvents({PAYGcustomer: paygBand});</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for Errors
+     */
+    public pushError(type: EventTypes,
+                     message: string<span class="fstat-no" title="function not covered" >) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.pushInlineErrorEvent(ModalName.None, message);</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for contract Account Numbers
+     * @param {{}} accountNumbers
+     */
+    public pushContractAccounts(accountNumbers: {}<span class="fstat-no" title="function not covered" >) {</span>
+&nbsp;
+        let pushContractAccounts: UtagLink = <span class="cstat-no" title="statement not covered" >{</span>
+            eventCategory: EventCategory.AccountsPush,
+            eventAction: EventAction.AccountsPush,
+            eventLabel: EventLabel.AccountsPush,
+            event_name: EventName.AccountsPush,
+            page_name: '',
+            event: accountNumbers
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.ngZone.runOutsideAngular(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            utag.link('pushContractAccounts', pushContractAccounts);</span>
+        });
+    }
+&nbsp;
+    /**
+     * To Fetch the page channel field in tealium tag.
+     * @param pageUrl
+     * @returns {any}
+     */
+    public getPageChannel(pageUrl<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        switch (pageUrl) {</span>
+            case pageUrls.overview: {
+<span class="cstat-no" title="statement not covered" >                return 'Overview';</span>
+            }
+            case pageUrls.billing: {
+<span class="cstat-no" title="statement not covered" >                return 'Billing';</span>
+            }
+            case pageUrls.usage: {
+<span class="cstat-no" title="statement not covered" >                return 'Usage';</span>
+            }
+            case pageUrls.settings: {
+<span class="cstat-no" title="statement not covered" >                return 'Manage Account';</span>
+            }
+            case pageUrls.rewards:
+            case pageUrls.rewardsDiscounts:
+            case pageUrls.rewardsFlybuys: {
+<span class="cstat-no" title="statement not covered" >                return 'Rewards';</span>
+            }
+            default: {
+<span class="cstat-no" title="statement not covered" >                return 'Manage Account';</span>
+            }
+        }
+&nbsp;
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for Errors in Make payment, My wallet and Directdebit
+     */
+    public pushPaymentError(failureEvent: string, errorMessage: string, paymentType?: PaymentMethodName, accounts?: string[]<span class="fstat-no" title="function not covered" >) {</span>
+        let event = <span class="cstat-no" title="statement not covered" >{</span>
+            payment_method: paymentType,
+            payment_successful: false
+        };
+&nbsp;
+        // Accounts aren't always available but are a required field, so create blank where appropriate.
+<span class="cstat-no" title="statement not covered" >        if (!accounts) {</span>
+<span class="cstat-no" title="statement not covered" >            accounts = [];</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.pushNewPageEvent(ModalName.PaymentModal, PageChannel.Payments, PageType.Modal, SiteSubSection.Payment, accounts, event);</span>
+    }
+&nbsp;
+    /**
+     * Sends a datalayer push for Success in Make payment, My wallet and Directdebit
+     */
+    public pushPaymentSuccess(successMessage: string, buttonLabel: string, paymentType?: PaymentMethodName, accounts?: string[]<span class="fstat-no" title="function not covered" >) {</span>
+        let event = <span class="cstat-no" title="statement not covered" >{</span>
+            payment_method: paymentType,
+            payment_successful: true
+        };
+&nbsp;
+        // Accounts aren't always available but are a required field, so create blank where appropriate.
+<span class="cstat-no" title="statement not covered" >        if (!accounts) {</span>
+<span class="cstat-no" title="statement not covered" >            accounts = [];</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.pushNewPageEvent(ModalName.PaymentModal, PageChannel.Payments, PageType.Modal, SiteSubSection.Payment, accounts, event);</span>
+    }
+&nbsp;
+    public pushFormFailure(modalName: ModalName, pageChannel: PageChannel, pageType: PageType, siteSubSection: SiteSubSection, formFieldsUpdated: string[], errorDescription: string, errorCode: ErrorCodes<span class="fstat-no" title="function not covered" > ) {</span>
+        let utagFailure = <span class="cstat-no" title="statement not covered" >{</span>
+            update_success: false,
+            update_type: formFieldsUpdated.join('|'),
+            error_code: errorCode,
+            error_description: errorDescription
+        };
+<span class="cstat-no" title="statement not covered" >        this.pushNewPageEvent(modalName, pageChannel, pageType, siteSubSection, [''], utagFailure);</span>
+    }
+&nbsp;
+    public pushFormSuccess(modalName: ModalName, pageChannel: PageChannel, pageType: PageType, siteSubSection: SiteSubSection, formFieldsUpdated: string[]<span class="fstat-no" title="function not covered" >) {</span>
+        let utagSuccess = <span class="cstat-no" title="statement not covered" >{</span>
+            update_success: true,
+            update_type: formFieldsUpdated.join('|'),
+        };
+<span class="cstat-no" title="statement not covered" >        this.pushNewPageEvent(modalName, pageChannel, pageType, siteSubSection, [''], utagSuccess);</span>
+    }
+&nbsp;
+    /**
+     * Tracks adding calendar event for extended due date
+     */
+    public trackAddCalendarForExtendedDueDate(addEventUrl: string<span class="fstat-no" title="function not covered" >) {</span>
+        let utagLink = <span class="cstat-no" title="statement not covered" >{</span>
+            eventCategory: EventCategory.Calendar,
+            eventAction: addEventUrl,
+            eventLabel: EventLabel.None,
+            event_name: EventName.ButtonClick,
+            page_name: ModalName.PaymentExtension
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.ngZone.runOutsideAngular(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            utag.link(utagLink);</span>
+        });
+    }
+&nbsp;
+    /**
+     * Tracks extending payment due date failure
+     */
+    public trackExtendingPaymentDueDateFailure(message: string<span class="fstat-no" title="function not covered" >) {</span>
+        let pageName = <span class="cstat-no" title="statement not covered" >'agl:myaccount' + location.pathname.replace(/\//g, ':');</span>
+&nbsp;
+        let utagError: UtagError = <span class="cstat-no" title="statement not covered" >{</span>
+            error_code: ErrorCodes.None,
+            error_description: message,
+            event_name: EventName.InlineError,
+            page_name: pageName.slice(0, -1)
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.ngZone.runOutsideAngular(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            utag.link(utagError);</span>
+        });
+    }
+&nbsp;
+    /**
+     * Tracks extension option dog doom error
+     */
+    public trackPaymentExtensionDogDoomError(errorDescription: string<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.pushNewPageEvent(ModalName.PaymentExtension, PageChannel.Payments, PageType.None, SiteSubSection.Confirm, [], {</span>
+            error_description: errorDescription,
+            error_code: ErrorCodes.MyAccountApplicationError
+        });
+    }
+&nbsp;
+    /**
+     * The function is to add optional data to page change analytics tracking.
+     * The function is called to cache optional data to dataLayerservice before page navigation (in "optionalPageVariables" variable). Then in navigation, "pushPageChangeEvent" is called,
+     * it tries to add the optional data previously cached in dataLayerService to utagView (ref: tryAddOptionalDataToUtagView)
+     */
+    public addOptionalPageVariableForTracking(page: PageRequireOptionalVariables, key: string, value: string<span class="fstat-no" title="function not covered" >) {</span>
+        let optionalPageVariable = <span class="cstat-no" title="statement not covered" >this.optionalPageVariables.find((p: OptionalPageVariable<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            return p.page === page &amp;&amp; p.key === key;</span>
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (optionalPageVariable) {</span>
+<span class="cstat-no" title="statement not covered" >            optionalPageVariable.value = value;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            optionalPageVariable = new OptionalPageVariable(page, key, value);</span>
+<span class="cstat-no" title="statement not covered" >            this.optionalPageVariables.push(optionalPageVariable);</span>
+        }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    public pushNewPageEvent(modalName: ModalName,</span>
+                            pageChannel: PageChannel,
+                            pageType: PageType,
+                            siteSubSection1: SiteSubSection,
+                            accountNumbers: string[],
+                            optionalData?: any<span class="fstat-no" title="function not covered" >) {</span>
+        let pageUri = <span class="cstat-no" title="statement not covered" >this.normaliseModalName(modalName);</span>
+        let hierarchy = <span class="cstat-no" title="statement not covered" >this.generateHierarchy(pageUri);</span>
+        let pageName = <span class="cstat-no" title="statement not covered" >this.generatePageName(pageUri);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.businessPartnerNumberService.getBusinessPartnerNumber().subscribe((bpId<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+            let utagView: UtagView = <span class="cstat-no" title="statement not covered" >{</span>
+                page_URL: location.href + '/' + pageUri,
+                page_channel: pageChannel,
+                page_hierarchy: hierarchy.substr(1).slice(0, -1),
+                page_name: pageName,
+                page_pathName: location.pathname,
+                page_previousPageName: '',
+                page_title: document.title,
+                page_type: pageType,
+                site_currencyCode: CURRENCY_AUD,
+                site_languageCode: LANGUAGE_CODE_EN,
+                site_name: SITE_NAME_MY_ACCOUNT,
+                site_section: pageChannel,
+                site_subSection1: siteSubSection1,
+                site_subSection2: SiteSubSection.None,
+                site_subSection3: SiteSubSection.None,
+                user_BPID: bpId.bpId,
+                user_BPID_hashed: bpId.hashed,
+                user_accountNo: accountNumbers,
+                user_nameID: this.jwtDecoderService.nameIdentifier(),
+                user_email: this.jwtDecoderService.emailAddress(),
+                user_loggedInStatus: LoggedInStatus.LoggedIn
+            };
+&nbsp;
+            // Merge the objects
+<span class="cstat-no" title="statement not covered" >            if (optionalData) {</span>
+<span class="cstat-no" title="statement not covered" >                utagView = Object.assign(utagView, optionalData);</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            console.log('pushNewPageEvent', utagView);</span>
+<span class="cstat-no" title="statement not covered" >            this.ngZone.runOutsideAngular(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                utag.view(utagView);</span>
+            });
+        });
+    }
+&nbsp;
+    public pushClickEvent(modalName: ModalName, eventCategory: EventCategory, eventAction: EventAction, eventLabel: EventLabel<span class="fstat-no" title="function not covered" >) {</span>
+        let pageUri = <span class="cstat-no" title="statement not covered" >this.normaliseModalName(modalName);</span>
+        let pageName = <span class="cstat-no" title="statement not covered" >this.generatePageName(pageUri);</span>
+&nbsp;
+        let utagLink: UtagLink = <span class="cstat-no" title="statement not covered" >{</span>
+            eventCategory: eventCategory,
+            eventAction: eventAction,
+            eventLabel: eventLabel,
+            event_name: EventName.ButtonClick,
+            page_name: pageName.slice(0, -1)
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        console.log('pushClickEvent', utagLink);</span>
+<span class="cstat-no" title="statement not covered" >        this.ngZone.runOutsideAngular(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            utag.link(utagLink);</span>
+        });
+    }
+&nbsp;
+    public pushEvent(modalName: ModalName, eventCategory: EventCategory, eventAction: EventAction, eventLabel: EventLabel, event: any<span class="fstat-no" title="function not covered" >) {</span>
+        let pageUri = <span class="cstat-no" title="statement not covered" >this.normaliseModalName(modalName);</span>
+        let pageName = <span class="cstat-no" title="statement not covered" >this.generatePageName(pageUri);</span>
+&nbsp;
+        let utagLink: UtagLink = <span class="cstat-no" title="statement not covered" >{</span>
+            eventCategory: eventCategory,
+            eventAction: eventAction,
+            eventLabel: eventLabel,
+            event_name: EventName.None,
+            page_name: pageName.slice(0, -1),
+            event: event
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        console.log('pushEvent', utagLink);</span>
+<span class="cstat-no" title="statement not covered" >        this.ngZone.runOutsideAngular(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            utag.link(utagLink);</span>
+        });
+    }
+&nbsp;
+    public pushInlineErrorEvent(modalName: ModalName, errorDescription: string<span class="fstat-no" title="function not covered" >) {</span>
+        let pageUri = <span class="cstat-no" title="statement not covered" >this.normaliseModalName(modalName);</span>
+        let pageName = <span class="cstat-no" title="statement not covered" >this.generatePageName(pageUri);</span>
+&nbsp;
+        let utagError: UtagError = <span class="cstat-no" title="statement not covered" >{</span>
+            error_code: ErrorCodes.None,
+            error_description: errorDescription,
+            event_name: EventName.InlineError,
+            page_name: pageName.slice(0, -1)
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        console.log('pushInlineErrorEvent', utagError);</span>
+<span class="cstat-no" title="statement not covered" >        this.ngZone.runOutsideAngular(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            utag.link(utagError);</span>
+        });
+    }
+&nbsp;
+    /**
+     * Similar method to pushNewPageEvent but is only for new page changes
+     * This code is to stop duplicate of router events per page.
+     * @param {ModalName} modalName
+     * @param pageType
+     * @param siteSubSection
+     * @param pageUrl
+     */
+<span class="cstat-no" title="statement not covered" >    public pushPageChangeEvent(modalName: ModalName, pageType, siteSubSection, pageUrl, href, pathname, isUserAuthenticated: boolean<span class="fstat-no" title="function not covered" >) {</span></span>
+<span class="cstat-no" title="statement not covered" >        console.log(`The page url is ${pageUrl}`);</span>
+        let pageUri = <span class="cstat-no" title="statement not covered" >this.normaliseModalName(modalName);</span>
+        let hierarchy = <span class="cstat-no" title="statement not covered" >this.generateHierarchy(pageUri, pathname);</span>
+        let pageName = <span class="cstat-no" title="statement not covered" >this.generatePageName(pageUri, pathname);</span>
+&nbsp;
+        let utagView = <span class="cstat-no" title="statement not covered" >{</span>
+            page_name: pageName.slice(0, -1),
+            page_hierarchy: hierarchy.substr(1).slice(0, -1),
+            page_URL: href,
+            page_channel: this.getPageChannel(pageUrl),
+            page_pathName: pathname,
+            page_previousPageName: '',
+            page_title: document.title,
+            page_type: pageType,
+            site_currencyCode: CURRENCY_AUD,
+            site_languageCode: LANGUAGE_CODE_EN,
+            site_name: SITE_NAME_MY_ACCOUNT,
+            site_section: this.getPageChannel(pageUrl),
+            site_subSection1: pathname.split('/')[2] || '',
+            site_subSection2: '',
+            site_subSection3: ''
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (isUserAuthenticated) {</span>
+<span class="cstat-no" title="statement not covered" >            console.log(`The account number is ${this.apiService.accountNumber}`);</span>
+            let uniqueAccountNumbers = <span class="cstat-no" title="statement not covered" >this.apiService.accountNumber.filter((value, index, array<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >array.indexOf(value) === index)</span></span>;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            this.businessPartnerNumberService.getBusinessPartnerNumber().subscribe((bpId<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+&nbsp;
+                let dataForUserAuthenticated = <span class="cstat-no" title="statement not covered" >{</span>
+                    user_BPID: bpId.bpId,
+                    user_BPID_hashed: bpId.hashed,
+                    user_accountNo: uniqueAccountNumbers,
+                    user_nameID: this.jwtDecoderService.nameIdentifier(),
+                    user_email: this.jwtDecoderService.emailAddress(),
+                    user_loggedInStatus: LoggedInStatus.LoggedIn
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                utagView = Object.assign(utagView, dataForUserAuthenticated);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                utagView = this.tryAddOptionalDataToUtagView(pageUrl, utagView);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                console.log('pushPageChangeEvent', utagView);</span>
+<span class="cstat-no" title="statement not covered" >                this.ngZone.runOutsideAngular(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                    utag.view(utagView);</span>
+                });
+            });
+        } else {
+            let dataForUserUnauthenticated = <span class="cstat-no" title="statement not covered" >{</span>
+                user_BPID: '',
+                user_BPID_hashed: '',
+                user_accountNo: [],
+                user_nameID: '',
+                user_email: '',
+                user_loggedInStatus: LoggedInStatus.NotLoggedIn
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            utagView = Object.assign(utagView, dataForUserUnauthenticated);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            utagView = this.tryAddOptionalDataToUtagView(pageUrl, utagView);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            console.log('pushPageChangeEvent', utagView);</span>
+<span class="cstat-no" title="statement not covered" >            this.ngZone.runOutsideAngular(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                utag.view(utagView);</span>
+            });
+        }
+    }
+&nbsp;
+    /**
+     * This is to do a simple migration from the singular datalayer pushes.
+     * @param event
+     */
+    public pushSingleEvents(event: {}<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        console.log('pushSingleEvents', event);</span>
+<span class="cstat-no" title="statement not covered" >        this.ngZone.runOutsideAngular(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            utag.link(event);</span>
+        });
+    }
+&nbsp;
+    private generateHierarchy(pageUri: string, <span class="cstat-no" title="statement not covered" >pathname: string = location.pathname<span class="fstat-no" title="function not covered" >)</span>: string {</span>
+<span class="cstat-no" title="statement not covered" >        return pathname.replace(/\//g, '|') + '|' + pageUri;</span>
+    }
+&nbsp;
+    private normalisePageChannel(pageChannel: PageChannel<span class="fstat-no" title="function not covered" >): string {</span>
+<span class="cstat-no" title="statement not covered" >        return pageChannel.toString().replace(' ', '-').toLowerCase();</span>
+    }
+&nbsp;
+    private normaliseModalName(modalName: ModalName<span class="fstat-no" title="function not covered" >): string {</span>
+<span class="cstat-no" title="statement not covered" >        return modalName.toString().replace(/\s+/g, '-').toLowerCase();</span>
+    }
+&nbsp;
+    private generatePageName(pageUri: string, <span class="cstat-no" title="statement not covered" >pathname: string = location.pathname<span class="fstat-no" title="function not covered" >)</span>: string {</span>
+<span class="cstat-no" title="statement not covered" >        return 'agl:myaccount' + pathname.replace(/\//g, ':') + ':' + pageUri;</span>
+    }
+&nbsp;
+    private tryAddOptionalDataToUtagView(pageUrl: string, utagView: any<span class="fstat-no" title="function not covered" >): any {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.optionalPageVariables.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >            return utagView;</span>
+        }
+&nbsp;
+        const variablesToAdd = <span class="cstat-no" title="statement not covered" >[];</span>
+        const indexes = <span class="cstat-no" title="statement not covered" >[];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        for (let index in this.optionalPageVariables) {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.optionalPageVariables[index].page.toString() === pageUrl) {</span>
+                const optionalPageVariable = <span class="cstat-no" title="statement not covered" >this.optionalPageVariables[index];</span>
+                const obj = <span class="cstat-no" title="statement not covered" >{};</span>
+<span class="cstat-no" title="statement not covered" >                obj[optionalPageVariable.key] = optionalPageVariable.value;</span>
+<span class="cstat-no" title="statement not covered" >                variablesToAdd.push(obj);</span>
+<span class="cstat-no" title="statement not covered" >                indexes.push(index);</span>
+            }
+        }
+&nbsp;
+        let result = <span class="cstat-no" title="statement not covered" >utagView;</span>
+<span class="cstat-no" title="statement not covered" >        for (let variableToAdd<span class="cstat-no" title="statement not covered" ></span> of variablesToAdd) {</span>
+<span class="cstat-no" title="statement not covered" >            result = Object.assign(result, variableToAdd);</span>
+        }
+&nbsp;
+        // variables have been added to utagview, they can be removed from cache variable
+<span class="cstat-no" title="statement not covered" >        for (let index<span class="cstat-no" title="statement not covered" ></span> of indexes) {</span>
+<span class="cstat-no" title="statement not covered" >            this.optionalPageVariables.splice(index, 1);</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return result;</span>
+    }
+}
+&nbsp;
+interface UtagView {
+    page_URL: string;
+    page_channel: PageChannel;
+    page_hierarchy: string;
+    page_name: string;
+    page_pathName: string;
+    page_previousPageName: string;
+    page_title: string;
+    page_type: PageType;
+    site_currencyCode: string;
+    site_languageCode: string;
+    site_name: string;
+    site_section: PageChannel;
+    site_subSection1: SiteSubSection;
+    site_subSection2: SiteSubSection;
+    site_subSection3: SiteSubSection;
+    user_BPID: string;
+    user_BPID_hashed: string;
+    user_accountNo: string[];
+    user_nameID: string;
+    user_email: string;
+    user_loggedInStatus: LoggedInStatus;
+}
+&nbsp;
+interface UtagLink {
+    eventCategory: EventCategory;
+    eventAction: EventAction;
+    eventLabel: EventLabel;
+    event_name: EventName;
+    page_name: string;
+    event?: any;
+}
+&nbsp;
+interface UtagError {
+    error_code: ErrorCodes;
+    error_description: string;
+    event_name: EventName;
+    page_name: string;
+}
+&nbsp;
+class OptionalPageVariable {
+    constructor(public <span class="cstat-no" title="statement not covered" >page: PageRequireOptionalVariables,</span> public <span class="cstat-no" title="statement not covered" >key: string,</span> public <span class="cstat-no" title="statement not covered" >value: string<span class="fstat-no" title="function not covered" >)</span> {</span>
+    }
+}
+&nbsp;
+export enum ModalName {
+    BillSmoothingSetup = 'Set Up Bill Smoothing',
+    UpdateContactDetails = 'Update Contact Details',
+    BillSmoothingSuccessSetup = 'Success Set Up Bill Smoothing',
+    PaymentModal = 'Make a Payment Modal',
+    PaymentExtension = 'Payment Extension',
+    FeatureIntro = 'Feature Intro',
+    None = ''
+}
+&nbsp;
+export enum pageUrls {
+    overview =  '/overview',
+    billing =  '/bills',
+    usage =  '/usage',
+    settings =  '/settings',
+    rewards =  '/rewards',
+    rewardsFlybuys =  '/rewards/flybuys',
+    rewardsDiscounts =  '/rewards/discounts'
+}
+&nbsp;
+export enum PageChannel {
+    ManageAccount =  'Manage Account',
+    Payments =  'Make a payment',
+    Billing =  'Billing',
+    Usage =  'Usage',
+    Personal =  'Personal',
+    Offers =  'Offers and Rewards',
+    BillSmoothing =  'Bill Smoothing',
+    DirectDebit =  'Direct debit',
+    MyWallet =  'My Wallet',
+    Smspay =  'SMS Pay',
+    Solar =  'Solar',
+    Rewards =  'Rewards',
+    UpdateContactDetails =  'Update Contact Details'
+}
+&nbsp;
+export enum PageType {
+    Modal =  'Modal',
+    Account =  'account',
+    None =  ''
+}
+&nbsp;
+export enum SiteSubSection {
+    BillSmoothing =  'Bill Smoothing',
+    UpdateContactDetails =  'Update Contact Details',
+    Payment =  'Make a Payment',
+    Confirm =  'Confirm',
+    None =  ''
+}
+&nbsp;
+enum LoggedInStatus {
+    LoggedIn =  'LoggedIn',
+    NotLoggedIn =  'NotLoggedIn'
+}
+&nbsp;
+export enum EventCategory {
+    BillSmoothing =  'Bill Smoothing',
+    AccountsPush =  'My Accounts',
+    Rewards =  'Rewards',
+    Calendar =  'Calendar',
+    FeatureIntro =  'Feature Intro'
+}
+&nbsp;
+export enum EventAction {
+    BillSmoothingFrequencySelection =  'Frequency Selection',
+    AccountsPush =  '',
+    ClickAction =  'Button Click',
+    ShowFeatureIntro =  'Show Feature Intro'
+}
+&nbsp;
+export enum EventLabel {
+    Weekly =  'Weekly',
+    Fortnightly =  'Fortnightly',
+    Monthly =  'Monthly',
+    AccountsPush =  '',
+    MakePayment =  'Make a Payment',
+    RewardsDiscountsLearnMore =  'Discounts Learn More',
+    RewardsFlybuysViewDetails =  'Flybuys View Details',
+    RewardsRedeemOffer =  'Redeem Offer',
+    RewardsOfferTermsAndConditions =  'Offer Terms and Conditions',
+    RewardsDiscountsViewYourBills =  'Discounts View Your Bills',
+    RewardsFlybuysTransactionsSeeMore =  'Flybuys Transactions See More',
+    RewardsFlybuysTransactionsSeeLess =  'Flybuys Transactions See Less',
+    FeatureIntroNavigateToFeature =  'Navigate to the feature',
+    FeatureIntroDismissFeature =  'Dismiss the current feature',
+    FeatureIntroCloseModal =  'Close the feature intro modal',
+    ShowFeatureIntro =  'Show Feature intro',
+    None =  ''
+}
+&nbsp;
+enum EventName {
+    ButtonClick =  'button_click',
+    InlineError =  'inline_error',
+    AccountsPush =  'accounts_push',
+    None =  ''
+}
+&nbsp;
+export enum ErrorCodes {
+    None =  '',
+    MyAccountApplicationError =  10, /* for errors that occurred within My Account (i.e javascript errors, dog of doom etc) */
+    ApiError =  20 /* for errors that came back from api calls */
+}
+&nbsp;
+export enum PageRequireOptionalVariables {
+    PaymentExtensionSuccess =  '/bills/paymentassistance/extend/success'
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

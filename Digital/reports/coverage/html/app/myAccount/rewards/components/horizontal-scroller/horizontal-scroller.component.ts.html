@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\rewards\components\horizontal-scroller\horizontal-scroller.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/rewards/components/horizontal-scroller/</a> horizontal-scroller.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">23.35% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>39/167</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/73</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">6.06% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/33</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">24.18% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>37/153</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, Input, AfterViewInit, OnChanges, OnDestroy, SimpleChanges, ViewChild, ElementRef, HostBinding, Output, EventEmitter } from '@angular/core';
+import { Subject, Observable } from 'rxjs';
+&nbsp;
+import { AnimatedScroller, AnimatedScrollEventType } from '../../shared/animated-scroller';
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >@Component({</span></span>
+    selector: 'agl-horizontal-scroller',
+    template: require('./horizontal-scroller.component.html'),
+    styles: [require('./horizontal-scroller.component.scss')]
+})
+export class HorizontalScrollerComponent implements OnChanges, AfterViewInit, OnDestroy {
+    @Input() public <span class="cstat-no" title="statement not covered" >indicatorCount = 0;</span>
+    @Input() public <span class="cstat-no" title="statement not covered" >scrollDuration = 400;</span>
+    @Input() public <span class="cstat-no" title="statement not covered" >showNavButtons = false;</span>
+    @HostBinding('class.mobile-only') @Input() public <span class="cstat-no" title="statement not covered" >mobileOnly = true;</span>
+    @Output() public <span class="cstat-no" title="statement not covered" >indicatorChanged: EventEmitter&lt;number&gt; = new EventEmitter&lt;number&gt;();</span>
+    public <span class="cstat-no" title="statement not covered" >isScrollable = false;</span>
+    public <span class="cstat-no" title="statement not covered" >indicators: number[] = [];</span>
+    public <span class="cstat-no" title="statement not covered" >activeIndicator: number = 0;</span>
+&nbsp;
+    @ViewChild('scroller') private scrollerElement: ElementRef;
+    @ViewChild('spacerLeft') private spacerLeftElement: ElementRef;
+    @ViewChild('spacerRight') private spacerRightElement: ElementRef;
+    @ViewChild('scrollerItems') private scrollerItemsElement: ElementRef;
+    private <span class="cstat-no" title="statement not covered" >scroller = new HorizontalScrollerHelper();</span>
+    private windowResizeTimeout: any;
+    private scrollTimeout: any;
+    private <span class="cstat-no" title="statement not covered" >ignoreScrollEvents = false;</span>
+&nbsp;
+    public ngOnChanges(changes: SimpleChanges<span class="fstat-no" title="function not covered" >): void {</span>
+        let change = <span class="cstat-no" title="statement not covered" >changes['indicatorCount'];</span>
+<span class="cstat-no" title="statement not covered" >        if (change) {</span>
+<span class="cstat-no" title="statement not covered" >            this.setupIndicatorsArray();</span>
+<span class="cstat-no" title="statement not covered" >            if (!change.firstChange) {</span>
+<span class="cstat-no" title="statement not covered" >                this.scroller.reset(this.scrollerElement, this.spacerLeftElement, this.spacerRightElement, this.scrollerItemsElement, this.indicatorCount);</span>
+            }
+        }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public ngAfterViewInit() {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.scrollerElement.nativeElement.addEventListener('scroll', this.scrollerScrollEvent);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        window.addEventListener('resize', this.windowResizeEvent);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        setTimeout(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            this.scroller.reset(this.scrollerElement, this.spacerLeftElement, this.spacerRightElement, this.scrollerItemsElement, this.indicatorCount);</span>
+<span class="cstat-no" title="statement not covered" >            this.checkIsScrollable();</span>
+        });
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public ngOnDestroy(): void {</span>
+<span class="cstat-no" title="statement not covered" >        window.removeEventListener('resize', this.windowResizeEvent);</span>
+<span class="cstat-no" title="statement not covered" >        this.scrollerElement.nativeElement.removeEventListener('scroll', this.scrollerScrollEvent);</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    public setActiveIndicator(index: number, <span class="cstat-no" title="statement not covered" >scrollToPosition: boolean = true,</span> <span class="cstat-no" title="statement not covered" >scrollDuration: number = this.scrollDuration<span class="fstat-no" title="function not covered" >)</span> {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (index &lt; this.indicatorCount &amp;&amp; index &gt;= 0) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (!scrollToPosition &amp;&amp; index === this.activeIndicator) {</span>
+<span class="cstat-no" title="statement not covered" >                return;</span>
+            }
+            const prevIndicator = <span class="cstat-no" title="statement not covered" >this.activeIndicator;</span>
+<span class="cstat-no" title="statement not covered" >            this.activeIndicator = index;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (this.scroller &amp;&amp; scrollToPosition) {</span>
+<span class="cstat-no" title="statement not covered" >                this.ignoreScrollEvents = true;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                this.animatedScrollLeft(this.scroller.indicatorScrollPosition(index), Math.abs(index - prevIndicator) / 4, scrollDuration).subscribe( <span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                    setTimeout( <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >this.ignoreScrollEvents = false,</span></span> 200);</span>
+<span class="cstat-no" title="statement not covered" >                    if (prevIndicator !== this.activeIndicator) {</span>
+<span class="cstat-no" title="statement not covered" >                        this.indicatorChanged.emit(this.activeIndicator);</span>
+                    }
+                });
+            } else {
+<span class="cstat-no" title="statement not covered" >                this.indicatorChanged.emit(this.activeIndicator);</span>
+            }
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public showPreviousItem() {</span>
+<span class="cstat-no" title="statement not covered" >        this.setActiveIndicator(this.activeIndicator - 1);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public showNextItem() {</span>
+<span class="cstat-no" title="statement not covered" >        this.setActiveIndicator(this.activeIndicator + 1);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private setupIndicatorsArray() {</span>
+        const results: number[] = <span class="cstat-no" title="statement not covered" >[];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        for (let i = 0; i &lt; this.indicatorCount; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            results.push(i);</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.indicators = results; </span>// need an array to loop through for the ngFor (can't seem to loop through a count)
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private checkIsScrollable() {</span>
+<span class="cstat-no" title="statement not covered" >        this.isScrollable = this.scroller.isScrollable();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private setActiveIndicatorBasedOnScrollPosition() {</span>
+        const closestIndicator = <span class="cstat-no" title="statement not covered" >this.scroller.findClosestIndicatorToScrollPosition();</span>
+<span class="cstat-no" title="statement not covered" >        this.setActiveIndicator(closestIndicator, false);</span>
+    }
+&nbsp;
+    private <span class="cstat-no" title="statement not covered" >scrollerScrollEvent = (e: any<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (this.indicatorCount &gt; 0 &amp;&amp; !this.ignoreScrollEvents) {</span>
+<span class="cstat-no" title="statement not covered" >            this.setActiveIndicatorBasedOnScrollPosition();</span>
+        }
+    }
+&nbsp;
+    private <span class="cstat-no" title="statement not covered" >windowResizeEvent = (e: UIEvent<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (this.indicatorCount &lt;= 0) {</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.windowResizeTimeout) {</span>
+<span class="cstat-no" title="statement not covered" >            clearTimeout(this.windowResizeTimeout);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        this.windowResizeTimeout = setTimeout( <span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            this.scroller.reset(this.scrollerElement, this.spacerLeftElement, this.spacerRightElement,  this.scrollerItemsElement, this.indicatorCount);</span>
+<span class="cstat-no" title="statement not covered" >            this.checkIsScrollable();</span>
+<span class="cstat-no" title="statement not covered" >            this.setActiveIndicatorBasedOnScrollPosition();</span>
+        }, 200);
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    private animatedScrollLeft(scrollLeft: number, <span class="cstat-no" title="statement not covered" >movementPercentage: number = 1,</span> scrollDuration: number<span class="fstat-no" title="function not covered" >): Observable&lt;boolean&gt; {</span></span>
+        let result = <span class="cstat-no" title="statement not covered" >new Subject&lt;boolean&gt;();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        AnimatedScroller.scroll(scrollLeft, this.scroller.scrollLeft, scrollDuration, movementPercentage).subscribe( (event<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (event.type === AnimatedScrollEventType.Scroll) {</span>
+<span class="cstat-no" title="statement not covered" >                this.scroller.scrollLeft = event.scrollTo;</span>
+            } else <span class="cstat-no" title="statement not covered" >if (event.type === AnimatedScrollEventType.Finish) {</span>
+<span class="cstat-no" title="statement not covered" >                result.next(true);</span>
+<span class="cstat-no" title="statement not covered" >                result.complete();</span>
+            }
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return result;</span>
+    }
+&nbsp;
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >class HorizontalScrollerHelper {</span>
+    public <span class="cstat-no" title="statement not covered" >hasSpacers = false;</span>
+    private scroller: ElementRef;
+    private spacerLeft: ElementRef;
+    private spacerRight: ElementRef;
+    private scrollerItems: ElementRef;
+    private <span class="cstat-no" title="statement not covered" >itemCount: number = 0;</span>
+    private <span class="cstat-no" title="statement not covered" >itemWidth: number = 0;</span>
+&nbsp;
+    public reset(scroller: ElementRef, spacerLeft: ElementRef, spacerRight: ElementRef, scrollerItems: ElementRef, itemCount: number<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.scroller = scroller;</span>
+<span class="cstat-no" title="statement not covered" >        this.spacerLeft = spacerLeft;</span>
+<span class="cstat-no" title="statement not covered" >        this.spacerRight = spacerRight;</span>
+<span class="cstat-no" title="statement not covered" >        this.scrollerItems = scrollerItems;</span>
+<span class="cstat-no" title="statement not covered" >        this.itemCount = itemCount;</span>
+<span class="cstat-no" title="statement not covered" >        this.itemWidth = this.calcItemWidth();</span>
+<span class="cstat-no" title="statement not covered" >        this.setSpacerSizes();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public get scrollLeft(): number {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.scroller) {</span>
+<span class="cstat-no" title="statement not covered" >            return this.scroller.nativeElement.scrollLeft;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return 0;</span>
+        }
+    }
+&nbsp;
+    public set scrollLeft(val: number<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.scroller) {</span>
+<span class="cstat-no" title="statement not covered" >            this.scroller.nativeElement.scrollLeft = val;</span>
+        }
+    }
+&nbsp;
+    public indicatorScrollPosition(index: number<span class="fstat-no" title="function not covered" >): number {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.scroller &amp;&amp; this.itemCount &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            if (index === 0) {</span>
+<span class="cstat-no" title="statement not covered" >                return 0;</span>
+            } else <span class="cstat-no" title="statement not covered" >if (index === this.itemCount - 1) {</span>
+<span class="cstat-no" title="statement not covered" >                return this.scrollableWidth();</span>
+            } else {
+                let spacerWidth = <span class="cstat-no" title="statement not covered" >this.spacerWidth();</span>
+                let screenScroll = (<span class="cstat-no" title="statement not covered" >index * this.itemWidth)</span>;
+                let offset = <span class="cstat-no" title="statement not covered" >(this.clientWidth - this.itemWidth) / 2;</span>
+<span class="cstat-no" title="statement not covered" >                return (screenScroll - offset) + spacerWidth;</span>
+            }
+        } else {
+<span class="cstat-no" title="statement not covered" >            return 0;</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public isScrollable() {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.scroller) {</span>
+<span class="cstat-no" title="statement not covered" >            return this.scroller.nativeElement.scrollWidth !== this.clientWidth;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public findClosestIndicatorToScrollPosition(): number {</span>
+        const scrollLeft = <span class="cstat-no" title="statement not covered" >this.scrollLeft;</span>
+&nbsp;
+        let result = <span class="cstat-no" title="statement not covered" >null;</span>
+        let closestPos = <span class="cstat-no" title="statement not covered" >0;</span>
+<span class="cstat-no" title="statement not covered" >        for (let i = 0; i &lt; this.itemCount; i++) {</span>
+            const pos = <span class="cstat-no" title="statement not covered" >this.indicatorScrollPosition(i);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (result === null || Math.abs(scrollLeft - pos) &lt; Math.abs(scrollLeft - closestPos)) {</span>
+<span class="cstat-no" title="statement not covered" >                result = i;</span>
+<span class="cstat-no" title="statement not covered" >                closestPos = pos;</span>
+            }
+        }
+<span class="cstat-no" title="statement not covered" >        return result;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private setSpacerSizes() {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.scroller) {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.spacerLeft) {</span>
+<span class="cstat-no" title="statement not covered" >                this.spacerLeft.nativeElement.style.minWidth = this.spacerWidth() + 'px';</span>
+<span class="cstat-no" title="statement not covered" >                this.spacerLeft.nativeElement.style.maxWidth = this.spacerWidth() + 'px';</span>
+            }
+<span class="cstat-no" title="statement not covered" >            if (this.spacerRight) {</span>
+<span class="cstat-no" title="statement not covered" >                this.spacerRight.nativeElement.style.minWidth = this.spacerWidth() + 'px';</span>
+<span class="cstat-no" title="statement not covered" >                this.spacerRight.nativeElement.style.maxWidth = this.spacerWidth() + 'px';</span>
+            }
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private scrollableWidth(): number {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.scroller) {</span>
+<span class="cstat-no" title="statement not covered" >            return this.scroller.nativeElement.scrollWidth - this.clientWidth;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return 0;</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private get clientWidth(): number {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.scroller) {</span>
+<span class="cstat-no" title="statement not covered" >            return this.scroller.nativeElement.clientWidth;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return 0;</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private calcItemWidth(): number {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.scrollerItems &amp;&amp; this.itemCount &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            return this.elementWidth(this.scrollerItems.nativeElement) / this.itemCount;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return 0;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private spacerWidth(): number {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.scroller &amp;&amp; this.spacerLeft &amp;&amp; this.spacerRight) {</span>
+<span class="cstat-no" title="statement not covered" >            return (this.clientWidth - this.itemWidth) / 2;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return 0;</span>
+        }
+    }
+&nbsp;
+    private elementWidth(element: any<span class="fstat-no" title="function not covered" >): number {</span>
+<span class="cstat-no" title="statement not covered" >        return element.offsetWidth;</span>
+    }
+&nbsp;
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

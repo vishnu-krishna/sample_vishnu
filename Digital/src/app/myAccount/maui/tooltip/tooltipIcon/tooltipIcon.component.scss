@@ -1,0 +1,21 @@
+@import '../../maui';
+
+@include maui-component-reset();
+
+$icon-diameter: 15px;
+
+.tooltip-icon {
+    position: relative;
+    background-color: $primary-dark;
+    border-radius: 50%;
+    color: $neutral-08;
+    cursor: pointer;
+    display: inline-block;
+    font-family: $body-font-stack;
+    font-size: $body-font-size-smallest;
+    font-weight: bold;
+    line-height: $icon-diameter;
+    height: $icon-diameter;
+    text-align: center;
+    width: $icon-diameter;
+}

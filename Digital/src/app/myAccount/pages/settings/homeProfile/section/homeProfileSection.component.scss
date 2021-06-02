@@ -1,0 +1,113 @@
+@import '../homeProfile';
+
+$list-icon: 'yourhome' 'cooking' 'cooling' 'entertainment'
+'fridgefreezer' 'heating' 'hotwater' 'poolspa';
+
+$icon-content-width: 95px;
+$other-electical-icon-content-width: 100px;
+
+@mixin icon-default() {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 66px;
+    height: 66px;
+    margin-left: $space-03;
+}
+
+.homeprofile-section {
+    @media #{$agl-layout-tablet-and-greater} {
+        display: flex;
+        align-items: flex-start;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        margin-bottom: $space-03;
+        text-align: center;
+    }
+
+    @media #{$agl-layout-mobile} {
+        display: none;
+
+        &--clickable {
+            display: block;
+        }
+    }
+
+    &-icon {
+        @media #{$agl-layout-tablet-and-greater} {
+            max-height: 190px;
+            margin-bottom: $space-04;
+            margin-top: $space-04;
+            overflow-y: auto;
+            flex-basis: 25%;
+            text-align: center;
+
+            &:nth-child(n+5) {
+                margin-top: 0px;
+            }
+
+            & &__description {
+                width: $icon-content-width;
+            }
+
+            &:nth-child(n+5) &__description {
+                height: 40px;
+            }
+
+            &:nth-child(7) &__description {
+                width: $other-electical-icon-content-width;
+            }
+
+        }
+
+        @media #{$agl-layout-mobile} {
+            @include homeprofile-stack-segment-styling();
+            padding-top: $space-03;
+            padding-bottom: $space-03;
+        }
+
+        &--clickable {
+            cursor: pointer;
+        }
+
+        &__description {
+            @media #{$agl-layout-tablet-and-greater} {
+                @include horizontally-center-in-parent();
+                margin-top: $space-01;
+                font-size: $body-font-size-small;
+            }
+
+            @media #{$agl-layout-mobile} {
+                font-size: $body-font-size-normal;
+                display: inline-block;
+                height: auto;
+            }
+        }
+
+        &__link {
+            @media #{$agl-layout-tablet-and-greater} {
+                @include horizontally-center-in-parent();
+                text-transform: lowercase;
+            }
+
+            @media #{$agl-layout-mobile} {
+                display: inline-block;
+                float: right;
+            }
+
+            color: $primary-dark;
+            font-size: $body-font-size-small;
+        }
+
+        @each $icon in $list-icon {
+            &-#{ $icon } {
+                @media #{$agl-layout-mobile} {
+                    display: none;
+                }
+
+                @include icon-default;
+                @include horizontally-center-in-parent();
+                background-image: url('svg/homeprofile/icon-#{ $icon }.svg');
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@import '../../style/variables';
+@import '../../style/mixins';
+
+a {
+    border-radius: $agl-border-radius;
+    padding: 4px 10px;
+    margin-right: 30px;
+
+    @media #{$agl-layout-mobile} {
+        width: 100%;
+    }
+
+    &:hover {
+        color: $brand-white;
+        background-color: $brand-sky;
+    }
+}

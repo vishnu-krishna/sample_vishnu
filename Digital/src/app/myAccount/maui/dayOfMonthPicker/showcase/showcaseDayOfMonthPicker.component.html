@@ -1,0 +1,23 @@
+<agl-maui-showcase-template heading='Day of Month Picker'>
+    <div description>
+        1. Day of Month picker<br>
+        2. Takes an optional input [dayOfMonth] to be highlighted initially, otherwise by default it highlights the number of today's date.<br>
+        3. Takes an optional input [excludedDays] which is an array of days (numbers) to be disabled and greyed out.<br>
+        4. Bind to the (select) event to get the selected day (number).<br><br>
+
+        Refer to <a href="https://aglenergy.atlassian.net/wiki/spaces/AGLDST/pages/135530377/MAUI+Component+Library">MAUI Component Library</a> for details
+    </div>
+    <div exampleCodeUsage>
+        {{codeUsage}}
+    </div>
+    <div exampleImplementation>
+        <agl-maui-showcase-example label='set optional dayOfMonth=7'>
+            <agl-maui-day-of-month-picker
+                [dayOfMonth]="7"
+                [excludedDays]="[29, 30, 31]"
+                (select)="onSelectDay($event)"
+            >
+            </agl-maui-day-of-month-picker>
+        </agl-maui-showcase-example>
+    </div>
+</agl-maui-showcase-template>

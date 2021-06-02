@@ -1,0 +1,18 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "billDeliveryMode": "Email",
+            "contractAccountNumbers": [
+                7022757475
+            ]
+        },
+        {
+            "billDeliveryMode": "Postal",
+            "contractAccountNumbers": [
+                96114244
+            ]
+        }
+    ]
+}

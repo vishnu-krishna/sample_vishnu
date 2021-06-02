@@ -1,0 +1,94 @@
+<div class="concession">
+    <div class="concession__add">
+        <h4 class="concession__add-heading">Concessions</h4>
+        <a class="concession__add-link" *ngIf="!isFeatureFlagApplyForConcession" href="{{addConcessionInAeoUrl}}" target="_blank">Manage</a>
+
+        <a class="concession__add-link" *ngIf="showApplyForConcessionLink" (click)="onClickAdd()">Add</a>
+        <a class="concession__add-link--disabled" *ngIf="showAppliedConcessionDetails">Added</a>
+        <div *ngIf="isFeatureFlagApplyForConcession && isLoading" class="concession__add-link--loading">
+            <img src="svg/button-spinner.svg" alt="loading">
+        </div>
+    </div>
+
+    <div class="concession__content" *ngIf="!showAppliedConcessionDetails">
+        Concession card holders may be eligible for discounts.
+    </div>
+    <div class="concession__content" *ngIf="showAppliedConcessionDetails">
+        You are currently receiving concession using your {{cardDescription}}
+        <span class="concession__content-applied-card-number"><span *ngIf="!cardDescriptionEndsWithCard">card</span> no. {{cardNumber}}</span>.
+    </div>
+
+    <agl-maui-flash-message class="concession__content--error" type="Error" *ngIf="unableToResolveConcessionStatus">
+        <div heading>Sorry we can't retrieve your data right now.</div>
+        <div subheading>
+            Please reload the page and try again.
+            If the issue persists, you can get in touch with us <a href="https://www.agl.com.au/residential/contact-us" target="_blank">here</a> and we'll sort it out.
+        </div>
+    </agl-maui-flash-message>
+
+    <div *ngIf="isFeatureFlagApplyForConcession">
+        <agl-maui-flash-message class="concession__web-chat--info" type="Inform"
+                                *ngIf="hasMultipleBusinessPartners">
+            <div heading>Sorry, Concessions cannot be applied online for your account.</div>
+            <div subheading>
+                <agl-webchat #concessionMultiBPChat
+                             chatButtonId="LPConcessionMultipleBusinessPartners"
+                             [contentIsHostedInLivePerson]="false"
+                             [autoScanForWebChatAvailability]="true">
+                    <div agent-status-unresolved>&nbsp;<!-- reserve some space to reduce the popping effect --></div>
+                    <div agent-offline>
+                        If you'd like to check your concession discount eligibility, contact us 24/7 on <a href="tel:131245">131 245</a>.
+                        Calling from overseas? You can call us on <a href="tel:+61386336000">+61 3 8633 6000</a>.
+                    </div>
+                    <div agent-online>
+                        If you'd like to check your concession discount eligibility, please
+                        <a (click)="concessionMultiBPChat.requestChat()">chat with us now</a>.
+                    </div>
+                </agl-webchat>
+            </div>
+        </agl-maui-flash-message>
+
+        <agl-maui-flash-message class="concession__south-australia--info" type="Inform"
+                                *ngIf="shouldContactSouthAustraliaDeptOfCommunities">
+            <div heading>Sorry, you can't add your concession cards online</div>
+            <div subheading>
+                In South Australia, concessions are administered by the Department for Communities and Social Inclusion (DCSI).
+                That means you'll need to get in touch with the DCSI to add your concession details,
+                either through their website or their concessions hotline on <a href="tel:1800307758">1800 307 758</a>.
+            </div>
+        </agl-maui-flash-message>
+
+        <agl-maui-flash-message class="concession__western-australia--info" type="Inform"
+                                *ngIf="isWesternAustraliaFairerWayPackageApplicable">
+            <div heading>Thanks for updating your concession details</div>
+            <div subheading>
+                The Gas Concession Rebate isn't provided in Western Australia. However, adding your concession card means you won't
+                incur any late payment fees as part of our 'A Fairer Way' package.
+            </div>
+        </agl-maui-flash-message>
+
+        <agl-maui-flash-message class="concession__rejected-application--warn" type="Warning" *ngIf="concessionRejectedChatWithUsSubheading || concessionRejectedTryAgainSubheading">
+            <div heading>Sorry, there is an issue with the concession card information.</div>
+            <div subheading *ngIf="concessionRejectedChatWithUsSubheading">
+                <agl-webchat #concessionRejectedChat
+                             chatButtonId="LPConcessionRejected"
+                             [contentIsHostedInLivePerson]="false"
+                             [autoScanForWebChatAvailability]="true">
+                    <div agent-status-unresolved>{{concessionRejectedChatWithUsSubheading}}<br>&nbsp;<!-- reserve some space to reduce the popping effect --></div>
+                    <div agent-offline>
+                        {{concessionRejectedChatWithUsSubheading}}
+                        Contact us 24/7 on <a href="tel:131 245">131 245</a>.<br class="visible-md visible-lg">
+                        Calling from overseas? You can call us on <a href="tel:+61386336000">+61 3 8633 6000</a>.
+                    </div>
+                    <div agent-online>
+                        {{concessionRejectedChatWithUsSubheading}}
+                        <a (click)="concessionRejectedChat.requestChat()">Chat with us now</a> to confirm your details.
+                    </div>
+                </agl-webchat>
+            </div>
+            <div subheading *ngIf="concessionRejectedTryAgainSubheading">
+                {{concessionRejectedTryAgainSubheading}}
+            </div>
+        </agl-maui-flash-message>
+    </div>
+</div>

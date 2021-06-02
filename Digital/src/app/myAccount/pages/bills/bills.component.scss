@@ -1,0 +1,187 @@
+@import '../../../shared/style/variables';
+@import '../../../shared/style/mixins';
+@import '../../address-header';
+
+.billing {
+    padding: 30px 0 0;
+    @media #{$agl-layout-mobile} {
+        padding: 0;
+    }
+
+    &-left-panel {
+        padding-right: 20px;
+        @media #{$agl-layout-tablet-and-smaller} {
+            padding: 0;
+        }
+    }
+
+    &-right-panel {
+        margin-top: 59px;
+        padding-left: 0;
+        padding-right: 0;
+        @media #{$agl-layout-mobile} {
+            margin-top: 0;
+            padding-top: 35px;
+        }
+        @media #{$agl-layout-tablet} {
+            margin-top: 0;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 50px;
+
+            .col-sm-6 {
+                &:first-child {
+                    padding-left: 0;
+                }
+
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+
+    .account {
+        margin-top: 2px;
+    }
+
+    .contract {
+        padding-bottom: 30px;
+    }
+
+    .promo-area {
+        margin-bottom: 15px;
+    }
+
+    .billing-container {
+        margin: 0 0 20px 0;
+        padding: 45px;
+        background-color: $brand-white;
+        box-shadow: $agl-box-shadow;
+
+        @media #{$agl-layout-mobile} {
+            padding: 30px 15px;
+        }
+    }
+
+    .contract-fuel {
+        display: inline-block;
+        padding-bottom: 5px;
+
+        &__inactive {
+            @include bill-pill($brand-grey-darker);
+            border-radius: 14px;
+            display: inline-block;
+            padding: 2px 10px;
+            margin-left: 8px;
+            vertical-align: top;
+            font-weight: normal;
+            font-size: 12px;
+            margin-top: 7px;
+        }
+    }
+}
+
+.placeholder-section {
+    h3 {
+        color: $brand-white;
+        margin-bottom: 45px;
+        @media (max-width: 414px) {
+            margin-top: 0;
+        }
+        @media (max-width: $device-min-xs) {
+            margin-bottom: 15px;
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .lights-out {
+        z-index: 1;
+        margin-top: -20px;
+
+        .col-sm-4 {
+            text-align: center;
+        }
+
+        img {
+            width: 85%;
+            filter: blur(3px);
+            opacity: 0.10;
+            @media (max-width: 414px) {
+                height: 345px;
+            }
+        }
+    }
+
+    .lights-out-message {
+        text-align: center;
+        z-index: 2;
+        position: absolute;
+        padding-right: 15px;
+        margin-right: auto;
+        @media (max-width: $device-min-xs) {
+            padding-right: 0;
+        }
+        @media (min-width: $device-min-sm) {
+            width: 750px;
+        }
+        @media (min-width: $device-min-med) {
+            width: 970px;
+        }
+        @media (min-width: $device-min-lge) {
+            width: 1170px;
+        }
+
+        .lights-out-message__header {
+            height: 103px;
+
+            h4 {
+                font-weight: bold;
+                color: $brand-white;
+                text-align: left;
+            }
+
+            img {
+                padding-right: 20px;
+                @media (max-width: $device-min-xs) {
+                    padding-right: 0;
+                }
+            }
+
+            img,
+            h4 {
+                display: inline-block;
+                margin-bottom: 35px;
+            }
+        }
+
+        .lights-out-message__content {
+            p {
+                color: $brand-white;
+                font-family: $secondary-font-stack;
+                font-size: 16px;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .lights-out-button {
+                margin-top: 30px;
+                @media (max-width: $device-min-xs) {
+                    margin-top: 20px;
+                }
+
+                .lights-out-button_btn {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    @media (max-width: 414px) {
+                        display: inline-block;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

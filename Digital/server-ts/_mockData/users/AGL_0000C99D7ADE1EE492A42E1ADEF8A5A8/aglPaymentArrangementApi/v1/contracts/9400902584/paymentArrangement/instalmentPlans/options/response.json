@@ -1,0 +1,33 @@
+[{
+    "frequency": "Weekly",
+    "minStartDate": "2018-06-01",
+    "maxStartDate": "2018-06-15",
+    "instalmentSuggestions": [
+        { "instalmentAmount": 20, "numberOfInstalments": 10 },
+        { "instalmentAmount": 40, "numberOfInstalments": 5 },
+        { "instalmentAmount": 100, "numberOfInstalments": 2 }
+    ],
+    "instalmentMinAmount": 20,
+    "instalmentMaxAmount": 190
+},
+{
+    "frequency": "Fortnightly",
+    "minStartDate": "2018-06-01",
+    "maxStartDate": "2018-06-15",
+    "instalmentSuggestions": [
+        { "instalmentAmount": 40, "numberOfInstalments": 5 },
+        { "instalmentAmount": 100, "numberOfInstalments": 2 }
+    ],
+    "instalmentMinAmount": 40,
+    "instalmentMaxAmount": 190
+},
+{
+    "frequency": "Monthly",
+    "minStartDate": "2018-06-01",
+    "maxStartDate": "2018-06-15",
+    "instalmentSuggestions": [
+        { "instalmentAmount": 100, "numberOfInstalments": 2 }
+    ],
+    "instalmentMinAmount": 100,
+    "instalmentMaxAmount": 100
+}]

@@ -1,0 +1,17 @@
+{
+  "status": 200,
+  "headers": { },
+  "body": {
+    "hasMultipleBusinessPartners": false,
+    "businessPartners": [
+      {
+        "firstName": "Helen",
+        "lastName": "McFarlane",
+        "businessPartnerNumber": "BP0001",
+        "phone": "03 8663 6721",
+        "mobile": "0438 770 119",
+        "hasDateOfBirth": false
+      }
+    ]
+  }
+}

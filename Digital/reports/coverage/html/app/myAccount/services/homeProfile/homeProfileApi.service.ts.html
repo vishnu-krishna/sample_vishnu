@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\services\homeProfile\homeProfileApi.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/myAccount/services/homeProfile/</a> homeProfileApi.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">57.45% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>27/47</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">80% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>8/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">27.78% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>5/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">51.22% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>21/41</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable }                 from '@angular/core';
+import { Http, Headers, RequestOptions, RequestMethod, Response } from '@angular/http';
+import { Observable }                 from 'rxjs/Observable';
+import { ConfigService }              from '../../../shared/service/config.service';
+import { AglAuthTokenProvider }       from '../../../shared/repository/aglAuthTokenProvider';
+import { Guid }                       from '../../../shared/utils/guid';
+import { ErrorApiModel }              from '../../../shared/service/api.service';
+&nbsp;
+<span class="fstat-no" title="function not covered" >export abstract class IHomeProfileApi {</span>
+    public abstract getProfiles(): Observable&lt;HomeProfileSummaryApiModel[]&gt;;
+    public abstract getProfile(contractNumber: string): Observable&lt;HomeProfileApiModel&gt;;
+    public abstract saveProfile(contractNumber: string, profile: HomeProfileApiModel): Observable&lt;Response&gt;;
+}
+&nbsp;
+@Injectable()
+export class HomeProfileApiService implements IHomeProfileApi {
+    private basePath: string;
+&nbsp;
+    constructor(
+        private <span class="cstat-no" title="statement not covered" >http: Http,</span>
+        private <span class="cstat-no" title="statement not covered" >configService: ConfigService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >tokenProvider: AglAuthTokenProvider<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >)</span> {</span></span>
+<span class="cstat-no" title="statement not covered" >            this.basePath = configService.current.aglHomeProfileApi;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public getProfiles(): Observable&lt;HomeProfileSummaryApiModel[]&gt; {</span>
+        const getEndPoint = <span class="cstat-no" title="statement not covered" >`/v1/homeProfiles`;</span>
+<span class="cstat-no" title="statement not covered" >        return this.get(getEndPoint);</span>
+    }
+&nbsp;
+    public getProfile(contractNumber: string<span class="fstat-no" title="function not covered" >): Observable&lt;HomeProfileApiModel&gt; {</span>
+        const getEndPoint = <span class="cstat-no" title="statement not covered" >`/v1/contracts/${contractNumber}/homeProfile`;</span>
+<span class="cstat-no" title="statement not covered" >        return this.get(getEndPoint);</span>
+    }
+&nbsp;
+    public saveProfile(contractNumber: string, profile: HomeProfileApiModel<span class="fstat-no" title="function not covered" >): Observable&lt;Response&gt; {</span>
+        const postEndPoint = <span class="cstat-no" title="statement not covered" >`/v1/contracts/${contractNumber}/homeProfile`;</span>
+        const body = <span class="cstat-no" title="statement not covered" >profile;</span>
+<span class="cstat-no" title="statement not covered" >        return this.post&lt;Response&gt;(postEndPoint, body);</span>
+    }
+&nbsp;
+    private get&lt;T&gt;(url: string<span class="fstat-no" title="function not covered" >): Observable&lt;T&gt; {</span>
+        let requestOptions = <span class="cstat-no" title="statement not covered" >new RequestOptions({</span>
+            method: RequestMethod.Get,
+            headers: this.commonHeaders()
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return this.http.get(`${this.basePath}${url}`, requestOptions)</span>
+            .map((response<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                return response.json();</span>
+            });
+    }
+&nbsp;
+    private post&lt;T&gt;(url: string, body: any<span class="fstat-no" title="function not covered" >): Observable&lt;T&gt; {</span>
+        let requestOptions = <span class="cstat-no" title="statement not covered" >new RequestOptions({</span>
+            method: RequestMethod.Post,
+            headers: this.commonHeaders()
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return this.http.post(`${this.basePath}${url}`, body, requestOptions)</span>
+            .map((response: Response<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                return response.json();</span>
+            });
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private commonHeaders(): Headers {</span>
+<span class="cstat-no" title="statement not covered" >        return new Headers({</span>
+            'Authorization': `Bearer ${this.tokenProvider.getToken()}`,
+            'X-Correlation-Id': Guid.newGuid(),
+            'Content-Type': 'application/json'
+        });
+    }
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >export class HomeProfileApiModel {</span>
+    public propertyType?: string;
+    public numberOfAdults?: number;
+    public numberOfChildren?: number;
+    public numberOfBedrooms?: number;
+    public numberOfBathrooms?: number;
+&nbsp;
+    public hasCooling?: boolean;
+    public hasCoolingAircon: boolean;
+    public numberOfAirconSplitSystems?: number;
+    public numberOfAirconFixed?: number;
+    public hasDuctedAircon?: boolean;
+    public hasEvaporativeCooling?: boolean;
+    public numberOfPortableCoolers?: number;
+    public hasDuctedEvaporativeCooling?: boolean;
+    public hasOtherCooling?: boolean; // Maps to 'Has fan cooling'.
+    public numberOfFans?: number;
+&nbsp;
+    public hotWaterType?: string;
+&nbsp;
+    public ovenType?: string;
+    public cooktopType?: string;
+&nbsp;
+    public numberOfHeatingSplitSystems?: number;
+    public typeOfDuctedHeating?: string;
+    public numberOfPortableElecHeaters?: number;
+    public typeOfOtherHeating?: string;
+&nbsp;
+    public mainFridge?: Fridge;
+    public fridge2?: Fridge;
+&nbsp;
+    public numberOfTelevisions?: number;
+    public hasWashingMachine?: boolean;
+    public hasClothesDryer?: boolean;
+    public hasDishwasher?: boolean;
+    public hasMicrowave?: boolean;
+    public hasElectricalVehicle?: boolean;
+&nbsp;
+    public hasPool?: boolean;
+    public poolSize?: string;
+    public poolHeaterFuelType?: string;
+    public poolPumpAge?: string;
+    public hasSpa?: boolean;
+}
+&nbsp;
+export class Fridge {
+    constructor(fridgeType: string, age: string<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.fridgeType = fridgeType;</span>
+<span class="cstat-no" title="statement not covered" >        this.age = age;</span>
+    }
+    public fridgeType?: string;
+    public age?: string;
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >export class HomeProfileSummaryApiModel {</span>
+    public contractNumber: string;
+    public accountNumber: string;
+    public updatedUtc: Date;
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\settings\billing\billingSettingsViewModelFactory.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/settings/billing/</a> billingSettingsViewModelFactory.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">21.43% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>15/70</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">19.51% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>8/41</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.14% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">21.31% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>13/61</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable }                   from '@angular/core';
+import { Observable }                   from 'rxjs/Observable';
+import { AccountViewModel, ContractViewModel, IAccountServiceMA } from '../../../services/account.service';
+import { ISettingsService }             from '../../../services/settings/settings.service.interface';
+&nbsp;
+import { SettingsAggregateModel }       from '../../../services/settings/model/settingsAggregateModel';
+import { EmailBillingComponentModel }   from '../billing/emailBilling/emailBillingComponentModel';
+import { BillingSettingsViewModel }     from './billingSettingsViewModel';
+import { BillingSettingsViewModelItem } from './billingSettingsViewModelItem';
+&nbsp;
+import { ApiService, ContactDetailModel } from '../../../../shared/service/api.service';
+&nbsp;
+@Injectable()
+export class BillingSettingsViewModelFactory {
+    constructor(
+        private <span class="cstat-no" title="statement not covered" >accountService: IAccountServiceMA,</span>
+        private <span class="cstat-no" title="statement not covered" >settingsService: ISettingsService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >apiService: ApiService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >)</span> {</span></span>
+    }
+&nbsp;
+    /**
+     * Creates view model by calling data services and combining the results together.
+     *
+     * @returns {Observable&lt;BillingSettingsViewModel&gt;}
+     *
+     * @memberOf BillingSettingsViewModelFactory
+     */
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public getViewModel(): Observable&lt;BillingSettingsViewModel&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        return Observable.forkJoin(</span>
+                this.accountService.getAccounts(),
+                this.settingsService.getSettings(),
+                this.apiService.getContactDetail()
+            )
+            .map(([<span class="cstat-no" title="statement not covered" >accountsList,</span> <span class="cstat-no" title="statement not covered" >settingsModel,</span> <span class="cstat-no" title="statement not covered" >contactDetails]<span class="fstat-no" title="function not covered" ></span>) =&gt; {</span>
+                let aggregate = <span class="cstat-no" title="statement not covered" >this.combineModels(accountsList, settingsModel, contactDetails);</span>
+<span class="cstat-no" title="statement not covered" >                return aggregate;</span>
+            }
+        );
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    private combineModels(accountModels: AccountViewModel[], settingsModel: SettingsAggregateModel, contactDetails: ContactDetailModel<span class="fstat-no" title="function not covered" >): BillingSettingsViewModel {</span></span>
+&nbsp;
+        let combinedModel = <span class="cstat-no" title="statement not covered" >new BillingSettingsViewModel();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        combinedModel.isSingleContractAccountWithSingleContract =</span>
+            (accountModels.length === 1 &amp;&amp; accountModels[0].contracts.length === 1);
+&nbsp;
+        // This property set when bill delivery method preferences could not be obtained from the settings API
+        // What the UI is meant to look like in this case is unclear
+<span class="cstat-no" title="statement not covered" >        combinedModel.billDeliveryApiError = settingsModel.billDeliveryApiLoadError;</span>
+        let modelSequenceId = <span class="cstat-no" title="statement not covered" >0;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        accountModels.forEach((ca<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (!ca.allContractsAreRestricted) {</span>
+                let item = <span class="cstat-no" title="statement not covered" >new BillingSettingsViewModelItem();</span>
+<span class="cstat-no" title="statement not covered" >                item.account = ca;</span>
+                let isGroupedAddress = <span class="cstat-no" title="statement not covered" >!!ca.groupedAddress;</span>
+                let oneContractAccountOneContract = (<span class="cstat-no" title="statement not covered" >accountModels.length === 1 &amp;&amp; ca.contracts.length === 1)</span>;
+                let emailAddress = <span class="cstat-no" title="statement not covered" >(!!contactDetails</span>
+                    &amp;&amp; contactDetails.businessPartners
+                    &amp;&amp; contactDetails.businessPartners.length
+                    &amp;&amp; !!contactDetails.businessPartners[0]
+                    &amp;&amp; !!contactDetails.businessPartners[0].email) ? contactDetails.businessPartners[0].email :  '';
+                let isMandatoryEBilling = <span class="cstat-no" title="statement not covered" >ca.contracts.some((contract<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >(contract.isMandatoryEBilling === true))</span></span>;</span>
+<span class="cstat-no" title="statement not covered" >                item.showAccountDetailComponent = !(oneContractAccountOneContract);</span>
+<span class="cstat-no" title="statement not covered" >                item.accountDetailModel.contractAccountNumber = ca.accountNumber;</span>
+<span class="cstat-no" title="statement not covered" >                item.accountDetailModel.doesAccountHaveBasicMeter = (ca.contracts.find((contract<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >(contract.isSmartMeter === false))</span></span> !== undefined) ;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                settingsModel.billDeliveryMethodList.forEach((settingsBillDeliveryMethod<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                    if (ca.accountNumber === settingsBillDeliveryMethod.contractAccountNumber) {</span>
+                        // If there is a bill delivery setting for the contract account number
+                        // we create a model with the bill delivery setting so that UI shows
+                        // buttons if the preference is Email or Postal otherwise an error message.
+<span class="cstat-no" title="statement not covered" >                        item.emailBillingModel = new EmailBillingComponentModel(ca.accountNumber,</span>
+                                                                                emailAddress,
+                                                                                contactDetails.hasMultipleBusinessPartners,
+                                                                                ++modelSequenceId,
+                                                                                settingsBillDeliveryMethod.billDeliveryMethod,
+                                                                                isMandatoryEBilling);
+                    }
+                });
+<span class="cstat-no" title="statement not covered" >                if (!item.emailBillingModel) {</span>
+                    // If the api data doesn't contain a bill delivery setting for the contract account number
+                    // We create a model without a bill delivery mode that renders an error message.
+<span class="cstat-no" title="statement not covered" >                    item.emailBillingModel = new EmailBillingComponentModel(ca.accountNumber,</span>
+                                                                            emailAddress,
+                                                                            contactDetails.hasMultipleBusinessPartners,
+                                                                            ++modelSequenceId);
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                for (let index = 0; index &lt; ca.contracts.length; index++) {</span>
+                    let contract = <span class="cstat-no" title="statement not covered" >ca.contracts[index];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    if (isGroupedAddress &amp;&amp; index === 1) {</span>
+<span class="cstat-no" title="statement not covered" >                        item.accountDetailModel.supplyAddresses.push(ca.groupedAddress);</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    if (!isGroupedAddress &amp;&amp; !contract.isRestricted) {</span>
+<span class="cstat-no" title="statement not covered" >                        item.accountDetailModel.supplyAddresses.push(contract.address);</span>
+                    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    item.accountDetailModel.numberOfGasIcons = ca.contracts.filter((currentCa: ContractViewModel<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                        if (!currentCa.isRestricted) {</span>
+<span class="cstat-no" title="statement not covered" >                            return currentCa.isGas;</span>
+                        }
+                    }).length;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    item.accountDetailModel.numberOfElectricityIcons = ca.contracts.filter((currentCa: ContractViewModel<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                        if (!currentCa.isRestricted) {</span>
+<span class="cstat-no" title="statement not covered" >                            return currentCa.isElectricity;</span>
+                        }
+                    }).length;
+&nbsp;
+                    // Region for accountDetailModel
+<span class="cstat-no" title="statement not covered" >                    item.accountDetailModel.regionId = contract.regionId;</span>
+                }
+                let paygContract = <span class="cstat-no" title="statement not covered" >ca.contracts.find((c<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >c.isPayg)</span></span>;</span>
+<span class="cstat-no" title="statement not covered" >                if (paygContract != null) {</span>
+<span class="cstat-no" title="statement not covered" >                     combinedModel.containsPaygContract = true;</span>
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                item.showMonthlyBilling = this.showMonthlyBilling(ca);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                combinedModel.items.push(item);</span>
+            }
+        });
+<span class="cstat-no" title="statement not covered" >        return combinedModel;</span>
+    }
+&nbsp;
+    private showMonthlyBilling(accountDetailModel: AccountViewModel<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return accountDetailModel.contracts</span>
+            .some((c: ContractViewModel<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >!c.isRestricted)</span></span>;
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

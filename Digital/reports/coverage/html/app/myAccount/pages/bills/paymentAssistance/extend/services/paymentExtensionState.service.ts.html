@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\bills\paymentAssistance\extend\services\paymentExtensionState.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/bills/paymentAssistance/extend/services/</a> paymentExtensionState.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">38.33% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>23/60</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">36.36% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">37.04% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>20/54</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+&nbsp;
+import * as jwt_decode from 'jwt-decode';
+import * as _ from 'lodash';
+import { Observer } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
+import { ConfigService } from '../../../../../../shared/service/config.service';
+import { IAccountServiceMA } from '../../../../../services/account.service';
+import { FuelChipData } from '../eligibility/fuelChipData';
+&nbsp;
+declare let leanengage: any;
+&nbsp;
+<span class="fstat-no" title="function not covered" >export abstract class IPaymentExtensionStateService {</span>
+    public abstract extensionCompleted(extendedDueDate: Date): Observable&lt;boolean&gt;;
+    public abstract initNewSession(selectedContractNumber: string, eligibleFuelChips: FuelChipData[]);
+    public abstract getSelectedFuelChip(): FuelChipData;
+    public abstract clearSelectedFuelChip(): void;
+    public abstract getEligibleFuelChips(): FuelChipData[];
+    public abstract getExtendedFuelChip(): FuelChipData;
+    public abstract selectChip(selectedContractNumber: string);
+    public abstract showLeanEngageSurveyOnSuccessfulSetup(): void;
+    public abstract shouldLeanEngageSurveyBeShown(): boolean;
+    public abstract setLeanEngageSurveyShown(leanSurveyShown: boolean): void;
+}
+&nbsp;
+// This service is still under development, will revisit later after the other payment extension pages are ready.
+@Injectable()
+export class PaymentExtensionStateService implements IPaymentExtensionStateService {
+    private selectedChip: FuelChipData;
+    private eligibleChips: FuelChipData[];
+    private extendedChip: FuelChipData;
+    private <span class="cstat-no" title="statement not covered" >leanSurveryShown = false;</span>
+&nbsp;
+    constructor(
+        private <span class="cstat-no" title="statement not covered" >accountService: IAccountServiceMA,</span>
+        public <span class="cstat-no" title="statement not covered" >configService: ConfigService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >,</span></span></span>
+    ) { }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public getSelectedFuelChip(): FuelChipData {</span>
+<span class="cstat-no" title="statement not covered" >        return this.selectedChip;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public clearSelectedFuelChip(): void {</span>
+<span class="cstat-no" title="statement not covered" >        this.selectedChip = undefined;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public getEligibleFuelChips(): FuelChipData[] {</span>
+<span class="cstat-no" title="statement not covered" >        return this.eligibleChips;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public getExtendedFuelChip(): FuelChipData {</span>
+<span class="cstat-no" title="statement not covered" >        return this.extendedChip;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    public extensionCompleted(extendedDueDate: Date<span class="fstat-no" title="function not covered" >): Observable&lt;boolean&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        return new Observable((observer: Observer&lt;boolean&gt;<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            this.accountService.refreshAccounts().subscribe(</span>
+<span class="fstat-no" title="function not covered" >                () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    this.eligibleChips = this.eligibleChips.filter((fcd<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >fcd.contractNumber !== this.selectedChip.contractNumber)</span></span>;</span>
+<span class="cstat-no" title="statement not covered" >                    this.extendedChip = _.cloneDeep(this.selectedChip);</span>
+<span class="cstat-no" title="statement not covered" >                    this.extendedChip.eligibility.dueDate = extendedDueDate;</span>
+<span class="cstat-no" title="statement not covered" >                    this.extendedChip.eligibility.isEligible = false;</span>
+<span class="cstat-no" title="statement not covered" >                    this.extendedChip.eligibility.availableExtensionDates = null;</span>
+<span class="cstat-no" title="statement not covered" >                    this.selectedChip = null;</span>
+<span class="cstat-no" title="statement not covered" >                    observer.next(true);</span>
+                },
+                (error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    observer.next(false);</span>
+                },
+<span class="fstat-no" title="function not covered" >                () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    observer.complete();</span>
+                }
+            );
+        });
+    }
+&nbsp;
+    public selectChip(selectedContractNumber: string<span class="fstat-no" title="function not covered" >) {</span>
+        let selectedFuelChip = <span class="cstat-no" title="statement not covered" >this.getEligibleFuelChips().find((fc<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >fc.contractNumber === selectedContractNumber)</span></span>;</span>
+<span class="cstat-no" title="statement not covered" >        if (selectedFuelChip) {</span>
+<span class="cstat-no" title="statement not covered" >            this.selectedChip = _.cloneDeep(selectedFuelChip);</span>
+<span class="cstat-no" title="statement not covered" >            this.selectedChip.hasBeenSelected();</span>
+        }
+    }
+&nbsp;
+    public initNewSession(selectedContractNumber: string, eligibleFuelChips: FuelChipData[]<span class="fstat-no" title="function not covered" >): FuelChipData {</span>
+<span class="cstat-no" title="statement not covered" >        this.eligibleChips = eligibleFuelChips;</span>
+<span class="cstat-no" title="statement not covered" >        this.selectChip(selectedContractNumber);</span>
+<span class="cstat-no" title="statement not covered" >        this.leanSurveryShown = false;</span>
+<span class="cstat-no" title="statement not covered" >        return this.selectedChip;</span>
+    }
+&nbsp;
+    /***
+     * Displays the 'payment-extensions-success' lean engage survey as a modal dialog
+     */
+<span class="fstat-no" title="function not covered" >    public showLeanEngageSurveyOnSuccessfulSetup(): void {</span>
+        let nameId: string;
+        let leanAppId = <span class="cstat-no" title="statement not covered" >this.configService.current.leanEngageAppId;</span>
+        let bearerToken = <span class="cstat-no" title="statement not covered" >sessionStorage.getItem('Bearer');</span>
+<span class="cstat-no" title="statement not covered" >        if (bearerToken) {</span>
+<span class="cstat-no" title="statement not covered" >            nameId = jwt_decode(bearerToken)['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'];</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        leanengage('start', { user_id: nameId, name: nameId, app_id: leanAppId });</span>
+        // The leanenage library is current defaulting the appId. Calling the 'create' method allows us to reset it
+        // leanengage('create', leanAppId);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        leanengage('triggerSurvey', 'payment-extensions-success');</span>
+&nbsp;
+    }
+&nbsp;
+    /**
+     * Determine if the lean engage survey should be shown
+     * Only show if there is not another fuel type eligible for payment extension and that the
+     * survey has not previously been shown to the user
+     */
+<span class="fstat-no" title="function not covered" >    public shouldLeanEngageSurveyBeShown(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return !this.leanSurveryShown &amp;&amp; (this.eligibleChips.length === 0);</span>
+    }
+&nbsp;
+    /**
+     * Set the lean survey shown flag. This is used by the shouldLeanEngageSurveyBeShown() logic
+     * @param leanSurveyShown Flag indicating if the lean engage survey has been show to the user
+     */
+    public setLeanEngageSurveyShown(leanSurveyShown: boolean<span class="fstat-no" title="function not covered" >): void {</span>
+<span class="cstat-no" title="statement not covered" >        this.leanSurveryShown = leanSurveyShown;</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../../sorter.js"></script>
+</body>
+</html>

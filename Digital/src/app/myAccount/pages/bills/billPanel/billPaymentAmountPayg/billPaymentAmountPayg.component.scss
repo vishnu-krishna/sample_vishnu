@@ -1,0 +1,62 @@
+@import '../../../../../shared/style/variables';
+
+.bill-panel-amount {
+    &__pending-payment {
+        font-size: 12px;
+        color: $brand-grey-g2;
+        font-weight: normal;
+        letter-spacing: 0px;
+        padding-top: 0px;
+        line-height: 1.25em;
+        width: 240px;
+        padding-bottom: 10px;
+        @media #{$agl-layout-mobile} {
+            padding-right: 0px;
+            width: 100%;
+        }
+    }
+
+    &__paygdebit {
+        font-size: 14px;
+        line-height: 20px;
+        color: $brand-grey-g2;
+        width: 251px;
+        padding-bottom: 10px;
+        @media #{$agl-layout-mobile} {
+            padding-right: 0px;
+            width: 100%;
+        }
+    }
+
+    &__balance {
+        height: 100px;
+    }
+
+    &__prepayment {
+        padding-bottom: 10px;
+    }
+
+    &__button-container {
+        padding-right: 50px;
+        @media #{$agl-layout-mobile} {
+            padding-right: 0px;
+            padding-top: 10px;
+        }
+    }
+
+    &__payment-pending--mobile {
+        display: none;
+        @media #{$agl-layout-mobile} {
+            display: block;
+        }
+    }
+
+    &.payment-pending {
+        .bill-panel-amount__paygdebit {
+            display: block;
+            @media #{$agl-layout-mobile} {
+                display: none;
+            }
+        }
+    }
+}

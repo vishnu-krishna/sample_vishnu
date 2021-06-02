@@ -1,0 +1,84 @@
+<div class="concession-final-confirmation">
+    <agl-maui-confirmation-banner text="You've successfully added your concession details.">
+    </agl-maui-confirmation-banner>
+    <agl-maui-container class="concession-final-confirmation__container-top">
+        <div class="concession-final-confirmation__wrapper">
+
+            <div class="concession-final-confirmation__heading-text">
+                Concession card summary
+            </div>
+            <div class="concession-final-confirmation__content">
+                <div class="concession-final-confirmation__content-row">
+                    <div class="concession-final-confirmation__content-row-label">Name:</div>
+                    <div class="concession-final-confirmation__content-row-content">{{accountHolderName}}</div>
+                </div>
+                <div class="concession-final-confirmation__content-row">
+                    <div
+                        class="concession-final-confirmation__content-row-label concession-final-confirmation__content-address-label">
+                        {{addressLabel}}:
+                    </div>
+                    <div class="concession-final-confirmation__content-row-content">
+                        <div *ngFor="let address of uniqueAddresses" class="concession-final-confirmation__address">{{address}}</div>
+                    </div>
+                </div>
+                <div class="concession-final-confirmation__content-row">
+                    <div class="concession-final-confirmation__content-row-label">Card issuer:</div>
+                    <div
+                        class="concession-final-confirmation__content-row-content concession-final-confirmation__content-card-description">
+                        {{cardIssuerDescription}}
+                    </div>
+                </div>
+                <div class="concession-final-confirmation__content-row">
+                    <div class="concession-final-confirmation__content-row-label">Card type:</div>
+                    <div
+                        class="concession-final-confirmation__content-row-content concession-final-confirmation__content-card-type-description">
+                        {{cardTypeDescription}}
+                    </div>
+                </div>
+                <div class="concession-final-confirmation__content-row">
+                    <div class="concession-final-confirmation__content-row-label">Card number:</div>
+                    <div
+                        class="concession-final-confirmation__content-row-content concession-final-confirmation__content-card-number">
+                        {{cardNumber}}
+                    </div>
+                </div>
+            </div>
+            <div class="concession-final-confirmation__whats-happens-now">
+                <div class="concession-final-confirmation__whats-happens-now-list">
+                    <agl-maui-icon-list heading="What happens now">
+                        <agl-maui-icon-list-item iconPath="/svg/maui/iconList/showcase/icon-clock.svg">
+                            We're validating your card and will let you know if we have any issues.
+                        </agl-maui-icon-list-item>
+                        <agl-maui-icon-list-item iconPath="/svg/concession/icon-card.svg">
+                            You'll see the discount for your concession reflected in your next bill.
+                        </agl-maui-icon-list-item>
+                        <agl-maui-icon-list-item iconPath="/svg/maui/iconList/showcase/icon-alert.svg">
+                            If there are any issues with your card, we'll let you know the next steps to take to resolve
+                            them.
+                        </agl-maui-icon-list-item>
+                    </agl-maui-icon-list>
+                </div>
+            </div>
+        </div>
+    </agl-maui-container>
+    <div class="concession-final-confirmation__close-button">
+        <agl-maui-button (clicked)="close()">Close</agl-maui-button>
+    </div>
+    <div class="concession-final-confirmation__banner">
+        <div class="concession-final-confirmation__banner-wrapper">
+            <div class="concession-final-confirmation__banner-text-section">
+                <p class="concession-final-confirmation__banner-heading">We're here to help</p>
+                <p class="concession-final-confirmation__banner-sub-heading">
+                    We've built a tool that helps you find financial assistance options, such as government grants you
+                    might be eligible for.</p>
+            </div>
+            <a href="https://www.agl.com.au/heretohelp" class="concession-final-confirmation__banner-button-section"
+               target="_blank">
+                <span class="concession-final-confirmation__banner-button-section-btn">
+                    check now
+                </span>
+            </a>
+            <div class="concession-final-confirmation__banner-icon-section"></div>
+        </div>
+    </div>
+</div>

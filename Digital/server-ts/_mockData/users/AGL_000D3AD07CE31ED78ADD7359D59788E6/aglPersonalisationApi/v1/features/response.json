@@ -1,0 +1,24 @@
+[
+    {
+        "featureId": "Rewards",
+        "startDate": "2017-01-25",
+        "endDate": "2080-01-31",
+        "priority": 1,
+        "content": {
+            "heading": "Rewards have landed",
+            "description": "Rewards are our way of saying thanks. Treat yourself with credits, discounted movie tickets and more.",
+            "image": "img/campaign-image-fpo.jpg"
+        }
+    },
+    {
+        "featureId": "BillSmoothing",
+        "startDate": "2017-01-25",
+        "endDate": "2080-01-31",
+        "priority": 1,
+        "content": {
+            "heading": "Bill Smoothing is here",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac aliquet massa. Donec tellus odio, tempor a viverra eu, luctus ac sapien. Sed tincidunt volutpat nibh, quis auctor dolor rutrum id.",
+            "image": "img/Community_MyAccount_lowres.jpg"
+        }
+    }
+]

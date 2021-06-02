@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\shared\service\config.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/shared/service/</a> config.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">35.29% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>18/51</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10.53% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">13.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.33% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>16/48</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { IConfig } from './config.service';
+&nbsp;
+// Import non-bundled .js file (./config/config.js) that contains our config
+declare let getTransformedConfig: any;
+&nbsp;
+// Native html object
+declare let window: any;
+&nbsp;
+@Injectable()
+export class ConfigService {
+&nbsp;
+    /**
+     * Get config settings for the current environment.
+     */
+    public current: IConfig;
+&nbsp;
+<span class="fstat-no" title="function not covered" >    constructor() {</span>
+        let env = <span class="cstat-no" title="statement not covered" >this.getEnvironmentName();</span>
+<span class="cstat-no" title="statement not covered" >        this.current = this.getConfigForEnvironment(env);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public getEnvironmentName() {</span>
+<span class="cstat-no" title="statement not covered" >        return window.location.host;</span>
+    }
+&nbsp;
+    public navigateToLoginWithReturnPath(path: string<span class="fstat-no" title="function not covered" >): void {</span>
+        const loginPage = <span class="cstat-no" title="statement not covered" >this.formatSiteCoreLoginUrl(path);</span>
+<span class="cstat-no" title="statement not covered" >        this.replaceWindowLocation(loginPage);</span>
+    }
+&nbsp;
+    public navigateToRegisterWithReturnPath(path: string<span class="fstat-no" title="function not covered" >): void {</span>
+        const loginPage = <span class="cstat-no" title="statement not covered" >this.formatSiteCoreLoginUrl(path, true);</span>
+<span class="cstat-no" title="statement not covered" >        this.replaceWindowLocation(loginPage);</span>
+    }
+&nbsp;
+    public replaceWindowLocation(newLocation: string<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        window.location.replace(newLocation);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public get getEnvironmentLoginUrl() {</span>
+<span class="cstat-no" title="statement not covered" >        return `${this.current.aglSiteCoreWebsiteBaseUrl}/sts/account/login`;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public get getEnvironmentLogoutUrl() {</span>
+<span class="cstat-no" title="statement not covered" >        return `${this.current.aglSiteCoreWebsiteBaseUrl}/aeo/home/logout`;</span>
+    }
+&nbsp;
+    // TODO: move into a NavigationService with other similar methods
+    public routeWithParameters(router: Router, activatedRoute: ActivatedRoute, destinationRoute: String<span class="fstat-no" title="function not covered" >) {</span>
+&nbsp;
+        let extra = <span class="cstat-no" title="statement not covered" >{</span>
+            queryParams: activatedRoute.snapshot.queryParams
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        router.navigate([destinationRoute], extra);</span>
+    }
+&nbsp;
+    /**
+     * Setup the configuration variables.
+     * @param  {string} env the env
+     * @return {Object}     the config
+     */
+    private getConfigForEnvironment(env: string<span class="fstat-no" title="function not covered" >): IConfig {</span>
+&nbsp;
+        // removeNonProdConfig() - This function will strip out on build-prod
+        // release with webpack.
+<span class="fstat-no" title="function not covered" >        function removeNonProdConfig() {</span>
+&nbsp;
+            let currentProcess = <span class="cstat-no" title="statement not covered" >process.env.ENV;</span>
+&nbsp;
+            let baseConfig = <span class="cstat-no" title="statement not covered" >{</span>
+                aglWebApiBaseUrl: 'https://apiaglbauuat.api.agl.com.au',
+                aglRedLineApiBaseUrl: 'https://uat-redline.digital.agl.com.au/api',
+                aglSettingsApiBaseUrl: 'https://settings-api-agl-bauu-aus.azurewebsites.net/v2',
+                // TODO: Confirm Energy Insights URL
+                aglEnergyInsightsApiBaseUrl: 'https://energy-insights-api-agl-bauu-aus.azurewebsites.net/v2',
+                aglProductApiBaseUrl: 'https://product.api.agl.com.au/v2',
+                aglMoveAndJoinApiUrl: 'https://moveandjoin-api-agl-bautst-aus.azurewebsites.net',
+                aglStoredPaymentApi: 'https://storedpayments-api-agl-bauu-aus.azurewebsites.net/v1',
+                aglPaymentSchemeApi: 'base-config-value',
+                aglConcessionApiBaseUrl: 'base-config-value',
+                aglHomeProfileApi: 'https://homeprofiles-bauuat.api.agl.com.au',
+                isPilotBannerCollapsedKey: 'selfService.isPilotBannerCollapsed',
+                betaSitePreferenceKey: 'AGL_beta_site_login',
+                bearerTokenCookieName: 'bearer',
+                sitecoreApiBaseUrl: '/sitecore/api/ssc/item/',
+                sitecoreBaseContentPath: '/sitecore/content/AGL/Home/Apps',
+                fileBaseContentPath: '/Apps/dist',
+                aglWebApiSyncPollingIntervalMs: 1000,
+                aglWebApiSyncPollingTimeOutMs: 60000,
+                aglPalPalApiBaseUrl: 'https://api.sandbox.paypal.com/v1/',
+                aglPayPalTokenUrl: '/svc/paypal/GetSandboxToken',
+                splunkUrl: 'https://azsaw0177.agl.int:8088/services/collector/event',
+                splunkApplicationKey: 'F58C933B-7548-4957-A5B0-4ED755B08237',
+                logProvider: LogProvider.Sitecore,
+                aglWebPaymentApiBaseUrl: 'https://apipaymentdev.agl.com.au',
+                leanEngageAppId: 'd9d00195-bbac-438b-907c-6d6c839ae11d',
+                leanEngageTrackerAppId: '89a6d223-e90e-47e3-80e3-30d10cc4b550',
+                PCIDSSURL: 'https://glawiwde3.agl.int/PCIDSSWeb_AEO/PCIDSS/creditcardnumbermyaccount',
+                showLoadingModalAfterMs: 30000,
+                solarCheckApiBaseUrl : 'https://solarcheck-api-dev.azurewebsites.net',
+                aglRewardsApiBaseUrl: '',
+                aglPersonalisationApiBaseUrl: '',
+                loginDetailsBaseUrl: 'https://agl-identity-app-uat.azurewebsites.net',
+                isE2eTestMode: <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >!!localStorage.getItem('selfService.e2e'),</span></span>
+                aglAeoWarmUpDelayMs: 0
+            };
+&nbsp;
+            let localhostConfig: IConfig = <span class="cstat-no" title="statement not covered" >Object.assign({}, baseConfig, {</span>
+                // NOTE: These are fake base URL's, to allow the WebPack proxy to detect these and re-route to the node mock servers
+                aglSiteCoreWebsiteBaseUrl: 'https://localhost:3456/siteCoreWebsite',
+                aglWebApiBaseUrl: 'https://localhost:3456/aglWebApi',
+                aglRedLineApiBaseUrl: 'https://localhost:3456/aglRedlineApi',
+                aglMoveAndJoinApiUrl: `https://localhost:3456/aglMoveAndJoinApi`,
+                aglSettingsApiBaseUrl: 'https://localhost:3456/aglSettingsApi',
+                aglEnergyInsightsApiBaseUrl: 'https://localhost:3456/aglEnergyInsightsApi',
+                aglProductApiBaseUrl: 'https://localhost:3456/aglProductApi',
+                aglPaymentSchemeApi: 'https://localhost:3456/aglPaymentSchemeApi',
+                aglHomeProfileApi: 'https://localhost:3456/aglHomeProfileApi',
+                solarCheckApiBaseUrl: 'https://localhost:3456/aglSolarCheckApi',
+                aglRewardsApiBaseUrl: 'https://localhost:3456/aglRewardsApi',
+                aglPersonalisationApiBaseUrl: 'https://localhost:3456/aglPersonalisationApi',
+                aglConcessionApiBaseUrl: 'https://localhost:3456/aglConcessionApi',
+                aglDecisioningApiUrl: 'https://localhost:3456/aglDecisioningApi',
+                aglStoredPaymentApi: 'https://storedpayments-api-agl-qtrt-aus.azurewebsites.net/v1',
+                domainApiUrl: '/domainapi',
+                PCIDSSURL: 'https://localhost:8080/pci-frame.html',
+                logProvider: LogProvider.Console,
+            });
+&nbsp;
+            let envConfigs = <span class="cstat-no" title="statement not covered" >{</span>
+                'localhost:3000': localhostConfig, // Unsure, leaving here just incase it is in use.
+                'localhost:8000': localhostConfig, // Local service worker / AOT
+                'localhost:8080': localhostConfig, // Local WebPack Development
+                'localhost': localhostConfig,
+            };
+&nbsp;
+            // Fix for concurrent npm run test-ci failing due to port collision (Determine config based on NPM command rather than port)
+<span class="cstat-no" title="statement not covered" >            if ((currentProcess === 'test-ci') || (currentProcess === 'test') || (currentProcess === 'test-watch')) {</span>
+<span class="cstat-no" title="statement not covered" >                return baseConfig;</span>
+            }
+&nbsp;
+            // No URL based config was matched, so use the octopus config
+<span class="cstat-no" title="statement not covered" >            if (env &amp;&amp; !envConfigs.hasOwnProperty(env.toLowerCase())) {</span>
+<span class="cstat-no" title="statement not covered" >                return getTransformedConfig();</span>
+            }
+&nbsp;
+            let config = <span class="cstat-no" title="statement not covered" >envConfigs[env];</span>
+<span class="cstat-no" title="statement not covered" >            return config;</span>
+        }
+&nbsp;
+<span class="fstat-no" title="function not covered" >        function prodConfig() {</span>
+<span class="cstat-no" title="statement not covered" >            return getTransformedConfig();</span>
+        }
+&nbsp;
+        // Return type based on build.
+<span class="cstat-no" title="statement not covered" >        if (process.env.ENV === 'build:prod') {</span>
+<span class="cstat-no" title="statement not covered" >            return prodConfig();</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return removeNonProdConfig();</span>
+        }
+&nbsp;
+    }
+&nbsp;
+    private formatSiteCoreLoginUrl(path: string, <span class="cstat-no" title="statement not covered" >register: boolean = false<span class="fstat-no" title="function not covered" >)</span>: string {</span>
+        const siteCoreUrl = <span class="cstat-no" title="statement not covered" >this.current.aglSiteCoreWebsiteBaseUrl;</span>
+        const registerParameter = <span class="cstat-no" title="statement not covered" >register ? 'register=true&amp;' : '';</span>
+        const returnPathParameter = <span class="cstat-no" title="statement not covered" >path ? `&amp;returnPath=${encodeURIComponent(path)}` : '';</span>
+        const loginPage = `${<span class="cstat-no" title="statement not covered" >siteCoreUrl}/sts/account/login?${registerParameter}returnApp=MyAccount${returnPathParameter}`;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return loginPage;</span>
+    }
+}
+&nbsp;
+export enum LogProvider {
+    Console,
+    Splunk,
+    Sitecore
+}
+&nbsp;
+export interface IConfig {
+    aglWebApiBaseUrl: string;
+    aglSiteCoreWebsiteBaseUrl: string; // Contains the URL of the sitecore website that this instance of myaccount uses (eg. myaccount.agl.com.au consumes www.agl.com.au)
+    aglRedLineApiBaseUrl: string;
+    aglPalPalApiBaseUrl: string;
+    aglSettingsApiBaseUrl: string;
+    aglProductApiBaseUrl: string;
+    aglMoveAndJoinApiUrl: string;
+    aglStoredPaymentApi: string;
+    aglPaymentSchemeApi: string;
+    aglConcessionApiBaseUrl: string;
+    aglHomeProfileApi: string;
+    aglDecisioningApiUrl: string;
+    aglEnergyInsightsApiBaseUrl: string;
+    isPilotBannerCollapsedKey: string;
+    betaSitePreferenceKey: string;
+    bearerTokenCookieName: string;
+    sitecoreApiBaseUrl: string;
+    sitecoreBaseContentPath: string;
+    fileBaseContentPath: string;
+    aglWebApiSyncPollingIntervalMs: number;
+    aglWebApiSyncPollingTimeOutMs: number;
+    splunkUrl: string;
+    splunkApplicationKey: string;
+    logProvider: LogProvider;
+    aglWebPaymentApiBaseUrl: string;
+    aglPayPalTokenUrl: string;
+    leanEngageAppId: string;
+    leanEngageTrackerAppId: string;
+    PCIDSSURL: string;
+    showLoadingModalAfterMs: number;
+    solarCheckApiBaseUrl: string;
+    aglRewardsApiBaseUrl: string;
+    aglPersonalisationApiBaseUrl: string;
+    loginDetailsBaseUrl: string;
+    aglAeoWarmUpDelayMs: number; // A Delay (in milliseconds) to wait before calling the AEO warm up endpoints
+&nbsp;
+    isE2eTestMode(): Boolean;
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

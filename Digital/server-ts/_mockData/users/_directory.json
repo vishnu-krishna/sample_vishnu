@@ -1,0 +1,781 @@
+[
+    {
+        "businessPartnerNumber": "AGL_0000C99DF8261ED582B680F41CDC4EDF",
+        "title": "Lauren Ferguson",
+        "description": "Prototype Account - Do not write tests for this account",
+        "tags": [],
+        "emailAddress": "FERGUSONLAURENAMY@GMAIL.COM",
+        "environment": "",
+        "attributes": {
+            "overdue": false
+        },
+        "ommDescription": "F1-OMM Customer single fuel  1. Elec - Fueltype status - Confirmed,Requesttype status - RequestReceived , Iscancelled - true , State - VIC'"
+    },
+    {
+        "businessPartnerNumber": "AGL_E413C3BB1354B6F19A520000C99D7ADE",
+        "title": "ROD BINNINGTON",
+        "description": "Single account - Smart Elec and Gas",
+        "tags": [
+            "monthly-billing",
+            "concession-submit-application-card-from-different-region"
+        ],
+        "emailAddress": "BRIGHTON@POBOX.COM",
+        "environment": "",
+        "ommDescription": "F2-OMM Customer Dual fuel - Fueltype status - Confirmed,Requesttype status - RequestReceived , Elec - Iscancelled - true, Gas - Iscancelled - false,State - VIC"
+    },
+    {
+        "businessPartnerNumber": "AGL_E395B919757991F1B3400000C99D6332",
+        "title": "PATRICIA OWEN",
+        "description": "Only Elec - No Gas",
+        "tags": ["energy-insights-ineligible"],
+        "emailAddress": "PETER.OWEN@CARPEVITA.COM.AU",
+        "environment": "",
+        "ommDescription": "F3-OMM Customer Single fuel 1. Elec - Fueltype status - Requested,Requesttype status - ProcessingTenPercent , Iscancelled - true, State - NSW"
+    },
+    {
+        "businessPartnerNumber": "AGL_E395B7D9A0EC7DF18C2A0000C99DF826",
+        "title": "LOUIS CHRISTODOULOU",
+        "description": "Only Gas - No Elec, SSMR modal deep link (with smart meter)",
+        "tags": ["SSMR modal deep link (with smart meter)"],
+        "emailAddress": "DOCLC@BIGPOND.COM.AU",
+        "environment": "",
+        "ommDescription": "F4-OMM Customer Single fuel 1. Gas - Fueltype status - Requested,Requesttype status - RequestReceived , Iscancelled - true, State - VIC"
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99D63321ED48BC94F0F8E2C771B",
+        "title": "KATHRINE WHIRISKEY",
+        "description": "Single account with Dual Elec",
+        "tags": [],
+        "emailAddress": "BETCHC@TPG.COM.AU",
+        "environment": "",
+        "ommDescription": "F5 \nOMM Customer Single fuel 1.Move in- Gas - Fueltype status - Confirmed,Requesttype status - ProcessingTenPercent , State - NSW ,\n 2. Move out - Elec - Iscancelled - false,"
+    },
+    {
+        "businessPartnerNumber": "AGL_0090FA0E77041ED5A3FEFC5853FA273D",
+        "title": "Hue Phan",
+        "description": "Invalid Contract",
+        "tags": [],
+        "emailAddress": "LE.MIK@HOTMAIL.COM",
+        "environment": "",
+        "ommDescription": "F6-OMM Customer Dual fuel - Fueltype status - Requested,Requesttype status - ProcessingTenPercent , Iscancelled - false, State - NSW,Elec - no actual date"
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99D63321EE4A4DBA84EAD7DBF09",
+        "title": "COLIN METCALFE",
+        "description": "EV Car plan only",
+        "tags": ["energy-insights"],
+        "emailAddress": "COLIN.METCALFE@BIGPOND.COM",
+        "environment": "",
+        "ommDescription": "F7-OMM Customer Single  fuel 1.Elec - Fueltype status - Requested,Requesttype status - ProcessingNinetyPercent , Iscancelled - false, State - SA"
+    },
+    {
+        "businessPartnerNumber": "AGL_001B218ACA131ED6B5C55B97E22AD34B",
+        "title": "THAO Nguyen",
+        "description": "Smart Elec with Solar",
+        "tags": [],
+        "emailAddress": "",
+        "environment": "",
+        "ommDescription": "F8-OMM Customer Single fuel 1. Gas - Fueltype status - Confirmed,Requesttype status - ProcessingNinetyPercent , Iscancelled - false, State - SA, Actual Address missing"
+    },
+    {
+        "businessPartnerNumber": "AGL_E395B7CDAFFF04F18C2A0000C99DF826",
+        "title": "Richard Munt",
+        "description": "Basic Elec with solar",
+        "tags": ["energy-insights"],
+        "emailAddress": "DICKMUNT9@BIGPOND.COM",
+        "environment": "",
+        "ommDescription": "F9-My Account : Two Accounts - Elec and Gas in each,\nOMM Customer Dual fuel\n 1. Elec - Fueltype status - Requested,Requesttype status - ProcessingNinetyPercent , Iscancelled - false \n 2. Gas - Fueltype status - Confirmed,Requesttype status - ProcessingNinetyPercent , Iscancelled - true, State - SA"
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99D63321EE581CEFE7BF2AEFF09",
+        "title": "PHILIP THONG",
+        "description": "Two Accounts - Elec and Gas in each<ul><li>[bill-smoothing] = </li></ul>",
+        "tags": [
+            "bill-smoothing",
+            "concession-get-concession-status-internal-server-error"
+        ],
+        "emailAddress": "PHILLIP.THONG@GMAIL.COM",
+        "environment": "",
+        "ommDescription": "F10-My AOMM Customer Single  fuel 1.Elec - Fueltype status - Confirmed,Requesttype status - ReadyToConnect , Iscancelled - true,State - QLD , Visual inspection - true"
+    },
+    {
+        "businessPartnerNumber": "AGL_00000000000000000000000000000100",
+        "title": "Harry Basic Usage",
+        "description": "Elec Only - Basic Meter",
+        "tags": [],
+        "emailAddress": "",
+        "environment": "",
+        "ommDescription": "F11-OMM Customer Single fuel 1. Gas - Fueltype status - Requested,Requesttype status - ReadyToConnect , Iscancelled - false , State - QLD , Visual inspection - false"
+    },
+    {
+        "businessPartnerNumber": "AGL_00000000000000000000000000000200",
+        "title": "Stacey Smorgon",
+        "description": "Basic Elec - Has a basic usage billing period with a value much lower than other periods, to test the usage graph.",
+        "tags": [],
+        "emailAddress": "",
+        "environment": "",
+        "ommDescription": "F12-OMM Customer Single  fuel\n 1. Gas - Fueltype status - Requested,Requesttype status - ReadyToConnect , Iscancelled - false, State - WA"
+    },
+    {
+        "businessPartnerNumber": "AGL_E395B5CFC36FFEF18D470000C99D68E2",
+        "title": "Shahrukh Khan",
+        "description": "Smart Elec & Gas - (Basic gas has 1 billing period with a negative cost)",
+        "tags": [],
+        "emailAddress": "AVINASHBEHL@HOTMAIL.COM",
+        "environment": "",
+        "ommDescription": "F13-OMM Customer Single fuel\n 1. Elec - Fueltype status - Confirmed,Requesttype status - WelcomeHome , Iscancelled - false, state - QLD"
+    },
+    {
+        "businessPartnerNumber": "AGL_DC2BDC7176F11ED6B1F9D696B98BD84D",
+        "title": "Clint Eastwood",
+        "description": "",
+        "tags": [
+            "monthly-billing",
+            "concession-submit-application-internal-server-error",
+            "energy-insights"
+        ],
+        "emailAddress": "",
+        "environment": "",
+        "ommDescription": "F14-OMM Customer Single fuel\n 1. Gas - Fueltype status - Requested,Requesttype status - WelcomeHome , Iscancelled - false , state - QLD"
+    },
+    {
+        "businessPartnerNumber": "AGL_E413049401DC19F1A8F80000C99D68E2",
+        "title": "Doug Hansen",
+        "description": "1 Elec, 1 Gas. Same Physical Address but mis-matched addresses on contracts.",
+        "tags": [
+            "monthly-billing",
+            "concession-submit-application-duplicate-card"
+        ],
+        "emailAddress": "GARTH.D.MCLAUGHLIN@GMAIL.COM",
+        "environment": "",
+        "ommDescription": "F15-My Account : Single account - Smart Elec and Gas,\n OMM Customer Dual fuel\n 1. Elec - Fueltype status - Confirmed,Requesttype status - WelcomeHome , Iscancelled - false \n 2. Gas - Fueltype status - Requested,Requesttype status - RequestReceived , Iscancelled - false"
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99D63321EE4A9A7063D466AFF09",
+        "title": "Jon Krakauer",
+        "description": "",
+        "tags": [],
+        "emailAddress": "GUYZA@HOTMAIL.COM",
+        "environment": "",
+        "ommDescription": "F16-OMM Customer Single fuel Elec - Fueltype status -Checking,  \nRequesttype status -RequestReceived, Iscancelled - false , Actual date - empty,state - QLD , Visual inspection - false"
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99DF8261EE6BCB63B0C1F2DB418",
+        "title": "Gianna Mafodda",
+        "description": "2x Accounts: (1x Elec contract), (1x Elec & 1x Gas contract, both in-flight)",
+        "tags": [
+            "mandatory-monthly-billing",
+            "mandatory-direct-debit",
+            "mandatory-ebilling",
+            "energy-insights-ineligible"
+        ],
+        "emailAddress": "",
+        "environment": "",
+        "ommDescription": "F17-OMM Customer Single fuel Gas - Fueltype status -Checking,  \nRequesttype status -RequestReceived, Iscancelled - false , Confirmed date later than request date,State - QLD , Visual inspection - true"
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99DF8261EE5B6A22DE24E25C86B",
+        "title": "Barry McClinton",
+        "description": "1 Basic gas",
+        "tags": ["energy-insights-ineligible"],
+        "emailAddress": "BMCCLINTON@AGL.COM.AU",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99D7ADE1EE492A42E1ADEF8A5A8",
+        "title": "Iain Sanders",
+        "description": "",
+        "tags": [
+            "monthly-billing",
+            "energy-insights",
+            "bill-type-scenarios",
+            "contracts-on-potd-product",
+            "not-on-direct-debit"
+        ],
+        "emailAddress": "IFSANDERS55@GMAIL.COM",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_E395B61D687BF7F1B5090000C99D5B1A",
+        "title": "Bev Sanders",
+        "description": "",
+        "tags": [],
+        "emailAddress": "BLASANDERS.MAIL@GMAIL.COM",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_0090FA0E77041EE4A9DE06F2FA21828E",
+        "title": "Jay McDonald",
+        "description": "Inflight electricity ontract",
+        "tags": [
+            "energy-insights-ineligible",
+            "inflight"
+        ],
+        "emailAddress": "BLASANDERS.MAIL@GMAIL.COM",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_PAYG049401DC19F1A8F80000C99D68E2",
+        "title": "YanFang Cui",
+        "description": "PAYG - 1 x Account 2 x Contracts: \nContract 1: PAYG - Overdue Amount = $167.12, Prepaid Balance = -$100, Prepaid Band = DR. Monthly billing cancel ineligible code number 086. \n Contract 2: NO PAYG",
+        "tags": ["monthly-billing"],
+        "emailAddress": "",
+        "environment": "",
+        "ommDescription": "F18-OMM Customer Dual fuel 1. Elec - Fueltype status -Checking, 2. Gas- Fueltype status -Confirmed \nRequesttype status -RequestReceived, Iscancelled - false , Confirmed date = requested date"
+    },
+    {
+        "businessPartnerNumber": "AGL_PAYG049401DC19F1A8F80000C99D68E3",
+        "title": "Rene Descartes",
+        "description": "PAYG - 1 x Account 2 x Contracts: \nContract 1: PAYG - Prepaid Balance = $123.12 , Prepaid Band = H. Monthly billing setup ineligible code number 093. \nContract 2: PAYG -Prepaid Balance = -$50, Overdue Amount - 167.12",
+        "tags": ["monthly-billing"],
+        "emailAddress": "",
+        "environment": "",
+        "ommDescription": "F19-OMM Customer Dual fuel 1. Elec - Fueltype status -Checking, 2. Gas- Fueltype status -Confirmed \nRequesttype status -ProcessingNinetyPercent, Iscancelled - false , State - QLD , Visaul inspection - false"
+    },
+    {
+        "businessPartnerNumber": "AGL_PAYG049401DC19F1A8F80000C99D68E4",
+        "title": "Belinda Clark",
+        "description": "PAYG - 1 x Account 2 x Contracts: \nContract 1: PAYG - Prepaid Balance = $123.12  , Prepaid Band = H \nContract 2 : PAYG Overdue Amount = $167.12 , Prepaid Balance = -$20 , Prepaid Band = DR",
+        "tags": [],
+        "emailAddress": "",
+        "environment": "",
+        "ommDescription": "F20-OMM Customer Dual fuel 1. Elec - Fueltype status -Checking, 2. Gas- Fueltype status -Requested \nRequesttype status -ProcessingNinetyPercent, Iscancelled - false , Discconnection:Gas :Actual date - empty"
+    },
+    {
+        "businessPartnerNumber": "AGL_PAYG049401DC19F1A8F80000C99D68E5",
+        "title": "Ben Radcliff",
+        "description": "PAYG - 1 x Account 2 x Contracts \nContract 1: PAYG - Prepaid Balance = $123.12  , Prepaid Band = H \nContract 2: PAYG Prepaid Balance = $50.00  , Prepaid Band = L",
+        "tags": [],
+        "emailAddress": "",
+        "environment": "",
+        "ommDescription": "F21-OMM Customer Dual fuel 1. Elec - Fueltype status -Checking, 2. Gas- Fueltype status -Confirmed \nRequesttype status -ReadyToConnect, Elec and Gas - Iscancelled - true , State - QLD , Visual inspection - false"
+    },
+    {
+        "businessPartnerNumber": "AGL_PAYG049401DC19F1A8F80000C99D68E6",
+        "title": "Benjamin Holt",
+        "description": "PAYG - 1 x Account 2 x Contracts \nContract 1: PAYG - Overdue Amount = $167.12, Prepaid Balance = -$23.12  , Prepaid Band = DR \nContract 2: PAYG Prepaid Balance = $50 , Prepaid Band = L",
+        "tags": [],
+        "emailAddress": "",
+        "environment": "",
+        "ommDescription": "F22-OMM Customer Dual fuel 1. Elec - Fueltype status -Checking, 2. Gas- Fueltype status -Confirmed \nRequesttype status -WelcomeHome, Iscancelled - false"
+    },
+    {
+        "businessPartnerNumber": "AGL_PAYG049401DC19F1A8F80000C99D68E7",
+        "title": "Roy Williams",
+        "description": "PAYG - 1 x Account 6 x Contracts \nContract 1: PAYG - Prepaid Balance = $123.12  , Prepaid Band = H,Bill issued \nContract 2: PAYG - Prepaid Balance = $50 , Prepaid Band = L, Bill not issued \nContract 3: PAYG - Prepaid Balance = -$20.00 , Prepaid Band = DR,Bill not issued \nContract 4: PAYG - Overdue Amount = $20 ,Prepaid Balance = -$40.00 , Prepaid Band = DR,Bill issued\nContract 5: NO PAYG - Electricity,Bill not issued, DD-true, overdue = 20 \nContract 6: NO PAYG - Gas , Bill not issued",
+        "tags": [],
+        "emailAddress": "",
+        "environment": "",
+        "ommDescription": "F23-OMM Customer Dual fuel 1. Elec - Fueltype status -Confirmed, 2. Gas- Fueltype status -Checking \nRequesttype status -RequestReceived, Iscancelled - false"
+    },
+    {
+        "businessPartnerNumber": "AGL_PAYG049401DC19F1A8F80000C99D68E8",
+        "title": "Sandra Young",
+        "description": "PAYG - 1 x Account 6 x Contracts \nContract 1: PAYG - Prepaid Balance = $123.12 - payment pending , Prepaid Band = H, Bill not issued \nContract 2: PAYG - Prepaid Balance = $50 , Prepaid Band = L,Bill issued , estimated read - true \nContract 3: PAYG - Prepaid Balance = -$20.00 , Prepaid Band = DR,Bill issued , estimated read - true\nContract 4: PAYG - Overdue Amount = $20 -Payment pending ,Prepaid Balance = -$40.00 , Prepaid Band = DR,Bill issued, DD - true \nContract 5: NO PAYG - Gas , Bill not issued \nContract 6: NO PAYG - Gas ,Bill not issued ",
+        "tags": [],
+        "emailAddress": "",
+        "environment": "",
+        "ommDescription": "F24-OMM Customer Dual fuel 1. Elec - Fueltype status -Confirmed, 2. Gas- Fueltype status -Checking \nRequesttype status -ProcessingNinetyPercent, Iscancelled - false \n Disconnection:DualFuel"
+    },
+    {
+        "businessPartnerNumber": "AGL_PAYG049401DC19F1A8F80000C99D68E9",
+        "title": "Gen Mathews",
+        "description": "PAYG - 1 x Account 3 x Contracts \nContract 1: PAYG - Restricted \nContract 2: PAYG Prepaid Balance = $50.00  , Prepaid Band = L\nContract 3: smart meter",
+        "tags": [
+            "energy-insights",
+            "energy-insights-ineligible"
+        ],
+        "emailAddress": "",
+        "environment": "",
+        "ommDescription": "F25-OMM Customer Dual fuel 1. Elec - Fueltype status -Checking, 2. Gas- Fueltype status -Confirmed \nRequesttype status -ProcessingNinetyPercent, Iscancelled - false , State - QLD , Visual inspection - true"
+    },
+    {
+        "businessPartnerNumber": "AGL_PAYG049401DC19F1A8F80000C99D68E10",
+        "title": "Rene Bing",
+        "description": "PAYG - 2 x Account 1 x Contract \nAccount 1 Contract 1: PAYG Prepaid Balance = $123.00  , Prepaid Band = H  \n Account 2 Contract 1: PAYG Prepaid Balance = $50.00  , Prepaid Band = L",
+        "tags": [],
+        "emailAddress": "",
+        "environment": "",
+        "ommDescription": "F28-OMM Customer Dual fuel 1. Elec - Fueltype status -Checking, 2. Gas- Fueltype status -Checking \nRequesttype status - RequestReceived , Iscancelled - false \n  \n Disconnection:Elec"
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99D63321EE4A4DBA84EAD7DBF10",
+        "title": "Joey Tribiani",
+        "description": "Non PAYG - 2 x Account 1 x Contract \nAccount 1 Contract 1: Non-PAYG   \n Account 2 Contract 1: Non-PAYG ",
+        "tags": [],
+        "emailAddress": "",
+        "environment": "",
+        "ommDescription": "F29-MyAccount: Elec Only - Basic Meter,\n OMM Customer Single fuel 1. Elec - Fueltype status - Confirmed,Requesttype status - RequestReceived : with Expired date , Iscancelled - false,State - VIC"
+    },
+    {
+        "businessPartnerNumber": "AGL_PAYG049401DC19F1A8F80000C99D68F1",
+        "title": "Will Town",
+        "description": "PAYG - 1 x Account 2 x Contracts \nContract 1: PAYG - Inflight \nContract 2: PAYG Prepaid Balance = $50.00  , Prepaid Band = L",
+        "tags": [],
+        "emailAddress": "",
+        "environment": "",
+        "ommDescription": "F30-MyAccount: Elec Only - Basic Meter,\n OMM Customer Single fuel 1. Elec - Fueltype status - Confirmed,Requesttype status - WelcomeHome : with Expired date , Iscancelled - false,State - VIC"
+    },
+    {
+        "businessPartnerNumber": "AGL_PAYG049401DC19F1A8F80000C99D68F2",
+        "title": "Helen Ross",
+        "description": "PAYG - 1 x Account 2 x Contracts \nContract 1: PAYG - Restricted \nContract 2: PAYG - Restricted",
+        "tags": [],
+        "emailAddress": "",
+        "environment": "",
+        "ommDescription": "F31-MyAccount: Elec Only - Basic Meter,\n OMM Customer with api errors"
+    },
+    {
+        "businessPartnerNumber": "AGL_PAYG049401DC19F1A8F80000C99D68F3",
+        "title": "Jamie Gil",
+        "description": "PAYG - 1 x Account 2 x Contracts \nContract 1: PAYG - Invalid Product \nContract 2: PAYG Prepaid Balance = $50.00  , Prepaid Band = L",
+        "tags": [],
+        "emailAddress": "",
+        "environment": "",
+        "ommDescription": "F26-OMM Customer Dual fuel 1. Elec - Fueltype status -Checking, 2. Gas- Fueltype status -Confirmed \nRequesttype status - ReadyToConnect , Iscancelled - false, Single address for disconnection"
+    },
+    {
+        "businessPartnerNumber": "AGL_PAYG049401DC19F1A8F80000C99D68F4",
+        "title": "Emma Paton",
+        "description": "PAYG - 1 x Account 3 x Contracts \nContract 2: PAYG - Inflight Product \nContract 2: PAYG Restricted \nContract 3: PAYG - Invalid",
+        "tags": ["monthly-billing"],
+        "emailAddress": "",
+        "environment": "",
+        "ommDescription": "F27-OMM Customer Dual fuel 1. Elec - Fueltype status -Checking, 2. Gas- Fueltype status -Confirmed \nRequesttype status - RequestReceived , Iscancelled - false , different addresses for disconnection"
+    },
+    {
+        "businessPartnerNumber": "AGL_PAYG049401DC19F1A8F80000C99D68F5",
+        "title": "Emma Paton",
+        "description": "PAYG - 1 x Account 2 x Contracts \nContract 1: PAYG - Inflight Product \nContract 2: PAYG - Invalid",
+        "tags": [],
+        "emailAddress": "",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_PAYG049401DC19F1A8F80000C99D68F6",
+        "title": "Roger Patson",
+        "description": "PAYG - 1 x Account 2 x Contracts \nContract 1: PAYG - Inflight \nContract 2: PAYG - Restricted",
+        "tags": [],
+        "emailAddress": "",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_PAYG049401DC19F1A8F80000C99D68F7",
+        "title": "Roger Patson",
+        "description": "PAYG - 1 x Account 4 x Contracts \nContract 1: PAYG - Inflight \nContract 2: PAYG - Restricted \nContract 3: PAYG - Invalid \nContract 4: PAYG Prepaid Balance = $200, Prepaid Band = H",
+        "tags": [],
+        "emailAddress": "",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_PAYG049401DC19F1A8F80000C99D68F9",
+        "title": "Belinda Clark",
+        "description": "PAYG - 1 x Account 2 x Contracts: \nContract 1: PAYG - Prepaid Balance = $123.12 Bonus bands:6 , Prepaid Band = H \nContract 2 : PAYG Overdue Amount = $167.12 , Prepaid Balance = $120 Bonus bands:5  , Prepaid Band = H",
+        "tags": [],
+        "emailAddress": "",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_PAYG049401DC19F1A8F80000C99D68F10",
+        "title": "Belinda Clark",
+        "description": "PAYG - 1 x Account 2 x Contracts: \nContract 1: Restricted and Overdue Amount = $167.12 \nContract 2 : PAYG Prepaid Balance = $120 , Prepaid Band = H",
+        "tags": [],
+        "emailAddress": "",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_PAYG049401DC19F1A8F80000C99D68E11",
+        "title": "Ross Geller",
+        "description": "PAYG - 1 x Account 6 x Contracts - No bonus available \nContract 1: PAYG - Prepaid Balance = $123.12  , Prepaid Band = H , No bonus ,Bill issued \nContract 2: PAYG - Prepaid Balance = $50 , Prepaid Band = L , No bonus , Bill not issued \nContract 3: PAYG - Prepaid Balance = -$20.00 , Payment Pending, Prepaid Band = DR, Bill issued\nContract 4: PAYG - Overdue Amount = $20 ,Prepaid Balance = -$40.00 , Prepaid Band = DR,Bill issued\nContract 5: NO PAYG - Gas , Bill issued \nContract 6: NO PAYG - Gas , Bill not issued",
+        "tags": [],
+        "emailAddress": "",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_PAYG049401DC19F1A8F80000C99D68E12",
+        "title": "Rachel Green",
+        "description": "PAYG - 1 x Account 6 x Contracts Billing Scenarios \nContract 1: PAYG - Prepaid Balance = $123.12 - payment pending , Prepaid Band = H , Bill issued \nContract 2: PAYG - Prepaid Balance = $50 , Prepaid Band = L , Bill not issued \nContract 3: PAYG - Prepaid Balance = -$20.00 , Prepaid Band = DR,Bill issued \nContract 4: PAYG - Overdue Amount = $20 -Payment pending ,Prepaid Balance = -$40.00 , Prepaid Band = DR, Bill issued\nContract 5:NO PAYG - Gas ,Bill not issued \nContract 6: NO PAYG - Gas , Bill not issued",
+        "tags": [],
+        "emailAddress": "",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_PAYG049401DC19F1A8F80000C99D68E13",
+        "title": "Monica Green",
+        "description": "PAYG - 1 x Account 6 x Contracts Billing Scenarios and DD \nContract 1: PAYG - Prepaid Balance = $123.12 - payment pending , Prepaid Band = H , Bill issued , DD - false \nContract 2: PAYG - Prepaid Balance = $50 , Prepaid Band = L ,Bill not issued, DD - true\nContract 3: PAYG - Prepaid Balance = -$20.00 , Prepaid Band = DR, Bill issued, DD - true\nContract 4: PAYG - Overdue Amount = $20 ,Prepaid Balance = -$40.00 , Prepaid Band = DR,Bill not issued, DD - true\nContract 5: NO PAYG - Gas ,Bill not issued, DD - true\nContract 6:NO PAYG - Gas ,Bill not issued, DD - true",
+        "tags": [],
+        "emailAddress": "",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_PAYG049401DC19F1A8F80000C99D68F12",
+        "title": "Minesh Don",
+        "description": "PAYG - 1 x Account 6 x Contracts Prepaid balance unavailable Scenarios and DD \nContract 1: PAYG - Prepaid Balance = Unavailable - payment pending , Prepaid Band = unavilable , Bill issued , DD - false \nContract 2: PAYG - Prepaid Balance = unavilable, Prepaid Band = unavilable ,Bill not issued, DD - true\nContract 3: PAYG - Prepaid Balance = unavilable , Prepaid Band = unavilable, Bill issued, DD - true\nContract 4: PAYG -Payment pending ,Prepaid Balance = unavilable, Prepaid Band = unavilable,Bill not issued, DD - true\nContract 5: NON PAYG - Gas ,Bill not issued, DD - true\nContract 6: NON PAYG - Gas ,Bill not issued, DD - true",
+        "tags": [],
+        "emailAddress": "",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_PAYG049401DC19F1A8F80000C99D68F13",
+        "title": "George Clooney",
+        "description": "PAYG - 1 x Account 6 x Contracts Prepaid balance unavailable Scenarios and DD \nContract 1: PAYG - Prepaid Balance = Unavailable - payment pending , Prepaid Band = unavilable , Bill issued , DD - false , no bonus available \nContract 2: PAYG - Prepaid Balance = 50, Prepaid Band = L ,Bill not issued, DD - true\nContract 3: PAYG - Prepaid Balance = -$20 , Prepaid Band = DR, Bill issued, DD - true\nContract 4: PAYG -Payment pending ,Prepaid Balance = unavilable, Prepaid Band = unavilable,Bill not issued, DD - true\nContract 5: NON PAYG - Gas ,Bill not issued, DD - true\nContract 6: NON PAYG - Gas ,Bill not issued, DD - true",
+        "tags": [
+            "blank-contact-details",
+            "concession-has-been-rejected-and-cannot-reapply"
+        ],
+        "emailAddress": "",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99D7ADE1EE595CD264FA9DDED28",
+        "title": "Philip MacLaren",
+        "description": "AGL Employee",
+        "tags": [
+            "bill-smoothing",
+            "contact-details-update-will-succeed",
+            "concession-has-been-rejected-but-can-reapply",
+            "concession-failed-to-load-eligible-cards"
+        ],
+        "emailAddress": "PHIL.MACLAREN@ME.COM",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99D7ADE1EE595CD264FA9DDED29",
+        "title": "Philip MacLaren With Multi Account",
+        "description": "AGL Employee",
+        "tags": [
+            "invalid-contact-details",
+            "bill-smoothing",
+            "concession-applied"
+        ],
+        "emailAddress": "PHIL.MACLAREN@ME.COM",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99D7ADE1EE595CD264FA9DDED30",
+        "title": "Meera With Single Contract Account",
+        "description": "AGL Employee",
+        "tags": [
+            "e2e",
+            "bill-smoothing",
+            "contact-details-update-will-fail",
+            "concession-submit-application-invalid-card-number-format",
+            "concession-fuel-specific-eligible-cards",
+            "on-direct-debit"
+        ],
+        "emailAddress": "meera.hans@agl.com.au",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_000D3AD07CE31ED78A9654FF312468E6",
+        "title": "LEIGH RING",
+        "description": "SMMR - INRD-08,D021E",
+        "tags": ["SSMR MAY 2017"],
+        "emailAddress": "LEIGHR222@HOTMAIL.COM",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_000D3AD07CE31ED789CB2D22118528E6",
+        "title": "BEVIN BOD",
+        "description": "[SSMR] - D017E, INRD-04 (Has already submitted a read for the day)",
+        "tags": [],
+        "emailAddress": "BODE0005@FLINDERS.EDU.AU",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99D68E21ED4B38A573027E717E8",
+        "title": "NEVILLE MCBRIDE",
+        "description": "[SSMR] - D018E, INRD-05",
+        "tags": [
+            "monthly-billing",
+            "bill-smoothing"
+        ],
+        "emailAddress": "NEDAJUAN@HOTMAIL.COM",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_000D3AD07CE31ED78A96476E03A7C8E6",
+        "title": "SUS HEF",
+        "description": "[SSMR] - D035G, INRD-22",
+        "tags": ["energy-insights"],
+        "emailAddress": "UNION@AGL.COM.AU",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_000D3AD07CE31ED789B0D3EFCC0628E6",
+        "title": "HUNT BN",
+        "description": "[SSMR] - D015E, INRD-02",
+        "tags": [],
+        "emailAddress": "HUNT@AGL.COM.AU",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_000D3AD07CE31ED789C7375D9524A8E6",
+        "title": "P HOW",
+        "description": "[SSMR] -D014E, INRD-01",
+        "tags": [],
+        "emailAddress": "PHL@AGL.COM.AU",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_E3FFDCE9CEB7F0F1960C0000C99DF826",
+        "title": "MARK POLLEY",
+        "description": "[SSMR] - D033E, INRD-20",
+        "tags": [],
+        "emailAddress": "M.POLLEY@HOTMAIL.COM",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_000D3AD07CE31ED78ADDAF002485E8E6",
+        "title": "BRID MARCH",
+        "description": "[SSMR] - D044, INRD-31",
+        "tags": [],
+        "emailAddress": "BRID@AGL.COM.AU",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_000D3AD07CE31ED78A974C62099A48E6",
+        "title": "PETER PELUSO",
+        "description": "<ul><li>[SSMR] - D022E, INRD-35 (Server error when submitting read)</li></ul>",
+        "tags": [
+            "monthly-billing",
+            "concession-in-south-australia"
+        ],
+        "emailAddress": "PETER.PELUSO58@GMAIL.COM",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_000D3AD07CE31ED78ADD7359D59788E6",
+        "title": "GARNET EVANS",
+        "description": "[SSMR] - D020G, INRD-07, Rewards not eligible, Feature Intros",
+        "tags": [],
+        "emailAddress": "MURRAE@ADAM.COM.AU",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_E395B7F670462DF18D470000C99D68E2",
+        "title": "Helen McFarlane",
+        "description": "D029G, INRD-16, Rewards Eligible, Feature Intros, SSMR modal deep link (with basic meter)",
+        "tags": ["11/05/2017", "SSMR-modal-deep-link (with basic meter)"],
+        "emailAddress": "HELEN_MAC1976@HOTMAIL.COM",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99D68E21EE595B7F8D9EA04EEC5",
+        "title": "NAGENDRA KOTHURU",
+        "description": "Multi BP",
+        "tags": [
+            "multiple-business-partners"
+        ],
+        "emailAddress": "",
+        "environment": "monthly-uat"
+    },
+    {
+        "businessPartnerNumber": "AGL_E395B7CDAFFF04F18C2A000011111111",
+        "title": "Brock Lesnar",
+        "description": "Payment extension - Multi Accounts",
+        "tags": [
+            "payment-extension",
+            "instalment-plan",
+            "bill-smoothing",
+            "concession-can-apply-for-concession"
+        ],
+        "emailAddress": "brock.lesnar@agl.com.au",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_E395B7CDAFFF04F18C2A000011111112",
+        "title": "Tom Hardy",
+        "description": "Payment extension - Single Account",
+        "tags": [
+            "payment-extension",
+            "bill-smoothing"
+        ],
+        "emailAddress": "tom.hardy@agl.com.au",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99D68E21ED79FA05C243D489E0F",
+        "title": "Zoe Hannah",
+        "description": "WA Gas Customer",
+        "tags": [
+            "wa-gas",
+            "monthly-billing",
+            "concession-applied-in-western-australia",
+            "energy-insights-ineligible"
+        ],
+        "emailAddress": "zoe.hannah@fake.agl.com.au",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_E395B7CDAFFF04F18C2A000011111113",
+        "title": "Bruce O'Dwyer",
+        "description": "Payment extension - Duplicate duel Fuel",
+        "tags": ["payment-extension"],
+        "emailAddress": "bruce.o'dwyer@agl.com.au",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_BF16BFCF95FA1EE6ACF298A55BBA1BA9",
+        "title": "Sunil Bhandary",
+        "tags": [
+            "inflight"
+        ],
+        "description": "inflight contract"
+    },
+    {
+        "businessPartnerNumber": "AGL_E395B7CDAFFF04F18C2A000011111114",
+        "title": "Kitty Pryde",
+        "description": "Payment assistance select screen",
+        "tags": [
+            "payment-extension",
+            "instalment-plan"
+        ],
+        "emailAddress": "kitty.pryde@agl.com.au",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99D68E21ED4B38A573027E717E9",
+        "title": "NEVILLE Restricted",
+        "description": "All Accounts Restricted",
+        "tags": ["All Accounts Restricted"],
+        "emailAddress": "NEDAJUAN@HOTMAIL.COM",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99D7ADE1EE595CD264FA9DDED31",
+        "title": "Philip MacLaren ",
+        "description": "AGL Employee",
+        "tags": [
+            "contact-details-getcontactdetails-will-fail"
+        ],
+        "emailAddress": "PHIL.MACLAREN@ME.COM",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99DF8261ED582B680F41CDC4ED0",
+        "title": "Lauren Ferguson",
+        "description": "Solar Check Eligible, not registered \nRewards eligible"
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99DF8261ED582B680F41CDC4ED1",
+        "title": "Lauren Ferguson",
+        "description": "Solar Check Not eligible not registered \nRewards not eligible"
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99DF8261ED582B680F41CDC4ED2",
+        "title": "Lauren Ferguson",
+        "tags": [
+            "decisioning-pre-mover"
+        ],
+        "description": "Solar Check Eligible and registered with good status"
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99DF8261ED582B680F41CDC4ED3",
+        "title": "Lauren Ferguson",
+        "description": "Solar Check Not eligible and registered with Not Available (Registered) status"
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99DF8261ED582B680F41CDC4ED4",
+        "title": "Lauren Ferguson",
+        "description": "Solar Check registered and eligible with request status of Deregistration pending"
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99DF8261ED582B680F41CDC4ED5",
+        "title": "Lauren Ferguson",
+        "description": "Solar Check Not eligible and registered with Fault status"
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99DF8261ED582B680F41CDC4ED6",
+        "title": "Lauren Ferguson",
+        "description": "Solar Check Not eligible and registered with Indeterminate (Not Available) status"
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99DF8261ED582B680F41CDC4ED7",
+        "title": "Lauren Ferguson",
+        "description": "Solar Check eligible and registered with 2nd contract where 2nd contracts status is Fault"
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99DF8261ED582B680F41CDC4ED8",
+        "title": "Lauren Ferguson",
+        "description": "Has Solar and registered with both contract, where 1st contract is Indeterminate and 2nd response is empty"
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99DF8261ED582B680F41CDC4ED9",
+        "title": "Lauren Ferguson",
+        "description": "Has Solar and registered with second contract, where 2nd contract with Good status"
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99DF8261ED582B680F41CDC4ED10",
+        "title": "Lauren Ferguson",
+        "description": "Has Solar and registered with first contract, with Good status"
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99DF8261ED582B680F41CDC4ED11",
+        "title": "Lauren Ferguson",
+        "description": "Has Solar and registered with first contract, with System Update status"
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99DF8261ED582B680F41CDC4ED12",
+        "title": "Lauren Ferguson",
+        "description": "Has Solar and registered with first contract, with System Update status with 10 days till status is availble"
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99DF8261ED582B680F41CDC4ED13",
+        "title": "Lauren Ferguson",
+        "description": "Solar Check Eligible and Deregistered"
+    },
+    {
+        "businessPartnerNumber": "AGL_0000C99DF8261ED582B680F41CDC4ED14",
+        "title": "Lauren Ferguson",
+        "description": "Solar Check Eligible and Registered Pending"
+    },
+    {
+        "businessPartnerNumber": "AGL_E395B7CDAFFF04F18C2A33333331",
+        "title": "Matt Young",
+        "description": "Home Profile - Single account with multi contracts",
+        "tags": [
+            "home-profile"
+        ],
+        "emailAddress": "matt.young@agl.com.au",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_E395B7CDAFFF04F18C2A33333332",
+        "title": "Matt Young",
+        "description": "Home Profile - Multi accounts",
+        "tags": [
+            "home-profile"
+        ],
+        "emailAddress": "matt.young@agl.com.au",
+        "environment": ""
+    },
+    {
+        "businessPartnerNumber": "AGL_E41F13FEDF921EE799B9DFDCB594EDF6",
+        "title": "Jono Lowe",
+        "description": "Single-Account with Multi Contracts",
+        "tags": ["energy-insights"],
+        "emailAddress": "jlowe@agl.com.au"
+    },
+    {
+        "businessPartnerNumber": "AGL_E395B7CDAFFF04F18C2A33333333",
+        "title": "Matt Young",
+        "description": "Home Profile - Single account with empty home profile for e2e - Do not delete",
+        "tags": ["home-profile"],
+        "emailAddress": "matt.young@agl.com.au",
+        "environment": ""
+    },
+	{
+        "businessPartnerNumber": "AGL_0000C99DF8261EE6BCB63B0C1F2DB419",
+        "title": "Rachael Rachael",
+        "description": "1x Accounts: (1x Elec contract) in-flight)",
+        "tags": [
+            "mandatory-monthly-billing",
+            "mandatory-direct-debit",
+            "mandatory-ebilling"
+        ],
+        "emailAddress": "Rachael@gmail.com",
+        "environment": "",
+        "ommDescription": "F17-OMM Customer Single fuel Gas - Fueltype status -Checking,  \nRequesttype status -RequestReceived, Iscancelled - false , Confirmed date later than request date,State - QLD , Visual inspection - true"
+    }
+]

@@ -1,0 +1,17 @@
+@import '../../../../maui/maui';
+
+.continue-or-cancel {
+    &__cta {
+        text-align: center;
+
+        &-continue {
+            margin-top: $space-05;
+            margin-bottom: $space-03;
+        }
+
+        &-cancel {
+            margin-top: $space-01;
+            display: inline-block;
+        }
+    }
+}

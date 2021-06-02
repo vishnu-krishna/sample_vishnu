@@ -1,0 +1,96 @@
+<div class="delete-pm">
+
+    <!--No other stored Credit Card-->
+    <div *ngIf="numberOfPaymentMethodsExists === NumberOfPaymentMethodsExists.NoOtherValidPaymentMethodExists">
+        <div class="delete-pm__header">
+            <span>Are you sure you want to remove your {{args.title}} ending in {{args.shortReference}} from My Wallet?</span>
+        </div>
+        <div class="delete-pm__body">Any payment arrangements set up on this {{args.paymentMethodType}} will be removed.</div>
+        <div *ngIf="args.isBankAccount && hasPendingPayment" class="delete-pm__body">If you made a payment using this {{args.paymentMethodType}} within the last two business days, removing it may result in your payment failing to process.</div>
+        <div *ngIf="hasSmsPay" class="delete-pm__body"> If you've authorised any payments with SMS Pay in the last 24 hours, please
+            <a href="https://www.agl.com.au/residential/help-and-support/contact-us" target="_blank">
+                contact us</a>
+            to confirm if your payment will be processed.</div>
+        <div class="delete-pm__sub-body">You won't be able to use this {{args.paymentMethodType}} for any payment arrangements or online payments unless you add it back into your Wallet.</div>
+        <div *ngIf="hasMultipleCA">
+            <agl-account-details-delete-payment-method [accountDetails] ="accountDetails" [paymentMethodType]= "args.paymentMethodType"></agl-account-details-delete-payment-method>
+        </div>
+        <div class="delete-pm__button">
+            <button color="accent" mat-raised-button [class.is-loading]="isLoading" (click)="deleteCreditCard(paymentMethodId)">Remove Payment Method</button>
+            <button mat-raised-button class="delete-pm__button--white" (click)="closeModal()">Keep Payment Method</button>
+        </div>
+    </div>
+
+    <!--One other stored Credit Card-->
+    <div *ngIf="numberOfPaymentMethodsExists === NumberOfPaymentMethodsExists.OneOtherValidPaymentMethodExists;">
+        <div class="delete-pm__header">
+            <span>Are you sure you want to remove your {{args.title}} ending in {{args.shortReference}} from My Wallet?</span>
+        </div>
+        <div class="delete-pm__body">Any payment arrangements set up on this {{args.paymentMethodType}} will be removed.</div>
+        <div *ngIf="args.isBankAccount && hasPendingPayment" class="delete-pm__body">If you made a payment using this {{args.paymentMethodType}} within the last two business days, removing it may result in your payment failing to process.</div>
+        <div *ngIf="hasSmsPay" class="delete-pm__body"> If you've authorised any payments with SMS Pay in the last 24 hours, please
+            <a href="https://www.agl.com.au/residential/help-and-support/contact-us" target="_blank">
+                contact us</a>
+            to confirm if your payment will be processed.</div>
+        <div *ngIf="hasMultipleCA">
+           <agl-account-details-delete-payment-method [accountDetails] = "accountDetails" [paymentMethodType]= "args.paymentMethodType"></agl-account-details-delete-payment-method>
+        </div>
+        <div class="delete-pm__option" [class.mg-fix]="hasMultipleCA">
+            <div class="delete-pm__radio-header">Please select an option below:</div>
+            <mat-radio-group *ngFor="let paymentMethod of validPaymentMethods" class="delete-pm__radio">
+                <mat-radio-button class="delete-pm__radio-label delete-pm__radio-relink" [value]="!args.id" (click)="onClickLink(paymentMethod.id)">Link my payment arrangement<span *ngIf="!hasOnePaymentArrangement">s</span> to my {{paymentMethod.title}} xxxx {{paymentMethod.shortReference}} instead</mat-radio-button><br>
+                <div *ngIf="newCreditCardSelected" class="delete-pm__credit-card-warning radio-button-message">
+                    A 0.45% processing fee appies to credit cards
+                </div>
+                <mat-radio-button class="delete-pm__radio-label" [value]="args.id" (click)="onClickCancel(args.id)">Cancel my payment arrangement<span *ngIf="!hasOnePaymentArrangement">s</span></mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="delete-pm__button" [class.mg-fix]="hasMultipleCA">
+            <button color="accent" mat-raised-button [class.is-loading]="isLoading" [class.disable-button]="!hasSelectedOptions" (click)="deleteCreditCard(args.id)">Remove and update</button>
+            <button mat-raised-button class="delete-pm__button--white" [class.disable-button]="!hasSelectedOptions" (click)="closeModal()">Keep Payment Method</button>
+        </div>
+    </div>
+
+    <!--More than one other stored Credit Card-->
+    <div *ngIf="numberOfPaymentMethodsExists === NumberOfPaymentMethodsExists.MultipleValidPaymentMethodExists">
+        <div class="delete-pm__header">
+            <span>Are you sure you want to remove your {{args.title}} ending in {{args.shortReference}} from My Wallet?</span>
+        </div>
+        <div class="delete-pm__body">Any payment arrangements set up on this {{args.paymentMethodType}} will be removed.</div>
+        <div *ngIf="args.isBankAccount && hasPendingPayment" class="delete-pm__body">If you made a payment using this {{args.paymentMethodType}} within the last two business days, removing it may result in your payment failing to process.</div>
+        <div *ngIf="hasSmsPay" class="delete-pm__body"> If you've authorised any payments with SMS Pay in the last 24 hours, please
+            <a href="https://www.agl.com.au/residential/help-and-support/contact-us" target="_blank">
+                contact us</a>
+            to confirm if your payment will be processed.</div>
+        <div *ngIf="hasMultipleCA">
+            <agl-account-details-delete-payment-method [accountDetails] = "accountDetails" [paymentMethodType]= "args.paymentMethodType"></agl-account-details-delete-payment-method>
+        </div>
+        <div class="delete-pm__option" [class.mg-fix]="hasMultipleCA">
+            <div class="delete-pm__radio-header">
+                Please select an option below:
+            </div>
+            <mat-radio-group class="delete-pm__radio delete-pm__radio-dropdown">
+                <div class="click-fix">
+                    <mat-radio-button color="primary" class="delete-pm__radio-label delete-pm__radio-relink show-drop-down" [value]="args.id" (click)="showDropDownMenu()">Link my payment arrangement<span *ngIf="!hasOnePaymentArrangement">s</span> to another payment method instead</mat-radio-button><br>
+                </div>
+                <div class="delete-pm__dropdown-wrapper" [class.display-dropdown]="showOtherPaymentMethods">
+                    <select (change)="getNewPaymentMethodId($event.target.value)" (change)="enableButtons()" [class.placeholder]="!hasSelectedOptions" class="delete-pm__dropdown">
+                        <option [value]="hasSelectedOptions" disabled class="delete-pm__dropdown-option disabled">Select payment method</option>
+                        <option *ngFor="let paymentMethod of validPaymentMethods; let i = index" [value]="paymentMethod.id" class="delete-pm__dropdown-option dropdown-{{i}}">{{paymentMethod.title}} xxxx {{paymentMethod.shortReference}}</option>
+                    </select>
+                    <div *ngIf="newCreditCardSelected" class="delete-pm__credit-card-warning">
+                        A 0.45% processing fee appies to credit cards
+                    </div>
+                </div>
+                <div class="click-fix">
+                    <mat-radio-button color="primary" class="delete-pm__radio-label" [value]="!args.id" (click)="enableButtons()" (click)="getOldPaymentMethodId(args.id)">Cancel my payment arrangement<span *ngIf="!hasOnePaymentArrangement">s</span></mat-radio-button>
+                </div>
+            </mat-radio-group>
+        </div>
+        <div class="delete-pm__button" [class.mg-fix]="hasMultipleCA">
+            <button color="accent" mat-raised-button [class.is-loading]="isLoading" [class.disable-button]="!hasSelectedOptions" (click)="deleteCreditCard(paymentMethodId)">Remove and update</button>
+            <button mat-raised-button class="delete-pm__button--white" [class.disable-button]="!hasSelectedOptions" (click)="closeModal()">Keep Payment Method</button>
+        </div>
+    </div>
+
+</div>

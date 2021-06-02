@@ -1,0 +1,18 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": {
+        "hasMultipleBusinessPartners": false,
+        "businessPartners": [
+            {
+              "firstName": "SUS",
+              "lastName": "HEF",
+              "businessPartnerNumber": "BP0001",
+              "phone": "03 8663 6721",
+              "mobile": "0438 770 119",
+              "hasDateOfBirth": false,
+              "email": "UNION@AGL.COM.AU"
+            }
+          ]
+    }
+}

@@ -1,0 +1,35 @@
+@import '../homeProfile';
+
+.homeprofile-cooling {
+    @include homeprofile-survey-page-styling();
+
+    &-body  {
+        @include homeprofile-body-styling();
+
+        @media #{$agl-layout-tablet-and-greater} {
+            background-image: url('svg/homeprofile/house-cooling.svg');
+            background-position: right 22px top 40px;
+        }
+    }
+
+    &-questionnaire {
+        @include homeprofile-survey-questionnaire-styling();
+
+        &__heading {
+            @include homeprofile-heading-styling();
+        }
+
+        &__item {
+            margin-bottom: $space-04;
+
+            &-header {
+                font-size: $body-font-size-normal;
+                margin-bottom: $space-03;
+            }
+        }
+    }
+
+    &__segmented-button {
+        @include homeprofile-segmented-buttons-styling();
+    }
+}

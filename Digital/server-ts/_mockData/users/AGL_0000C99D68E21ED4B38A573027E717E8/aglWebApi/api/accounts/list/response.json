@@ -1,0 +1,46 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "number": "55920961",
+            "firstName": "NEVILLE",
+            "lastName": "MCBRIDE",
+            "contracts": [
+                {
+                    "address": "10 Lake Avenue|BARMERA SA 5345",
+                    "accountNumber": "55920961",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_0000C99D68E21ED4B38A573027E717E8",
+                    "number": "9035268363",
+                    "planName": "Select 7%",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "AGLMKTRE2415046",
+                    "regionId": "SA"
+                }
+            ]
+        },
+        {
+            "number": "56900087",
+            "firstName": "NEVILLE",
+            "lastName": "MCBRIDE",
+            "contracts": [
+                {
+                    "address": "26 Queen Elizabeth Drive|BARMERA SA 5345",
+                    "accountNumber": "56900087",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_0000C99D68E21ED4B38A573027E717E8",
+                    "number": "9036179378",
+                    "planName": "Select 7%",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false
+                }
+            ]
+        }
+    ]
+}

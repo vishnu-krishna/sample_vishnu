@@ -1,0 +1,23 @@
+<div class= "ssmr-banner"  *ngIf="(ssmr?.hasElecBasicMeter || ssmr?.hasGasBasicMeter) && showSSMRPanel">
+    <div class="ssmr-banner__container">
+        <div class="ssmr-banner--left col-sm-8">
+            <div class="ssmr-banner__icon">
+                <img class="ssmr-banner__icon--elec" *ngIf="ssmr?.hasElecBasicMeter" src="svg/icon_blue_elec_meter.svg" alt="Elec meter icon">
+                <img class="ssmr-banner__icon--gas" *ngIf="ssmr?.hasGasBasicMeter" src="svg/icon_blue_gas_meter.svg" alt="Gas meter icon">
+            </div>
+            <div class="ssmr-banner__text">
+                <div class="ssmr-banner__text-header">Want a more accurate bill?</div>
+                <div class="ssmr-banner__text-subtext">You can make it happen by taking your own meter read.</div>
+            </div>
+        </div>  
+
+        <div class="ssmr-banner--right col-sm-4">
+            <div class="ssmr-banner__cta">
+                <a class="ssmr-banner__cta-button" mat-raised-button color="accent" (click)="ssmr.showModal()">Enter your meter read</a>
+                <div class="ssmr-banner__cta-link"><a href="https://www.agl.com.au/residential/help-and-support/how-to-read-your-meter" target="_blank">How to read your meter</a></div>
+            </div>
+            <i (click)="closeSSMRPanel()" class="ssmr-banner__close material-icons hidden-xs">&#xE5CD;</i>
+        </div>
+        <i (click)="closeSSMRPanel()" class="ssmr-banner__close material-icons visible-xs">&#xE5CD;</i>
+    </div>
+</div>

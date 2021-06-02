@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="store-card-return">
+        <div class="desktop">
+            <mat-icon class="paypalIcon" svgIcon="icon-paypal" alt="Paypal"></mat-icon>
+            <h1>PayPal</h1>
+            <p>Paypal supports payments via bank transfer, credit card, debit card and AMEX.</p>
+            <span (click)="goBack()">Change</span>
+        </div>
+        <div class="mobile">
+            <div class="mobile-change-method">Paypal <span (click)="goBack()">Change</span></div>
+            <div class="mobile-description">Paypal supports payments via bank transfer, credit card, debit card and AMEX</div>
+        </div>
+    </div>
+    <div class="store-card-form">
+        <agl-paymentpaypal [content]="content" (onSave)="setupPaypal()"></agl-paymentpaypal>
+    </div>
+     <agl-loader *ngIf="paypalLoading" loadingSubMessage="You will be redirected to the PayPal website shortly." [fullScreen]="true"></agl-loader>
+</div>

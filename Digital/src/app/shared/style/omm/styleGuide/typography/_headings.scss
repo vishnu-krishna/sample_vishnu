@@ -1,0 +1,62 @@
+/*
+Decoupling headers from their semantic tags
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin-top: 0;
+}
+
+.alpha,
+.beta,
+.gamma,
+.delta {
+    font-family: $headerStack;
+    color: $col-g1;
+    line-height: 1.2;
+    margin-bottom: 0.7em;
+}
+
+.alpha {
+    font-size: 36px;
+}
+
+.beta {
+    font-size: 30px;
+}
+
+.gamma {
+    font-size: 26px;
+}
+
+.delta {
+    font-size: 20px;
+}
+
+.section-heading {
+    margin-bottom: 2em;
+    display: block;
+    text-align: center;
+    padding-top: 2em;
+}
+
+.rich-text-output {
+    h1 {
+        @extend .alpha;
+    }
+
+    h2 {
+        @extend .beta;
+    }
+
+    h3 {
+        @extend .gamma;
+    }
+
+    h4 {
+        @extend .delta;
+    }
+}

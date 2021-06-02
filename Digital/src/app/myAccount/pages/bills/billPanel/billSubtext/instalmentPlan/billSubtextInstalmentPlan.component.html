@@ -1,0 +1,12 @@
+<div *ngIf="instalmentPlan">
+    <mat-icon svgIcon="icon-tick-in-box" class="bill-panel-instalment-plan-message-panel__tick-icon"></mat-icon>
+    <div class="bill-panel-instalment-plan-message-panel__title">
+        You're on an instalment&nbsp;plan
+    </div>
+    <div *ngIf="instalmentPlan.nextInstalment" class="bill-panel-instalment-plan-message-panel__subtext">
+        Instalment {{instalmentPlan.nextInstalment.index}} {{chargeDescription}} - {{instalmentPlan.nextInstalment.dueDate | aglFormatDate}}
+    </div>
+    <div class="bill-panel-instalment-plan-message-panel__instalment-plan-bill-period">
+        <agl-bill-panel-instalment-plan-bill-period [contract]="contract"></agl-bill-panel-instalment-plan-bill-period>
+    </div>
+</div>

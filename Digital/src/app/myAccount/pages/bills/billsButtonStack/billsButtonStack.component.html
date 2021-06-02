@@ -1,0 +1,81 @@
+<mat-card class="promo-card button-stack">
+    <div class="promo-card-header">Online services</div>
+    <mat-card-content>
+        <ul>
+
+            <li class="promo-card-item">
+                <div class="promo-card-item__image">
+                    <img src="./img/iconExp_bill.png" alt="Setup Direct Debit image">
+                </div>
+                <div class="promo-card-item__note">
+                    Pay your bills with no fuss on time everytime.
+                </div>
+                <div class="promo-card-item__action">
+                    <div class="promo-card-item__action--link">
+                        <a [routerLink]="['/settings/directdebit']" [class.read-only]="isReadOnly" class="promo-card-item__action--button" mat-raised-button
+                            color="primary">
+                            Setup Direct Debit
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Monthly Billing (New feature in Feb 2018) -->
+            <li *ngIf="showMyAccountManagedMonthlyBilling()" class="promo-card-item">
+                <div class="promo-card-item__action">
+                    <div class="promo-card-item__action--link">
+                        <a [class.read-only]="isReadOnly" (click)="onClickMonthlyBilling()" *ngIf="!isLoadingMonthlyBillingEligibility">
+                            Set up Monthly Billing
+                        </a>
+                        <div *ngIf="isLoadingMonthlyBillingEligibility" class="monthly-billing-link__loader">
+                            <img src="svg/button-spinner.svg" alt="loading">
+                        </div>
+                        <mat-icon>play_arrow</mat-icon>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Early feature that links to AEO -->
+            <li *ngIf="showClassicAeoMonthlyBillingLink()" class="promo-card-item">
+                <div class="promo-card-item__action">
+                    <div class="promo-card-item__action--link">
+                        <a [class.read-only]="isReadOnly" [routerLink]="['/settings/billing']">
+                            Set up Monthly Billing
+                        </a>
+                        <mat-icon>play_arrow</mat-icon>
+                    </div>
+                </div>
+            </li>
+
+            <li class="promo-card-item">
+                <div class="promo-card-item__action">
+                    <div class="promo-card-item__action--link">
+                        <a [routerLink]="[eBillingLink()]" [class.read-only]="isReadOnly">
+                            Switch to eBilling
+                        </a>
+                        <mat-icon>play_arrow</mat-icon>
+                    </div>
+                </div>
+            </li>
+
+            <li *ngIf="showSssmrLink()" class="promo-card-item">
+                <div class="promo-card-item__action">
+                    <div class="promo-card-item__action--link">
+                        <a (click)="ssmr.showModal()">Enter a meter read</a>
+                        <mat-icon>play_arrow</mat-icon>
+                    </div>
+                </div>
+            </li>
+
+            <li class="promo-card-item">
+                <div class="promo-card-item__action">
+                    <div class="promo-card-item__action--link">
+                        <a href="{{viewPlanLink()}}">View Plan</a>
+                        <mat-icon>play_arrow</mat-icon>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </mat-card-content>
+</mat-card>

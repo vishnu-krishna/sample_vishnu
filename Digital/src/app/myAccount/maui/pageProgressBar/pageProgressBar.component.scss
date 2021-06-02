@@ -1,0 +1,105 @@
+@import '../maui';
+
+@include maui-component-reset();
+
+$gradient-light: #364DC5;
+
+:host {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: baseline;
+    font-size: $body-font-size-smallest;
+    font-family: $body-font-stack;
+    overflow: hidden;
+    padding-top: $space-03;
+    padding-bottom: $space-04;
+    padding-left: $space-05;
+    padding-right: $space-05;
+    height: 50px;
+}
+
+@mixin maui-page-progress-bar-tip() {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 7px;
+    background-color: $neutral-03;
+    top: -5px;
+}
+
+.maui-page-progress-bar {
+    border-top: 2px solid $neutral-05;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+
+    &:before {
+        @include maui-page-progress-bar-tip;
+        left: -7px;
+    }
+
+    &:after {
+        @include maui-page-progress-bar-tip;
+        right: -7px;
+    }
+
+    &__page {
+        flex-grow: 2;
+        flex-basis: 0;
+        position: relative;
+        vertical-align: top;
+
+        &-filler {
+            width: 100%;
+        }
+
+        &-number,
+        &-total {
+            font-weight: bold;
+        }
+
+        &-current {
+            & span[label] {
+                display: block;
+                position: absolute;
+                width: 100px;
+                right: -50px;
+                margin-top: $space-03;
+            }
+
+            &-marker {
+                position: absolute;
+                right: 0px;
+                z-index: 1;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    width: 24px;
+                    height: 24px;
+                    background-color: $gradient-light;
+                    border-radius: 14px;
+                    top: -13px;
+                    left: -9px;
+                    opacity: .15;
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 12px;
+                    height: 12px;
+                    background-color: $primary-dark;
+                    border-radius: 6px;
+                    top: -7px;
+                    left: -3px;
+                }
+            }
+        }
+    }
+}

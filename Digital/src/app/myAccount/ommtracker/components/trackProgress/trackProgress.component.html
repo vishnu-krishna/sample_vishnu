@@ -1,0 +1,28 @@
+<div id="container-progress-bar" class="track-progress">
+    <div id="plugConnection" class="track-progress__container">
+         <div class="track-progress__segment end">
+            <div class="track-progress__plug" [class.statusone]="showRequestReceivedMessage"></div> 
+            <div class="track-progress__bar stepone"></div>  
+            <div id="track-progress-message1" class="track-progress__message stepone" [class.messageenabled]="showRequestReceivedMessage">{{progressContent[0]}}</div>    
+         </div>
+         <div class="track-progress__segment">
+            <div class="track-progress__plug" [style.width]="cablewidth">
+                <mat-icon svgIcon="icon-plug" class="track-progress__icon" [class.statusone]="showRequestReceivedMessage" [class.full]="showReadyToConnectMessage"></mat-icon>
+            </div> 
+            <div  class="track-progress__bar bar-container"></div> 
+            <div class="track-progress__bar steptwo" [style.width]="percentText"></div>   
+            <div id="track-progress-message2" class="track-progress__message steptwo" [class.messageenabled]="showProcessingMessage">{{progressContent[1]}}</div>    
+         </div>
+         <div class="track-progress__segment end">
+             <div class="track-progress__plug final" [class.full]="showReadyToConnectMessage">
+                <mat-icon svgIcon="icon-plug" class="track-progress__icon" [class.statusone]="showRequestReceivedMessage"></mat-icon>
+            </div> 
+            <div class="track-progress__plugend">
+                <mat-icon svgIcon="icon-socket" class="track-progress__socket"></mat-icon>
+            </div>
+            <div class="track-progress__bar stepthree" [class.statusthree]="showReadyToConnectMessage"></div>  
+            <div id="track-progress-message3" class="track-progress__message stepthree" [class.messageenabled]="showReadyToConnectMessage">{{progressContent[2]}}</div>    
+         </div>
+    </div> 
+    <div class="clear"></div> 
+</div>

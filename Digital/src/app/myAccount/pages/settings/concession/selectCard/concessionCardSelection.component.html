@@ -1,0 +1,50 @@
+<div class="select-card">
+    <div class="select-card__heading">
+        <agl-maui-heading heading="Select your concession card"></agl-maui-heading>
+        <agl-maui-heading
+            subheading="Only one active concession can be applied to your&nbsp;account."></agl-maui-heading>
+    </div>
+
+    <agl-maui-container>
+        <div class="select-card__details-wrapper">
+            <agl-maui-radio-button-group [(selectedValue)]="selectedValue" name="cardGroup">
+                <ng-template ngFor let-issuer [ngForOf]="issuerCards">
+                    <div class="select-card__details-heading">{{issuer.issuerDescription}}</div>
+                    <div class="select-card__details-group">
+                        <agl-maui-radio-button *ngFor="let card of issuer.cards" value="{{card.uniqueKey}}">
+                            <div label class="select-card__details-row">
+                                <div class="select-card__details-row-label">{{card.cardDescription}}</div>
+                                <mat-icon class="select-card__details-row-icon" [svgIcon]="card.iconName"></mat-icon>
+                            </div>
+                            <div content class="select-card__details-fuel-warning"
+                                 *ngIf="card.uniqueKey === selectedValue && !!selectedCardExcludedFuelWarning">
+                                <agl-maui-flash-message type="Inform">
+                                    <div subheading>
+                                        {{selectedCardExcludedFuelWarning}}
+                                    </div>
+                                </agl-maui-flash-message>
+                            </div>
+                        </agl-maui-radio-button>
+                    </div>
+                </ng-template>
+            </agl-maui-radio-button-group>
+        </div>
+    </agl-maui-container>
+
+    <div class="select-card__other-card-message">
+        <agl-maui-flash-message type="Inform">
+            <div heading>
+                Can't find your card in the above list?
+            </div>
+            <div subheading>
+                Check out our <a href="https://www.agl.com.au/residential/help-and-support/concessions-rebates-grants"
+                                 target="blank">guide to concessions</a>for more information.
+            </div>
+        </agl-maui-flash-message>
+    </div>
+
+    <agl-concession-continue-or-cancel
+        (continueButtonClicked)="continue()"
+        [continueButtonEnabled]="continueButtonEnabled">
+    </agl-concession-continue-or-cancel>
+</div>

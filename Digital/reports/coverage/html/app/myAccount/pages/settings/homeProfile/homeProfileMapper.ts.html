@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\settings\homeProfile\homeProfileMapper.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/settings/homeProfile/</a> homeProfileMapper.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">15.38% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>14/91</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/34</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">37.5% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.5% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>11/88</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { HomeProfileViewModel, PropertyType, FridgeType, FridgeAge, HotWaterType, PoolSize, PoolHeaterType, PoolPumpAge, DuctedHeatingType, OtherHeatingType, OvenType, CooktopType } from './homeProfileViewModel';
+import { HomeProfileApiModel, Fridge } from '../../../services/homeProfile/homeProfileApi.service';
+&nbsp;
+<span class="fstat-no" title="function not covered" >export abstract class IHomeProfileMapper {</span>
+    public abstract fromViewModel(viewModel: HomeProfileViewModel): HomeProfileApiModel;
+    public abstract toViewModel(profile: HomeProfileApiModel): HomeProfileViewModel;
+}
+&nbsp;
+@Injectable()
+export class HomeProfileMapper implements IHomeProfileMapper {
+&nbsp;
+    public fromViewModel(model: HomeProfileViewModel<span class="fstat-no" title="function not covered" >): HomeProfileApiModel {</span>
+        let profile = <span class="cstat-no" title="statement not covered" >new HomeProfileApiModel();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (model) {</span>
+&nbsp;
+            // Your Home properties
+<span class="cstat-no" title="statement not covered" >            profile.propertyType = model.propertyType ? model.propertyType.toString() : undefined;</span>
+<span class="cstat-no" title="statement not covered" >            profile.numberOfBathrooms = model.numberOfBathrooms;</span>
+<span class="cstat-no" title="statement not covered" >            profile.numberOfBedrooms = model.numberOfBedrooms;</span>
+<span class="cstat-no" title="statement not covered" >            profile.numberOfAdults = model.numberOfAdults;</span>
+<span class="cstat-no" title="statement not covered" >            profile.numberOfChildren = model.numberOfChildren;</span>
+&nbsp;
+            // Cooling properties
+<span class="cstat-no" title="statement not covered" >            profile.numberOfAirconSplitSystems = model.numberOfSplitSystemAirconCooling;</span>
+<span class="cstat-no" title="statement not covered" >            profile.numberOfAirconFixed = model.numberOfWallUnitAirconCooling;</span>
+<span class="cstat-no" title="statement not covered" >            profile.hasDuctedAircon = model.hasDuctedAirconCooling;</span>
+<span class="cstat-no" title="statement not covered" >            profile.numberOfPortableCoolers = model.numberOfPortableEvaporativeCooling;</span>
+<span class="cstat-no" title="statement not covered" >            profile.hasDuctedEvaporativeCooling = model.hasDuctedEvaporativeCooling;</span>
+<span class="cstat-no" title="statement not covered" >            profile.numberOfFans = model.numberOfCoolingFans;</span>
+&nbsp;
+            // Heating
+<span class="cstat-no" title="statement not covered" >            profile.numberOfHeatingSplitSystems = model.numberOfHeatingSplitSystems;</span>
+<span class="cstat-no" title="statement not covered" >            profile.typeOfDuctedHeating = model.typeOfDuctedHeating;</span>
+<span class="cstat-no" title="statement not covered" >            profile.numberOfPortableElecHeaters = model.numberOfPortableElecHeaters;</span>
+<span class="cstat-no" title="statement not covered" >            profile.typeOfOtherHeating = model.typeOfOtherHeating;</span>
+&nbsp;
+            // Hot water
+<span class="cstat-no" title="statement not covered" >            profile.hotWaterType = HotWaterType[model.hotWaterType];</span>
+&nbsp;
+            // Oven and CookTop
+<span class="cstat-no" title="statement not covered" >            profile.ovenType = model.ovenType;</span>
+<span class="cstat-no" title="statement not covered" >            profile.cooktopType = model.cooktopType;</span>
+&nbsp;
+            // Fridges and freezers
+<span class="cstat-no" title="statement not covered" >            this.fridgeFromViewModel(model, profile);</span>
+&nbsp;
+            // Other electrical items
+<span class="cstat-no" title="statement not covered" >            profile.numberOfTelevisions = model.numberOfTelevisions;</span>
+<span class="cstat-no" title="statement not covered" >            profile.hasWashingMachine = model.hasWashingMachine;</span>
+<span class="cstat-no" title="statement not covered" >            profile.hasClothesDryer = model.hasClothesDryer;</span>
+<span class="cstat-no" title="statement not covered" >            profile.hasDishwasher = model.hasDishwasher;</span>
+<span class="cstat-no" title="statement not covered" >            profile.hasMicrowave = model.hasMicrowave;</span>
+<span class="cstat-no" title="statement not covered" >            profile.hasElectricalVehicle = model.hasElectricalVehicle;</span>
+&nbsp;
+            // Pool and spa
+<span class="cstat-no" title="statement not covered" >            profile.hasPool = model.hasPool;</span>
+<span class="cstat-no" title="statement not covered" >            profile.poolSize = model.poolSize &amp;&amp; model.poolSize.toString();</span>
+<span class="cstat-no" title="statement not covered" >            profile.poolHeaterFuelType = model.poolHeaterType &amp;&amp; model.poolHeaterType.toString();</span>
+<span class="cstat-no" title="statement not covered" >            profile.poolPumpAge = model.poolPumpAge &amp;&amp; model.poolPumpAge.toString();</span>
+<span class="cstat-no" title="statement not covered" >            profile.hasSpa = model.hasSpa;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return profile;</span>
+    }
+&nbsp;
+    public toViewModel(profile: HomeProfileApiModel<span class="fstat-no" title="function not covered" >): HomeProfileViewModel {</span>
+        let model = <span class="cstat-no" title="statement not covered" >new HomeProfileViewModel();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (profile) {</span>
+&nbsp;
+            // Your Home properties
+<span class="cstat-no" title="statement not covered" >            model.propertyType = PropertyType[profile.propertyType];</span>
+<span class="cstat-no" title="statement not covered" >            model.numberOfBathrooms = profile.numberOfBathrooms;</span>
+<span class="cstat-no" title="statement not covered" >            model.numberOfBedrooms = profile.numberOfBedrooms;</span>
+<span class="cstat-no" title="statement not covered" >            model.numberOfAdults = profile.numberOfAdults;</span>
+<span class="cstat-no" title="statement not covered" >            model.numberOfChildren = profile.numberOfChildren;</span>
+&nbsp;
+            // Cooling properties
+<span class="cstat-no" title="statement not covered" >            model.numberOfSplitSystemAirconCooling = profile.numberOfAirconSplitSystems;</span>
+<span class="cstat-no" title="statement not covered" >            model.numberOfWallUnitAirconCooling = profile.numberOfAirconFixed;</span>
+<span class="cstat-no" title="statement not covered" >            model.hasDuctedAirconCooling = profile.hasDuctedAircon;</span>
+<span class="cstat-no" title="statement not covered" >            model.numberOfPortableEvaporativeCooling = profile.numberOfPortableCoolers;</span>
+<span class="cstat-no" title="statement not covered" >            model.hasDuctedEvaporativeCooling = profile.hasDuctedEvaporativeCooling;</span>
+<span class="cstat-no" title="statement not covered" >            model.numberOfCoolingFans = profile.numberOfFans;</span>
+&nbsp;
+            // Hot water
+<span class="cstat-no" title="statement not covered" >            model.hotWaterType = HotWaterType[profile.hotWaterType];</span>
+&nbsp;
+            // Heating
+<span class="cstat-no" title="statement not covered" >            model.numberOfHeatingSplitSystems = profile.numberOfHeatingSplitSystems;</span>
+<span class="cstat-no" title="statement not covered" >            model.typeOfDuctedHeating = DuctedHeatingType[profile.typeOfDuctedHeating];</span>
+<span class="cstat-no" title="statement not covered" >            model.numberOfPortableElecHeaters = profile.numberOfPortableElecHeaters;</span>
+<span class="cstat-no" title="statement not covered" >            model.typeOfOtherHeating = OtherHeatingType[profile.typeOfOtherHeating];</span>
+&nbsp;
+            // Oven and CookTop
+<span class="cstat-no" title="statement not covered" >            model.ovenType = OvenType[profile.ovenType];</span>
+<span class="cstat-no" title="statement not covered" >            model.cooktopType = CooktopType[profile.cooktopType];</span>
+&nbsp;
+            // Fridges and freezers
+<span class="cstat-no" title="statement not covered" >            this.fridgeToViewModel(profile, model);</span>
+&nbsp;
+            // Other electrical items
+<span class="cstat-no" title="statement not covered" >            model.numberOfTelevisions = profile.numberOfTelevisions;</span>
+<span class="cstat-no" title="statement not covered" >            model.hasWashingMachine = profile.hasWashingMachine;</span>
+<span class="cstat-no" title="statement not covered" >            model.hasClothesDryer = profile.hasClothesDryer;</span>
+<span class="cstat-no" title="statement not covered" >            model.hasDishwasher = profile.hasDishwasher;</span>
+<span class="cstat-no" title="statement not covered" >            model.hasMicrowave = profile.hasMicrowave;</span>
+<span class="cstat-no" title="statement not covered" >            model.hasElectricalVehicle = profile.hasElectricalVehicle;</span>
+&nbsp;
+            // Pool and spa
+<span class="cstat-no" title="statement not covered" >            model.hasPool = profile.hasPool;</span>
+<span class="cstat-no" title="statement not covered" >            model.poolSize = PoolSize[profile.poolSize];</span>
+<span class="cstat-no" title="statement not covered" >            model.poolHeaterType = PoolHeaterType[profile.poolHeaterFuelType];</span>
+<span class="cstat-no" title="statement not covered" >            model.poolPumpAge = PoolPumpAge[profile.poolPumpAge];</span>
+<span class="cstat-no" title="statement not covered" >            model.hasSpa = profile.hasSpa;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return model;</span>
+    }
+    private fridgeFromViewModel(model: HomeProfileViewModel, profile: HomeProfileApiModel<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        if (model.mainFridgeType) {</span>
+<span class="cstat-no" title="statement not covered" >            profile.mainFridge = new Fridge(model.mainFridgeType, model.mainFridgeAge ? model.mainFridgeAge : null);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (model.hasSecondaryFridge) {</span>
+<span class="cstat-no" title="statement not covered" >            profile.fridge2 = !model.secondaryFridgeType ? {} : new Fridge(model.secondaryFridgeType, model.secondaryFridgeAge ? model.secondaryFridgeAge : null);</span>
+        }
+    }
+&nbsp;
+    private fridgeToViewModel(profile: HomeProfileApiModel, model: HomeProfileViewModel<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        if (profile.mainFridge) {</span>
+<span class="cstat-no" title="statement not covered" >            model.mainFridgeType = profile.mainFridge.fridgeType ? FridgeType[profile.mainFridge.fridgeType] : null;</span>
+<span class="cstat-no" title="statement not covered" >            model.mainFridgeAge = profile.mainFridge.age ? FridgeAge[profile.mainFridge.age] : null;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (profile.fridge2) {</span>
+<span class="cstat-no" title="statement not covered" >            model.hasSecondaryFridge = true;</span>
+<span class="cstat-no" title="statement not covered" >            model.secondaryFridgeType = profile.fridge2.fridgeType ? FridgeType[profile.fridge2.fridgeType] : null;</span>
+<span class="cstat-no" title="statement not covered" >            model.secondaryFridgeAge = profile.fridge2.age ? FridgeAge[profile.fridge2.age] : null;</span>
+        }
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

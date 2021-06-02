@@ -1,0 +1,1091 @@
+{
+    "environments": [
+        {
+            "envName": "local",
+            "baseURI": "https://localhost",
+            "port": "8080",
+            "path": "",
+            "users": [
+                {
+                    "name": "Default",
+                    "guid": "AGL_E413C3BB1354B6F19A520000C99D7ADE",
+                    "firstName": "Rod",
+                    "accounts": [
+                        {
+                            "number": "7013149351",
+                            "numberFormatted": "7013 149 351",
+                            "contracts": {
+                                "gas": [
+                                    {
+                                        "number": "9133061138",
+                                        "fuelType": "Gas"
+                                    }
+                                ],
+                                "electricity": [
+                                    {
+                                        "number": "9133061126",
+                                        "fuelType": "Electricity"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "106 Head Street, Brighton VIC 3186"
+                        }
+                    ]
+                },
+                {
+                    "name": "PAYG",
+                    "guid": "AGL_PAYG049401DC19F1A8F80000C99D68E7",
+                    "firstName": "Roy",
+                    "accounts": [
+                        {
+                            "number": "123456789",
+                            "numberFormatted": "123 456 789",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "111111111",
+                                        "fuelType": "Electricity",
+                                        "prepaidBalanceFormatted": "$ 123 .00"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "32 Brewery Ln, North Willoughby, Sydney, NSW 2023"
+                        },
+                        {
+                            "number": "123456789",
+                            "numberFormatted": "123 456 789",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "222222222",
+                                        "fuelType": "Electricity",
+                                        "prepaidBalanceFormatted": "$ 50 .00"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "32/102 Cook St, Parramatta, Sydney, NSW 2150"
+                        },
+                        {
+                            "number": "123456789",
+                            "numberFormatted": "123 456 789",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "333333333",
+                                        "fuelType": "Electricity",
+                                        "prepaidBalanceFormatted": "-$ 20 .00 DR"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "32/102 Cook St, Parramatta, Sydney, NSW 2150"
+                        },
+                        {
+                            "number": "123456789",
+                            "numberFormatted": "123 456 789",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "444444444",
+                                        "fuelType": "Electricity",
+                                        "prepaidBalanceFormatted": "-$ 40 .00 DR",
+                                        "outstandingBill": {
+                                            "amount": "$78.80",
+                                            "duedate": "2017-04-28T00:00:00"
+                                        }
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "32 Brewery Ln, North Willoughby, Sydney, NSW 2023"
+                        },
+                        {
+                            "number": "123456789",
+                            "numberFormatted": "123 456 789",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "9000273625",
+                                        "fuelType": "Electricity",
+                                        "outstandingBill": {
+                                            "amount": "$78.80",
+                                            "duedate": "2017-04-28T00:00:00"
+                                        }
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "32 Collins St, Docklands, Melbourne, VIC 3008"
+                        }
+                    ]
+                },
+                {
+                    "name": "RESI_DUAL_FUEL_BILL_ISSUED",
+                    "guid": "AGL_E395B5CFC36FFEF18D470000C99D68E2",
+                    "firstName": "Shahrukh",
+                    "accounts": [
+                        {
+                            "number": "23965742",
+                            "numberFormatted": "2396 5742",
+                            "contracts": {
+                                "gas": [
+                                    {
+                                        "number": "9400780910",
+                                        "fuelType": "Gas"
+                                    }
+                                ],
+                                "electricity": [
+                                    {
+                                        "number": "9400780769",
+                                        "fuelType": "Electricity"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "55 Fongeo Drive, Point Cook VIC 3030"
+                        }
+                    ]
+                },
+				{
+					"name": "contactDetailsWillSucceed",
+					"guid": "AGL_0000C99D7ADE1EE595CD264FA9DDED28"
+				},
+                {
+                    "name": "invalidContactDetails",
+                    "guid": "AGL_PAYG049401DC19F1A8F80000C99D68F13"
+                },
+                {
+                  "name": "CAN_APPLY_FOR_CONCESSION_WITH_MULTI_CONTRACT_ACCOUNTS",
+                  "guid": "AGL_E395B7CDAFFF04F18C2A000011111111"
+                },
+                {
+                    "name": "CAN_APPLY_FOR_CONCESSION_WITH_SINGLE_CONTRACT_ACCOUNT",
+                    "guid": "AGL_0000C99D7ADE1EE595CD264FA9DDED30"
+                },
+                {
+                    "name": "DUAL_ACCOUNT_SSMR",
+                    "guid": "AGL_0000C99D68E21ED4B38A573027E717E8"
+                },
+                {
+                    "name": "MULTI_ACCOUNT_MULTI_CONTRACT_ELIGIBLE_ENERGY_INSIGHTS",
+                    "guid": "AGL_000D3AD07CE31ED78A96476E03A7C8E6",
+                    "firstName": "SUS"
+                },
+                {
+                    "name": "MULTI_ACCOUNT_SINGLE_CONTRACT_ELIGIBLE_ENERGY_INSIGHTS",
+                    "guid": "AGL_0000C99D7ADE1EE492A42E1ADEF8A5A8",
+                    "firstName": "Iain"
+                },
+                {
+                    "name": "RESI_SINGLE_FUEL_SMART_ELEC",
+                    "guid": "AGL_001B218ACA131ED6B5C55B97E22AD34B",
+                    "firstName": "Thao",
+                    "accounts": [
+                        {
+                            "number": "7022408723",
+                            "numberFormatted": "7022 408 723",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "9400932978",
+                                        "fuelType": "Electricity"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "18 Terry Court, Springvale South VIC 3172"
+                        }
+                    ]
+                },
+                {
+                    "name": "NO_FIRST_BILL_USER",
+                    "guid": "AGL_0000C99D63321EE581CEFE7BF2AEFF09",
+                    "firstName": "Philip",
+                    "accounts": [
+                        {
+                            "number": "41307083",
+                            "numberFormatted": "4130 7083",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "9014500059",
+                                        "fuelType": "Electricity"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "1 Redwood Court, Currimundi QLD 4551"
+                        }
+                    ]
+                },
+                {
+                    "name": "BILLSMOOTHING",
+                    "guid": "AGL_0000C99D7ADE1EE595CD264FA9DDED30",
+                    "firstName": "Meera",
+                    "accounts": [
+                        {
+                            "number": "7021129726",
+                            "numberFormatted": "7021 129 726",
+                            "contracts": {
+                                "gas": [
+                                    {
+                                        "number": "9400717581"
+                                    }
+                                ],
+                                "electricity": [
+                                    {
+                                        "number": "9400717466"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "53 Dennis Street, Northcote VIC 3070"
+                        }
+                    ]
+                },
+                {
+                    "name": "WITH_USAGE_DATA",
+                    "guid": "AGL_DC2BDC7176F11ED6B1F9D696B98BD84D",
+                    "firstName": "Clint",
+                    "accounts": [
+                        {
+                            "number": "90428798",
+                            "numberFormatted": "9042 87 98",
+                            "contracts": {
+                                "gas": [
+                                    {
+                                        "number": "9101163496"
+                                    }
+                                ],
+                                "electricity": [
+                                    {
+                                        "number": "9101004976"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "14/27 Robe Street, St Kilda VIC 3182"
+                        }
+                    ]
+                },
+                {
+                    "name": "HOME_PROFILE",
+                    "guid": "AGL_E395B7CDAFFF04F18C2A33333333",
+                    "firstName": "Matt",
+                    "accounts": [
+                        {
+                            "number": "123456",
+                            "numberFormatted": "123 456",
+                            "contracts": {
+                                "gas": [
+                                    {
+                                        "number": "123456111"
+                                    }
+                                ],
+                                "electricity": [
+                                    {
+                                        "number": "123456222"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "99 Swanston Street, Melbourne VIC 3000"
+                        }
+                    ]
+                },
+                {
+                    "name": "HOME_PROFILE_MULTI_CONTRACT",
+                    "guid": "AGL_E395B7CDAFFF04F18C2A33333332",
+                    "firstName": "Matt",
+                    "accounts": [
+                        {
+                            "number": "123456",
+                            "numberFormatted": "123 456",
+                            "contracts": {
+                                "gas": [
+                                    {
+                                        "number": "123456111"
+                                    }
+                                ],
+                                "electricity": [
+                                    {
+                                        "number": "123456222"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "99 Swanston Street, Melbourne VIC 3000"
+                        },
+                        {
+                            "number": "456789",
+                            "numberFormatted": "456 789",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "456789111"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "2 Albion Street, Brunswick VIC 3000"
+                        }
+                    ]
+                },
+				{
+					"name": "SINGLE_FUEL_BASIC_GAS",
+					"guid": "AGL_0000C99DF8261EE5B6A22DE24E25C86B"
+				},
+                {
+                    "name": "MULTI_ACCOUNT_MULTI_CONTRACT",
+                    "guid": "AGL_E395B7CDAFFF04F18C2A0000C99DF826",
+                    "firstName": "Richard",
+                    "accounts": [
+                        {
+                            "number": "7016135894",
+                            "numberFormatted": "7016 135 894",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "9139723694"
+                                    }
+                                ],
+                                "gas": [
+                                    {
+                                        "number": "9139723699"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": " 8 Armstrong Street, Springvale VIC 3171"
+                        },
+                        {
+                            "number": "7029521254",
+                            "numberFormatted": "7029 521 254",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "9401786227"
+                                    }
+                                ],
+                                "gas": [
+                                    {
+                                        "number": "9401786228"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "4 Clovelly Drive, Craigieburn VIC 3064"
+                        }
+                    ]
+                },
+                {
+                    "name": "WITH_ESSENTIAL_PRODUCT",
+                    "guid": "AGL_0000C99DF8261EE6BCB63B0C1F2DB419",
+                    "email": "gianna.mafodda@gmail.com",
+                    "password": "Password@1",
+                    "firstName": "Gianna",
+                    "accounts": [
+                        {
+                            "number": "7036967672",
+                            "numberFormatted": "7036 967 672",
+                            "contracts": {
+
+                                "electricity": [
+                                    {
+                                        "number": "9403315392"
+                                    }
+                                ]
+
+                            },
+                            "addressFormatted": "Unit, U2/18 Grantham Street, Brunswick West VIC 3055"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "envName": "obsidian",
+            "baseURI": "https://aglobsidian.digital.agl.com.au",
+            "path": "",
+            "users": [
+                {
+                    "name": "Default",
+                    "email": "LGNAYLOR1958@GMAIL.COM",
+                    "password": "",
+                    "firstName": "Lee",
+                    "guid": "AGL_0000C99DF8261EE69DB123BECE3BF1D7"
+                },
+                {
+                    "name": "RESI_DUAL_FUEL_BILL_ISSUED",
+                    "guid": "AGL_000D3AD1221E1ED889D67D4861CC20CD",
+                    "firstName": "Steven",
+                    "accounts": [
+                        {
+                            "number": "21479472",
+                            "numberFormatted": "2147 9472",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "9002022200",
+                                        "fuelType": "Electricity"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "11 Ashwood Avenue, Highett VIC 3190"
+                        }
+                    ]
+                },
+                {
+                    "name": "contactDetailsWillSucceed",
+                    "guid": "AGL_E395B88D1C431AF18D470000C99D68E2"
+                },
+                {
+                    "name": "invalidContactDetails",
+                    "guid": "AGL_E395B8924196C8F1A8DCE150C6AD1CFB"
+                },
+                {
+                    "name": "NO_FIRST_BILL_USER",
+                    "guid": "AGL_E395B7BABF5A1DF18D470000C99D68E2",
+                    "firstName": "Gail",
+                    "accounts": [
+                        {
+                            "number": "82946005",
+                            "numberFormatted": "8294 6005",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "9118826052",
+                                        "fuelType": "Electricity"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "72 Pandora Avenue|Venus Bay VIC 3956"
+                        }
+                    ]
+                },
+                {
+                    "name": "BILLSMOOTHING",
+                    "guid": "AGL_0000C99DF8261EE69DB123BECE3BF1D7",
+                    "firstName": "Lee",
+                    "accounts": [
+                        {
+                            "number": "7039977090",
+                            "numberFormatted": "7039 977 090",
+                            "contracts": {
+                                "gas": [
+                                    {
+                                        "number": "9403491813"
+                                    }
+                                ],
+                                "electricity": [
+                                    {
+                                        "number": "9403491812"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "24 Caley Street, Frankston North VIC 3200"
+                        }
+                    ]
+                },
+                {
+                    "name": "PAYG",
+                    "guid": "AGL_000D3AD1221E1ED88A854AD9191DE0CD",
+                    "firstName": "David",
+                    "accounts": [
+                        {
+                            "number": "29563855",
+                            "numberFormatted": "2956 3855",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "9014057329",
+                                        "fuelType": "Electricity",
+                                        "prepaidBalanceFormatted": "$ 123 .00"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "66 Barton Street, Surrey Hills VIC 3127"
+                        },
+                        {
+                            "number": "7040360096",
+                            "numberFormatted": "7040 360 096",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "9403551710",
+                                        "fuelType": "Electricity",
+                                        "prepaidBalanceFormatted": "$ 157 .35"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "22 Dellfield Drive, Lower Templestowe VIC 3107"
+                        },
+                        {
+                            "number": "29563855",
+                            "numberFormatted": "2956 3855",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "9403551713",
+                                        "fuelType": "Electricity",
+                                        "prepaidBalanceFormatted": "$ 157 .35"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "13b Barber Drive, Hoppers Crossing VIC 3029"
+                        },
+                        {
+                            "number": "29563855",
+                            "numberFormatted": "2956 3855",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "9403551716",
+                                        "fuelType": "Electricity",
+                                        "prepaidBalanceFormatted": "$ 157 .35"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "13 Warrumbungle Close, Ocean Grove VIC 3226"
+                        },
+                        {
+                            "number": "29563855",
+                            "numberFormatted": "2956 3855",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "9403551718",
+                                        "fuelType": "Electricity",
+                                        "prepaidBalanceFormatted": "$ 157 .35"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "11 Heidelberg Road, Clifton Hill VIC 3068"
+                        }
+                    ]
+                },
+                {
+                    "name": "RESI_SINGLE_FUEL_SMART_ELEC",
+                    "guid": "AGL_0000C99D7ADE1ED785DAD1DF97BEDECD",
+                    "firstName": "Huiting",
+                    "accounts": [
+                        {
+                            "number": "7033683694",
+                            "numberFormatted": "7033 683 694",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "9402505010",
+                                        "fuelType": "Electricity"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "12 Suffolk Road, Dandenong VIC 3175"
+                        }
+                    ]
+                },
+                {
+                    "name": "WITH_USAGE_DATA",
+                    "guid": "AGL_E395B88D1C431AF18D470000C99D68E2",
+                    "firstName": "Vince",
+                    "accounts": [
+                        {
+                            "number": "24061160",
+                            "numberFormatted": "2406 1160",
+                            "contracts": {
+                                "gas": [
+                                    {
+                                        "number": "9013690015",
+                                        "fuelType": "Gas"
+                                    }
+                                ],
+                                "electricity": [
+                                    {
+                                        "number": "9002563071",
+                                        "fuelType": "Electricity"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "3 Albion Road, Glen Iris VIC 3146"
+                        }
+                    ]
+                }
+
+            ]
+        },
+        {
+            "envName": "diamond",
+            "baseURI": "https://agldiamond.digital.agl.com.au/residential",
+            "path": "",
+            "users": [
+                {
+                    "name": "Default",
+                    "email": "LGNAYLOR1958@GMAIL.COM",
+                    "password": "",
+                    "firstName": "Lee",
+                    "guid": "AGL_0000C99DF8261EE69DB123BECE3BF1D7"
+                },
+                {
+                    "name": "RESI_DUAL_FUEL_BILL_ISSUED",
+                    "guid": "AGL_E40F9CC409530BF1A8F80000C99D68E2",
+                    "firstName": "Steven",
+                    "accounts": [
+                        {
+                            "number": "7013066316",
+                            "numberFormatted": "7013 066 316",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "9403296666",
+                                        "fuelType": "Electricity"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "3/95 Macalister Street, Sale VIC 3850"
+                        }
+                    ]
+                },
+                {
+                    "name": "contactDetailsWillSucceed",
+                    "guid": "AGL_E395B88D1C431AF18D470000C99D68E2"
+                },
+                {
+                    "name": "invalidContactDetails",
+                    "guid": "AGL_E395B8924196C8F1A8DCE150C6AD1CFB"
+                },
+                {
+                    "name": "NO_FIRST_BILL_USER",
+                    "guid": "AGL_E395B7BABF5A1DF18D470000C99D68E2",
+                    "firstName": "Gail",
+                    "accounts": [
+                        {
+                            "number": "82946005",
+                            "numberFormatted": "8294 6005",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "9118826052",
+                                        "fuelType": "Electricity"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "72 Pandora Avenue|Venus Bay VIC 3956"
+                        }
+                    ]
+                },
+                {
+                    "name": "BILLSMOOTHING",
+                    "guid": "AGL_0000C99DF8261EE69DB123BECE3BF1D7",
+                    "firstName": "Lee",
+                    "accounts": [
+                        {
+                            "number": "7039977090",
+                            "numberFormatted": "7039 977 090",
+                            "contracts": {
+                                "gas": [
+                                    {
+                                        "number": "9403491813"
+                                    }
+                                ],
+                                "electricity": [
+                                    {
+                                        "number": "9403491812"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "24 Caley Street, Frankston North VIC 3200"
+                        }
+                    ]
+                },
+                {
+                    "name": "PAYG",
+                    "guid": "AGL_000D3AD1221E1ED88A854AD9191DE0CD",
+                    "firstName": "David",
+                    "accounts": [
+                        {
+                            "number": "29563855",
+                            "numberFormatted": "2956 3855",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "9014057329",
+                                        "fuelType": "Electricity",
+                                        "prepaidBalanceFormatted": "$ 123 .00"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "66 Barton Street, Surrey Hills VIC 3127"
+                        },
+                        {
+                            "number": "7040360096",
+                            "numberFormatted": "7040 360 096",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "9403551710",
+                                        "fuelType": "Electricity",
+                                        "prepaidBalanceFormatted": "$ 157 .35"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "22 Dellfield Drive, Lower Templestowe VIC 3107"
+                        },
+                        {
+                            "number": "29563855",
+                            "numberFormatted": "2956 3855",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "9403551713",
+                                        "fuelType": "Electricity",
+                                        "prepaidBalanceFormatted": "$ 157 .35"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "13b Barber Drive, Hoppers Crossing VIC 3029"
+                        },
+                        {
+                            "number": "29563855",
+                            "numberFormatted": "2956 3855",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "9403551716",
+                                        "fuelType": "Electricity",
+                                        "prepaidBalanceFormatted": "$ 157 .35"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "13 Warrumbungle Close, Ocean Grove VIC 3226"
+                        },
+                        {
+                            "number": "29563855",
+                            "numberFormatted": "2956 3855",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "9403551718",
+                                        "fuelType": "Electricity",
+                                        "prepaidBalanceFormatted": "$ 157 .35"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "11 Heidelberg Road, Clifton Hill VIC 3068"
+                        }
+                    ]
+                },
+                {
+                    "name": "RESI_SINGLE_FUEL_SMART_ELEC",
+                    "guid": "AGL_0000C99D7ADE1ED785DAD1DF97BEDECD",
+                    "firstName": "Huiting",
+                    "accounts": [
+                        {
+                            "number": "7033683694",
+                            "numberFormatted": "7033 683 694",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "9402505010",
+                                        "fuelType": "Electricity"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "12 Suffolk Road, Dandenong VIC 3175"
+                        }
+                    ]
+                },
+                {
+                    "name": "WITH_USAGE_DATA",
+                    "guid": "AGL_E395B88D1C431AF18D470000C99D68E2",
+                    "firstName": "Vince",
+                    "accounts": [
+                        {
+                            "number": "24061160",
+                            "numberFormatted": "2406 1160",
+                            "contracts": {
+                                "gas": [
+                                    {
+                                        "number": "9013690015",
+                                        "fuelType": "Gas"
+                                    }
+                                ],
+                                "electricity": [
+                                    {
+                                        "number": "9002563071",
+                                        "fuelType": "Electricity"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "3 Albion Road, Glen Iris VIC 3146"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "envName": "monthly-uat",
+            "baseURI": "https://aglmntuat.digital.agl.com.au/residential",
+            "path": "",
+            "users": [
+                {
+                    "name": "Default",
+                    "email": "SENYEE3@YAHOO.COM",
+                    "password": "",
+                    "firstName": "Sen Yee",
+                    "guid": "AGL_E395B96ED5910FF18D470000C99D68E2"
+                },
+                {
+                    "name": "RESI_DUAL_FUEL_BILL_ISSUED",
+                    "guid": "AGL_E395B5CFC36FFEF18D470000C99D68E2",
+                    "firstName": "Avinash",
+                    "accounts": [
+                        {
+                            "number": "23965742",
+                            "numberFormatted": "2396 5742",
+                            "contracts": {
+                                "gas": [
+                                    {
+                                        "number": "9400780910",
+                                        "fuelType": "Gas"
+                                    }
+                                ],
+                                "electricity": [
+                                    {
+                                        "number": "9400780769",
+                                        "fuelType": "Electricity"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "55 Fongeo Drive, Point Cook VIC 3030"
+                        }
+                    ]
+                },
+                {
+                    "name": "RESI_SINGLE_FUEL_SMART_ELEC",
+                    "guid": "AGL_001B218ACA131ED6B5C55B97E22AD34B",
+                    "firstName": "Thao",
+                    "accounts": [
+                        {
+                            "number": "7022408723",
+                            "numberFormatted": "7022 408 723",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "9400932978",
+                                        "fuelType": "Electricity"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "18 Terry Court, Springvale South VIC 3172"
+                        }
+                    ]
+                },
+                {
+                    "name": "NO_FIRST_BILL_USER",
+                    "guid": "AGL_0000C99D63321EE581CEFE7BF2AEFF09",
+                    "firstName": "Philip",
+                    "accounts": [
+                        {
+                            "number": "41307083",
+                            "numberFormatted": "4130 7083",
+                            "contracts": {
+                                "electricity": [
+                                    {
+                                        "number": "9014500059",
+                                        "fuelType": "Electricity"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "1 Redwood Court, Currimundi QLD 4551"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "envName": "bau",
+            "baseURI": "https://aglbauuat.digital.agl.com.au",
+            "path": "",
+            "users": [
+                {
+                    "name": "Default",
+                    "email": "CHRIS.BARRAS2@COLES.COM.AU",
+                    "password": "P@ssw0rd",
+                    "firstName": "Chris"
+                },
+                {
+                    "name": "OTHER2",
+                    "email": "garth.d.mclaughlin@gmail.com",
+                    "password": "oeisuft1"
+                }
+            ]
+        },
+        {
+            "envName": "uat",
+            "baseURI": "https://agldstuat.digital.agl.com.au",
+            "path": "",
+            "users": [
+                {
+                    "name": "Default",
+                    "email": "CHRIS.BARRAS2@COLES.COM.AU",
+                    "password": "P@ssw0rd",
+                    "firstName": "Chris"
+                },
+                {
+                    "name": "OTHER2",
+                    "email": "garth.d.mclaughlin@gmail.com",
+                    "password": "oeisuft1"
+                }
+            ]
+        },
+        {
+            "envName": "production",
+            "baseURI": "https://www.agl.com.au/residential",
+            "path": "",
+            "users": [
+                {
+                    "name": "Default",
+                    "email": "hpsnagra@hotmail.com",
+                    "password": "Letsgetin18",
+                    "firstName": "Harnandan Preet",
+                    "accounts": [
+                        {
+                            "number": "7046909300",
+                            "numberFormatted": "7046 909 300",
+                            "contracts": {
+                                "gas": [
+                                    {
+                                        "number": "9404547263"
+                                    }
+                                ],
+                                "electricity": [
+                                    {
+                                        "number": "9404585376"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "1/353 High Street Road, Mount Waverley VIC 3149"
+                        }
+                    ]
+                },
+                {
+                    "name": "OTHER",
+                    "email": "nkarvelis@agl.com.au",
+                    "password": "Nick2222"
+                },
+                {
+                    "name": "OTHER2",
+                    "email": "garth.d.mclaughlin@gmail.com",
+                    "password": "Password@2"
+                },
+                {
+                    "name": "SOLAR",
+                    "email": "vinashbehl@hotmail.com",
+                    "password": "Avinash78!"
+                },
+                {
+                    "name": "SINGLE_CONTRACT",
+                    "email": "guyza@hotmail.com",
+                    "password": "Password@1",
+                    "firstName": "Guy"
+                },
+                {
+                    "name": "MULTI_CONTRACT"
+                },
+                {
+                    "name": "WITH_USAGE_DATA",
+                    "email": "hpsnagra@hotmail.com",
+                    "password": "Letsgetin18",
+                    "firstName": "Harnandan Preet",
+                    "accounts": [
+                        {
+                            "number": "7046909300",
+                            "numberFormatted": "7046 909 300",
+                            "contracts": {
+                                "gas": [
+                                    {
+                                        "number": "9404547263"
+                                    }
+                                ],
+                                "electricity": [
+                                    {
+                                        "number": "9404585376"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "1/353 High Street Road, Mount Waverley VIC 3149"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "envName": "staging",
+            "baseURI": "https://www.agl.com.au/",
+            "path": "",
+            "users": [
+                {
+                    "name": "Default",
+                    "email": "hpsnagra@hotmail.com",
+                    "password": "Letsgetin18",
+                    "firstName": "Harnandan Preet",
+                    "accounts": [
+                        {
+                            "number": "7046909300",
+                            "numberFormatted": "7046 909 300",
+                            "contracts": {
+                                "gas": [
+                                    {
+                                        "number": "9404547263"
+                                    }
+                                ],
+                                "electricity": [
+                                    {
+                                        "number": "9404585376"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "1/353 High Street Road, Mount Waverley VIC 3149"
+                        }
+                    ]
+                },
+                {
+                    "name": "OTHER",
+                    "email": "nkarvelis@agl.com.au",
+                    "password": "Nick2222"
+                },
+                {
+                    "name": "OTHER2",
+                    "email": "garth.d.mclaughlin@gmail.com",
+                    "password": "Password@2"
+                },
+                {
+                    "name": "SOLAR",
+                    "email": "vinashbehl@hotmail.com",
+                    "password": "Avinash78!"
+                },
+                {
+                    "name": "SINGLE_CONTRACT",
+                    "email": "guyza@hotmail.com",
+                    "password": "Password@1",
+                    "firstName": "Guy"
+                },
+                {
+                    "name": "MULTI_CONTRACT"
+                },
+                {
+                    "name": "WITH_USAGE_DATA",
+                    "email": "hpsnagra@hotmail.com",
+                    "password": "Letsgetin18",
+                    "firstName": "Harnandan Preet",
+                    "accounts": [
+                        {
+                            "number": "7046909300",
+                            "numberFormatted": "7046 909 300",
+                            "contracts": {
+                                "gas": [
+                                    {
+                                        "number": "9404547263"
+                                    }
+                                ],
+                                "electricity": [
+                                    {
+                                        "number": "9404585376"
+                                    }
+                                ]
+                            },
+                            "addressFormatted": "1/353 High Street Road, Mount Waverley VIC 3149"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

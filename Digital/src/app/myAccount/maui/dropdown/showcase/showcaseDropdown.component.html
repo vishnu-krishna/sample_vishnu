@@ -1,0 +1,68 @@
+<agl-maui-showcase-template heading='Native dropdown'>
+    <div description>
+        <p>The AGL MAUI native dropdown allows the user to select standard options as with any native dropdown.
+        However, the user can also select actions as shown in the example below.  After selecting either a
+        function or option from the list, the component returns the value attribute as an identifier.</p>
+
+        <p>There are currently no colour formatting options because white is the AGL standard colour for the control.
+        The width of the control is set to 100% and can be configured by sizing the outer container allowing responsive formatting.
+        Actions are deliberately grouped beneath the dashed line in the native dropdown options for usability.</p>
+
+        <p>To add placeholder text to a dropdown, add a option that is disabled and selected. See the 'Select a value' option in the example below</p>
+
+        <div class="showcase-attributes">
+            <table>
+                <tr><td colspan="3" class="header">Attributes for &lt;agl-maui-dropdown&gt;</td></tr>
+                <tr><td>disabled</td><td>boolean</td><td>Disables selection. Set to false by default.</td></tr>
+                <tr><td>text</td><td>string</td><td>Notes</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td colspan="3" class="header">Attributes for &lt;agl-maui-dropdown-option&gt;</td></tr>
+                <tr><td>value</td><td>string</td><td class="required">required if not the placeholder option</td></tr>
+                <tr><td>text</td><td>string</td><td class="required">required</td></tr>
+                <tr><td>selected</td><td>boolean</td><td>this is mutually exclusive with the selected value for the 'functions' option</td></tr>
+                <tr><td>disabled</td><td>boolean</td><td>this is mutually exclusive with the selected value for the 'functions' option</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td colspan="3" class="header">Attributes for &lt;agl-maui-dropdown-function&gt;</td></tr>
+                <tr><td>value</td><td>string</td><td class="required">required if not the placeholder option</td></tr>
+                <tr><td>text</td><td>string</td><td class="required">required</td></tr>
+                <tr><td>selected</td><td>boolean</td><td>this is mutually exclusive with the selected value for the 'options' option</td></tr>
+                <tr><td>disabled</td><td>boolean</td><td>this is mutually exclusive with the selected value for the 'options' option</td></tr>
+            </table>
+        </div>
+    </div>
+    <div exampleCodeUsage>
+        {{codeUsage}}
+    </div>
+    <div exampleImplementation>
+        <div class="showcase-dropdown__toggles">
+            <label><input type="checkbox" [checked]="disabled" (change)="toggleDisabled()">Display inactive/disabled state</label>
+            <br>
+            <label><input type="checkbox" [checked]="hasError" (change)="toggleHasError()">Display invalid state</label>
+        </div>
+        <agl-maui-showcase-example label="Dropdown with static options">
+            <div class="dropdown-container">
+                <agl-maui-dropdown (notify)="handleNotify($event)" [disabled]="disabled" [hasError]="hasError">
+                    <agl-maui-dropdown-option text="Select a value" disabled ="true" selected="true"></agl-maui-dropdown-option>
+                    <agl-maui-dropdown-option value="Card01" text="Visa xxxx 4242"></agl-maui-dropdown-option>
+                    <agl-maui-dropdown-option value="Card02" text="Visa xxxx 1234"></agl-maui-dropdown-option>
+                    <agl-maui-dropdown-option value="Card03" text="Mastercard xxxx 5678"></agl-maui-dropdown-option>
+                    <agl-maui-dropdown-option value="Card04" text="Bank account xxxx 1337"></agl-maui-dropdown-option>
+                    <agl-maui-dropdown-function value="AddCard" text="Add new method"></agl-maui-dropdown-function>
+                </agl-maui-dropdown>
+            </div>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label="Dropdown with bound options">
+            <div class="dropdown-container">
+                <agl-maui-dropdown (notify)="handleBoundNotify($event)" [disabled]="disabled" [hasError]="hasError">
+                    <agl-maui-dropdown-option
+                        *ngFor="let option of boundOptions"
+                        value="{{option.value}}"
+                        text="{{option.text}}"
+                        [disabled]="option.disabled"
+                        [selected]="option.selected">
+                    </agl-maui-dropdown-option>
+                </agl-maui-dropdown>
+            </div>
+        </agl-maui-showcase-example>
+    </div>
+</agl-maui-showcase-template>

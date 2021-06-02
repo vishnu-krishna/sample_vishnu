@@ -1,0 +1,22 @@
+[
+    {
+        "account": "23965742",
+        "contract": "9400780769",
+        "overdue": 0.0,
+        "dueDate": "06/02/2017",
+        "currentBalance": 15.24,
+        "totalPayment": 15.24,
+        "billSmoothing": false,
+        "directDebit": true
+    },
+    {
+        "account": "23965742",
+        "contract": "9400780910",
+        "overdue": 0.0,
+        "dueDate": "06/02/2017",
+        "currentBalance": 85.14,
+        "totalPayment": 85.14,
+        "billSmoothing": false,
+        "directDebit": true
+    }
+]

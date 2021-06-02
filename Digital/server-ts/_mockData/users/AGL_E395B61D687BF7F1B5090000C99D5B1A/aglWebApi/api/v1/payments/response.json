@@ -1,0 +1,25 @@
+{
+    "status": 200,
+    "body": [
+        {
+            "account": "20804027",
+            "contract": "9402779865",
+            "overdue": 0,
+            "dueDate": "28/03/2017",
+            "currentBalance": 7.34,
+            "totalPayment": 7.34,
+            "billSmoothing": false,
+            "directDebit": true
+        },
+        {
+            "account": "20804027",
+            "contract": "9402779867",
+            "overdue": 0,
+            "dueDate": "12/04/2017",
+            "currentBalance": 35.33,
+            "totalPayment": 35.33,
+            "billSmoothing": false,
+            "directDebit": true
+        }
+    ]
+}

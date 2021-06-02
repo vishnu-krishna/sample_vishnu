@@ -1,0 +1,92 @@
+@mixin btn-modifier($bgColor, $fgColor, $hoverBgColor) {
+    color: $fgColor;
+    background-color: $bgColor;
+
+    &.is-disabled {
+        color: $col-g3;
+        background-color: $col-g5;
+    }
+
+    &:hover {
+        background-color: $hoverBgColor;
+    }
+
+    .icon--flat {
+        path,
+        polygon,
+        rect {
+            fill: $fgColor;
+        }
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+.btn {
+    @include fluid-prop(font-size, 320px, 960px, 12px, 14px);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    display: inline-block;
+    text-transform: uppercase;
+    border-radius: 4px;
+    line-height: 3.6;
+    height: 3.6em;
+    padding: 0 4em;
+    text-align: center;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    transition-duration: 200ms;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    .icon {
+        @extend .v-center;
+        @include fluid-prop(font-size, 320px, 960px, 12px, 14px);
+        vertical-align: top;
+        display: inline-block;
+
+        svg {
+            @include fluid-prop(height, 320px, 960px, 12px, 14px);
+            max-height: 100%;
+            display: inline;
+        }
+    }
+
+    &.is-disabled {
+        pointer-events: none;
+    }
+
+    &--small {
+        line-height: 2.6;
+        height: 2.6em;
+    }
+
+    &--primary {
+        @include btn-modifier($col-sun, $col-g1, lighten($col-sun, 5%));
+    }
+
+    &--secondary {
+        @include btn-modifier($col-ocean, #FFF, lighten($col-ocean, 5%));
+    }
+
+    &--tertiary {
+        @include btn-modifier(#FFF, $col-g1, darken(#FFF, 2%));
+    }
+
+    .content-added-btn & {
+        @include vertical-rhythm;
+        display: inline-block;
+        margin-left: 5px;
+
+        &:first-child {
+            margin: 0;
+        }
+    }
+}

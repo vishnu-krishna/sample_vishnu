@@ -1,0 +1,29 @@
+[
+    {
+        "account": "22389365",
+        "contract": "9002125115",
+        "overdue": 84.59,
+        "currentBalance": 0,
+        "totalPayment": 84.59,
+        "billSmoothing": false,
+        "directDebit": false
+    },
+    {
+        "account": "22389365",
+        "contract": "9002294179",
+        "overdue": 0,
+        "currentBalance": -2.51,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false
+    },
+    {
+        "account": "22389365",
+        "contract": "9401787494",
+        "overdue": 0,
+        "currentBalance": 0,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false
+    }
+]

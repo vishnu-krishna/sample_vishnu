@@ -1,0 +1,132 @@
+<div class="settings-container pa-settings">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- New Settings -->
+            <mat-card *ngIf="isDirectDebitEnabled">
+                <div class="pa-settings__header" [class.pd-fix]="hasDirectDebitSetup" [class.bdr-btm]="isSingleView && hasDirectDebitSetup">
+                    <div class="main-card-header">Direct Debit</div>
+                    <div id="cancel-direct-debit" class="pa-settings__header-cta" *ngIf="isSingleView && hasDirectDebitSetup && !isMandatoryDirectDebit" (click)="cancelPaymentArrangement(viewModel[0])">Cancel Direct Debit</div>
+                </div>
+                <div *ngIf="isLoading" class="pa-settings__loading">
+                    <div class="pa-settings__sign-up-message" *ngIf="!hasDirectDebitSetup">Pay on time, every time. Just select a credit card, bank or PayPal account to get Direct Debit up and
+                        running.
+                    </div>
+                    <agl-loader></agl-loader>
+                </div>
+                <div *ngIf="!isLoading && showContactUs" class="pa-settings__error">
+                    <div class="pa-settings__sign-up-message" *ngIf="!hasDirectDebitSetup">Pay on time, every time. Just select a credit card, bank or PayPal account to get Direct Debit up and
+                        running.
+                    </div>
+                    <agl-alert alertType="error" heading="Sorry, Direct Debit isn't currently available online for your account.">
+                        <div>Please get in touch with us <a href="https://www.agl.com.au/residential/contact-us" target="_blank">here</a> and
+                            we’ll sort it out.</div>
+                    </agl-alert>
+                </div>
+                <div *ngIf="!isLoading && !showContactUs" class="pa-settings__body">
+                    <div class="pa-settings__sign-up-message" *ngIf="!hasDirectDebitSetup">Pay on time, every time. Just select a credit card, bank or PayPal account to get Direct Debit up and
+                        running.
+                    </div>
+                    <div *ngIf="isSingleView && !hasDirectDebitSetup">
+                        <div class="pa-settings__set-up-button">
+                            <agl-direct-debit-button *ngIf="!stateService.isUpdatingPaymentArrangement" [isSingleView]="isSingleView" [contractAccountNum]="viewModel[0].accountDetailModel.contractAccountNumber"
+                                [storedPaymentMethods]="storedPaymentMethods"></agl-direct-debit-button>
+                        </div>
+                        <div class="pa-account__delete-alert">
+                            <agl-alert *ngIf="showDeleteDDAlertMessage" [alertType]="alertMessageType" [heading]="alertMessageHeader" [body]="alertMessageBody"
+                                isDismissible="true"></agl-alert>
+                            <agl-alert *ngIf="viewModel[0].hasPaygContract" alertType="inform" [heading]="paygNoDDSetHeaderMessage" [body]="paygNoDDSetBodyMessage"></agl-alert>
+                        </div>
+                    </div>
+                    <div class="pa-account" *ngFor="let vm of viewModel">
+                        <div
+                            [class.hidden]="!isUpdatingAccount(vm.accountDetailModel.contractAccountNumber)"
+                            class="updating-account">
+                            <agl-loader loadingSubMessage="Please wait while this account is updated.">
+                            </agl-loader>
+                        </div>
+                        <div *ngIf="!isSingleView" class="pa-account__header">
+                            <div class="pa-account__header__panel" [class.block-fix]="!vm.hasDirectDebitPaymentArrangement">
+                                <div class="pa-account__header-left-panel">
+                                    <agl-settings-account-detail [model]="vm.accountDetailModel"></agl-settings-account-detail>
+                                </div>
+                                <div class="pa-account__header-right-panel">
+                                    <div id="cancel-direct-debit" class="pa-account__cta--link" *ngIf="vm.hasDirectDebitPaymentArrangement && !vm.isMandatoryDirectDebit" (click)="cancelPaymentArrangement(vm)">Cancel Direct Debit</div>
+                                    <div class="pa-account__cta--button" *ngIf="!vm?.hasDirectDebitPaymentArrangement">
+                                        <agl-direct-debit-button [isSingleView]="isSingleView" [contractAccountNum]="vm?.accountDetailModel?.contractAccountNumber" [hasDirectDebit]="vm.hasDirectDebitPaymentArrangement"
+                                            [storedPaymentMethods]="storedPaymentMethods"></agl-direct-debit-button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pa-account__delete-alert">
+                                <agl-alert *ngIf="showDeleteDDAlertMessage && updatedContractAccountNumber==vm.accountDetailModel.contractAccountNumber"
+                                    [alertType]="alertMessageType" [body]="alertMessageBody" isDismissible="true"></agl-alert>
+                                <agl-alert *ngIf="vm.hasPaygContract && !vm.hasDirectDebitPaymentArrangement" alertType="inform" [heading]="paygNoDDSetHeaderMessage"
+                                    [body]="paygNoDDSetBodyMessage"></agl-alert>
+                            </div>
+                        </div>
+
+                        <div class="pa-account__body" *ngIf="vm?.hasDirectDebitPaymentArrangement">
+                            <div class="pa-account__payment-method">
+                                <agl-payment-arrangement-payment-method [paymentMethod]="vm?.paymentArrangementPaymentMethodModel"></agl-payment-arrangement-payment-method>
+                                <div class="pa-account__payment-method-button">
+                                    <agl-direct-debit-button [isSingleView]="isSingleView" [contractAccountNum]="vm?.accountDetailModel?.contractAccountNumber" [paymentMethodId]="vm?.paymentArrangementPaymentMethodModel?.id"
+                                        [hasDirectDebit]="vm?.hasDirectDebitPaymentArrangement" [storedPaymentMethods]="storedPaymentMethods"
+                                        [paymentMethodType]="vm" [isMultiAccount]="isMultiAccount"></agl-direct-debit-button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pa-account__body">
+                            <div class="pa-account__add-alert">
+                                <agl-alert *ngIf="vm?.hasPaygContract && vm?.hasDirectDebitPaymentArrangement" alertType="inform" [heading]="paygWithDDSetHeaderMessage"
+                                    [body]="paygWithDDSetBodyMessage"></agl-alert>
+                                <agl-alert *ngIf="showAddPAAlertMessage && updatedContractAccountNumber==vm.accountDetailModel.contractAccountNumber" [alertType]="alertMessageType"
+                                    [heading]="alertMessageHeader" [body]="alertMessageBody" isDismissible="true"></agl-alert>
+                                <agl-alert *ngIf="showAddPAErrorMessage && updatedContractAccountNumber==vm.accountDetailModel.contractAccountNumber" [alertType]="alertMessageType"
+                                    [heading]="alertMessageHeader" isDismissible="true">
+                                    <div>If this issue persists, you can get in touch with us <a target="_blank" href="https://www.agl.com.au/residential/contact-us">here</a>                                        and we’ll help sort it out.</div>
+                                </agl-alert>
+                            </div>
+                            <mat-card class="warning-panel" *ngIf="vm?.hasSmsPayPaymentArrangement">
+                                <div class="icon-container col-xs-2">
+                                </div>
+                                <div class="content-container col-xs-10">
+                                    <div class="header">
+                                        You're currently on SMS Pay
+                                    </div>
+                                    <div class="content-text">
+                                        Setting up Direct Debit will replace your current SMS Pay arrangement.
+                                    </div>
+                                </div>
+                            </mat-card>
+                            <div class="pa-account__upcoming-dd" *ngIf="!!vm?.upcomingPaymentArrangementModel && vm?.hasDirectDebitPaymentArrangement">
+                                <agl-upcoming-direct-debit [paymentDetails]="vm?.upcomingPaymentArrangementModel"></agl-upcoming-direct-debit>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-card-footer">
+                    <img class="main-card-footer__wallet" src="svg/icon_wallet.svg" />
+                    <div class="main-card-footer__text">Setting up Direct Debit with your bank account or credit card will save your payment method in My Wallet.
+                        Easy to manage, fast to find.</div>
+                </div>
+            </mat-card>
+            <!-- Old Settings: To delete when new settings is ready for prod -->
+            <mat-card *ngIf="!isDirectDebitEnabled">
+                <div class="main-card-header">Direct Debit</div>
+                <div class="main-card-message">
+                    We are busy working hard on the new My Account and this page isn't quite finished. <br/> The below sections
+                    will open in a new window on the existing site.
+                </div>
+                <div class="main-card-options">
+                    <div class="main-card-options__edit">
+                        <h4>Direct debit</h4>
+                        <a href="{{directDebitUrl}}" target="_blank">Manage</a>
+                    </div>
+                    <div class="main-card-options__content">
+                        Pay energy bills on time, every time.
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

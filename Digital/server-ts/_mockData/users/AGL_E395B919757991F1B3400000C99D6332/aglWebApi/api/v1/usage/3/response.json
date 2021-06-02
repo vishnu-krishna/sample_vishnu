@@ -1,0 +1,83 @@
+[
+    {
+        "account": "56930357",
+        "contract": "9035852059",
+        "costs": [
+            {
+                "value": 257.050512,
+                "startDateTime": "2015-10-31T00:00:00",
+                "endDateTime": "2015-11-30T00:00:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 218.59056,
+                "startDateTime": "2015-12-01T00:00:00",
+                "endDateTime": "2015-12-30T00:00:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 259.099488,
+                "startDateTime": "2015-12-31T00:00:00",
+                "endDateTime": "2016-01-30T00:00:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 215.98992,
+                "startDateTime": "2016-01-31T00:00:00",
+                "endDateTime": "2016-02-29T00:00:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 459.379776,
+                "startDateTime": "2016-03-01T00:00:00",
+                "endDateTime": "2016-04-30T00:00:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 900.638928,
+                "startDateTime": "2016-05-01T00:00:00",
+                "endDateTime": "2016-07-30T00:00:00",
+                "estimatedRead": false
+            }
+        ],
+        "consumption": [
+            {
+                "value": 911,
+                "startDateTime": "2015-10-31T00:00:00",
+                "endDateTime": "2015-11-30T00:00:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 826,
+                "startDateTime": "2015-12-01T00:00:00",
+                "endDateTime": "2015-12-30T00:00:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 858,
+                "startDateTime": "2015-12-31T00:00:00",
+                "endDateTime": "2016-01-30T00:00:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 687,
+                "startDateTime": "2016-01-31T00:00:00",
+                "endDateTime": "2016-02-29T00:00:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 2284,
+                "startDateTime": "2016-03-01T00:00:00",
+                "endDateTime": "2016-04-30T00:00:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 3342,
+                "startDateTime": "2016-05-01T00:00:00",
+                "endDateTime": "2016-07-30T00:00:00",
+                "estimatedRead": false
+            }
+        ],
+        "hasNoBill": false
+    }
+]

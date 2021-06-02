@@ -1,0 +1,78 @@
+<div class="payment">
+    <div class="payment-header">
+        <div class="payment-header-container">
+            <div class="payment-success-header">
+                <div class="payment-icon">
+                    <img src="svg/tick_success.svg">
+                </div>
+                <div class="payment-text">
+                    <h1>Payment successful</h1>
+                    <p>for {{paymentDetails.fuelType | lowercase}} at {{paymentDetails.address}}</p>
+                </div>
+                <div class="close-button" (click)="closeModal()">
+                    &#x2715;
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="payment-content">
+    <div class="payment-success__amount">
+        <div id="payment-success-amount" class="payment-success__amount-topay" id="payment-success-payment-amount">${{paymentDetails.receiptDetail.paymentAmount | number : '1.2-2'}} payment </div>
+        <div id="payment-success-bouus-amount" *ngIf="showBonusAmount()" id="payment-success-bonus-text" class="payment-success__amount-bonus" [class.debit]="isDebit">{{getBonusText()}}</div>
+    </div>
+
+    <div class="payment-success__details">
+        <div id="payment-success-payment-date" class="payment-success__details__paymentdate format"> {{paymentDetails.receiptDetail.paymentDate}} with </div>
+        <div id="payment-success-payment-type" class="payment-success__details__paymenttype">{{getPaymentMethodDescription()}} </div>
+        <div id="payment-success-receipt-number" class="format"> Receipt number: {{paymentDetails.receiptDetail.receiptNumber}}</div>
+        <div id="payment-success-reference-number" class="format"> Reference number: {{paymentDetails.referenceNumber}} </div>
+    </div>
+
+    <div class="payment-success__alert-message">
+        <agl-alert id="success-bonus-pending-message" *ngIf="isDisplayBonusPending()" alertType="inform" [heading]="content?.debitStateBonusPendingHeader" [body]="content?.debitStateBonusPendingMessage"></agl-alert>
+        <agl-alert
+            id="success-payment-pending-message"
+            *ngIf="!isDebit"
+            alertType="pending"
+            [heading]="content?.creditStateProcessPaymentHeader">
+            <div *ngIf="!paymentDetails.receiptDetail.savedCreditCard && !paymentDetails.receiptDetail.failureToSaveCreditCard">
+                Please allow up to 2 business days for your recent payment to update your balance.
+            </div>
+            <div *ngIf="paymentDetails.receiptDetail.savedCreditCard">
+                Please allow up to 2 business days for your recent payment to update your balance.
+                <br/><br/>
+                Your credit card has been successfully been added to My Wallet.
+                </div>
+            <div *ngIf="paymentDetails.receiptDetail.failureToSaveCreditCard">
+                Your payment was successful but we were unable to store your credit card. If you would like to try again please visit My Wallet.
+                <br/><br/>
+                Please allow up to 2 business days for your recent payment to update your balance.
+            </div>
+        </agl-alert>
+    </div>
+
+    <div class="payment-success__email">
+        <form class="payment-success__email-form" [formGroup]="emailForm" (ngSubmit)="sendEmail()">
+            <div class="payment-success__email-submit">
+                <button mat-raised-button color="accent" [class.is-loading]="emailSending" [class.error]="emailSubmitted && !emailForm.get('email').valid"
+                    [class.disabled]="emailSending || !emailForm.get('email').valid" id="payment-success-email-button" type="submit">Send to my email</button>
+            </div>
+            <div class="payment-success__email-label-error">
+                <div *ngIf="emailSubmitted && !emailForm.get('email').valid">
+                    {{content?.emailFieldInvalidError}}
+                </div>
+            </div>
+        </form>
+        <div class="payment-success__alert-message">
+            <agl-alert id="email-success-message" alertType="success" *ngIf="sendingSuccess && !emailSubmitted" [heading]="content?.emailReceiptSentTextHeader" [body]="content?.emailReceiptSentTextBody"></agl-alert>
+            <agl-alert id="email-error-message" alertType="error" *ngIf="sendingFailure && !emailSubmitted" [heading]="content?.emailReceiptErrorTextHeader" [body]="content?.emailReceiptErrorTextBody"></agl-alert>
+        </div>
+    </div>
+
+    <agl-payment-smspay-banner *ngIf="isSmsPayBannerEnabled"  (setupSmsPayEvent)="setupSmsPayEventReceived()">
+    </agl-payment-smspay-banner>
+
+
+</div>

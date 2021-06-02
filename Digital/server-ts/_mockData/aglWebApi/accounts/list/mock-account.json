@@ -1,0 +1,33 @@
+[
+  {
+    "number": "7026978580",
+    "firstName": "Zohaib",
+    "lastName": "Momin",
+    "contracts": [
+      {
+        "address": "3 KERRIE ROAD|GLEN WAVERLEY VIC 3150",
+        "accountNumber": "7026978580",
+        "fuelType": "Gas",
+        "nameId": "AGL_0090FA0E77041EE4ADB1DF95F6EF628E",
+        "number": "9401666097",
+        "planName": "Set and Forget",
+        "inFlight": false,
+        "contractStatus": "",
+        "isRestricted": false,
+        "hasElectricVehicle": false
+      },
+      {
+        "address": "3 KERRIE ROAD|GLEN WAVERLEY VIC 3150",
+        "accountNumber": "7026978580",
+        "fuelType": "Electricity",
+        "nameId": "AGL_0090FA0E77041EE4ADB1DF95F6EF628E",
+        "number": "9401941144",
+        "planName": "Select 28%",
+        "inFlight": false,
+        "contractStatus": "",
+        "isRestricted": false,
+        "hasElectricVehicle": false
+      }
+    ]
+  }
+]

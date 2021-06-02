@@ -1,0 +1,59 @@
+@import '../../maui';
+
+$dropdown-container-width: 320px;
+
+.showcase-dropdown {
+    &__toggles {
+        padding-bottom: $space-04;
+
+        label {
+            display: inline-block;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        input {
+            margin-right: 5px;
+            margin-top: 0;
+            width: 15px;
+            height: 15px;
+            vertical-align: middle;
+        }
+    }
+}
+
+.dropdown-container {
+    max-width: $dropdown-container-width;
+}
+
+.dropdown-toggles {
+    margin-bottom: 15px;
+}
+
+.showcase-attributes {
+    padding: 15px;
+    background-color: $neutral-06;
+    border-radius: $border-radius-01;
+
+    .header {
+        font-weight: bold;
+        padding-bottom: 5px;
+    }
+
+    .required {
+        color: $secondary-warning-dark;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    td {
+        padding-right: 15px;
+        vertical-align: top;
+
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+}

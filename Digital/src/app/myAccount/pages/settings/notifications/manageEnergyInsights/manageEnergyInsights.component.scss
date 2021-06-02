@@ -1,0 +1,30 @@
+@import '../notifications.component';
+@import '../../../../maui/maui';
+
+.main-card-options {
+
+    &__header {
+        margin-bottom: 0px;
+    }
+
+    &__container {
+        padding-top: $space-04;
+
+        &--first {
+            padding-top: 0px;
+        }
+
+        &--ineligible {
+            padding: 0;
+            display: none;
+        }
+    }
+}
+
+.account {
+    margin-bottom: -8px;
+}
+
+agl-maui-flash-message {
+    padding-top: $space-04;
+}

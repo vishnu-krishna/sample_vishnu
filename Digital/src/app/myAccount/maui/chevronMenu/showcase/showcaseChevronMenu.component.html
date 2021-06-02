@@ -1,0 +1,30 @@
+<agl-maui-showcase-template heading="Chevron Menu">
+    <div description>
+        <div>The chevron menu can be used to collapse and expand a component.</div>
+        <div>
+            It takes three Inputs:
+            <ul>
+                <li>isUp: boolean indicating whether the chevron is up or down.</li>
+                <li>upMessage: The message displayed when the chevron is up.</li>
+                <li>downMessage: The message displayed when the chevron is down.</li>
+            </ul>
+        </div>
+        <div>
+            It takes one Output:
+            <ul>
+                <li>toggled: Function that will be called on click.</li>
+            </ul>
+        </div>
+    </div>
+    <div exampleCodeUsage>
+        {{codeUsage}}
+    </div>
+    <div exampleImplementation>
+        <agl-maui-chevron-menu
+            [isUp]="isUp"
+            [upMessage]="'Up'"
+            [downMessage]="'Down'"
+            (toggled)="toggleIsUp()">
+        </agl-maui-chevron-menu>
+    </div>
+</agl-maui-showcase-template>

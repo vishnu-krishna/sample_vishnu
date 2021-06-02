@@ -1,0 +1,22 @@
+[
+    {
+        "account": "123456",
+        "contract": "123456111",
+        "overdue": 0,
+        "currentBalance": 70.28,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false,
+        "extendedDueDate": "03/11/2027"
+    },
+    {
+        "account": "123456",
+        "contract": "123456222",
+        "overdue": 0,
+        "currentBalance": 70.28,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false,
+        "extendedDueDate": "03/11/2027"
+    }
+]

@@ -1,0 +1,62 @@
+<div class="confirm-detail">
+    <div class="confirm-detail__heading">
+        <agl-maui-heading heading="Confirm your details"></agl-maui-heading>
+        <agl-maui-heading
+            subheading="Your name and postcode of your registered concession must match the name and postcode listed on your AGL&nbsp;account."></agl-maui-heading>
+    </div>
+
+    <agl-maui-container>
+        <div class="confirm-detail__details-wrapper">
+            <div class="confirm-detail__details-heading">Personal Details</div>
+
+            <div class="confirm-detail__details-row">
+                <div class="confirm-detail__details-row-label">Name:</div>
+                <div class="confirm-detail__details-row-content">{{accountHolderName}}</div>
+            </div>
+
+            <div class="confirm-detail__details-row">
+                <div class="confirm-detail__details-row-label">{{addressLabel}}:</div>
+                <div class="confirm-detail__details-row-content">
+                    <div *ngFor="let address of uniqueAddresses">{{address}}</div>
+                </div>
+            </div>
+
+            <div class="confirm-detail__chat">
+                <div class="confirm-detail__chat-wrapper">
+                    <span class="confirm-detail__chat-icon"></span>
+                    <agl-webchat #chat chatButtonId="LPConcessionConfirmDetails" [contentIsHostedInLivePerson]="false">
+                        <div agent-status-unresolved>
+                            <div class="confirm-detail__chat--agent-unresolved">
+                                <div class="confirm-detail__chat--agent-unresolved-line-1">&nbsp;</div>
+                                <div class="confirm-detail__chat--agent-unresolved-line-2">&nbsp;</div>
+                            </div>
+                        </div>
+                        <div agent-online>
+                            <div class="confirm-detail__chat--agent-offline">
+                                If your name and address doesn't match the name and address listed on your AGL account,
+                                <a (click)="chat.requestChat()">please chat with us now</a>.
+                            </div>
+                        </div>
+                        <div agent-offline>
+                            <div class="confirm-detail__chat--agent-offline">
+                                If your name and address doesn't match the name and address listed on your AGL account,
+                                please contact us 24/7 on <a href="tel:131 245">131 245</a>.
+                                <br>
+                                Calling from overseas? You can call us on <a href="tel:+61386336000">+61 3 8633 6000</a>.
+                            </div>
+                        </div>
+                    </agl-webchat>
+                </div>
+            </div>
+        </div>
+    </agl-maui-container>
+
+    <agl-maui-flash-message class="confirm-detail__flash-message" *ngIf="failedToLoadCards" type="Error">
+        <div heading>Sorry, we're unable to process your request right now. Please try again.</div>
+    </agl-maui-flash-message>
+
+    <agl-concession-continue-or-cancel (continueButtonClicked)="continue()"
+                                       [continueButtonEnabled]="continueButtonEnabled"
+                                       [continueButtonClickInProgress]="showSpinner()">
+    </agl-concession-continue-or-cancel>
+</div>

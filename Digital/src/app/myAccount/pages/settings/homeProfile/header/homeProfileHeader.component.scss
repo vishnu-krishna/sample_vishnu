@@ -1,0 +1,11 @@
+@import '../homeProfile';
+
+.homeprofile-header {
+    agl-maui-heading {
+        @include homeprofile-survey-title-styling();
+    }
+
+    &__progress-bar {
+        @include homeprofile-progress-bar-styling();
+    }
+}

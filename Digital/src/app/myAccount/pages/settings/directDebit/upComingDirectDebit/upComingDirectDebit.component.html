@@ -1,0 +1,50 @@
+<div class="upcoming">
+    <div class="upcoming__header card__subheader">Upcoming Direct Debits</div>
+    <div class="upcoming__text" *ngFor="let contract of paymentDetails">
+        <div class="float-left">
+            <div class="upcoming__text__icon">
+                <mat-icon class="ddfuelicon" svgIcon={{getIcon(contract.fuelType)}}></mat-icon>
+            </div>
+            <div class="upcoming__text__header"> {{contract.fuelType}}</div>
+        </div>
+
+        <div class="upcoming__text__balance bill-smoothing-container">
+            <div *ngIf="contract.displayInBillSmoothingMode()" class="test__smoothing">
+                <div class="upcoming__text__balance__amount">${{contract.billSmoothingAmount | number:'1.0'}} {{contract.frequency}} Bill Smoothing payment</div>
+                <div *ngIf="!contract.billSmoothingPreviousAmountUsed" class="block test__smoothing-date">{{contract.billSmoothingDate | aglFormatDate}}</div>
+            </div>
+            <div *ngIf="contract.displayInPaymentExtensionMode()">
+                <div class="upcoming__text__balance__amount"> {{contract.totalAmountOwing | aglCurrency}}</div>
+                <div>
+                    <div class="upcoming__text__extended__duedate"><b>Original debit date</b></div>
+                    <div class="upcoming__text__extended__duedate">{{contract.dueDate | aglFormatDate}}</div>
+                </div>
+                <div>
+                    <div class="upcoming__text__extended__duedate test_extended_due-date"><b>Extended debit date</b></div>
+                    <div class="upcoming__text__extended__duedate">{{contract.extendedDueDate | aglFormatDate}}</div>
+                </div>
+            </div>
+            <div *ngIf="contract.displayInInstalmentPlanMode()">
+                <div *ngIf="contract.isOverdue" class="upcoming__text__balance__amount-red">{{contract.overdueAmount | aglCurrency}} instalment overdue
+                </div>
+                <div class="upcoming__text__balance__amount" *ngIf="contract.totalAmountOwing" [class.block]="contract.isOverdue">
+                    {{contract.totalAmountOwing | aglCurrency}} instalment
+                </div>
+                <div class="upcoming__text__balance__date" *ngIf="contract.dueDate">
+                    {{contract.dueDate | aglFormatDate}}
+                </div>
+            </div>
+            <div *ngIf="contract.displayInDefaultMode()">
+                <div *ngIf="contract.isOverdue" class="upcoming__text__balance__amount-red">{{contract.overdueAmount | aglCurrency}} overdue</div>
+                <div *ngIf="contract.isOverdue" class="upcoming__text__balance__duedate">
+                    Debited next business day
+                </div>
+                <div *ngIf="contract.isCurrentBalance" class="upcoming__text__balance__amount">
+                    {{contract.totalAmountOwing?(contract.totalAmountOwing | aglCurrency):'$0'}}
+                    <span *ngIf="contract.isPending" class="upcoming__text__pending"> pending</span>
+                </div>
+                <div *ngIf="contract.isCurrentBalance && contract.dueDate" class="upcoming__text__balance__date" [class.block]="contract.isPending">{{contract.dueDate | aglFormatDate}}</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": {
+            "screenCode": "SSMR_EX1",
+            "meters": [
+                {
+                    "meterSerial": "SSMR_MRE1",
+                    "registers": [
+                        {
+                            "registerId": "001",
+                            "dialFormat": "5",
+                            "currentMeterRead": "1790824",
+                            "lastMeterRead": "02180",
+                            "lastReadQuality": "Actual Read by MDP",
+                            "lastReadDate": "28.11.2016"
+                        },
+                        {
+                            "registerId": "002",
+                            "dialFormat": "5",
+                            "currentMeterRead": "1790824",
+                            "lastMeterRead": "02180",
+                            "lastReadQuality": "Actual Read by MDP",
+                            "lastReadDate": "28.11.2016"
+                        }
+                    ]
+                },
+                {
+                    "meterSerial": "SSMR_MRE2",
+                    "registers": [
+                        {
+                            "registerId": "001",
+                            "dialFormat": "6",
+                            "currentMeterRead": "5678123A",
+                            "lastMeterRead": "029180",
+                            "lastReadQuality": "Customer Read",
+                            "lastReadDate": "05.02.2017"
+                        }
+                    ]
+                }
+            ],
+            "error": {
+                "message": "Previous read implausible. Can't allow customer own meter submission",
+                "internalError": {
+                    "errorId": "ZIBI105",
+                    "errorNumber": "075",
+                    "description": "Previous read implausible. Can't allow COR"
+                }
+            }
+        }
+}

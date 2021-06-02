@@ -1,0 +1,28 @@
+@import '../../../../maui/maui';
+@import '../../../../../shared/style/mixins';
+
+.choose-service {
+    padding-top: $space-08;
+    width: $content-width;
+    margin-left: auto;
+    margin-right: auto;
+    @media #{$agl-layout-mobile} {
+        width: 90%;
+    }
+
+    &__subscribed {
+        margin-top: $space-04;
+    }
+
+    &__subheading {
+        margin-top: $space-06;
+        margin-bottom: $space-04;
+        @media #{$agl-layout-mobile} {
+            margin-top: $space-05;
+        }
+    }
+
+    .fuelchip {
+        margin-bottom: $space-03;
+    }
+}

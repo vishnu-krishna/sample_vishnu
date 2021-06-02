@@ -1,0 +1,51 @@
+@import '../../../../maui/maui';
+@import '../../../../../shared/style/mixins';
+
+.monthly-billing-choose-service {
+    margin-top: $space-04;
+    max-width: $content-width;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media #{$agl-layout-mobile} {
+        margin-top: $space-06;
+    }
+
+    .choose-service {
+        margin-top: $space-04;
+
+        .fuelchip {
+            margin-bottom: $space-03;
+        }
+
+        .non-setup-subheading {
+            display: block;
+            margin-bottom: $space-04;
+            margin-top: $space-04;
+        }
+
+        .flash-message-container {
+            margin-top: $space-03;
+            margin-bottom: $space-03;
+        }
+    }
+
+    &__shadow {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: 1001;
+        background-color: $neutral-01;
+        opacity: .5;
+
+        img {
+            @include spinner();
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}

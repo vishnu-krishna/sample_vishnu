@@ -1,0 +1,36 @@
+﻿{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "webAppName": {
+      "value": "#{Website}"
+    },
+    "hostingPlanName": {
+      "value": "#{hostingPlanName}"
+    },
+    "location": {
+      "value": "#{location}"
+    },
+    "hostingEnvironment": {
+      "value": "#{hostingEnvironment}"
+    },
+    "serverFarmResourceGroup": {
+      "value": "#{serverFarmResourceGroup}"
+    },
+    "subscriptionId": {
+      "value": "#{subscriptionID}"
+    },
+    "customUri": {
+      "value": "#{customURI}"
+    },
+    "certThumbprint": {
+      "value": "#{certificateThumbprint}"
+    },
+    "stagingSlotName": {
+      "value": "#{stagingSlotName}"
+    },
+    "sasUrl": {
+      "value": "#{sasUrl}"
+    }
+  }
+}

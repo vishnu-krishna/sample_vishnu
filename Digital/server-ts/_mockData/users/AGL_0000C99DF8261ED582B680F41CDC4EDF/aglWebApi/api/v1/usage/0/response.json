@@ -1,0 +1,4043 @@
+[
+    {
+        "account": "7019079511",
+        "contract": "9400307029",
+        "costs": [
+            {
+                "value": 0.016424,
+                "startDateTime": "2017-02-14T00:00:00",
+                "endDateTime": "2017-02-14T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.016128,
+                "startDateTime": "2017-02-14T01:00:00",
+                "endDateTime": "2017-02-14T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.015832,
+                "startDateTime": "2017-02-14T02:00:00",
+                "endDateTime": "2017-02-14T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.015832,
+                "startDateTime": "2017-02-14T03:00:00",
+                "endDateTime": "2017-02-14T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.015538,
+                "startDateTime": "2017-02-14T04:00:00",
+                "endDateTime": "2017-02-14T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.015538,
+                "startDateTime": "2017-02-14T05:00:00",
+                "endDateTime": "2017-02-14T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.029152,
+                "startDateTime": "2017-02-14T06:00:00",
+                "endDateTime": "2017-02-14T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.037138,
+                "startDateTime": "2017-02-14T07:00:00",
+                "endDateTime": "2017-02-14T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.049436,
+                "startDateTime": "2017-02-14T08:00:00",
+                "endDateTime": "2017-02-14T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.025846,
+                "startDateTime": "2017-02-14T09:00:00",
+                "endDateTime": "2017-02-14T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.026096,
+                "startDateTime": "2017-02-14T10:00:00",
+                "endDateTime": "2017-02-14T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.026098,
+                "startDateTime": "2017-02-14T11:00:00",
+                "endDateTime": "2017-02-14T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.026096,
+                "startDateTime": "2017-02-14T12:00:00",
+                "endDateTime": "2017-02-14T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.047928,
+                "startDateTime": "2017-02-14T13:00:00",
+                "endDateTime": "2017-02-14T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.028606,
+                "startDateTime": "2017-02-14T14:00:00",
+                "endDateTime": "2017-02-14T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.027604,
+                "startDateTime": "2017-02-14T15:00:00",
+                "endDateTime": "2017-02-14T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.0271,
+                "startDateTime": "2017-02-14T16:00:00",
+                "endDateTime": "2017-02-14T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.027352,
+                "startDateTime": "2017-02-14T17:00:00",
+                "endDateTime": "2017-02-14T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.027352,
+                "startDateTime": "2017-02-14T18:00:00",
+                "endDateTime": "2017-02-14T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.032872,
+                "startDateTime": "2017-02-14T19:00:00",
+                "endDateTime": "2017-02-14T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.223336,
+                "startDateTime": "2017-02-14T20:00:00",
+                "endDateTime": "2017-02-14T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.053702,
+                "startDateTime": "2017-02-14T21:00:00",
+                "endDateTime": "2017-02-14T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.028608,
+                "startDateTime": "2017-02-14T22:00:00",
+                "endDateTime": "2017-02-14T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.016128,
+                "startDateTime": "2017-02-14T23:00:00",
+                "endDateTime": "2017-02-14T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.019378,
+                "startDateTime": "2017-02-15T00:00:00",
+                "endDateTime": "2017-02-15T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.019734,
+                "startDateTime": "2017-02-15T01:00:00",
+                "endDateTime": "2017-02-15T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.019556,
+                "startDateTime": "2017-02-15T02:00:00",
+                "endDateTime": "2017-02-15T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.019378,
+                "startDateTime": "2017-02-15T03:00:00",
+                "endDateTime": "2017-02-15T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.019022,
+                "startDateTime": "2017-02-15T04:00:00",
+                "endDateTime": "2017-02-15T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.0192,
+                "startDateTime": "2017-02-15T05:00:00",
+                "endDateTime": "2017-02-15T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.051378,
+                "startDateTime": "2017-02-15T06:00:00",
+                "endDateTime": "2017-02-15T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.049866,
+                "startDateTime": "2017-02-15T07:00:00",
+                "endDateTime": "2017-02-15T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.031624,
+                "startDateTime": "2017-02-15T08:00:00",
+                "endDateTime": "2017-02-15T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.031624,
+                "startDateTime": "2017-02-15T09:00:00",
+                "endDateTime": "2017-02-15T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.031624,
+                "startDateTime": "2017-02-15T10:00:00",
+                "endDateTime": "2017-02-15T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.031928,
+                "startDateTime": "2017-02-15T11:00:00",
+                "endDateTime": "2017-02-15T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.031624,
+                "startDateTime": "2017-02-15T12:00:00",
+                "endDateTime": "2017-02-15T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.031624,
+                "startDateTime": "2017-02-15T13:00:00",
+                "endDateTime": "2017-02-15T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.031928,
+                "startDateTime": "2017-02-15T14:00:00",
+                "endDateTime": "2017-02-15T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.032232,
+                "startDateTime": "2017-02-15T15:00:00",
+                "endDateTime": "2017-02-15T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.032232,
+                "startDateTime": "2017-02-15T16:00:00",
+                "endDateTime": "2017-02-15T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.117976,
+                "startDateTime": "2017-02-15T17:00:00",
+                "endDateTime": "2017-02-15T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.27244,
+                "startDateTime": "2017-02-15T18:00:00",
+                "endDateTime": "2017-02-15T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.318352,
+                "startDateTime": "2017-02-15T19:00:00",
+                "endDateTime": "2017-02-15T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.17058,
+                "startDateTime": "2017-02-15T20:00:00",
+                "endDateTime": "2017-02-15T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.148078,
+                "startDateTime": "2017-02-15T21:00:00",
+                "endDateTime": "2017-02-15T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.069934,
+                "startDateTime": "2017-02-15T22:00:00",
+                "endDateTime": "2017-02-15T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.029332,
+                "startDateTime": "2017-02-15T23:00:00",
+                "endDateTime": "2017-02-15T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.026684,
+                "startDateTime": "2017-02-16T00:00:00",
+                "endDateTime": "2017-02-16T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.026864,
+                "startDateTime": "2017-02-16T01:00:00",
+                "endDateTime": "2017-02-16T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.026864,
+                "startDateTime": "2017-02-16T02:00:00",
+                "endDateTime": "2017-02-16T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.026862,
+                "startDateTime": "2017-02-16T03:00:00",
+                "endDateTime": "2017-02-16T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.032056,
+                "startDateTime": "2017-02-16T04:00:00",
+                "endDateTime": "2017-02-16T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.037966,
+                "startDateTime": "2017-02-16T05:00:00",
+                "endDateTime": "2017-02-16T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.03922,
+                "startDateTime": "2017-02-16T06:00:00",
+                "endDateTime": "2017-02-16T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.064458,
+                "startDateTime": "2017-02-16T07:00:00",
+                "endDateTime": "2017-02-16T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.033444,
+                "startDateTime": "2017-02-16T08:00:00",
+                "endDateTime": "2017-02-16T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.034356,
+                "startDateTime": "2017-02-16T09:00:00",
+                "endDateTime": "2017-02-16T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.034052,
+                "startDateTime": "2017-02-16T10:00:00",
+                "endDateTime": "2017-02-16T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.033748,
+                "startDateTime": "2017-02-16T11:00:00",
+                "endDateTime": "2017-02-16T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.033748,
+                "startDateTime": "2017-02-16T12:00:00",
+                "endDateTime": "2017-02-16T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.033748,
+                "startDateTime": "2017-02-16T13:00:00",
+                "endDateTime": "2017-02-16T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.033444,
+                "startDateTime": "2017-02-16T14:00:00",
+                "endDateTime": "2017-02-16T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.032532,
+                "startDateTime": "2017-02-16T15:00:00",
+                "endDateTime": "2017-02-16T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.032532,
+                "startDateTime": "2017-02-16T16:00:00",
+                "endDateTime": "2017-02-16T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.032836,
+                "startDateTime": "2017-02-16T17:00:00",
+                "endDateTime": "2017-02-16T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.032836,
+                "startDateTime": "2017-02-16T18:00:00",
+                "endDateTime": "2017-02-16T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.273948,
+                "startDateTime": "2017-02-16T19:00:00",
+                "endDateTime": "2017-02-16T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.252968,
+                "startDateTime": "2017-02-16T20:00:00",
+                "endDateTime": "2017-02-16T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.14868,
+                "startDateTime": "2017-02-16T21:00:00",
+                "endDateTime": "2017-02-16T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.048952,
+                "startDateTime": "2017-02-16T22:00:00",
+                "endDateTime": "2017-02-16T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.028296,
+                "startDateTime": "2017-02-16T23:00:00",
+                "endDateTime": "2017-02-16T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.027296,
+                "startDateTime": "2017-02-17T00:00:00",
+                "endDateTime": "2017-02-17T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.027296,
+                "startDateTime": "2017-02-17T01:00:00",
+                "endDateTime": "2017-02-17T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.026936,
+                "startDateTime": "2017-02-17T02:00:00",
+                "endDateTime": "2017-02-17T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.0264,
+                "startDateTime": "2017-02-17T03:00:00",
+                "endDateTime": "2017-02-17T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.0264,
+                "startDateTime": "2017-02-17T04:00:00",
+                "endDateTime": "2017-02-17T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.0264,
+                "startDateTime": "2017-02-17T05:00:00",
+                "endDateTime": "2017-02-17T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.067344,
+                "startDateTime": "2017-02-17T06:00:00",
+                "endDateTime": "2017-02-17T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.031318,
+                "startDateTime": "2017-02-17T07:00:00",
+                "endDateTime": "2017-02-17T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.022196,
+                "startDateTime": "2017-02-17T08:00:00",
+                "endDateTime": "2017-02-17T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.022196,
+                "startDateTime": "2017-02-17T09:00:00",
+                "endDateTime": "2017-02-17T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.021892,
+                "startDateTime": "2017-02-17T10:00:00",
+                "endDateTime": "2017-02-17T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.021892,
+                "startDateTime": "2017-02-17T11:00:00",
+                "endDateTime": "2017-02-17T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.0225,
+                "startDateTime": "2017-02-17T12:00:00",
+                "endDateTime": "2017-02-17T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.022804,
+                "startDateTime": "2017-02-17T13:00:00",
+                "endDateTime": "2017-02-17T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.023108,
+                "startDateTime": "2017-02-17T14:00:00",
+                "endDateTime": "2017-02-17T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.023108,
+                "startDateTime": "2017-02-17T15:00:00",
+                "endDateTime": "2017-02-17T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.023412,
+                "startDateTime": "2017-02-17T16:00:00",
+                "endDateTime": "2017-02-17T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.023412,
+                "startDateTime": "2017-02-17T17:00:00",
+                "endDateTime": "2017-02-17T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.023716,
+                "startDateTime": "2017-02-17T18:00:00",
+                "endDateTime": "2017-02-17T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.036486,
+                "startDateTime": "2017-02-17T19:00:00",
+                "endDateTime": "2017-02-17T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.100944,
+                "startDateTime": "2017-02-17T20:00:00",
+                "endDateTime": "2017-02-17T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.210706,
+                "startDateTime": "2017-02-17T21:00:00",
+                "endDateTime": "2017-02-17T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.130438,
+                "startDateTime": "2017-02-17T22:00:00",
+                "endDateTime": "2017-02-17T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.0695,
+                "startDateTime": "2017-02-17T23:00:00",
+                "endDateTime": "2017-02-17T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.056928,
+                "startDateTime": "2017-02-18T00:00:00",
+                "endDateTime": "2017-02-18T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.049566,
+                "startDateTime": "2017-02-18T01:00:00",
+                "endDateTime": "2017-02-18T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.049028,
+                "startDateTime": "2017-02-18T02:00:00",
+                "endDateTime": "2017-02-18T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.049028,
+                "startDateTime": "2017-02-18T03:00:00",
+                "endDateTime": "2017-02-18T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.048668,
+                "startDateTime": "2017-02-18T04:00:00",
+                "endDateTime": "2017-02-18T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.05639,
+                "startDateTime": "2017-02-18T05:00:00",
+                "endDateTime": "2017-02-18T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.047052,
+                "startDateTime": "2017-02-18T06:00:00",
+                "endDateTime": "2017-02-18T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.057108,
+                "startDateTime": "2017-02-18T07:00:00",
+                "endDateTime": "2017-02-18T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.076682,
+                "startDateTime": "2017-02-18T08:00:00",
+                "endDateTime": "2017-02-18T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.085662,
+                "startDateTime": "2017-02-18T09:00:00",
+                "endDateTime": "2017-02-18T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.083328,
+                "startDateTime": "2017-02-18T10:00:00",
+                "endDateTime": "2017-02-18T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.229688,
+                "startDateTime": "2017-02-18T11:00:00",
+                "endDateTime": "2017-02-18T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.096258,
+                "startDateTime": "2017-02-18T12:00:00",
+                "endDateTime": "2017-02-18T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.061238,
+                "startDateTime": "2017-02-18T13:00:00",
+                "endDateTime": "2017-02-18T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.067884,
+                "startDateTime": "2017-02-18T14:00:00",
+                "endDateTime": "2017-02-18T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.061598,
+                "startDateTime": "2017-02-18T15:00:00",
+                "endDateTime": "2017-02-18T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.036096,
+                "startDateTime": "2017-02-18T16:00:00",
+                "endDateTime": "2017-02-18T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.038252,
+                "startDateTime": "2017-02-18T17:00:00",
+                "endDateTime": "2017-02-18T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.107212,
+                "startDateTime": "2017-02-18T18:00:00",
+                "endDateTime": "2017-02-18T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.118706,
+                "startDateTime": "2017-02-18T19:00:00",
+                "endDateTime": "2017-02-18T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.110086,
+                "startDateTime": "2017-02-18T20:00:00",
+                "endDateTime": "2017-02-18T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.107572,
+                "startDateTime": "2017-02-18T21:00:00",
+                "endDateTime": "2017-02-18T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.042204,
+                "startDateTime": "2017-02-18T22:00:00",
+                "endDateTime": "2017-02-18T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.02173,
+                "startDateTime": "2017-02-18T23:00:00",
+                "endDateTime": "2017-02-18T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020422,
+                "startDateTime": "2017-02-19T00:00:00",
+                "endDateTime": "2017-02-19T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020064,
+                "startDateTime": "2017-02-19T01:00:00",
+                "endDateTime": "2017-02-19T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.019524,
+                "startDateTime": "2017-02-19T02:00:00",
+                "endDateTime": "2017-02-19T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.018988,
+                "startDateTime": "2017-02-19T03:00:00",
+                "endDateTime": "2017-02-19T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.018808,
+                "startDateTime": "2017-02-19T04:00:00",
+                "endDateTime": "2017-02-19T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.01845,
+                "startDateTime": "2017-02-19T05:00:00",
+                "endDateTime": "2017-02-19T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.018272,
+                "startDateTime": "2017-02-19T06:00:00",
+                "endDateTime": "2017-02-19T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.018808,
+                "startDateTime": "2017-02-19T07:00:00",
+                "endDateTime": "2017-02-19T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.024002,
+                "startDateTime": "2017-02-19T08:00:00",
+                "endDateTime": "2017-02-19T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.03493,
+                "startDateTime": "2017-02-19T09:00:00",
+                "endDateTime": "2017-02-19T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.056604,
+                "startDateTime": "2017-02-19T10:00:00",
+                "endDateTime": "2017-02-19T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.018808,
+                "startDateTime": "2017-02-19T11:00:00",
+                "endDateTime": "2017-02-19T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.018628,
+                "startDateTime": "2017-02-19T12:00:00",
+                "endDateTime": "2017-02-19T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.018808,
+                "startDateTime": "2017-02-19T13:00:00",
+                "endDateTime": "2017-02-19T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.058574,
+                "startDateTime": "2017-02-19T14:00:00",
+                "endDateTime": "2017-02-19T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.157274,
+                "startDateTime": "2017-02-19T15:00:00",
+                "endDateTime": "2017-02-19T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.183604,
+                "startDateTime": "2017-02-19T16:00:00",
+                "endDateTime": "2017-02-19T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.144736,
+                "startDateTime": "2017-02-19T17:00:00",
+                "endDateTime": "2017-02-19T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.040842,
+                "startDateTime": "2017-02-19T18:00:00",
+                "endDateTime": "2017-02-19T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.038334,
+                "startDateTime": "2017-02-19T19:00:00",
+                "endDateTime": "2017-02-19T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.037974,
+                "startDateTime": "2017-02-19T20:00:00",
+                "endDateTime": "2017-02-19T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.066814,
+                "startDateTime": "2017-02-19T21:00:00",
+                "endDateTime": "2017-02-19T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.02275,
+                "startDateTime": "2017-02-19T22:00:00",
+                "endDateTime": "2017-02-19T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.021852,
+                "startDateTime": "2017-02-19T23:00:00",
+                "endDateTime": "2017-02-19T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.021674,
+                "startDateTime": "2017-02-20T00:00:00",
+                "endDateTime": "2017-02-20T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.021496,
+                "startDateTime": "2017-02-20T01:00:00",
+                "endDateTime": "2017-02-20T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.021316,
+                "startDateTime": "2017-02-20T02:00:00",
+                "endDateTime": "2017-02-20T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020958,
+                "startDateTime": "2017-02-20T03:00:00",
+                "endDateTime": "2017-02-20T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.02078,
+                "startDateTime": "2017-02-20T04:00:00",
+                "endDateTime": "2017-02-20T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.0206,
+                "startDateTime": "2017-02-20T05:00:00",
+                "endDateTime": "2017-02-20T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.057856,
+                "startDateTime": "2017-02-20T06:00:00",
+                "endDateTime": "2017-02-20T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.038278,
+                "startDateTime": "2017-02-20T07:00:00",
+                "endDateTime": "2017-02-20T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.034936,
+                "startDateTime": "2017-02-20T08:00:00",
+                "endDateTime": "2017-02-20T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.03524,
+                "startDateTime": "2017-02-20T09:00:00",
+                "endDateTime": "2017-02-20T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.034936,
+                "startDateTime": "2017-02-20T10:00:00",
+                "endDateTime": "2017-02-20T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.034328,
+                "startDateTime": "2017-02-20T11:00:00",
+                "endDateTime": "2017-02-20T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.034632,
+                "startDateTime": "2017-02-20T12:00:00",
+                "endDateTime": "2017-02-20T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.062582,
+                "startDateTime": "2017-02-20T13:00:00",
+                "endDateTime": "2017-02-20T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.037064,
+                "startDateTime": "2017-02-20T14:00:00",
+                "endDateTime": "2017-02-20T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.03524,
+                "startDateTime": "2017-02-20T15:00:00",
+                "endDateTime": "2017-02-20T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.035848,
+                "startDateTime": "2017-02-20T16:00:00",
+                "endDateTime": "2017-02-20T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.035544,
+                "startDateTime": "2017-02-20T17:00:00",
+                "endDateTime": "2017-02-20T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.035544,
+                "startDateTime": "2017-02-20T18:00:00",
+                "endDateTime": "2017-02-20T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.035544,
+                "startDateTime": "2017-02-20T19:00:00",
+                "endDateTime": "2017-02-20T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.03524,
+                "startDateTime": "2017-02-20T20:00:00",
+                "endDateTime": "2017-02-20T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.089922,
+                "startDateTime": "2017-02-20T21:00:00",
+                "endDateTime": "2017-02-20T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.036456,
+                "startDateTime": "2017-02-20T22:00:00",
+                "endDateTime": "2017-02-20T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.023824,
+                "startDateTime": "2017-02-20T23:00:00",
+                "endDateTime": "2017-02-20T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020978,
+                "startDateTime": "2017-02-21T00:00:00",
+                "endDateTime": "2017-02-21T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.0208,
+                "startDateTime": "2017-02-21T01:00:00",
+                "endDateTime": "2017-02-21T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.022772,
+                "startDateTime": "2017-02-21T02:00:00",
+                "endDateTime": "2017-02-21T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.02062,
+                "startDateTime": "2017-02-21T03:00:00",
+                "endDateTime": "2017-02-21T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.024386,
+                "startDateTime": "2017-02-21T04:00:00",
+                "endDateTime": "2017-02-21T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.02044,
+                "startDateTime": "2017-02-21T05:00:00",
+                "endDateTime": "2017-02-21T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.049128,
+                "startDateTime": "2017-02-21T06:00:00",
+                "endDateTime": "2017-02-21T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.04004,
+                "startDateTime": "2017-02-21T07:00:00",
+                "endDateTime": "2017-02-21T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.033368,
+                "startDateTime": "2017-02-21T08:00:00",
+                "endDateTime": "2017-02-21T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.03276,
+                "startDateTime": "2017-02-21T09:00:00",
+                "endDateTime": "2017-02-21T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.032458,
+                "startDateTime": "2017-02-21T10:00:00",
+                "endDateTime": "2017-02-21T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.033974,
+                "startDateTime": "2017-02-21T11:00:00",
+                "endDateTime": "2017-02-21T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.034278,
+                "startDateTime": "2017-02-21T12:00:00",
+                "endDateTime": "2017-02-21T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.034278,
+                "startDateTime": "2017-02-21T13:00:00",
+                "endDateTime": "2017-02-21T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.03458,
+                "startDateTime": "2017-02-21T14:00:00",
+                "endDateTime": "2017-02-21T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.034884,
+                "startDateTime": "2017-02-21T15:00:00",
+                "endDateTime": "2017-02-21T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.03458,
+                "startDateTime": "2017-02-21T16:00:00",
+                "endDateTime": "2017-02-21T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.034884,
+                "startDateTime": "2017-02-21T17:00:00",
+                "endDateTime": "2017-02-21T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.03458,
+                "startDateTime": "2017-02-21T18:00:00",
+                "endDateTime": "2017-02-21T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.039738,
+                "startDateTime": "2017-02-21T19:00:00",
+                "endDateTime": "2017-02-21T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.216282,
+                "startDateTime": "2017-02-21T20:00:00",
+                "endDateTime": "2017-02-21T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.10617,
+                "startDateTime": "2017-02-21T21:00:00",
+                "endDateTime": "2017-02-21T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.043378,
+                "startDateTime": "2017-02-21T22:00:00",
+                "endDateTime": "2017-02-21T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.021156,
+                "startDateTime": "2017-02-21T23:00:00",
+                "endDateTime": "2017-02-21T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.021336,
+                "startDateTime": "2017-02-22T00:00:00",
+                "endDateTime": "2017-02-22T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020978,
+                "startDateTime": "2017-02-22T01:00:00",
+                "endDateTime": "2017-02-22T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020978,
+                "startDateTime": "2017-02-22T02:00:00",
+                "endDateTime": "2017-02-22T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.02528,
+                "startDateTime": "2017-02-22T03:00:00",
+                "endDateTime": "2017-02-22T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.021876,
+                "startDateTime": "2017-02-22T04:00:00",
+                "endDateTime": "2017-02-22T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.02062,
+                "startDateTime": "2017-02-22T05:00:00",
+                "endDateTime": "2017-02-22T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.05415,
+                "startDateTime": "2017-02-22T06:00:00",
+                "endDateTime": "2017-02-22T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.054904,
+                "startDateTime": "2017-02-22T07:00:00",
+                "endDateTime": "2017-02-22T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.034884,
+                "startDateTime": "2017-02-22T08:00:00",
+                "endDateTime": "2017-02-22T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.03731,
+                "startDateTime": "2017-02-22T09:00:00",
+                "endDateTime": "2017-02-22T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.062186,
+                "startDateTime": "2017-02-22T10:00:00",
+                "endDateTime": "2017-02-22T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.037312,
+                "startDateTime": "2017-02-22T11:00:00",
+                "endDateTime": "2017-02-22T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.035796,
+                "startDateTime": "2017-02-22T12:00:00",
+                "endDateTime": "2017-02-22T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.035796,
+                "startDateTime": "2017-02-22T13:00:00",
+                "endDateTime": "2017-02-22T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.035492,
+                "startDateTime": "2017-02-22T14:00:00",
+                "endDateTime": "2017-02-22T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.035492,
+                "startDateTime": "2017-02-22T15:00:00",
+                "endDateTime": "2017-02-22T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.035188,
+                "startDateTime": "2017-02-22T16:00:00",
+                "endDateTime": "2017-02-22T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.035796,
+                "startDateTime": "2017-02-22T17:00:00",
+                "endDateTime": "2017-02-22T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.044896,
+                "startDateTime": "2017-02-22T18:00:00",
+                "endDateTime": "2017-02-22T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.044288,
+                "startDateTime": "2017-02-22T19:00:00",
+                "endDateTime": "2017-02-22T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.277256,
+                "startDateTime": "2017-02-22T20:00:00",
+                "endDateTime": "2017-02-22T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.20961,
+                "startDateTime": "2017-02-22T21:00:00",
+                "endDateTime": "2017-02-22T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.040952,
+                "startDateTime": "2017-02-22T22:00:00",
+                "endDateTime": "2017-02-22T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.03084,
+                "startDateTime": "2017-02-22T23:00:00",
+                "endDateTime": "2017-02-22T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.027274,
+                "startDateTime": "2017-02-23T00:00:00",
+                "endDateTime": "2017-02-23T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.026556,
+                "startDateTime": "2017-02-23T01:00:00",
+                "endDateTime": "2017-02-23T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.026736,
+                "startDateTime": "2017-02-23T02:00:00",
+                "endDateTime": "2017-02-23T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.026556,
+                "startDateTime": "2017-02-23T03:00:00",
+                "endDateTime": "2017-02-23T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.026736,
+                "startDateTime": "2017-02-23T04:00:00",
+                "endDateTime": "2017-02-23T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.027096,
+                "startDateTime": "2017-02-23T05:00:00",
+                "endDateTime": "2017-02-23T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.056522,
+                "startDateTime": "2017-02-23T06:00:00",
+                "endDateTime": "2017-02-23T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.043738,
+                "startDateTime": "2017-02-23T07:00:00",
+                "endDateTime": "2017-02-23T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.036448,
+                "startDateTime": "2017-02-23T08:00:00",
+                "endDateTime": "2017-02-23T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.035536,
+                "startDateTime": "2017-02-23T09:00:00",
+                "endDateTime": "2017-02-23T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.034928,
+                "startDateTime": "2017-02-23T10:00:00",
+                "endDateTime": "2017-02-23T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.035232,
+                "startDateTime": "2017-02-23T11:00:00",
+                "endDateTime": "2017-02-23T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.034928,
+                "startDateTime": "2017-02-23T12:00:00",
+                "endDateTime": "2017-02-23T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.035232,
+                "startDateTime": "2017-02-23T13:00:00",
+                "endDateTime": "2017-02-23T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.035232,
+                "startDateTime": "2017-02-23T14:00:00",
+                "endDateTime": "2017-02-23T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.035536,
+                "startDateTime": "2017-02-23T15:00:00",
+                "endDateTime": "2017-02-23T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.03584,
+                "startDateTime": "2017-02-23T16:00:00",
+                "endDateTime": "2017-02-23T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.037056,
+                "startDateTime": "2017-02-23T17:00:00",
+                "endDateTime": "2017-02-23T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.037056,
+                "startDateTime": "2017-02-23T18:00:00",
+                "endDateTime": "2017-02-23T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.03736,
+                "startDateTime": "2017-02-23T19:00:00",
+                "endDateTime": "2017-02-23T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.037056,
+                "startDateTime": "2017-02-23T20:00:00",
+                "endDateTime": "2017-02-23T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.068036,
+                "startDateTime": "2017-02-23T21:00:00",
+                "endDateTime": "2017-02-23T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.095676,
+                "startDateTime": "2017-02-23T22:00:00",
+                "endDateTime": "2017-02-23T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.026916,
+                "startDateTime": "2017-02-23T23:00:00",
+                "endDateTime": "2017-02-23T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.026196,
+                "startDateTime": "2017-02-24T00:00:00",
+                "endDateTime": "2017-02-24T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.029786,
+                "startDateTime": "2017-02-24T01:00:00",
+                "endDateTime": "2017-02-24T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.04127,
+                "startDateTime": "2017-02-24T02:00:00",
+                "endDateTime": "2017-02-24T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.027992,
+                "startDateTime": "2017-02-24T03:00:00",
+                "endDateTime": "2017-02-24T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.026916,
+                "startDateTime": "2017-02-24T04:00:00",
+                "endDateTime": "2017-02-24T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.026376,
+                "startDateTime": "2017-02-24T05:00:00",
+                "endDateTime": "2017-02-24T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.068366,
+                "startDateTime": "2017-02-24T06:00:00",
+                "endDateTime": "2017-02-24T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.052242,
+                "startDateTime": "2017-02-24T07:00:00",
+                "endDateTime": "2017-02-24T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.045864,
+                "startDateTime": "2017-02-24T08:00:00",
+                "endDateTime": "2017-02-24T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.081402,
+                "startDateTime": "2017-02-24T09:00:00",
+                "endDateTime": "2017-02-24T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.036144,
+                "startDateTime": "2017-02-24T10:00:00",
+                "endDateTime": "2017-02-24T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.03584,
+                "startDateTime": "2017-02-24T11:00:00",
+                "endDateTime": "2017-02-24T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.036144,
+                "startDateTime": "2017-02-24T12:00:00",
+                "endDateTime": "2017-02-24T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.035232,
+                "startDateTime": "2017-02-24T13:00:00",
+                "endDateTime": "2017-02-24T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.035232,
+                "startDateTime": "2017-02-24T14:00:00",
+                "endDateTime": "2017-02-24T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.034928,
+                "startDateTime": "2017-02-24T15:00:00",
+                "endDateTime": "2017-02-24T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.034928,
+                "startDateTime": "2017-02-24T16:00:00",
+                "endDateTime": "2017-02-24T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.035232,
+                "startDateTime": "2017-02-24T17:00:00",
+                "endDateTime": "2017-02-24T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.034624,
+                "startDateTime": "2017-02-24T18:00:00",
+                "endDateTime": "2017-02-24T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.034928,
+                "startDateTime": "2017-02-24T19:00:00",
+                "endDateTime": "2017-02-24T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.034928,
+                "startDateTime": "2017-02-24T20:00:00",
+                "endDateTime": "2017-02-24T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.034624,
+                "startDateTime": "2017-02-24T21:00:00",
+                "endDateTime": "2017-02-24T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.035232,
+                "startDateTime": "2017-02-24T22:00:00",
+                "endDateTime": "2017-02-24T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.035708,
+                "startDateTime": "2017-02-24T23:00:00",
+                "endDateTime": "2017-02-24T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.027232,
+                "startDateTime": "2017-02-25T00:00:00",
+                "endDateTime": "2017-02-25T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.029742,
+                "startDateTime": "2017-02-25T01:00:00",
+                "endDateTime": "2017-02-25T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.026696,
+                "startDateTime": "2017-02-25T02:00:00",
+                "endDateTime": "2017-02-25T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.026156,
+                "startDateTime": "2017-02-25T03:00:00",
+                "endDateTime": "2017-02-25T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.025978,
+                "startDateTime": "2017-02-25T04:00:00",
+                "endDateTime": "2017-02-25T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.025978,
+                "startDateTime": "2017-02-25T05:00:00",
+                "endDateTime": "2017-02-25T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.025978,
+                "startDateTime": "2017-02-25T06:00:00",
+                "endDateTime": "2017-02-25T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.065214,
+                "startDateTime": "2017-02-25T07:00:00",
+                "endDateTime": "2017-02-25T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.164292,
+                "startDateTime": "2017-02-25T08:00:00",
+                "endDateTime": "2017-02-25T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.20729,
+                "startDateTime": "2017-02-25T09:00:00",
+                "endDateTime": "2017-02-25T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.05984,
+                "startDateTime": "2017-02-25T10:00:00",
+                "endDateTime": "2017-02-25T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.022216,
+                "startDateTime": "2017-02-25T11:00:00",
+                "endDateTime": "2017-02-25T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.02114,
+                "startDateTime": "2017-02-25T12:00:00",
+                "endDateTime": "2017-02-25T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020962,
+                "startDateTime": "2017-02-25T13:00:00",
+                "endDateTime": "2017-02-25T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020962,
+                "startDateTime": "2017-02-25T14:00:00",
+                "endDateTime": "2017-02-25T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020962,
+                "startDateTime": "2017-02-25T15:00:00",
+                "endDateTime": "2017-02-25T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020784,
+                "startDateTime": "2017-02-25T16:00:00",
+                "endDateTime": "2017-02-25T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020784,
+                "startDateTime": "2017-02-25T17:00:00",
+                "endDateTime": "2017-02-25T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.02759,
+                "startDateTime": "2017-02-25T18:00:00",
+                "endDateTime": "2017-02-25T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.030994,
+                "startDateTime": "2017-02-25T19:00:00",
+                "endDateTime": "2017-02-25T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.022754,
+                "startDateTime": "2017-02-25T20:00:00",
+                "endDateTime": "2017-02-25T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.021858,
+                "startDateTime": "2017-02-25T21:00:00",
+                "endDateTime": "2017-02-25T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.0215,
+                "startDateTime": "2017-02-25T22:00:00",
+                "endDateTime": "2017-02-25T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.02132,
+                "startDateTime": "2017-02-25T23:00:00",
+                "endDateTime": "2017-02-25T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.02114,
+                "startDateTime": "2017-02-26T00:00:00",
+                "endDateTime": "2017-02-26T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020962,
+                "startDateTime": "2017-02-26T01:00:00",
+                "endDateTime": "2017-02-26T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020962,
+                "startDateTime": "2017-02-26T02:00:00",
+                "endDateTime": "2017-02-26T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020784,
+                "startDateTime": "2017-02-26T03:00:00",
+                "endDateTime": "2017-02-26T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020604,
+                "startDateTime": "2017-02-26T04:00:00",
+                "endDateTime": "2017-02-26T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020784,
+                "startDateTime": "2017-02-26T05:00:00",
+                "endDateTime": "2017-02-26T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020604,
+                "startDateTime": "2017-02-26T06:00:00",
+                "endDateTime": "2017-02-26T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020604,
+                "startDateTime": "2017-02-26T07:00:00",
+                "endDateTime": "2017-02-26T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020424,
+                "startDateTime": "2017-02-26T08:00:00",
+                "endDateTime": "2017-02-26T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020424,
+                "startDateTime": "2017-02-26T09:00:00",
+                "endDateTime": "2017-02-26T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020424,
+                "startDateTime": "2017-02-26T10:00:00",
+                "endDateTime": "2017-02-26T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020604,
+                "startDateTime": "2017-02-26T11:00:00",
+                "endDateTime": "2017-02-26T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020424,
+                "startDateTime": "2017-02-26T12:00:00",
+                "endDateTime": "2017-02-26T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020604,
+                "startDateTime": "2017-02-26T13:00:00",
+                "endDateTime": "2017-02-26T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020604,
+                "startDateTime": "2017-02-26T14:00:00",
+                "endDateTime": "2017-02-26T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020604,
+                "startDateTime": "2017-02-26T15:00:00",
+                "endDateTime": "2017-02-26T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020784,
+                "startDateTime": "2017-02-26T16:00:00",
+                "endDateTime": "2017-02-26T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020604,
+                "startDateTime": "2017-02-26T17:00:00",
+                "endDateTime": "2017-02-26T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.020962,
+                "startDateTime": "2017-02-26T18:00:00",
+                "endDateTime": "2017-02-26T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.02329,
+                "startDateTime": "2017-02-26T19:00:00",
+                "endDateTime": "2017-02-26T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.145478,
+                "startDateTime": "2017-02-26T20:00:00",
+                "endDateTime": "2017-02-26T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.049808,
+                "startDateTime": "2017-02-26T21:00:00",
+                "endDateTime": "2017-02-26T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.029204,
+                "startDateTime": "2017-02-26T22:00:00",
+                "endDateTime": "2017-02-26T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.028128,
+                "startDateTime": "2017-02-26T23:00:00",
+                "endDateTime": "2017-02-26T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.030842,
+                "startDateTime": "2017-02-27T00:00:00",
+                "endDateTime": "2017-02-27T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.028152,
+                "startDateTime": "2017-02-27T01:00:00",
+                "endDateTime": "2017-02-27T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.027794,
+                "startDateTime": "2017-02-27T02:00:00",
+                "endDateTime": "2017-02-27T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.027794,
+                "startDateTime": "2017-02-27T03:00:00",
+                "endDateTime": "2017-02-27T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.027436,
+                "startDateTime": "2017-02-27T04:00:00",
+                "endDateTime": "2017-02-27T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.027078,
+                "startDateTime": "2017-02-27T05:00:00",
+                "endDateTime": "2017-02-27T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.065092,
+                "startDateTime": "2017-02-27T06:00:00",
+                "endDateTime": "2017-02-27T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.060436,
+                "startDateTime": "2017-02-27T07:00:00",
+                "endDateTime": "2017-02-27T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.035532,
+                "startDateTime": "2017-02-27T08:00:00",
+                "endDateTime": "2017-02-27T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.035228,
+                "startDateTime": "2017-02-27T09:00:00",
+                "endDateTime": "2017-02-27T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.035228,
+                "startDateTime": "2017-02-27T10:00:00",
+                "endDateTime": "2017-02-27T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.035228,
+                "startDateTime": "2017-02-27T11:00:00",
+                "endDateTime": "2017-02-27T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.064688,
+                "startDateTime": "2017-02-27T12:00:00",
+                "endDateTime": "2017-02-27T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.038568,
+                "startDateTime": "2017-02-27T13:00:00",
+                "endDateTime": "2017-02-27T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.037052,
+                "startDateTime": "2017-02-27T14:00:00",
+                "endDateTime": "2017-02-27T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.036444,
+                "startDateTime": "2017-02-27T15:00:00",
+                "endDateTime": "2017-02-27T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.036444,
+                "startDateTime": "2017-02-27T16:00:00",
+                "endDateTime": "2017-02-27T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.036444,
+                "startDateTime": "2017-02-27T17:00:00",
+                "endDateTime": "2017-02-27T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.06499,
+                "startDateTime": "2017-02-27T18:00:00",
+                "endDateTime": "2017-02-27T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.361394,
+                "startDateTime": "2017-02-27T19:00:00",
+                "endDateTime": "2017-02-27T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.665998,
+                "startDateTime": "2017-02-27T20:00:00",
+                "endDateTime": "2017-02-27T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.426082,
+                "startDateTime": "2017-02-27T21:00:00",
+                "endDateTime": "2017-02-27T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.28122,
+                "startDateTime": "2017-02-27T22:00:00",
+                "endDateTime": "2017-02-27T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.130186,
+                "startDateTime": "2017-02-27T23:00:00",
+                "endDateTime": "2017-02-27T23:59:00",
+                "estimatedRead": false
+            }
+        ],
+        "consumption": [
+            {
+                "value": 0.111,
+                "startDateTime": "2017-02-14T00:00:00",
+                "endDateTime": "2017-02-14T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.109,
+                "startDateTime": "2017-02-14T01:00:00",
+                "endDateTime": "2017-02-14T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.107,
+                "startDateTime": "2017-02-14T02:00:00",
+                "endDateTime": "2017-02-14T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.107,
+                "startDateTime": "2017-02-14T03:00:00",
+                "endDateTime": "2017-02-14T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.105,
+                "startDateTime": "2017-02-14T04:00:00",
+                "endDateTime": "2017-02-14T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.105,
+                "startDateTime": "2017-02-14T05:00:00",
+                "endDateTime": "2017-02-14T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.197,
+                "startDateTime": "2017-02-14T06:00:00",
+                "endDateTime": "2017-02-14T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.148,
+                "startDateTime": "2017-02-14T07:00:00",
+                "endDateTime": "2017-02-14T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.197,
+                "startDateTime": "2017-02-14T08:00:00",
+                "endDateTime": "2017-02-14T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.103,
+                "startDateTime": "2017-02-14T09:00:00",
+                "endDateTime": "2017-02-14T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.104,
+                "startDateTime": "2017-02-14T10:00:00",
+                "endDateTime": "2017-02-14T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.104,
+                "startDateTime": "2017-02-14T11:00:00",
+                "endDateTime": "2017-02-14T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.104,
+                "startDateTime": "2017-02-14T12:00:00",
+                "endDateTime": "2017-02-14T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.191,
+                "startDateTime": "2017-02-14T13:00:00",
+                "endDateTime": "2017-02-14T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.114,
+                "startDateTime": "2017-02-14T14:00:00",
+                "endDateTime": "2017-02-14T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.11,
+                "startDateTime": "2017-02-14T15:00:00",
+                "endDateTime": "2017-02-14T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.108,
+                "startDateTime": "2017-02-14T16:00:00",
+                "endDateTime": "2017-02-14T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.109,
+                "startDateTime": "2017-02-14T17:00:00",
+                "endDateTime": "2017-02-14T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.109,
+                "startDateTime": "2017-02-14T18:00:00",
+                "endDateTime": "2017-02-14T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.131,
+                "startDateTime": "2017-02-14T19:00:00",
+                "endDateTime": "2017-02-14T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.89,
+                "startDateTime": "2017-02-14T20:00:00",
+                "endDateTime": "2017-02-14T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.214,
+                "startDateTime": "2017-02-14T21:00:00",
+                "endDateTime": "2017-02-14T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.114,
+                "startDateTime": "2017-02-14T22:00:00",
+                "endDateTime": "2017-02-14T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.109,
+                "startDateTime": "2017-02-14T23:00:00",
+                "endDateTime": "2017-02-14T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.109,
+                "startDateTime": "2017-02-15T00:00:00",
+                "endDateTime": "2017-02-15T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.111,
+                "startDateTime": "2017-02-15T01:00:00",
+                "endDateTime": "2017-02-15T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.11,
+                "startDateTime": "2017-02-15T02:00:00",
+                "endDateTime": "2017-02-15T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.109,
+                "startDateTime": "2017-02-15T03:00:00",
+                "endDateTime": "2017-02-15T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.107,
+                "startDateTime": "2017-02-15T04:00:00",
+                "endDateTime": "2017-02-15T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.108,
+                "startDateTime": "2017-02-15T05:00:00",
+                "endDateTime": "2017-02-15T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.289,
+                "startDateTime": "2017-02-15T06:00:00",
+                "endDateTime": "2017-02-15T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.164,
+                "startDateTime": "2017-02-15T07:00:00",
+                "endDateTime": "2017-02-15T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.104,
+                "startDateTime": "2017-02-15T08:00:00",
+                "endDateTime": "2017-02-15T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.104,
+                "startDateTime": "2017-02-15T09:00:00",
+                "endDateTime": "2017-02-15T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.104,
+                "startDateTime": "2017-02-15T10:00:00",
+                "endDateTime": "2017-02-15T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.105,
+                "startDateTime": "2017-02-15T11:00:00",
+                "endDateTime": "2017-02-15T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.104,
+                "startDateTime": "2017-02-15T12:00:00",
+                "endDateTime": "2017-02-15T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.104,
+                "startDateTime": "2017-02-15T13:00:00",
+                "endDateTime": "2017-02-15T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.105,
+                "startDateTime": "2017-02-15T14:00:00",
+                "endDateTime": "2017-02-15T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.106,
+                "startDateTime": "2017-02-15T15:00:00",
+                "endDateTime": "2017-02-15T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.106,
+                "startDateTime": "2017-02-15T16:00:00",
+                "endDateTime": "2017-02-15T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.388,
+                "startDateTime": "2017-02-15T17:00:00",
+                "endDateTime": "2017-02-15T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.896,
+                "startDateTime": "2017-02-15T18:00:00",
+                "endDateTime": "2017-02-15T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 1.047,
+                "startDateTime": "2017-02-15T19:00:00",
+                "endDateTime": "2017-02-15T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.561,
+                "startDateTime": "2017-02-15T20:00:00",
+                "endDateTime": "2017-02-15T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.487,
+                "startDateTime": "2017-02-15T21:00:00",
+                "endDateTime": "2017-02-15T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.23,
+                "startDateTime": "2017-02-15T22:00:00",
+                "endDateTime": "2017-02-15T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.165,
+                "startDateTime": "2017-02-15T23:00:00",
+                "endDateTime": "2017-02-15T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.149,
+                "startDateTime": "2017-02-16T00:00:00",
+                "endDateTime": "2017-02-16T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.15,
+                "startDateTime": "2017-02-16T01:00:00",
+                "endDateTime": "2017-02-16T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.15,
+                "startDateTime": "2017-02-16T02:00:00",
+                "endDateTime": "2017-02-16T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.15,
+                "startDateTime": "2017-02-16T03:00:00",
+                "endDateTime": "2017-02-16T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.179,
+                "startDateTime": "2017-02-16T04:00:00",
+                "endDateTime": "2017-02-16T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.212,
+                "startDateTime": "2017-02-16T05:00:00",
+                "endDateTime": "2017-02-16T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.219,
+                "startDateTime": "2017-02-16T06:00:00",
+                "endDateTime": "2017-02-16T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.212,
+                "startDateTime": "2017-02-16T07:00:00",
+                "endDateTime": "2017-02-16T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.11,
+                "startDateTime": "2017-02-16T08:00:00",
+                "endDateTime": "2017-02-16T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.113,
+                "startDateTime": "2017-02-16T09:00:00",
+                "endDateTime": "2017-02-16T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.112,
+                "startDateTime": "2017-02-16T10:00:00",
+                "endDateTime": "2017-02-16T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.111,
+                "startDateTime": "2017-02-16T11:00:00",
+                "endDateTime": "2017-02-16T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.111,
+                "startDateTime": "2017-02-16T12:00:00",
+                "endDateTime": "2017-02-16T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.111,
+                "startDateTime": "2017-02-16T13:00:00",
+                "endDateTime": "2017-02-16T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.11,
+                "startDateTime": "2017-02-16T14:00:00",
+                "endDateTime": "2017-02-16T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.107,
+                "startDateTime": "2017-02-16T15:00:00",
+                "endDateTime": "2017-02-16T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.107,
+                "startDateTime": "2017-02-16T16:00:00",
+                "endDateTime": "2017-02-16T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.108,
+                "startDateTime": "2017-02-16T17:00:00",
+                "endDateTime": "2017-02-16T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.108,
+                "startDateTime": "2017-02-16T18:00:00",
+                "endDateTime": "2017-02-16T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.901,
+                "startDateTime": "2017-02-16T19:00:00",
+                "endDateTime": "2017-02-16T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.832,
+                "startDateTime": "2017-02-16T20:00:00",
+                "endDateTime": "2017-02-16T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.489,
+                "startDateTime": "2017-02-16T21:00:00",
+                "endDateTime": "2017-02-16T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.161,
+                "startDateTime": "2017-02-16T22:00:00",
+                "endDateTime": "2017-02-16T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.158,
+                "startDateTime": "2017-02-16T23:00:00",
+                "endDateTime": "2017-02-16T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.152,
+                "startDateTime": "2017-02-17T00:00:00",
+                "endDateTime": "2017-02-17T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.152,
+                "startDateTime": "2017-02-17T01:00:00",
+                "endDateTime": "2017-02-17T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.15,
+                "startDateTime": "2017-02-17T02:00:00",
+                "endDateTime": "2017-02-17T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.147,
+                "startDateTime": "2017-02-17T03:00:00",
+                "endDateTime": "2017-02-17T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.147,
+                "startDateTime": "2017-02-17T04:00:00",
+                "endDateTime": "2017-02-17T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.147,
+                "startDateTime": "2017-02-17T05:00:00",
+                "endDateTime": "2017-02-17T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.375,
+                "startDateTime": "2017-02-17T06:00:00",
+                "endDateTime": "2017-02-17T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.103,
+                "startDateTime": "2017-02-17T07:00:00",
+                "endDateTime": "2017-02-17T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.073,
+                "startDateTime": "2017-02-17T08:00:00",
+                "endDateTime": "2017-02-17T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.073,
+                "startDateTime": "2017-02-17T09:00:00",
+                "endDateTime": "2017-02-17T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.072,
+                "startDateTime": "2017-02-17T10:00:00",
+                "endDateTime": "2017-02-17T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.072,
+                "startDateTime": "2017-02-17T11:00:00",
+                "endDateTime": "2017-02-17T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.074,
+                "startDateTime": "2017-02-17T12:00:00",
+                "endDateTime": "2017-02-17T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.075,
+                "startDateTime": "2017-02-17T13:00:00",
+                "endDateTime": "2017-02-17T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.076,
+                "startDateTime": "2017-02-17T14:00:00",
+                "endDateTime": "2017-02-17T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.076,
+                "startDateTime": "2017-02-17T15:00:00",
+                "endDateTime": "2017-02-17T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.077,
+                "startDateTime": "2017-02-17T16:00:00",
+                "endDateTime": "2017-02-17T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.077,
+                "startDateTime": "2017-02-17T17:00:00",
+                "endDateTime": "2017-02-17T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.078,
+                "startDateTime": "2017-02-17T18:00:00",
+                "endDateTime": "2017-02-17T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.12,
+                "startDateTime": "2017-02-17T19:00:00",
+                "endDateTime": "2017-02-17T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.332,
+                "startDateTime": "2017-02-17T20:00:00",
+                "endDateTime": "2017-02-17T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.693,
+                "startDateTime": "2017-02-17T21:00:00",
+                "endDateTime": "2017-02-17T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.429,
+                "startDateTime": "2017-02-17T22:00:00",
+                "endDateTime": "2017-02-17T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.387,
+                "startDateTime": "2017-02-17T23:00:00",
+                "endDateTime": "2017-02-17T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.317,
+                "startDateTime": "2017-02-18T00:00:00",
+                "endDateTime": "2017-02-18T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.276,
+                "startDateTime": "2017-02-18T01:00:00",
+                "endDateTime": "2017-02-18T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.273,
+                "startDateTime": "2017-02-18T02:00:00",
+                "endDateTime": "2017-02-18T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.273,
+                "startDateTime": "2017-02-18T03:00:00",
+                "endDateTime": "2017-02-18T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.271,
+                "startDateTime": "2017-02-18T04:00:00",
+                "endDateTime": "2017-02-18T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.314,
+                "startDateTime": "2017-02-18T05:00:00",
+                "endDateTime": "2017-02-18T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.262,
+                "startDateTime": "2017-02-18T06:00:00",
+                "endDateTime": "2017-02-18T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.318,
+                "startDateTime": "2017-02-18T07:00:00",
+                "endDateTime": "2017-02-18T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.427,
+                "startDateTime": "2017-02-18T08:00:00",
+                "endDateTime": "2017-02-18T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.477,
+                "startDateTime": "2017-02-18T09:00:00",
+                "endDateTime": "2017-02-18T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.464,
+                "startDateTime": "2017-02-18T10:00:00",
+                "endDateTime": "2017-02-18T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 1.279,
+                "startDateTime": "2017-02-18T11:00:00",
+                "endDateTime": "2017-02-18T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.536,
+                "startDateTime": "2017-02-18T12:00:00",
+                "endDateTime": "2017-02-18T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.341,
+                "startDateTime": "2017-02-18T13:00:00",
+                "endDateTime": "2017-02-18T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.378,
+                "startDateTime": "2017-02-18T14:00:00",
+                "endDateTime": "2017-02-18T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.343,
+                "startDateTime": "2017-02-18T15:00:00",
+                "endDateTime": "2017-02-18T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.201,
+                "startDateTime": "2017-02-18T16:00:00",
+                "endDateTime": "2017-02-18T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.213,
+                "startDateTime": "2017-02-18T17:00:00",
+                "endDateTime": "2017-02-18T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.597,
+                "startDateTime": "2017-02-18T18:00:00",
+                "endDateTime": "2017-02-18T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.661,
+                "startDateTime": "2017-02-18T19:00:00",
+                "endDateTime": "2017-02-18T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.613,
+                "startDateTime": "2017-02-18T20:00:00",
+                "endDateTime": "2017-02-18T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.599,
+                "startDateTime": "2017-02-18T21:00:00",
+                "endDateTime": "2017-02-18T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.235,
+                "startDateTime": "2017-02-18T22:00:00",
+                "endDateTime": "2017-02-18T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.121,
+                "startDateTime": "2017-02-18T23:00:00",
+                "endDateTime": "2017-02-18T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.114,
+                "startDateTime": "2017-02-19T00:00:00",
+                "endDateTime": "2017-02-19T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.112,
+                "startDateTime": "2017-02-19T01:00:00",
+                "endDateTime": "2017-02-19T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.109,
+                "startDateTime": "2017-02-19T02:00:00",
+                "endDateTime": "2017-02-19T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.106,
+                "startDateTime": "2017-02-19T03:00:00",
+                "endDateTime": "2017-02-19T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.105,
+                "startDateTime": "2017-02-19T04:00:00",
+                "endDateTime": "2017-02-19T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.103,
+                "startDateTime": "2017-02-19T05:00:00",
+                "endDateTime": "2017-02-19T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.102,
+                "startDateTime": "2017-02-19T06:00:00",
+                "endDateTime": "2017-02-19T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.105,
+                "startDateTime": "2017-02-19T07:00:00",
+                "endDateTime": "2017-02-19T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.134,
+                "startDateTime": "2017-02-19T08:00:00",
+                "endDateTime": "2017-02-19T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.195,
+                "startDateTime": "2017-02-19T09:00:00",
+                "endDateTime": "2017-02-19T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.316,
+                "startDateTime": "2017-02-19T10:00:00",
+                "endDateTime": "2017-02-19T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.105,
+                "startDateTime": "2017-02-19T11:00:00",
+                "endDateTime": "2017-02-19T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.104,
+                "startDateTime": "2017-02-19T12:00:00",
+                "endDateTime": "2017-02-19T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.105,
+                "startDateTime": "2017-02-19T13:00:00",
+                "endDateTime": "2017-02-19T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.327,
+                "startDateTime": "2017-02-19T14:00:00",
+                "endDateTime": "2017-02-19T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.878,
+                "startDateTime": "2017-02-19T15:00:00",
+                "endDateTime": "2017-02-19T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 1.025,
+                "startDateTime": "2017-02-19T16:00:00",
+                "endDateTime": "2017-02-19T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.808,
+                "startDateTime": "2017-02-19T17:00:00",
+                "endDateTime": "2017-02-19T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.228,
+                "startDateTime": "2017-02-19T18:00:00",
+                "endDateTime": "2017-02-19T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.214,
+                "startDateTime": "2017-02-19T19:00:00",
+                "endDateTime": "2017-02-19T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.212,
+                "startDateTime": "2017-02-19T20:00:00",
+                "endDateTime": "2017-02-19T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.373,
+                "startDateTime": "2017-02-19T21:00:00",
+                "endDateTime": "2017-02-19T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.127,
+                "startDateTime": "2017-02-19T22:00:00",
+                "endDateTime": "2017-02-19T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.122,
+                "startDateTime": "2017-02-19T23:00:00",
+                "endDateTime": "2017-02-19T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.121,
+                "startDateTime": "2017-02-20T00:00:00",
+                "endDateTime": "2017-02-20T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.12,
+                "startDateTime": "2017-02-20T01:00:00",
+                "endDateTime": "2017-02-20T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.119,
+                "startDateTime": "2017-02-20T02:00:00",
+                "endDateTime": "2017-02-20T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.117,
+                "startDateTime": "2017-02-20T03:00:00",
+                "endDateTime": "2017-02-20T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.116,
+                "startDateTime": "2017-02-20T04:00:00",
+                "endDateTime": "2017-02-20T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.115,
+                "startDateTime": "2017-02-20T05:00:00",
+                "endDateTime": "2017-02-20T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.323,
+                "startDateTime": "2017-02-20T06:00:00",
+                "endDateTime": "2017-02-20T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.126,
+                "startDateTime": "2017-02-20T07:00:00",
+                "endDateTime": "2017-02-20T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.115,
+                "startDateTime": "2017-02-20T08:00:00",
+                "endDateTime": "2017-02-20T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.116,
+                "startDateTime": "2017-02-20T09:00:00",
+                "endDateTime": "2017-02-20T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.115,
+                "startDateTime": "2017-02-20T10:00:00",
+                "endDateTime": "2017-02-20T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.113,
+                "startDateTime": "2017-02-20T11:00:00",
+                "endDateTime": "2017-02-20T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.114,
+                "startDateTime": "2017-02-20T12:00:00",
+                "endDateTime": "2017-02-20T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.206,
+                "startDateTime": "2017-02-20T13:00:00",
+                "endDateTime": "2017-02-20T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.122,
+                "startDateTime": "2017-02-20T14:00:00",
+                "endDateTime": "2017-02-20T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.116,
+                "startDateTime": "2017-02-20T15:00:00",
+                "endDateTime": "2017-02-20T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.118,
+                "startDateTime": "2017-02-20T16:00:00",
+                "endDateTime": "2017-02-20T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.117,
+                "startDateTime": "2017-02-20T17:00:00",
+                "endDateTime": "2017-02-20T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.117,
+                "startDateTime": "2017-02-20T18:00:00",
+                "endDateTime": "2017-02-20T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.117,
+                "startDateTime": "2017-02-20T19:00:00",
+                "endDateTime": "2017-02-20T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.116,
+                "startDateTime": "2017-02-20T20:00:00",
+                "endDateTime": "2017-02-20T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.296,
+                "startDateTime": "2017-02-20T21:00:00",
+                "endDateTime": "2017-02-20T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.12,
+                "startDateTime": "2017-02-20T22:00:00",
+                "endDateTime": "2017-02-20T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.133,
+                "startDateTime": "2017-02-20T23:00:00",
+                "endDateTime": "2017-02-20T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.117,
+                "startDateTime": "2017-02-21T00:00:00",
+                "endDateTime": "2017-02-21T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.116,
+                "startDateTime": "2017-02-21T01:00:00",
+                "endDateTime": "2017-02-21T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.127,
+                "startDateTime": "2017-02-21T02:00:00",
+                "endDateTime": "2017-02-21T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.115,
+                "startDateTime": "2017-02-21T03:00:00",
+                "endDateTime": "2017-02-21T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.136,
+                "startDateTime": "2017-02-21T04:00:00",
+                "endDateTime": "2017-02-21T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.114,
+                "startDateTime": "2017-02-21T05:00:00",
+                "endDateTime": "2017-02-21T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.274,
+                "startDateTime": "2017-02-21T06:00:00",
+                "endDateTime": "2017-02-21T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.132,
+                "startDateTime": "2017-02-21T07:00:00",
+                "endDateTime": "2017-02-21T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.11,
+                "startDateTime": "2017-02-21T08:00:00",
+                "endDateTime": "2017-02-21T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.108,
+                "startDateTime": "2017-02-21T09:00:00",
+                "endDateTime": "2017-02-21T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.107,
+                "startDateTime": "2017-02-21T10:00:00",
+                "endDateTime": "2017-02-21T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.112,
+                "startDateTime": "2017-02-21T11:00:00",
+                "endDateTime": "2017-02-21T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.113,
+                "startDateTime": "2017-02-21T12:00:00",
+                "endDateTime": "2017-02-21T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.113,
+                "startDateTime": "2017-02-21T13:00:00",
+                "endDateTime": "2017-02-21T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.114,
+                "startDateTime": "2017-02-21T14:00:00",
+                "endDateTime": "2017-02-21T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.115,
+                "startDateTime": "2017-02-21T15:00:00",
+                "endDateTime": "2017-02-21T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.114,
+                "startDateTime": "2017-02-21T16:00:00",
+                "endDateTime": "2017-02-21T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.115,
+                "startDateTime": "2017-02-21T17:00:00",
+                "endDateTime": "2017-02-21T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.114,
+                "startDateTime": "2017-02-21T18:00:00",
+                "endDateTime": "2017-02-21T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.131,
+                "startDateTime": "2017-02-21T19:00:00",
+                "endDateTime": "2017-02-21T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.713,
+                "startDateTime": "2017-02-21T20:00:00",
+                "endDateTime": "2017-02-21T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.35,
+                "startDateTime": "2017-02-21T21:00:00",
+                "endDateTime": "2017-02-21T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.143,
+                "startDateTime": "2017-02-21T22:00:00",
+                "endDateTime": "2017-02-21T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.118,
+                "startDateTime": "2017-02-21T23:00:00",
+                "endDateTime": "2017-02-21T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.119,
+                "startDateTime": "2017-02-22T00:00:00",
+                "endDateTime": "2017-02-22T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.117,
+                "startDateTime": "2017-02-22T01:00:00",
+                "endDateTime": "2017-02-22T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.117,
+                "startDateTime": "2017-02-22T02:00:00",
+                "endDateTime": "2017-02-22T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.141,
+                "startDateTime": "2017-02-22T03:00:00",
+                "endDateTime": "2017-02-22T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.122,
+                "startDateTime": "2017-02-22T04:00:00",
+                "endDateTime": "2017-02-22T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.115,
+                "startDateTime": "2017-02-22T05:00:00",
+                "endDateTime": "2017-02-22T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.302,
+                "startDateTime": "2017-02-22T06:00:00",
+                "endDateTime": "2017-02-22T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.181,
+                "startDateTime": "2017-02-22T07:00:00",
+                "endDateTime": "2017-02-22T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.115,
+                "startDateTime": "2017-02-22T08:00:00",
+                "endDateTime": "2017-02-22T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.123,
+                "startDateTime": "2017-02-22T09:00:00",
+                "endDateTime": "2017-02-22T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.205,
+                "startDateTime": "2017-02-22T10:00:00",
+                "endDateTime": "2017-02-22T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.123,
+                "startDateTime": "2017-02-22T11:00:00",
+                "endDateTime": "2017-02-22T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.118,
+                "startDateTime": "2017-02-22T12:00:00",
+                "endDateTime": "2017-02-22T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.118,
+                "startDateTime": "2017-02-22T13:00:00",
+                "endDateTime": "2017-02-22T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.117,
+                "startDateTime": "2017-02-22T14:00:00",
+                "endDateTime": "2017-02-22T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.117,
+                "startDateTime": "2017-02-22T15:00:00",
+                "endDateTime": "2017-02-22T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.116,
+                "startDateTime": "2017-02-22T16:00:00",
+                "endDateTime": "2017-02-22T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.118,
+                "startDateTime": "2017-02-22T17:00:00",
+                "endDateTime": "2017-02-22T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.148,
+                "startDateTime": "2017-02-22T18:00:00",
+                "endDateTime": "2017-02-22T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.146,
+                "startDateTime": "2017-02-22T19:00:00",
+                "endDateTime": "2017-02-22T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.914,
+                "startDateTime": "2017-02-22T20:00:00",
+                "endDateTime": "2017-02-22T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.691,
+                "startDateTime": "2017-02-22T21:00:00",
+                "endDateTime": "2017-02-22T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.135,
+                "startDateTime": "2017-02-22T22:00:00",
+                "endDateTime": "2017-02-22T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.172,
+                "startDateTime": "2017-02-22T23:00:00",
+                "endDateTime": "2017-02-22T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.152,
+                "startDateTime": "2017-02-23T00:00:00",
+                "endDateTime": "2017-02-23T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.148,
+                "startDateTime": "2017-02-23T01:00:00",
+                "endDateTime": "2017-02-23T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.149,
+                "startDateTime": "2017-02-23T02:00:00",
+                "endDateTime": "2017-02-23T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.148,
+                "startDateTime": "2017-02-23T03:00:00",
+                "endDateTime": "2017-02-23T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.149,
+                "startDateTime": "2017-02-23T04:00:00",
+                "endDateTime": "2017-02-23T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.151,
+                "startDateTime": "2017-02-23T05:00:00",
+                "endDateTime": "2017-02-23T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.315,
+                "startDateTime": "2017-02-23T06:00:00",
+                "endDateTime": "2017-02-23T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.144,
+                "startDateTime": "2017-02-23T07:00:00",
+                "endDateTime": "2017-02-23T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.12,
+                "startDateTime": "2017-02-23T08:00:00",
+                "endDateTime": "2017-02-23T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.117,
+                "startDateTime": "2017-02-23T09:00:00",
+                "endDateTime": "2017-02-23T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.115,
+                "startDateTime": "2017-02-23T10:00:00",
+                "endDateTime": "2017-02-23T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.116,
+                "startDateTime": "2017-02-23T11:00:00",
+                "endDateTime": "2017-02-23T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.115,
+                "startDateTime": "2017-02-23T12:00:00",
+                "endDateTime": "2017-02-23T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.116,
+                "startDateTime": "2017-02-23T13:00:00",
+                "endDateTime": "2017-02-23T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.116,
+                "startDateTime": "2017-02-23T14:00:00",
+                "endDateTime": "2017-02-23T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.117,
+                "startDateTime": "2017-02-23T15:00:00",
+                "endDateTime": "2017-02-23T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.118,
+                "startDateTime": "2017-02-23T16:00:00",
+                "endDateTime": "2017-02-23T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.122,
+                "startDateTime": "2017-02-23T17:00:00",
+                "endDateTime": "2017-02-23T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.122,
+                "startDateTime": "2017-02-23T18:00:00",
+                "endDateTime": "2017-02-23T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.123,
+                "startDateTime": "2017-02-23T19:00:00",
+                "endDateTime": "2017-02-23T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.122,
+                "startDateTime": "2017-02-23T20:00:00",
+                "endDateTime": "2017-02-23T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.224,
+                "startDateTime": "2017-02-23T21:00:00",
+                "endDateTime": "2017-02-23T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.315,
+                "startDateTime": "2017-02-23T22:00:00",
+                "endDateTime": "2017-02-23T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.15,
+                "startDateTime": "2017-02-23T23:00:00",
+                "endDateTime": "2017-02-23T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.146,
+                "startDateTime": "2017-02-24T00:00:00",
+                "endDateTime": "2017-02-24T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.166,
+                "startDateTime": "2017-02-24T01:00:00",
+                "endDateTime": "2017-02-24T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.23,
+                "startDateTime": "2017-02-24T02:00:00",
+                "endDateTime": "2017-02-24T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.156,
+                "startDateTime": "2017-02-24T03:00:00",
+                "endDateTime": "2017-02-24T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.15,
+                "startDateTime": "2017-02-24T04:00:00",
+                "endDateTime": "2017-02-24T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.147,
+                "startDateTime": "2017-02-24T05:00:00",
+                "endDateTime": "2017-02-24T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.381,
+                "startDateTime": "2017-02-24T06:00:00",
+                "endDateTime": "2017-02-24T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.172,
+                "startDateTime": "2017-02-24T07:00:00",
+                "endDateTime": "2017-02-24T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.151,
+                "startDateTime": "2017-02-24T08:00:00",
+                "endDateTime": "2017-02-24T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.268,
+                "startDateTime": "2017-02-24T09:00:00",
+                "endDateTime": "2017-02-24T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.119,
+                "startDateTime": "2017-02-24T10:00:00",
+                "endDateTime": "2017-02-24T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.118,
+                "startDateTime": "2017-02-24T11:00:00",
+                "endDateTime": "2017-02-24T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.119,
+                "startDateTime": "2017-02-24T12:00:00",
+                "endDateTime": "2017-02-24T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.116,
+                "startDateTime": "2017-02-24T13:00:00",
+                "endDateTime": "2017-02-24T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.116,
+                "startDateTime": "2017-02-24T14:00:00",
+                "endDateTime": "2017-02-24T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.115,
+                "startDateTime": "2017-02-24T15:00:00",
+                "endDateTime": "2017-02-24T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.115,
+                "startDateTime": "2017-02-24T16:00:00",
+                "endDateTime": "2017-02-24T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.116,
+                "startDateTime": "2017-02-24T17:00:00",
+                "endDateTime": "2017-02-24T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.114,
+                "startDateTime": "2017-02-24T18:00:00",
+                "endDateTime": "2017-02-24T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.115,
+                "startDateTime": "2017-02-24T19:00:00",
+                "endDateTime": "2017-02-24T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.115,
+                "startDateTime": "2017-02-24T20:00:00",
+                "endDateTime": "2017-02-24T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.114,
+                "startDateTime": "2017-02-24T21:00:00",
+                "endDateTime": "2017-02-24T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.116,
+                "startDateTime": "2017-02-24T22:00:00",
+                "endDateTime": "2017-02-24T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.199,
+                "startDateTime": "2017-02-24T23:00:00",
+                "endDateTime": "2017-02-24T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.152,
+                "startDateTime": "2017-02-25T00:00:00",
+                "endDateTime": "2017-02-25T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.166,
+                "startDateTime": "2017-02-25T01:00:00",
+                "endDateTime": "2017-02-25T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.149,
+                "startDateTime": "2017-02-25T02:00:00",
+                "endDateTime": "2017-02-25T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.146,
+                "startDateTime": "2017-02-25T03:00:00",
+                "endDateTime": "2017-02-25T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.145,
+                "startDateTime": "2017-02-25T04:00:00",
+                "endDateTime": "2017-02-25T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.145,
+                "startDateTime": "2017-02-25T05:00:00",
+                "endDateTime": "2017-02-25T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.145,
+                "startDateTime": "2017-02-25T06:00:00",
+                "endDateTime": "2017-02-25T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.364,
+                "startDateTime": "2017-02-25T07:00:00",
+                "endDateTime": "2017-02-25T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.917,
+                "startDateTime": "2017-02-25T08:00:00",
+                "endDateTime": "2017-02-25T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 1.157,
+                "startDateTime": "2017-02-25T09:00:00",
+                "endDateTime": "2017-02-25T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.334,
+                "startDateTime": "2017-02-25T10:00:00",
+                "endDateTime": "2017-02-25T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.124,
+                "startDateTime": "2017-02-25T11:00:00",
+                "endDateTime": "2017-02-25T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.118,
+                "startDateTime": "2017-02-25T12:00:00",
+                "endDateTime": "2017-02-25T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.117,
+                "startDateTime": "2017-02-25T13:00:00",
+                "endDateTime": "2017-02-25T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.117,
+                "startDateTime": "2017-02-25T14:00:00",
+                "endDateTime": "2017-02-25T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.117,
+                "startDateTime": "2017-02-25T15:00:00",
+                "endDateTime": "2017-02-25T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.116,
+                "startDateTime": "2017-02-25T16:00:00",
+                "endDateTime": "2017-02-25T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.116,
+                "startDateTime": "2017-02-25T17:00:00",
+                "endDateTime": "2017-02-25T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.154,
+                "startDateTime": "2017-02-25T18:00:00",
+                "endDateTime": "2017-02-25T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.173,
+                "startDateTime": "2017-02-25T19:00:00",
+                "endDateTime": "2017-02-25T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.127,
+                "startDateTime": "2017-02-25T20:00:00",
+                "endDateTime": "2017-02-25T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.122,
+                "startDateTime": "2017-02-25T21:00:00",
+                "endDateTime": "2017-02-25T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.12,
+                "startDateTime": "2017-02-25T22:00:00",
+                "endDateTime": "2017-02-25T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.119,
+                "startDateTime": "2017-02-25T23:00:00",
+                "endDateTime": "2017-02-25T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.118,
+                "startDateTime": "2017-02-26T00:00:00",
+                "endDateTime": "2017-02-26T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.117,
+                "startDateTime": "2017-02-26T01:00:00",
+                "endDateTime": "2017-02-26T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.117,
+                "startDateTime": "2017-02-26T02:00:00",
+                "endDateTime": "2017-02-26T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.116,
+                "startDateTime": "2017-02-26T03:00:00",
+                "endDateTime": "2017-02-26T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.115,
+                "startDateTime": "2017-02-26T04:00:00",
+                "endDateTime": "2017-02-26T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.116,
+                "startDateTime": "2017-02-26T05:00:00",
+                "endDateTime": "2017-02-26T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.115,
+                "startDateTime": "2017-02-26T06:00:00",
+                "endDateTime": "2017-02-26T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.115,
+                "startDateTime": "2017-02-26T07:00:00",
+                "endDateTime": "2017-02-26T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.114,
+                "startDateTime": "2017-02-26T08:00:00",
+                "endDateTime": "2017-02-26T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.114,
+                "startDateTime": "2017-02-26T09:00:00",
+                "endDateTime": "2017-02-26T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.114,
+                "startDateTime": "2017-02-26T10:00:00",
+                "endDateTime": "2017-02-26T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.115,
+                "startDateTime": "2017-02-26T11:00:00",
+                "endDateTime": "2017-02-26T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.114,
+                "startDateTime": "2017-02-26T12:00:00",
+                "endDateTime": "2017-02-26T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.115,
+                "startDateTime": "2017-02-26T13:00:00",
+                "endDateTime": "2017-02-26T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.115,
+                "startDateTime": "2017-02-26T14:00:00",
+                "endDateTime": "2017-02-26T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.115,
+                "startDateTime": "2017-02-26T15:00:00",
+                "endDateTime": "2017-02-26T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.116,
+                "startDateTime": "2017-02-26T16:00:00",
+                "endDateTime": "2017-02-26T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.115,
+                "startDateTime": "2017-02-26T17:00:00",
+                "endDateTime": "2017-02-26T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.117,
+                "startDateTime": "2017-02-26T18:00:00",
+                "endDateTime": "2017-02-26T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.13,
+                "startDateTime": "2017-02-26T19:00:00",
+                "endDateTime": "2017-02-26T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.812,
+                "startDateTime": "2017-02-26T20:00:00",
+                "endDateTime": "2017-02-26T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.278,
+                "startDateTime": "2017-02-26T21:00:00",
+                "endDateTime": "2017-02-26T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.163,
+                "startDateTime": "2017-02-26T22:00:00",
+                "endDateTime": "2017-02-26T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.157,
+                "startDateTime": "2017-02-26T23:00:00",
+                "endDateTime": "2017-02-26T23:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.172,
+                "startDateTime": "2017-02-27T00:00:00",
+                "endDateTime": "2017-02-27T00:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.157,
+                "startDateTime": "2017-02-27T01:00:00",
+                "endDateTime": "2017-02-27T01:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.155,
+                "startDateTime": "2017-02-27T02:00:00",
+                "endDateTime": "2017-02-27T02:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.155,
+                "startDateTime": "2017-02-27T03:00:00",
+                "endDateTime": "2017-02-27T03:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.153,
+                "startDateTime": "2017-02-27T04:00:00",
+                "endDateTime": "2017-02-27T04:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.151,
+                "startDateTime": "2017-02-27T05:00:00",
+                "endDateTime": "2017-02-27T05:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.363,
+                "startDateTime": "2017-02-27T06:00:00",
+                "endDateTime": "2017-02-27T06:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.199,
+                "startDateTime": "2017-02-27T07:00:00",
+                "endDateTime": "2017-02-27T07:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.117,
+                "startDateTime": "2017-02-27T08:00:00",
+                "endDateTime": "2017-02-27T08:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.116,
+                "startDateTime": "2017-02-27T09:00:00",
+                "endDateTime": "2017-02-27T09:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.116,
+                "startDateTime": "2017-02-27T10:00:00",
+                "endDateTime": "2017-02-27T10:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.116,
+                "startDateTime": "2017-02-27T11:00:00",
+                "endDateTime": "2017-02-27T11:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.213,
+                "startDateTime": "2017-02-27T12:00:00",
+                "endDateTime": "2017-02-27T12:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.127,
+                "startDateTime": "2017-02-27T13:00:00",
+                "endDateTime": "2017-02-27T13:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.122,
+                "startDateTime": "2017-02-27T14:00:00",
+                "endDateTime": "2017-02-27T14:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.12,
+                "startDateTime": "2017-02-27T15:00:00",
+                "endDateTime": "2017-02-27T15:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.12,
+                "startDateTime": "2017-02-27T16:00:00",
+                "endDateTime": "2017-02-27T16:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.12,
+                "startDateTime": "2017-02-27T17:00:00",
+                "endDateTime": "2017-02-27T17:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.214,
+                "startDateTime": "2017-02-27T18:00:00",
+                "endDateTime": "2017-02-27T18:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 1.19,
+                "startDateTime": "2017-02-27T19:00:00",
+                "endDateTime": "2017-02-27T19:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 2.193,
+                "startDateTime": "2017-02-27T20:00:00",
+                "endDateTime": "2017-02-27T20:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 1.403,
+                "startDateTime": "2017-02-27T21:00:00",
+                "endDateTime": "2017-02-27T21:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.926,
+                "startDateTime": "2017-02-27T22:00:00",
+                "endDateTime": "2017-02-27T22:59:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 0.726,
+                "startDateTime": "2017-02-27T23:00:00",
+                "endDateTime": "2017-02-27T23:59:00",
+                "estimatedRead": false
+            }
+        ],
+        "hasNoBill": false
+    }
+]

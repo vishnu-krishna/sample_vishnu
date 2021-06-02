@@ -1,0 +1,21 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "id": "C000001",
+            "creditCard": {
+                "cardType": "Master",
+                "creditCardReference": "5105105105105100",
+                "expiryDate": "2019-02",
+                "cardHolderName": "Rod Binnington"
+            },
+            "bank": null,
+            "payPal": null,
+            "directDebitContractAccounts": [
+                7013149351
+            ],
+            "oneTouchPayContractAccounts": []
+        }
+    ]
+}

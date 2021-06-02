@@ -1,0 +1,24 @@
+<div class="sms-banner" *ngIf="showSmsPayPanel">
+    <div class="sms-banner__container">
+        <div class="sms-banner--left col-sm-8 col-md-9">
+            <div class="sms-banner__icon">
+                <img src="svg/icon_smspay.svg" alt="SMS PAY icon">
+            </div>
+            <div class="sms-banner__text">
+                <div class="sms-banner__text-header">SMS Pay is here</div>
+                <div class="sms-banner__text-subtext">Set up SMS Pay and we'll text you a few days before payment is
+                    due. Just reply 'Pay' and we'll deduct your payment on the due date.
+                </div>
+            </div>
+        </div>
+
+        <div class="sms-banner--right col-sm-4 col-md-3">
+            <div class="sms-banner__cta">
+                <a class="sms-banner__cta-button" mat-raised-button color="primary" [routerLink]="['/settings/smspay']">SETUP
+                    SMS PAY</a>
+            </div>
+            <i (click)="closeSmsPayPanel()" class="sms-banner__close material-icons hidden-xs">&#xE5CD;</i>
+        </div>
+        <i (click)="closeSmsPayPanel()" class="sms-banner__close material-icons visible-xs">&#xE5CD;</i>
+    </div>
+</div>

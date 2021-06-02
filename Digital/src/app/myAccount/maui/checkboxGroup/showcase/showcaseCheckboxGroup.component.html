@@ -1,0 +1,24 @@
+<agl-maui-showcase-template heading='Checkbox Group'>
+    <div description>
+        <div>A checkbox group displays checkboxes in a group.</div>
+        <p>The event binding (checked) is to be invoked on the host component. <br/>It returns an array of selected items.</p>
+
+        <p>Refer to <a href="https://aglenergy.atlassian.net/wiki/spaces/AGLDST/pages/200672615/Radio+Button+List+-+Planned+1816">MAUI Component Library</a> for details</p>
+    </div>
+    <div exampleCodeUsage>
+        {{codeUsage}}
+    </div>
+    <div exampleImplementation>
+        <agl-maui-showcase-example label='What kind of cooling do you have?'>
+            <agl-maui-checkbox-group (checked)="checkBoxSelected($event)">
+                <agl-maui-checkbox
+                    *ngFor="let option of checkboxOptions"
+                    label="{{option.label}}"
+                    value="{{option.value}}"
+                    [isChecked]="option.isChecked"
+                    [isFullWidth]="option.isFullWidth">
+                </agl-maui-checkbox>
+            </agl-maui-checkbox-group>
+        </agl-maui-showcase-example>
+    </div>
+</agl-maui-showcase-template>

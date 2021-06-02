@@ -1,0 +1,84 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "account": "62055272",
+            "contract": "9035268282",
+            "costs": [
+                {
+                    "value": 110.43,
+                    "startDateTime": "2016-01-30T00:00:00",
+                    "endDateTime": "2016-05-02T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 106.07,
+                    "startDateTime": "2016-05-03T00:00:00",
+                    "endDateTime": "2016-07-29T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 114.11,
+                    "startDateTime": "2016-07-30T00:00:00",
+                    "endDateTime": "2016-10-27T00:00:00",
+                    "estimatedRead": false
+                }
+            ],
+            "consumption": [
+                {
+                    "value": 412,
+                    "startDateTime": "2016-01-30T00:00:00",
+                    "endDateTime": "2016-05-02T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 399,
+                    "startDateTime": "2016-05-03T00:00:00",
+                    "endDateTime": "2016-07-29T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 386,
+                    "startDateTime": "2016-07-30T00:00:00",
+                    "endDateTime": "2016-10-27T00:00:00",
+                    "estimatedRead": false
+                }
+            ],
+            "hasNoBill": false
+        },
+        {
+            "account": "62055272",
+            "contract": "9102254408",
+            "costs": [
+                {
+                    "value": 92.17,
+                    "startDateTime": "2016-03-02T00:00:00",
+                    "endDateTime": "2016-05-30T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 244.32,
+                    "startDateTime": "2016-05-31T00:00:00",
+                    "endDateTime": "2016-08-24T00:00:00",
+                    "estimatedRead": false
+                }
+            ],
+            "consumption": [
+                {
+                    "value": 2188.9212742488,
+                    "startDateTime": "2016-03-02T00:00:00",
+                    "endDateTime": "2016-05-30T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 10012.7106103413,
+                    "startDateTime": "2016-05-31T00:00:00",
+                    "endDateTime": "2016-08-24T00:00:00",
+                    "estimatedRead": false
+                }
+            ],
+            "hasNoBill": false
+        }
+    ]
+}

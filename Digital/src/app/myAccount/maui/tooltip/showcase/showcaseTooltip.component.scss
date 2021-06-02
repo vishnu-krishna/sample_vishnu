@@ -1,0 +1,22 @@
+@import '../../maui';
+@import '../../showcase';
+
+.showcase-tooltip {
+    position: relative;
+    padding-bottom: $space-01;
+
+    & p {
+        width: 100px;
+    }
+
+    h4 {
+        display: inline-block;
+    }
+}
+
+.after-heading {
+    agl-maui-tooltip-icon {
+        position: relative;
+        bottom: 1px;
+    }
+}

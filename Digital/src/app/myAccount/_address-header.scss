@@ -1,0 +1,72 @@
+$address-blue: #0057BF;
+$address-blue-light: #0778FF;
+
+.address-header {
+    min-height: 50px;
+    padding-bottom: 15px;
+    padding-top: 20px;
+    font-size: 14px;
+
+    @media #{$agl-layout-mobile} {
+        padding-left: 15px;
+        padding-bottom: 24px;
+    }
+
+    .number {
+        font-weight: bold;
+        color: $font-colour-black;
+        display: inline-block;
+        padding-right: 40px;
+
+        .mat-icon {
+            height: 17px;
+            margin-left: 5px;
+            position: relative;
+            top: 3px;
+
+            &.elec {
+                width: 11px;
+            }
+
+            &.gas {
+                width: 12px;
+            }
+        }
+
+        .contract-state-pill {
+            &__inactive {
+                @include bill-pill($brand-grey-darker);
+                display: inline-block;
+                padding: 2px 10px;
+                margin-left: 6px;
+                vertical-align: top;
+            }
+
+            &__cancelled {
+                @include bill-pill($address-blue);
+                vertical-align: top;
+            }
+
+            &__new-connection {
+                @include bill-pill($address-blue-light);
+                display: inline-block;
+                padding: 2px 10px;
+                margin-left: 6px;
+                vertical-align: top;
+            }
+        }
+    }
+
+    .address {
+        color: $font-colour-black;
+        display: inline-block;
+        margin-bottom: -5px;
+        font-weight: normal;
+
+        @media (min-width: $device-min-sm) {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}

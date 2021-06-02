@@ -1,0 +1,21 @@
+@import '../../../../../shared/style/variables';
+
+.bill-payment-button {
+    margin-top: 13px;
+    @media #{$agl-layout-mobile} {
+        margin-top: 0;
+    }
+
+    .dls-button {
+        border-radius: $agl-border-radius;
+        width: 100%;
+        height: 50px;
+    }
+}
+
+.is-loading {
+    background-image: url('svg/Button_Load_spinner.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: transparent;
+}

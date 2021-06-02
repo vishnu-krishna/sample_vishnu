@@ -1,0 +1,14 @@
+{
+    "scenarios": [{
+        "context": {
+            "contractAccountNumber": 123456789,
+            "deliveryMethod": "Postal"
+        },
+        "outcome": {
+            "status": 400,
+            "body": {
+                "message": "Invalid bill delivery method"
+            }
+        }
+    }]
+}

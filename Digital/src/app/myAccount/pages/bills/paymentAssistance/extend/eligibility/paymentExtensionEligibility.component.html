@@ -1,0 +1,128 @@
+<agl-maui-secondary-navigation display="true" text="Payment extensions"></agl-maui-secondary-navigation>
+<div class="payment-extension-eligibility">
+
+    <div class="payment-extension-eligibility__loader" *ngIf="showLoader">
+        <agl-loader loadingSubMessage="We're looking into your options, please stand by."></agl-loader>
+    </div>
+    <div *ngIf="!showLoader">
+        <div *ngIf="showError">
+            <agl-payment-extension-error></agl-payment-extension-error>
+        </div>
+        <div *ngIf="!showError" class="payment-extension-eligibility__content">
+            <agl-maui-heading [heading]="heading"></agl-maui-heading>
+
+            <div *ngIf="displayEligibleFuelChips">
+                <agl-maui-heading subheading="Hi {{firstName}}, select the bill you'd like to extend below."></agl-maui-heading>
+                <div *ngFor="let fuelChip of classifiedFuelChips.eligibleFuelChips; let first = first; let last = last">
+                    <agl-maui-container [hasShadow]="false" class="payment-extension-eligibility__fuel-chip"
+                        [class.payment-extension-eligibility__fuel-chip--first]="first"
+                        [class.payment-extension-eligibility__fuel-chip--last]="last">
+                        <agl-maui-fuel-chip
+                            [fuelChipState]="fuelChip.state"
+                            [fuelType]="fuelChip.fuelType"
+                            [fuelContext]="fuelChip.fuelContext"
+                            [contractNumber]="fuelChip.contractNumber"
+                            [contractAccountDetails]="fuelChip.accountDetails"
+                            (selectorClick)='onFuelChipSelected(fuelChip.contractNumber)'>
+                            <agl-maui-fuel-chip-message *ngIf="fuelChip.statusMessage[0].primaryMessage"
+                                [primaryMessage]="fuelChip.statusMessage[0].primaryMessage"
+                                [secondaryMessage]="fuelChip.statusMessage[0].secondaryMessage"
+                                [secondaryMessageStatus]="fuelChip.statusMessage[0].secondaryMessageStatus">
+                            </agl-maui-fuel-chip-message>
+                        </agl-maui-fuel-chip>
+                    </agl-maui-container>
+                </div>
+                <div *ngIf="showPayOnTimeDiscount" class="payment-extension-eligibility__potd-message">
+                    <div>Your account balance shown here excludes any applicable Pay on Time discounts.</div>
+                    <div>By extending your due date, you'll no longer be eligible for this discount.</div>
+                </div>
+            </div>
+
+            <div *ngIf="displayAlreadyExtendedFuelChips">
+                <div class="payment-extension-eligibility__subheading">
+                    Your recently extended bills.
+                </div>
+                <div *ngFor="let fuelChip of classifiedFuelChips.alreadyExtendedFuelChips; let first = first; let last = last">
+                    <agl-maui-container [hasShadow]="false" class="payment-extension-eligibility__fuel-chip"
+                        [class.payment-extension-eligibility__fuel-chip--first]="first"
+                        [class.payment-extension-eligibility__fuel-chip--last]="last">
+                        <agl-maui-fuel-chip
+                            [fuelChipState]="fuelChip.state"
+                            [fuelType]="fuelChip.fuelType"
+                            [fuelContext]="fuelChip.fuelContext"
+                            [contractNumber]="fuelChip.contractNumber"
+                            [contractAccountDetails]="fuelChip.accountDetails">
+                            <agl-maui-fuel-chip-message *ngIf="fuelChip.statusMessage[0].primaryMessage"
+                                [primaryMessage]="fuelChip.statusMessage[0].primaryMessage"
+                                [secondaryMessage]="fuelChip.statusMessage[0].secondaryMessage"
+                                [secondaryMessageStatus]="fuelChip.statusMessage[0].secondaryMessageStatus">
+                            </agl-maui-fuel-chip-message>
+                        </agl-maui-fuel-chip>
+                    </agl-maui-container>
+                </div>
+            </div>
+
+
+            <div *ngIf="displayIneligibleFuelChips">
+                <div class="payment-extension-eligibility__subheading" *ngIf= "showIneligibleFuelChipSubHeading">
+                    The due date for these bills can't be extended.
+                </div>
+                <div class="payment-extension-eligibility__subheading">
+                    <span class="payment-extension-eligibility__phone-number">Call <a href="tel:131 245">131 245</a></span> to see how we can help.
+                </div>
+                <div *ngFor="let fuelChip of classifiedFuelChips.ineligibleFuelChips; let first = first; let last = last">
+                    <agl-maui-container [hasShadow]="false" class="payment-extension-eligibility__fuel-chip"
+                        [class.payment-extension-eligibility__fuel-chip--first]="first"
+                        [class.payment-extension-eligibility__fuel-chip--last]="last">
+                        <agl-maui-fuel-chip
+                            [fuelChipState]="fuelChip.state"
+                            [fuelType]="fuelChip.fuelType"
+                            [fuelContext]="fuelChip.fuelContext"
+                            [contractNumber]="fuelChip.contractNumber"
+                            [contractAccountDetails]="fuelChip.accountDetails">
+                            <agl-maui-fuel-chip-message *ngIf="fuelChip.statusMessage[0].primaryMessage"
+                                [primaryMessage]="fuelChip.statusMessage[0].primaryMessage"
+                                [secondaryMessage]="fuelChip.statusMessage[0].secondaryMessage"
+                                [secondaryMessageStatus]="fuelChip.statusMessage[0].secondaryMessageStatus">
+                            </agl-maui-fuel-chip-message>
+                            <agl-maui-fuel-chip-footer *ngIf="fuelChip.tertiaryMessage"
+                                [tertiaryMessage]="fuelChip.tertiaryMessage">
+                            </agl-maui-fuel-chip-footer>
+                        </agl-maui-fuel-chip>
+                    </agl-maui-container>
+                </div>
+            </div>
+
+            <div *ngIf="displayNoIssuedBillFuelChips">
+                <div class="payment-extension-eligibility__subheading">
+                    There's no need to extend any bills shown below.
+                </div>
+                <div *ngFor="let fuelChip of classifiedFuelChips.noIssuedBillFuelChips; let first = first; let last = last">
+                    <agl-maui-container [hasShadow]="false" class="payment-extension-eligibility__fuel-chip"
+                        [class.payment-extension-eligibility__fuel-chip--first]="first"
+                        [class.payment-extension-eligibility__fuel-chip--last]="last">
+                        <agl-maui-fuel-chip
+                            [fuelChipState]="fuelChip.state"
+                            [fuelType]="fuelChip.fuelType"
+                            [fuelContext]="fuelChip.fuelContext"
+                            [contractNumber]="fuelChip.contractNumber"
+                            [contractAccountDetails]="fuelChip.accountDetails">
+                            <agl-maui-fuel-chip-message *ngIf="fuelChip.statusMessage[0].primaryMessage"
+                                [primaryMessage]="fuelChip.statusMessage[0].primaryMessage"
+                                [secondaryMessage]="fuelChip.statusMessage[0].secondaryMessage"
+                                [secondaryMessageStatus]="fuelChip.statusMessage[0].secondaryMessageStatus">
+                            </agl-maui-fuel-chip-message>
+                            <agl-maui-fuel-chip-footer *ngIf="fuelChip.tertiaryMessage"
+                                [tertiaryMessage]="fuelChip.tertiaryMessage">
+                            </agl-maui-fuel-chip-footer>
+                        </agl-maui-fuel-chip>
+                    </agl-maui-container>
+                </div>
+            </div>
+
+            <div class="payment-extension-eligibility__button-overview" *ngIf="!displayEligibleFuelChips">
+                <agl-maui-button (clicked)="goToOverview()">Go To Overview</agl-maui-button>
+            </div>
+        </div>
+    </div>
+</div>

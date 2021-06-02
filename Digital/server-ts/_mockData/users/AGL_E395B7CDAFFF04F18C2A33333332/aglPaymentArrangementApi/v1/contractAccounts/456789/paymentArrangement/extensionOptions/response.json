@@ -1,0 +1,28 @@
+{
+    "status": 200,
+    "headers": {},
+    "body":
+        {
+            "contractAccountNumber": 456789,
+            "extensionOptions": [
+                {
+                    "contractNumber": 456789111,
+                    "isEligible": true,
+                    "dueDate": "2017-10-10T14:00:00Z",
+                    "totalDueAmount": 70.28,
+                    "dueDateExtensions": [
+                        {
+                            "numberOfDays": 7,
+                            "date": "2017-10-15T14:00:00Z"
+                        },
+                        {
+                            "numberOfDays": 14
+                        },
+                        {
+                            "numberOfDays": 21
+                        }
+                    ]
+                }
+            ]
+        }
+}

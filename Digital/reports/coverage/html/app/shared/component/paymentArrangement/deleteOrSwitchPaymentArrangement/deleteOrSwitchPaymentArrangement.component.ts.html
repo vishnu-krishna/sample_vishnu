@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\shared\component\paymentArrangement\deleteOrSwitchPaymentArrangement\deleteOrSwitchPaymentArrangement.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">all files</a> / <a href="index.html">app/shared/component/paymentArrangement/deleteOrSwitchPaymentArrangement/</a> deleteOrSwitchPaymentArrangement.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">15.52% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>9/58</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.69% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">14.55% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>8/55</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* tslint:disable:no-access-missing-member */
+import { OnInit } from '@angular/core';
+import { PaymentArrangementType } from '../../../../myAccount/common/enums';
+import { IModalComponent } from '../../../../myAccount/modal/modal-loader.directive';
+import { ModalService } from '../../../../myAccount/modal/modal.service';
+import { IPaymentMethodsService } from '../../../../myAccount/services/settings/paymentMethods.service.interface';
+import { AccountDetailComponentModel } from '../../../../myAccount/settings/accountDetail/accountDetail.component';
+import { DeletePaymentArrangementResultMessage } from '../../../messages/deletePaymentArrangementResult.message';
+import { SwitchPaymentArrangementResultMessage } from '../../../messages/switchPaymentArrangementResult.message';
+import { PaymentArrangementPaymentMethodModel } from '../../../model/domain/paymentArrangement/paymentArrangementData.model';
+import { IMessageBusService } from '../../../service/contract/imessageBus.service';
+import { PaymentArrangementSettingsViewModel } from '../paymentArrangement.settings.service';
+import { IPaymentArrangementStateService } from '../paymentArrangementState.service';
+&nbsp;
+export abstract class DeleteOrSwitchPaymentArrangementComponent implements OnInit, IModalComponent {
+    public args: any;
+    public abstract title: string;
+    public abstract  description: string;
+    public abstract deleteButtonText: string;
+    public abstract keepButtonText: string;
+    public paymentArrangementSettingsViewModel: PaymentArrangementSettingsViewModel;
+    public accountDetailModel: AccountDetailComponentModel;
+    public paymentArrangementPaymentMethodModel: PaymentArrangementPaymentMethodModel;
+    public isMultiAccount: boolean;
+    public elecIcons: number[];
+    public gasIcons: number[];
+    public isLoading: boolean;
+    public <span class="cstat-no" title="statement not covered" >isSwitchPaymentMethod: boolean = false;</span>
+    public paymentMethodReference: string;
+    public contractAccountNo: number;
+    public paymentArrangementPaymentMethodId: string;
+    public <span class="cstat-no" title="statement not covered" >showMessage: boolean = false;</span>
+&nbsp;
+    constructor(public <span class="cstat-no" title="statement not covered" >modalService: ModalService,</span>
+                public <span class="cstat-no" title="statement not covered" >paymentMethodService: IPaymentMethodsService,</span>
+                public <span class="cstat-no" title="statement not covered" >messageBusService: IMessageBusService,</span>
+                public <span class="cstat-no" title="statement not covered" >deletePaymentArrangementResult: DeletePaymentArrangementResultMessage,</span>
+                public <span class="cstat-no" title="statement not covered" >switchPaymentArrangementResult: SwitchPaymentArrangementResultMessage,</span>
+                public <span class="cstat-no" title="statement not covered" >stateService: IPaymentArrangementStateService<span class="fstat-no" title="function not covered" ></span></span>
+            ) {
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public ngOnInit() {</span>
+<span class="cstat-no" title="statement not covered" >        this.paymentArrangementSettingsViewModel = this.args.paymentArrangementSettingsViewModel;</span>
+<span class="cstat-no" title="statement not covered" >        this.accountDetailModel = this.paymentArrangementSettingsViewModel.accountDetailModel;</span>
+<span class="cstat-no" title="statement not covered" >        this.paymentArrangementPaymentMethodModel = this.paymentArrangementSettingsViewModel.paymentArrangementPaymentMethodModel;</span>
+<span class="cstat-no" title="statement not covered" >        this.elecIcons = new Array&lt;number&gt;(this.accountDetailModel.numberOfElectricityIcons).fill(1);</span>
+<span class="cstat-no" title="statement not covered" >        this.gasIcons = new Array&lt;number&gt;(this.accountDetailModel.numberOfGasIcons).fill(1);</span>
+<span class="cstat-no" title="statement not covered" >        this.getMessage();</span>
+    }
+&nbsp;
+    public abstract getMessage();
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    public removePaymentArrangement(paymentArrangementType: PaymentArrangementType<span class="fstat-no" title="function not covered" >) {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.isLoading = true;</span>
+        let paymentMethodId = <span class="cstat-no" title="statement not covered" >this.paymentArrangementSettingsViewModel.paymentArrangementPaymentMethodModel.id;</span>
+        let contractAccountNumber = <span class="cstat-no" title="statement not covered" >Number(this.accountDetailModel.contractAccountNumber);</span>
+<span class="cstat-no" title="statement not covered" >        this.stateService.isUpdatingPaymentArrangement = true;</span>
+<span class="cstat-no" title="statement not covered" >        this.stateService.updateStarted(this.accountDetailModel.contractAccountNumber);</span>
+<span class="cstat-no" title="statement not covered" >        this.paymentMethodService.removePaymentArrangementFromPaymentMethod(paymentMethodId, contractAccountNumber, paymentArrangementType)</span>
+            .finally(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >this.stateService.updateCompleted(this.accountDetailModel.contractAccountNumber))</span></span>
+            .subscribe(
+                (data<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    this.deletePaymentArrangementResult.isSuccessful = true;</span>
+<span class="cstat-no" title="statement not covered" >                    this.deletePaymentArrangementResult.contractAccountNumber = contractAccountNumber;</span>
+<span class="cstat-no" title="statement not covered" >                    this.messageBusService.broadcast(this.deletePaymentArrangementResult);</span>
+<span class="cstat-no" title="statement not covered" >                    this.modalService.close();</span>
+&nbsp;
+                },
+                (error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    console.error('Error within the remove payment arrangement method', error);</span>
+<span class="cstat-no" title="statement not covered" >                    this.deletePaymentArrangementResult.isSuccessful = false;</span>
+<span class="cstat-no" title="statement not covered" >                    this.deletePaymentArrangementResult.contractAccountNumber = contractAccountNumber;</span>
+<span class="cstat-no" title="statement not covered" >                    this.messageBusService.broadcast(this.deletePaymentArrangementResult);</span>
+<span class="cstat-no" title="statement not covered" >                    this.modalService.close();</span>
+                }
+            );
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    public changePaymentMethod(paymentArrangementType: PaymentArrangementType<span class="fstat-no" title="function not covered" >) {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.isLoading = true;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.stateService.isUpdatingPaymentArrangement = true;</span>
+<span class="cstat-no" title="statement not covered" >        this.stateService.updateStarted(this.accountDetailModel.contractAccountNumber);</span>
+<span class="cstat-no" title="statement not covered" >        this.switchPaymentArrangementResult = new SwitchPaymentArrangementResultMessage();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.paymentMethodService.attachPaymentArrangementToPaymentMethod(this.paymentArrangementPaymentMethodId, this.contractAccountNo, paymentArrangementType)</span>
+            .finally(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >this.stateService.updateCompleted(this.accountDetailModel.contractAccountNumber))</span></span>
+            .subscribe(
+            (data<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.switchPaymentArrangementResult.contractAccountNumber = this.contractAccountNo;</span>
+<span class="cstat-no" title="statement not covered" >                this.switchPaymentArrangementResult.isSwitchPaymentArrangement = true;</span>
+<span class="cstat-no" title="statement not covered" >                this.messageBusService.broadcast(this.switchPaymentArrangementResult);</span>
+<span class="cstat-no" title="statement not covered" >                this.modalService.close();</span>
+            },
+            (error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                console.error('Error within the change payment method', error);</span>
+<span class="cstat-no" title="statement not covered" >                this.switchPaymentArrangementResult.message = 'error';</span>
+<span class="cstat-no" title="statement not covered" >                this.switchPaymentArrangementResult.contractAccountNumber = this.contractAccountNo;</span>
+<span class="cstat-no" title="statement not covered" >                this.messageBusService.broadcast(this.switchPaymentArrangementResult);</span>
+<span class="cstat-no" title="statement not covered" >                this.modalService.close();</span>
+            }
+            );
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public closeModal() {</span>
+<span class="cstat-no" title="statement not covered" >        this.modalService.close();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public isAccountWithMultiAddresses(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.accountDetailModel.supplyAddresses.length &gt; 1;</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

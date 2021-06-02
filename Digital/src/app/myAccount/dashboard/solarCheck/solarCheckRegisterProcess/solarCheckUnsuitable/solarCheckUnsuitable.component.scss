@@ -1,0 +1,133 @@
+@import '../solarCheckRegisterProcess';
+
+.solar-check-unsuitable {
+
+    .content-area {
+        width: 400px;
+
+        @media #{$agl-layout-mobile} {
+            width: 320px;
+        }
+    }
+
+    /* Title Section */
+    .battery-title {
+        margin-top: 20px;
+
+        &-text {
+            height: 36px;
+            color: $brand-grey-g1;
+            font-family: $primary-font-stack;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 36px;
+            text-align: center;
+
+            @media #{$agl-layout-mobile} {
+                width: 320px;
+            }
+        }
+    }
+
+    .link {
+        text-align: center;
+        padding-top: 15px;
+
+        a {
+            font-size: 14px;
+            line-height: 31px;
+            letter-spacing: normal;
+            font-weight: bold;
+            color: $brand-sky;
+
+            &:hover {
+                color: $brand-sky-darker;
+                cursor: pointer;
+            }
+
+            @media #{$agl-layout-desktop-medium} {
+                font-size: 13px;
+            }
+        }
+    }
+
+    /*Yes No Buttons Section */
+    .option-button {
+
+        &-outer-padding {
+            padding-top: 60px;
+            padding-bottom: 6px;
+            text-align: center;
+        }
+
+        &-layout {
+            display: inline-block;
+        }
+
+        &-size {
+            width: 150px;
+            height: 150px;
+
+            @media #{$agl-layout-mobile} {
+                width: 140px;
+                height: 140px;
+            }
+        }
+
+        &-button-padding {
+            margin-right: 20px;
+
+            @media #{$agl-layout-mobile} {
+                margin-right: 8px;
+            }
+        }
+
+        &-selected {
+            background-color: $brand-sky;
+            color: $brand-white;
+        }
+
+        // Note : option button sizes are not centered because they're different sizes - hence fized size
+        &-yes-img-size {
+            width: 124px;
+            height: 65px;
+            text-align: center;
+
+            @media #{$agl-layout-mobile} {
+                width: 115px;
+            }
+        }
+
+        &-text-pos {
+            height: initial;
+            padding-top: 19px;
+        }
+
+        &-text {
+            text-transform: none;
+            font-family: $secondary-font-stack;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 18px;
+            text-align: center;
+        }
+    }
+
+    /* Information Message Section */
+    .info-message {
+        &-padding {
+            padding-top: 20px;
+        }
+
+        &-font-details {
+            font-size: 14px;
+            letter-spacing: normal;
+            font-weight: normal;
+            color: $brand-grey-g1;
+            font-family: $secondary-font-stack;
+            line-height: 20px;
+            text-align: center;
+        }
+    }
+
+}

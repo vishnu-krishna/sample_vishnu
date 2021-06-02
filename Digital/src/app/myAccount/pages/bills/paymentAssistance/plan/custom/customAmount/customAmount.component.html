@@ -1,0 +1,22 @@
+<div *ngIf="customAmountModel" class="payment-assistance-plan-custom-amount">
+    <div class="payment-assistance-plan-custom-amount__copy">Enter {{customAmountModel.frequency | lowercase}} instalment amount</div>
+    <div class="payment-assistance-plan-custom-amount__amount">
+        <form [formGroup]="customPageForm" novalidate autocomplete="off">
+            <div class="payment-assistance-plan-custom-amount__amount-control" [ngClass]="{ 'payment-assistance-plan-custom-amount__amount-control--dollarSign': amountHasDollarSign }">
+                <img src="svg/button-spinner-disabled.svg" alt="loading" [ngClass]="{'hidden': !customAmountModel.disabled }">
+                <input type="tel" #amount class="payment-assistance-plan-custom-amount__amount-input"
+                                [(ngModel)]="customAmountModel.amountInput"
+                                [ngClass]="{ 'payment-assistance-plan-custom-amount__amount-input--dollarSign': amountHasDollarSign, 'payment-assistance-plan-custom-amount__amount-error': amountErrorMessage }"
+                                (focus)="onAmountFocus()"
+                                (blur)="onAmountBlur()"
+                                (keyup.enter)="onKeyUpEnter()"
+                                [attr.disabled]="customAmountModel.disabled ? true : undefined"
+                                [placeholder]="amountHasDollarSign ? '' : customAmountModel.placeholder"
+                                formControlName="amount"/>
+            </div>
+            <span *ngIf="amountErrorMessage" class="payment-assistance-plan-custom-amount__amount--error-message">
+                {{amountErrorMessage}}
+            </span>
+        </form>
+    </div>
+</div>

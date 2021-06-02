@@ -1,0 +1,30 @@
+$displayStack: 'Titillium Web',
+sans-serif;
+$headerStack: 'Titillium Web',
+sans-serif;
+$bodyStack: 'Open Sans',
+sans-serif;
+$fw-ultra-light: 100;
+$fw-light: 200;
+$fw-book: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semi-bold: 600;
+$fw-bold: 700;
+$fw-black: 800;
+@import 'typography/display';
+@import 'typography/headings';
+@import 'typography/body';
+@import 'typography/links';
+@import 'typography/lists';
+@import 'typography/blockquote';
+@import 'typography/buttons';
+@import 'typography/textCTA';
+
+.text--blue {
+    color: $col-ocean;
+}
+
+.rich-text-output {
+    @include vertical-rhythm;
+}

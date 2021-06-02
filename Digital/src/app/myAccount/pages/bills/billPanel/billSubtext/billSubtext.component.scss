@@ -1,0 +1,251 @@
+@import '../../../../../shared/style/variables';
+
+// Bill panel right text
+.bill-panel-text {
+    font-family: $secondary-font-stack;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 18px;
+    color: $brand-grey-g2;
+
+    &__warning-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 20px;
+    }
+
+    &__direct-debit-icon {
+        margin-bottom: 20px;
+        height: 30px;
+        width: 45px;
+    }
+
+    &__pay-icon {
+        height: 47px;
+        width: 38px;
+        margin-bottom: 20px;
+    }
+
+    &__tick-box-icon {
+        height: 34px;
+        width: 36px;
+        margin-bottom: 20px;
+    }
+
+    &__payment-overdue-text {
+        color: $brand-grey-g1;
+        font-family: $secondary-font-stack;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: normal;
+        padding-top: 15px;
+
+        &-margin {
+            margin-top: -7px;
+        }
+
+        &--red {
+            color: $brand-fire;
+        }
+    }
+
+    &__pay-on-time-discount {
+        margin-top: 4px;
+        margin-bottom: 15px;
+        color: $brand-grey-g1;
+        font-family: $secondary-font-stack;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 17px;
+
+        &-icon {
+            margin-top: -2px;
+            height: 18px;
+            width: 18px;
+        }
+    }
+
+    &__DD,
+    &__BS,
+    &--usage {
+        a {
+            font-size: 14px;
+            font-weight: bold;
+            color: $brand-sky;
+            letter-spacing: normal;
+            transition: color .3s ease;
+
+            &:hover {
+                color: $brand-grey-g1;
+            }
+
+            &.sm-text {
+                font-size: 14px;
+                line-height: 31px;
+                letter-spacing: normal;
+            }
+        }
+
+        &__BS {
+            cursor: pointer;
+        }
+    }
+
+    &__pending-payment {
+        font-size: 12px;
+        color: $brand-grey-g2;
+        font-weight: normal;
+        letter-spacing: 0px;
+        padding-top: 0px;
+        line-height: 1.25em;
+    }
+
+    &__button-container {
+        padding-top: 20px;
+
+        .dls-button {
+            width: 100%;
+            height: 50px;
+            @media #{$agl-layout-mobile} {
+                width: 100%;
+            }
+        }
+    }
+
+    &__heading-text {
+        font-family: $primary-font-stack;
+        font-size: 30px;
+        font-weight: bold;
+        color: $brand-grey-g1;
+        line-height: 33px;
+        padding-top: 10px;
+        padding-bottom: 8px;
+        max-width: 300px;
+
+        &-no-wrap {
+            white-space: nowrap;
+        }
+
+        &-bill-smoothing {
+            max-width: none;
+        }
+
+        @media #{$agl-layout-mobile} {
+            max-width: 100%;
+            line-height: 26px;
+            font-size: 24px;
+        }
+    }
+
+    &__subheading-text,
+    &__subheading-additional-text {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 24px;
+        max-width: 350px;
+        color: $brand-grey-g1;
+
+        &--normal {
+            font-weight: normal;
+        }
+
+        @media #{$agl-layout-mobile} {
+            max-width: 100%;
+            line-height: 24px;
+            display: inline-block;
+        }
+    }
+
+    &__subheading-text {
+        padding-bottom: 15px;
+
+        &-dash {
+            padding-bottom: 0;
+        }
+
+        &-padding {
+            padding-top: 7px;
+        }
+
+        &-date {
+            white-space: nowrap;
+        }
+    }
+
+    &__subheading-additional-text {
+        font-weight: normal;
+        padding-top: 7px;
+        padding-bottom: 8px;
+
+        &-date {
+            white-space: nowrap;
+        }
+    }
+
+    &__subheading-text-bs {
+        padding-bottom: 15px;
+        padding-top: 7px;
+        max-width: 350px;
+        font-family: $secondary-font-stack;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 22px;
+        color: $brand-grey-g1;
+        @media #{$agl-layout-mobile} {
+            max-width: 100%;
+            line-height: 20px;
+            padding-top: 15px;
+        }
+    }
+
+    &__text-line-one,
+    &__text-line-two {
+        text-transform: uppercase;
+    }
+
+    &__red {
+        color: $brand-fire;
+    }
+
+    .paymentAmount {
+        font-family: $primary-font-stack;
+        font-size: 26px;
+        font-weight: bold;
+        line-height: 28px;
+        letter-spacing: 1px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        max-width: 265px;
+        padding-bottom: 0px;
+        @media #{$agl-layout-mobile} {
+            padding-top: 0;
+            line-height: 26px;
+            font-size: 24px;
+        }
+    }
+
+    .payg {
+        padding-top: 0px;
+        text-transform: lowercase;
+    }
+
+    .no-pad-content {
+        @media #{$agl-layout-mobile} {
+            padding-left: 0px;
+        }
+    }
+
+    &__pdf {
+        &-open {
+            line-height: 24px;
+            color: $brand-sky;
+            cursor: pointer;
+            transition: color .3s ease;
+
+            &:hover {
+                color: $brand-grey-g1;
+                text-decoration: underline;
+            }
+        }
+    }
+}

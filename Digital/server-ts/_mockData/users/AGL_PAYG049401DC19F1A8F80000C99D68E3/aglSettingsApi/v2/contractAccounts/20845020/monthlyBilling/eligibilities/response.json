@@ -1,0 +1,35 @@
+[
+    {
+        "contractNumber": 9002002507,
+        "setup": {
+            "isEligible": false,
+            "reason": {
+                "internal": {
+                    "id": "ZIBI105",
+                    "number": "093",
+                    "message": "Change in date is not allowed until product start date has been reached"
+                }
+            }
+        },
+        "cancellation": {
+            "isEligible": false,
+            "reason": {
+                "internal": {
+                    "id": "ZIBI105",
+                    "number": "086",
+                    "message": "Unable to Terminate; Flexible Billing is Mandatory for PAYG customers"
+                }
+            }
+
+        }
+    },
+    {
+        "contractNumber": 9401786528,
+        "setup": {
+            "isEligible": true
+        },
+        "cancellation": {
+            "isEligible": true
+        }
+    }
+]

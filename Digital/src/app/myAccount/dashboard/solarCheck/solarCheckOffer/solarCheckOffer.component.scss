@@ -1,0 +1,76 @@
+@import '../../../../shared/style/variables';
+@import '../../../../shared/style/mixins';
+
+.solar-check-offer {
+    background-color: $brand-bright;
+    background-clip: content-box;
+    @media #{$agl-layout-mobile} {
+        background-clip: border-box;
+    }
+    @media #{$agl-layout-tablet}
+    {
+        height: 250px;
+        background-clip: border-box;
+
+        .container {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    }
+
+    >div {
+        padding-top: 39px;
+        @media #{$agl-layout-mobile} {
+            padding-top: 18px;
+        }
+    }
+
+    .text {
+        padding-top: 39px;
+    }
+
+    .learn-more {
+        padding-top: 15px;
+        padding-bottom: 39px;
+        @media #{$agl-layout-mobile} {
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 18px;
+        }
+
+        button {
+            background-color: $brand-white;
+            box-shadow: $agl-button-shadow;
+            width: 260px;
+            height: 50px;
+            @media #{$agl-layout-mobile} {
+                width: 100%;
+            }
+        }
+    }
+
+    .close-icon {
+        cursor: pointer;
+        float: right;
+        @media #{$agl-layout-mobile} {
+            padding-left: 0px;
+            float: left;
+            margin-left: -7px;
+        }
+
+        mat-icon {
+            color: $brand-blue;
+            font-weight: 900;
+            font-feature-settings: 'liga';
+        }
+    }
+
+    .home-icon {
+        padding-top: 25px;
+
+        .mat-icon {
+            height: 91px;
+            width: 125px;
+        }
+    }
+}

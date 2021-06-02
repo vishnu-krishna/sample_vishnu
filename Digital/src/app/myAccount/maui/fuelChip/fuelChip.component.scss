@@ -1,0 +1,298 @@
+@import '../maui';
+
+@include maui-component-reset();
+
+$ineligible-color: rgba(51, 51, 51, 0.5);
+$ineligible-account-color: rgba(51, 51, 51, 0.5);
+$font-size-min: 1px;
+$box-shadow-transition: box-shadow 0.3s;
+
+$svgIconFuelHeight: 30px;
+$svgIconFuelWidth: 20px;
+
+$svgIconChevronHeight: 23px;
+$svgIconChevronWidth: 12px;
+$svgIconChevronMargin: 0;
+
+/* maui-table */
+.maui-table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+
+    &-row {
+        display: table-row;
+    }
+
+    &-cell {
+        display: table-cell;
+    }
+
+    &-body {
+        display: table-row-group;
+    }
+}
+/* end maui-table */
+
+/* fuel chip main*/
+.maui-fuel-chip {
+    font-size: $body-font-size-small;
+    font-family: $body-font-stack;
+    background-color: $neutral-08;
+    padding: 20px 15px 15px 15px;
+    color: $neutral-01;
+
+    &--pre-setup {
+        transition: $box-shadow-transition;
+
+        &:hover {
+            box-shadow: $shadow-01-hover;
+            cursor: pointer;
+        }
+    }
+
+    &--display {
+        font-size: $body-font-size-small;
+        font-family: $body-font-stack;
+        background-color: $neutral-08;
+        padding: 0 0 30px 0;
+        color: $neutral-01;
+    }
+}
+
+.maui-fuel-chip__border-shadow {
+    box-shadow: $shadow-01;
+    transition: $box-shadow-transition;
+}
+
+.maui-fuel-chip__border-shadow--hover {
+    box-shadow: $shadow-01-hover;
+    transition: $box-shadow-transition;
+}
+
+.maui-fuel-chip__electricity-icon {
+    vertical-align: top;
+    width: 20px;
+}
+
+.maui-fuel-chip__gas-icon {
+    vertical-align: top;
+    width: 20px;
+}
+
+.maui-fuel-icon-electricity {
+    @include maui-icon('svg/maui/fuelChip/icon_elec.svg', $svgIconFuelWidth, $svgIconFuelHeight);
+    display: inline-block;
+    background-size: contain;
+}
+
+.maui-fuel-icon-gas {
+    @include maui-icon( 'svg/maui/fuelChip/icon_gas.svg', $svgIconFuelWidth, $svgIconFuelHeight);
+    display: inline-block;
+    background-size: contain;
+}
+
+.maui-fuel-selector--regular {
+    @include maui-icon('svg/maui/fuelChip/icon_chevron_regular.svg', $svgIconChevronWidth, $svgIconChevronHeight);
+    display: inline-block;
+}
+
+.maui-fuel-selector--hover {
+    @include maui-icon('svg/maui/fuelChip/icon_chevron_hover.svg', $svgIconChevronWidth, $svgIconChevronHeight);
+    display: inline-block;
+}
+
+.maui-fuel-selector-offset-without-address {
+    padding-bottom: 7px;
+}
+
+.maui-fuel-selector-offset-with-address {
+    padding-bottom: 15px;
+}
+
+.maui-fuel-display-without-address-offset {
+    padding-bottom: 5px;
+}
+
+.maui-fuel-chip__header-selector-container {
+    text-align: right;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.maui-fuel-chip__header-selector {
+    vertical-align: middle;
+    height: 24px;
+    margin-bottom: 0;
+}
+
+.maui-fuel-chip-title-offset {
+    padding-bottom: 3px;
+}
+
+.maui-fuel-chip__title {
+    font-family: $display-font-stack;
+    font-size: $display-font-size-delta;
+    font-weight: bold;
+    margin-left: -7px;
+    line-height: $display-font-size-delta;
+    padding-bottom: 9px;
+}
+/* end fuel chip main*/
+
+/*account details */
+.maui-fuel-chip__account-details {
+    margin-left: -20px;
+    padding: 2px 0 12px 0;
+}
+
+.maui-fuel-chip__number {
+    font-size: $body-font-size-smallest;
+    color: $neutral-02;
+    font-weight: bold;
+    padding-top: 1px;
+    white-space: nowrap;
+}
+
+.maui-fuel-chip__address {
+    padding-top: 1px;
+    font-size: $body-font-size-smallest;
+}
+
+/*end account details */
+
+/*Status messages*/
+.maui-fuel-chip__status-divider {
+    border-bottom: 1px solid $neutral-04;
+    font-size: $font-size-min;
+}
+
+.maui-fuel-chip__primary-status-with-address {
+    font-size: $body-font-size-big;
+    margin-left: -7px;
+}
+
+.maui-fuel-chip__primary-status-without-address {
+    font-size: $body-font-size-big;
+    padding-left: 10px;
+    width: 100%;
+}
+
+.maui-fuel-chip__primary-message-offset {
+    padding-top: 10px;
+ }
+
+.maui-fuel-chip__primary-status-link-with-address {
+    padding-top: 7px;
+    color: $primary-dark;
+    margin-left: 4px;
+    padding-right: 0;
+    text-align: right;
+    font-weight: bold;
+
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+        color: $neutral-01;
+    }
+}
+
+.maui-fuel-chip__primary-status-link-without-address {
+    padding-top: 7px;
+    color: $primary-dark;
+    text-align: right;
+    font-weight: bold;
+
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+        color: $neutral-01;
+    }
+}
+
+.maui-fuel-chip__secondary-status-message-with-address {
+    font-size: $body-font-size-small;
+    font-weight: bold;
+    padding-top: 3px;
+    margin-left: -5px;
+}
+
+.maui-fuel-chip__secondary-status-message-without-address {
+    font-size: $body-font-size-small;
+    font-weight: bold;
+    padding-top: 3px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.maui-fuel-chip__last-secondary-status-message {
+    padding-bottom: 0;
+ }
+
+.maui-fuel-chip__secondary-status--warning {
+    color: $secondary-warning-dark;
+}
+
+.maui-fuel-chip__secondary-status--success {
+    color: $secondary-success-dark;
+}
+
+.maui-fuel-chip__secondary-status--ineligible {
+    opacity:  0.5;
+}
+
+/*end Status messages*/
+
+/*tertiary Message  */
+.maui-fuel-chip__ineligible {
+    color: $ineligible-color;
+    background-color: $neutral-08;
+}
+
+.maui-fuel-chip__number--ineligible {
+    opacity:  0.5;
+}
+
+.maui-fuel-chip__ineligible-icon  {
+    opacity:  0.5;
+}
+
+.maui-fuel-chip__message-divider {
+    border-top: 1px solid $neutral-04;
+    margin-top: 5px;
+}
+
+.maui-fuel-chip__tertiary-message-spacer {
+    line-height: 15px;
+}
+
+.maui-fuel-chip__tertiary-message-border {
+    border-top: 1px solid $neutral-04;
+    line-height: 15px;
+}
+
+.maui-fuel-chip__no-messages-offset {
+    padding-top: 15px;
+}
+
+.maui-fuel-chip__tertiary-message-details-container {
+    font-size: $body-font-size-normal;
+    padding-left: 9px;
+    padding-bottom: 1px;
+    margin-left: -7px;
+}
+
+.maui-fuel-chip__cancel-details-container {
+    font-weight: bold;
+    color: $primary-dark;
+    padding-left: 9px;
+    margin-left: -7px;
+    text-transform: uppercase;
+
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+        color: $neutral-01;
+    }
+}
+/*end tertiary Message  */

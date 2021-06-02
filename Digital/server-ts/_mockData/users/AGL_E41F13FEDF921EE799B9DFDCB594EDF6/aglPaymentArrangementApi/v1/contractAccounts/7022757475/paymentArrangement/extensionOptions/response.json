@@ -1,0 +1,80 @@
+
+{
+"status": 200,
+"headers": {},
+  "body": {
+    "contractAccountNumber": 7022757475,
+    "extensionOptions": [
+      {
+        "contractNumber": 9401003442,
+        "isEligible": false,
+        "totalDueAmount": 0.0,
+        "dueDateExtensions": [],
+        "error": {
+          "message": "Not eligible for extension: control group",
+          "internalError": {
+            "errorId": "ZISS_OPA",
+            "errorNumber": "030",
+            "description": "Not eligible for extension: control group"
+          }
+        }
+      },
+      {
+        "contractNumber": 9402691887,
+        "isEligible": false,
+        "totalDueAmount": 0.0,
+        "dueDateExtensions": [],
+        "error": {
+          "message": "Not eligible for extension: control group",
+          "internalError": {
+            "errorId": "ZISS_OPA",
+            "errorNumber": "030",
+            "description": "Not eligible for extension: control group"
+          }
+        }
+      },
+      {
+        "contractNumber": 9402832689,
+        "isEligible": false,
+        "totalDueAmount": 0.0,
+        "dueDateExtensions": [],
+        "error": {
+          "message": "Not eligible for extension: control group",
+          "internalError": {
+            "errorId": "ZISS_OPA",
+            "errorNumber": "030",
+            "description": "Not eligible for extension: control group"
+          }
+        }
+      },
+      {
+        "contractNumber": 9402893992,
+        "isEligible": false,
+        "totalDueAmount": 100.94,
+        "dueDateExtensions": [],
+        "error": {
+          "message": "Not eligible for extension: control group",
+          "internalError": {
+            "errorId": "ZISS_OPA",
+            "errorNumber": "030",
+            "description": "Not eligible for extension: control group"
+          }
+        }
+      },
+      {
+        "contractNumber": 9403010402,
+        "isEligible": false,
+        "totalDueAmount": 63.1,
+        "dueDateExtensions": [],
+        "error": {
+          "message": "Not eligible for extension: control group",
+          "internalError": {
+            "errorId": "ZISS_OPA",
+            "errorNumber": "030",
+            "description": "Not eligible for extension: control group"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+@import '../../shared/style/variables';
+@import '../../shared/style/mixins';
+
+footer {
+    background-color: $brand-sky;
+    padding: 17px 0px;
+    font-family: $secondary-font-stack;
+    color: $brand-white;
+    font-size: 12px;
+    width: 100%;
+    z-index: 100;
+    min-height: 50px;
+
+    &.agl-footer {
+        margin-top: 180px;
+
+        .container {
+            a {
+                color: $brand-white;
+            }
+
+            span {
+                padding: 0 5px;
+            }
+        }
+    }
+}

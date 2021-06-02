@@ -1,0 +1,19 @@
+{
+    "scenarios": [{
+        "context": {
+            "contractAccountNumber": 7034382924,
+            "deliveryMethod": "Postal"
+        },
+        "outcome": {
+            "status": 500,
+            "body": {
+                "message": "Internal server error",
+                "internalError": {
+                    "errorId": "",
+                    "errorNumber": 0,
+                    "description": ""
+                }
+            }
+        }
+    }]
+}

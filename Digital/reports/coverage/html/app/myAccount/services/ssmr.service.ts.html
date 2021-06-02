@@ -1,0 +1,1703 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\services\ssmr.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/myAccount/services/</a> ssmr.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">14.89% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>39/262</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">8.89% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>16/180</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.17% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/46</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">15.16% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>37/244</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+&nbsp;
+import * as moment from 'moment';
+import { Observable } from 'rxjs/Observable';
+&nbsp;
+import { Location } from '@angular/common';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { Subscription } from 'rxjs/Subscription';
+import { ConfigService } from '../../shared/service/config.service';
+import { ContractDisplayViewModel } from '../model/ssmr/contractDisplayView.model';
+import { ErrorMessageMap } from '../model/ssmr/errorMessageMap.model';
+import { MeterViewModel } from '../model/ssmr/meter.model';
+import { ApiService, SelfServiceMeterReading, SelfServiceMeterReadingResult, SelfServicePhotoReading, SelfServiceReadingResponse } from './../../shared/service/api.service';
+import { IAccountServiceMA } from './account.service';
+import { ISsmrService } from './contract/issmr.service';
+&nbsp;
+declare let leanengage: any;
+&nbsp;
+@Injectable()
+export class SsmrService implements ISsmrService {
+    public contractsSubject: ReplaySubject&lt;ContractDisplayViewModel[]&gt;;
+    public <span class="cstat-no" title="statement not covered" >showSSMR: boolean = false; </span>// Show SSMR modal.
+    public currentStep: SsmrStep; // Current step. One of: 'Safety' | 'ChooseService' | 'MeterEntry' | 'Submitting' | 'Oops' | 'Adjustment'.
+    public transition1: boolean; // For SCSS Modal slide in.
+    public <span class="cstat-no" title="statement not covered" >showHeader: boolean = true; </span>// Don't show fixed app header when SSMR Modal is active.
+    public <span class="cstat-no" title="statement not covered" >showFooter: boolean = true; </span>// Don't show fixed app footer when SSMR Modal is active.
+    public selectedContract: ContractDisplayViewModel; // This contract's meters are being read and submitted.
+    public selfServiceMeterReadings: SelfServiceMeterReading[]; // Meter reading data sent to API.
+    public selfServiceReadingResponse: SelfServiceReadingResponse; // Meter reading data received from API.
+    public lastSubmittedReadings: SelfServiceMeterReading[]; // Meter reading data that is submitted last time.
+    public selfServicePhotoReadings: SelfServicePhotoReading[];
+    public screenCode: SsmrScreenCode; // This code comes from API and drives the state of the SSMR app.
+    public errorNumber: string; // This code comes from API and drives the state of the SSMR app.
+    public hasElecBasicMeter: boolean; // This show the value where an account have electricity with basic meter
+    public hasGasBasicMeter: boolean; // This show the value where an account have gas with basic meter
+    public meterEntryIndex: number;
+    public registerEntryIndex: number;
+    public badMeterReads: SelfServiceMeterReadingResult[];
+    public <span class="cstat-no" title="statement not covered" >submissionType: SubmissionType = 'MeterRead';</span>
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >BACK_BUTTON_DISABLED_STEPS: SsmrStep[] = ['Oops', 'Adjustment', 'Chat'];</span>
+    public <span class="cstat-no" title="statement not covered" >ELIGIBILITY_ERROR_MESSAGES: ErrorMessageMap[] = [</span>
+        {screenCode: 'SSMR_EX1', errorNumber: '025', message: 'Two failed attempts. Try again tomorrow.'},
+        {screenCode: 'SSMR_EX1', errorNumber: '064', message: 'Service ineligible.'},
+        {screenCode: 'SSMR_EX3', errorNumber: '', message: 'Processing error. We will contact you to resolve this.'},
+        {screenCode: 'SSMR_EX4', errorNumber: '065', message: 'Read submitted today.'},
+        {screenCode: 'SSMR_EX5', errorNumber: '003', message: 'Service ineligible.'},
+        {screenCode: 'SSMR_EX5', errorNumber: '014', message: 'Service ineligible.'},
+        {screenCode: 'SSMR_EX5', errorNumber: '018', message: 'Service ineligible due to pending move.'},
+        {screenCode: 'SSMR_EX5', errorNumber: '069', message: 'Service ineligible.'},
+        {screenCode: 'SSMR_EX5', errorNumber: '070', message: 'Service disconnected.'},
+        {screenCode: 'SSMR_EX5', errorNumber: '071', message: 'Smart meter read taken automatically.'}
+    ];
+    public <span class="cstat-no" title="statement not covered" >METER_READ_ERROR_MESSAGES: ErrorMessageMap[] = [</span>
+        {
+            screenCode: 'SSMR_EX3',
+            errorNumber: '',
+            message: 'Sorry, there was an error processing your request.&lt;br/&gt;&lt;br/&gt;One of our customer service agents will contact you directly&lt;br/&gt;to resolve this.'
+        },
+        {
+            screenCode: 'SSMR_MRR',
+            errorNumber: '009',
+            message: 'Your read doesn’t look quite right and is lower than expected.&lt;br/&gt;&lt;br/&gt;Please try again.'
+        },
+        {
+            screenCode: 'SSMR_MRR',
+            errorNumber: '010',
+            message: 'Your read doesn’t look quite right and cannot be accepted.&lt;br/&gt;&lt;br/&gt;Please try again.'
+        },
+        {
+            screenCode: 'SSMR_MRR',
+            errorNumber: '011',
+            message: 'Your read doesn’t look quite right and is lower than expected.&lt;br/&gt;&lt;br/&gt;Please try again.'
+        },
+        {
+            screenCode: 'SSMR_MRR',
+            errorNumber: '012',
+            message: 'Your read doesn’t look quite right and cannot be accepted.&lt;br/&gt;&lt;br/&gt;Please try again.'
+        },
+        {
+            screenCode: 'SSMR_MRR',
+            errorNumber: '013',
+            message: 'Your read doesn’t look quite right and is higher than expected.&lt;br/&gt;&lt;br/&gt;Please try again.'
+        },
+        {
+            screenCode: 'SSMR_MRR',
+            errorNumber: '014',
+            message: 'Your read doesn’t look quite right and is lower than expected.&lt;br/&gt;&lt;br/&gt;Please try again.'
+        },
+        {
+            screenCode: 'SSMR_MRR',
+            errorNumber: '033',
+            message: 'Sorry, there was an error processing your request.&lt;br/&gt;&lt;br/&gt;One of our customer service agents will contact you directly &lt;br/&gt; to resolve this.'
+        },
+        {
+            screenCode: 'SSMR_MRR',
+            errorNumber: '064',
+            message: 'Sorry, there was an error processing your request.&lt;br/&gt;&lt;br/&gt;One of our customer service agents will contact you directly &lt;br/&gt; to resolve this.'
+        },
+        {
+            screenCode: 'SSMR_MRR',
+            errorNumber: '068',
+            message: `Your read doesn’t look quite right and is lower than expected.&lt;br/&gt;&lt;br/&gt;Please try again.`
+        },
+        {
+            screenCode: 'SSMR_MRR',
+            errorNumber: '095',
+            message: `Your read doesn’t look quite right. It might be too high or too low.&lt;br/&gt;&lt;br/&gt;Please try again.`
+        },
+    ];
+&nbsp;
+    private locationSubscription: Subscription;
+&nbsp;
+    constructor(private <span class="cstat-no" title="statement not covered" >apiService: ApiService,</span>
+                private <span class="cstat-no" title="statement not covered" >accountService: IAccountServiceMA<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+                private <span class="cstat-no" title="statement not covered" >configService: ConfigService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+                private <span class="cstat-no" title="statement not covered" >domSanitizer: DomSanitizer<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+                private <span class="cstat-no" title="statement not covered" >location: Location<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >)</span> {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.contractsSubject = new ReplaySubject&lt;ContractDisplayViewModel[]&gt;(1);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public clearReadings() {</span>
+<span class="cstat-no" title="statement not covered" >        this.meterEntryIndex = 0;</span>
+<span class="cstat-no" title="statement not covered" >        this.registerEntryIndex = 0;</span>
+<span class="cstat-no" title="statement not covered" >        this.selfServiceMeterReadings = [];</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public isBackButtonAvailable() { // No back button for initial page (Safety).</span>
+<span class="cstat-no" title="statement not covered" >        return this.BACK_BUTTON_DISABLED_STEPS.indexOf(this.currentStep) &lt; 0;</span>
+    }
+&nbsp;
+    public isContractMultiRegister(contract: ContractDisplayViewModel<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        if (contract.ssmrModel.meters &amp;&amp; contract.ssmrModel.meters.length) {</span>
+<span class="cstat-no" title="statement not covered" >            for (let meter<span class="cstat-no" title="statement not covered" ></span> of contract.ssmrModel.meters) {</span>
+<span class="cstat-no" title="statement not covered" >                if (meter.registers.length &gt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >                    return true; </span>// More than 1 register
+                }
+            }
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+&nbsp;
+    public isMultiRegister(meter: MeterViewModel<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        return meter &amp;&amp; meter.registers &amp;&amp; meter.registers.length &gt; 1;</span>
+    }
+&nbsp;
+    public isContractMultiMeter(contract: ContractDisplayViewModel<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        if (contract.ssmrModel.hasOwnProperty('meters')) {</span>
+<span class="cstat-no" title="statement not covered" >            return contract.ssmrModel.meters.length &gt; 1;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return false;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public onClickBack() {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.currentStep === 'Safety') {</span>
+<span class="cstat-no" title="statement not covered" >            this.currentStep = 'ChooseService';</span>
+&nbsp;
+        } else <span class="cstat-no" title="statement not covered" >if (this.currentStep === 'MeterEntry') {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.meterEntryIndex &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                if (this.isContractMultiRegister(this.selectedContract)) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (this.registerEntryIndex === 0) {</span>
+<span class="cstat-no" title="statement not covered" >                        this.meterEntryIndex--;</span>
+<span class="cstat-no" title="statement not covered" >                        if (this.selfServiceMeterReadings[this.meterEntryIndex]) {</span>
+<span class="cstat-no" title="statement not covered" >                            this.registerEntryIndex = this.selfServiceMeterReadings[this.meterEntryIndex].registers.length - 1;</span>
+                        }
+                    } else {
+<span class="cstat-no" title="statement not covered" >                        this.registerEntryIndex--;</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    this.reloadMeterEntryPage();</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    this.meterEntryIndex--;</span>
+                }
+            } else <span class="cstat-no" title="statement not covered" >if (this.meterEntryIndex === 0) {</span>
+<span class="cstat-no" title="statement not covered" >                if (this.isContractMultiRegister(this.selectedContract)) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (this.registerEntryIndex === 0) {</span>
+<span class="cstat-no" title="statement not covered" >                        this.currentStep = 'MultiRegisterOnboard';</span>
+                    } else {
+<span class="cstat-no" title="statement not covered" >                        this.registerEntryIndex--;</span>
+<span class="cstat-no" title="statement not covered" >                        this.reloadMeterEntryPage();</span>
+                    }
+                } else <span class="cstat-no" title="statement not covered" >if (this.isContractMultiMeter(this.selectedContract)) {</span>
+<span class="cstat-no" title="statement not covered" >                  this.currentStep = 'MultiMeterIntro';</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                   this.currentStep = 'ChooseService';</span>
+                }
+            }
+&nbsp;
+        } else <span class="cstat-no" title="statement not covered" >if (this.currentStep === 'Submitting') {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.submissionType === 'MeterRead') {</span>
+<span class="cstat-no" title="statement not covered" >                if (this.isContractMultiMeter(this.selectedContract)) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.currentStep = 'Summary';</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    this.currentStep = 'MeterEntry';</span>
+                }
+            } else <span class="cstat-no" title="statement not covered" >if (this.submissionType === 'Photo') {</span>
+<span class="cstat-no" title="statement not covered" >                this.currentStep = 'AttachPhoto';</span>
+            }
+&nbsp;
+        } else <span class="cstat-no" title="statement not covered" >if (this.currentStep === 'MultiMeterIntro') {</span>
+<span class="cstat-no" title="statement not covered" >            this.currentStep = 'ChooseService';</span>
+        } else <span class="cstat-no" title="statement not covered" >if (this.currentStep === 'MultiRegisterOnboard') {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.isContractMultiMeter(this.selectedContract)) {</span>
+<span class="cstat-no" title="statement not covered" >                this.currentStep = 'MultiMeterIntro';</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                this.currentStep = 'ChooseService';</span>
+            }
+        } else <span class="cstat-no" title="statement not covered" >if (this.currentStep === 'Summary') {</span>
+<span class="cstat-no" title="statement not covered" >            this.meterEntryIndex = this.selectedContract.meterCount - 1;</span>
+<span class="cstat-no" title="statement not covered" >            this.registerEntryIndex = this.selectedContract.ssmrModel.meters[this.meterEntryIndex].registers.length - 1;</span>
+<span class="cstat-no" title="statement not covered" >            this.currentStep = 'MeterEntry';</span>
+        } else <span class="cstat-no" title="statement not covered" >if (this.currentStep === 'AttachPhoto') {</span>
+<span class="cstat-no" title="statement not covered" >            this.currentStep = 'PhotoIntro';</span>
+        } else <span class="cstat-no" title="statement not covered" >if (this.currentStep === 'PhotoIntro') {</span>
+<span class="cstat-no" title="statement not covered" >            this.currentStep = 'ChooseService';</span>
+        } else <span class="cstat-no" title="statement not covered" >if (this.currentStep === 'ChooseService') {</span>
+<span class="cstat-no" title="statement not covered" >            this.onClickClose();</span>
+        }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public reloadMeterEntryPage() {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.currentStep = null;</span>
+<span class="cstat-no" title="statement not covered" >        setTimeout(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            this.currentStep = 'MeterEntry';</span>
+        }, 1);
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public showModal() {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.loadEligibility();</span>
+<span class="cstat-no" title="statement not covered" >        this.currentStep = 'ChooseService';</span>
+        // this.currentStep = 'AttachPhoto';
+<span class="cstat-no" title="statement not covered" >        this.showSSMR = true;</span>
+<span class="cstat-no" title="statement not covered" >        this.transition1 = true; </span>// Puts the modal at bottom off screen.
+<span class="cstat-no" title="statement not covered" >        setTimeout(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            this.transition1 = false; </span>// Begins transition to slide modal to the top.
+        }, 50);
+<span class="cstat-no" title="statement not covered" >        setTimeout(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            this.showHeader = false; </span>   // Makes the header and footer disappear less abruptly.
+<span class="cstat-no" title="statement not covered" >            this.showFooter = false;</span>
+        }, 500);
+<span class="cstat-no" title="statement not covered" >        document.body.style.overflow = 'hidden'; </span>// Disable scroll on body behind modal.
+&nbsp;
+        // Support browser back button by pushing an extra url into the browser history
+<span class="cstat-no" title="statement not covered" >        window.history.pushState(window.history.state, window.document.title, window.location.href);</span>
+&nbsp;
+        // Listen for navigation change (if the subscription doesn't already exist)
+<span class="cstat-no" title="statement not covered" >        if (!this.locationSubscription) {</span>
+<span class="cstat-no" title="statement not covered" >            this.locationSubscription = &lt;Subscription&gt; this.location.subscribe(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                this.locationSubscription.unsubscribe();</span>
+<span class="cstat-no" title="statement not covered" >                this.locationSubscription = undefined;</span>
+<span class="cstat-no" title="statement not covered" >                this.onClickClose(true);</span>
+            });
+        }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    public onClickClose(<span class="cstat-no" title="statement not covered" >browserBackButtonClicked: boolean = false<span class="fstat-no" title="function not covered" >)</span> {</span></span>
+&nbsp;
+        // For non browser back closing of the dialog we need to clean up the top level history
+<span class="cstat-no" title="statement not covered" >        if (!browserBackButtonClicked) {</span>
+<span class="cstat-no" title="statement not covered" >            this.location.back();</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        document.body.style.overflow = 'scroll'; </span>// Enable scroll on body behind modal.
+<span class="cstat-no" title="statement not covered" >        this.transition1 = true; </span>   // Begins transition to slide modal to the bottom.
+<span class="cstat-no" title="statement not covered" >        this.showHeader = true;</span>
+<span class="cstat-no" title="statement not covered" >        this.showFooter = true;</span>
+<span class="cstat-no" title="statement not covered" >        setTimeout(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (this.currentStep === 'Adjustment') {</span>
+<span class="cstat-no" title="statement not covered" >                this.showFeedbackSurvey();</span>
+            }
+<span class="cstat-no" title="statement not covered" >            this.showSSMR = false; </span> // Hide the modal after it transitions off the bottom of screen.
+        }, 500);
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public showFeedbackSurvey() {</span>
+&nbsp;
+        let leanAppId = <span class="cstat-no" title="statement not covered" >this.configService.current.leanEngageAppId;</span>
+        let userId = <span class="cstat-no" title="statement not covered" >Array.apply(0, Array(15)).map(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            return ((charset<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                return charset.charAt(Math.floor(Math.random() * charset.length));</span>
+            })('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789');
+        }).join('');
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        leanengage('start', {user_id: userId, name: 'anonymous', app_id: leanAppId});</span>
+<span class="cstat-no" title="statement not covered" >        leanengage('triggerSurvey', 'my-account-payment-survey-clone-b46a2b14-c808-4bdd-b824-eab69e44d8c8');</span>
+    }
+&nbsp;
+    public goToStep(step: SsmrStep<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        if (step) {</span>
+<span class="cstat-no" title="statement not covered" >            this.currentStep = step;</span>
+        }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public loadEligibility() {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.screenCode = null;</span>
+<span class="cstat-no" title="statement not covered" >        this.accountService.getAccounts().subscribe(</span>
+            (accounts<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+&nbsp;
+                let contracts: ContractDisplayViewModel[] = <span class="cstat-no" title="statement not covered" >[];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if (accounts &amp;&amp; accounts.length &gt; 0) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    for (let account<span class="cstat-no" title="statement not covered" ></span> of accounts) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                        if (account.contracts &amp;&amp; account.contracts.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                            for (let contract<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span> of account.contracts) {</span></span>
+                                let contractDisplay = <span class="cstat-no" title="statement not covered" >new ContractDisplayViewModel(contract);</span>
+                                // Hide the restricted accounts to be shown in meter read screen
+<span class="cstat-no" title="statement not covered" >                                if (!contract.isRestricted) {</span>
+<span class="cstat-no" title="statement not covered" >                                    this.apiService.getMetersForContract(contract.contractNumber).subscribe(</span>
+                                        (result<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                                            if (result) {</span>
+<span class="cstat-no" title="statement not covered" >                                                contractDisplay.ssmrModel = result;</span>
+<span class="cstat-no" title="statement not covered" >                                                contractDisplay.isEligible = this.isEligible(contractDisplay);</span>
+<span class="cstat-no" title="statement not covered" >                                                contractDisplay.showWebChatLink = this.showWebChat(contractDisplay);</span>
+<span class="cstat-no" title="statement not covered" >                                                contractDisplay.suggestPhotoUpload = this.suggestPhotoUpload(contractDisplay);</span>
+<span class="cstat-no" title="statement not covered" >                                                contractDisplay.eligibilityMessage = this.getEligibilityMessage(contractDisplay);</span>
+<span class="cstat-no" title="statement not covered" >                                                contractDisplay.lastReadDate = this.getLastReadDate(contractDisplay);</span>
+<span class="cstat-no" title="statement not covered" >                                                contractDisplay.meterCount = this.getMeterCount(contractDisplay);</span>
+                                            }
+<span class="cstat-no" title="statement not covered" >                                            contracts.push(contractDisplay);</span>
+                                        },
+                                        (error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                                            contractDisplay.isEligible = this.isEligible(contractDisplay);</span>
+<span class="cstat-no" title="statement not covered" >                                            contractDisplay.showWebChatLink = this.showWebChat(contractDisplay);</span>
+<span class="cstat-no" title="statement not covered" >                                            contractDisplay.suggestPhotoUpload = this.suggestPhotoUpload(contractDisplay);</span>
+<span class="cstat-no" title="statement not covered" >                                            contractDisplay.eligibilityMessage = this.getEligibilityMessage(contractDisplay);</span>
+<span class="cstat-no" title="statement not covered" >                                            contracts.push(contractDisplay);</span>
+                                        }
+                                    );
+                                }
+                            }
+                        }
+                    }
+                }
+<span class="cstat-no" title="statement not covered" >                this.contractsSubject.next(contracts);</span>
+            }
+        );
+    }
+&nbsp;
+    public getLastReadDate(contract: ContractDisplayViewModel<span class="fstat-no" title="function not covered" >): string {</span>
+        let now = <span class="cstat-no" title="statement not covered" >moment().startOf('day');</span>
+        let lastReadDate = <span class="cstat-no" title="statement not covered" >null;</span>
+        let metercount: number = <span class="cstat-no" title="statement not covered" >0;</span>
+<span class="cstat-no" title="statement not covered" >        if (contract.hasOwnProperty('ssmrModel') &amp;&amp; contract.ssmrModel.hasOwnProperty('meters') &amp;&amp; contract.ssmrModel.meters.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            for (let meter<span class="cstat-no" title="statement not covered" ></span> of contract.ssmrModel.meters) {</span>
+<span class="cstat-no" title="statement not covered" >                if (meter.hasOwnProperty('registers') &amp;&amp; meter.registers.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                    for (let register<span class="cstat-no" title="statement not covered" ></span> of meter.registers) {</span>
+<span class="cstat-no" title="statement not covered" >                        if (register.hasOwnProperty('lastReadDate')) {</span>
+<span class="cstat-no" title="statement not covered" >                            if (lastReadDate === null) {</span>
+<span class="cstat-no" title="statement not covered" >                                lastReadDate = moment(register.lastReadDate);</span>
+                            } else <span class="cstat-no" title="statement not covered" >if (now.diff(register.lastReadDate) &lt; now.diff(lastReadDate)) {</span>
+<span class="cstat-no" title="statement not covered" >                                lastReadDate = moment(register.lastReadDate);</span>
+                            }
+                        }
+                    }
+                }
+            }
+<span class="cstat-no" title="statement not covered" >            if (lastReadDate) {</span>
+<span class="cstat-no" title="statement not covered" >                return moment(lastReadDate).format('ddd DD MMM YYYY').toString();</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                return 'None';</span>
+            }
+        }
+    }
+&nbsp;
+    public getMeterCount(contract: ContractDisplayViewModel<span class="fstat-no" title="function not covered" >): number {</span>
+<span class="cstat-no" title="statement not covered" >        if (contract.hasOwnProperty('ssmrModel') &amp;&amp; contract.ssmrModel.hasOwnProperty('meters')) {</span>
+<span class="cstat-no" title="statement not covered" >            return contract.ssmrModel.meters.length;</span>
+        }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public checkForBasicMeterByFuelType() {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.accountService.getAccounts().subscribe(</span>
+            (accounts<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                if (accounts &amp;&amp; accounts.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                    for (let account<span class="cstat-no" title="statement not covered" ></span> of accounts) {</span>
+<span class="cstat-no" title="statement not covered" >                        if (account.contracts &amp;&amp; account.contracts.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                            for (let contract<span class="cstat-no" title="statement not covered" ></span> of account.contracts) {</span>
+<span class="cstat-no" title="statement not covered" >                                if (contract.isElectricity &amp;&amp; !contract.isSmartMeter) {</span>
+<span class="cstat-no" title="statement not covered" >                                    this.hasElecBasicMeter = true;</span>
+                                } else <span class="cstat-no" title="statement not covered" >if (contract.isGas &amp;&amp; !contract.isSmartMeter) {</span>
+<span class="cstat-no" title="statement not covered" >                                    this.hasGasBasicMeter = true;</span>
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        );
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public getEligibleContracts(): Observable&lt;ContractDisplayViewModel[]&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this.contractsSubject.asObservable();</span>
+    }
+&nbsp;
+    public showWebChat(contract: ContractDisplayViewModel<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.isContractMultiRegister(contract) &amp;&amp; this.hasPhotoUploadError(contract);</span>
+    }
+&nbsp;
+    public suggestPhotoUpload(contract: ContractDisplayViewModel<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return !this.isContractMultiRegister(contract) &amp;&amp; this.hasPhotoUploadError(contract);</span>
+    }
+&nbsp;
+    public hasPhotoUploadError(contract: ContractDisplayViewModel<span class="fstat-no" title="function not covered" >): boolean {</span>
+        const screenCode: SsmrScreenCode = <span class="cstat-no" title="statement not covered" >contract.ssmrModel.screenCode;</span>
+        const errorValue = <span class="cstat-no" title="statement not covered" >this.getErrorValue(contract);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return screenCode === 'SSMR_EX1' &amp;&amp; errorValue</span>
+            &amp;&amp; errorValue.errorNumber === '025';
+    }
+&nbsp;
+    public isEligible(contract: ContractDisplayViewModel<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        if (contract &amp;&amp; contract.hasOwnProperty('ssmrModel') &amp;&amp; contract.ssmrModel.hasOwnProperty('screenCode')) {</span>
+<span class="cstat-no" title="statement not covered" >            return contract.ssmrModel.screenCode === 'SSMR_MRE' &amp;&amp; !contract.isSmartMeter;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return false; </span>// Not eligible.
+    }
+&nbsp;
+    public getErrorValue(contract: ContractDisplayViewModel<span class="fstat-no" title="function not covered" >) {</span>
+        let errorValue;
+        const screenCode: SsmrScreenCode = <span class="cstat-no" title="statement not covered" >contract.ssmrModel.screenCode;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (contract &amp;&amp; contract.ssmrModel &amp;&amp; contract.ssmrModel.screenCode &amp;&amp; contract.ssmrModel.error &amp;&amp; contract.ssmrModel.error.internalError) {</span>
+            const code = <span class="cstat-no" title="statement not covered" >contract.ssmrModel.error.internalError.errorNumber;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            errorValue = this.ELIGIBILITY_ERROR_MESSAGES.find((item<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                return item.screenCode === screenCode &amp;&amp; item.errorNumber === code;</span>
+            });
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return errorValue;</span>
+    }
+&nbsp;
+    public getEligibilityMessage(contract: ContractDisplayViewModel<span class="fstat-no" title="function not covered" >): any {</span>
+        let screenCode: SsmrScreenCode = <span class="cstat-no" title="statement not covered" >contract.ssmrModel.screenCode;</span>
+        let errorValue = <span class="cstat-no" title="statement not covered" >this.getErrorValue(contract);</span>
+&nbsp;
+        // If SSMR_MRE (eligible) screenCode but not single meter with single register.
+<span class="cstat-no" title="statement not covered" >        if (errorValue) {</span>
+<span class="cstat-no" title="statement not covered" >            if (screenCode === 'SSMR_EX3') {</span>
+<span class="cstat-no" title="statement not covered" >                this.screenCode = 'SSMR_EX3';</span>
+<span class="cstat-no" title="statement not covered" >                errorValue = this.ELIGIBILITY_ERROR_MESSAGES.find((item<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return item.screenCode === screenCode;</span>
+                });
+<span class="cstat-no" title="statement not covered" >                return this.domSanitizer.bypassSecurityTrustHtml(errorValue.message);</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                return this.domSanitizer.bypassSecurityTrustHtml(errorValue.message);</span>
+            }
+        }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    public postMetersForContract(contractNumber: string, data: SelfServiceMeterReading[]<span class="fstat-no" title="function not covered" >): Observable&lt;SelfServiceReadingResponse&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        return this.apiService.postMetersForContract(contractNumber, data)</span>
+            .do((result<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.selfServiceReadingResponse = result;</span>
+<span class="cstat-no" title="statement not covered" >                this.screenCode = result.screenCode;</span>
+            });
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    public postPhotosForContract(contractNumber: string, data: any<span class="fstat-no" title="function not covered" >): Observable&lt;SelfServiceReadingResponse&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        return this.apiService.postPhotosForContract(contractNumber, data)</span>
+            .do((result<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+                // this.selfServiceReadingResponse = result;
+<span class="cstat-no" title="statement not covered" >                this.screenCode = result.screenCode;</span>
+            });
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public getMeterReadErrorMessage(): any {</span></span>
+        let errorValue: ErrorMessageMap;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.screenCode &amp;&amp; this.screenCode === 'SSMR_EX3') { // SAP Error</span>
+<span class="cstat-no" title="statement not covered" >            errorValue = this.METER_READ_ERROR_MESSAGES.find((item<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                return item.screenCode === this.screenCode;</span>
+            });
+<span class="cstat-no" title="statement not covered" >            if (errorValue) {</span>
+<span class="cstat-no" title="statement not covered" >                return this.domSanitizer.bypassSecurityTrustHtml(errorValue.message);</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                return ''; </span>// No screenCode or code;
+            }
+        } else { // All Other Errors
+            let res = <span class="cstat-no" title="statement not covered" >this.selfServiceReadingResponse;</span>
+<span class="cstat-no" title="statement not covered" >            if (res &amp;&amp; res.screenCode) {</span>
+                let screenCode = <span class="cstat-no" title="statement not covered" >res.screenCode;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if (screenCode === 'SSMR_EX3') {</span>
+<span class="cstat-no" title="statement not covered" >                    errorValue = this.METER_READ_ERROR_MESSAGES.find((item<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                        return item.screenCode === screenCode;</span>
+                    });
+                } else <span class="cstat-no" title="statement not covered" >if (screenCode === 'SSMR_MRR' &amp;&amp; res.error &amp;&amp; res.error.internalError) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.errorNumber = res.error.internalError.errorNumber;</span>
+<span class="cstat-no" title="statement not covered" >                    errorValue = this.METER_READ_ERROR_MESSAGES.find((item<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                        return item.screenCode === screenCode &amp;&amp; item.errorNumber === this.errorNumber;</span>
+                    });
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if (errorValue) {</span>
+<span class="cstat-no" title="statement not covered" >                    return this.domSanitizer.bypassSecurityTrustHtml(errorValue.message);</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    return ''; </span>// when there is different screen code
+                }
+            } else {
+<span class="cstat-no" title="statement not covered" >                return 'Something went wrong processing your read. &lt;br&gt; Please try again tomorrow.'; </span>// Default message when there is no screen code and error number
+            }
+        }
+    }
+}
+&nbsp;
+export type SsmrStep = 'Safety' |
+    'ChooseService' |
+    'PhotoIntro' |
+    'MeterEntry' |
+    'Submitting' |
+    'Oops' |
+    'Adjustment' |
+    'Chat' |
+    'MultiMeterIntro' |
+    'MultiRegisterOnboard' |
+    'Summary' |
+    'PhotoIntro' |
+    'AttachPhoto';
+&nbsp;
+export type SsmrScreenCode = 'SSMR_ADJ1' |
+    'SSMR_ADJ2' |
+    'SSMR_ADJ3' |
+    'SSMR_EX1' |
+    'SSMR_EX2' |
+    'SSMR_EX3' |
+    'SSMR_EX4' |
+    'SSMR_EX5' |
+    'SSMR_MRE' |
+    'SSMR_MRR' |
+    'SSMR_PROJ1' |
+    'SSMR_PROJ2' |
+    'SSMR_PROJ3' |
+    'SSMR_NSBD1' |
+    'SSMR_NSBD2';
+&nbsp;
+export type SubmissionType = 'MeterRead' | 'Photo';
+&nbsp;
+export const FuelType = {
+    Electricity: 'Electricity',
+    Gas: 'Gas'
+};
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

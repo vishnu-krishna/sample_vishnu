@@ -1,0 +1,19 @@
+<div class="upcoming-billings--issue-dates">
+    <div class="row upcoming-billings--issue-dates__title">
+        <div class="hidden-xs col-sm-1"></div>
+        <div class="upcoming-billings--issue-dates__dates--left">Issued on</div>
+        <div class="upcoming-billings--issue-dates__dates--middle"></div>
+        <div class="upcoming-billings--issue-dates__dates--right">Due on</div>
+        <div class="hidden-xs col-sm-1"></div>
+    </div>
+    <div class="row upcoming-billings--issue-dates__dates" *ngFor="let billDate of selectedBillDate?.billDates">
+        <div class="hidden-xs col-sm-1"></div>
+        <div class="upcoming-billings--issue-dates__dates--left">{{billDate.issueDate | aglFormatDateDayMonth}}</div>
+        <div class="upcoming-billings--issue-dates__dates--middle">
+            <span class="bill-date-indicator"></span>
+        </div>
+        <div class="upcoming-billings--issue-dates__dates--right">{{billDate.dueDate | aglFormatDateDayMonth}}</div>
+        <div class="hidden-xs col-sm-1"></div>
+    </div>
+</div>
+

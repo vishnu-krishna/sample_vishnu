@@ -1,0 +1,28 @@
+<div class="banner-wrapper" [ngClass]="{'show-banner': showBanner()}">
+
+    <agl-dls-dm-banner [title]="offer?.content.heading" [showSuccess]="redmeptionDetails" [description]="offer?.content.description" [errorMessage]="errorMessage" (close)="closeClicked()">
+        <div image>
+            <img [src]="offer?.content.iconUri" *ngIf="offer?.content.iconUri" />
+        </div>
+        <div cta class="banner__cta">
+            <agl-maui-button size="small" (clicked)="redeemOffer()" [loading]="redeemingOffer">{{ offer?.content.callToAction | uppercase }}</agl-maui-button>
+            <div class="terms-conditions-link" (click)="viewTermsAndConditions()">*View Terms &amp; Conditions</div>
+        </div>
+        <div success  class="banner__succes">
+            <div class="close-btn success" (click)="closeClicked()"></div>
+            <div class="banner__succes-images">
+                <div class="successImage leftSuccessImage"></div>
+                <div class="successImage rightSuccessImage"></div>
+            </div>
+            <div class="banner__succes-message">
+                <div class="banner__success-heading">
+                    {{ redmeptionDetails?.heading }}
+                </div>
+                <p>{{ redmeptionDetails?.description }}</p> <!-- keep on one line - using pre-wrap -->
+            </div>
+        </div>
+        <div errorFooter>
+                <agl-rewards-error-webchat chatButtonId="LPMyRewardsRError" *ngIf="errorMessage"></agl-rewards-error-webchat> <!-- needs ngIf so chat comp not init straight away -->
+        </div>
+    </agl-dls-dm-banner>
+</div>

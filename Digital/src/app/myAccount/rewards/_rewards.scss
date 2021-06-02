@@ -1,0 +1,15 @@
+$rewards-tile-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+
+$rewards-tile-mobile-margin: 16px;
+
+@mixin modal-btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 15px;
+    width: 15px;
+    font-size: 0;
+    background: url('svg/icon_close_gray.svg') no-repeat center center;
+    background-size: cover;
+    cursor: pointer;
+}

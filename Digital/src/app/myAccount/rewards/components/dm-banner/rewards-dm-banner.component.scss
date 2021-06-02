@@ -1,0 +1,140 @@
+@import '../../../maui/maui';
+@import '../../rewards';
+
+$brand-black: #000000;
+
+.banner-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease-in-out;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.15);
+
+    &.show-banner {
+        max-height: 500px;
+    }
+}
+
+.terms-conditions-link {
+    display: block;
+    font-size: 14px;
+    color: $neutral-05;
+    text-decoration: underline;
+    margin-top: 15px;
+    cursor: pointer;
+
+    @media #{$agl-layout-tablet-and-smaller} {
+        margin-bottom: 5px;
+    }
+
+    &:hover {
+        color: $neutral-08;
+    }
+}
+
+.banner__cta {
+    color: $brand-black;
+    @media #{$agl-layout-tablet-and-smaller} {
+        width: 100%;
+    }
+
+    agl-maui-button {
+        width: 200px;
+        max-width: 320px;
+        margin-top: 10px;
+        display: block;
+
+        @media #{$agl-layout-tablet-and-smaller} {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+.banner__succes {
+    position: relative;
+
+    .banner__succes-images {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: $neutral-08;
+    }
+
+    .banner__success-heading {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+    .banner__succes-message {
+        padding: 30px 0;
+        max-width: 65%;
+        z-index: 10;
+        margin: 0 auto;
+
+        @media #{$agl-layout-desktop-medium-and-smaller} {
+            max-width: 65%;
+        }
+        @media #{$agl-layout-tablet-and-smaller} {
+            max-width: 70%;
+        }
+        @media #{$agl-layout-mobile} {
+            max-width: 80%;
+        }
+    }
+
+    p {
+        text-align: center;
+        white-space: pre-wrap;
+    }
+
+    .successImage {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        max-width: 23%;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @media #{$agl-layout-desktop-medium-and-smaller} {
+            max-width: 23%;
+        }
+
+        @media #{$agl-layout-tablet-and-smaller} {
+            max-width: 25%;
+        }
+
+        @media #{$agl-layout-mobile} {
+            max-width: 30%;
+        }
+    }
+
+    .leftSuccessImage {
+        left: 0;
+        background-image: url('svg/offer-success-bg-left.svg');
+        background-position: right center;
+    }
+
+    .rightSuccessImage {
+        right: 0;
+        background-image: url('svg/offer-success-bg-right.svg');
+        background-position: left center;
+    }
+}
+
+.close-btn {
+    @include modal-btn-close;
+
+    &.success {
+        background-color: $neutral-08;
+        margin: 15px;
+    }
+}

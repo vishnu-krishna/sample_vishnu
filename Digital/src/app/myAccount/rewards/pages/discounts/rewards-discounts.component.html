@@ -1,0 +1,34 @@
+<div>
+    <agl-maui-secondary-navigation
+         display="true"
+        displayBackButton="true"
+        hideNavigation="false"
+        text="Your AGL discounts"
+        hideNavigation="hideNavigation"
+        (clicked)='backClick()'>
+    </agl-maui-secondary-navigation>
+           <div class="tile__content">
+                   <h2>What to look for on your bill</h2>
+                   <p>Our calculation includes the following (where they apply to your energy plan):</p> 
+                   <div class="ul--split">
+                       <ul>
+                           <li><span>Guaranteed discount (%)</span></li>
+                           <li><span>Pay on Time discount (%)</span></li>
+                           <li><span>Direct debit reward (%)</span></li>
+                           <li><span>Double Up reward (%)</span></li>
+                       </ul>
+                       <ul>
+                           <li><span>Once Off account credit ($)</span></li>
+                           <li><span>Ongoing account credit ($)</span></li>
+                           <li><span>AGL bonus ($)</span></li>
+                           <li><span>Prepaid bonus credit ($)</span></li>
+                       </ul>
+                   </div>
+           
+                   <p>You'll find any applicable discounts or credits under the 'Credits' or 'Previous balance and payments' heading on the last page of your bill.</p>
+           
+                   <div class="tile__buttons">
+                       <agl-maui-button (clicked)="viewBillsClick()">View your bills</agl-maui-button>
+                   </div>
+               </div>
+    </div>

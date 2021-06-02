@@ -1,0 +1,199 @@
+@import '../maui';
+
+@include maui-component-reset();
+
+$svgIconHeight: 26px;
+$svgIconWidth: 26px;
+
+$iconHorizontalMargin: 15px;
+$stripBorderWidth: 7px;
+
+$dismissIconHeight: 12px;
+$dismissIconWidth: 12px;
+
+$dismissImageUrl: 'svg/maui/flashMessage/dismiss.svg';
+
+@mixin strip {
+    width: 7px;
+    position: absolute;
+    height: 100%;
+}
+
+@mixin flash-type-icon($width, $height, $iconSvgUrl) {
+    @include icon($width, $height, $iconSvgUrl);
+    margin: 0 $iconHorizontalMargin;
+}
+
+@mixin icon($width, $height, $iconSvgUrl) {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: $width $height;
+    background-image: url($iconSvgUrl);
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: $width;
+    height: $height;
+}
+
+.maui-flash-message {
+    @include deep-anchor-styling;
+
+    box-shadow: $shadow-01;
+    height: auto;
+    font-family: $body-font-stack;
+    position: relative;
+    background-color: $neutral-08;
+    text-align: initial;
+
+    &--inform {
+        border-left: $stripBorderWidth solid $neutral-03;
+
+        .maui-flash-message__icon {
+            @media #{$agl-layout-tablet-and-greater} {
+                @include flash-type-icon($svgIconWidth, $svgIconHeight, 'svg/maui/flashMessage/inform.svg');
+            }
+        }
+
+        .maui-flash-message__dismiss {
+            @include icon($dismissIconWidth, $dismissIconHeight, 'svg/maui/flashMessage/dismiss-inform.svg');
+        }
+    }
+
+    &--warning {
+        border-left: $stripBorderWidth solid $secondary-action-dark;
+
+        .maui-flash-message__icon {
+            @media #{$agl-layout-tablet-and-greater} {
+                @include flash-type-icon($svgIconWidth, $svgIconHeight, 'svg/maui/flashMessage/warning.svg');
+            }
+        }
+
+        .maui-flash-message__dismiss {
+            @include icon($dismissIconWidth, $dismissIconHeight, 'svg/maui/flashMessage/dismiss-warning.svg');
+        }
+    }
+
+    &--success {
+        border-left: $stripBorderWidth solid $secondary-success-dark;
+
+        .maui-flash-message__icon {
+            @media #{$agl-layout-tablet-and-greater} {
+                @include flash-type-icon($svgIconWidth, $svgIconHeight, 'svg/maui/flashMessage/success.svg');
+            }
+        }
+
+        .maui-flash-message__dismiss {
+            @include icon($dismissIconWidth, $dismissIconHeight, 'svg/maui/flashMessage/dismiss-success.svg');
+        }
+    }
+
+    &--error {
+        border-left: $stripBorderWidth solid $secondary-warning-dark;
+
+        .maui-flash-message__icon {
+            @media #{$agl-layout-tablet-and-greater} {
+                @include flash-type-icon($svgIconWidth, $svgIconHeight, 'svg/maui/flashMessage/error.svg');
+            }
+        }
+
+        .maui-flash-message__dismiss {
+            @include icon($dismissIconWidth, $dismissIconHeight, 'svg/maui/flashMessage/dismiss-error.svg');
+        }
+    }
+
+    &__content {
+        padding: $space-03;
+        margin-right: $space-03;
+        @media #{$agl-layout-tablet-and-greater} {
+            margin-left: 0px;
+
+            &.icon-margin {
+                margin-left: $svgIconWidth + $iconHorizontalMargin;
+            }
+        }
+        text-align: left;
+        color: $neutral-01;
+        font-size: $body-font-size-small;
+    }
+
+    &__heading {
+        @extend .text-small-long;
+
+        font-weight: bold;
+
+        &--with-subheading {
+            margin-bottom: 4px;
+        }
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    &__subheading {
+        @extend .text-small-long;
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    &__top {
+        position: relative;
+    }
+
+    &__dismiss {
+        position: absolute;
+        width: $dismissIconWidth;
+        height: $dismissIconHeight;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        padding: 15px 20px;
+        vertical-align: middle;
+    }
+}
+
+.maui-accordion {
+    padding-left: 15px;
+    padding-bottom: 15px;
+
+    @media #{$agl-layout-tablet-and-greater} {
+
+        &.icon-margin {
+            margin-left: $svgIconWidth + $iconHorizontalMargin;
+        }
+    }
+
+    &__icon {
+        font-size: 28px;
+        position: absolute;
+        font-weight: normal;
+        bottom: 0px;
+        right: -18px;
+        cursor: pointer;
+    }
+
+    &__more {
+        @extend .text-small;
+        @include link-styling;
+        margin-top: 6px;
+        font-weight: bold;
+        position: relative;
+    }
+
+    &__divider {
+        margin-top: 0px;
+        margin-bottom: $space-03;
+        margin-right: $space-03;
+    }
+
+    &__body {
+        @extend .text-small-long;
+        margin-right: $space-03;
+    }
+}

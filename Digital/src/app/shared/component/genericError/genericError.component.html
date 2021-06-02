@@ -1,0 +1,31 @@
+<div class="generic-error">
+    <div class="generic-error-header">
+        <div class="generic-error-header--logo">
+            <a href="/residential/" target="_blank" id="agl-logo-link">
+                <mat-icon class="agl-logo-desktop" svgIcon="icon-agl-logo-desktop"></mat-icon>
+                <mat-icon class="agl-logo-mobile" svgIcon="icon-agl-logo-mobile"></mat-icon>
+            </a>
+        </div>
+        <div class="generic-error-header--links">
+            <a href="https://www.agl.com.au/residential/help-and-support" target="_blank">HELP</a>
+            <a href="https://www.agl.com.au/residential/contact-us" target="_blank">CONTACT US</a>
+        </div>
+    </div>
+
+    <div class="generic-error-component" [class.vas-error]="isVasError">
+        <h3>Something unexpected happened.</h3>
+        <div id="error-text-myaccount" *ngIf="!isVasError" class="generic-error-text">We are sorry for any inconvenience. My Account is unavailable right now. Please check back soon.</div>
+        <div id="error-text-vas" *ngIf="isVasError" class="generic-error-text">We are sorry for any inconvenience. Everything should be working soon so please check back later.</div>
+        <agl-generic-error-image></agl-generic-error-image>
+        <div class="clear">
+            <p>For assistance <a href="https://www.agl.com.au/myaccountwebchat">chat online</a> now or <a href="https://www.agl.com.au/residential/contact-us"
+                    target="_blank">contact us</a> via the usual methods.</p>
+        </div>
+        <!--<span id="error-footer1" ><p>For assistance <a href="https://www.agl.com.au/residential/contact-us" target="_blank">contact us</a> via the usual methods.</p> </span>-->
+        <!--<span id="error-footer2" [hidden]="!isVasError"><p>For assistance <a href="#" target="_blank">chat online</a> now or <a href="https://www.agl.com.au/residential/contact-us" target="_blank">contact us</a> via the usual methods.</p> </span>-->
+
+    </div>
+    <div class="generic-error-footer">
+        <agl-app-footer id="aglAppFooter"></agl-app-footer>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="maui-terms-and-conditions">
+    <div class="maui-terms-and-conditions-control">
+        <input type="checkbox" class ="maui-terms-and-conditions-control__checkbox-hide"  [checked]="isChecked"  />
+        <label  class="maui-terms-and-conditions-control__customcheckbox" [class.maui-terms-and-conditions-control__customcheckbox--checked]="isChecked" (click)="checkboxChange()"></label>
+    </div>
+    <span class="maui-terms-and-conditions--text">
+        <ng-content>
+        </ng-content>
+    </span>
+</div>

@@ -1,0 +1,31 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": {
+        "contractAccountNumber": 7021129731,
+        "estimates": [
+            {
+                "contractNumber": 566645,
+                "error": {
+                    "message": "Contract 566643 unbilled for 358 days – Ineligible for Payment scheme.",
+                    "internalError": {
+                        "errorId": "ZIFI511",
+                        "errorNumber": "011",
+                        "description": "Contract 566643 unbilled for 358 days – Ineligible for Payment scheme."
+                    }
+                }
+            },
+            {
+                "contractNumber": 566646,
+                "error": {
+                    "message": ".",
+                    "internalError": {
+                        "errorId": "a",
+                        "errorNumber": "030",
+                        "description": "."
+                    }
+                }
+            }
+        ]
+    }
+}

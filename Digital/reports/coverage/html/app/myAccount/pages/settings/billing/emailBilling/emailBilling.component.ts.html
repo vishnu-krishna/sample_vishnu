@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\settings\billing\emailBilling\emailBilling.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/settings/billing/emailBilling/</a> emailBilling.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">45.71% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>16/35</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.11% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">45.16% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>14/31</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+&nbsp;
+import { FeatureFlagService, FeatureFlagTypes } from '../../../../services/featureFlag.service';
+import { BillDeliveryMethodType } from '../../../../services/settings/model/billDeliveryMethodType';
+import { BillDeliveryModeChangedEventArgs } from './billDeliveryModeChangedEventArgs';
+import { EmailBillingComponentModel } from './emailBillingComponentModel';
+&nbsp;
+@Component({
+    selector: 'agl-settings-email-billing',
+    template: require('./emailBilling.component.html'),
+    styles: [require('./emailBilling.component.scss')]
+})
+export class EmailBillingComponent implements OnInit {
+    @Input() public model: EmailBillingComponentModel;
+    @Output() public <span class="cstat-no" title="statement not covered" >BillDeliveryModeChanged = new EventEmitter&lt;BillDeliveryModeChangedEventArgs&gt;();</span>
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >justActivatedEmailBilling = false;</span>
+    public <span class="cstat-no" title="statement not covered" >ebillEnabled = false;</span>
+    public <span class="cstat-no" title="statement not covered" >editContactDetailsEnabled = false;</span>
+    public <span class="cstat-no" title="statement not covered" >shouldNotTurnOnEmailBilling = false;</span>
+&nbsp;
+    constructor(
+        public <span class="cstat-no" title="statement not covered" >featureFlagService: FeatureFlagService<span class="fstat-no" title="function not covered" ></span></span>
+    ) {}
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public ngOnInit() {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.featureFlagService.featureFlagged(FeatureFlagTypes.ebillEnabled).subscribe((response<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            this.ebillEnabled = response;</span>
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.featureFlagService.featureFlagged(FeatureFlagTypes.contactDetailsEnabled).subscribe((response<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            this.editContactDetailsEnabled = response;</span>
+<span class="cstat-no" title="statement not covered" >            this.shouldNotTurnOnEmailBilling = this.editContactDetailsEnabled &amp;&amp; (this.model.isEmptyOrInvalidEmailAddress || this.model.hasMultipleBusinessPartners);</span>
+        });
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public togglePaperlessBillingOn() {</span>
+<span class="cstat-no" title="statement not covered" >        this.justActivatedEmailBilling = true;</span>
+<span class="cstat-no" title="statement not covered" >        this.onBillDeliveryModeChanged(BillDeliveryMethodType.Email);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public togglePaperlessBillingOff() {</span>
+<span class="cstat-no" title="statement not covered" >        this.onBillDeliveryModeChanged(BillDeliveryMethodType.Postal);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public slidePaperlessBilling() {</span>
+        let desiredBillDeliveryMethod = (<span class="cstat-no" title="statement not covered" >this.model.isEmailBill ? BillDeliveryMethodType.Postal : BillDeliveryMethodType.Email)</span>;
+<span class="cstat-no" title="statement not covered" >        this.onBillDeliveryModeChanged(desiredBillDeliveryMethod);</span>
+    }
+&nbsp;
+    private onBillDeliveryModeChanged(deliveryPreference: BillDeliveryMethodType<span class="fstat-no" title="function not covered" >) {</span>
+        let eventArgs = <span class="cstat-no" title="statement not covered" >new BillDeliveryModeChangedEventArgs(this.model.contractAccountNumber, deliveryPreference);</span>
+<span class="cstat-no" title="statement not covered" >        this.BillDeliveryModeChanged.emit(eventArgs);</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

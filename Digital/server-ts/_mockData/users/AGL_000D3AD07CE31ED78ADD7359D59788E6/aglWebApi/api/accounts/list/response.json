@@ -1,0 +1,48 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "number": "21136072",
+            "firstName": "GARNET",
+            "lastName": "EVANS",
+            "contracts": [
+                {
+                    "address": "7 THORPE STREET|TORRENS PARK SA 5062",
+                    "accountNumber": "21136072",
+                    "fuelType": "Gas",
+                    "nameId": "AGL_000D3AD07CE31ED78ADD7359D59788E6",
+                    "number": "9002107027",
+                    "planName": "Savers",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "AGLMKTRG2415202",
+                    "regionId": "SA"
+                }
+            ]
+        },
+        {
+            "number": "62129549",
+            "firstName": "GARNET",
+            "lastName": "EVANS",
+            "contracts": [
+                {
+                    "address": "80 Coast Road|MOONTA BAY SA 5558",
+                    "accountNumber": "62129549",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_000D3AD07CE31ED78ADD7359D59788E6",
+                    "number": "9035779810",
+                    "planName": "Savers",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "AGLMKTRE2415121",
+                    "regionId": "SA"
+                }
+            ]
+        }
+    ]
+}

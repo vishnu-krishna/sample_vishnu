@@ -1,0 +1,48 @@
+[{
+    "productId": "AGLMKTREPP1",
+    "regionId": "VIC",
+    "bonus": 0,
+    "bonusUnit": "Dollar",
+    "lowerBand": 0,
+    "upperBand": 49.99,
+    "isUpperBandApplicable": true
+},{
+    "productId": "AGLMKTREPP1",
+    "regionId": "VIC",
+    "bonus": 10,
+    "bonusUnit": "Dollar",
+    "lowerBand": 50,
+    "upperBand": 79.99,
+    "isUpperBandApplicable": true
+}, {
+    "productId": "AGLMKTREPP1",
+    "regionId": "VIC",
+    "bonus": 15.00,
+    "bonusUnit": "Dollar",
+    "lowerBand": 80,
+    "upperBand": 119.99,
+    "isUpperBandApplicable": true
+}, {
+    "productId": "AGLMKTREPP1",
+    "regionId": "VIC",
+    "bonus": 25.00,
+    "bonusUnit": "Dollar",
+    "lowerBand": 120.00,
+    "upperBand": 149.99,
+    "isUpperBandApplicable": true
+}, {
+    "productId": "AGLMKTREPP1",
+    "regionId": "VIC",
+    "bonus": 35.00,
+    "bonusUnit": "Dollar",
+    "lowerBand": 150.00,
+    "upperBand": 249.99,
+    "isUpperBandApplicable": true
+}, {
+    "productId": "AGLMKTREPP1",
+    "regionId": "VIC",
+    "bonus": 65.00,
+    "bonusUnit": "Dollar",
+    "lowerBand": 250.00,
+    "isUpperBandApplicable": false
+}]

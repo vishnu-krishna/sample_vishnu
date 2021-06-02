@@ -1,0 +1,33 @@
+[
+    {
+        "number": "22389365",
+        "firstName": "Hue",
+        "lastName": "Phan",
+        "contracts": [
+            {
+                "address": "56 DONALD STREET|FOOTSCRAY VIC 3011",
+                "accountNumber": "22389365",
+                "fuelType": "Gas",
+                "nameId": "AGL_0090FA0E77041ED5A3FEFC5853FA273D",
+                "number": "9002125115",
+                "planName": "Savers - One Month's Worth Free",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false
+            },
+            {
+                "address": "56 DONALD STREET|FOOTSCRAY VIC 3011",
+                "accountNumber": "22389365",
+                "fuelType": "Electricity",
+                "nameId": "AGL_0090FA0E77041ED5A3FEFC5853FA273D",
+                "number": "9401787494",
+                "planName": "Savers - One Month's Worth Free",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false
+            }
+        ]
+    }
+]

@@ -1,0 +1,19 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "id": "C000002",
+            "creditCard": {
+                "cardType": "Visa",
+                "creditCardReference": "4111113775971111",
+                "expiryDate": "2020-02",
+                "cardHolderName": "testing"
+            },
+            "bank": null,
+            "payPal": null,
+            "directDebitContractAccounts": [],
+            "oneTouchPayContractAccounts": []
+        }
+    ]
+}

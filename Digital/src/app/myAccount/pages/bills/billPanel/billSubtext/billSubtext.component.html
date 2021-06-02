@@ -1,0 +1,91 @@
+<div class="bill-panel-text" *ngIf="!isDashboard">
+    <agl-bill-subtext-instalment-plan [contract]="contract"></agl-bill-subtext-instalment-plan>
+    <div *ngIf="!type.billSmoothingV2 && !contract.instalmentPlan">
+        <mat-icon *ngIf="iconPay" svgIcon="icon-pay-bill-panel" class="bill-panel-text__pay-icon"></mat-icon>
+        <mat-icon svgIcon="icon-payontime-overdue-newbill-warning" class="bill-panel-text__warning-icon" *ngIf="iconOverdue"></mat-icon>
+        <mat-icon svgIcon="icon-exp-bill" class="bill-panel-text__direct-debit-icon" *ngIf="iconDirectDebit"></mat-icon>
+        <div id="payment-amount-text" *ngIf="paygPaymentAmount" class="bill-panel-text__heading-text paymentAmount" [class.bill-panel-text__red]="type.overdue">
+            ${{paygPaymentAmount | number:'.2-2'}}
+        </div>
+        <div id="bill-panel-heading-text" *ngIf="headingTextLine1" class="bill-panel-text__heading-text"
+             [ngClass]="{'bill-panel-text__red': amountOwingIsAllOverdue,
+                         'payg' : contract.isPayg }">
+            {{headingTextLine1}}<span class="bill-panel-text__heading-text-no-wrap">{{headingTextLine2}}</span>
+        </div>
+        <div id="bill-panel-subheading-additional-text" *ngIf="headingSubTextAdditional" class="bill-panel-text__subheading-additional-text">
+            {{headingSubTextAdditional}}
+            <span class="hidden-xs" *ngIf="headingSubTextAdditionalDate">-</span>
+            <span class="bill-panel-text__subheading-additional-text--mobile">{{headingSubTextAdditionalDate}}</span>
+        </div>
+        <div id="bill-panel-subheading-text" *ngIf="headingSubText" class="bill-panel-text__subheading-text" [class.bill-panel-text__subheading-text--normal]="paymentExtensionApplied">
+            {{headingSubText}}
+            <span class="hidden-xs" *ngIf="headingSubTextDate">-</span>
+            <span class="bill-panel-text__subheading-text--mobile">{{headingSubTextDate}}</span>
+        </div>
+    </div>
+    <div *ngIf="type.billSmoothingV2">
+        <mat-icon svgIcon="icon-tick-in-box" class="bill-panel-text__tick-box-icon"></mat-icon>
+        <div class="bill-panel-text__heading-text bill-panel-text__heading-text-bill-smoothing">You're on Bill&nbsp;Smoothing</div>
+        <div class="bill-panel-text__subheading-text-bs">
+            <div>{{headingSubText}}</div>
+        </div>
+    </div>
+    <div *ngIf="billPdfDocExists && !type.billSmoothingV2" class="bill-panel-text__pdf">
+        <div class="bill-panel-text__pdf-open" (click)="openBillPdfInNewWindow()" target="_blank">Download PDF Bill
+        </div>
+    </div>
+    <div *ngIf="showUsageLink" class="bill-panel-text--usage"><a (click)="onClickViewBill()" class="sm-text">View energy use by appliance</a></div>
+    <div *ngIf="type.billSmoothingV2" class="bill-panel-text__BS">
+        <a [routerLink]="['/settings/billsmoothing']" class="sm-text">View Bill Smoothing arrangement</a></div>
+    <div *ngIf="type.directDebit" class="bill-panel-text__DD">
+        <a [routerLink]="['/settings/directdebit']" class="sm-text">Manage your Direct Debit</a></div>
+</div>
+
+<div class="bill-panel-text" *ngIf="isDashboard">
+    <div *ngIf="isHeaderMessageOnly">
+        <div *ngIf="paygPaymentAmount" class="bill-panel-text__heading-text paymentAmount no-pad-content" [class.bill-panel-text__red]="type.overdue">
+            ${{paygPaymentAmount | number:'.2-2'}}
+        </div>
+        <div *ngIf="headingTextLine1" class="bill-panel-text__heading-text no-pad-content" [class.bill-panel-text__red]="type.overdue" [class.payg]="contract.isPayg">
+            {{headingTextLine1}}<span class="bill-panel-text__heading-text-no-wrap">{{headingTextLine2}}</span>
+        </div>
+        <div *ngIf="headingSubTextAdditional" class="bill-panel-text__subheading-additional-text no-pad-content">
+            {{headingSubTextAdditional}}
+        </div>
+        <div *ngIf="headingSubText" class="bill-panel-text__subheading-text-dash no-pad-content">{{headingSubText}}</div>
+    </div>
+    <div *ngIf="isTextRowTwoOnly && !type.billSmoothingV2">
+        <div *ngIf="!type.outOfBillPeriod">
+            <div *ngIf="headingSubTextAdditional" class="bill-panel-text__subheading-additional-text">
+                {{headingSubTextAdditional}}
+            </div>
+            <div *ngIf="showPayOnTimeDiscountAppliedText" class="bill-panel-text__pay-on-time-discount">
+                <img src="svg/icon-payontime-applied-tick.svg" class="bill-panel-text__pay-on-time-discount-icon">
+                Pay on time discount applied
+            </div>
+            <div *ngIf="headingSubText" class="bill-panel-text__subheading-text-dash" [class.bill-panel-text__subheading-text-padding]="type.paymentOverdueInDebit">{{headingSubText}}</div>
+        </div>
+        <div *ngIf="showPaymentOverdueText" class="bill-panel-text__payment-overdue-text" [class.bill-panel-text__payment-overdue-text-margin]="!type.outOfBillPeriod">Total to pay includes
+            <span class="bill-panel-text__payment-overdue-text--red">${{overdueCharges}} overdue charges</span> and ${{newCharges}} new charges
+        </div>
+    </div>
+    <div *ngIf="isBsDDLinks">
+        <div *ngIf="type.billSmoothingV2" class="bill-panel-text__BS">
+            <a [routerLink]="['/settings/billsmoothing']" class="sm-text">View Bill Smoothing arrangement</a></div>
+        <div *ngIf="type.directDebit" class="bill-panel-text__DD">
+            <a [routerLink]="['/settings/directdebit']" class="sm-text">Manage your Direct Debit</a></div>
+    </div>
+    <div *ngIf="isExtendedDueDate">
+        <div *ngIf="paygPaymentAmount" class="bill-panel-text__heading-text paymentAmount no-pad-content" [class.bill-panel-text__red]="type.overdue">
+            ${{paygPaymentAmount | number:'.2-2'}}
+        </div>
+        <div *ngIf="headingSubTextAdditional" class="bill-panel-text__subheading-additional-text no-pad-content">
+            {{headingSubTextAdditional}} -
+            <span class="bill-panel-text__subheading-additional-text-date">{{headingSubTextAdditionalDate}}</span>
+        </div>
+        <br class="visible-xs">
+        <div *ngIf="headingSubText" class="bill-panel-text__subheading-text-dash no-pad-content">{{headingSubText}} -
+            <span class="bill-panel-text__subheading-text-date">{{headingSubTextDate}}</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+[
+  {
+    "account": "123456789",
+    "contract": "111111111",
+    "overdue": 0,
+    "currentBalance": 10,
+    "totalPayment": 0,
+    "billSmoothing": false,
+    "directDebit": true
+  },
+  {
+    "account": "123456789",
+    "contract": "222222222",
+    "overdue": 0,
+    "currentBalance": 0,
+    "totalPayment": 0,
+    "billSmoothing": false,
+    "directDebit": true
+  }
+]

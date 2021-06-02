@@ -1,0 +1,43 @@
+@import '../../../maui/maui';
+
+p {
+    font-size: 18px;
+    line-height: 1.3;
+
+    &.pt {
+        letter-spacing: 0.2px;
+        padding-left: 3px;
+        margin-bottom: 0;
+    }
+}
+
+strong {
+    font-family: $display-font-stack;
+    font-size: 52px;
+    line-height: 39px;
+    letter-spacing: 0.2px;
+
+    @media #{$agl-layout-xs} {
+        font-size: 45px;
+    }
+}
+
+.flybuys-content {
+    display: inline-block;
+    max-width: 346px;
+}
+
+.flybuys-points {
+    display: flex;
+    justify-content: center;
+    padding: 5px 0;
+}
+
+@media #{$agl-layout-desktop-medium-and-greater} {
+    .flybuys-points {
+        &.wide-left-align {
+            padding-top: 8px;
+            justify-content: flex-start;
+        }
+    }
+}

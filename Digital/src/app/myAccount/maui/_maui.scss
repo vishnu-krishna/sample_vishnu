@@ -1,0 +1,202 @@
+@import './_maui_colour.scss';
+@import './_maui_font.scss';
+@import './_maui_space.scss';
+
+// Gradients
+$gradient-toggle: linear-gradient(90deg, #001CB0 0%, #364DC5 100%);
+$gradient-01: linear-gradient(90deg, #0233B8 0%, #016DCA 100%);
+
+// Typographic Scale
+$line-height-heading: 1.25em;
+$line-height-short: 1.25em;
+$line-height-long: 1.5em;
+
+.text {
+    &-big {
+        font-size: 18px;
+        line-height: $line-height-short;
+    }
+
+    &-big-long {
+        font-size: 18px;
+        line-height: $line-height-long;
+    }
+
+    &-normal {
+        font-size: 16px;
+        line-height: $line-height-short;
+    }
+
+    &-normal-long {
+        font-size: 16px;
+        line-height: $line-height-long;
+    }
+
+    &-small {
+        font-size: 14px;
+        line-height: $line-height-short;
+    }
+
+    &-small-long {
+        font-size: 14px;
+        line-height: $line-height-long;
+    }
+
+    &-smallest {
+        font-size: 12px;
+        line-height: $line-height-short;
+    }
+
+    &-smallest-long {
+        font-size: 12px;
+        line-height: $line-height-long;
+    }
+}
+
+$max-navigation-width: 1170px;
+$container-side-space: $space-03;
+
+// Border Radius
+$border-radius-01: 4px;
+$border-radius-03: 3px;
+
+// Content
+$content-width: 600px;
+
+// Component  width
+$component-width: 400px;
+
+// Shadow
+$shadow-01: 0 2px 4px 0 rgba(51, 51, 51, 0.25);
+$shadow-01-hover: 0 2px 16px 0 rgba(51, 51, 51, 0.25);
+$shadow-checkbox: 0 0 0 .9pt $neutral-04;
+$shadow-checkbox-checked:  0 0 0 .9pt $primary-dark;
+$shadow-05: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+$shadow-agl-ellipses-button: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+
+// Media Sizes - NOTE these do not match dls
+$device-min-xs: 320px;
+$device-min-sm: 768px;
+$device-min-med: 992px;
+$device-min-lge: 1200px;
+
+// Responsive Layouts
+$agl-layout-desktop-large: (min-width: $device-min-lge);
+$agl-layout-desktop-medium: (min-width: $device-min-med) and (max-width: $device-min-lge - 1);
+$agl-layout-tablet: (min-width: $device-min-sm) and (max-width: $device-min-med - 1);
+$agl-layout-mobile: (max-width: $device-min-sm - 1);
+$agl-layout-xs: (max-width: $device-min-xs);
+
+$agl-layout-desktop-medium-and-greater: (min-width: $device-min-med);
+$agl-layout-tablet-and-greater: (min-width: $device-min-sm);
+
+$agl-layout-desktop-medium-and-smaller: (max-width: $device-min-lge - 1);
+$agl-layout-tablet-and-smaller: (max-width: $device-min-med - 1);
+
+//Z-index list
+$ellipses-button-content-z-index: 1;
+$showcase-mobile-header-z-index: 200;
+$tooltip-z-index: 100;
+$secondary-navigation-z-index: 50;
+$expandable-container-z-index: 20;
+
+@mixin anchor-styling() {
+    a {
+        @include link-styling;
+
+        &:hover,
+        &:focus,
+        &:link,
+        &:visited {
+            @include link-styling;
+        }
+    }
+}
+
+@mixin link-styling() {
+    font-family: $body-font-stack;
+    font-size: $body-font-size-small;
+    font-weight: inherit;
+    color: $primary-dark;
+    cursor: pointer;
+}
+
+/**
+ * Allows easy overriding of the anchors embedded in any MAUI components
+ * usage: `@include deep-anchor-styling;`
+**/
+@mixin deep-anchor-styling() {
+    ::ng-deep {
+        @include anchor-styling();
+    }
+}
+
+/**
+ * display svgs as background images
+ * @param { $verticallyCentered } Note that the parent element must have 'position: relative' set when $verticallyCentered is true
+**/
+@mixin maui-icon($iconSvgUrl, $width, $height, $iconMargin: 0, $verticallyCentered: false) {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: $width $height;
+    background-image: url($iconSvgUrl);
+
+    width: $width;
+    height: $height;
+    margin: $iconMargin;
+
+    @if $verticallyCentered == true {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+/**
+ * reset base settings for each maui component - to be used at the top of a component's scss file (or the the scss file of the outermost component if nested components are being used).
+ * usage: `@include maui-component-reset();`
+**/
+@mixin maui-component-reset() {
+    :host {
+        display: block;
+    }
+}
+
+@mixin center-content() {
+    transform: translate(-50%, -50%);
+}
+
+// Forms
+$input-text-color: $neutral-01;
+$input-text-height: 50px;
+$input-error-color: $secondary-warning-dark;
+
+@mixin form-textbox-styling() {
+    border: solid 1px $neutral-03;
+    height: $input-text-height;
+    width: 100%;
+    padding-left: 13px;
+    padding-right: 13px;
+    font-family: $body-font-stack;
+    color: $input-text-color;
+    font-size: $body-font-size-normal;
+
+    &:focus {
+        border: solid 1px $primary-dark;
+    }
+
+    &.error {
+        border: solid 1px $input-error-color;
+    }
+
+    &::placeholder {
+        font-size: $body-font-size-small;
+    }
+}
+
+@mixin form-textbox-error-text-styling() {
+    color: $input-error-color;
+    margin-top: $space-01;
+    font-weight: normal;
+    font-size: $body-font-size-smallest;
+}

@@ -1,0 +1,63 @@
+[
+    {
+        "dataGroup": "Account",
+        "status": "Complete",
+        "lastUpdated": "2017-03-27T00:03:57.8303628+00:00",
+        "failed": false
+    },
+    {
+        "dataGroup": "BillingHistory",
+        "status": "Complete",
+        "lastUpdated": "2017-03-23T14:10:06.5553702+00:00",
+        "failed": false
+    },
+    {
+        "dataGroup": "Dashboard",
+        "status": "Complete",
+        "lastUpdated": "2017-03-27T00:25:41.6452693+00:00",
+        "failed": true,
+        "errors": [
+            {
+                "dataType": "UsageTwoWeeks",
+                "account": "20804027",
+                "contract": "9402779865",
+                "message": "Sorry, we were unable to retrieve your usage charges. Please try again later.",
+                "hasRfcError": true,
+                "errorId": "002",
+                "errorNumber": ""
+            }
+        ]
+    },
+    {
+        "dataGroup": "Payments",
+        "status": "Complete",
+        "lastUpdated": "2017-03-23T14:10:05.7816274+00:00",
+        "failed": false
+    },
+    {
+        "dataGroup": "Usage",
+        "status": "Complete",
+        "lastUpdated": "2017-03-23T14:10:05.8066519+00:00",
+        "failed": true,
+        "errors": [
+            {
+                "dataType": "Usage13Months",
+                "account": "20804027",
+                "contract": "9402779865",
+                "message": "Sorry, we were unable to retrieve your usage charges. Please try again later.",
+                "hasRfcError": true,
+                "errorId": "002",
+                "errorNumber": ""
+            },
+            {
+                "dataType": "Usage13Months",
+                "account": "20804027",
+                "contract": "9402779865",
+                "message": "Sorry, we were unable to retrieve your usage charges. Please try again later.",
+                "hasRfcError": true,
+                "errorId": "002",
+                "errorNumber": ""
+            }
+        ]
+    }
+]

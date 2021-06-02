@@ -1,0 +1,22 @@
+<div id="payment-credit-card" class="credit-card">
+    <div class="credit-card__logo">
+        <mat-icon class="elec" svgIcon="icon-mastercard"></mat-icon>
+        <mat-icon class="elec" svgIcon="icon-visa"></mat-icon>
+        <span class="credit-card__logo-text">Use Mastercard or Visa. Fees apply.</span>
+    </div>
+
+    <div class="credit-card__alert" *ngIf="iframeFailedToLoadInTime" >
+        <agl-alert alertType="error" [heading]="content.iframePaymentPageUnavailableHeaderMessage" [body]="content.iframePaymentPageUnavailableContentMessage"></agl-alert>
+    </div>
+
+    <div class="credit-card__alert" *ngIf="iframeLoaded && iframePaymentFailure" >
+        <agl-alert alertType="error" [heading]="content.iframePaymentFailureHeaderMessage" [body]="content.iframePaymentFailureContentMessage"></agl-alert>
+    </div>
+
+    <div class="credit-card__iFrame" *ngIf="!iframeFailedToLoadInTime">
+        <div class="credit-card__iFrame-loader" *ngIf="!iframeLoaded">
+            <agl-loader [customClass]="'greyBackground'"></agl-loader>
+        </div>
+        <iframe id="paymentGateway" [src]="iframeUrl" width="100%" scrolling="no" frameborder="0" class="paymentIframe" [class.not-loaded]="!iframeLoaded" [class.has-errors]="iframeError"></iframe>
+    </div>
+</div>

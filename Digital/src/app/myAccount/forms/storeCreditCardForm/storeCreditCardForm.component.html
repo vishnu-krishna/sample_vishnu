@@ -1,0 +1,30 @@
+<div *ngIf="!data.isSmsPay || !data.paymentArrangementPaymentMethodId" class="store-card-return">
+    <div class="desktop">
+        <mat-icon class="creditCardIcon" svgIcon="icon-exp-bill" alt="Credit Card"></mat-icon>
+        <h1>Credit or debit card</h1>
+        <p>Use Mastercard or Visa.<br/>Transaction fee of 0.45% applies.</p>
+        <span (click)="goBack()">Change</span>
+    </div>
+    <div class="mobile">
+        <div class="mobile-change-method">Credit or debit card<span (click)="goBack()">Change</span></div>
+        <p>Use Mastercard or Visa. Transaction fee of 0.45% applies.</p>
+    </div>
+</div>
+<div *ngIf="data.isSmsPay && data.paymentArrangementPaymentMethodId" class="store-card-return">
+    <div class="desktop">
+        <mat-icon class="creditCardIcon" svgIcon="icon-wallet" alt="Wallet"></mat-icon>
+        <h1>Wallet</h1>
+        <p>You can add a Mastercard or Visa card. A 0.45% fee will apply to each payment transaction.</p>
+    </div>
+</div>
+<div class="store-card-form">
+    <agl-directdebitcreditcard
+        #creditCardView 
+        [content]="content"
+        [isDirectDebit]="data.isDirectDebit"
+        [isSmsPay]="data.isSmsPay"
+        [isSwitchingPaymentArrangements]="isSwitchingPaymentArrangements"
+        (onSave)="saveCreditCard($event)"
+        myWallet="true">
+    </agl-directdebitcreditcard>
+</div>

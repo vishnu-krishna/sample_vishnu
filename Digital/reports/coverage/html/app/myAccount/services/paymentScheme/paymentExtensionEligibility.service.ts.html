@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\services\paymentScheme\paymentExtensionEligibility.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/myAccount/services/paymentScheme/</a> paymentExtensionEligibility.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">65.45% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>36/55</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">18.18% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">35.29% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>6/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">63.27% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>31/49</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+&nbsp;
+import { ErrorApiModel } from '../../../shared/service/api.service';
+import { IPaymentSchemeApi, PaymentArrangementExtensionOption, PaymentArrangementExtensionOptions } from './paymentSchemeApi.service';
+&nbsp;
+<span class="fstat-no" title="function not covered" >export abstract class IPaymentExtensionEligibility {</span>
+    public abstract getContractAccountEligibility(contractAccountNumber: string): Observable&lt;PaymentExtensionContractEligibility&gt;;
+}
+&nbsp;
+@Injectable()
+export class PaymentExtensionEligibilityService implements IPaymentExtensionEligibility {
+    constructor(private <span class="cstat-no" title="statement not covered" >api: IPaymentSchemeApi<span class="fstat-no" title="function not covered" >)</span> {}</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    public getContractAccountEligibility(contractAccountNumber: string<span class="fstat-no" title="function not covered" >): Observable&lt;PaymentExtensionContractEligibility&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        return Observable.create((observer<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            this.api.getPaymentArrangementExtensionOptions(contractAccountNumber)</span>
+                .subscribe((apiResults: PaymentArrangementExtensionOptions<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    apiResults.extensionOptions.forEach((apiOption: PaymentArrangementExtensionOption<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+                        let res = <span class="cstat-no" title="statement not covered" >this.MapToPaymentExtensionContractEligibility(apiOption);</span>
+<span class="cstat-no" title="statement not covered" >                        observer.next(res);</span>
+                    });
+<span class="cstat-no" title="statement not covered" >                    observer.complete();</span>
+                },
+                (error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    observer.error(`Unable to determine payment extension eligibility ${contractAccountNumber}`);</span>
+                });
+        });
+    }
+&nbsp;
+    private MapToPaymentExtensionContractEligibility(apiOption: PaymentArrangementExtensionOption<span class="fstat-no" title="function not covered" >): PaymentExtensionContractEligibility {</span>
+<span class="cstat-no" title="statement not covered" >        apiOption.dueDateExtensions = apiOption.dueDateExtensions || [];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return new PaymentExtensionContractEligibility(</span>
+            apiOption.contractNumber.toString(),
+            apiOption.isEligible,
+            this.resolveReasonForIneligibility(apiOption.error),
+            apiOption.totalDueAmount,
+            apiOption.dueDate,
+            apiOption.dueDateExtensions.map((v<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                return new PaymentExtensionAvailableDate(v.numberOfDays, v.date);</span>
+            })
+        );
+    }
+&nbsp;
+    private resolveReasonForIneligibility(error: ErrorApiModel<span class="fstat-no" title="function not covered" >): PaymentExtensionIneligibilityReasons {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (error &amp;&amp; error.internalError &amp;&amp; error.internalError.errorNumber) {</span>
+&nbsp;
+            const errorNumber = <span class="cstat-no" title="statement not covered" >Number(error.internalError.errorNumber);</span>
+&nbsp;
+            const errorNumberToIneligibilityReasonMap = <span class="cstat-no" title="statement not covered" >{</span>
+                5: PaymentExtensionIneligibilityReasons.NoIssuedBill,
+                8: PaymentExtensionIneligibilityReasons.ExistingPaymentArrangement,
+                9: PaymentExtensionIneligibilityReasons.ExistingPaymentArrangement,
+                10: PaymentExtensionIneligibilityReasons.Payg,
+                11: PaymentExtensionIneligibilityReasons.UnableToExtendOnline,
+                12: PaymentExtensionIneligibilityReasons.UnableToExtendOnline,
+                13: PaymentExtensionIneligibilityReasons.UnableToExtendOnline,
+                14: PaymentExtensionIneligibilityReasons.UnableToExtendOnline,
+                15: PaymentExtensionIneligibilityReasons.BrokenAccount,
+                16: PaymentExtensionIneligibilityReasons.UnableToExtendOnlineOrNoIssuedBill,
+                17: PaymentExtensionIneligibilityReasons.UnableToExtendOnline,
+                18: PaymentExtensionIneligibilityReasons.TechnicalError,
+                19: PaymentExtensionIneligibilityReasons.TechnicalError,
+                20: PaymentExtensionIneligibilityReasons.TechnicalError,
+                21: PaymentExtensionIneligibilityReasons.TechnicalError,
+                22: PaymentExtensionIneligibilityReasons.TechnicalError,
+                27: PaymentExtensionIneligibilityReasons.AlreadyExtended,
+                28: PaymentExtensionIneligibilityReasons.UnableToExtendOnline,
+                30: PaymentExtensionIneligibilityReasons.UnableToExtendOnline,
+                31: PaymentExtensionIneligibilityReasons.UnableToExtendOnline
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            return errorNumberToIneligibilityReasonMap[errorNumber] || PaymentExtensionIneligibilityReasons.Unknown;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return PaymentExtensionIneligibilityReasons.None;</span>
+    }
+}
+&nbsp;
+export class PaymentExtensionContractEligibility {
+    constructor(
+        public contractNumber: string,
+        public isEligible: boolean,
+        public reasonForIneligibility?: PaymentExtensionIneligibilityReasons,
+        public totalAmountDue?: number,
+        public dueDate?: Date,
+        public availableExtensionDates?: PaymentExtensionAvailableDate[]
+    ) {}
+}
+&nbsp;
+export class PaymentExtensionAvailableDate {
+    constructor(
+        public <span class="cstat-no" title="statement not covered" >numberOfDays: number,</span>
+        public <span class="cstat-no" title="statement not covered" >dueDate?: Date<span class="fstat-no" title="function not covered" >,</span></span>
+    ) {}
+}
+&nbsp;
+export enum PaymentExtensionIneligibilityReasons {
+    None,
+    AlreadyExtended,
+    BrokenAccount,
+    ExistingPaymentArrangement,
+    NoIssuedBill,
+    Payg,
+    TechnicalError,
+    UnableToExtendOnline,
+    UnableToExtendOnlineOrNoIssuedBill,
+    Unknown
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

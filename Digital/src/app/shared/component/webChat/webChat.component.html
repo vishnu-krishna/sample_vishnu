@@ -1,0 +1,5 @@
+<span *ngIf="chatButtonId" id="{{chatButtonId}}"></span>
+
+<ng-content *ngIf="agentStatus === AgentStatus.Unresolved" select="[agent-status-unresolved]"></ng-content>
+<ng-content *ngIf="agentStatus === AgentStatus.Online" select="[agent-online]"></ng-content>
+<ng-content *ngIf="agentStatus === AgentStatus.Offline" select="[agent-offline]"></ng-content>

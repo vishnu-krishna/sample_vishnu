@@ -1,0 +1,31 @@
+<agl-maui-showcase-template heading='Confirmation Banner'>
+    <div description>
+        <p>Confirmation banner takes two input parameters</p>
+        <div class="showcase-attributes">
+            <div class="header">Attributes for &lt;agl-maui-confirmation-banner&gt;</div>
+            <table>
+                <tr><td>text</td> <td>string</td> <td class="required">required</td></tr>
+                <tr><td>iconFileName</td> <td>string</td> <td>(if not set, 'iconFileName' defaults to 'success icon.svg'.)</td></tr>
+            </table>
+        </div>
+        <p>Refer to <a href="https://aglenergy.atlassian.net/wiki/spaces/AGLDST/pages/135560005/Confirmation+Banner">Confirmation Banner</a> for details.</p>
+    </div>
+    <div exampleCodeUsage>  
+        {{codeUsage}}
+    </div>
+    <div exampleImplementation>
+        <agl-maui-showcase-example label='Banner with overlap container'>
+            <agl-maui-confirmation-banner text="Your Electricity account is now on monthly billing">
+            </agl-maui-confirmation-banner>
+            <agl-maui-container style="margin-top: -30px;">
+                <div style="width: 100%; height: 100px; display: flex; align-items: center;">
+                    <button style="width: 200px;">Ok</button>
+                </div>
+            </agl-maui-container>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label='Banner without overlap container'>
+            <agl-maui-confirmation-banner text="Your Electricity account is now on monthly billing" [withOverlapContainer]="false">
+            </agl-maui-confirmation-banner>
+        </agl-maui-showcase-example>
+    </div>
+</agl-maui-showcase-template>

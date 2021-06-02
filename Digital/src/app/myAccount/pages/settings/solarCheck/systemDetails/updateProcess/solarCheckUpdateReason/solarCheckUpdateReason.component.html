@@ -1,0 +1,64 @@
+<div class="solar-check-update-reason agl-modal-body agl-modal-body-overall-settings">
+    <div class="row modal-navi no-horizontal-padding">
+        <span id="solar-check-update-reason-close-button" class="close-button" tabindex="0" (keypress)="tabCloseModal($event)"  (click)="closeModal()" #cancelButtonTopRight>
+            <img src="svg/scc_modal_close.svg" alt="Exit Solar Check Update Details">
+        </span>
+    </div>
+    <div class="row update-reason-content no-horizontal-padding">
+        <div class="update-details-capture">
+
+            <!--title-->
+            <div class="content-area update-title">
+                <div class="update-title-text">
+                    I am editing this information because:
+                </div>
+            </div>
+
+            <!--upgrade reason selection buttons-->
+            <div class="content-area option-button-outer-padding">
+                <div class="option-button-layout">
+                    <button mat-raised-button color="warning" class="option-button-size option-button-left-button-padding option-button-system-changed" [class.option-button-deselected]="model.systemChanged !== true" [class.option-button-selected]="model.systemChanged === true" (click)="hasSystemChanged(true)">
+                        <img src="{{viewModel.leftButtonSrc}}" class="option-button-img-size-common option-button-system-changed-img-size" alt="I have modified my system">
+                        <div class="option-button-text option-button-text-pos">
+                            I have modified my system
+                        </div>
+                    </button>
+                    <button mat-raised-button color="warning" class="option-button-size option-button-system-correction" [class.option-button-deselected]="model.systemChanged !== false" [class.option-button-selected]="model.systemChanged === false" (click)="hasSystemChanged(false)">
+                        <img src="{{viewModel.rightButtonSrc}}" class="option-button-img-size-common option-button-system-correction-img-size" alt="I am making a correction">
+                        <div class="option-button-text option-button-text-pos">
+                            I am making a correction
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!--details text-->
+            <div class="content-area info-message-padding">
+                <div class="info-message-font-details">
+                    In order to maintain the accuracy of your data please confirm the reason why you are editing this information.
+                </div>
+            </div>
+
+            <div class="content-area next-button-padding">
+                <button [disabled]="model.systemChanged === null || submitInProgress" mat-raised-button class="mat-raised-button dls-button dls-button-override next-button" color="accent" (click)="submit()">
+                    Next
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="no-horizontal-padding banner-padding">
+        <div class="visible-sm visible-md visible-lg visible-xl">
+            <img src="svg/scc_update_banner.svg" alt="Solar Check Update Reason Banner">
+        </div>
+    </div>
+
+    <div class="visible-xs row no-horizontal-padding banner-padding">
+        <div class="center-image-horizontally-cropped-outer">
+            <div class="center-image-horizontally-cropped-inner">
+                <img src="svg/scc_update_banner.svg" alt="Solar Check Update Reason Mobile Banner">
+            </div>
+        </div>
+    </div>
+
+</div>

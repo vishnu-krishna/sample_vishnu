@@ -1,0 +1,50 @@
+[
+    {
+        "account": "123456",
+        "contract": "123456111",
+        "currentBillStartDate": "0001-01-01T00:00:00",
+        "currentBillEndDate": "2017-05-02T00:00:00",
+        "costToDate": 0,
+        "projectedBill": 0,
+        "usageCostThisWeek": 0,
+        "usageCostLastWeek": 0,
+        "usageThisWeek": "0",
+        "usageLastWeek": "0",
+        "balance": 0,
+        "dueDate": "0001-01-01T00:00:00",
+        "isSmartMeter": false,
+        "estimatedReads": true
+    },
+    {
+        "account": "123456",
+        "contract": "123456222",
+        "currentBillStartDate": "0001-01-01T00:00:00",
+        "currentBillEndDate": "2017-05-02T00:00:00",
+        "costToDate": 0,
+        "projectedBill": 0,
+        "usageCostThisWeek": 0,
+        "usageCostLastWeek": 0,
+        "usageThisWeek": "0",
+        "usageLastWeek": "0",
+        "balance": 0,
+        "dueDate": "0001-01-01T00:00:00",
+        "isSmartMeter": false,
+        "estimatedReads": true
+    },
+    {
+        "account": "456789",
+        "contract": "456789111",
+        "currentBillStartDate": "0001-01-01T00:00:00",
+        "currentBillEndDate": "2017-05-02T00:00:00",
+        "costToDate": 0,
+        "projectedBill": 0,
+        "usageCostThisWeek": 0,
+        "usageCostLastWeek": 0,
+        "usageThisWeek": "0",
+        "usageLastWeek": "0",
+        "balance": 0,
+        "dueDate": "0001-01-01T00:00:00",
+        "isSmartMeter": false,
+        "estimatedReads": true
+    }
+]

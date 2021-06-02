@@ -1,0 +1,77 @@
+@import '../../../../../shared/style/variables';
+@import '../../../../../shared/style/mixins';
+@import '../../../../../shared/style/tempdls';
+
+.heading {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    color: $brand-error-red;
+
+    @media #{$agl-layout-tablet-and-smaller} {
+        font-size: 25px;
+    }
+}
+
+.content {
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+    margin: 20px auto 0px;
+
+    .description {
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+
+    .icon {
+        text-align: center;
+        margin-top: 35px;
+    }
+}
+
+.button__continue {
+    text-align: center;
+    margin-top: 25px;
+
+    a {
+        height: 50px;
+        width: 290px;
+        padding: 7px 50px;
+        border-radius: $agl-border-radius;
+    }
+
+    &.close-button {
+        :hover {
+            background-color: initial;
+        }
+    }
+}
+
+.footer {
+
+    @media #{$agl-layout-tablet-and-smaller} {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .footer__content {
+        width: 200px;
+        margin: 70px auto;
+        color: $brand-sky;
+        background-color: $brand-grey-g6;
+        font-size: 16px;
+        font-weight: bold;
+        font-family: $primary-font-stack;
+        cursor: pointer;
+        text-align: center;
+
+        a {
+            color: $brand-sky;
+        }
+
+        img {
+            margin-right: 8px;
+        }
+    }
+}

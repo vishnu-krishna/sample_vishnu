@@ -1,0 +1,20 @@
+blockquote {
+    font-size: 16px;
+    padding: 20px 0 20px 40px;
+    display: block;
+    border-left: 10px solid $col-g5;
+    margin: 3em 0;
+
+    p {
+        font-size: 20px;
+        font-family: $headerStack;
+    }
+
+    cite {
+        text-transform: uppercase;
+        color: $col-g3;
+        display: block;
+        margin-top: 2em;
+        font-weight: 600;
+    }
+}

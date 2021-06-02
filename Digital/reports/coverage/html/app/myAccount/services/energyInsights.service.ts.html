@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\services\energyInsights.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/myAccount/services/</a> energyInsights.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">22.81% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>13/57</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">9.76% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/41</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">8.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20.75% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>11/53</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+&nbsp;
+import { ISettingsApi } from './settings/settingsApi.service.interface';
+import { IAccountServiceMA, AccountViewModel, ContractViewModel } from './account.service';
+import { ApiService, SelfServiceReadingResponse } from '../../shared/service/api.service';
+import { SetupEnergyInsightsRequest } from './settings/model/setupEnergyInsightsRequest';
+import { EnergyInsightsEligibility } from './settings/model/energyInsightsEligibility';
+import * as ApiModel from '../../shared/model/api.model';
+import { Guid } from '../../shared/utils/guid';
+import { EnergyInsightsApiRepository } from '../repository/energyInsightsApi.repository';
+import { ContractEnergyInsightsModel } from './settings/model/contractEnergyInsightsModel';
+&nbsp;
+@Injectable()
+&nbsp;
+export class EnergyInsightsService {
+&nbsp;
+    public selectedEnergyInsightscontract: ContractEnergyInsightsModel;
+    public selectedAccount: AccountViewModel;
+&nbsp;
+    constructor(
+        public <span class="cstat-no" title="statement not covered" >apiService: ApiService,</span>
+        private <span class="cstat-no" title="statement not covered" >energyInsightsApiRepository: EnergyInsightsApiRepository<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >,</span></span></span>
+    ) {
+<span class="cstat-no" title="statement not covered" >        if (!this.energyInsightsApiRepository) {</span>
+<span class="cstat-no" title="statement not covered" >            throw new Error(`energyInsightsApiRepository was undefined`);</span>
+        }
+    }
+&nbsp;
+    public getEligibilityAndSubscriptionStatus(accountNumber: string<span class="fstat-no" title="function not covered" >): Observable&lt;EnergyInsightsEligibility[]&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (!accountNumber) {</span>
+<span class="cstat-no" title="statement not covered" >            return Observable.throw(`Contract Number was empty`);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (isNaN(Number(accountNumber))) {</span>
+<span class="cstat-no" title="statement not covered" >            return Observable.throw(`Contract Number was not a valid number`);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return this.energyInsightsApiRepository.getEligibilityAndSubscriptionStatus(accountNumber);</span>
+    }
+&nbsp;
+    public setupEnergyInsights(contractNumber: string, setupEnergyInsightsRequest: SetupEnergyInsightsRequest<span class="fstat-no" title="function not covered" >): Observable&lt;void&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (!contractNumber) {</span>
+<span class="cstat-no" title="statement not covered" >            return Observable.throw(`contractNumber was empty`);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (isNaN(Number(contractNumber))) {</span>
+<span class="cstat-no" title="statement not covered" >            return Observable.throw(`contractNumber was not a valid number`);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (setupEnergyInsightsRequest.subscribedToMidBillEnergyBreakdown === null &amp;&amp; setupEnergyInsightsRequest.subscribedToEndBillEnergyBreakdown === null) {</span>
+<span class="cstat-no" title="statement not covered" >            return Observable.throw(`at least one of Mid or End subscription must be provided`);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return this.energyInsightsApiRepository.setupEnergyInsights(contractNumber, setupEnergyInsightsRequest);</span>
+    }
+&nbsp;
+    public getContractDetailsAndEligibility(account: AccountViewModel<span class="fstat-no" title="function not covered" >): Observable&lt;ContractEnergyInsightsModel[]&gt;{</span>
+<span class="cstat-no" title="statement not covered" >        return Observable.forkJoin(</span>
+            this.getEligibilityAndSubscriptionStatus(account.accountNumber),
+            this.apiService.getContactDetail()
+        ).map(([<span class="cstat-no" title="statement not covered" >contractEligibilityList,</span> <span class="cstat-no" title="statement not covered" >contactDetails]<span class="fstat-no" title="function not covered" ></span>) =&gt; {</span>
+            let contractEnergyInsightsList: ContractEnergyInsightsModel[] = <span class="cstat-no" title="statement not covered" >[];</span>
+&nbsp;
+            // Looping through eligibility list as contracts which are not in this list is not considered for energy insights
+<span class="cstat-no" title="statement not covered" >            contractEligibilityList.forEach((contractEligibility<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+                let contractEnergyInsightsModel: ContractEnergyInsightsModel = <span class="cstat-no" title="statement not covered" >new ContractEnergyInsightsModel();</span>
+<span class="cstat-no" title="statement not covered" >                contractEnergyInsightsModel.accountNumber = account.accountNumber;</span>
+                let elecContract: ContractViewModel = <span class="cstat-no" title="statement not covered" >account.contracts.find((contract<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return (contract.isElectricity &amp;&amp; contract.contractNumber === contractEligibility.contractNumber.toString());</span>
+                });
+<span class="cstat-no" title="statement not covered" >                if (elecContract &amp;&amp; contractEligibility.isEligible) {</span>
+<span class="cstat-no" title="statement not covered" >                    contractEnergyInsightsModel.address = elecContract.address === null ? account.groupedAddress : elecContract.address;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    if (contactDetails &amp;&amp; contactDetails.businessPartners &amp;&amp; contactDetails.businessPartners.length &gt; 0) {</span>
+                        // For Multi BR customers we are currently showing first contact details
+<span class="cstat-no" title="statement not covered" >                        contractEnergyInsightsModel.email = contactDetails.businessPartners[0].email.toLowerCase();</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    contractEnergyInsightsModel.energyInsightsEligibility = contractEligibility;</span>
+<span class="cstat-no" title="statement not covered" >                    contractEnergyInsightsModel.contract = elecContract;</span>
+<span class="cstat-no" title="statement not covered" >                    contractEnergyInsightsList.push(contractEnergyInsightsModel);</span>
+                }
+            });
+<span class="cstat-no" title="statement not covered" >            return contractEnergyInsightsList;</span>
+        }, (error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            console.log('getContractDetailsAndEligibility error:', error);</span>
+        });
+    }
+&nbsp;
+    public verifyAccountDetails(accounts: AccountViewModel[], energyInsightsEnabled: boolean<span class="fstat-no" title="function not covered" >): boolean {</span>
+        let validAccounts = <span class="cstat-no" title="statement not covered" >accounts.filter((account<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >!account.allContractsAreRestricted)</span></span>;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (validAccounts.length === 1 &amp;&amp; energyInsightsEnabled) {</span>
+            let account: AccountViewModel = <span class="cstat-no" title="statement not covered" >validAccounts[0];</span>
+            let numberOfElectricityContracts: number = <span class="cstat-no" title="statement not covered" >account.contracts.filter((contract<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                return (contract.isElectricity &amp;&amp; contract.isSmartMeter &amp;&amp; !contract.isRestricted);</span>
+            }).length;
+<span class="cstat-no" title="statement not covered" >            if (numberOfElectricityContracts === 1) {</span>
+<span class="cstat-no" title="statement not covered" >                this.selectedAccount = validAccounts[0];</span>
+<span class="cstat-no" title="statement not covered" >                return true;</span>
+            }
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

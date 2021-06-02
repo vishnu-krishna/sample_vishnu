@@ -1,0 +1,33 @@
+<div class="photo-intro">
+     <div class="heading">
+        Send us a photo
+    </div>
+    <div class="photo-icon">
+    </div>
+    <div class="content">
+        We are still having trouble confirming your meter read.
+        <br>
+        <br>
+        Have a photo of your meter handy so that you can attach it here or email it through for further review. 
+    </div>
+    <div class="button-container">
+        <div class="attach">
+            <a mat-raised-button color="accent" class="tempdls-button attach-button" (click)="clickToAttachPhoto()">ATTACH PHOTO</a>
+        </div>
+        <div class="email">
+            <a mat-raised-button class="tempdls-button email-button" [href]="mailToLink">
+                EMAIL PHOTO TO
+                <div class="mailing-address">{{customerEmail}}</div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footer__content">
+        <a href="https://www.agl.com.au/residential/help-and-support/how-to-read-your-meter" target="_blank"> 
+            <img class="icon_size" src="svg/help_icon.svg">
+            How to read your meter
+        </a>
+    </div>
+</div>

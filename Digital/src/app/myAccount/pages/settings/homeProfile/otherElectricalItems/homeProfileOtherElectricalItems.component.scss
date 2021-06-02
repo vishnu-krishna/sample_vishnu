@@ -1,0 +1,34 @@
+@import '../homeProfile';
+
+.homeprofile-other {
+    @include homeprofile-survey-page-styling();
+
+    &-body  {
+        @include homeprofile-body-styling();
+
+        @media #{$agl-layout-tablet-and-greater} {
+            background-image: url('svg/homeprofile/entertainment.svg');
+            background-position: right 22px top 85px;
+        }
+    }
+
+    &-questionnaire {
+        @include homeprofile-survey-questionnaire-styling();
+
+        &__heading {
+            @include homeprofile-heading-styling();
+        }
+
+        &-item {
+            @include homeprofile-question-stack-segment-styling();
+
+            &__question {
+                @include homeprofile-survey-question-styling();
+            }
+        }
+    }
+
+    &__segmented-button {
+        @include homeprofile-segmented-buttons-styling();
+    }
+}

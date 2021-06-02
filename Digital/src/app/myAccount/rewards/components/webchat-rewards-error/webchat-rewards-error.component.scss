@@ -1,0 +1,41 @@
+@import '../../../../shared/style/variables';
+
+.rewards-error-webchat {
+    min-height: 22px;
+
+    >div {
+        outline: none;
+    }
+
+    a,
+    .chat-link {
+        color:  $brand-sky;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+            color: $brand-sky-darker;
+        }
+    }
+
+    .redemption-error-desktop {
+        @media #{$agl-layout-mobile} {
+            display: none;
+        }
+    }
+
+    .redemption-error-mobile {
+        font-size: 14px;
+
+        @media #{$agl-layout-tablet-and-greater} {
+            display: none;
+        }
+    }
+
+    .redemption-error-webchat {
+        @media #{$agl-layout-mobile} {
+            font-size: 14px;
+        }
+    }
+}

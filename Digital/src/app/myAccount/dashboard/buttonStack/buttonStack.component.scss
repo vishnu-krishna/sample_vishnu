@@ -1,0 +1,142 @@
+@import '../../../shared/style/variables';
+@import '../../../shared/style/mixins';
+
+$bg-button-stack: $residential-blue;
+
+.button-stack {
+    padding-top: 15px;
+    padding-bottom: 18px;
+    box-shadow: $agl-box-shadow;
+
+    .loading-list {
+        z-index: 1;
+        @media #{$agl-layout-desktop-medium-and-greater} {
+            top: 25px;
+            position: absolute;
+        }
+
+        li {
+            margin: 0 0 5px 0;
+            background-color: $brand-base;
+
+            &.preLoader {
+
+                @include pulse();
+
+                img {
+                    width: 100%;
+                    height: 48px;
+                }
+            }
+        }
+    }
+}
+
+.promo-card {
+    mat-card-content {
+        ul {
+            list-style: none;
+            padding-left: 0px;
+            margin-left: 0px;
+        }
+    }
+
+    &-header {
+        color: $brand-grey-g1;
+    }
+
+    &-item {
+        border-top-color: rgba(0, 0, 0, 0.12);
+        border-top-style: solid;
+        border-top-width: 1px;
+        padding: 12px 0;
+
+        a {
+            font-weight: bold;
+            display: block;
+            font-family: $secondary-font-stack;
+        }
+
+        &:first-child {
+            border-top: none;
+            padding-top: 22px;
+        }
+
+        &:last-child {
+            padding-bottom: 0px;
+        }
+
+        &__image {
+            text-align: center;
+            padding-bottom: 15px;
+
+            img {
+                width: 80px;
+            }
+        }
+
+        &__note {
+            color: $brand-grey-g1;
+            padding-bottom: 15px;
+            font-size: 14px;
+            font-family: $secondary-font-stack;
+        }
+
+        &__action {
+            &--link {
+                position: relative;
+                padding-right: 25px;
+
+                mat-icon {
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translateY(-50%);
+                    font-size: 16px;
+                    width: 16px;
+                    height: 16px;
+                    color: $brand-grey-g3;
+                }
+
+                a {
+                    transition: color 0.3s ease;
+                    cursor: pointer;
+                }
+            }
+
+            &--button {
+                padding: 0;
+                font-family: $secondary-font-stack;
+                font-weight: bold;
+                text-align: center;
+                margin-bottom: 20px;
+                width: 100%;
+                border-radius: $agl-border-radius;
+                color: $brand-white;
+                box-shadow: $agl-button-shadow;
+
+                &:hover {
+                    background-color: $lighten-sky-6;
+                    box-shadow: $agl-button-hover-shadow;
+                }
+            }
+        }
+    }
+}
+
+
+.marketing-tile {
+    @include responsive-lg-only {
+        @include fakeBlock($width: 100%, $height: 337px, $radius: 3px);
+        @include pulse();
+        position: absolute;
+    }
+    position: absolute;
+    top: 264px;
+    z-index: 1;
+    @media #{$agl-layout-desktop-medium} {
+        @include fakeBlock($width: 100%, $height: 275px, $radius: 3px);
+        @include pulse();
+        position: absolute;
+    }
+}

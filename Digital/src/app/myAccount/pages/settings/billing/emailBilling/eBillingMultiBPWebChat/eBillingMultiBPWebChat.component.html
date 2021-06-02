@@ -1,0 +1,17 @@
+<agl-maui-flash-message type="Inform">
+    <div heading>We noticed that you have multiple accounts <span *ngIf="isEmptyOrInvalidEmailAddress">and we're missing a valid email address</span></div>
+    <div subheading>
+        <agl-webchat #contactDetailsMultiBPChat
+                        chatButtonId="LPEBillingContactDetailsMultiBusPartner-{{sequenceId}}"
+                        [contentIsHostedInLivePerson]="false">
+            <div agent-status-unresolved>&nbsp;<!-- reserve some space to reduce the popping effect --></div>
+            <div agent-offline>
+                To set up eBilling, please contact us 24/7 on <a href="tel:131 245">131 245</a>.<br>
+                Calling from overseas? You can call us on <a href="tel:+61386336000">+61 3 8633 6000</a>.
+            </div>
+            <div agent-online>
+                To set up eBilling <a (click)="contactDetailsMultiBPChat.requestChat()">chat with us online</a>.
+            </div>
+        </agl-webchat>
+    </div>
+</agl-maui-flash-message>

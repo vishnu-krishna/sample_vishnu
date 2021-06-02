@@ -1,0 +1,23 @@
+.card-scroll-active {
+    padding-right: 0;
+    padding-left: 0;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .card-scroll-wrapper {
+        width: 100%;
+        overflow-x: scroll;
+        padding-left: 10px;
+        padding-top: 5px;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .col {
+            padding-right: 0;
+        }
+    }
+}

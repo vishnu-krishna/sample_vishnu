@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\shared\service\usageRendering.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/shared/service/</a> usageRendering.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.4% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>15/121</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/52</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.11% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>13/117</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import * as moment from 'moment';
+&nbsp;
+import { UsageDataModel } from '../model/usage/usageData.model';
+import { UsageGraphItemViewModel } from '../model/usage/usageGraphItemView.model';
+import { UsageGraphViewModel } from '../model/usage/usageGraphView.model';
+import { UsageGranularity } from './../model/usage/usageGranularity.model';
+import { IUsageRenderingService } from './contract/iusageRendering.service';
+&nbsp;
+const smallValueThreshold: number = 10;
+const smallValueThresholdAxis: number = 20;
+&nbsp;
+<span class="fstat-no" title="function not covered" >@Injectable()</span>
+export class UsageRenderingService implements IUsageRenderingService {
+&nbsp;
+    private <span class="cstat-no" title="statement not covered" >debugMode: boolean = true;</span>
+&nbsp;
+    public getChartDataFromUsageInfo( usageInfo: UsageDataModel, graphGranularity<span class="fstat-no" title="function not covered" > ): UsageGraphViewModel {</span>
+&nbsp;
+        // Reset
+        let graphMaxValue = <span class="cstat-no" title="statement not covered" >0;</span>
+        let chartData = <span class="cstat-no" title="statement not covered" >new UsageGraphViewModel();</span>
+        let currentMonth: number = <span class="cstat-no" title="statement not covered" >-1;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        for ( let item<span class="cstat-no" title="statement not covered" ></span> of usageInfo.costs ) {</span>
+<span class="cstat-no" title="statement not covered" >            if ( item.value &gt; graphMaxValue ) {</span>
+<span class="cstat-no" title="statement not covered" >                graphMaxValue = item.value;</span>
+            }
+        }
+&nbsp;
+        // Granularity specific variables
+        let chartHeightDesktop: number = <span class="cstat-no" title="statement not covered" >0;</span>
+        let chartHeightMobile: number = <span class="cstat-no" title="statement not covered" >0;</span>
+        let amountOfGridLines: number = <span class="cstat-no" title="statement not covered" >0;</span>
+        let graphCeilingPadding: number = <span class="cstat-no" title="statement not covered" >0;</span> // The percentage of padding between graph maximum item and top of graph.
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (graphGranularity === UsageGranularity.monthly || graphGranularity === UsageGranularity.basic) {</span>
+<span class="cstat-no" title="statement not covered" >            amountOfGridLines = 4;</span>
+<span class="cstat-no" title="statement not covered" >            chartHeightDesktop = 288;</span>
+<span class="cstat-no" title="statement not covered" >            chartHeightMobile = 256;</span>
+<span class="cstat-no" title="statement not covered" >            graphCeilingPadding = 20;</span>
+        } else <span class="cstat-no" title="statement not covered" >if (graphGranularity === UsageGranularity.daily) {</span>
+<span class="cstat-no" title="statement not covered" >            amountOfGridLines = 3;</span>
+<span class="cstat-no" title="statement not covered" >            chartHeightDesktop = 214;</span>
+<span class="cstat-no" title="statement not covered" >            chartHeightMobile = 214;</span>
+<span class="cstat-no" title="statement not covered" >            graphCeilingPadding = 20;</span>
+        } else <span class="cstat-no" title="statement not covered" >if (graphGranularity === UsageGranularity.hourly) {</span>
+<span class="cstat-no" title="statement not covered" >            amountOfGridLines = 2;</span>
+<span class="cstat-no" title="statement not covered" >            chartHeightDesktop = 75;</span>
+<span class="cstat-no" title="statement not covered" >            chartHeightMobile = 75;</span>
+<span class="cstat-no" title="statement not covered" >            graphCeilingPadding = 5;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        chartData.graphCeilingValue = ( ( ( graphMaxValue / 100 ) * graphCeilingPadding ) + graphMaxValue );</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.debug(`graphMaxValue=${graphMaxValue}, graphCeilingValue=${chartData.graphCeilingValue}`);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (graphGranularity === UsageGranularity.daily) {</span>
+            // Add the out of data range placeholders
+<span class="cstat-no" title="statement not covered" >            for (let i = 0; i &lt;= 6; i++ ) {</span>
+                let newChartItem = <span class="cstat-no" title="statement not covered" >new UsageGraphItemViewModel();</span>
+<span class="cstat-no" title="statement not covered" >                newChartItem.isEndOfDataRangePlaceholder = true;</span>
+<span class="cstat-no" title="statement not covered" >                newChartItem.index = chartData.graphItems.length;</span>
+<span class="cstat-no" title="statement not covered" >                chartData.graphItems.push(newChartItem);</span>
+&nbsp;
+            }
+        }
+&nbsp;
+        // Generate the items for the graph
+<span class="cstat-no" title="statement not covered" >        for (let i<span class="cstat-no" title="statement not covered" ></span> of Object.keys(usageInfo.costs)) {</span>
+&nbsp;
+            let usageItem = <span class="cstat-no" title="statement not covered" >usageInfo.costs[i];</span>
+            let associatedConsumption = <span class="cstat-no" title="statement not covered" >usageInfo.consumption[i];</span>
+&nbsp;
+            let newChartItem = <span class="cstat-no" title="statement not covered" >new UsageGraphItemViewModel();</span>
+<span class="cstat-no" title="statement not covered" >            newChartItem.usageDatum = usageItem;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if ( newChartItem.usageDatum.value &lt; 0 ) {</span>
+<span class="cstat-no" title="statement not covered" >                newChartItem.usageDatum.value = 0;</span>
+            }
+&nbsp;
+            // set the cost and consumption values
+<span class="cstat-no" title="statement not covered" >            newChartItem.valueCost = usageItem.value;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if ( newChartItem.valueCost &lt; 0 ) {</span>
+<span class="cstat-no" title="statement not covered" >                newChartItem.valueCost = 0;</span>
+            } else <span class="cstat-no" title="statement not covered" >if ( newChartItem.valueCost &lt; 10 ) {</span>
+<span class="cstat-no" title="statement not covered" >                newChartItem.valueCost = +newChartItem.valueCost.toFixed( 2 );</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                newChartItem.valueCost = Math.round( newChartItem.valueCost );</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            newChartItem.barHeightDesktop = (( newChartItem.valueCost / chartData.graphCeilingValue ) * chartHeightDesktop );</span>
+<span class="cstat-no" title="statement not covered" >            newChartItem.barHeightMobile = (( newChartItem.valueCost / chartData.graphCeilingValue ) * chartHeightMobile );</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            newChartItem.estimatedRead = usageItem.estimatedRead;</span>
+<span class="cstat-no" title="statement not covered" >            if (usageItem.estimatedRead) {</span>
+<span class="cstat-no" title="statement not covered" >                chartData.hasMissingReads = true;</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            newChartItem.startDateTime = usageItem.startDateTime;</span>
+<span class="cstat-no" title="statement not covered" >            newChartItem.endDateTime = usageItem.endDateTime;</span>
+&nbsp;
+            // Find corresponding value for consumption
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if ( ( associatedConsumption.startDateTime  === usageItem.startDateTime ) &amp;&amp;</span>
+                 ( associatedConsumption.endDateTime    === usageItem.endDateTime ) ) {
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                newChartItem.valueConsumption = associatedConsumption.value;</span>
+&nbsp;
+            } else {
+<span class="cstat-no" title="statement not covered" >                console.error( 'ERROR: Could not find associated consumption record for the cost record ' + usageItem.startDateTime + ' - ' + usageItem.endDateTime );</span>
+            }
+&nbsp;
+            let startDate = <span class="cstat-no" title="statement not covered" >moment( usageItem.startDateTime );</span>
+            let endDate = <span class="cstat-no" title="statement not covered" >moment( usageItem.endDateTime );</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if ( graphGranularity === UsageGranularity.basic  || graphGranularity === UsageGranularity.monthly ) {</span>
+&nbsp;
+                // calculate averages
+                let daysInSelectedPeriod = <span class="cstat-no" title="statement not covered" >endDate.diff( startDate, 'days' ) + 1;</span>
+<span class="cstat-no" title="statement not covered" >                if ( daysInSelectedPeriod &gt; 0 ) {</span>
+<span class="cstat-no" title="statement not covered" >                    newChartItem.daysOfData = daysInSelectedPeriod;</span>
+<span class="cstat-no" title="statement not covered" >                    newChartItem.averageConsumption = this.calculateAverage(daysInSelectedPeriod, newChartItem.valueConsumption);</span>
+<span class="cstat-no" title="statement not covered" >                    newChartItem.averageCost = this.calculateAverage(daysInSelectedPeriod, newChartItem.valueCost);</span>
+                }
+&nbsp;
+                let startDateFormat = ( <span class="cstat-no" title="statement not covered" >startDate.year() === endDate.year() ? 'D MMM' : 'D MMM YYYY' </span>);
+                let timeSpanTitleStart = <span class="cstat-no" title="statement not covered" >moment( usageItem.startDateTime ).format( 'MMM' );</span>
+                let timeSpanTitleEnd = <span class="cstat-no" title="statement not covered" >moment( usageItem.endDateTime ).format( 'MMM' );</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if ( timeSpanTitleStart === timeSpanTitleEnd ) {</span>
+<span class="cstat-no" title="statement not covered" >                    newChartItem.timeSpanTitle = timeSpanTitleStart;</span>
+<span class="cstat-no" title="statement not covered" >                    newChartItem.timeSpanTitleMobile = timeSpanTitleStart;</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    newChartItem.timeSpanTitle = timeSpanTitleStart + ' - ' + timeSpanTitleEnd;</span>
+<span class="cstat-no" title="statement not covered" >                    newChartItem.timeSpanTitleMobile = timeSpanTitleStart + '-' + timeSpanTitleEnd;</span>
+                }
+<span class="cstat-no" title="statement not covered" >                if ( graphGranularity === UsageGranularity.monthly ) {</span>
+<span class="cstat-no" title="statement not covered" >                    newChartItem.timeSpanTitleInsight = startDate.format( 'MMMM YYYY' ); </span>// For monthly graph, only nonth and year need to show
+                } else {
+<span class="cstat-no" title="statement not covered" >                    newChartItem.timeSpanTitleInsight = startDate.format( startDateFormat ) + ' - ' + endDate.format( 'D MMM YYYY' );</span>
+                }
+&nbsp;
+            } else <span class="cstat-no" title="statement not covered" >if (graphGranularity === UsageGranularity.daily) {</span>
+&nbsp;
+                let thisMonth = <span class="cstat-no" title="statement not covered" >startDate.month();</span>
+<span class="cstat-no" title="statement not covered" >                if (thisMonth !== currentMonth) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (currentMonth !== -1) {</span>
+<span class="cstat-no" title="statement not covered" >                        newChartItem.isFirstOfNewMonth = true;</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    currentMonth = thisMonth;</span>
+                }
+&nbsp;
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            newChartItem.index = chartData.graphItems.length;</span>
+<span class="cstat-no" title="statement not covered" >            chartData.graphItems.push( newChartItem );</span>
+        }
+&nbsp;
+        // Grid Lines
+        let axisDecimalPlaces = <span class="cstat-no" title="statement not covered" >2;</span>
+<span class="cstat-no" title="statement not covered" >        if ( graphMaxValue &gt; smallValueThresholdAxis ) {</span>
+<span class="cstat-no" title="statement not covered" >            axisDecimalPlaces = 0;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        for (let i = 1; i &lt;= amountOfGridLines; i++) {</span>
+            let percentile = <span class="cstat-no" title="statement not covered" >(i) / (amountOfGridLines) * 100;</span>
+            let axisValue = (<span class="cstat-no" title="statement not covered" >(percentile * chartData.graphCeilingValue) / 100)</span>;
+<span class="cstat-no" title="statement not covered" >            this.debug(`i=${i}, amountOfGridLines=${amountOfGridLines}, percentile = ${percentile}, axisValue=${axisValue}`);</span>
+<span class="cstat-no" title="statement not covered" >            chartData.yAxisLabels[i - 1] = axisValue.toFixed(axisDecimalPlaces);</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return chartData;</span>
+    }
+&nbsp;
+    public calculateAverage(daysInSelectedPeriod: number, value: number<span class="fstat-no" title="function not covered" >): string {</span>
+<span class="cstat-no" title="statement not covered" >        return this.formatValueToString( value / daysInSelectedPeriod );</span>
+    }
+&nbsp;
+    public formatValueToString( value: number<span class="fstat-no" title="function not covered" > ): string {</span>
+&nbsp;
+        let formattedValue = <span class="cstat-no" title="statement not covered" >'0';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if ( value &lt; smallValueThreshold ) {</span>
+<span class="cstat-no" title="statement not covered" >            formattedValue = value.toFixed( 2 );</span>
+            let fractionSplit = <span class="cstat-no" title="statement not covered" >formattedValue.split( '.' );</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if ( fractionSplit.length === 2 &amp;&amp; fractionSplit[1].length === 1 ) {</span>
+<span class="cstat-no" title="statement not covered" >                formattedValue += '0';</span>
+            }
+&nbsp;
+        } else {
+<span class="cstat-no" title="statement not covered" >            formattedValue = Math.round( value ).toString();</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return formattedValue;</span>
+    }
+&nbsp;
+    private debug(msg: any<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.debugMode) {</span>
+<span class="cstat-no" title="statement not covered" >            console.log('*** USAGE RENDERING SERVICE: ' + msg);</span>
+        }
+    }
+&nbsp;
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<div class="bank-account">
+    <div *ngIf="!saveOnly" class="bank-account__info">Use a savings or cheque account. No payment processing fees apply.</div>
+    <div class="bank-account__form">
+        <form [formGroup]="bankAccountForm" (ngSubmit)="saveBankAccount()" novalidate autocomplete="off">
+            <div *ngIf="isSmsPay && paymentMethodReference">
+                <fieldset>
+                    <div>
+                        <label>Payment Method</label>
+                        <input mat-input class="bank-account__form--stored-payment-method" value="{{paymentMethodReference}}" disabled="disabled">
+                    </div>
+                </fieldset>
+            </div>
+            <div *ngIf="!isSmsPay || !paymentMethodReference">
+                <fieldset class="bank-account__form-block" [class.mg-fix]="saveOnly">
+                    <label for="account-name">{{content?.bankAccountNameLabelText}}</label>
+                    <input type="text" formControlName="accountHolderName"
+                        aglNameMask [class.invalid]="bankAccountForm.controls.accountHolderName.touched && !bankAccountForm.controls.accountHolderName.valid"
+                        maxLength="90" autocomplete="name"/>
+                    <div class="bank-account__form--warning" *ngIf="bankAccountForm.controls.accountHolderName.touched && !bankAccountForm.controls.accountHolderName.valid">{{content?.bankAccountNameError}}</div>
+                </fieldset>
+                <fieldset class="bank-account__form-block">
+                    <label >{{content?.bSBNumberLabelText}}</label><br />
+                    <input class="bank-account__form--small" type="tel" formControlName="bsb" maxLength="7"
+                        [class.invalid]="bankAccountForm.controls.bsb.touched && !bankAccountForm.controls.bsb.valid" aglBsbMask/>
+                    <div class="bank-account__form--warning" *ngIf="bankAccountForm.controls.bsb.touched && !bankAccountForm.controls.bsb.valid">{{content?.bSBInvalidError}}</div>
+                </fieldset>
+                <fieldset class="bank-account__form-block bank-account__form-account-number">
+                    <label>{{content?.bankAccountNumberLabelText}}</label>
+                    <input formControlName="accountNumber"
+                        [class.invalid]="bankAccountForm.controls.accountNumber.touched && !bankAccountForm.controls.accountNumber.valid"
+                        maxlength="9" pattern="\d*" autocomplete="off" type="tel" aglNumberField/>
+                    <div class="bank-account__form--warning" *ngIf="bankAccountForm.controls.accountNumber.touched && !bankAccountForm.controls.accountNumber.valid">{{content?.bankAccountNumberError}}</div>
+                </fieldset>
+            </div>
+            <div class="disclaimer" *ngIf="showSmsPayDisclaimer()">
+                If you've authorised any payments with {{paymentArrangementString}} in the last 24 hours, please
+                <a href="https://www.agl.com.au/residential/contact-us" target="_blank">contact us</a>
+                to confirm if your payment will be processed.
+            </div>
+            <div *ngIf="directDebitSettings" class="bank-account__dd">
+                <mat-icon svgIcon="icon-wallet" class="bank-account__dd-icon"></mat-icon>
+                <div class="bank-account__dd-text">{{paymentSafetyMessage}}</div>
+            </div>
+            <agl-mobile-number *ngIf="isSmsPay" [value]="mobileNumber" webChatElementId="smspayupdatemobileexisting"></agl-mobile-number>
+
+            <mat-checkbox
+                *ngIf="directDebitSettings"
+                class="save-and-pay-checkbox"
+                disableRipple="true"
+                formControlName="acceptanceCheckbox"
+                color="primary">
+                    <span class="toc-message">I confirm that I have read and agree to the <a href="{{termsConditionLink}}" target="_blank">{{termsConditionsText}}</a> </span>
+                </mat-checkbox>
+            <button id="make-payment-account"
+                mat-raised-button color="accent"
+                class="bank-account__form-button small-button"
+                [class.is-loading]="isSaving"
+                [disabled]="!bankAccountForm.valid"
+                type="submit">{{buttonWording}}</button>
+            <agl-alert *ngIf="errorMakingPayment" alertType="error" heading="Sorry, your payment was unsuccessful." body="Don't worry, you weren't charged. Please give it another try." class="failure"></agl-alert>
+            <div *ngIf="!myWalletSettings" class="bank-account__disclaimer">
+                <div *ngIf="!directDebitSettings">By proceeding with this payment, you are agreeing to the online payment <a href="https://www.agl.com.au/site-pages/terms" target="_blank">Terms and Conditions</a>.</div>
+                <div *ngIf="!directDebitSettings" class="bank-account__disclaimer-row">Payments submitted before 6pm AEST will usually be processed by your bank on the next business day, so please make sure sufficient funds are available in your account.</div>
+            </div>
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\bills\billsButtonStack\billsButtonStack.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/bills/billsButtonStack/</a> billsButtonStack.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">28% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>21/75</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">48.78% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>20/41</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.56% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">29.23% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>19/65</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Rx';
+import { ConfigService } from '../../../../shared/service/config.service';
+import { AccountService, AccountViewModel } from '../../../services/account.service';
+import { ISsmrService } from '../../../services/contract/issmr.service';
+import { FeatureFlagService, FeatureFlagTypes } from '../../../services/featureFlag.service';
+import { MonthlyBillingReferrer, MonthlyBillingService } from '../../../services/monthlyBilling.service';
+import { AccountMonthlyBillingModel } from '../../../services/settings/model/accountMonthlyBillingModel';
+import { MonthlyBillingRoutes } from '../../settings/monthlyBilling/monthlyBillingRoutes.const';
+&nbsp;
+@Component({
+    selector: 'agl-bills-button-stack',
+    template: require('./billsButtonStack.component.html'),
+    styles: [require('./billsButtonStack.component.scss')]
+})
+export class BillsButtonStackComponent implements OnInit {
+&nbsp;
+    @Input() public isReadOnly: boolean;
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >monthlyBillingEntryAvailable: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >ssmrFeatureEnabled: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >isSingleAccount: boolean = false;</span>
+    public monthlyBillingUrl: string;
+    public account: AccountViewModel;
+    public <span class="cstat-no" title="statement not covered" >isLoadingMonthlyBillingEligibility: boolean = false;</span>
+    public monthlyBillingFeatureFlagOn: boolean;
+    public doesCustomerhaveBasicMeter: boolean;
+    public <span class="cstat-no" title="statement not covered" >hasLoaded: boolean = false;</span>
+&nbsp;
+    constructor(
+        public <span class="cstat-no" title="statement not covered" >featureService: FeatureFlagService,</span>
+        public <span class="cstat-no" title="statement not covered" >accountsService: AccountService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >ssmr: ISsmrService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >monthlyBillingService: MonthlyBillingService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >router: Router<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >configService: ConfigService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" ></span></span></span>
+    ) {
+&nbsp;
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public ngOnInit() {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.checkCustomerHasBasicMeter();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.featureService.featureFlagged(FeatureFlagTypes.ssmrEnabled).subscribe((ssmrEnabled<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            this.ssmrFeatureEnabled = ssmrEnabled;</span>
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        Observable.forkJoin(</span>
+            this.featureService.featureFlagged(FeatureFlagTypes.monthlyBillingEnabled),
+            this.monthlyBillingService.isCustomerPredictedAsEligible(),
+            this.monthlyBillingService.hasAnyNonMonthlyBillingContract(),
+            this.accountsService.getAccounts()
+        )
+        .finally(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            this.hasLoaded = true;</span>
+        })
+        .subscribe(
+            ([<span class="cstat-no" title="statement not covered" >monthlyBillingEnabled,</span> <span class="cstat-no" title="statement not covered" >monthlyBillingPredictedEligible,</span> <span class="cstat-no" title="statement not covered" >nonMonthlyBillingContractAvailable,</span> <span class="cstat-no" title="statement not covered" >accounts]<span class="fstat-no" title="function not covered" ></span>) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.monthlyBillingFeatureFlagOn = monthlyBillingEnabled;</span>
+<span class="cstat-no" title="statement not covered" >                if (accounts.length === 1) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.isSingleAccount = true;</span>
+<span class="cstat-no" title="statement not covered" >                    this.account = accounts[0];</span>
+                }
+<span class="cstat-no" title="statement not covered" >                this.monthlyBillingEntryAvailable = (monthlyBillingEnabled &amp;&amp; monthlyBillingPredictedEligible &amp;&amp; nonMonthlyBillingContractAvailable);</span>
+            },
+            (err: any<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+                // We need to handle this error, otherwise it gets bubbled up to angular, which will cause issues
+            }
+        );
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public showSssmrLink() {</span>
+<span class="cstat-no" title="statement not covered" >        return this.doesCustomerhaveBasicMeter &amp;&amp; this.ssmrFeatureEnabled;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public onClickMonthlyBilling(): void {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (this.isSingleAccount) {</span>
+<span class="cstat-no" title="statement not covered" >            this.isLoadingMonthlyBillingEligibility = true;</span>
+<span class="cstat-no" title="statement not covered" >            this.monthlyBillingService.currentAccount = this.account;</span>
+<span class="cstat-no" title="statement not covered" >            this.monthlyBillingService.getMonthlyBillingInfoWithEligibility(this.monthlyBillingService.currentAccount)</span>
+                .finally(
+<span class="fstat-no" title="function not covered" >                    () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        this.isLoadingMonthlyBillingEligibility = false;</span>
+                    }
+                )
+                .subscribe(
+                    (monthlyBillingAccountDetails: AccountMonthlyBillingModel<span class="fstat-no" title="function not covered" > ) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        this.monthlyBillingService.eligibilityFailed = false;</span>
+<span class="cstat-no" title="statement not covered" >                        this.monthlyBillingService.monthlyBillingReferrer = MonthlyBillingReferrer.ManageAccount;</span>
+<span class="cstat-no" title="statement not covered" >                        this.monthlyBillingService.currentAccount = this.account;</span>
+<span class="cstat-no" title="statement not covered" >                        this.monthlyBillingService.selectedMonthlyBillingAccount = monthlyBillingAccountDetails;</span>
+<span class="cstat-no" title="statement not covered" >                        this.router.navigate([MonthlyBillingRoutes.ChooseService]);</span>
+                    },
+                    (err<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        this.monthlyBillingService.eligibilityFailed = true;</span>
+<span class="cstat-no" title="statement not covered" >                        this.router.navigate(['/settings/billing']);</span>
+                    }
+                );
+&nbsp;
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.router.navigate(['/settings/billing']);</span>
+        }
+&nbsp;
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public checkCustomerHasBasicMeter() {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.doesCustomerhaveBasicMeter = true;</span>
+<span class="cstat-no" title="statement not covered" >        this.accountsService.getAccounts().subscribe(</span>
+            (result<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+                let accountArray: AccountViewModel[];
+<span class="cstat-no" title="statement not covered" >                accountArray = result;</span>
+<span class="cstat-no" title="statement not covered" >                for (let account<span class="cstat-no" title="statement not covered" ></span> of accountArray) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.doesCustomerhaveBasicMeter = (account.contracts.find((contract<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >(contract.isSmartMeter === false))</span></span> !== undefined);</span>
+<span class="cstat-no" title="statement not covered" >                    if (this.doesCustomerhaveBasicMeter) {</span>
+<span class="cstat-no" title="statement not covered" >                        break; </span>// breaking if at least one basic meter is found for the account
+                    }
+                }
+            }
+        );
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public viewPlanLink(): string {</span>
+<span class="cstat-no" title="statement not covered" >        return this.configService.current.aglSiteCoreWebsiteBaseUrl + `/aeo/energyplans/energy-plan`;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public showClassicAeoMonthlyBillingLink(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return !this.monthlyBillingFeatureFlagOn &amp;&amp; this.hasLoaded;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public showMyAccountManagedMonthlyBilling(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.monthlyBillingFeatureFlagOn &amp;&amp; this.monthlyBillingEntryAvailable &amp;&amp; this.hasLoaded;</span>
+    }
+&nbsp;
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

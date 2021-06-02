@@ -1,0 +1,213 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "account": "7021129726",
+            "contract": "9400717466",
+            "overdue": 0,
+            "currentBalance": 150,
+            "totalPayment": 0,
+            "billSmoothing": true,
+            "directDebit": true
+        },
+        {
+            "account": "7021129726",
+            "contract": "9400717581",
+            "overdue": 0,
+            "currentBalance": 116.09,
+            "totalPayment": 0,
+            "billSmoothing": true,
+            "directDebit": true
+        },
+        {
+            "account": "7021129727",
+            "contract": "9400717467",
+            "overdue": 0,
+            "currentBalance": 100,
+            "totalPayment": 0,
+            "billSmoothing": true,
+            "directDebit": false
+        },
+        {
+            "account": "7021129727",
+            "contract": "9400717582",
+            "overdue": 20,
+            "currentBalance": 100,
+            "totalPayment": 0,
+            "billSmoothing": true,
+            "directDebit": false
+        },
+        {
+            "account": "7021129728",
+            "contract": "9400717468",
+            "overdue": 0,
+            "currentBalance": 0,
+            "totalPayment": 10,
+            "billSmoothing": false,
+            "directDebit": false
+        },
+        {
+            "account": "7021129728",
+            "contract": "9400717583",
+            "overdue": 0,
+            "currentBalance": 0,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": false
+        },
+        {
+            "account": "7021129728",
+            "contract": "123",
+            "overdue": 0,
+            "currentBalance": -116.09,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": false
+        },
+        {
+            "account": "7021129729",
+            "contract": "566643",
+            "overdue": 10.50,
+            "currentBalance": 0,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": false
+        },
+        {
+            "account": "7021129729",
+            "contract": "566642",
+            "overdue": 20,
+            "currentBalance": 10,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": false
+        },
+        {
+            "account": "7021129730",
+            "contract": "9400717430",
+            "overdue": 0,
+            "currentBalance": 0,
+            "totalPayment": 0,
+            "billSmoothing": true,
+            "directDebit": true
+        },
+        {
+            "account": "7021129730",
+            "contract": "9400717531",
+            "overdue": 0,
+            "currentBalance": -116.09,
+            "totalPayment": 0,
+            "billSmoothing": true,
+            "directDebit": false
+        },
+        {
+            "account": "7021129731",
+            "contract": "566645",
+            "overdue": 10.50,
+            "currentBalance": 0,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": false
+        },
+        {
+            "account": "7021129731",
+            "contract": "566646",
+            "overdue": 20,
+            "currentBalance": 10,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": false
+        },
+        {
+            "account": "7021129732",
+            "contract": "566647",
+            "overdue": 20,
+            "currentBalance": 10,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": false
+        },
+        {
+            "account": "7021129733",
+            "contract": "566648",
+            "overdue": 10.50,
+            "currentBalance": 0,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": true
+        },
+        {
+            "account": "7021129733",
+            "contract": "566649",
+            "overdue": 20,
+            "currentBalance": 10,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": false
+        },
+        {
+            "account": "7021129734",
+            "contract": "566650",
+            "overdue": 20,
+            "currentBalance": 10,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": false
+        },
+        {
+            "account": "7021129734",
+            "contract": "566651",
+            "overdue": 20,
+            "currentBalance": 10,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": false
+        },
+        {
+            "account": "7021129735",
+            "contract": "566652",
+            "overdue": 20,
+            "currentBalance": 10,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": false
+        },
+        {
+            "account": "7021129735",
+            "contract": "566653",
+            "overdue": 20,
+            "currentBalance": 10,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": false
+        },
+        {
+            "account": "7021129736",
+            "contract": "566654",
+            "overdue": 20,
+            "currentBalance": 10,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": false
+        },
+        {
+            "account": "7021129736",
+            "contract": "566655",
+            "overdue": 20,
+            "currentBalance": 10,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": false
+        },
+        {
+            "account": "7021129737",
+            "contract": "566657",
+            "overdue": 20,
+            "currentBalance": 10,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": false
+        }
+    ]
+}

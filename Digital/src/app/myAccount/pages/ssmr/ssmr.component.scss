@@ -1,0 +1,123 @@
+@import '../../../shared/style/variables';
+@import '../../../shared/style/mixins';
+@import '../../../shared/style/tempdls';
+
+:host {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 999;
+    background: $brand-grey-g6;
+    transition: .5s all;
+}
+
+:host(.transition1) {
+    transform: translateY(100%);
+}
+
+.ssmr-wrapper {
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.ssmr {
+    padding-top: 20px;
+    transition: .5s ease-in-out all;
+
+    @media #{$agl-layout-tablet-and-smaller} {
+        padding-top: 0px;
+    }
+
+    &.show {
+        opacity: 1;
+    }
+
+    &.step {
+        opacity: 0;
+        transform: translateY(70vh);
+    }
+
+    &.default {
+        opacity: 1;
+        transform: translateY(0);
+        transition-property: none;
+    }
+
+    .toolbar {
+        position: relative;
+        max-width: 660px;
+        margin: 0 auto;
+        background-color: $brand-grey-g6;
+
+        @media #{$agl-layout-mobile} {
+            position: fixed;
+            min-height: 50px;
+            z-index: 500;
+            width: 100%;
+            color: $ssmr-toolbar-icon-color;
+        }
+
+        &--left {
+            width: 50px;
+            position: absolute;
+            left: 20px;
+            font-size: 32px;
+            cursor: pointer;
+        }
+
+        &--right {
+            width: 50px;
+            position: absolute;
+            right: 20px;
+            top: -13px;
+            font-size: 52px;
+            cursor: pointer;
+            text-align: right;
+
+            @media #{$agl-layout-mobile} {
+                position: fixed;
+            }
+        }
+    }
+
+    .content {
+        max-width: 580px;
+        position: relative;
+        left: 0px;
+        right: 0px;
+        top: 10px;
+        margin: 0 auto;
+
+        @media #{$agl-layout-tablet-and-smaller} {
+            top: 50px;
+        }
+
+        &--narrow {
+            max-width: 456px;
+            margin: 0 auto;
+        }
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+
+        .footer__content {
+            width: 200px;
+            margin: 0 auto;
+            color: $brand-sky;
+            font-size: 16px;
+            font-weight: bold;
+            font-family: $primary-font-stack;
+            cursor: pointer;
+            text-align: center;
+
+            img {
+                margin-right: 8px;
+            }
+        }
+    }
+}

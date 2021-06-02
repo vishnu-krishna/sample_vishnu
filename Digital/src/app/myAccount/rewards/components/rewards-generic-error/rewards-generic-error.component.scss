@@ -1,0 +1,45 @@
+@import '../../../maui/maui';
+
+.error-message {
+    font-family: $display-font-stack;
+    text-align: center;
+    padding-top: 150px;
+
+    @media #{$agl-layout-mobile} {
+        padding-top: 90px;
+    }
+
+    h3 {
+        font-family: $display-font-stack;
+        font-size: 26px;
+        font-weight: normal;
+        color: $primary-dark;
+        margin: 0 auto;
+
+        @media #{$agl-layout-mobile} {
+            padding: 0 10px 10px 10px;
+            max-width: 280px;
+        }
+    }
+
+    p {
+        line-height: 1.6;
+        max-width: 450px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+        text-align: center;
+        padding: 0 5px;
+
+        @media #{$agl-layout-mobile} {
+            max-width: 335px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+    }
+}
+
+agl-maui-button {
+    margin-top: 30px;
+}

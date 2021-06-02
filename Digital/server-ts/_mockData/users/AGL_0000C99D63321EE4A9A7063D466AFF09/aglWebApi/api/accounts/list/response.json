@@ -1,0 +1,33 @@
+[
+    {
+        "number": "7016475233",
+        "firstName": "Jon",
+        "lastName": "Krakauer",
+        "contracts": [
+            {
+                "address": "10 AITKEN STREET|SUNBURY VIC 3429",
+                "accountNumber": "7016475233",
+                "fuelType": "Electricity",
+                "nameId": "AGL_0000C99D63321EE4A9A7063D466AFF09",
+                "number": "9141449436",
+                "planName": "Savers",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false
+            },
+            {
+                "address": "10 AITKEN STREET|SUNBURY VIC 3429",
+                "accountNumber": "7016475233",
+                "fuelType": "Gas",
+                "nameId": "AGL_0000C99D63321EE4A9A7063D466AFF09",
+                "number": "9141934597",
+                "planName": "",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false
+            }
+        ]
+    }
+]

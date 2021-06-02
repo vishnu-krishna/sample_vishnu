@@ -1,0 +1,23 @@
+@import '../../../../shared/style/variables';
+@import '../../../../shared/style/mixins';
+@import '../../../../shared/style/tempdls';
+
+.usage-legal-warning {
+    font-family: $secondary-font-stack;
+    font-size: 10px;
+    color: $brand-white;
+    padding-top: 9px;
+
+    .read-more-less {
+        font-family:  $secondary-font-stack;
+        font-size: 10px;
+        font-weight: bold;
+        color: $brand-water;
+
+        &:hover {
+            cursor: pointer;
+            cursor: hand;
+        }
+    }
+ }
+ 

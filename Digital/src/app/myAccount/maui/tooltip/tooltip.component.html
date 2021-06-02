@@ -1,0 +1,21 @@
+<div #tooltipTrigger (mouseover)="loadTooltip(tooltip, tooltipTrigger)" (touchstart)="loadTooltip(tooltip, tooltipTrigger)">
+    <ng-content></ng-content>
+    <div #tooltip
+        class="tooltip tooltip--{{positionClass}}"
+        [ngClass]="{
+            'tooltip--right-align': rightAlign,
+            'tooltip--left-align': leftAlign,
+            'tooltip--shown': showTooltip
+        }"
+    >
+            <div class="tooltip__text">
+                {{tooltipBody}}
+            </div>
+            <div class="tooltip__arrow"
+                [ngClass]="{
+                    'tooltip__arrow--right-align': rightAlign,
+                    'tooltip__arrow--left-align': leftAlign
+                }"
+            ></div>
+    </div>
+</div>

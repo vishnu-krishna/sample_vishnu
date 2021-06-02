@@ -1,0 +1,58 @@
+<agl-maui-showcase-template heading="Expandable container">
+    <div description>
+        <div>Expandable container is used to truncate the height of an element when it is deemed too tall (height).</div>
+        <div>
+            It takes four Input:
+            <ul>
+                <li>
+                    collapsedHeight: in pixels, the desired height of the element. If the element's height is bigger, the element will be truncated.
+                    If the element height is smaller, the expandable container will not influence the layout.
+                </li>
+                <li>gradientHeight: in pixels, the height of the gradient displayed at the bottom when the element is truncated.</li>
+                <li>collapsedMessage: The message to be displayed on the chevron menu when the component is in a collapsed state.</li>
+                <li>expandedMessage: The message to be displayed on the chevron menu when the component is in an expanded state.</li>
+            </ul>
+        </div>
+    </div>
+    <div exampleCodeUsage>
+        {{codeUsage}}
+    </div>
+    <div exampleImplementation>
+        <agl-maui-showcase-example label="Expandable Container with a placeholder in MAUI container. This illustrates the case when there is a need to hide part of the content.">
+            <agl-maui-container class="showcase-expandable-container">
+                <agl-maui-expandable-container
+                    [collapsedHeight]="collapsedHeightForCollapsedContainer"
+                    [gradientHeight]="gradientHeightForCollapsedContainer"
+                    [collapsedMessage]="'Show more'"
+                    [expandedMessage]="'Show less'">
+                    <div class="showcase-expandable-container__dummy--collapsable">
+                        <ul>
+                            <li>I'm a list</li>
+                            <li>with</li>
+                            <li>many</li>
+                            <li>many</li>
+                            <li>many</li>
+                            <li>many</li>
+                            <li>elements</li>
+                            <li>and some of them</li>
+                            <li>are hidden</li>
+                        </ul>
+                    </div>
+                </agl-maui-expandable-container>
+            </agl-maui-container>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label="Expandable Container with a placeholder in MAUI container. This illustrates the case when there is no need to hide part of the content.">
+            <agl-maui-container class="showcase-expandable-container">
+                <agl-maui-expandable-container [collapsedHeight]="1000" [gradientHeight]="64">
+                    <div class="showcase-expandable-container__dummy--non-collapsable">
+                        <p>
+                            This should be<br>
+                            220px<br>
+                            height
+                        </p>
+                    </div>
+                </agl-maui-expandable-container>
+            </agl-maui-container>
+        </agl-maui-showcase-example>
+    </div>
+</agl-maui-showcase-template>

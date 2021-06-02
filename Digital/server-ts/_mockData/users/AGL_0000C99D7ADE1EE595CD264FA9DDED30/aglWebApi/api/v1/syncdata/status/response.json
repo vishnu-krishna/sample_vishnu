@@ -1,0 +1,58 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "dataGroup": "Account",
+            "status": "Complete",
+            "lastUpdated": "2017-04-27T22:50:50.0502755+00:00",
+            "failed": false
+        },
+        {
+            "dataGroup": "BillingHistory",
+            "status": "Complete",
+            "lastUpdated": "2017-04-27T16:45:11.2188356+00:00",
+            "failed": true,
+            "errors": [
+                {
+                    "dataType": "TransactionHistory",
+                    "account": "7021129726",
+                    "contract": "9400713353",
+                    "message": "Sorry, we were unable to retrieve your information. Please try again later.",
+                    "hasRfcError": true,
+                    "errorId": "ZISS002",
+                    "errorNumber": "3"
+                }
+            ]
+        },
+        {
+            "dataGroup": "Dashboard",
+            "status": "Complete",
+            "lastUpdated": "2017-04-26T04:16:03.7789537+00:00",
+            "failed": false
+        },
+        {
+            "dataGroup": "Payments",
+            "status": "Complete",
+            "lastUpdated": "2017-04-27T16:44:28.672086+00:00",
+            "failed": false
+        },
+        {
+            "dataGroup": "Usage",
+            "status": "Complete",
+            "lastUpdated": "2017-04-27T18:45:21.1113013+00:00",
+            "failed": true,
+            "errors": [
+                {
+                    "dataType": "Usage13Months",
+                    "account": "7021129726",
+                    "contract": "9400713353",
+                    "message": "Sorry, we were unable to retrieve your information. Please try again later.",
+                    "hasRfcError": true,
+                    "errorId": "ZICONTRACT001",
+                    "errorNumber": "3"
+                }
+            ]
+        }
+    ]
+}

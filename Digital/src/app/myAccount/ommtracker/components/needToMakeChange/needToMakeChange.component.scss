@@ -1,0 +1,21 @@
+@import '../../../../shared/style/omm/_omm_variables';
+
+.makechange {
+    &__header {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-family: $displayStack;
+        font-size: 36px;
+        line-height: 1.2;
+        color: $omm-vdark-grey;
+        @media #{$medium-and-down} {
+            font-size: 30px;
+            margin-top: 0px;
+        }
+    }
+
+    @media #{$medium-and-down} {
+        padding: 0px 10px 20px 10px;
+    }
+}

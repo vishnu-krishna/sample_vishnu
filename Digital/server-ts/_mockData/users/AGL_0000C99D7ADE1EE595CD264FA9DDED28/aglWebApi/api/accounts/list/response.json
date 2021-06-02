@@ -1,0 +1,39 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "number": "7021129726",
+            "firstName": "Philip",
+            "lastName": "MacLaren",
+            "contracts": [
+                {
+                    "address": "53 Dennis Street|Northcote VIC 3070",
+                    "accountNumber": "7021129726",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_0000C99D7ADE1EE595CD264FA9DDED28",
+                    "number": "9400717466",
+                    "planName": "Savers",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "regionId": "VIC"
+                },
+                {
+                    "address": "53 Dennis Street|Northcote VIC 3070",
+                    "accountNumber": "7021129726",
+                    "fuelType": "Gas",
+                    "nameId": "AGL_0000C99D7ADE1EE595CD264FA9DDED28",
+                    "number": "9400717581",
+                    "planName": "Employee Freedom",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "regionId": "VIC"
+                }
+            ]
+        }
+    ]
+}

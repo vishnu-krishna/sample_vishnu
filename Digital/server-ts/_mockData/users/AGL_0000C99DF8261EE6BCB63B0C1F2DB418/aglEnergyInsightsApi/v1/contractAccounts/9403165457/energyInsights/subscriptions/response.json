@@ -1,0 +1,15 @@
+[{
+	"contractNumber": 9403165458,
+	"isEligible": false,
+	"ineligibleReason": {
+		"message": "Energy Insights registration is not allowed for Bill Distribution type <XXX>",
+		"internal": {
+			"id": "ZIDM_ENERGY_INSIGHT",
+			"number": "032",
+			"description": "Energy Insights registration is not allowed for Bill Distribution type <XXX>"
+		}
+	},
+	"subscribedToMidBillEnergyBreakdown": false,
+    "subscribedToEndBillEnergyBreakdown": false,
+    "availableUsageBreakdownBillPeriods": []
+}]

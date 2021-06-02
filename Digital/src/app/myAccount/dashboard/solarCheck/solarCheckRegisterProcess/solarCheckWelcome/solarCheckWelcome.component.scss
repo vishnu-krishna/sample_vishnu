@@ -1,0 +1,140 @@
+@import '../solarCheckRegisterProcess';
+
+.solar-check-welcome {
+    padding-top: 49px;
+    background-color: $brand-white;
+
+    &.bottom-section {
+        background-color: $brand-grey-g6;
+        padding-top: 0px;
+    }
+
+    .move-up-for-mobile {
+        @media #{$agl-layout-mobile} {
+            margin-top: -70px;
+            color: $brand-white;
+            padding-bottom: 40px;
+            position: relative;
+        }
+        @media #{$agl-layout-xs} {
+            padding-bottom: 0px;
+        }
+    }
+
+    .sub-section {
+        width: 47%;
+        margin-bottom: 40px;
+        @media #{$agl-layout-mobile} {
+            margin-bottom: 0px;
+        }
+
+        @media #{$agl-layout-mobile} {
+            width: 100%;
+        }
+        display: inline-block;
+
+        p {
+            margin-top: 0.5em;
+        }
+    }
+
+    .right {
+        float: right;
+        @media #{$agl-layout-mobile} {
+            float: none;
+        }
+    }
+
+    .need-list {
+        mat-icon {
+            vertical-align: middle;
+        }
+
+        div {
+            display: inline;
+            @media #{$agl-layout-mobile} {
+                display: block;
+                padding-bottom: 10px;
+            }
+        }
+
+        span {
+            padding-left: 13px;
+            padding-right: 30px;
+        }
+    }
+
+    .section {
+        &__bottom {
+            padding-top: 23px;
+        }
+    }
+
+    .body-text {
+        color: $brand-grey-g1;
+        padding-left: 90px;
+        padding-right: 90px;
+        margin-left: 0px;
+        text-align: left;
+        font-size: 14px;
+        @media #{$agl-layout-mobile} {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+    }
+
+    mat-icon {
+        width: 31px;
+        height: 31px;
+    }
+
+    .next-button {
+        padding-top: 31px;
+
+        button {
+            height: 50px;
+            min-width: 300px;
+            @media #{$agl-layout-mobile} {
+                width: 100%;
+                min-width: 0px;
+            }
+        }
+        @media #{$agl-layout-mobile} {
+            padding-bottom: 31px;
+            margin-bottom: -30px;
+        }
+    }
+
+    .link-faq {
+        padding-top: 16px;
+
+        a {
+            color: $brand-blue;
+            font-weight: 600;
+        }
+        @media #{$agl-layout-mobile} {
+            padding-top: 16px;
+            padding-bottom: 31px;
+        }
+    }
+
+    .background {
+        mat-icon {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .center-image-horizontally {
+        &-cropped-outer {
+            text-align: center;
+            overflow: hidden;
+        }
+
+        &-cropped-inner {
+            position: relative;
+            left: 100%;
+            margin-left: -200%;
+        }
+    }
+}

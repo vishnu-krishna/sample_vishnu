@@ -1,0 +1,35 @@
+[
+    {
+        "number": "90428798",
+        "firstName": "Clint",
+        "lastName": "Eastwood",
+        "contracts": [
+            {
+                "address": "14/27 Robe Street|ST KILDA VIC 3182",
+                "accountNumber": "90428798",
+                "fuelType": "Electricity",
+                "nameId": "AGL_DC2BDC7176F11ED6B1F9D696B98BD84D",
+                "number": "9101004976",
+                "planName": "",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false,
+                "regionId": "VIC"
+            },
+            {
+                "address": "14/27 Robe Street|ST KILDA VIC 3182",
+                "accountNumber": "90428798",
+                "fuelType": "Gas",
+                "nameId": "AGL_DC2BDC7176F11ED6B1F9D696B98BD84D",
+                "number": "9101163496",
+                "planName": "",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false,
+                "regionId": "VIC"
+            }
+        ]
+    }
+]

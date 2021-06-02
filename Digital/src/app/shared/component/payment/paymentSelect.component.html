@@ -1,0 +1,32 @@
+<div id="payment-select" class="payment-select">
+    <div id="payment-select-left-panel" class="payment-select__amount" [class.payment-select__amount--small]="isPAYGBonusSelect">
+        <agl-payment-amount #paymentAmount [content]="content" [bonusBands]="bonusBands" [paymentDetails]="paymentDetails" (onUpdateAmount)="onUpdateAmount($event)" [savedMethod]="storedMethodActive"></agl-payment-amount>
+    </div>
+    <div id="payment-select-right-panel" class="payment-select__method">
+        <div id="payment-method-container" class="payment-select__method__content">
+            <div id="payment-methods-label">Pay with</div>
+            <div class="payment-method-stored" *ngIf="showStoredPaymentMethods">
+                <agl-stored-method #storedMethodPaymentComponent [paymentDetails]="paymentDetails" (storeSelectedLoaded)="selectedStoredMethodLoaded($event)" (storeSelected)="selectedStoredMethod($event)" (storeSelectedActive)="selectedStoredMethodActive($event)" [(paymentAmount)]="validPaymentAmount" [(bonusAmount)]="bonusAmount"></agl-stored-method>
+            </div>
+            <div *ngIf="showOneOffPaymentMethods && multiBPChecked">
+                <agl-button-dropdown [list]="paymentMethods" (onSelect)="selectMethod($event)"></agl-button-dropdown>
+                <div id="payment-method-type" class="payment-select__method__container">
+                    <div *ngIf="newPaymentMethod">
+                        <agl-payment-creditcard #creditCardView
+                        [content]="content"
+                        [paymentDetails]="paymentDetails"
+                        [isSmsPay]="isSmsPay"
+                        [isDirectDebit]="isDirectDebit"
+                        [hideStoredCheckBox]="hideStoredCheckBox"
+                        *ngIf="selectedMethod === PaymentMethod.CreditCard"></agl-payment-creditcard>
+                    </div>
+                    <div *ngIf="!newPaymentMethod">
+                        <agl-iframe-payment-creditcard #creditCardView [content]="content" [paymentDetails]="paymentDetails" *ngIf="selectedMethod === PaymentMethod.CreditCard"></agl-iframe-payment-creditcard>
+                    </div>
+                    <agl-payment-paypal #paypalView [content]="content" [paymentDetails]="paymentDetails" *ngIf="selectedMethod === PaymentMethod.PayPal"></agl-payment-paypal>
+                    <agl-payment-bankaccount #bankAccountView [paymentDetails]="paymentDetails" *ngIf="selectedMethod === PaymentMethod.BankAccount" (onSave)="saveAndPayBankAccount($event)"></agl-payment-bankaccount>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

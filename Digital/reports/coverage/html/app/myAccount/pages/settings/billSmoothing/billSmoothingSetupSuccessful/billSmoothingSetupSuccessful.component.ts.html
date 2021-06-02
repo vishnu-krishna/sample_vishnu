@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\settings\billSmoothing\billSmoothingSetupSuccessful\billSmoothingSetupSuccessful.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/settings/billSmoothing/billSmoothingSetupSuccessful/</a> billSmoothingSetupSuccessful.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">41.03% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>16/39</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">57.14% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>8/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.11% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">43.75% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>14/32</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, Input, OnInit } from '@angular/core';
+import { SetUpBillSmoothingResultMessage } from '../../../../../shared/messages/setUpBillSmoothingResultMessage';
+import { DataLayerService, ModalName, PageChannel, PageType, SiteSubSection } from '../../../../../shared/service/dataLayer.service';
+import { ModalService } from '../../../../modal/modal.service';
+import { BillDeliveryMethodType } from '../../../../services/settings/model/billDeliveryMethodType';
+import { BillSmoothingService } from '../billSmoothing.service';
+&nbsp;
+@Component({
+    selector: 'agl-billsmoothing-setup-successful',
+    template: require('./billSmoothingSetupSuccessful.component.html'),
+    styles: [require('./billSmoothingSetupSuccessful.component.scss')]
+})
+export class BillSmoothingSetupSuccessfulComponent implements OnInit {
+&nbsp;
+    @Input() public billDeliveryMethodType: BillDeliveryMethodType;
+    @Input() public isDirectDebit: boolean;
+    @Input() public setUpBillSmoothingResultMessage: SetUpBillSmoothingResultMessage;
+    @Input() public accountNumber: number;
+    public firstRow: string;
+    public secondRow: string;
+    public fuelAndErrors: string[];
+&nbsp;
+    constructor(
+        public <span class="cstat-no" title="statement not covered" >modalService: ModalService,</span>
+        public <span class="cstat-no" title="statement not covered" >billSmoothingService: BillSmoothingService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >dataLayerService: DataLayerService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" ></span></span></span>
+    ) { }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public ngOnInit() {</span></span>
+        let frequency = <span class="cstat-no" title="statement not covered" >this.setUpBillSmoothingResultMessage.frequency;</span>
+        let startDate = <span class="cstat-no" title="statement not covered" >BillSmoothingService.generateLongDate(this.setUpBillSmoothingResultMessage.startDate);</span>
+        let billDeliveryMethod = <span class="cstat-no" title="statement not covered" >this.billDeliveryMethodType === BillDeliveryMethodType.Email ? 'email' : 'letter';</span>
+&nbsp;
+        let fuelSuccessfullySaved = <span class="cstat-no" title="statement not covered" >this.setUpBillSmoothingResultMessage.saveResultDetails.filter((detail<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >detail.isSuccessful)</span></span>;</span>
+        let fuelNotSuccessfullySaved = <span class="cstat-no" title="statement not covered" >this.setUpBillSmoothingResultMessage.saveResultDetails.filter((detail<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >!detail.isSuccessful)</span></span>;</span>
+        let fuelAndAmounts = <span class="cstat-no" title="statement not covered" >fuelSuccessfullySaved.map((detail<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >`$${detail.amount} for ${detail.fuel}`)</span></span>;</span>
+<span class="cstat-no" title="statement not covered" >        this.fuelAndErrors = fuelNotSuccessfullySaved.map((detail<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >detail.fuel)</span></span>;</span>
+<span class="cstat-no" title="statement not covered" >        this.fuelAndErrors.forEach((fuelAndError<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+            let errorDescription = <span class="cstat-no" title="statement not covered" >`Sorry, we couldn't set up Bill Smoothing for ${fuelAndError}.`;</span>
+<span class="cstat-no" title="statement not covered" >            this.dataLayerService.pushInlineErrorEvent(ModalName.BillSmoothingSuccessSetup, errorDescription);</span>
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.firstRow = `You\'ll receive your Bill Smoothing welcome pack and confirmation ${billDeliveryMethod}.`;</span>
+<span class="cstat-no" title="statement not covered" >        this.secondRow = this.isDirectDebit</span>
+            ? `We'll debit your ${frequency.toLowerCase()} payments of ${fuelAndAmounts.join(' and ')} from your nominated account starting &lt;strong&gt;${startDate}&lt;/strong&gt;.`
+            : `${frequency} payments of ${fuelAndAmounts.join(' and ')} will be due starting &lt;strong&gt;${startDate}&lt;/strong&gt;.`;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.dataLayerService.pushNewPageEvent(</span>
+            ModalName.BillSmoothingSuccessSetup,
+            PageChannel.ManageAccount,
+            PageType.Modal,
+            SiteSubSection.BillSmoothing,
+            [this.accountNumber.toString()]);
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public close() {</span>
+<span class="cstat-no" title="statement not covered" >        this.modalService.close();</span>
+<span class="cstat-no" title="statement not covered" >        BillSmoothingService.showLeanEngageSurveyOnSuccessfulSetup();</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

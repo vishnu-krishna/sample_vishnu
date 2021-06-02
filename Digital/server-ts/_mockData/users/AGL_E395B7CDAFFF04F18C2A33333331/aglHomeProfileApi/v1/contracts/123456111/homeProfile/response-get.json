@@ -1,0 +1,43 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": {
+        "propertyType": "House",
+        "numberOfAdults": 3,
+        "numberOfChildren": 2,
+        "numberOfBedrooms": 3,
+        "numberOfBathrooms": 1,
+        "numberOfAirconSplitSystems": 1,
+        "numberOfAirconFixed": 2,
+        "hasDuctedAircon": true,
+        "hasDuctedEvaporativeCooling": false,
+        "numberOfFans": 3,
+        "numberOfPortableCoolers": 0,
+        "numberOfHeatingSplitSystems": 1,
+        "typeOfDuctedHeating": "None",
+        "numberOfPortableElecHeaters": 2,
+        "typeOfOtherHeating": "Elec",
+        "hotWaterType": "ElectricInstantaneous",
+        "mainFridge": {
+            "fridgeType": "TopOrBottomMount",
+            "age": "UpTo5Yrs"
+        },
+        "fridge2": {
+            "fridgeType": "SideBySide",
+            "age": "From6To10Yrs"
+        },
+        "numberOfTelevisions": 3,
+        "hasWashingMachine": true,
+        "hasClothesDryer": false,
+        "hasMicrowave": true,
+        "hasDishwasher": false,
+        "hasElectricalVehicle": true,
+        "ovenType": "Other",
+        "cooktopType": "None",
+        "hasPool": true,
+        "poolSize": "Small",
+        "poolHeaterFuelType": "Solar",
+        "poolPumpAge": "UpTo5Yrs",
+        "hasSpa": true
+    }
+}

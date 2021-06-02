@@ -1,0 +1,33 @@
+{
+    "isSuccess": true,
+    "screenCode": "SSMR_ADJ1",
+    "dailyUsage": 0.14,
+    "accountBalance": 13.04,
+    "invoiceDueDate": "2017-05-12",
+    "nextScheduledBillDate": "2017-08-17",
+    "numberOfDaysTillNextBill": 99,
+    "currentBill": {
+        "amount": 17.20,
+        "startDate": "2017-01-06",
+        "endDate": "2017-05-10"
+    },
+    "projectedBill": {
+        "amount": 763.24,
+        "startDate": "2017-01-06",
+        "endDate": "2017-08-17"
+    },
+    "lastInvoice": {
+        "amount": 422.30,
+        "startDate": "2016-10-02",
+        "endDate": "2017-01-05",
+        "quality": "Automatic estimation - SAP"
+    },
+    "adjustment": {
+        "preAdjustmentBalance": 422.30,
+        "postAdjustmentBalance": 13.04,
+        "startDate": "2016-10-02",
+        "endDate": "2017-01-05"
+    },
+    "meters": [],
+    "error": null
+}

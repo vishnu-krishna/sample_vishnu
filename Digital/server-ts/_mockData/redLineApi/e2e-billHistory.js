@@ -1,0 +1,10 @@
+localStorage.setItem('selfService.mock.redline.bills/contract/111111111:data', '[{"FxPrintDoc":"10000000","SapPrintDoc":"3379772401"},{"FxPrintDoc":"10000001","SapPrintDoc":"3379772402"},{"FxPrintDoc":"10000002","SapPrintDoc":"3379772403"},{"FxPrintDoc":"10000003","SapPrintDoc":"3379772430"},{"FxPrintDoc":"10000004","SapPrintDoc":"3379772340"}]');
+localStorage.setItem('selfService.mock.redline.bills/contract/222222222:data', '[{"FxPrintDoc":"10000005","SapPrintDoc":"3379772404"},{"FxPrintDoc":"10000006","SapPrintDoc":"3379772405"},{"FxPrintDoc":"10000007","SapPrintDoc":"3379772406"}]');
+localStorage.setItem('selfService.mock.redline.bills/pdf/111111111/10000000:data', '"https://localhost:8080/bills/fakeBill.pdf?contractAccount=111111111&printDoc=10000000"');
+localStorage.setItem('selfService.mock.redline.bills/pdf/111111111/10000001:data', '"https://localhost:8080/bills/fakeBill.pdf?contractAccount=111111111&printDoc=10000001"');
+localStorage.setItem('selfService.mock.redline.bills/pdf/111111111/10000002:data', '"https://localhost:8080/bills/fakeBill.pdf?contractAccount=111111111&printDoc=10000002"');
+localStorage.setItem('selfService.mock.redline.bills/pdf/111111111/10000003:data', '"https://localhost:8080/bills/fakeBill.pdf?contractAccount=111111111&printDoc=10000003"');
+localStorage.setItem('selfService.mock.redline.bills/pdf/111111111/10000004:data', '"https://localhost:8080/bills/fakeBill.pdf?contractAccount=111111111&printDoc=10000004"');
+localStorage.setItem('selfService.mock.redline.bills/pdf/222222222/10000005:data', '"https://localhost:8080/bills/fakeBill.pdf?contractAccount=222222222&printDoc=10000005"');
+localStorage.setItem('selfService.mock.redline.bills/pdf/222222222/10000006:data', '"https://localhost:8080/bills/fakeBill.pdf?contractAccount=222222222&printDoc=10000006"');
+localStorage.setItem('selfService.mock.redline.bills/pdf/222222222/10000007:data', '"https://localhost:8080/bills/fakeBill.pdf?contractAccount=222222222&printDoc=10000007"');

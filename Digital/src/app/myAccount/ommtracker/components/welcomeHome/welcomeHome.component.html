@@ -1,0 +1,15 @@
+<div class="welcome-home">
+    <agl-status-header [trackerMode]="trackerMode" [headerStatus]="headerStatus"></agl-status-header>
+    <div id="tracker-survey" *ngIf="!surveyCompleted"  class="welcome-home__survey">
+        
+    </div>
+
+    <div *ngIf="surveyCompleted" class="welcome-home__survey completed">
+        <div class="pageContainer">
+            <mat-icon class="icon" svgIcon="icon-status-tick"></mat-icon>
+            <div class="heading">Thank you for your feedback!</div>
+            <div class="content">Your feedback will help us to work towards a better user experience.</div>
+        </div>
+
+    </div>
+</div>

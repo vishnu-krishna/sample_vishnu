@@ -1,0 +1,71 @@
+<div class="agl-omm-date-picker" [ngClass]="{'agl-omm-date-picker__inline' : opts.inline}">
+    <div class="agl-omm-date-picker__selection-group" *ngIf="!opts.inline">
+        <input *ngIf="opts.showInputField" ngtype="text" class="agl-omm-date-picker__selection" [attr.aria-label]="opts.ariaLabelInputField"
+                (click)="opts.openSelectorOnInputClick && !opts.editableDateField && openBtnClicked()" [attr.maxlength]="opts.dateFormat.length"
+                [ngClass]="{'agl-omm-date-picker__invalid-date': invalidDate && opts.indicateInvalidDate}" placeholder="{{placeholder}}"
+                [aglInputAutofill]="autoFillOpts" (keyup)="userDateInput($event)" [value]="selectionDayTxt" (focus)="onFocusInput()" (blur)="lostFocusInput($event)"
+                [disabled]="opts.componentDisabled" [readonly]="!opts.editableDateField" [required]="opts.inputValueRequired">
+        <div class="agl-omm-date-picker__sel-btn-group" [style.height]="opts.height">
+            <button type="button" [attr.aria-label]="opts.ariaLabelClearDate" class="agl-omm-date-picker__btn-clear" *ngIf="selectionDayTxt.length>0 && opts.showClearDateBtn" (click)="removeBtnClicked()" [ngClass]="{'agl-omm-date-picker__btn-clear--enabled': !opts.componentDisabled, 'agl-omm-date-picker__btn-clear--disabled': opts.componentDisabled, 'agl-omm-date-picker__btn-left-border': opts.showInputField}" [disabled]="opts.componentDisabled">
+                <span class="agl-omm-date-picker__icon agl-omm-date-picker__icon--remove" [ngStyle]="{'line-height': opts.height}"></span>
+            </button>
+            <button type="button" [attr.aria-label]="opts.ariaLabelOpenCalendar" class="agl-omm-date-picker__btn-picker" *ngIf="opts.showPickerDateBtn" (click)="openBtnClicked()" [ngClass]="{'agl-omm-date-picker__btn-picker--enabled': !opts.componentDisabled, 'agl-omm-date-picker__btn-picker--disabled': opts.componentDisabled, 'agl-omm-date-picker__btn-left-border': opts.showInputField||selectionDayTxt.length>0 && opts.showClearDateBtn}" [disabled]="opts.componentDisabled">
+                <span class="agl-omm-date-picker__icon agl-omm-date-picker__icon--calendar" [ngStyle]="{'line-height': opts.height}"></span>
+            </button>
+        </div>
+    </div>
+    <div class="agl-omm-date-picker__selector" *ngIf="showSelector||opts.inline" [aglDpFocus]="opts.inline?'0':'1'" [ngStyle]="{'bottom': getSelectorTopPosition()}" [ngClass]="{'agl-omm-date-picker__align-selector-right': opts.alignSelectorRight, 'agl-omm-date-picker__selector-arrow': opts.showSelectorArrow && !opts.inline, 'agl-omm-date-picker__selector-arrow-left': opts.showSelectorArrow && !opts.alignSelectorRight && !opts.inline, 'selectorarrowright': opts.showSelectorArrow && opts.alignSelectorRight && !opts.inline}" tabindex="0">
+        <table class="agl-omm-date-picker__header">
+            <tr>
+                <td>
+                    <div class="agl-omm-date-picker__header-container">
+                        <div *ngIf="opts.changeYear" class="agl-omm-date-picker__header-row agl-omm-date-picker__header-row--year">
+                            <div class="agl-omm-date-picker__header-btn-cell">
+                                <button type="button" [attr.aria-label]="opts.ariaLabelPrevYear" class="agl-omm-date-picker__header-btn agl-omm-date-picker__icon agl-omm-date-picker__icon--left"
+                                    (click)="prevYear()" [disabled]="prevYearDisabled" [ngClass]="{'agl-omm-date-picker__header-btn--enabled': !prevYearDisabled, 'agl-omm-date-picker__header-btn--disabled': prevYearDisabled}">
+                                </button>
+                            </div>
+                            <div>
+                                {{visibleMonth.year}}
+                            </div>
+                            <div class="agl-omm-date-picker__header-btn-cell">
+                                <button type="button" [attr.aria-label]="opts.ariaLabelNextYear" class="agl-omm-date-picker__header-btn agl-omm-date-picker__icon agl-omm-date-picker__icon--right"
+                                    (click)="nextYear()" [disabled]="nextYearDisabled" [ngClass]="{'agl-omm-date-picker__header-btn--enabled': !nextYearDisabled, 'agl-omm-date-picker__header-btn--disabled': nextYearDisabled}">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="agl-omm-date-picker__header-row">
+                            <div class="agl-omm-date-picker__header-btn-cell">
+                                <button type="button" [attr.aria-label]="opts.ariaLabelPrevMonth" class="agl-omm-date-picker__header-btn agl-omm-date-picker__icon agl-omm-date-picker__icon--left"
+                                    (click)="prevMonth()" [disabled]="prevMonthDisabled" [ngClass]="{'agl-omm-date-picker__header-btn--enabled': !prevMonthDisabled, 'agl-omm-date-picker__header-btn--disabled': prevMonthDisabled}">
+                                </button>
+                            </div>
+                            <div>
+                                <strong>{{visibleMonth.monthTxt}}</strong>
+                                <span *ngIf="!opts.changeYear">{{visibleMonth.year}}</span>
+                            </div>
+                            <div class="agl-omm-date-picker__header-btn-cell">
+                                <button type="button" [attr.aria-label]="opts.ariaLabelNextMonth" class="agl-omm-date-picker__header-btn agl-omm-date-picker__icon agl-omm-date-picker__icon--right"
+                                    (click)="nextMonth()" [disabled]="nextMonthDisabled" [ngClass]="{'agl-omm-date-picker__header-btn--enabled': !nextMonthDisabled, 'agl-omm-date-picker__header-btn--disabled': nextMonthDisabled}">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <table class="agl-omm-date-picker__cal-table">
+            <thead><tr><th class="agl-omm-date-picker__weekday-title agl-omm-date-picker__weekday-title-week-nbr" *ngIf="opts.showWeekNumbers && opts.firstDayOfWeek==='mo'">#</th><th class="agl-omm-date-picker__weekday-title" scope="col" *ngFor="let d of weekDays">{{d.substring(0, 1) | uppercase}}</th></tr></thead>
+            <tbody>
+            <tr *ngFor="let w of dates">
+                <td class="daycell agl-omm-date-picker__daycell-weeknbr" *ngIf="opts.showWeekNumbers && opts.firstDayOfWeek==='mo'">{{w.weekNbr}}</td>
+                <td class="daycell" *ngFor="let d of w.week" [ngClass]="{'agl-omm-date-picker__curr-month':d.cmo===CURR_MONTH && !d.disabled, 'agl-omm-date-picker__selected-day':selectedDate.day===d.dateObj.day && selectedDate.month===d.dateObj.month && selectedDate.year===d.dateObj.year && d.cmo===CURR_MONTH, 'agl-omm-date-picker__disabled': d.disabled, 'agl-omm-date-picker__table-single-day': d.cmo===CURR_MONTH && !d.disabled}" (click)="!d.disabled&&cellClicked(d);$event.stopPropagation()" (keydown)="cellKeyDown($event, d)" tabindex="0">
+                    <div [ngClass]="{'agl-omm-date-picker__prev-month':d.cmo===PREV_MONTH,'agl-omm-date-picker__curr-month':d.cmo===CURR_MONTH,'agl-omm-date-picker__next-month':d.cmo===NEXT_MONTH,'sunday':d.dayNbr === 0 && opts.sunHighlight}">
+                        <span [ngClass]="{'agl-omm-date-picker__curr-day':d.currDay && opts.markCurrentDay, 'agl-omm-date-picker__sunday-dim': opts.sunHighlight && d.dayNbr === 0 && (d.cmo===PREV_MONTH || d.cmo===NEXT_MONTH || d.disabled), 'agl-omm-date-picker__saturday-dim': d.dayNbr === 6 && (d.cmo===PREV_MONTH || d.cmo===NEXT_MONTH || d.disabled)}">{{d.dateObj.day}}</span>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

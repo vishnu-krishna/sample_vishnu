@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\bills\paymentAssistance\paymentAssistance.module.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/bills/paymentAssistance/</a> paymentAssistance.module.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>30/30</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>27/27</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { CommonModule } from '@angular/common';
+&nbsp;
+import { MauiButtonModule } from '../../../maui/button';
+import { MauiHeadingModule } from '../../../maui/heading';
+import { PaymentAssistanceChooseComponent } from './choose/paymentAssistanceChoose.component';
+import { PaymentAssistanceChooseModule } from './choose/paymentAssistanceChoose.module';
+import { PaymentExtensionApplicationComponent } from './extend/application/paymentExtensionApplication.component';
+import { PaymentExtensionConfirmationComponent } from './extend/confirmation/paymentExtensionConfirmation.component';
+import { PaymentExtensionEligibilityComponent } from './extend/eligibility/paymentExtensionEligibility.component';
+import { PaymentExtensionRoutingGuard } from './extend/paymentExtensionRouting.guard';
+import { PaymentExtensionsModule } from './extend/paymentExtensions.module';
+import { PaymentAssistanceRoutingGuard } from './paymentAssistanceRouting.guard';
+import { PaymentAssistanceWelcomeComponent } from './paymentAssistanceWelcome.component';
+import { PaymentAssistancePlanConfirmComponent } from './plan/confirm/paymentAssistancePlanConfirm.component';
+import { PaymentAssistancePlanConfirmModule } from './plan/confirm/paymentAssistancePlanConfirm.module';
+import { PaymentAssistancePlanCustomComponent } from './plan/custom/paymentAssistancePlanCustom.component';
+import { PaymentAssistancePlanCustomModule } from './plan/custom/paymentAssistancePlanCustom.module';
+import { PaymentAssistancePlanOptionsComponent } from './plan/options/paymentAssistancePlanOptions.component';
+import { PaymentAssistancePlanOptionsModule } from './plan/options/paymentAssistancePlanOptions.module';
+import { PaymentAssistancePlanSuccessComponent } from './plan/success/paymentAssistancePlanSuccess.component';
+import { PaymentAssistancePlanSuccessModule } from './plan/success/paymentAssistancePlanSuccess.module';
+import { PaymentAssistanceSelectComponent } from './select/paymentAssistanceSelect.component';
+import { PaymentAssistanceSelectModule } from './select/paymentAssistanceSelect.module';
+import { MauiFuelChipModule } from '../../../maui/fuelChip';
+&nbsp;
+export const ROUTES: Routes = [
+    { path: 'select', component: PaymentAssistanceSelectComponent, canActivate: [PaymentAssistanceRoutingGuard] },
+    { path: 'choose/:contractAccountNumber/:contractNumber', component: PaymentAssistanceChooseComponent, canActivate: [PaymentAssistanceRoutingGuard] },
+    { path: 'plan', children: [
+        { path: 'confirm/:contractAccountNumber/:contractNumber/:frequency/:startDate/:instalmentAmount', component: PaymentAssistancePlanConfirmComponent },
+        { path: 'success/:contractAccountNumber/:contractNumber', component: PaymentAssistancePlanSuccessComponent },
+        { path: 'custom/:contractAccountNumber/:contractNumber', component: PaymentAssistancePlanCustomComponent },
+        { path: 'options/:contractAccountNumber/:contractNumber', component: PaymentAssistancePlanOptionsComponent },
+    ], canActivate: [ PaymentAssistanceRoutingGuard ] },
+    { path: 'extend', children: [
+        { path: 'select', component: PaymentExtensionEligibilityComponent },
+        { path: 'confirm/:contractAccountNumber/:contractNumber', component: PaymentExtensionApplicationComponent },
+        { path: 'success', component: PaymentExtensionConfirmationComponent },
+    ], canActivate: [ PaymentExtensionRoutingGuard ] }
+];
+&nbsp;
+@NgModule({
+    declarations: [
+        PaymentAssistanceWelcomeComponent
+    ],
+    imports: [
+        RouterModule.forChild(ROUTES),
+        PaymentAssistanceSelectModule,
+        PaymentAssistancePlanConfirmModule,
+        PaymentAssistancePlanSuccessModule,
+        PaymentAssistancePlanCustomModule,
+        PaymentAssistancePlanOptionsModule,
+        PaymentAssistanceChooseModule,
+        PaymentExtensionsModule,
+        CommonModule,
+        MauiButtonModule,
+        MauiHeadingModule,
+        MauiFuelChipModule
+    ],
+    providers: [
+        PaymentAssistanceRoutingGuard,
+        PaymentExtensionRoutingGuard
+    ]
+})
+<span class="fstat-no" title="function not covered" >export class PaymentAssistanceModule { }</span>
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<div class="homeprofile-yourhome">
+    <agl-home-profile-header
+        [accountNumber]="accountNumber"
+        [contractNumber]="contractNumber"
+        [isMultiAddresses]="isMultiAddresses"
+        pageHeading="Your home">
+    </agl-home-profile-header>
+
+    <div *ngIf="isLoading" class="homeprofile-landing__loader">
+        <agl-loader></agl-loader>
+    </div>
+
+    <div *ngIf="!isLoading" class="homeprofile-yourhome-body">
+        <div class="homeprofile-yourhome-questionnaire">
+            <div class="homeprofile-yourhome-questionnaire__subsection">
+                <div class="homeprofile-yourhome-questionnaire__heading-no-margin">What kind of home do you live in?</div>
+                <agl-maui-radio-button-group name="hometype" (selectedValueChange)="setPropertyType($event)" [selectedValue]="homeProfile.propertyType">
+                    <agl-maui-radio-button *ngFor="let homeType of homeTypes" value="{{homeType.value}}" [attr.data-test]="homeType.value">
+                        <div label>
+                            {{homeType.text}}
+                        </div>
+                        <div content class="content">
+                            <div class="homeprofile-yourhome__number-of-rooms" data-test="number-of-bedrooms">
+                                <div class="homeprofile-reveal-section__heading">Number of bedrooms</div>
+                                <agl-maui-segmented-buttons class="homeprofile-yourhome__segmented-button" (change)="setNumberOfBedrooms($event)">
+                                    <agl-maui-segmented-button
+                                        *ngFor="let option of numberOfBedroomsOptions"
+                                        value="{{option.value}}"
+                                        text="{{option.text}}"
+                                        textMobile="{{option.textMobile}}"
+                                        [selected]="option.value === homeProfile.numberOfBedrooms">
+                                    </agl-maui-segmented-button>
+                                </agl-maui-segmented-buttons>
+                            </div>
+                            <div class="homeprofile-yourhome__number-of-rooms" data-test="number-of-bathrooms">
+                                <div class="homeprofile-reveal-section__heading">Number of bathrooms</div>
+                                <agl-maui-segmented-buttons class="homeprofile-yourhome__segmented-button" (change)="setNumberOfBathrooms($event)">
+                                    <agl-maui-segmented-button
+                                        *ngFor="let option of numberOfBathroomsOptions"
+                                        value="{{option.value}}"
+                                        text="{{option.text}}"
+                                        textMobile="{{option.textMobile}}"
+                                        [selected]="option.value === homeProfile.numberOfBathrooms">
+                                    </agl-maui-segmented-button>
+                                </agl-maui-segmented-buttons>
+                            </div>
+                        </div>
+                    </agl-maui-radio-button>
+                </agl-maui-radio-button-group>
+            </div>
+
+            <div class="homeprofile-yourhome-questionnaire__subsection">
+                <div class="homeprofile-yourhome-questionnaire__heading">How many people live in your home?</div>
+                <div class="homeprofile-yourhome__number-of-people" data-test="number-of-adults">
+                    <div class="homeprofile-yourhome__number-of-people-header">Number of adults?</div>
+                    <agl-maui-segmented-buttons class="homeprofile-yourhome__segmented-button" (change)="setNumberOfAdults($event)">
+                        <agl-maui-segmented-button
+                            *ngFor="let option of numberOfAdultsOptions"
+                            value="{{option.value}}"
+                            text="{{option.text}}"
+                            textMobile="{{option.textMobile}}"
+                            [selected]="option.value === homeProfile.numberOfAdults">
+                        </agl-maui-segmented-button>
+                    </agl-maui-segmented-buttons>
+                </div>
+                <div class="homeprofile-yourhome__number-of-people" data-test="number-of-children">
+                    <div class="homeprofile-yourhome__number-of-people-header">Number of children?</div>
+                    <agl-maui-segmented-buttons class="homeprofile-yourhome__segmented-button" (change)="setNumberOfChildren($event)">
+                        <agl-maui-segmented-button
+                            *ngFor="let option of numberOfChildrenOptions"
+                            value="{{option.value}}"
+                            text="{{option.text}}"
+                            textMobile="{{option.textMobile}}"
+                            [selected]="option.value === homeProfile.numberOfChildren">
+                        </agl-maui-segmented-button>
+                    </agl-maui-segmented-buttons>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <agl-home-profile-footer [accountNumber]="accountNumber" [contractNumber]="contractNumber"></agl-home-profile-footer>
+</div>

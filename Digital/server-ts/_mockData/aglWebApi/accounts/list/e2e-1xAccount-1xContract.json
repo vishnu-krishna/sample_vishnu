@@ -1,0 +1,20 @@
+[
+    {
+        "number": "123456789",
+        "firstName": "Rene",
+        "lastName": "Descartes",
+        "contracts": [
+            {
+                "address": "32 Brewery Ln, North Willoughby, Sydney, NSW 2023",
+                "fuelType": "Electricity",
+                "accountNumber": "123456789",
+                "nameId": "AGL_E395B892419209F1A8DCE150C6AD1CFB",
+                "number": "111111111",
+                "planName": "Select 6%",
+                "inFlight": false,
+                "isRestricted": false,
+                "regionId": "WA"
+            }
+        ]
+    }
+]

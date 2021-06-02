@@ -1,0 +1,38 @@
+<div class="multiMeterInfo">
+    <div class="header">
+        Multiple meters found
+    </div>
+    <div class="description">
+        Your account has {{selectedContract?.ssmrModel?.meters?.length}} meters and you must enter at least one read.
+        If you skip a meter, we will use historical data to estimate your usage. 
+        <br>
+        <br>
+    </div>
+        <div  class="meter-info" *ngFor="let meter of selectedContract.ssmrModel.meters; let i = index">
+            <div class="col-xs-3 col-sm-2">
+                    <img class="meter-info__icon" *ngIf="selectedContract?.fuelType === 'Electricity'" src="svg/icon_blue_elec_meter.svg">
+                    <img class="meter-info__icon" *ngIf="selectedContract?.fuelType === 'Gas'" src="svg/icon_blue_gas_meter.svg">
+                    <span class="meter-info__index">{{i+1}}</span>
+            </div>
+            <div class="col-xs-9 col-lg-10 meter-info__text">
+                Meter no.
+                <div class="meter-info__text--number"> {{meter?.meterSerial}}</div>
+                <div class="meter-info__register" *ngIf= "isMultiRegister(meter)" >
+                    {{getRegisterMessage(meter)}}
+                </div>
+            </div>
+        </div>
+     <div class="button__continue">
+        <a mat-raised-button color="accent" class="tempdls-button" (click)="onClickMeterEntry()">TAKE THE FIRST READ</a>
+    </div>
+
+    <div class="footer">
+        <div class="footer__content">
+            <a href="https://www.agl.com.au/residential/help-and-support/how-to-read-your-meter" target="_blank"> 
+                <img class="icon_size" src="svg/help_icon.svg">
+               How to read your meter
+            </a>
+        </div>
+    </div>
+
+</div>

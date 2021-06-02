@@ -1,0 +1,78 @@
+@import '../../../../../shared/style/variables';
+@import '../../../../../shared/style/mixins';
+@import '../../../../style/settings';
+
+.settings-system-details {
+    border-top: 1px solid $brand-grey-c6;
+    margin: 20px 0px;
+
+    .com-row {
+        padding-top: 26px;
+    }
+
+    .switch-label {
+        line-height: 20px;
+        min-height: 36px;
+        display: table;
+
+        span {
+            vertical-align: middle;
+            display: table-cell;
+        }
+    }
+
+    .heading {
+        font-family: $primary-font-stack;
+        font-size: 16px;
+        font-weight: bold;
+        padding-bottom: 20px;
+    }
+
+    .disabled {
+        opacity: $brand-disabled-opacity;
+    }
+
+    .edit-button {
+        float: right;
+        text-align: right;
+        color: $brand-sky;
+        font-size: 15px;
+        cursor: pointer;
+
+        &:hover {
+            color: $lighten-sky-10;
+        }
+
+        &.disabled {
+            pointer-events: none;
+            color: $brand-disabled-grey;
+        }
+
+        @media #{$agl-layout-mobile} {
+            padding-left: 5px;
+        }
+    }
+
+    .heading-label {
+        font-family: $primary-font-stack;
+        font-size: 16px;
+        font-weight: bold;
+        padding-top: 5px;
+        padding-left: 15px;
+    }
+
+    div {
+        color: $brand-grey-g1;
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+    &__loading {
+        padding-top: 40px;
+        padding-bottom: 50px;
+
+        @media #{$agl-layout-tablet-and-smaller} {
+            padding-bottom: 10px;
+        }
+    }
+}

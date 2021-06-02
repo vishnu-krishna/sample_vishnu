@@ -1,0 +1,2660 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\shared\service\api.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/shared/service/</a> api.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">22.82% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>55/241</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">32.88% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>24/73</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">3.51% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/57</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">22.61% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>52/230</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+690
+691
+692
+693
+694
+695
+696
+697
+698
+699
+700
+701
+702
+703
+704
+705
+706
+707
+708
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746
+747
+748
+749
+750
+751
+752
+753
+754
+755
+756
+757
+758
+759
+760
+761
+762
+763
+764
+765
+766
+767
+768
+769
+770
+771
+772
+773
+774
+775
+776
+777
+778
+779
+780
+781
+782
+783
+784
+785
+786
+787
+788
+789
+790
+791
+792
+793
+794
+795
+796
+797
+798
+799
+800
+801
+802
+803
+804
+805
+806
+807
+808
+809
+810
+811
+812
+813
+814
+815
+816
+817
+818
+819
+820
+821
+822
+823
+824
+825
+826
+827
+828
+829
+830
+831
+832
+833
+834
+835
+836
+837
+838
+839
+840
+841
+842
+843
+844
+845
+846
+847
+848
+849
+850
+851
+852
+853
+854
+855
+856
+857
+858
+859
+860
+861
+862
+863
+864
+865
+866</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { Http, RequestOptions, URLSearchParams } from '@angular/http';
+import * as _ from 'lodash';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Observable } from 'rxjs/Observable';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
+import 'rxjs/Rx';
+import { Subject } from 'rxjs/Subject';
+import { ModalService } from '../../myAccount/modal/modal.service';
+import { BillSmoothingAccountsViewModel } from '../../myAccount/pages/settings/billSmoothing/billSmoothing.model';
+import { IPaymentSchemeApi } from '../../myAccount/services/paymentScheme/paymentSchemeApi.service';
+import { SsmrScreenCode } from '../../myAccount/services/ssmr.service';
+import { CreatePaymentMethodRequest } from '../../myAccount/services/storedPaymentsApi/model/createPaymentMethodRequest';
+import * as ApiModel from '../model/api.model';
+import { PaymentSimpleModel } from '../model/billSmoothing/paymentSimple.model';
+import { BonusEligible } from '../model/payment/bonusEligible.model';
+import { PaymentDetailsApiModel } from '../model/payment/paymentApi.model';
+import { PrePaymentBalance } from '../model/product/prePaymentBalance.model';
+import { UsageDataModel } from '../model/usage/usageData.model';
+import { UsageGranularity } from '../model/usage/usageGranularity.model';
+import { IApiRepository } from '../repository/contract/iapi.repository';
+import { IApiv2Repository } from '../repository/contract/iapiv2.repository';
+import { IPaymentApiRepository } from '../repository/contract/ipaymentapi.repository';
+import { Guid } from '../utils/guid';
+import { ConfigService } from './config.service';
+import { IApiService } from './contract/iapi.service';
+&nbsp;
+/**
+ * An HTTP client service for consumption of the AGL Web API.
+ * Encapsulates the HTTP transportation mechanism and applies common configuration
+ * requirements such as JSON serialisation and deserialisation.
+ */
+@Injectable()
+export class ApiService implements IApiService {
+&nbsp;
+    /**
+     * Provides a replay subject for loaded
+     */
+    public <span class="cstat-no" title="statement not covered" >allContentLoaded: ReplaySubject&lt;boolean&gt; = new ReplaySubject(1);</span>
+    public <span class="cstat-no" title="statement not covered" >contactLoadedStatus: ReplaySubject&lt;string&gt; = new ReplaySubject&lt;string&gt;(1);</span>
+    public <span class="cstat-no" title="statement not covered" >businessPartnerNumber: string[] = [];</span>
+    public <span class="cstat-no" title="statement not covered" >accountLoadedStatus: ReplaySubject&lt;string&gt; = new ReplaySubject&lt;string&gt;(1);</span>
+    public <span class="cstat-no" title="statement not covered" >accountNumber: number[] = [];</span>
+    protected <span class="cstat-no" title="statement not covered" >isAllSyncComplete: boolean = false;</span>
+    protected <span class="cstat-no" title="statement not covered" >_baseUrl: string = this._config.current.aglWebApiBaseUrl;</span>
+    protected <span class="cstat-no" title="statement not covered" >_errors: Subject&lt;any&gt; = new Subject&lt;any&gt;();</span>
+    protected maxPollingIndex: number;
+    protected pollingIntervalMs: number;
+    protected <span class="cstat-no" title="statement not covered" >pollSyncStatusIndex: number = 0;</span>
+    protected pollSyncStatusIntervalId: any;
+    protected <span class="cstat-no" title="statement not covered" >siteCoreUrl: string = this._config.current.aglSiteCoreWebsiteBaseUrl;</span>
+    protected <span class="cstat-no" title="statement not covered" >sourcePlatformKey: string = 'source';</span>
+    protected <span class="cstat-no" title="statement not covered" >sourcePlatformValue: string = 'Web';</span>
+&nbsp;
+    /**
+     * API data synchronisation status trackers for each available data group
+     */
+    private <span class="cstat-no" title="statement not covered" >_syncStatus: any = {</span>
+        Account: new ReplaySubject&lt;ApiModel.SyncStatus&gt;(1),
+        BillingHistory: new ReplaySubject&lt;ApiModel.SyncStatus&gt;(1),
+        Dashboard: new ReplaySubject&lt;ApiModel.SyncStatus&gt;(1),
+        Payments: new ReplaySubject&lt;ApiModel.SyncStatus&gt;(1),
+        Usage: new ReplaySubject&lt;ApiModel.SyncStatus&gt;(1)
+    };
+&nbsp;
+    /**
+     * Provides a stream of HTTP errors that other parts of the application can listen to.
+     */
+<span class="fstat-no" title="function not covered" >    public get errors(): Subject&lt;any&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this._errors;</span>
+    }
+&nbsp;
+    private <span class="cstat-no" title="statement not covered" >_isSyncing: boolean = false;</span>
+&nbsp;
+    /**
+     * Creates an instance of ApiService.
+     */
+<span class="cstat-no" title="statement not covered" >    constructor(</span>
+        private <span class="cstat-no" title="statement not covered" >_http: Http,</span>
+        private <span class="cstat-no" title="statement not covered" >_apiRepository: IApiRepository<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >_config: ConfigService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >_modalService: ModalService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >_apiv2Repository: IApiv2Repository<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >_paymentApiRepository: IPaymentApiRepository<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >_paymentSchemeApi: IPaymentSchemeApi<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" ></span></span></span>
+    ) {
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this._apiRepository.errors.subscribe((err<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            this._errors.next(err);</span>
+        });
+<span class="cstat-no" title="statement not covered" >        this.pollingIntervalMs = this._config.current.aglWebApiSyncPollingIntervalMs;</span>
+<span class="cstat-no" title="statement not covered" >        this.maxPollingIndex = Math.round(this._config.current.aglWebApiSyncPollingTimeOutMs / this.pollingIntervalMs);</span>
+    }
+&nbsp;
+    /**
+     * Invoke the AGL Web API /dashboard endpoint.
+     */
+<span class="fstat-no" title="function not covered" >    public getDashboard(): Observable&lt;ContractDetailApiModel[]&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this._apiRepository.get&lt;ContractDetailApiModel[]&gt;('/api/v1/dashboard', this._syncStatus.Dashboard, true, true).catch((err<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            return Observable.of([]);</span>
+        });
+    }
+&nbsp;
+    public getUsage(granularity: UsageGranularity, startDate: Date, endDate: Date<span class="fstat-no" title="function not covered" >): Observable&lt;UsageDataModel[]&gt; {</span>
+        let searchParams = <span class="cstat-no" title="statement not covered" >new URLSearchParams();</span>
+<span class="cstat-no" title="statement not covered" >        searchParams.append('startDate', startDate.toISOString());</span>
+<span class="cstat-no" title="statement not covered" >        searchParams.append('endDate', endDate.toISOString());</span>
+<span class="cstat-no" title="statement not covered" >        searchParams.append('includeEstimatedReads', 'true');</span>
+<span class="cstat-no" title="statement not covered" >        return this._apiRepository.get&lt;UsageDataModel[]&gt;(`/api/v1/usage/${granularity}`, this._syncStatus.Usage, true, true, searchParams);</span>
+    }
+&nbsp;
+    /**
+     * Invoke the AGL Web API /accounts/list endpoint.
+     */
+<span class="fstat-no" title="function not covered" >    public getAccounts(): Observable&lt;AccountApiModel[]&gt; {</span>
+        let searchParams = <span class="cstat-no" title="statement not covered" >new URLSearchParams();</span>
+<span class="cstat-no" title="statement not covered" >        searchParams.append('includeInFlight', 'true');</span>
+<span class="cstat-no" title="statement not covered" >        return this._apiRepository.get&lt;AccountApiModel[]&gt;('/api/accounts/list', this._syncStatus.Account, true, true, searchParams);</span>
+    }
+&nbsp;
+    /**
+     * Invoke the AGL Web API /bills endpoint.
+     */
+<span class="fstat-no" title="function not covered" >    public getBills(): Observable&lt;BillHistoryApiModel[]&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this._apiRepository.get&lt;BillHistoryApiModel[]&gt;('/api/v1/bills', this._syncStatus.BillingHistory, true, true);</span>
+    }
+&nbsp;
+    /**
+     * Invoke the AGL Web API /payments endpoint
+     * @return {Observable&lt;PaymentApiModel[]&gt;}
+     */
+<span class="fstat-no" title="function not covered" >    public getPayments(): Observable&lt;PaymentApiModel[]&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this._apiRepository.get&lt;PaymentApiModel[]&gt;('/api/v1/payments', this._syncStatus.Payments, false, true).catch((err<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            return Observable.of([]);</span>
+        });
+    }
+&nbsp;
+    public sendPaymentEmail(data: EmailReceiptRequestModel<span class="fstat-no" title="function not covered" >): Observable&lt;boolean&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this._apiRepository.post({</span>
+            endpoint: '/api/v1/payments/emailreceipt',
+            isJson: false,
+            body: data,
+            useCache: false
+        });
+    }
+&nbsp;
+    /**
+     * Invoke the AGL Web API /pendingpayments endpoint
+     * @return {Observable&lt;PendingPaymentApiModel[]&gt;}
+     */
+<span class="fstat-no" title="function not covered" >    public getPendingPayments(): Observable&lt;PendingPaymentApiModel[]&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this._apiRepository.get&lt;PendingPaymentApiModel[]&gt;('/api/v1/pendingpayments', this._syncStatus.Payments, false, true);</span>
+    }
+&nbsp;
+    /**
+     * Invoke the AGL Web API /pendingpayments endpoint POST
+     * @return {Observable&lt;PendingPaymentApiModel[]&gt;}
+     */
+    public postPendingPayments(data<span class="fstat-no" title="function not covered" >): Observable&lt;PendingPaymentApiModel[]&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this._apiRepository.post&lt;PendingPaymentApiModel[]&gt;({</span>
+            endpoint: '/api/v1/pendingpayments',
+            isJson: false,
+            body: data,
+            useCache: false
+        });
+    }
+&nbsp;
+    /**
+     * Invoke the AGL Web API v2 /contracts/{contractNumber}/prePaymentBalance endpoint
+     * @return {Observable&lt;PrePaymentBalance&gt;}
+     */
+    public getPrePaymentBalance(contractNumber: string<span class="fstat-no" title="function not covered" >): Observable&lt;PrePaymentBalance&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this._apiv2Repository.get&lt;PrePaymentBalance&gt;('/v2/contracts/' + contractNumber + '/prepaymentbalance', false, true).catch((err<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            return Observable.of(null);</span>
+        });
+    }
+&nbsp;
+    /**
+     * Invoke the AGL Web API v2 /contracts/{contractNumber}/prePaymentBalance endpoint
+     * @return {Observable&lt;BonusEligible&gt;}
+     */
+    public getBonusEligible(contractNumber: string, paymentAmount: number<span class="fstat-no" title="function not covered" >): Observable&lt;BonusEligible&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this._apiv2Repository.get&lt;BonusEligible&gt;('/v2/contracts/' + contractNumber + '/payments/' + paymentAmount + '/productBonusEligibility', false, true).catch((err<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            return Observable.of(null);</span>
+        });
+    }
+&nbsp;
+    /**
+     * Invoke the AGL Web API v2 /contactdetail endpoint
+     * @return {Observable&lt;ContactDetail&gt;}
+     */
+<span class="fstat-no" title="function not covered" >    public getContactDetail(): Observable&lt;ContactDetailModel&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this._apiv2Repository.get&lt;ContactDetailModel&gt;('/v2/contactdetail', false, true);</span>
+    }
+&nbsp;
+    /**
+     * Invoke the AGL Web API v2 /businessPartners endpoint
+     * @return {Observable&lt;boolean&gt;}
+     */
+    public updateContactDetail(currentDetails: BusinessPartnerModel, updatedDetails: BusinessPartnerModel<span class="fstat-no" title="function not covered" >): Observable&lt;boolean&gt; {</span>
+        let patchBody: ApiModel.PatchDocument[] = <span class="cstat-no" title="statement not covered" >[];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (updatedDetails.mobile) {</span>
+<span class="cstat-no" title="statement not covered" >            this.appendAlteredPatchDocumentValues(patchBody, '/mobile', currentDetails.mobile, updatedDetails.mobile);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (updatedDetails.email) {</span>
+<span class="cstat-no" title="statement not covered" >            this.appendAlteredPatchDocumentValues(patchBody, '/email', currentDetails.email, updatedDetails.email);</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (patchBody.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >            return Observable.of(true); </span>// nothing to update
+        } else {
+            let endpointUrl = <span class="cstat-no" title="statement not covered" >`/v2/businessPartners/${currentDetails.businessPartnerNumber}`;</span>
+            let requestOptions: ApiModel.ApiV2RequestOptions = <span class="cstat-no" title="statement not covered" >{</span>
+                endpoint: endpointUrl,
+                isJson: false, // 200 OK response will send an empty body
+                body: patchBody,
+                guid: Guid.newGuid(),
+                useCache: false
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            return this._apiv2Repository.patch(requestOptions)</span>
+                       .map((res<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                           return true;</span>
+                       })
+                       .catch((err<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                           console.error('updateContactDetail error', err);</span>
+<span class="cstat-no" title="statement not covered" >                           return Observable.of(false);</span>
+                       });
+        }
+    }
+&nbsp;
+    /**
+     * Invoke the API call to get bill smoothing contracts for the provided contract account number.
+     */
+    public getBillSmoothingContracts(contractAccountNumber: string<span class="fstat-no" title="function not covered" >): Observable&lt;any&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this._paymentSchemeApi.getBillSmoothingContracts(contractAccountNumber)</span>
+                   .catch((error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                       console.error('BillSmoothingApi error', error);</span>
+<span class="cstat-no" title="statement not covered" >                       return Observable.of({</span>
+                           paymentSchemes: []
+                       });
+                   });
+    }
+&nbsp;
+    /**
+     * Invoke the API call to get bill smoothing estimates for the provided contract account number.
+     */
+<span class="cstat-no" title="statement not covered" >    public getBillSmoothingEstimates(contractAccountNumber: string<span class="fstat-no" title="function not covered" >): Observable&lt;BillSmoothingAccountsViewModel&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        return this._paymentSchemeApi.getBillSmoothingEstimates(contractAccountNumber)</span>
+                   .catch((response: any<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+                       const result = <span class="cstat-no" title="statement not covered" >new BillSmoothingAccountsViewModel();</span>
+<span class="cstat-no" title="statement not covered" >                       result.contractAccountNumber = Number(contractAccountNumber);</span>
+<span class="cstat-no" title="statement not covered" >                       if (this.isHardshipCustomer(response)) {</span>
+<span class="cstat-no" title="statement not covered" >                           result.hasEstimatesApiError = false;</span>
+<span class="cstat-no" title="statement not covered" >                           result.error = response.json();</span>
+                       } else {
+<span class="cstat-no" title="statement not covered" >                           result.hasEstimatesApiError = true;</span>
+<span class="cstat-no" title="statement not covered" >                           result.error = null;</span>
+                       }
+<span class="cstat-no" title="statement not covered" >                       return Observable.of(result);</span>
+                   });
+    }
+&nbsp;
+    /**
+     * Invoke the API call to get bill smoothing contracts for the provided contract account number.
+     */
+    public postBillSmoothingScheme(contractAccountNumber: string, body<span class="fstat-no" title="function not covered" >): Observable&lt;any&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this._paymentSchemeApi.postBillSmoothingScheme(contractAccountNumber, body);</span>
+    }
+&nbsp;
+    /**
+     * Invoke the AGL Web API /v2/contracts/contractNumber/meters/selfServiceEligibility` endpoint
+     * @return {Observable&lt;PendingPaymentApiModel&gt;}
+     */
+    public getMetersForContract(contractNumber: string<span class="fstat-no" title="function not covered" >): Observable&lt;SelfServiceEligibilityResponseApiModel&gt; {</span>
+        let searchParams: URLSearchParams = <span class="cstat-no" title="statement not covered" >this.appendSourcePlatform();</span>
+        let endpointUrl = <span class="cstat-no" title="statement not covered" >`/v2/contracts/${contractNumber}/meters/selfServiceEligibility`;</span>
+<span class="cstat-no" title="statement not covered" >        return this._apiv2Repository.get&lt;SelfServiceEligibilityResponseApiModel&gt;(endpointUrl, false, true, searchParams);</span>
+    }
+&nbsp;
+    public postMetersForContract(contractNumber: string, data: SelfServiceMeterReading[]<span class="fstat-no" title="function not covered" >): Observable&lt;SelfServiceReadingResponse&gt; {</span>
+        let endpointUrl = <span class="cstat-no" title="statement not covered" >`/v2/contracts/${contractNumber}/meters/selfServiceReadings?source=Web`;</span>
+&nbsp;
+        let filteredReadings: SelfServiceMeterReading[] = <span class="cstat-no" title="statement not covered" >[];</span>
+&nbsp;
+        // Skipped reads need to be removed prior to submission or they will cause an error in SAP
+<span class="cstat-no" title="statement not covered" >        data.map((meter<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+            let thisMeter = <span class="cstat-no" title="statement not covered" >_.clone(meter);</span>
+<span class="cstat-no" title="statement not covered" >            thisMeter.registers = thisMeter.registers.filter((p<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >!!p.reading)</span></span>;</span>
+<span class="cstat-no" title="statement not covered" >            if (thisMeter.registers.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                filteredReadings.push(thisMeter);</span>
+            }
+        });
+&nbsp;
+        let requestOptions: ApiModel.ApiV2RequestOptions = <span class="cstat-no" title="statement not covered" >{</span>
+            endpoint: endpointUrl,
+            isJson: true,
+            body: filteredReadings,
+            guid: Guid.newGuid(),
+            useCache: false
+        };
+<span class="cstat-no" title="statement not covered" >        return this._apiv2Repository.post&lt;SelfServiceReadingResponse&gt;(requestOptions);</span>
+    }
+&nbsp;
+    public postPhotosForContract(contractNumber: string, data: SelfServicePhotoReading[]<span class="fstat-no" title="function not covered" >): Observable&lt;SelfServiceReadingResponse&gt; {</span>
+&nbsp;
+        let endpointUrl = <span class="cstat-no" title="statement not covered" >`/v2/contracts/${contractNumber}/meters/selfServicePhotos?source=Web`;</span>
+&nbsp;
+        let requestOptions: ApiModel.ApiV2RequestOptions = <span class="cstat-no" title="statement not covered" >{</span>
+            endpoint: endpointUrl,
+            isJson: false,
+            body: ``,
+            guid: Guid.newGuid(),
+            useCache: false
+        };
+&nbsp;
+        let formData = <span class="cstat-no" title="statement not covered" >new FormData();</span>
+&nbsp;
+        let fileCount = <span class="cstat-no" title="statement not covered" >data.length;</span>
+        let dataModel: SelfServicePhotoSubmissionDataModel[] = <span class="cstat-no" title="statement not covered" >[];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        for (let index: number = 0; index &lt; data.length; index++) {</span>
+&nbsp;
+            let item = <span class="cstat-no" title="statement not covered" >data[index];</span>
+            let photoIndex = <span class="cstat-no" title="statement not covered" >index + 1;</span>
+&nbsp;
+            let thisDataModel: SelfServicePhotoSubmissionDataModel = <span class="cstat-no" title="statement not covered" >{};</span>
+<span class="cstat-no" title="statement not covered" >            thisDataModel.meterSerial = item.meterSerial;</span>
+<span class="cstat-no" title="statement not covered" >            thisDataModel.registers = item.registers;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (item.fileMetadata) {</span>
+<span class="cstat-no" title="statement not covered" >                thisDataModel.photoName = item.fileMetadata.name;</span>
+<span class="cstat-no" title="statement not covered" >                dataModel.push(thisDataModel);</span>
+<span class="cstat-no" title="statement not covered" >                formData.append(`photo${photoIndex}`, item.fileMetadata);</span>
+            }
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        formData.append(`data`, JSON.stringify(dataModel));</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return this._apiv2Repository.postForm(requestOptions, formData);</span>
+    }
+&nbsp;
+    /**
+     * Generates a Token for a creditcard on the api payment gateway
+     *
+     * @param {string} endpointUrl
+     * @param {string} billingRef
+     * @returns
+     *
+     * @memberof ApiService
+     */
+    public paymentApiGenerateToken(cardNumber: string, endpoint: string<span class="fstat-no" title="function not covered" >) {</span>
+        let tokenEndpoint = <span class="cstat-no" title="statement not covered" >`${this._config.current.aglWebPaymentApiBaseUrl}${endpoint}${cardNumber}`;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return this._http.get(tokenEndpoint);</span>
+    }
+&nbsp;
+    /**
+     * Generates a UID for the api payment gateway
+     *
+     * @param {string} endpointUrl
+     * @param {string} billingRef
+     * @returns
+     *
+     * @memberof ApiService
+     */
+    public paymentApiGenerateBillingReference(billingRef: string, endpoint: string<span class="fstat-no" title="function not covered" >) {</span>
+        let requestOptions: ApiModel.ApiV2RequestOptions = <span class="cstat-no" title="statement not covered" >{</span>
+            endpoint: `${this._config.current.aglWebPaymentApiBaseUrl}${endpoint}${billingRef}`,
+            isJson: true,
+            body: {},
+            guid: Guid.newGuid(),
+            useCache: false
+        };
+        // This endpoint just returns a string...
+<span class="cstat-no" title="statement not covered" >        return this._paymentApiRepository.post(requestOptions);</span>
+    }
+&nbsp;
+    /**
+     * Sends a saved payment (card) to the api payment gateway
+     *
+     * @param {string} endpointUrl
+     * @param {string} billingRef
+     * @returns
+     *
+     * @memberof ApiService
+     */
+    public paymentApiGeneratePayment(endpoint: string, paymentDetails: PaymentDetailsApiModel<span class="fstat-no" title="function not covered" >) {</span>
+        let requestOptions: ApiModel.ApiV2RequestOptions = <span class="cstat-no" title="statement not covered" >{</span>
+            endpoint: `${this._config.current.aglWebPaymentApiBaseUrl}${endpoint}`,
+            isJson: true,
+            body: paymentDetails,
+            guid: Guid.newGuid(),
+            useCache: false
+        };
+        // This endpoint just returns a string...
+<span class="cstat-no" title="statement not covered" >        return this._paymentApiRepository.post(requestOptions);</span>
+    }
+&nbsp;
+    /**
+     * Sends a saved payment (bank account) to the stored payment api
+     *
+     * @param {string} endpointUrl
+     * @param {string} billingRef
+     * @returns
+     *
+     * @memberof ApiService
+     */
+    public storedPaymentApiGeneratePayment(endpoint: string, paymentDetails: CreatePaymentMethodRequest<span class="fstat-no" title="function not covered" >) {</span>
+        let requestOptions: ApiModel.ApiV2RequestOptions = <span class="cstat-no" title="statement not covered" >{</span>
+            endpoint: `${this._config.current.aglStoredPaymentApi}${endpoint}`,
+            isJson: true,
+            body: paymentDetails,
+            guid: Guid.newGuid(),
+            useCache: false
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return this._paymentApiRepository.postBody(requestOptions);</span>
+    }
+&nbsp;
+    /**
+     * Start user data synchronisation
+     *
+     * @returns {Observable&lt;any&gt;} Mocked, LightMode, Queued or AttemptedAndIgnored
+     */
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public startSync() {</span></span>
+&nbsp;
+        // let mockCounter = 0;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this._isSyncing) {</span>
+<span class="cstat-no" title="statement not covered" >            console.warn('Sync already in progress, skipping.');</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this._isSyncing = true;</span>
+<span class="cstat-no" title="statement not covered" >        console.time(`api-service-sync-start`);</span>
+<span class="cstat-no" title="statement not covered" >        console.time(`api-service-syncing-complete`);</span>
+<span class="cstat-no" title="statement not covered" >        this.checkSync();</span>
+<span class="cstat-no" title="statement not covered" >        this._apiRepository.get&lt;string&gt;('/api/v1/syncdata/start', null, false, false).subscribe(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            console.timeEnd(`api-service-sync-start`);</span>
+<span class="cstat-no" title="statement not covered" >            this.pollSyncStatusIndex = 0;</span>
+<span class="cstat-no" title="statement not covered" >            if (!this.isAllSyncComplete) {</span>
+<span class="cstat-no" title="statement not covered" >                this.checkSync();</span>
+<span class="cstat-no" title="statement not covered" >                this.pollSyncStatusIntervalId = setInterval(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                    this.checkSync();</span>
+                }, this.pollingIntervalMs);
+            }
+        });
+&nbsp;
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public checkSync() {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (!this.isAllSyncComplete) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            this.getSyncStatus().subscribe((statuses: ApiModel.SyncStatus[]<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                for (let syncStatus<span class="cstat-no" title="statement not covered" ></span> of statuses) {</span>
+                    let subject = &lt;BehaviorSubject&lt;ApiModel.SyncStatus&gt;&gt; <span class="cstat-no" title="statement not covered" >this._syncStatus[syncStatus.dataGroup];</span>
+<span class="cstat-no" title="statement not covered" >                    if (subject.closed) {</span>
+<span class="cstat-no" title="statement not covered" >                        continue;</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    subject.next(syncStatus);</span>
+<span class="cstat-no" title="statement not covered" >                    if (this.isSyncComplete(syncStatus)) {</span>
+<span class="cstat-no" title="statement not covered" >                        subject.complete();</span>
+                    }
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                this.isAllSyncComplete = statuses.every((s<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >this.isSyncComplete(s))</span></span>;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                this.pollSyncStatusIndex++;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if (this.pollSyncStatusIndex &gt;= this.maxPollingIndex) {</span>
+<span class="cstat-no" title="statement not covered" >                    clearInterval(this.pollSyncStatusIntervalId);</span>
+<span class="cstat-no" title="statement not covered" >                    this._errors.next('Not all services responded within timeframe');</span>
+<span class="cstat-no" title="statement not covered" >                    this._modalService.close();</span>
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if (this.isAllSyncComplete) {</span>
+<span class="cstat-no" title="statement not covered" >                    clearInterval(this.pollSyncStatusIntervalId);</span>
+<span class="cstat-no" title="statement not covered" >                    this._isSyncing = false;</span>
+<span class="cstat-no" title="statement not covered" >                    console.timeEnd(`api-service-syncing-complete`);</span>
+<span class="cstat-no" title="statement not covered" >                    this.allContentLoaded.next(true);</span>
+<span class="cstat-no" title="statement not covered" >                    this.allContentLoaded.complete();</span>
+                }
+            });
+        }
+    }
+&nbsp;
+    /**
+     * Starts the timeout for your session
+     * Sets a timeout to 15 minutes before doing a heartbeat to the server
+     */
+<span class="fstat-no" title="function not covered" >    public startTimeout() {</span>
+        // Get the current time of the host.
+        let time = <span class="cstat-no" title="statement not covered" >new Date();</span>
+        // let waitTime = 1.2e+6; // 20 minutes
+        // Remove any references to the old time.
+<span class="cstat-no" title="statement not covered" >        localStorage.removeItem('selfService.timeoutTime');</span>
+        // Set the current time into localstorage.
+<span class="cstat-no" title="statement not covered" >        localStorage.setItem('selfService.timeoutTime', time.toISOString());</span>
+    }
+&nbsp;
+    /**
+     * Check the timeout based on if a user interaction with the application has
+     * been made.
+     */
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public checkTimeout() {</span></span>
+        // Get the local time
+        let localStorageTime = <span class="cstat-no" title="statement not covered" >localStorage.getItem('selfService.timeoutTime');</span> // Timeout Time
+        let d1: any = <span class="cstat-no" title="statement not covered" >new Date(localStorageTime);</span> // Older Date
+        let d2: any = <span class="cstat-no" title="statement not covered" >new Date();</span> // New Date
+        let diff = <span class="cstat-no" title="statement not covered" >d2 - d1;</span> // Do the difference
+        let seconds = <span class="cstat-no" title="statement not covered" >Math.floor(diff / 1e3);</span> // Set the seconds
+        // Over 900 seconds (15 minutes) then ping the server
+<span class="cstat-no" title="statement not covered" >        if (seconds &gt;= 900) {</span>
+            // Do API call
+            let heartBeat = <span class="cstat-no" title="statement not covered" >this._http.get(`${this.siteCoreUrl}/svc/app/heartBeat`,</span>
+                new RequestOptions({ withCredentials: true }));
+<span class="cstat-no" title="statement not covered" >            heartBeat.subscribe((value<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                if (value.ok) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.startTimeout();</span>
+                }
+            });
+        }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public getProfile() {</span></span>
+&nbsp;
+        // Wait until the sync process has completed, as it has prio #1 for data connections
+<span class="cstat-no" title="statement not covered" >        this.allContentLoaded.subscribe((loaded<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+&nbsp;
+            let requestOptions = <span class="cstat-no" title="statement not covered" >new RequestOptions({</span>
+                withCredentials: true
+            });
+&nbsp;
+            // Defer these calls to allow the application to 'settle'
+<span class="cstat-no" title="statement not covered" >            setTimeout(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+                // sequential calls
+<span class="cstat-no" title="statement not covered" >                this._http.get(`${this.siteCoreUrl}/svc/MyAccount/GetProfile`, requestOptions)</span>
+                    .switchMap(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >this._http.get(`${this.siteCoreUrl}/svc/MyAccount/GetCustomerMessages`, requestOptions))</span></span>.subscribe(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    console.log(`Warm up for AEO is complete`);</span>
+                });
+            }, this._config.current.aglAeoWarmUpDelayMs);
+        });
+&nbsp;
+    }
+&nbsp;
+    /**
+     * Invoke the AGL Web API /syncdata/status endpoint
+     * @return {Observable&lt;SyncStatus[]&gt;}
+     */
+<span class="fstat-no" title="function not covered" >    private getSyncStatus(): Observable&lt;ApiModel.SyncStatus[]&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this._apiRepository.get&lt;ApiModel.SyncStatus[]&gt;('/api/v1/syncdata/status', null, false, true);</span>
+    }
+&nbsp;
+    /**
+     * Returns true if a synchronisation status is marked as complete
+     */
+    private isSyncComplete(sync: ApiModel.SyncStatus<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        return (sync &amp;&amp; sync.status &amp;&amp; sync.status.toLowerCase() === 'complete');</span>
+    }
+&nbsp;
+    private appendSourcePlatform(params?: URLSearchParams<span class="fstat-no" title="function not covered" >): URLSearchParams {</span>
+<span class="cstat-no" title="statement not covered" >        if (!params) {</span>
+<span class="cstat-no" title="statement not covered" >            params = new URLSearchParams();</span>
+        }
+<span class="cstat-no" title="statement not covered" >        params.append(`${this.sourcePlatformKey}`, `${this.sourcePlatformValue}`);</span>
+<span class="cstat-no" title="statement not covered" >        return params;</span>
+    }
+&nbsp;
+    /**
+     * @param {fieldJsonPointer} string in json pointer format https://tools.ietf.org/html/rfc6901
+     */
+    private appendAlteredPatchDocumentValues(patchDocuments: ApiModel.PatchDocument[],
+                                             fieldNameJsonPointer: string,
+                                             currentValue: string | number,
+                                             updatedValue: string | number<span class="fstat-no" title="function not covered" >): void {</span>
+<span class="cstat-no" title="statement not covered" >        if (currentValue !== updatedValue) {</span>
+<span class="cstat-no" title="statement not covered" >            patchDocuments.push({</span>
+                op: 'Replace',
+                path: fieldNameJsonPointer,
+                value: updatedValue
+            });
+        }
+    }
+&nbsp;
+    private isHardshipCustomer(response: any<span class="fstat-no" title="function not covered" >): boolean {</span>
+        const responseObj = <span class="cstat-no" title="statement not covered" >response.json();</span>
+<span class="cstat-no" title="statement not covered" >        if (response.status === 400 &amp;&amp; responseObj.internalError) {</span>
+<span class="cstat-no" title="statement not covered" >            if (Number(responseObj.internalError.errorNumber) === 16) {</span>
+<span class="cstat-no" title="statement not covered" >                return true;</span>
+            }
+        }
+<span class="cstat-no" title="statement not covered" >        return false;</span>
+    }
+}
+&nbsp;
+export interface ContractDetailApiModel {
+    account: string;
+    contract: string;
+    currentBillStartDate: Date;
+    currentBillEndDate: Date;
+    costToDate: number;
+    projectedBill: number;
+    usageCostThisWeek: number;
+    usageCostLastWeek: number;
+    usageThisWeek: string;
+    usageLastWeek: string;
+    balance: number;
+    dueDate: Date;
+    isSmartMeter: boolean;
+    estimatedReads: boolean;
+}
+&nbsp;
+export interface BillHistoryApiModel {
+    account: string;
+    contract: string;
+    bills: BillApiModel[];
+}
+&nbsp;
+export interface BillApiModel {
+    billIssued: Date;
+    newCharges: number;
+    totalDue: number;
+    dueDate: Date;
+    isInCredit: boolean;
+    isOverdue: boolean;
+    billStatus: string;
+    printDoc: string;
+    startDate: Date;
+    endDate: Date;
+}
+&nbsp;
+export interface AccountApiModel {
+    number: string;
+    firstName: string;
+    lastName: string;
+    contracts: ContractApiModel[];
+}
+&nbsp;
+export interface ContractApiModel {
+    address: string;
+    accountNumber: string;
+    fuelType: string;
+    nameId: string;
+    number: string;
+    planName: string;
+    inFlight: boolean;
+    isRestricted: boolean;
+    hasSolar: boolean;
+    solarCheckRegistered: boolean;
+    hasElectricVehicle: boolean;
+    productId: string;
+    regionId: string;
+}
+&nbsp;
+export interface PaymentApiModel {
+    account: string;
+    contract: string;
+    overdue: number;
+    currentBalance: number;
+    totalPayment: number;
+    dueDate?: string;
+    extendedDueDate?: string;
+    billSmoothing: boolean;
+    directDebit: boolean;
+    payOnTimeDiscount: number;
+}
+&nbsp;
+export interface PendingPaymentApiModel {
+    contractNumber: string;
+    paymentDateTime: Date;
+    amount: number;
+}
+&nbsp;
+export interface ContactDetailModel {
+    hasMultipleBusinessPartners: boolean;
+    businessPartners: BusinessPartnerModel[];
+}
+&nbsp;
+export interface BusinessPartnerModel {
+    /** Note: For business users, firstName may contain the company name. Additionally firstName will not be populated by the api until an Apr/May 2018 SAP release */
+    firstName: string;
+    /** Note For business users, lastName may contain the company name. Additionally lastName will not be populated by the api until an Apr/May 2018 SAP release */
+    lastName: string;
+    businessPartnerNumber: string;
+    phone: string;
+    mobile: string;
+    hasDateOfBirth: boolean;
+    email: string;
+}
+&nbsp;
+export interface SelfServiceEligibilityResponseApiModel {
+    screenCode?: SsmrScreenCode;
+    meters?: MeterApiModel[];
+    error?: ErrorApiModel;
+}
+&nbsp;
+export interface MeterApiModel {
+    meterSerial?: string;
+    registers?: RegisterApiModel[];
+}
+&nbsp;
+export interface RegisterApiModel {
+    registerId?: string;
+    dialFormat?: number;
+    currentMeterRead?: string;
+    lastMeterRead?: string;
+    lastReadQuality?: string;
+    lastReadDate?: string;
+}
+&nbsp;
+export interface ErrorApiModel {
+    message?: string;
+    internalError?: InternalErrorApiModel;
+}
+&nbsp;
+export interface InternalErrorApiModel {
+    errorId?: string;
+    errorNumber?: string;
+    description?: string;
+}
+&nbsp;
+export interface BillSmoothingApiModel {
+    contractAccountNumber: number;
+    paymentSchemes: BillSmoothingApiSchemeModel[];
+}
+&nbsp;
+export interface BillSmoothingApiSchemeModel {
+    contractNumber: number;
+    paymentSchemeNumber: number;
+    startDate: string;
+    endDate: string;
+    frequency: string;
+    nextPayment: PaymentSimpleModel;
+    previousPayment: PaymentSimpleModel;
+}
+&nbsp;
+export interface SelfServiceReadingResponse {
+&nbsp;
+    /**
+     * Indicates reading submitted has been committed successfully.
+     */
+    isSuccess: boolean;
+&nbsp;
+    /**
+     * Screen code from SAP that indicates which screen to display at front-end
+     */
+    screenCode: SsmrScreenCode;
+&nbsp;
+    /**
+     * Average Daily Usage based on Current Bill Amount.
+     */
+    dailyUsage?: string;
+    accountBalance?: number;
+    invoiceDueDate?: Date;
+&nbsp;
+    /**
+     * Next Scheduled Bill Date as per customer meter reading schedule
+     */
+    nextScheduledBillDate?: Date;
+&nbsp;
+    /**
+     * Number of days remaining between current system date &amp; Next Scheduled Bill Date
+     */
+    numberOfDaysTillNextBill?: string;
+    currentBill?: SelfServiceBill;
+    projectedBill?: SelfServiceBill;
+    lastInvoice?: SelfServiceInvoice;
+    adjustment?: SelfServiceAdjustment;
+    meters?: SelfServiceMeterReadingResult[];
+    error?: ErrorApiModel;
+}
+&nbsp;
+export interface SelfServiceBill {
+    amount: number;
+    startDate: Date;
+    endDate: Date;
+}
+&nbsp;
+export interface SelfServiceInvoice {
+&nbsp;
+    /**
+     * Last invoice amount that was rendered to the customer
+     */
+    amount: number;
+&nbsp;
+    /**
+     * Commencement date of the last invoice period that customer has received their invoice
+     */
+    startDate: Date;
+&nbsp;
+    /**
+     * End date of the last invoice period that customer has received their invoice
+     */
+    endDate: Date;
+&nbsp;
+    /**
+     * Indicates the means in which the meter reading was provided (Market Quality flag).
+     */
+    quality: string;
+}
+&nbsp;
+export interface SelfServiceAdjustment {
+    preAdjustmentBalance: number;
+    postAdjustmentBalance: number;
+    startDate: Date;
+    endDate: Date;
+}
+&nbsp;
+export interface SelfServiceMeterReadingResult {
+    meterSerial: string;
+    photoUploadRequired: boolean;
+    registers: SelfServiceRegisterReadingResult[];
+}
+&nbsp;
+export interface SelfServiceRegisterReadingResult {
+    registerId: string;
+    reading: string;
+    isValid: boolean;
+    status: string;
+}
+&nbsp;
+export interface SelfServiceMeterReading {
+    meterSerial?: string;
+    registers?: SelfServiceRegisterReading[];
+}
+&nbsp;
+export interface SelfServicePhotoReading extends MeterApiModel {
+    fileData?: any;
+    fileMetadata?: File;
+    isThumbnailAvailable?: boolean;
+}
+&nbsp;
+export interface SelfServicePhotoSubmissionDataModel extends MeterApiModel {
+    photoName?: string;
+}
+&nbsp;
+export interface SelfServiceRegisterReading {
+    registerId?: string;
+    reading?: string;
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >export class EmailReceiptRequestModel {</span>
+    public referenceNumber: string;
+    public receiptNumber: string;
+    public paymentAmount: number;
+    public paymentDate: string;
+    public payg?: boolean;
+&nbsp;
+    public creditCardType?: string;
+    public creditCardNumber?: string;
+    public creditCardExpiry?: string;
+&nbsp;
+    public bonus?: string;
+    public additionalTextTemplate?: string;
+&nbsp;
+    // Exist in .web but not in .api call :(
+    public subjectTemplate?: string;
+    public emailTitleTemplate?: string;
+    public termsAndConditionsTemplate?: string;
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

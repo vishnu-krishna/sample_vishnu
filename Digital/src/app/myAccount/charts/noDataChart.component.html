@@ -1,0 +1,35 @@
+<div *ngIf="!contract.isDataAvailable" class="dashboard-billing-summary__no-bills-container">
+    <div class='dashboard-billing-summary__no-bills-container--centered'>
+
+        <!-- No bill history to plot from -->
+        <div *ngIf="!contract.isInFlight">
+            <div *ngIf="contract.isGas">
+                <img src="svg/icon_gas_no_circle.svg" class="dashboard-billing-summary__no-bills-image">
+                <span class="dashboard-billing-summary__no-bills-message">Your first gas bill will be issued {{firstBillDue}}.</span>
+            </div>
+            <div *ngIf="contract.isElectricity">
+                <img src="svg/icon_elec_no_circle.svg" class="dashboard-billing-summary__no-bills-image">
+                <span class="dashboard-billing-summary__no-bills-message">Your first electricity bill will be issued {{firstBillDue}}.</span>
+            </div>
+        </div>
+
+        <!-- In flight i.e. just signed up and not quite set up properly-->
+        <div *ngIf="contract.isInFlight" class="contract-inflight">
+            <div *ngIf="contract.isGas">
+                <div class='dashboard-billing-summary__icon-gas-svg'></div>
+                <div class="dashboard-billing-summary__gas-pulse"></div>
+            </div>
+            <div *ngIf="contract.isElectricity">
+                <div class='dashboard-billing-summary__icon-elec-svg'></div>
+                <div class="dashboard-billing-summary__elec-pulse"></div>
+            </div>
+            <div class="dashboard-billing-summary__in-flight-main-header">
+                Account setup in progress
+            </div>
+            <div class="dashboard-billing-summary__in-flight-sub-header">
+                Your connection information will be available online soon
+            </div>
+        </div>
+        
+    </div>
+</div>

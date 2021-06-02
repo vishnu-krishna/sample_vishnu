@@ -1,0 +1,529 @@
+[
+    {
+        "dayOfMonth": 1,
+        "billDates": [
+            {
+                "issueDate": "2017-10-10",
+                "dueDate": "2017-10-21"
+            },
+            {
+                "issueDate": "2017-11-10",
+                "dueDate": "2017-11-21"
+            },
+            {
+                "issueDate": "2017-12-10",
+                "dueDate": "2017-12-21"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 2,
+        "billDates": [
+            {
+                "issueDate": "2017-10-11",
+                "dueDate": "2017-10-22"
+            },
+            {
+                "issueDate": "2017-11-11",
+                "dueDate": "2017-11-22"
+            },
+            {
+                "issueDate": "2017-12-11",
+                "dueDate": "2017-12-22"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 3,
+        "billDates": [
+            {
+                "issueDate": "2017-10-12",
+                "dueDate": "2017-10-23"
+            },
+            {
+                "issueDate": "2017-11-12",
+                "dueDate": "2017-11-23"
+            },
+            {
+                "issueDate": "2017-12-12",
+                "dueDate": "2017-12-23"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 4,
+        "billDates": [
+            {
+                "issueDate": "2017-10-13",
+                "dueDate": "2017-10-24"
+            },
+            {
+                "issueDate": "2017-11-13",
+                "dueDate": "2017-11-24"
+            },
+            {
+                "issueDate": "2017-12-13",
+                "dueDate": "2017-12-24"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 5,
+        "billDates": [
+            {
+                "issueDate": "2017-10-14",
+                "dueDate": "2017-10-25"
+            },
+            {
+                "issueDate": "2017-11-14",
+                "dueDate": "2017-11-25"
+            },
+            {
+                "issueDate": "2017-12-14",
+                "dueDate": "2017-12-25"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 6,
+        "billDates": [
+            {
+                "issueDate": "2017-10-15",
+                "dueDate": "2017-10-26"
+            },
+            {
+                "issueDate": "2017-11-15",
+                "dueDate": "2017-11-26"
+            },
+            {
+                "issueDate": "2017-12-15",
+                "dueDate": "2017-12-26"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 7,
+        "billDates": [
+            {
+                "issueDate": "2017-10-16",
+                "dueDate": "2017-10-27"
+            },
+            {
+                "issueDate": "2017-11-16",
+                "dueDate": "2017-11-27"
+            },
+            {
+                "issueDate": "2017-12-16",
+                "dueDate": "2017-12-27"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 8,
+        "billDates": [
+            {
+                "issueDate": "2017-10-17",
+                "dueDate": "2017-10-28"
+            },
+            {
+                "issueDate": "2017-11-17",
+                "dueDate": "2017-11-28"
+            },
+            {
+                "issueDate": "2017-12-17",
+                "dueDate": "2017-12-28"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 9,
+        "billDates": [
+            {
+                "issueDate": "2017-10-18",
+                "dueDate": "2017-10-29"
+            },
+            {
+                "issueDate": "2017-11-18",
+                "dueDate": "2017-11-29"
+            },
+            {
+                "issueDate": "2017-12-18",
+                "dueDate": "2017-12-29"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 10,
+        "billDates": [
+            {
+                "issueDate": "2017-10-19",
+                "dueDate": "2017-10-30"
+            },
+            {
+                "issueDate": "2017-11-19",
+                "dueDate": "2017-11-30"
+            },
+            {
+                "issueDate": "2017-12-19",
+                "dueDate": "2017-12-30"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 11,
+        "billDates": [
+            {
+                "issueDate": "2017-10-20",
+                "dueDate": "2017-10-31"
+            },
+            {
+                "issueDate": "2017-11-20",
+                "dueDate": "2017-12-01"
+            },
+            {
+                "issueDate": "2017-12-20",
+                "dueDate": "2017-12-31"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 12,
+        "billDates": [
+            {
+                "issueDate": "2017-10-21",
+                "dueDate": "2017-11-01"
+            },
+            {
+                "issueDate": "2017-11-21",
+                "dueDate": "2017-12-02"
+            },
+            {
+                "issueDate": "2017-12-21",
+                "dueDate": "2018-01-01"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 13,
+        "billDates": [
+            {
+                "issueDate": "2017-10-22",
+                "dueDate": "2017-11-02"
+            },
+            {
+                "issueDate": "2017-11-22",
+                "dueDate": "2017-12-03"
+            },
+            {
+                "issueDate": "2017-12-22",
+                "dueDate": "2018-01-02"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 14,
+        "billDates": [
+            {
+                "issueDate": "2017-10-23",
+                "dueDate": "2017-11-03"
+            },
+            {
+                "issueDate": "2017-11-23",
+                "dueDate": "2017-12-04"
+            },
+            {
+                "issueDate": "2017-12-23",
+                "dueDate": "2018-01-03"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 15,
+        "billDates": [
+            {
+                "issueDate": "2017-10-24",
+                "dueDate": "2017-11-04"
+            },
+            {
+                "issueDate": "2017-11-24",
+                "dueDate": "2017-12-05"
+            },
+            {
+                "issueDate": "2017-12-24",
+                "dueDate": "2018-01-04"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 16,
+        "billDates": [
+            {
+                "issueDate": "2017-10-25",
+                "dueDate": "2017-11-05"
+            },
+            {
+                "issueDate": "2017-11-25",
+                "dueDate": "2017-12-06"
+            },
+            {
+                "issueDate": "2017-12-25",
+                "dueDate": "2018-01-05"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 17,
+        "billDates": [
+            {
+                "issueDate": "2017-10-26",
+                "dueDate": "2017-11-06"
+            },
+            {
+                "issueDate": "2017-11-26",
+                "dueDate": "2017-12-07"
+            },
+            {
+                "issueDate": "2017-12-26",
+                "dueDate": "2018-01-06"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 18,
+        "billDates": [
+            {
+                "issueDate": "2017-10-27",
+                "dueDate": "2017-11-07"
+            },
+            {
+                "issueDate": "2017-11-27",
+                "dueDate": "2017-12-08"
+            },
+            {
+                "issueDate": "2017-12-27",
+                "dueDate": "2018-01-07"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 19,
+        "billDates": [
+            {
+                "issueDate": "2017-10-28",
+                "dueDate": "2017-11-08"
+            },
+            {
+                "issueDate": "2017-11-28",
+                "dueDate": "2017-12-09"
+            },
+            {
+                "issueDate": "2017-12-28",
+                "dueDate": "2018-01-08"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 20,
+        "billDates": [
+            {
+                "issueDate": "2017-10-29",
+                "dueDate": "2017-11-09"
+            },
+            {
+                "issueDate": "2017-11-29",
+                "dueDate": "2017-12-10"
+            },
+            {
+                "issueDate": "2017-12-29",
+                "dueDate": "2018-01-09"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 21,
+        "billDates": [
+            {
+                "issueDate": "2017-10-30",
+                "dueDate": "2017-11-10"
+            },
+            {
+                "issueDate": "2017-11-30",
+                "dueDate": "2017-12-11"
+            },
+            {
+                "issueDate": "2017-12-30",
+                "dueDate": "2018-01-10"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 22,
+        "billDates": [
+            {
+                "issueDate": "2017-10-31",
+                "dueDate": "2017-11-11"
+            },
+            {
+                "issueDate": "2017-11-30",
+                "dueDate": "2017-12-11"
+            },
+            {
+                "issueDate": "2017-12-31",
+                "dueDate": "2018-01-11"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 23,
+        "billDates": [
+            {
+                "issueDate": "2017-11-01",
+                "dueDate": "2017-11-12"
+            },
+            {
+                "issueDate": "2017-12-01",
+                "dueDate": "2017-12-12"
+            },
+            {
+                "issueDate": "2018-01-01",
+                "dueDate": "2018-01-12"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 24,
+        "billDates": [
+            {
+                "issueDate": "2017-11-02",
+                "dueDate": "2017-11-13"
+            },
+            {
+                "issueDate": "2017-12-02",
+                "dueDate": "2017-12-13"
+            },
+            {
+                "issueDate": "2018-01-02",
+                "dueDate": "2018-01-13"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 25,
+        "billDates": [
+            {
+                "issueDate": "2017-11-03",
+                "dueDate": "2017-11-14"
+            },
+            {
+                "issueDate": "2017-12-03",
+                "dueDate": "2017-12-14"
+            },
+            {
+                "issueDate": "2018-01-03",
+                "dueDate": "2018-01-14"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 26,
+        "billDates": [
+            {
+                "issueDate": "2017-11-04",
+                "dueDate": "2017-11-15"
+            },
+            {
+                "issueDate": "2017-12-04",
+                "dueDate": "2017-12-15"
+            },
+            {
+                "issueDate": "2018-01-04",
+                "dueDate": "2018-01-15"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 27,
+        "billDates": [
+            {
+                "issueDate": "2017-11-05",
+                "dueDate": "2017-11-16"
+            },
+            {
+                "issueDate": "2017-12-05",
+                "dueDate": "2017-12-16"
+            },
+            {
+                "issueDate": "2018-01-05",
+                "dueDate": "2018-01-16"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 28,
+        "billDates": [
+            {
+                "issueDate": "2017-11-06",
+                "dueDate": "2017-11-17"
+            },
+            {
+                "issueDate": "2017-12-06",
+                "dueDate": "2017-12-17"
+            },
+            {
+                "issueDate": "2018-01-06",
+                "dueDate": "2018-01-17"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 29,
+        "billDates": [
+            {
+                "issueDate": "2017-11-07",
+                "dueDate": "2017-11-18"
+            },
+            {
+                "issueDate": "2017-12-07",
+                "dueDate": "2017-12-18"
+            },
+            {
+                "issueDate": "2018-01-07",
+                "dueDate": "2018-01-18"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 30,
+        "billDates": [
+            {
+                "issueDate": "2017-11-08",
+                "dueDate": "2017-11-19"
+            },
+            {
+                "issueDate": "2017-12-08",
+                "dueDate": "2017-12-19"
+            },
+            {
+                "issueDate": "2018-01-08",
+                "dueDate": "2018-01-19"
+            }
+        ]
+    },
+    {
+        "dayOfMonth": 31,
+        "billDates": [
+            {
+                "issueDate": "2017-11-09",
+                "dueDate": "2017-11-20"
+            },
+            {
+                "issueDate": "2017-12-09",
+                "dueDate": "2017-12-20"
+            },
+            {
+                "issueDate": "2018-01-09",
+                "dueDate": "2018-01-20"
+            }
+        ]
+    }
+]

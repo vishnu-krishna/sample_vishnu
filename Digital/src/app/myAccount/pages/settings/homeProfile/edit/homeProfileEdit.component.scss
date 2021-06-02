@@ -1,0 +1,41 @@
+@import '../homeProfile';
+
+.homeprofile-edit {
+
+    &__header {
+        padding-top: $space-08;
+        @media #{$agl-layout-mobile} {
+            padding-top: $space-07;
+        }
+        margin-bottom: $space-04;
+    }
+
+    &__container {
+        max-width: $content-width;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: $neutral-08;
+    }
+
+    &__content {
+        font-family: $body-font-stack;
+        font-size: $body-font-size-normal;
+        padding: $space-04;
+        @media #{$agl-layout-mobile} {
+            padding: $space-03;
+        }
+
+        &-description {
+            margin-bottom: $space-03;
+        }
+    }
+
+    &__address {
+        margin-top: $space-04;
+
+        &-header {
+            font-size: $body-font-size-small;
+            font-weight: bold;
+        }
+    }
+}

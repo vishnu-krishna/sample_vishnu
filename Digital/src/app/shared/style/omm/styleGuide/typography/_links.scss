@@ -1,0 +1,6 @@
+p {
+    a {
+        @include link-underline;
+        color: $col-ocean;
+    }
+}

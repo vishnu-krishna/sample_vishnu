@@ -1,0 +1,21 @@
+[
+    {
+        "account": "20845020",
+        "contract": "9002002507",
+        "dueDate": "31/01/2018",
+        "overdue": 167.12,
+        "currentBalance": 0,
+        "totalPayment": 167.12,
+        "billSmoothing": false,
+        "directDebit": false
+    },
+    {
+        "account": "20845020",
+        "contract": "9401786528",
+        "overdue": 0,
+        "currentBalance": 0,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false
+    }
+]

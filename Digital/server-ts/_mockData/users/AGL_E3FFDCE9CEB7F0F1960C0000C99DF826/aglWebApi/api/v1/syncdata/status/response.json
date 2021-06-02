@@ -1,0 +1,36 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "dataGroup": "Account",
+            "status": "Complete",
+            "lastUpdated": "2017-05-10T04:00:55.2555767+00:00",
+            "failed": false
+        },
+        {
+            "dataGroup": "BillingHistory",
+            "status": "Complete",
+            "lastUpdated": "2017-05-10T04:01:04.2371141+00:00",
+            "failed": false
+        },
+        {
+            "dataGroup": "Dashboard",
+            "status": "Complete",
+            "lastUpdated": "2017-05-09T00:49:52.6518279+00:00",
+            "failed": false
+        },
+        {
+            "dataGroup": "Payments",
+            "status": "Complete",
+            "lastUpdated": "2017-05-10T04:00:56.5758321+00:00",
+            "failed": false
+        },
+        {
+            "dataGroup": "Usage",
+            "status": "Complete",
+            "lastUpdated": "2017-05-10T04:01:09.4510702+00:00",
+            "failed": false
+        }
+    ]
+}

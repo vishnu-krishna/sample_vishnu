@@ -1,0 +1,33 @@
+@import '../../../myAccount/maui/maui';
+
+@include anchor-styling;
+
+a {
+    &:hover {
+        color: $neutral-01;
+    }
+
+    &.link--large {
+        &:link {
+            font-size: $body-font-size-big;
+        }
+    }
+
+    &.link--normal {
+        &:link {
+            font-size: $body-font-size-normal;
+        }
+    }
+
+    &.link--small {
+        &:link {
+            font-size: $body-font-size-small;
+        }
+    }
+
+    &.link--smallest {
+        &:link {
+            font-size: $body-font-size-smallest;
+        }
+    }
+}

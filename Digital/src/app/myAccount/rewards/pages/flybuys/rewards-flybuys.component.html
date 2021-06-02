@@ -1,0 +1,46 @@
+<div>
+   <div class="flybuys-navigation">
+    <agl-maui-secondary-navigation
+    display="true"
+   displayBackButton="false"
+   text="Flybuys transactions"
+   hideNavigation="hideNavigation"
+   (clicked)='backClick()'>
+ </agl-maui-secondary-navigation>
+   </div>
+   <div class="flybuys-content">
+        <div class="page__header" *ngIf="!loadingError">
+                <div>
+                     <img src="svg/flybuys.svg" />
+                 </div>
+                 <p>Visit <agl-dls-link href="https://www.flybuys.com.au">flybuys.com.au</agl-dls-link> to redeem your points.</p>
+             </div>
+         
+             <agl-loader *ngIf="loading"></agl-loader>
+         
+             <div *ngIf="!loading && !loadingError" class="page__content">
+                 <div class="transactions-list">
+                     <table>
+                         <tr *ngFor="let transaction of filteredTransactions" [ngClass]="{'debit-row': !transaction.isCredit()}">
+                             <td>{{ transaction.extractionDate | aglFormatDate:DateFormat.SHORT_DATE_FORMAT }}</td>
+                             <td><div class="transaction__description">{{ transaction.transactionDescription }}</div></td>
+                             <td class="flybuy-points">{{ transaction.adjustedPoints }}</td>
+                         </tr>
+                     </table>
+                 </div>
+                 <agl-dls-link class="transaction-list__action" (click)="transactionListMoreOrLessClick()" *ngIf="showMoreOrLessAction()" >
+                     <span class="action__text">{{ !viewedAllTransactions() ? 'See more' : 'See less' }}</span> <span [ngClass]="{'down-arrow': !viewedAllTransactions(), 'up-arrow': viewedAllTransactions()}"></span>
+                 </agl-dls-link>
+             </div>
+             
+   </div>
+   <div class="error-message" *ngIf="loadingError">
+        <h3>That wasn't supposed to happen.</h3>
+        <p>We're sorry for the inconvenience, but your flybuys transactions are currently unavailable. Please check back soon.</p>
+
+        <div class="error-image">
+            <agl-generic-error-image></agl-generic-error-image>
+        </div>
+        <agl-rewards-error-webchat chatButtonId="LPMyRewardsFBError" *ngIf="loadingError"></agl-rewards-error-webchat>
+    </div>
+</div>

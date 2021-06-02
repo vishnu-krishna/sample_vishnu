@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\settings\homeProfile\landing\homeProfileLanding.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/settings/homeProfile/landing/</a> homeProfileLanding.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.93% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>19/56</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">26.67% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>8/30</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">6.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">32.69% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>17/52</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { ContractViewModel, AccountViewModel } from '../../../../services/account.service';
+import { HomeProfileNavigationService, HomeProfilePage } from '../homeProfileNavigation.service';
+import { IHomeProfileStateService, HomeProfileStatus } from '../homeProfileState.service';
+import { IAccountServiceMA } from '../../../../services/account.service';
+import { HomeProfileViewModel } from '../homeProfileViewModel';
+import { FlashMessageType } from '../../../../maui/flashMessage';
+&nbsp;
+@Component({
+    selector: 'agl-home-profile-landing',
+    template: require('./homeProfileLanding.component.html'),
+    styles: [require('./homeProfileLanding.component.scss')]
+})
+export class HomeProfileLandingComponent implements OnInit {
+    public eligible: boolean;
+    public <span class="cstat-no" title="statement not covered" >address: string = '';</span>
+    public <span class="cstat-no" title="statement not covered" >isLoading: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >isError: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >flashMessageType = FlashMessageType;</span>
+    public <span class="cstat-no" title="statement not covered" >page = HomeProfilePage;</span>
+&nbsp;
+    constructor(
+        private <span class="cstat-no" title="statement not covered" >homeProfileNavigationService: HomeProfileNavigationService,</span>
+        private <span class="cstat-no" title="statement not covered" >accountService: IAccountServiceMA<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >homeProfileStateService: IHomeProfileStateService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" ></span></span></span>
+    ) {}
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public ngOnInit(): void {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.isLoading = true;</span>
+<span class="cstat-no" title="statement not covered" >        Observable.forkJoin(</span>
+                this.accountService.getAccounts(),
+                this.homeProfileStateService.getContractId())
+            .flatMap(([<span class="cstat-no" title="statement not covered" >accounts,</span> <span class="cstat-no" title="statement not covered" >contractId]</span>: [AccountViewModel[], string]<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+                const account: AccountViewModel = <span class="cstat-no" title="statement not covered" >(accounts &amp;&amp; accounts.length &gt; 0) ? accounts[0] : null;</span>
+<span class="cstat-no" title="statement not covered" >                this.address = this.getAddress(account);</span>
+<span class="cstat-no" title="statement not covered" >                return this.getProfile(account, contractId);</span>
+            })
+            .finally(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >this.isLoading = false)</span></span>
+            .subscribe(
+                (homeProfileModel: HomeProfileViewModel<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    this.isError = false;</span>
+                },
+                (error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    console.error('Error retrieving home profile');</span>
+<span class="cstat-no" title="statement not covered" >                    this.isError = true;</span>
+                });
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public startHomeProfile() {</span>
+<span class="cstat-no" title="statement not covered" >        this.homeProfileNavigationService.startClick();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public allowStart(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.homeProfileStateService.getStatus() === HomeProfileStatus.NotStarted;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public allowEdit(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.homeProfileStateService.getStatus() === HomeProfileStatus.Incomplete;</span>
+    }
+&nbsp;
+    public edit(page: HomeProfilePage<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.allowEdit()) {</span>
+<span class="cstat-no" title="statement not covered" >            this.homeProfileNavigationService.gotoSurveyPage(page);</span>
+        }
+    }
+&nbsp;
+    public getAddress(account: AccountViewModel<span class="fstat-no" title="function not covered" >): string {</span>
+        let address = <span class="cstat-no" title="statement not covered" >'';</span>
+<span class="cstat-no" title="statement not covered" >        if (account) {</span>
+            // The account.groupedAddress is only populated if there is more than one contract under the account, and if the addresses are the exactly same.
+<span class="cstat-no" title="statement not covered" >            address = account.groupedAddress</span>
+                || (account.contracts.length &gt; 0 ? account.contracts[0].address : address);
+        }
+<span class="cstat-no" title="statement not covered" >        return address;</span>
+    }
+&nbsp;
+    public getProfile(account: AccountViewModel, contractId: string<span class="fstat-no" title="function not covered" >): Observable&lt;HomeProfileViewModel&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (contractId) {</span>
+<span class="cstat-no" title="statement not covered" >            if (!this.isContractCurrent(account, contractId)) {</span>
+<span class="cstat-no" title="statement not covered" >                return Observable.throw('Contract id is not current');</span>
+            }
+<span class="cstat-no" title="statement not covered" >            return this.homeProfileStateService.getProfile();</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.homeProfileStateService.setContractId(account.contracts[0].contractNumber);</span>
+<span class="cstat-no" title="statement not covered" >            return Observable.of(new HomeProfileViewModel());</span>
+        }
+    }
+&nbsp;
+    public isContractCurrent(account: AccountViewModel, contractId: string<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return account &amp;&amp; account.contracts.length &gt; 0 &amp;&amp; contractId &amp;&amp;</span>
+            account.contracts.find((c<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >c.contractNumber === contractId)</span></span> != null;
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

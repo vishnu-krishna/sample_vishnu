@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\services\survey.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/myAccount/services/</a> survey.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">55.56% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>30/54</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">28.57% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">35.71% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>5/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">51.02% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>25/49</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import * as jwt_decode from 'jwt-decode';
+import { Md5 } from 'ts-md5/dist/md5';
+import { ConfigService } from '../../shared/service/config.service';
+&nbsp;
+declare let leanengage: any;
+&nbsp;
+export enum SurveyType {
+    myAccountSolarSurvey = &lt;any&gt; 'my-account-solar-survey',
+    myAccountPayNowSurvey = &lt;any&gt; 'my-account-payment-survey-clone-b46a2b14-c808-4bdd-b824-eab69e44d8c8',
+    myAccountV2PayNowSurvey = &lt;any&gt; 'my-account-v2-survey-pay-now',
+    myAccountUsageSurvey = &lt;any&gt; 'usage-survey',
+    oneMinuteMoveProcessSurvey = &lt;any&gt; 'one-minute-move-process-survey',
+    smsPaySurvey = &lt;any&gt; 'sms-pay-survey-clone',
+    myAccountDDSurvey = &lt;any&gt; 'my-account-dd-survey-1ff795e5-1aae-481f-8e08-6891146dd8e5',
+    MonthlyBilling = &lt;any&gt; 'monthly-billing-survey-clone',
+}
+&nbsp;
+export enum SurveyEventType {
+    solarFaqClickEvent = &lt;any&gt; 'solar_faq_click',
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >export class Survey {</span>
+    // tslint:disable-next-line:variable-name
+    public user_id: String;
+    public email: String;
+    public name: String;
+    // tslint:disable-next-line:variable-name
+    public app_id: String;
+}
+&nbsp;
+export class SolarSurvey extends Survey {
+    // tslint:disable-next-line:variable-name (These values are provided to Lean Engage service so cannot be camel case)
+    public solar_status: String;
+    // tslint:disable-next-line:variable-name (These values are provided to Lean Engage service so cannot be camel case)
+    public <span class="cstat-no" title="statement not covered" >valid_solar_status: boolean = true;</span>
+&nbsp;
+    constructor(contractId: String, solarStatus: String<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        super();</span>
+        let hashedContractId = <span class="cstat-no" title="statement not covered" >Md5.hashStr(contractId.toString()).toString();</span>
+<span class="cstat-no" title="statement not covered" >        this.user_id = hashedContractId;</span>
+<span class="cstat-no" title="statement not covered" >        this.email = hashedContractId;</span>
+<span class="cstat-no" title="statement not covered" >        this.name = hashedContractId;</span>
+<span class="cstat-no" title="statement not covered" >        this.solar_status = solarStatus;</span>
+    }
+}
+&nbsp;
+@Injectable()
+export class SurveyService {
+&nbsp;
+    constructor(private <span class="cstat-no" title="statement not covered" >configService: ConfigService<span class="fstat-no" title="function not covered" >)</span> { }</span>
+    /**
+     * Initialise Survey with Lean Engage
+     * @param params intialized values that are required (e.g user_id, email, name, etc)
+     */
+    public start(survey: Survey<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        survey.app_id = this.configService.current.leanEngageAppId;</span>
+<span class="cstat-no" title="statement not covered" >        leanengage('start', survey);</span>
+    }
+&nbsp;
+    /**
+     * Tracking the triggering of events with Lean Engage
+     * @param surveyEventType
+     */
+    public trackEvent(surveyEventType: SurveyEventType<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        leanengage('trackEvent', surveyEventType.toString());</span>
+    }
+&nbsp;
+    /**
+     * Trigger a survey via Lean Engage
+     * @param  {SurveyType} surveyType
+     */
+    public triggerSurvey(surveyType: SurveyType<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        leanengage('triggerSurvey', surveyType.toString());</span>
+    }
+&nbsp;
+    public showFeedbackSurvey(surveyType: SurveyType<span class="fstat-no" title="function not covered" >) {</span>
+        const leanAppId = <span class="cstat-no" title="statement not covered" >this.configService.current.leanEngageAppId;</span>
+        let userId;
+<span class="cstat-no" title="statement not covered" >        if (</span>
+            surveyType === SurveyType.smsPaySurvey ||
+            surveyType === SurveyType.MonthlyBilling
+        ) {
+<span class="cstat-no" title="statement not covered" >            userId = Array.apply(0, Array(15)).map( <span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                return ( (charset<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return charset.charAt(Math.floor(Math.random() * charset.length));</span>
+                }) ('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789');
+            }).join('');
+<span class="cstat-no" title="statement not covered" >            leanengage('start', { user_id: userId, name: 'anonymous', app_id: leanAppId });</span>
+        } else <span class="cstat-no" title="statement not covered" >if (surveyType === SurveyType.myAccountDDSurvey) {</span>
+            const bearerToken = <span class="cstat-no" title="statement not covered" >sessionStorage.getItem('Bearer');</span>
+<span class="cstat-no" title="statement not covered" >            if (bearerToken) {</span>
+<span class="cstat-no" title="statement not covered" >                userId = jwt_decode(bearerToken)['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'];</span>
+            }
+<span class="cstat-no" title="statement not covered" >            leanengage('start', { user_id: userId, name: userId, app_id: leanAppId });</span>
+        }
+&nbsp;
+        // Uncomment the below line if you want to test this on localhost
+        // leanengage('create', leanAppId);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        leanengage('triggerSurvey', surveyType);</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

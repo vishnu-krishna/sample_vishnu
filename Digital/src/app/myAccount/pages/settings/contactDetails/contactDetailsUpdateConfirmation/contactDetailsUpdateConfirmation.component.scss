@@ -1,0 +1,14 @@
+:host {
+    display: none;
+
+    &.isVisible {
+        display: block;
+    }
+}
+
+.update-confirmation {
+    &__login-details {
+        display: block;
+        margin-top: 5px;
+    }
+}

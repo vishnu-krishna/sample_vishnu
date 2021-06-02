@@ -1,0 +1,49 @@
+@import '../homeProfile';
+
+.homeprofile-thankyou {
+    width: 100%;
+
+    &-header {
+        margin: 0px;
+
+        &.maui-confirmation-banner-content {
+            max-width: $content-width;
+        }
+
+        @media #{$agl-layout-mobile} {
+            padding-left: $space-03;
+            padding-right: $space-03;
+        }
+    }
+
+    &-footer {
+        margin-top: $space-06;
+        text-align: center;
+        @media #{$agl-layout-mobile} {
+            margin-left: $space-03;
+            margin-right: $space-03;
+        }
+    }
+
+    &-body {
+        max-width: $content-width;
+        margin-top: -$space-04;
+        margin-left: auto;
+        margin-right: auto;
+
+        &__content {
+            padding: $space-04;
+
+            @media #{$agl-layout-mobile} {
+                padding: $space-03;
+            }
+        }
+
+        @media #{$agl-layout-mobile} {
+            agl-maui-container {
+                margin-left: 0px;
+                margin-right: 0px;
+            }
+        }
+    }
+}

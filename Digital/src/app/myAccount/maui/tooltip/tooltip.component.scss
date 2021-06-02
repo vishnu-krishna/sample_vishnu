@@ -1,0 +1,115 @@
+@import '../maui';
+
+@include maui-component-reset();
+
+$host-width: 15px;
+
+$toolip-width-default: 204px;
+
+$tooltip-arrow-left-align-amount: 16px;
+$border-radius-amount: 6px;
+
+:host {
+    width: $host-width;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+    }
+
+    .tooltip {
+        position: absolute;
+        visibility: hidden;
+        width: $toolip-width-default;
+        z-index: $tooltip-z-index;
+        left: 50%;
+
+        &--shown {
+            visibility: visible;
+        }
+
+        &__arrow {
+            position: absolute;
+            z-index: -$tooltip-z-index;
+            display: block;
+            width: 15px;
+            height: 13px;
+            background: white;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            box-shadow: $shadow-05;
+
+            &--right-align {
+                left: initial;
+                right: 1%;
+            }
+
+            &--left-align {
+                left: 15px;
+                right: initial;
+            }
+        }
+
+        &--right-align {
+            left: -79px;
+        }
+
+        &--left-align {
+            left: 95px;
+        }
+
+        &--top {
+            transform: translateX(-50%);
+            bottom: 34px;
+
+            .tooltip__arrow {
+                bottom: -6px;
+            }
+        }
+
+        &--bottom {
+            transform: translateX(-50%);
+            top: 38px;
+
+            .tooltip__arrow {
+                top: -6px;
+            }
+        }
+
+        &__text {
+            background: $neutral-08;
+            color: $neutral-01;
+            padding: $container-side-space;
+            font-family: $body-font-stack;
+            font-size: $body-font-size-smallest;
+            text-align: left;
+            text-transform: none;
+            border-radius: $border-radius-amount;
+
+            &:before,
+            &:after {
+                display: block;
+                content: '';
+                position: absolute;
+                z-index: -$tooltip-z-index;
+                width: 50%;
+                top: 0;
+                bottom: 0;
+                box-shadow: $shadow-05;
+                border-radius: $border-radius-amount;
+            }
+
+            &:before {
+                left: 0;
+            }
+
+            &:after {
+                right: 0;
+            }
+        }
+    }
+}

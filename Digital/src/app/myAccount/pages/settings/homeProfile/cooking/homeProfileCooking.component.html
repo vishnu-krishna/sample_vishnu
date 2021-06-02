@@ -1,0 +1,36 @@
+<div class="homeprofile-cooking">
+    <agl-home-profile-header [accountNumber]="accountNumber" [contractNumber]="contractNumber" pageHeading="Oven and cooktop"></agl-home-profile-header>
+
+    <div *ngIf="isLoading" class="homeprofile-landing__loader">
+        <agl-loader></agl-loader>
+    </div>
+
+    <div *ngIf="!isLoading" class="homeprofile-cooking-body">
+        <div class="homeprofile-cooking-questionnaire">
+            <div class="homeprofile-cooking-questionnaire__subsection">
+                <div class="homeprofile-cooking-questionnaire__heading-no-margin">What kind of oven do you have?</div>
+                <agl-maui-radio-button-group [selectedValue]="homeProfile.ovenType" name="groupOvenType"
+                    (selectedValueChange)="ovenTypeChanged($event)">
+                    <agl-maui-radio-button *ngFor="let radio of ovenTypeOptions" [value]="radio.value">
+                        <div label>
+                            {{radio.text}}
+                        </div>
+                    </agl-maui-radio-button>
+                </agl-maui-radio-button-group>
+            </div>
+            <div class="homeprofile-cooking-questionnaire__subsection">
+                <div class="homeprofile-cooking-questionnaire__heading-no-margin">What kind of cooktop do you have?</div>
+                <agl-maui-radio-button-group [selectedValue]="homeProfile.cooktopType" name="groupCooktopType"
+                    (selectedValueChange)="cooktopTypeChanged($event)">
+                    <agl-maui-radio-button *ngFor="let radio of cooktopTypeOptions" [value]="radio.value">
+                        <div label>
+                            {{radio.text}}
+                        </div>
+                    </agl-maui-radio-button>
+                </agl-maui-radio-button-group>
+            </div>
+        </div>
+    </div>
+
+    <agl-home-profile-footer [accountNumber]="accountNumber" [contractNumber]="contractNumber"></agl-home-profile-footer>
+</div>

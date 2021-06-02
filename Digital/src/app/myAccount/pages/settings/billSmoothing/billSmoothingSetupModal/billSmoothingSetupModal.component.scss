@@ -1,0 +1,69 @@
+@import '../../../../../shared/style/variables';
+@import '../../../../../shared/style/mixins';
+
+.setup-fuel-picker {
+    display: flex;
+    align-items: center;
+
+    @media #{$agl-layout-mobile} {
+        display: block;
+    }
+
+    .select-fuel {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        @media #{$agl-layout-mobile} {
+            margin-bottom: 22px;
+        }
+
+        .fuel-radio {
+            margin-right: 15px;
+        }
+
+        .fuel-text {
+            margin-right: 25px;
+
+            &-selected {
+                color: $brand-sky;
+            }
+        }
+    }
+}
+
+.setup-details {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 22px;
+    @media #{$agl-layout-mobile} {
+        display: block;
+    }
+
+    .account-details {
+        display: flex;
+        align-items: center;
+
+        .icon {
+            height: 17px;
+            width: 12px;
+            margin-right: 5px;
+        }
+
+        .account-no {
+            margin-right: 10px;
+        }
+    }
+
+    .address {
+        margin-left: 5px;
+        @media #{$agl-layout-mobile} {
+            margin-left: 0;
+        }
+    }
+}
+
+.footer-content {
+    font-size: 12px;
+    line-height: 17px;
+}

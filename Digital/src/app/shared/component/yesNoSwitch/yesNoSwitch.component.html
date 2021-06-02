@@ -1,0 +1,29 @@
+<div class="yes-no-switch">
+    <div class="yes-no-switch-toggle">
+        <div [class.disabled]="isDisabled" (click)="toggleSwitch()" class="yes-no-switch-toggle__off" [class.active]="!yesNoModel.isYes" [class.not-clickable]="yesNoModel.isInFlight">
+            <span>No</span>
+            <span *ngIf="!yesNoModel.isYes" class="no" [class.disabled]="isDisabled">
+            <span *ngIf="!yesNoModel.isInFlight">
+                <img src="svg/icon_tick.svg" alt="busy icon">
+            </span>
+            <span *ngIf="yesNoModel.isInFlight">
+                <img src="svg/icon_spin.svg" width="18" alt="busy icon">
+            </span>
+            </span>
+        </div>
+        <div [class.disabled]="isDisabled" (click)="toggleSwitch()" class="yes-no-switch-toggle__on" [class.active]="yesNoModel.isYes" [class.not-clickable]="yesNoModel.isInFlight">
+            <span>Yes</span>
+            <span *ngIf="yesNoModel.isYes" class="yes" [class.disabled]="isDisabled">
+            <span *ngIf="!yesNoModel.isInFlight">
+                <img src="svg/icon_tick.svg" alt="tick icon">
+            </span>
+            <span *ngIf="yesNoModel.isInFlight">
+                <img src="svg/icon_spin.svg" width="18" alt="busy icon">
+            </span>
+            </span>
+        </div>
+    </div>
+    <div class="controls">
+        <mat-slide-toggle class="yes-no-switch-slider" [class.disabled]="isDisabled" [checked]="yesNoModel.isYes" (change)="toggleSwitch()" [class.not-clickable]="yesNoModel.isInFlight"></mat-slide-toggle>
+    </div>
+</div>

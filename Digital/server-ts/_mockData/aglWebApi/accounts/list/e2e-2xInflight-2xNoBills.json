@@ -1,0 +1,45 @@
+[
+    {
+        "number": "987654321",
+        "firstName": "Rene",
+        "lastName": "Descartes",
+        "contracts": [
+            {
+                "address": "1 Brewery Ln, North Willoughby, Sydney, NSW 2023",
+                "fuelType": "Electricity",
+                "accountNumber": "987654321",
+                "nameId": "AGL_E395B892419209F1A8DCE150C6AD1CFB",
+                "number": "11111111",
+                "planName": "Select 6%",
+                "inFlight": true
+            },
+             {
+                "address": "31 Brewery Ln, North Willoughby, Sydney, NSW 2023",
+                "fuelType": "Electricity",
+                "accountNumber": "987654321",
+                "nameId": "AGL_E395B892419209F1A8DCE150C6AD1CFB",
+                "number": "2222222222",
+                "planName": "Select 6%",
+                "inFlight": false
+            },
+            {
+                "address": "100 Cook St, Parramatta, Sydney, NSW 2150",
+                "fuelType": "Gas",
+                "accountNumber": "987654321",
+                "nameId": "AGL_E395B892419209F1A8DCE150C6AD1CFB",
+                "number": "333333333",
+                "planName": "Select 6%",
+                "inFlight": false
+            },
+             {
+                "address": "50 Cook St, Parramatta, Sydney, NSW 2150",
+                "fuelType": "Gas",
+                "accountNumber": "987654321",
+                "nameId": "AGL_E395B892419209F1A8DCE150C6AD1CFB",
+                "number": "4444444444",
+                "planName": "Select 6%",
+                "inFlight": true
+            }
+        ]
+    }
+]

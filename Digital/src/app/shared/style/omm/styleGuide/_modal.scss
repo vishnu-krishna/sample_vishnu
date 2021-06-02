@@ -1,0 +1,54 @@
+$ab-rotation: 5;
+
+.ab {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        height: 200%;
+        width: 200%;
+        position: absolute;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden; // for Chrome Windows
+        outline: 1px solid transparent; // for Chrome Windows
+    }
+
+    &--top-left {
+        @include angled-background(top, left, $ab-rotation);
+    }
+
+    &--top-right {
+        @include angled-background(top, right, $ab-rotation);
+    }
+
+    &--bottom-left {
+        @include angled-background(bottom, left, $ab-rotation);
+    }
+
+    &--bottom-right {
+        @include angled-background(bottom, right, $ab-rotation);
+    }
+
+    &--gray {
+        &::before {
+            background-color: $col-g5;
+        }
+    }
+
+    &--offset-large {
+        &.ab--bottom-left,
+        &.ab--bottom-right {
+            &::before {
+                margin-top: -200px;
+            }
+        }
+
+        &.ab--top-left,
+        &.ab--top-right {
+            &::before {
+                margin-bottom: -200px;
+            }
+        }
+    }
+}

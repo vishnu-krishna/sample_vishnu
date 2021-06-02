@@ -1,0 +1,54 @@
+{
+    "status": 200,
+    "headers": {},
+    "body":
+        {
+            "contractAccountNumber": 1500000000,
+            "extensionOptions": [
+                {
+                    "contractNumber": 1511111111,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Ineligible for extension",
+                        "internalError": {
+                            "errorNumber": "005",
+                            "description": "some reason as to why the contract is not eligible"
+                        }
+                    }
+                },
+                {
+                    "contractNumber": 1522222222,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Ineligible for extension",
+                        "internalError": {
+                            "errorNumber": "016",
+                            "description": "some reason as to why the contract is not eligible"
+                        }
+                    }
+                },
+                {
+                    "contractNumber": 1533333333,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Ineligible for extension",
+                        "internalError": {
+                            "errorNumber": "010",
+                            "description": "some reason as to why the contract is not eligible"
+                        }
+                    }
+                },
+                {
+                    "contractNumber": 1544444444,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Ineligible for extension",
+                        "internalError": {
+                            "errorNumber": "011",
+                            "description": "some reason as to why the contract is not eligible"
+                        }
+                    }
+                }
+            ]
+        }
+}

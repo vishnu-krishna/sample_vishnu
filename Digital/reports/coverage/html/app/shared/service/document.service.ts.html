@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\shared\service\document.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/shared/service/</a> document.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">52.17% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>12/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.5% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">52.63% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>10/19</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Inject, Injectable } from '@angular/core';
+import { DOCUMENT }           from '@angular/platform-browser';
+&nbsp;
+@Injectable()
+export class DocumentService {
+    constructor(@Inject(DOCUMENT) private <span class="cstat-no" title="statement not covered" >_dom<span class="fstat-no" title="function not covered" >)</span> { }</span>
+&nbsp;
+    public querySelector(el: any, selector: string<span class="fstat-no" title="function not covered" >): HTMLElement | null {</span>
+<span class="cstat-no" title="statement not covered" >        return this._dom.querySelector(selector);</span>
+    }
+&nbsp;
+    public setStyle(element: any, styleName: string, styleValue: string<span class="fstat-no" title="function not covered" >): void {</span>
+<span class="cstat-no" title="statement not covered" >        if (!element) { <span class="cstat-no" title="statement not covered" >return; </span>}</span>
+<span class="cstat-no" title="statement not covered" >        return element.setAttribute('style', `${styleName}: ${styleValue}`);</span>
+    }
+&nbsp;
+    public removeAttribute(element: any, attribute: string<span class="fstat-no" title="function not covered" >): void {</span>
+<span class="cstat-no" title="statement not covered" >        if (!element) { <span class="cstat-no" title="statement not covered" >return; </span>}</span>
+<span class="cstat-no" title="statement not covered" >        return element.removeAttribute(attribute);</span>
+    }
+&nbsp;
+    public getElementById(elementId: string<span class="fstat-no" title="function not covered" >): HTMLElement | null {</span>
+<span class="cstat-no" title="statement not covered" >        return this._dom.getElementById(elementId);</span>
+    }
+&nbsp;
+    /**
+     * Can be used to determine if the whole SPA is being (re)loaded or a deep link is being loaded for the first time
+     */
+<span class="fstat-no" title="function not covered" >    public isReadyStateComplete(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this._dom.readyState === 'complete';</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public get URL(): string {</span>
+<span class="cstat-no" title="statement not covered" >        return this._dom.URL;</span>
+    }
+&nbsp;
+//   public parse(templateHtml: string): void {};
+// public hasProperty(element: any, name: string): boolean;
+// public setProperty(el: any, name: string, value: any): void;
+// public getProperty(el: any, name: string): any;
+// public invoke(el: any, methodName: string, args: any[]): any;
+// public logError(error: any): void;
+// public log(error: any): void;
+// public logGroup(error: any): void;
+// public logGroupEnd(): void;
+// public query(selector: string): any;
+// public querySelector(el: any, selector: string): HTMLElement;
+// public querySelectorAll(el: any, selector: string): any[];
+// public on(el: any, evt: any, listener: any): void;
+// public onAndCancel(el: any, evt: any, listener: any): Function;
+// public dispatchEvent(el: any, evt: any): void;
+// public createMouseEvent(eventType: string): MouseEvent;
+// public createEvent(eventType: any): Event;
+// public preventDefault(evt: Event): void;
+// public isPrevented(evt: Event): boolean;
+// public getInnerHTML(el: any): string;
+// public getTemplateContent(el: any): Node;
+// public getOuterHTML(el: any): string;
+// public nodeName(node: Node): string;
+// public nodeValue(node: Node): string;
+// public type(node: HTMLInputElement): string;
+// public content(node: Node): Node;
+// public firstChild(el: any): Node;
+// public nextSibling(el: any): Node;
+// public parentElement(el: any): Node;
+// public childNodes(el: any): Node[];
+// public childNodesAsList(el: any): any[];
+// public clearNodes(el: any): void;
+// public appendChild(el: any, node: any): void;
+// public removeChild(el: any, node: any): void;
+// public replaceChild(el: Node, newChild: any, oldChild: any): void;
+// public remove(node: any): Node;
+// public insertBefore(el: any, node: any): void;
+// public insertAllBefore(el: any, nodes: any): void;
+// public insertAfter(el: any, node: any): void;
+// public setInnerHTML(el: any, value: any): void;
+// public getText(el: any): string;
+// public setText(el: any, value: string): void;
+// public getValue(el: any): string;
+// public setValue(el: any, value: string): void;
+// public getChecked(el: any): boolean;
+// public setChecked(el: any, value: boolean): void;
+// public createComment(text: string): Comment;
+// public createTemplate(html: any): HTMLElement;
+// public createElement(tagName: any, doc?: Document): HTMLElement;
+// public createElementNS(ns: any, tagName: any, doc?: Document): Element;
+// public createTextNode(text: string, doc?: Document): Text;
+// public createScriptTag(attrName: string, attrValue: string, doc?: Document): HTMLScriptElement;
+// public createStyleElement(css: string, doc?: Document): HTMLStyleElement;
+// public createShadowRoot(el: HTMLElement): DocumentFragment;
+// public getShadowRoot(el: HTMLElement): DocumentFragment;
+// public getHost(el: HTMLElement): HTMLElement;
+// public clone(node: Node): Node;
+// public getElementsByClassName(element: any, name: string): HTMLElement[];
+// public getElementsByTagName(element: any, name: string): HTMLElement[];
+// public classList(element: any): any[];
+// public addClass(element: any, className: string): void;
+// public removeClass(element: any, className: string): void;
+// public hasClass(element: any, className: string): boolean;
+// public setStyle(element: any, styleName: string, styleValue: string): void;
+// public removeStyle(element: any, stylename: string): void;
+// public getStyle(element: any, stylename: string): string;
+// public hasStyle(element: any, styleName: string, styleValue?: string): boolean;
+// public tagName(element: any): string;
+// public attributeMap(element: any): Map&lt;string, string&gt;;
+// public hasAttribute(element: any, attribute: string): boolean;
+// public hasAttributeNS(element: any, ns: string, attribute: string): boolean;
+// public getAttribute(element: any, attribute: string): string;
+// public getAttributeNS(element: any, ns: string, name: string): string;
+// public setAttribute(element: any, name: string, value: string): void;
+// public setAttributeNS(element: any, ns: string, name: string, value: string): void;
+// public removeAttribute(element: any, attribute: string): void;
+// public removeAttributeNS(element: any, ns: string, name: string): void;
+// public templateAwareRoot(el: any): any;
+// public createHtmlDocument(): HTMLDocument;
+// public defaultDoc(): HTMLDocument;
+// public getBoundingClientRect(el: any): any;
+// public getTitle(): string;
+// public setTitle(newTitle: string): void;
+// public elementMatches(n: any, selector: string): boolean;
+// public isTemplateElement(el: any): boolean;
+// public isTextNode(node: Node): boolean;
+// public isCommentNode(node: Node): boolean;
+// public isElementNode(node: Node): boolean;
+// public hasShadowRoot(node: any): boolean;
+// public isShadowRoot(node: any): boolean;
+// public importIntoDoc(node: Node): any;
+// public adoptNode(node: Node): any;
+// public getHref(el: Element): string;
+// public getEventKey(event: any): string;
+// public getGlobalEventTarget(target: string): EventTarget;
+// public getHistory(): History;
+// public getLocation(): Location;
+// public getBaseHref(): string;
+// public resetBaseElement(): void;
+// public getUserAgent(): string;
+// public setData(element: any, name: string, value: string): void;
+// public getData(element: any, name: string): string;
+// public getComputedStyle(element: any): any;
+// public setGlobalVar(path: string, value: any): void;
+// public supportsWebAnimation(): boolean;
+// public performanceNow(): number;
+// public supportsCookies(): boolean;
+// public getCookie(name: string): string;
+// public setCookie(name: string, value: string): void;
+&nbsp;
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

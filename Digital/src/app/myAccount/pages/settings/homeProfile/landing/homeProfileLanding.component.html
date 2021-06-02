@@ -1,0 +1,53 @@
+<div class="settings-container homeprofile-landing">
+    <span class="homeprofile-landing__header">Home Profile</span>
+
+    <div class="homeprofile-landing__description">
+        <span *ngIf="!hasHomeProfile()">
+            <span class="homeprofile-landing__description-row">
+                Completing your Home Profile helps AGL develop and tailor products for your specific needs. The information you share regarding your energy usage will improve our accuracy for bill estimation purposes.
+            </span>
+            <span class="homeprofile-landing__description-row hidden-xs">
+                It'll only take 5 minutes and includes the following.
+            </span>
+            <span class="homeprofile-landing__description-row visible-xs">
+                The profile only takes 5 minutes to complete and includes cooling, heating, hot water, fridge &amp; freezer, cooking, other electrical items, pool &amp; spa.
+            </span>
+        </span>
+        <span *ngIf="hasHomeProfile()">
+            <span class="homeprofile-landing__description-row">
+                Your Home Profile helps AGL develop and tailor products for your specific needs.
+            </span>
+        </span>
+    </div>
+
+    <div *ngIf="isLoading" class="homeprofile-landing__loader">
+        <agl-loader></agl-loader>
+    </div>
+
+    <div *ngIf="isError" class="homeprofile-landing__error">
+        <agl-maui-flash-message [type]="flashMessageType.Error" [dismissable]="true">
+            <div heading>
+                Home Profile is currently unavailable.
+            </div>
+            <div subheading>
+                Please try again later. If the issue persists, you can get in touch with us <a href="https://www.agl.com.au/residential/contact-us" target="_blank">here</a>.
+            </div>
+        </agl-maui-flash-message>
+    </div>
+
+    <div *ngIf="!isError && !isLoading">
+        <agl-home-profile-section [allowEdit]="address && hasHomeProfile()" [accountNumber]="accountNumber" [contractNumber]="contractNumber"></agl-home-profile-section>
+
+        <div class="homeprofile-landing__address-and-button">
+            <div *ngIf="address" class="homeprofile-landing__address">
+                <span class="homeprofile-landing__address-header">Your Profile is based on</span>
+                <span class="homeprofile-landing__address-body">{{address}}</span>
+            </div>
+
+            <div *ngIf="!(isSingleAddress() && hasHomeProfile())" class="homeprofile-landing__setup-button" [ngClass]="{ 'homeprofile-landing__setup-button-multi': !isSingleAddress() }">
+                <agl-maui-button (clicked)="startHomeProfile()" type="primary">{{hasHomeProfile() ? 'Manage' : 'Start'}} Home Profile</agl-maui-button>
+                <div class="homeprofile-landing__policy"><a href="https://www.agl.com.au/site-pages/privacy" target="_blank">Read our Privacy Policy</a></div>
+            </div>
+        </div>
+    </div>
+</div>

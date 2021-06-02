@@ -1,0 +1,55 @@
+<agl-maui-showcase-template heading="Calendar Reminder">
+    <div description>
+        <div>The MAUI Calendar reminder component can be used in 2 ways:</div>
+        <ul>
+            <li>A one off reminder event</li>
+            <li>A recurring reminder event</li>
+        </ul>
+        <p>The definition of the CalendarReminderModel that is passed in defines the type</p>
+        <p>If a frequency, interval and end date are passed as part of the model then the reminder will be recurring</p>
+        <p>All other attributes are common to both</p>
+        <p>Note: While Yahoo is included is the third party service (Addevent), Yahoo does not support recurring events</p>
+        <p>so it was decided to remove that option altogether.</p>
+        <p>The component returns the link from the selected option for use with tracking for example</p>
+
+        <div class="showcase-attributes">
+            <div class="header"> Attributes</div>
+            <table>
+                <tr><td>icsFileName</td> <td>string</td><td>Defaults to 'AGL bill reminder'</td></tr>
+                <tr><td>timezone</td> <td>string</td><td>Defaults to 'Australia/Sydney'</td></tr>
+                <tr><td>calendarReminderModel</td> <td>CalendarReminderModel</td><td></td></tr>
+            </table>
+        </div>
+
+        <div class="showcase-attributes">
+            <div class="header">CalendarReminderModel Attributes</div>
+            <table>
+                <tr><td>title</td> <td>string</td><td>Title of the event</td></tr>
+                <tr><td>start</td> <td>string</td><td>This is the start date of the event (format YYYY/MM/DD start time is '%208:00' ie 8am)</td></tr>
+                <tr><td>calendarType</td> <td>enum / string</td><td>This is set within the component eg Apple, Google, Outlook, OutlookCom </td></tr>
+                <tr><td>description</td> <td>string</td><td>This is the body of the reminder event</td></tr>
+                <tr><td>frequency</td> <td>enum / string</td><td>This is the frequency of the recurring reminder event (Weekly,Fortnightly,Monthly)</td></tr>
+                <tr><td>interval</td> <td>number</td><td>This determines the interval of the event ie frequency of weekly and interval of 2 = fornightly</td></tr>
+                <tr><td>endDate</td> <td>boolean</td><td>This is the end date of the recurring reminder event (format YYYYMMDD, end time 'T140000Z')</td></tr>
+            </table>
+        </div>
+    </div>
+    <div exampleCodeUsage>
+        {{codeUsage}}
+    </div>
+    <div exampleImplementation>
+        <div class="calendar-reminder-container">
+            <div class="calendar-reminder-container-label">
+                One off reminder.
+            </div>
+                <agl-maui-calendar-reminder [model]="calendarReminderModelOneOff">
+                </agl-maui-calendar-reminder>
+            <div class="calendar-reminder-container-label">
+                Recurring reminder (this is preset to a frequency of fortnightly note the frequency is set to weekly and the interval to 2).
+            </div>
+                <agl-maui-calendar-reminder [model]="calendarReminderModelRecurring" (calendarSelected)="calendarSelected($event)">
+                </agl-maui-calendar-reminder>
+            </div>
+            Returned link: {{link}}
+    </div>
+</agl-maui-showcase-template>

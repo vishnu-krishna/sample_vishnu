@@ -1,0 +1,46 @@
+<div class="maui-lightbox">
+    <div class ="maui-lightbox-invoke" *ngIf="invokeText">
+        <a (click)="showLightBox(true)">{{invokeText}}</a>
+    </div>
+    <div class="maui-lightbox-shadow" *ngIf="isLightBoxVisible">
+    </div>
+    <div class="maui-lightbox-outer" *ngIf="isLightBoxVisible">
+        <div class="maui-lightbox-middle">
+            <div class="maui-lightbox-container">
+                <div class="maui-lightbox-container__heading">
+                    <div class="maui-lightbox-container__heading-title col-xs-10">
+                        {{title}}
+                    </div>
+                    <div class="maui-lightbox-container__heading-close col-xs-2">
+                        <div class="maui-lightbox-container__heading-close-inner" (click)="showLightBox(false)">
+                            &times;
+                        </div>
+                    </div>
+                </div>
+
+                <div class="maui-lightbox-container__content">
+                    <ng-content></ng-content>
+                    <div class="maui-lightbox__button-container">
+                        <div class="maui-lightbox__button-container__button--primary"
+                            [class.col-sm-6]="buttonPrimaryText && buttonDismissText"
+                            *ngIf="buttonPrimaryText"
+                        >
+                            <agl-maui-button (click)="onClickButtonPrimary($event)">{{buttonPrimaryText}}</agl-maui-button>
+                        </div>
+
+                        <div class="maui-lightbox__button-container__space" *ngIf="buttonPrimaryText && buttonDismissText">
+                        </div>
+
+                        <div class="maui-lightbox__button-container__button--dismiss"
+                            [class.col-sm-6]="buttonPrimaryText && buttonDismissText"
+                            *ngIf="buttonDismissText"
+                        >
+                            <agl-maui-button type="tertiary" (click)="onClickButtonDismiss($event)">{{buttonDismissText}}</agl-maui-button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

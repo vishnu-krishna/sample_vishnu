@@ -1,0 +1,47 @@
+@import '../../../../maui/maui';
+
+.payment-extension-error {
+
+    &__message {
+        padding: 240px 0 35px 0;
+        text-align: center;
+
+        @media #{$agl-layout-mobile} {
+            padding: 160px 0 35px 0;
+        }
+
+        &__header {
+            display: block;
+            font-weight: bold;
+            color: $primary-dark;
+            font-family: $display-font-stack;
+            font-size: $display-font-size-gamma;
+            line-height: $line-height-heading;
+            margin-bottom: 10px;
+            @media #{$agl-layout-mobile} {
+                margin-bottom: 25px;
+            }
+        }
+
+        &__body {
+            display: block;
+            font-family: $body-font-stack;
+            line-height: $line-height-short;
+
+            a {
+                color: $primary-dark;
+            }
+        }
+    }
+
+    &__overview-button {
+        margin-top: 60px;
+        text-align: center;
+    }
+
+    &__dog-of-doom {
+        @media #{$agl-layout-mobile} {
+            margin: 0 -15px;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+<div id="payment-paypal">
+    <agl-alert *ngIf="hasError" alertType="error" [heading]="errorMessageHeader" [body]="errorMessage"></agl-alert>
+    
+    <div id="payment-paypal-content" class="payment-paypal__content">
+        Use any linked credit card or account. No payment processing fees apply.
+    </div>
+
+    <button id="make-payment-paypal" class="payment-paypal__button" mat-raised-button color="accent" (click)="payByPayPal()">Make Payment</button>  
+    
+    <div id="payment-paypal-footnote" class="payment-paypal__footnote">
+        <div class="payment-paypal__footnote-text">
+            PayPal supports payments via bank transfer, credit card, debit card and AMEX.
+        </div>
+        <div class="payment-paypal__footnote-text">
+            Payments submitted before 6pm AEST will reach your account by the next business day.
+        </div>
+        <div class="payment-paypal__footnote-text"> 
+            Any payments submitted after 6pm AEST will take up to 2 business days to reach your account. If you have paid your outstanding bills in full, you can disregard any payment reminder notices during this period.
+        </div>
+    </div>
+
+    <agl-loader *ngIf="paypalLoading" loadingSubMessage="You will be redirected to the PayPal website shortly." [fullScreen]="true"></agl-loader>
+</div>

@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\settings\solarCheck\solarCheck.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/settings/solarCheck/</a> solarCheck.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">36.84% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>35/95</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">17.86% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>10/56</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.54% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">35.16% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>32/91</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit } from '@angular/core';
+&nbsp;
+import { SolarCheckRegisterProcessComponent } from '../../../../myAccount/dashboard/solarCheck/solarCheckRegisterProcess/solarCheckRegisterProcess.component';
+import { ModalService } from '../../../../myAccount/modal/modal.service';
+import { ISolarCheckService } from '../../../../myAccount/services/contract/isolarCheck.service';
+import { SolarCheckEligibilityContract, SolarCheckEligiblity } from '../../../../shared/model/solar/solarCheckEligibility.model';
+import { SolarCheckRegistrationStatusType } from '../../../../shared/model/solar/solarCheckRegistrationStatus.model';
+import { SolarCheckDeregisterComponent } from './deregister/solarCheckDeregister.component';
+&nbsp;
+import { IMessageBusService } from '../../../../shared/service/contract/imessageBus.service';
+import { SolarCheckEvents, SolarCheckMessage } from '../../../services/solarCheck.service';
+&nbsp;
+<span class="fstat-no" title="function not covered" >export class DeregisterRequestStatus {</span>
+    public <span class="cstat-no" title="statement not covered" >Progress: SolarCheckDeregistrationState = SolarCheckDeregistrationState.NOTSTARTED;</span>
+}
+&nbsp;
+export enum SolarCheckDeregistrationState {
+    INPROGRESS = &lt;any&gt; 'INPROGRESS',
+    COMPLETE = &lt;any&gt; 'COMPLETE',
+    ERROR = &lt;any&gt; 'ERROR',
+    NOTSTARTED = &lt;any&gt; 'NOTSTARTED'
+}
+&nbsp;
+@Component({
+    selector: 'agl-settings-solar',
+    template: require('./solarCheck.component.html'),
+    styles: [require('./solarCheck.component.scss')]
+})
+export class SolarCheckComponent implements OnInit {
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >hasBattery: boolean = false;</span>
+    private <span class="cstat-no" title="statement not covered" >solarCheckEligibilityContract: SolarCheckEligibilityContract = null;</span>
+    private <span class="cstat-no" title="statement not covered" >solarCheckRegisteredContract: SolarCheckEligibilityContract = null;</span>
+    private hasSolarCheckDeregistrationPending: boolean;
+    private <span class="cstat-no" title="statement not covered" >hasSolarCheckDeregistrationErrorOccurred: boolean = null;</span>
+    private hasSolarCheckRegistrationPending: boolean;
+    private solarCheckEligiblity: SolarCheckEligiblity;
+    private deregisterRequestStatus: DeregisterRequestStatus; // class required to detect changes when passed into modal - primtivie type boolean does not work
+&nbsp;
+    constructor(
+        private <span class="cstat-no" title="statement not covered" >solarCheckService: ISolarCheckService,</span>
+        private <span class="cstat-no" title="statement not covered" >modalService: ModalService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >messageBusService: IMessageBusService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" ></span></span></span>
+    ) {
+<span class="cstat-no" title="statement not covered" >        this.deregisterRequestStatus = new DeregisterRequestStatus();</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public ngOnInit() {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.solarCheckService.isEligible()</span>
+            .subscribe(
+            (data<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.solarCheckEligiblity = data;</span>
+<span class="cstat-no" title="statement not covered" >                if (this.solarCheckEligiblity &amp;&amp; this.solarCheckEligiblity.contracts) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.solarCheckEligibilityContract = this.solarCheckEligiblity.contracts</span>
+                        .find((x<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >x.eligible === true)</span></span>;
+<span class="cstat-no" title="statement not covered" >                    this.solarCheckRegisteredContract = this.solarCheckEligiblity.contracts</span>
+                        .find((x<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >this.isRegisteredContract(x as SolarCheckEligibilityContract))</span></span>;
+<span class="cstat-no" title="statement not covered" >                    this.hasSolarCheckDeregistrationPending = this.solarCheckEligiblity.contracts</span>
+                        .some((x<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >x.registrationStatus ===</span></span>
+                            SolarCheckRegistrationStatusType.DeregistrationPending);
+<span class="cstat-no" title="statement not covered" >                    this.hasSolarCheckRegistrationPending = this.solarCheckEligiblity.contracts</span>
+                        .some((x<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >x.registrationStatus ===</span></span>
+                            SolarCheckRegistrationStatusType.RegistrationPending);
+                }
+            }
+            );
+<span class="cstat-no" title="statement not covered" >        this.messageBusService.listenWithLatest(SolarCheckMessage).subscribe((x<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            switch (x.solarCheckEvent) {</span>
+                case SolarCheckEvents.deRegistered:
+<span class="cstat-no" title="statement not covered" >                    this.solarCheckRegisteredContract = null;</span>
+<span class="cstat-no" title="statement not covered" >                    break;</span>
+                case SolarCheckEvents.updateNoBattery:
+<span class="cstat-no" title="statement not covered" >                    if (this.solarCheckEligibilityContract) {</span>
+<span class="cstat-no" title="statement not covered" >                        this.solarCheckEligibilityContract.eligible = true;</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    this.hasBattery = false;</span>
+<span class="cstat-no" title="statement not covered" >                    break;</span>
+                case SolarCheckEvents.hasBattery:
+<span class="cstat-no" title="statement not covered" >                    if (this.solarCheckEligibilityContract) {</span>
+<span class="cstat-no" title="statement not covered" >                        this.solarCheckEligibilityContract.eligible = false;</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    this.hasBattery = true;</span>
+<span class="cstat-no" title="statement not covered" >                    break;</span>
+            }
+        });
+    }
+&nbsp;
+    public deregister(event: Event<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        event.preventDefault();</span>
+<span class="cstat-no" title="statement not covered" >        this.deregisterRequestStatus.Progress = SolarCheckDeregistrationState.INPROGRESS;</span>
+        let registeredContract = <span class="cstat-no" title="statement not covered" >this.getRegisteredContract();</span>
+<span class="cstat-no" title="statement not covered" >        if (registeredContract) {</span>
+<span class="cstat-no" title="statement not covered" >             this.modalService.activate({</span>
+                title: '',
+                cancelText: '',
+                okText: '',
+                modalType: 'emptyComponent',
+                component: SolarCheckDeregisterComponent,
+                fullScreen: false,
+                componentData: { registeredContract: registeredContract, deregisterRequest: this.deregisterRequestStatus }
+             });
+        } else {
+<span class="cstat-no" title="statement not covered" >            console.error('Error: When deregistering the Contract number must be supplied.');</span>
+        }
+    }
+&nbsp;
+    public signUp(event: Event<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        event.preventDefault();</span>
+<span class="cstat-no" title="statement not covered" >        this.modalService.activate({</span>
+            title: '',
+            cancelText: '',
+            okText: '',
+            modalType: 'emptyComponent',
+            component: SolarCheckRegisterProcessComponent,
+            fullScreen: false,
+            componentData: { contract: this.solarCheckEligibilityContract}
+        });
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public get isEligible() {</span>
+<span class="cstat-no" title="statement not covered" >        return this.solarCheckEligibilityContract &amp;&amp; this.solarCheckEligibilityContract.eligible === true;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public get isSignupEligible() {</span>
+<span class="cstat-no" title="statement not covered" >        return this.isEligible &amp;&amp; this.isRegistered !== true &amp;&amp; this.isDeregistrationPending !== true &amp;&amp; this.isDeregisterRequestCompleted !== true &amp;&amp; !this.hasBattery;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public get isSolarRegistered() {</span>
+<span class="cstat-no" title="statement not covered" >        return this.isRegistered &amp;&amp; this.isDeregistrationPending !== true &amp;&amp; this.isDeregisterRequestCompleted !== true &amp;&amp; !this.hasBattery;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public get isPendingRegistration() {</span>
+<span class="cstat-no" title="statement not covered" >        return (this.hasSolarCheckRegistrationPending === true ||</span>
+            (this.getRegisteredContract() &amp;&amp;
+            this.getRegisteredContract().registrationStatus === SolarCheckRegistrationStatusType.RegistrationPending));
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public get isCurrentlyDeregistering() {</span>
+<span class="cstat-no" title="statement not covered" >        return (this.isDeregistrationPending === true || this.isDeregisterRequestCompleted === true) &amp;&amp; !this.hasBattery;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public displaySystemDeregistrationErrorAlert(): Boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.deregisterRequestStatus.Progress === SolarCheckDeregistrationState.ERROR;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public get registeredContractNumber() {</span>
+        let registeredContract = <span class="cstat-no" title="statement not covered" >this.getRegisteredContract();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (registeredContract) {</span>
+<span class="cstat-no" title="statement not covered" >            return registeredContract.contractNumber;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return 'error';</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private getRegisteredContract(): SolarCheckEligibilityContract {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.solarCheckRegisteredContract) {</span>
+<span class="cstat-no" title="statement not covered" >            return this.solarCheckRegisteredContract;</span>
+        } else <span class="cstat-no" title="statement not covered" >if (this.solarCheckEligibilityContract) {</span>
+<span class="cstat-no" title="statement not covered" >            return this.solarCheckEligibilityContract;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return null;</span>
+        }
+    }
+&nbsp;
+    private isRegisteredContract(contract: SolarCheckEligibilityContract<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return contract &amp;&amp;</span>
+            contract.registrationStatus &amp;&amp;
+            (contract.registrationStatus === SolarCheckRegistrationStatusType.Registered ||
+                contract.registrationStatus === SolarCheckRegistrationStatusType.RegistrationPending);
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private get isRegistered() {</span>
+<span class="cstat-no" title="statement not covered" >        return ((this.solarCheckRegisteredContract &amp;&amp; this.isRegisteredContract(this.solarCheckRegisteredContract)) ||</span>
+            (this.solarCheckEligibilityContract &amp;&amp; this.isRegisteredContract(this.solarCheckEligibilityContract)));
+    }
+&nbsp;
+    // evaluates if have just deregistered
+<span class="fstat-no" title="function not covered" >    private get isDeregisterRequestCompleted() {</span>
+<span class="cstat-no" title="statement not covered" >        return this.deregisterRequestStatus.Progress === SolarCheckDeregistrationState.COMPLETE;</span>
+    }
+&nbsp;
+    // evaluates if has pre-existing deregistration request when entering component
+<span class="fstat-no" title="function not covered" >    private get isDeregistrationPending() {</span>
+<span class="cstat-no" title="statement not covered" >        return this.hasSolarCheckDeregistrationPending;</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

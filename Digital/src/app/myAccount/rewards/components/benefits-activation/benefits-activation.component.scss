@@ -1,0 +1,144 @@
+@import '../../../maui/maui';
+@import '../../rewards';
+
+:host {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    box-shadow: $rewards-tile-shadow;
+    background-position: center;
+    color: $neutral-08;
+    margin: 40px 14px 30px 14px;
+
+    @media #{$agl-layout-mobile} {
+        flex-direction: column-reverse;
+        margin: $rewards-tile-mobile-margin 0 0 0;
+    }
+}
+
+.benefits-img-activation,
+.benefits-activation-content {
+    padding: 35px 28px 10px 35px;
+    line-height: 1.2;
+
+    @media #{$agl-layout-tablet-and-greater} {
+        flex-basis: 50%;
+    }
+}
+
+.benefits-activation-content {
+    background: $gradient-01;
+
+    @media #{$agl-layout-tablet-and-greater} {
+        flex-grow: 1;
+    }
+
+    @media #{$agl-layout-tablet} {
+        height: auto;
+    }
+
+    @media #{$agl-layout-mobile} {
+        padding: 20px;
+    }
+}
+
+.benefits-activation-heading {
+    font-family: $display-font-stack;
+    font-size: 34px;
+
+    @media #{$agl-layout-tablet-and-greater} {
+        max-width: 350px;
+    }
+
+    @media #{$agl-layout-mobile} {
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+    }
+}
+
+.benefits-activation-subheading {
+    font-family: $body-font-stack;
+    line-height: 21px;
+    max-width: 450px;
+    width: 100%;
+    font-size: 16px;
+    padding-top: 20px;
+
+    @media #{$agl-layout-tablet} and (orientation: portrait) {
+        max-width: 560px;
+    }
+
+    @media #{$agl-layout-mobile} {
+        margin: 0 auto 15px;
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+.benefits-activation-btn {
+    text-align: center;
+}
+
+.activation-btn {
+    display: block;
+    margin-top: 40px;
+    max-width: 320px;
+
+    @media #{$agl-layout-mobile} {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media #{$agl-layout-tablet} {
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+.benefits-terms-conditions {
+    font-size: 12px;
+    margin-top: 10px;
+    line-height: 17px;
+    max-width: 360px;
+    padding: 10px 0;
+
+    @media #{$agl-layout-tablet-and-greater} {
+        margin: 10px 0 20px 0;
+    }
+
+    @media #{$agl-layout-tablet} {
+        font-size: 11px;
+        max-width: 405px;
+        display: inline-block;
+    }
+
+    @media #{$agl-layout-mobile} {
+        text-align: center;
+        max-width: 275px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        font-size: 12px;
+    }
+}
+
+.benefits-terms-conditions-link {
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.benefits-img-activation {
+    background: url('img/rewards/aglrewards-activation.jpg') no-repeat center;
+    background-size: cover;
+
+    @media #{$agl-layout-tablet} {
+        height: auto;
+    }
+
+    @media #{$agl-layout-mobile} {
+        background-position: left top;
+        height: 175px;
+    }
+
+}

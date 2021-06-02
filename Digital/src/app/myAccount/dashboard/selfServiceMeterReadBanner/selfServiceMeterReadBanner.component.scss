@@ -1,0 +1,149 @@
+@import '../../../shared/style/variables';
+@import '../../../shared/style/mixins';
+@import '../../../shared/style/tempdls';
+
+:host {
+    display: block;
+    max-height: 500px;
+    transition: max-height 0.8s ease;
+}
+
+:host(.close-panel) {
+    max-height: 0;
+}
+
+.ssmr-banner {
+    background-color: $brand-sky;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 35px 20px;
+    font-family: $secondary-font-stack;
+    box-shadow: $agl-box-shadow-c1;
+
+    @media #{$agl-layout-mobile} {
+        display: block;
+        padding-bottom: 30px;
+    }
+
+    &__container {
+        // matches .agl-desktop-header__container
+        position: relative;
+        margin: 0px auto;
+        padding-left: 15px;
+        padding-right: 15px;
+
+        @media #{$agl-layout-tablet-and-greater} {
+            width: 1170px;
+        }
+        @media #{$agl-layout-mobile} {
+            max-width: 750px;
+        }
+    }
+
+    &--left {
+        display: flex;
+        flex-direction: row;
+        @media #{$agl-layout-mobile} {
+            display: block;
+        }
+    }
+
+    &--right {
+        display: flex;
+        flex-direction: row-reverse;
+
+        @media #{$agl-layout-mobile} {
+            display: block;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        color: $brand-white;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+
+        top: -25px;
+        right: -10px;
+
+        @media #{$agl-layout-desktop-medium-and-greater} {
+            right: -10px;
+        }
+        @media #{$agl-layout-desktop-large} {
+            right: -5px;
+        }
+        @media #{$agl-layout-mobile} {
+            top: -10px;
+            right: -2px;
+            font-size: 18px;
+        }
+    }
+
+    &__icon {
+        @media #{$agl-layout-mobile} {
+            display: none;
+        }
+    }
+
+    &__text {
+        padding-left: 30px;
+        width: 60%;
+        @media #{$agl-layout-tablet} {
+            width: 75%;
+        }
+        @media #{$agl-layout-mobile} {
+            padding-left: 0;
+            width: 100%;
+        }
+
+        &-header {
+            font-family: $primary-font-stack;
+            color: $ssmr-banner-heading-color;
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        &-subtext {
+            color: $brand-white;
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+
+    &__cta {
+        @media #{$agl-layout-mobile} {
+            margin: auto;
+            margin-top: 26px;
+            text-align: center;
+        }
+
+        &-button {
+            border-radius: $agl-border-radius;
+            @media #{$agl-layout-mobile} {
+                width: 100%;
+            }
+
+            &:hover {
+                color: $brand-sky;
+            }
+        }
+
+        &-link {
+            margin-top: 12px;
+
+            a {
+                font-size: 14px;
+                color: $brand-white;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: $brand-white;
+                }
+            }
+        }
+    }
+
+}

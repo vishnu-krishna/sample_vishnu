@@ -1,0 +1,143 @@
+@import '../../../maui/maui';
+@import '../../_rewards';
+
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media #{$agl-layout-desktop-large} {
+        margin-bottom: 6px;
+    }
+}
+
+.benefits-dashboard__message {
+    text-align: center;
+    margin: 20px 0 52px 0;
+
+    @media #{$agl-layout-mobile} {
+        margin: 30px 0 25px 0;
+    }
+
+    &-title {
+        font-family: $display-font-stack;
+        font-size: 36px;
+        margin-bottom: 6px;
+        color: $primary-dark;
+
+        @media #{$agl-layout-mobile} {
+            font-size: 26px;
+            line-height: 32px;
+            margin-bottom: 20px;
+
+            max-width: 300px; /* ie fix for text not wrapping */
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &-text {
+        font-size: 24px;
+
+        @media #{$agl-layout-mobile} {
+            font-size: 14px;
+            line-height: 100%;
+
+            max-width: 200px; /* ie fix for text not wrapping */
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+agl-horizontal-scroller {
+    @media #{$agl-layout-mobile} {
+        margin-bottom: -5px;
+    }
+}
+
+.benefits-dashboard__tiles {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    @media #{$agl-layout-tablet-and-greater} {
+        flex-wrap: wrap;
+    }
+
+    @media #{$agl-layout-mobile} {
+        justify-content: flex-start;
+    }
+}
+
+.benefit-tile__bg-image {
+    height: 0;
+    padding: 56.25% 0 0 0; /* 56.25% is the 16:9 ratio of the width */
+    background-size: cover;
+}
+
+.agl-benefit-tile-wrapper {
+    padding: 0 12px 24px 12px;
+    max-width: 284px;
+    min-width: 284px;
+    overflow: hidden;
+    display: flex; /* so tiles all stretch to same height */
+
+    @media #{$agl-layout-desktop-medium}, #{$agl-layout-tablet} {
+        height: auto;
+        width: 50%;
+        max-width: 365px;
+        min-width: 0;
+        padding: 0 15px 30px 15px;
+    }
+
+    @media #{$agl-layout-mobile} {
+        padding-bottom: 0px;
+        min-width: 305px;
+        max-width: 305px;
+        padding: 0 $rewards-tile-mobile-margin / 2;
+    }
+
+    @media #{$agl-layout-xs} {
+        min-width: 270px;
+        max-width: 270px;
+    }
+}
+
+agl-benefit-tile {
+    transition: opacity 0.1s ease-in-out;
+    width: 100%; /* fix for ie to correct image sizing */
+
+    @media #{$agl-layout-mobile} {
+        &:not(.active) {
+            opacity: 0.5;
+        }
+    }
+
+    a {
+        img {
+            border: none;
+        }
+    }
+}
+
+.view-all-benefits {
+    font-family: $display-font-stack;
+    font-size: 30px;
+    color: $neutral-08;
+    padding: 45px 20px 0 20px;
+
+    p {
+        font-size: 16px;
+        line-height: 20px;
+        font-family: $body-font-stack;
+        padding-right: 10px;
+    }
+
+    &__heading {
+        font-size: 36px;
+        line-height: 100%;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+}

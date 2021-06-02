@@ -1,0 +1,7 @@
+<agl-dls-cta-tile [args]="ctaTile" class="cta-tile--no-margin" [ngClass]="{'cta-tile--row': isSingleTile}" (onCTAButton1Clicked)="ctaClick($event)">
+    <div class="flybuys-content">
+        <p>Since linking your flybuys with AGL, you've earned</p>
+        <div class="flybuys-points" [ngClass]="{'wide-left-align': isSingleTile}"><strong>{{flybuysArgs.summary.totalPoints | number}}</strong><p class="pt">pts</p></div>
+        <p>To check your balance, visit <agl-dls-link href="https://www.flybuys.com.au">flybuys</agl-dls-link></p>
+    </div>
+</agl-dls-cta-tile>

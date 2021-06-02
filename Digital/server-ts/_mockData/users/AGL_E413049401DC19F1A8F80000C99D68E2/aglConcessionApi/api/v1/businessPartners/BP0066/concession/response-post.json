@@ -1,0 +1,9 @@
+{
+  "status": 400,
+  "body": {
+    "message": "Mock server error for duplicate card already in use",
+    "internalError": {
+      "errorNumber": "002"
+    }
+  }
+}

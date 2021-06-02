@@ -1,0 +1,120 @@
+<div class="selected-day">
+    {{selectedGraphItem?.startDateTime | date:'EEEE, d MMMM y'}}
+</div>
+
+<div class="usage-graph">
+
+    <div class="controls" *ngIf="isDesktop()" >
+        <div class="controls--previous" *ngIf="!isScrollLeftDisabled" (click)="scrollLeft()">
+            <svg height="12" width="8">
+                <polygon points="0,6 8,0 8,12" style="fill:#0000ff;"/>
+            </svg>
+        </div>
+        <div class="controls--previous" *ngIf="isScrollLeftDisabled" >
+            <svg height="12" width="8">
+                <polygon points="0,6 8,0 8,12" style="fill: #E8E8E8;"/>
+            </svg>
+        </div>
+        <div class="controls--next" *ngIf="!isScrollRightDisabled" (click)="scrollRight()">
+            <svg height="12" width="8">
+                <polygon points="8,6 0,0 0,12" style="fill:#0000ff;"/>
+            </svg>
+        </div>
+        <div class="controls--next" *ngIf="isScrollRightDisabled" >
+            <svg height="12" width="8">
+                <polygon points="8,6 0,0 0,12" style="fill: #E8E8E8;"/>
+            </svg>
+        </div>
+    </div>
+
+    <div class="yaxis" [class.isGraphLoading]="isGraphLoading" >
+        
+        <div class="labelgroup">
+            <div class="labelgroup__label">${{yAxisLabels[2]}}</div>
+            <div class="labelgroup__label">${{yAxisLabels[1]}}</div>
+            <div class="labelgroup__label">${{yAxisLabels[0]}}</div>
+            <div class="labelgroup__label">$0</div>
+        </div>
+
+        <div class="gridlines">
+            <div class="gridlines__line"></div>
+            <div class="gridlines__line"></div>
+            <div class="gridlines__line"></div>
+        </div>
+
+    </div>
+
+    <div class="viewport" 
+        #chartViewPort 
+        [class.isGraphLoading]="isGraphLoading" 
+        id="viewport" >
+
+        <div
+            id="usage-graph-daily" 
+            class="items" 
+            #chartViewPortItems 
+            [style.margin-left.px]="graphScrollOffset" 
+            [(style.width.px)]="chartViewPortItemsWidth"
+            (panleft)="pan($event)" (panright)="pan($event)" (panend)="panEnd($event)"
+            [class.isPanning]="isPanning"
+            >
+
+            <div class="item" 
+                *ngFor="let usageGraphItem of chartData?.graphItems; let i = index;"
+                [class.selected]="usageGraphItem === selectedGraphItem" 
+                (click)="graphItemSelected(usageGraphItem)">
+
+                <div class="dateRange--tabletandsmaller" 
+                    *ngIf="!isDesktop()" >
+                    <div class="dateRange--dayOfWeek">{{usageGraphItem?.startDateTime | date:'E'}}</div>
+                    <div class="dateRange--dayOfMonth">{{usageGraphItem?.startDateTime | date:'d'}}</div>
+                </div>
+
+                <div class="graph" 
+                    *ngIf="!usageGraphItem?.isEndOfDataRangePlaceholder"
+                    [class.gas]="activeContract?.fuelType==='Gas'"
+                    [class.elec]="activeContract?.fuelType==='Electricity'"
+                    [class.ripple]="isDesktop()"
+                    [class.ripple2]="!isDesktop()"                               
+                    [style.height.px]="calculateGraphItemSize(usageGraphItem)"
+                    >
+                </div>
+
+                <div 
+                    class="estimated--read"
+                    *ngIf="usageGraphItem?.estimatedRead"
+                    [style.bottom.px]="calculateGraphItemSize(usageGraphItem) + (isDesktop() ? 70 : 42)">
+                </div>
+
+                <div class="graph placeholder--new ripple"
+                    *ngIf="usageGraphItem?.isEndOfDataRangePlaceholder" >
+                </div>
+                
+                <div class="dateRange--desktop" 
+                    *ngIf="isDesktop()" >
+                    <div class="dateRange--dayOfMonth">{{usageGraphItem?.startDateTime | date:'d'}}</div>
+                    <div class="dateRange--dayOfWeek">{{usageGraphItem?.startDateTime | date:'E'}}</div>
+                </div>
+
+                <div class="chevron" [hidden]="usageGraphItem !== selectedGraphItem" >
+                    <svg height="9" width="18">
+                        <polygon points="0,9 9,0 18,9" style="fill:#0000ff;" />
+                    </svg>
+                </div>
+
+                <div 
+                    *ngIf="usageGraphItem.isFirstOfNewMonth"
+                    class="newMonthMarker">
+                    <div class="newMonthMarker--icon">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="gunSight">
+            </div>
+
+        </div>
+    </div>
+
+</div>

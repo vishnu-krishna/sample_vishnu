@@ -1,0 +1,67 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "dataGroup": "Account",
+            "status": "Complete",
+            "lastUpdated": "2017-05-11T04:36:35.549499+00:00",
+            "failed": true,
+            "errors": [
+                {
+                    "dataType": "AccountDetails",
+                    "account": "95455382",
+                    "contract": "9084396295",
+                    "message": "Sorry, we were unable to retrieve your information. Please try again later.",
+                    "hasRfcError": true,
+                    "errorId": "GENERIC",
+                    "errorNumber": ""
+                },
+                {
+                    "dataType": "ContractAccountDetails",
+                    "account": "95455382",
+                    "contract": "9084396295",
+                    "message": "Sorry, we were unable to retrieve your information. Please try again later.",
+                    "hasRfcError": true,
+                    "errorId": "GENERIC",
+                    "errorNumber": ""
+                }
+            ]
+        },
+        {
+            "dataGroup": "BillingHistory",
+            "status": "Complete",
+            "lastUpdated": "2017-05-11T04:34:55.7520519+00:00",
+            "failed": false
+        },
+        {
+            "dataGroup": "Dashboard",
+            "status": "Complete",
+            "lastUpdated": "2017-05-11T04:36:35.549499+00:00",
+            "failed": true,
+            "errors": [
+                {
+                    "dataType": "BillSimulation",
+                    "account": "95455382",
+                    "contract": "9084396295",
+                    "message": "Sorry, we were unable to retrieve your information. Please try again later.",
+                    "hasRfcError": true,
+                    "errorId": "GENERIC",
+                    "errorNumber": ""
+                }
+            ]
+        },
+        {
+            "dataGroup": "Payments",
+            "status": "Complete",
+            "lastUpdated": "2017-05-11T04:31:23.3961906+00:00",
+            "failed": false
+        },
+        {
+            "dataGroup": "Usage",
+            "status": "Complete",
+            "lastUpdated": "2017-05-11T04:34:55.7050066+00:00",
+            "failed": false
+        }
+    ]
+}

@@ -1,0 +1,104 @@
+@import '../../../../maui/maui';
+@import '../../../../../shared/style/mixins';
+
+$svgIconFuelHeight: 30px;
+$svgIconFuelWidth: 20px;
+
+.concession-contracts {
+    padding-top: 50px;
+    max-width: $content-width;
+    margin: 0 auto;
+
+    @media #{$agl-layout-mobile} {
+        padding-left: $space-03;
+        padding-right: $space-03;
+    }
+
+    &__spinner {
+        margin-top: 125px;
+    }
+
+    &__heading {
+        margin-top: $space-06;
+        margin-bottom: $space-04;
+
+        @media #{$agl-layout-mobile} {
+            margin-top: $space-04;
+        }
+    }
+
+    &__choose-fuel {
+        margin-bottom: $space-03;
+    }
+
+    &__contract {
+        padding: $space-04;
+        @media #{$agl-layout-mobile} {
+            padding: $space-03 $space-04;
+        }
+
+        &-label {
+            display: grid;
+            grid: auto / 33px auto;
+
+            // TODO remove this when the autoprefixer is upgraded to 7.2.3
+            display: -ms-grid;
+            -ms-grid-rows: auto;
+            -ms-grid-columns: 33px auto;
+            // End of removal
+
+            @media #{$agl-layout-mobile} {
+                grid: auto / 33px 2fr;
+
+                // TODO remove this when the autoprefixer is upgraded to 7.2.3
+                -ms-grid-rows: auto;
+                -ms-grid-columns: 33px 2fr;
+                // End of removal
+
+            }
+
+            &-electricity {
+                @include maui-icon('svg/maui/fuelChip/icon_elec.svg', $svgIconFuelWidth, $svgIconFuelHeight);
+                background-size: contain;
+            }
+
+            &-gas {
+                @include maui-icon('svg/maui/fuelChip/icon_gas.svg', $svgIconFuelWidth, $svgIconFuelHeight);
+                background-size: contain;
+            }
+
+            &-account-section {
+                grid-column: 2;
+
+                // TODO remove this when the autoprefixer is upgraded to 7.2.3
+                -ms-grid-column: 2;
+                // End of removal
+                margin-top: -3px;
+            }
+
+            &-fuel-type {
+                font-family: $display-font-stack;
+                font-size: $display-font-size-delta;
+                font-weight: bold;
+                line-height: $display-font-size-delta;
+                padding-bottom: 8px;
+            }
+
+            &-address {
+                padding-top: 2px;
+                font-size: $body-font-size-small;
+
+                &-no-wrap {
+                    white-space: nowrap;
+                }
+            }
+
+            &-account-number {
+                font-size: $body-font-size-small;
+                font-weight: bold;
+                padding-top: 1px;
+                white-space: nowrap;
+            }
+        }
+    }
+}

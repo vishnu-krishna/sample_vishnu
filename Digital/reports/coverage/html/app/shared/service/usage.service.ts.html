@@ -1,0 +1,923 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\shared\service\usage.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/shared/service/</a> usage.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">19.58% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>28/143</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">27.59% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>8/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/50</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">18.71% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>26/139</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+&nbsp;
+import { Observable } from 'rxjs/Observable';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
+&nbsp;
+import * as _ from 'lodash';
+import * as moment from 'moment';
+&nbsp;
+import { ContractViewModel } from '../../myAccount/services/account.service';
+import * as api from '../../shared/service/api.service';
+import { UsageDataModel } from '../model/usage/usageData.model';
+import { IMessageBusService } from '../service/contract/imessageBus.service';
+import { UsageGranularity } from './../model/usage/usageGranularity.model';
+import { IUsageService } from './contract/iusage.service';
+&nbsp;
+@Injectable()
+export class UsageService implements IUsageService {
+&nbsp;
+    private <span class="cstat-no" title="statement not covered" >debugMode: boolean = true;</span>
+&nbsp;
+    private usageDataBasic: ReplaySubject&lt;UsageDataModel[]&gt;;
+    private usageDataMonthly: ReplaySubject&lt;UsageDataModel[]&gt;;
+    private usageDataDaily: ReplaySubject&lt;UsageDataModel[]&gt;;
+    private usageDataHourly: ReplaySubject&lt;UsageDataModel[]&gt;;
+&nbsp;
+    private <span class="cstat-no" title="statement not covered" >startDateBasic: moment.Moment = moment().subtract('13', 'months');</span>
+    private <span class="cstat-no" title="statement not covered" >startDateMonthly: moment.Moment = moment().subtract('13', 'months');</span>
+    private <span class="cstat-no" title="statement not covered" >startDateDaily: moment.Moment = moment().subtract('3', 'months');</span>
+    private <span class="cstat-no" title="statement not covered" >startDateHourly: moment.Moment = moment().subtract('18', 'days');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    constructor(</span>
+        private <span class="cstat-no" title="statement not covered" >_http: Http,</span>
+        private <span class="cstat-no" title="statement not covered" >_api: api.ApiService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >_messageBusService: IMessageBusService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" ></span></span></span>
+    ) {
+<span class="cstat-no" title="statement not covered" >        this.usageDataBasic = new ReplaySubject&lt;UsageDataModel[]&gt;(1);</span>
+<span class="cstat-no" title="statement not covered" >        this.usageDataMonthly = new ReplaySubject&lt;UsageDataModel[]&gt;(1);</span>
+<span class="cstat-no" title="statement not covered" >        this.usageDataDaily = new ReplaySubject&lt;UsageDataModel[]&gt;(1);</span>
+<span class="cstat-no" title="statement not covered" >        this.usageDataHourly = new ReplaySubject&lt;UsageDataModel[]&gt;(1);</span>
+<span class="cstat-no" title="statement not covered" >        this._api.allContentLoaded</span>
+            .filter((val, index<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >val === true)</span></span>
+            .subscribe(
+<span class="fstat-no" title="function not covered" >                () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    this.debug('allContentLoaded');</span>
+<span class="cstat-no" title="statement not covered" >                    this.sync();</span>
+                }
+            );
+    }
+&nbsp;
+    public GetBasic(contractNumber: string<span class="fstat-no" title="function not covered" >): Observable&lt;UsageDataModel&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this.usageDataBasic</span>
+            .asObservable()
+            .map((results<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                return _.find(results, (result<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return result.contract === contractNumber;</span>
+                });
+            });
+    }
+&nbsp;
+    public GetMonthly(contractNumber: string<span class="fstat-no" title="function not covered" >): Observable&lt;UsageDataModel&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this.usageDataMonthly</span>
+            .asObservable()
+            .map((results<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                return _.find(results, (result<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return result.contract === contractNumber;</span>
+                });
+            });
+    }
+&nbsp;
+    public GetMonthlyForDay(contract: ContractViewModel, day: Date<span class="fstat-no" title="function not covered" >): Observable&lt;UsageDataModel&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this.usageDataMonthly</span>
+            .asObservable()
+            .map((results<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+                let matchingContract = <span class="cstat-no" title="statement not covered" >_.find(results, (result<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return result.contract === contract.contractNumber;</span>
+                });
+                let filteredMonth = <span class="cstat-no" title="statement not covered" >new UsageDataModel();</span>
+<span class="cstat-no" title="statement not covered" >                filteredMonth.account = contract.accountNumber;</span>
+<span class="cstat-no" title="statement not covered" >                filteredMonth.contract = contract.contractNumber;</span>
+<span class="cstat-no" title="statement not covered" >                if (matchingContract) {</span>
+<span class="cstat-no" title="statement not covered" >                    filteredMonth.hasNoBill = matchingContract.hasNoBill;</span>
+<span class="cstat-no" title="statement not covered" >                    filteredMonth.costs = _.filter(matchingContract.costs, (item<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+                        let itemMoment = <span class="cstat-no" title="statement not covered" >moment(item.startDateTime);</span>
+<span class="cstat-no" title="statement not covered" >                        return itemMoment.isSame(day, 'month');</span>
+                    });
+<span class="cstat-no" title="statement not covered" >                    filteredMonth.consumption = _.filter(matchingContract.consumption, (item<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+                        let itemMoment = <span class="cstat-no" title="statement not covered" >moment(item.startDateTime);</span>
+<span class="cstat-no" title="statement not covered" >                        return itemMoment.isSame(day, 'month');</span>
+                    });
+                }
+<span class="cstat-no" title="statement not covered" >                return filteredMonth;</span>
+            });
+    }
+&nbsp;
+    public GetMonthSoFar(contractNumber: string<span class="fstat-no" title="function not covered" >): Observable&lt;UsageDataModel&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this.usageDataDaily</span>
+            .asObservable()
+            .map((results<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+                let monthSoFarItem = <span class="cstat-no" title="statement not covered" >new UsageDataModel();</span>
+                let targetContract = <span class="cstat-no" title="statement not covered" >_.find(results, (result<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return result.contract === contractNumber;</span>
+                });
+                let totalSoFar = <span class="cstat-no" title="statement not covered" >0;</span>
+<span class="cstat-no" title="statement not covered" >                for (let dailyUsage<span class="cstat-no" title="statement not covered" ></span> of targetContract.costs) {</span>
+<span class="cstat-no" title="statement not covered" >                    totalSoFar += dailyUsage.value;</span>
+                }
+                // TODO Perform the same operation for consumption
+<span class="cstat-no" title="statement not covered" >                return monthSoFarItem;</span>
+            });
+    }
+&nbsp;
+    public GetDaily(contractNumber: string<span class="fstat-no" title="function not covered" >): Observable&lt;UsageDataModel&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        this.debug('GET DAILY for ' + contractNumber);</span>
+<span class="cstat-no" title="statement not covered" >        return this.usageDataDaily</span>
+            .asObservable()
+            .map((results<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                return _.find(results, (result<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return result.contract === contractNumber;</span>
+                });
+            });
+    }
+&nbsp;
+    public GetDailyForMonth(contract: ContractViewModel, date: Date<span class="fstat-no" title="function not covered" >): Observable&lt;UsageDataModel&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        this.debug(`GET DAILY FOR MONTH for ${contract.contractNumber} and date: ${date}`);</span>
+        let requestedDate = <span class="cstat-no" title="statement not covered" >moment(date);</span>
+<span class="cstat-no" title="statement not covered" >        return this.usageDataDaily</span>
+            .asObservable()
+            .map((results<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+                let matchingContract = <span class="cstat-no" title="statement not covered" >_.find(results, (result<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return result.contract === contract.contractNumber;</span>
+                });
+                let filteredDaily = <span class="cstat-no" title="statement not covered" >new UsageDataModel();</span>
+<span class="cstat-no" title="statement not covered" >                filteredDaily.account = contract.accountNumber;</span>
+<span class="cstat-no" title="statement not covered" >                filteredDaily.contract = contract.contractNumber;</span>
+<span class="cstat-no" title="statement not covered" >                if (matchingContract) {</span>
+<span class="cstat-no" title="statement not covered" >                    filteredDaily.hasNoBill = matchingContract.hasNoBill;</span>
+<span class="cstat-no" title="statement not covered" >                    filteredDaily.costs = _.filter(matchingContract.costs, (item<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+                        let itemMoment = <span class="cstat-no" title="statement not covered" >moment(item.startDateTime);</span>
+<span class="cstat-no" title="statement not covered" >                        return itemMoment.isSame(requestedDate, 'month');</span>
+                    });
+<span class="cstat-no" title="statement not covered" >                    filteredDaily.consumption = _.filter(matchingContract.consumption, (item<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+                        let itemMoment = <span class="cstat-no" title="statement not covered" >moment(item.startDateTime);</span>
+<span class="cstat-no" title="statement not covered" >                        return itemMoment.isSame(requestedDate, 'month');</span>
+                    });
+                }
+<span class="cstat-no" title="statement not covered" >                return filteredDaily;</span>
+            });
+    }
+&nbsp;
+    public HaveCompleteDailyDataForMonth(contract: ContractViewModel, month: Date<span class="fstat-no" title="function not covered" >): Observable&lt;boolean&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this.GetDailyForMonth(contract, month)</span>
+            .map((value<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                if (value &amp;&amp; value.costs &amp;&amp; value.costs.length &gt; 0) {</span>
+                    let firstDayOfUsage = <span class="cstat-no" title="statement not covered" >value.costs[0].startDateTime;</span>
+                    let lastDayOfUsage = <span class="cstat-no" title="statement not covered" >value.costs[value.costs.length - 1].startDateTime;</span>
+<span class="cstat-no" title="statement not covered" >                    return (</span>
+                        moment(month).startOf('month').isSame(firstDayOfUsage, 'day') &amp;&amp;
+                        moment(month).endOf('month').isSame(lastDayOfUsage, 'day'));
+                }
+<span class="cstat-no" title="statement not covered" >                return false;</span>
+            });
+    }
+&nbsp;
+    public GetHourly(contractNumber: string<span class="fstat-no" title="function not covered" >): Observable&lt;UsageDataModel&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        this.debug(`GET HOURLY for ${contractNumber}`);</span>
+<span class="cstat-no" title="statement not covered" >        return this.usageDataHourly</span>
+            .asObservable()
+            .map((results<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                return _.find(results, (result<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return result.contract === contractNumber;</span>
+                });
+            });
+    }
+&nbsp;
+    public GetHourlyForDate(contractNumber: string, date: Date<span class="fstat-no" title="function not covered" >): Observable&lt;UsageDataModel&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        this.debug(`GET HOURLY FOR DATE for ${contractNumber} and date: ${date}`);</span>
+        let requestedDate = <span class="cstat-no" title="statement not covered" >moment(date.toISOString());</span>
+<span class="cstat-no" title="statement not covered" >        return this.usageDataHourly</span>
+            .asObservable()
+            .map((results<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+                let matchingContract = <span class="cstat-no" title="statement not covered" >_.find(results, (result<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return result.contract === contractNumber;</span>
+                });
+                let filteredHourly = <span class="cstat-no" title="statement not covered" >new UsageDataModel();</span>
+<span class="cstat-no" title="statement not covered" >                filteredHourly.account = matchingContract.account;</span>
+<span class="cstat-no" title="statement not covered" >                filteredHourly.contract = matchingContract.contract;</span>
+<span class="cstat-no" title="statement not covered" >                filteredHourly.hasNoBill = matchingContract.hasNoBill;</span>
+<span class="cstat-no" title="statement not covered" >                filteredHourly.costs = _.filter(matchingContract.costs, (item<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+                    let itemMoment = <span class="cstat-no" title="statement not covered" >moment(item.startDateTime);</span>
+<span class="cstat-no" title="statement not covered" >                    return itemMoment.isSame(requestedDate, 'day');</span>
+                });
+<span class="cstat-no" title="statement not covered" >                filteredHourly.consumption = _.filter(matchingContract.consumption, (item<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+                    let itemMoment = <span class="cstat-no" title="statement not covered" >moment(item.startDateTime);</span>
+<span class="cstat-no" title="statement not covered" >                    return itemMoment.isSame(requestedDate, 'day');</span>
+                });
+<span class="cstat-no" title="statement not covered" >                if (</span>
+                    filteredHourly.costs &amp;&amp;
+                    filteredHourly.costs.length === 24 &amp;&amp;
+                    filteredHourly.consumption &amp;&amp;
+                    filteredHourly.consumption.length === 24) {
+<span class="cstat-no" title="statement not covered" >                        return filteredHourly;</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                return null;</span>
+            });
+    }
+&nbsp;
+    private debug(msg: any<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.debugMode) {</span>
+<span class="cstat-no" title="statement not covered" >            console.log('*** USAGE SERVICE: ' + msg);</span>
+        }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    private sync() {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.loadBasic()</span>
+            .subscribe(
+                (result<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    this.usageDataBasic.next(result);</span>
+                },
+                (error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    console.error(`Basic usage unavilable`);</span>
+                }
+            );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.loadMonthly()</span>
+            .subscribe(
+                (result<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    this.usageDataMonthly.next(result);</span>
+                },
+                (error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    console.error(`Monthly usage unavilable`);</span>
+                }
+            );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.loadDaily()</span>
+            .subscribe(
+                (result<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    this.usageDataDaily.next(result);</span>
+                },
+                (error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    console.error(`Daily usage unavilable`);</span>
+                }
+            );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.loadHourly()</span>
+            .subscribe(
+                (result<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    this.usageDataHourly.next(result);</span>
+                },
+                (error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    console.error(`Hourly usage unavilable`);</span>
+                }
+            );
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private loadBasic(): Observable&lt;UsageDataModel[]&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this._api.getUsage(</span>
+            UsageGranularity.basic,
+            new Date(this.startDateBasic.toISOString()),
+            new Date());
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private loadMonthly(): Observable&lt;UsageDataModel[]&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this._api.getUsage(</span>
+            UsageGranularity.monthly,
+            new Date(this.startDateMonthly.toISOString()),
+            new Date());
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private loadDaily(): Observable&lt;UsageDataModel[]&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this._api.getUsage(</span>
+            UsageGranularity.daily,
+            new Date(this.startDateDaily.toISOString()),
+            new Date());
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private loadHourly(): Observable&lt;UsageDataModel[]&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this._api.getUsage(</span>
+            UsageGranularity.hourly,
+            new Date(this.startDateHourly.toISOString()),
+            new Date());
+    }
+&nbsp;
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

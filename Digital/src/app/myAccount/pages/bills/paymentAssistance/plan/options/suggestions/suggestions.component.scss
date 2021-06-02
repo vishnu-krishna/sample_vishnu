@@ -1,0 +1,54 @@
+@import '../../../../../../maui/maui';
+@import '../../../../../../../shared/style/mixins';
+
+.payment-assistance-plan-options-suggestions {
+    &__heading {
+        font-size: $display-font-size-epsilon;
+    }
+
+    &__label {
+        display: inline-flex;
+        width: 100%;
+
+        @media #{$agl-layout-mobile} {
+            display: block;
+        }
+
+        &-left {
+            width: 100%;
+        }
+
+        &-right {
+            float: right;
+            text-align: right;
+            width: 100%;
+            font-size: $body-font-size-small;
+
+            @media #{$agl-layout-mobile} {
+                float: none;
+                text-align: left;
+            }
+
+            &-amount {
+                font-weight: bold;
+            }
+
+        }
+    }
+
+    &__options {
+        &-hidden {
+            display: none;
+        }
+    }
+
+    &__menu {
+        display: block;
+        padding: $space-03 0;
+
+        &--divider {
+            border-top: $neutral-04 1px solid;
+        }
+    }
+}
+

@@ -1,0 +1,20 @@
+[
+    {
+        "account": "7013149351",
+        "contract": "9133061126",
+        "overdue": 406.4,
+        "currentBalance": 0,
+        "totalPayment": 406.4,
+        "billSmoothing": false,
+        "directDebit": false
+    },
+    {
+        "account": "7013149351",
+        "contract": "9133061138",
+        "overdue": 0,
+        "currentBalance": -55.76,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false
+    }
+]

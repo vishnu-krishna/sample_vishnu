@@ -1,0 +1,38 @@
+<div class="homeprofile-select">
+    <agl-maui-secondary-navigation display="true" displayBackButton="true" text="Home Profile" textMobile="Home Profile"
+        (click)="backClick()"></agl-maui-secondary-navigation>
+    <agl-maui-heading class="homeprofile-select__header"
+        heading="Choose your service">
+    </agl-maui-heading>
+
+    <agl-loader *ngIf="isLoading"></agl-loader>
+    <div *ngIf="!isLoading">
+        <div *ngIf="alreadyStartedAddressContracts.length > 0" data-test="contracts-already-started">
+            <agl-maui-heading class="homeprofile-select__subheader"
+                subheading="Manage your home profile">
+            </agl-maui-heading>
+            <div class="homeprofile-select__body">
+                <div class="homeprofile-select__address with-arrow" *ngFor="let addressContract of alreadyStartedAddressContracts"
+                    (click)="editHomeProfile(addressContract.accountId, addressContract.contractId, addressContract.status)">
+                    <div>{{addressContract.address}}</div>
+                    <div class="homeprofile-select__address-selector"></div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="notStartedAddressContracts.length > 0" data-test="contracts-not-started">
+            <agl-maui-heading class="homeprofile-select__subheader"
+                [subheading]="newStart
+                    ? 'Which account would you like to set up a home profile for?'
+                    : 'Would you like to set up a home profile for the below account?'">
+            </agl-maui-heading>
+            <div class="homeprofile-select__body">
+                <div class="homeprofile-select__address with-arrow" *ngFor="let addressContract of notStartedAddressContracts"
+                    (click)="editHomeProfile(addressContract.accountId, addressContract.contractId, addressContract.status)">
+                    <div>{{addressContract.address}}</div>
+                    <div class="homeprofile-select__address-selector"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

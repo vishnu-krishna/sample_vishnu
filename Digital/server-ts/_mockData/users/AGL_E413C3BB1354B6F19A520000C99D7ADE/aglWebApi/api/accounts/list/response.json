@@ -1,0 +1,35 @@
+[
+    {
+        "number": "7013149351",
+        "firstName": "ROD",
+        "lastName": "BINNINGTON",
+        "contracts": [
+            {
+                "address": "106 HEAD STREET|BRIGHTON VIC 3186",
+                "accountNumber": "7013149351",
+                "fuelType": "Electricity",
+                "nameId": "AGL_E413C3BB1354B6F19A520000C99D7ADE",
+                "number": "9133061126",
+                "planName": "Select 22%",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false,
+                "regionId": "VIC"
+            },
+            {
+                "address": "106 HEAD STREET|BRIGHTON VIC 3186",
+                "accountNumber": "7013149351",
+                "fuelType": "Gas",
+                "nameId": "AGL_E413C3BB1354B6F19A520000C99D7ADE",
+                "number": "9133061138",
+                "planName": "Select 12%",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false,
+                "regionId": "VIC"
+            }
+        ]
+    }
+]

@@ -1,0 +1,44 @@
+<agl-loader *ngIf="isLoading" class="loader"></agl-loader>
+
+<div class="container-fluid placeholder-section lite-mode" *ngIf="isLightMode()">
+    <div class="error-page">
+        <div class="error-page-heading">
+            My Account is undergoing maintenance.
+        </div>
+        <div class="error-page-message">
+            We are sorry for any inconvenience your settings cannot be updated at this time. Please check back soon.
+        </div>
+        <div class="error-page-image-wrap">
+            <img src="img/lite-mode/lite-mode@2x.png">
+        </div>
+        <div class="error-page-assistance">
+            For assistance <a href="https://www.agl.com.au/residential/contact-us">contact us</a> via the usual methods.
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid placeholder-section restricted" *ngIf="isRestrictedMode()">
+    <div class="error-page">
+        <div class="error-page-heading">
+            Your account is inactive.
+        </div>
+        <div class="error-page-message">
+            Settings cannot be updated for inactive accounts.
+        </div>
+        <div class="error-page-image-wrap">
+            <img src="svg/inactive_trolley.svg">
+        </div>
+        <div class="error-page-assistance">
+            For assistance <a href="https://www.agl.com.au/residential/contact-us">contact us</a> via the usual methods.
+        </div>
+    </div>
+</div>
+
+<div [ngClass]="{'settings': !isFullPageRoute(), 'hidden': !isSettingsMode()}">
+    <agl-left-hand-menu class="settings-sub-menu" *ngIf="showLeftMenu() && !isFullPageRoute()"></agl-left-hand-menu>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+    <agl-back-to-top *ngIf="!isFullPageRoute()"></agl-back-to-top>
+</div>
+

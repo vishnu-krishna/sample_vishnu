@@ -1,0 +1,58 @@
+<div class="concession-contracts">
+    <div class="concession-contracts__spinner" *ngIf="isLoading">
+        <agl-loader></agl-loader>
+    </div>
+    <div *ngIf="!isLoading">
+        <agl-maui-heading class="concession-contracts__heading"
+                          heading="Choose your service"
+                          subheading="You can only apply concession to one gas and one electricity service at a single address under the account name of {{accountHolderName}}.">
+        </agl-maui-heading>
+        <div class="concession-contracts__choose-fuel">
+            <agl-maui-container>
+                <div class="concession-contracts__contract">
+                    <div class="concession-contracts__contract-list">
+                        <agl-maui-checkbox-group (checked)="checkBoxSelected($event)">
+                            <agl-maui-checkbox
+                                class="concession-contracts__contract__checkbox"
+                                *ngFor="let contract of contractAccount; let i = index"
+                                [value]="i"
+                                [isChecked]="false"
+                                [isFullWidth]="true">
+                                <div label class="concession-contracts__contract-label">
+                                    <div class="concession-contracts__contract-label-fuel-section">
+                                        <div class="concession-contracts__contract-label-electricity"
+                                             *ngIf="contract.isElec"></div>
+                                        <div class="concession-contracts__contract-label-gas"
+                                             *ngIf="contract.isGas"></div>
+                                    </div>
+                                    <div class="concession-contracts__contract-label-account-section">
+                                        <div class="concession-contracts__contract-label-fuel-type">
+                                            {{contract.fuelType}}
+                                        </div>
+                                        <div class="concession-contracts__contract-label-account-number">
+                                            Account No: {{contract.accountNumber | aglAddSpaces}}
+                                        </div>
+                                        <div class="concession-contracts__contract-label-address" *ngIf="contract.address">
+                                            {{contract.address.addressPart1}}
+                                            <span class="concession-contracts__contract-label-address-no-wrap">
+                                                {{contract.address.addressPart2}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </agl-maui-checkbox>
+                        </agl-maui-checkbox-group>
+                    </div>
+                </div>
+            </agl-maui-container>
+        </div>
+        <agl-maui-flash-message type="Error" *ngIf="sameFuelError">
+            <div heading>Oops, that doesn't look right.</div>
+            <div subheading>To continue, please choose one gas and one electricity connection.</div>
+        </agl-maui-flash-message>
+        <agl-concession-continue-or-cancel
+            (continueButtonClicked)="continue()"
+            [continueButtonEnabled]="continueButtonEnabled">
+        </agl-concession-continue-or-cancel>
+    </div>
+</div>
+

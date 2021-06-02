@@ -1,0 +1,141 @@
+@mixin all-styling($dimensionDesktopConfig, $dimensionMobileConfig) {
+    ::ng-deep {
+        .verticalItem {
+            &__item {
+                @include item-styling($dimensionDesktopConfig, $dimensionMobileConfig);
+
+                &:before {
+                    @include item-before-styling($dimensionDesktopConfig, $dimensionMobileConfig);
+                }
+            }
+
+            &__item-last {
+                @include item-final-styling($dimensionDesktopConfig, $dimensionMobileConfig);
+            }
+
+            &__left-pane {
+                @include left-pane-styling($dimensionDesktopConfig, $dimensionMobileConfig);
+            }
+
+            &__right-pane {
+                @include right-pane-styling($dimensionDesktopConfig, $dimensionMobileConfig);
+            }
+        }
+    }
+}
+
+@mixin item-styling($dimensionDesktopConfig, $dimensionMobileConfig) {
+    @include set-item-styling($dimensionDesktopConfig);
+    @media #{$agl-layout-mobile} {
+        @include set-item-styling($dimensionMobileConfig);
+    }
+}
+
+@mixin set-item-styling($dimensionConfig) {
+    $lineHeight: map-get($dimensionConfig, lineHeight);
+    $lineThickness: map-get($dimensionConfig, lineThickness);
+    $bulletHeight: map-get($dimensionConfig, bulletHeight);
+
+    display: block;
+    border-left-width: $lineThickness;
+    height: $lineHeight;
+    position: relative;
+    left: -($lineThickness / 2);
+    top: ($lineHeight / 2 + $bulletHeight);
+    margin-bottom: $bulletHeight;
+}
+
+@mixin item-before-styling($dimensionDesktopConfig, $dimensionMobileConfig) {
+    @include set-item-before-styling($dimensionDesktopConfig);
+    @media #{$agl-layout-mobile} {
+        @include set-item-before-styling($dimensionMobileConfig);
+    }
+}
+
+@mixin set-item-before-styling($dimensionConfig) {
+    $bulletWidth: map-get($dimensionConfig, bulletWidth);
+    $bulletHeight: map-get($dimensionConfig, bulletHeight);
+    $lineThickness: map-get($dimensionConfig, lineThickness);
+    $bulletBorderWidth: map-get($dimensionConfig, bulletBorderWidth);
+
+    position: absolute;
+    top: -$bulletHeight;
+    left: -($bulletWidth / 2 + $lineThickness / 2);
+    border-width: $bulletBorderWidth;
+    border-style: solid;
+    height: $bulletHeight - $bulletBorderWidth * 2;
+    width: $bulletWidth - $bulletBorderWidth * 2;
+    box-sizing: content-box;
+    content: '';
+}
+
+@mixin item-final-styling($dimensionDesktopConfig, $dimensionMobileConfig) {
+    @include set-item-final-styling($dimensionDesktopConfig);
+    @media #{$agl-layout-mobile} {
+        @include set-item-final-styling($dimensionMobileConfig);
+    }
+}
+
+@mixin set-item-final-styling($dimensionConfig) {
+    $lineHeight: map-get($dimensionConfig, lineHeight);
+    $bulletHeight: map-get($dimensionConfig, bulletHeight);
+    border-left-color: transparent !important;
+    height: $lineHeight / 2;
+    padding-bottom: $lineHeight + $bulletHeight;
+    margin-bottom: 0;
+}
+
+@mixin left-pane-styling($dimensionDesktopConfig, $dimensionMobileConfig) {
+    @include set-left-pane-styling($dimensionDesktopConfig);
+    @media #{$agl-layout-mobile} {
+        @include set-left-pane-styling($dimensionMobileConfig);
+    }
+}
+
+@mixin set-left-pane-styling($dimensionConfig) {
+    $leftPaneHeight: map-get($dimensionConfig, leftPaneHeight);
+    $bulletHeight: map-get($dimensionConfig, bulletHeight);
+    $bulletWidth: map-get($dimensionConfig, bulletWidth);
+    $lineThickness: map-get($dimensionConfig, lineThickness);
+    $leftPaneLeftPadding: map-get($dimensionConfig, leftPaneLeftPadding);
+    $leftPaneRightPadding: map-get($dimensionConfig, leftPaneRightPadding);
+
+    @include pane-common-styling;
+    top: -(($leftPaneHeight - $bulletHeight) / 2 + $bulletHeight);
+    left: -100%;
+    width: 100%;
+    height: $leftPaneHeight;
+    padding-left: $leftPaneLeftPadding - $lineThickness;
+    padding-right: ($bulletWidth + $lineThickness) / 2 + $leftPaneRightPadding;
+}
+
+@mixin right-pane-styling($dimensionDesktopConfig, $dimensionMobileConfig) {
+    @include set-right-pane-styling($dimensionDesktopConfig);
+    @media #{$agl-layout-mobile} {
+        @include set-right-pane-styling($dimensionMobileConfig);
+    }
+}
+
+@mixin set-right-pane-styling($dimensionConfig) {
+    $rightPaneHeight: map-get($dimensionConfig, rightPaneHeight);
+    $bulletHeight: map-get($dimensionConfig, bulletHeight);
+    $bulletWidth: map-get($dimensionConfig, bulletWidth);
+    $lineThickness: map-get($dimensionConfig, lineThickness);
+    $rightPaneLeftPadding: map-get($dimensionConfig, rightPaneLeftPadding);
+    $rightPaneRightPadding: map-get($dimensionConfig, rightPaneRightPadding);
+
+    @include pane-common-styling;
+    top: -(($rightPaneHeight - $bulletHeight) / 2 + $bulletHeight);
+    left: 0px;
+    width: 100%;
+    height: $rightPaneHeight;
+    padding-left: ($bulletWidth - $lineThickness) / 2 + $rightPaneLeftPadding;
+    padding-right: $rightPaneRightPadding;
+}
+
+@mixin pane-common-styling() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+}

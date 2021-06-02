@@ -1,0 +1,44 @@
+<agl-maui-showcase-template heading='Icon List'>
+    <div description>
+        The Icon List component is a reusable component that displays a list of items with icons. It is to be used on confirmation screens to provide customers with a summary of confirmation details or suggestions for other tasks to complete in my account.
+        It is to be placed in the UI container. Refer to <a href='https://aglenergy.atlassian.net/wiki/spaces/AGLDST/pages/135533715/Next+Steps'>MAUI Component Library for details</a>. Note the component examples below have not been inlcuded in a container to 
+        illustrate the borders of the component.
+    </div>
+    <div exampleCodeUsage>
+        {{codeUsage}}
+    </div>
+    <div exampleImplementation>
+        <div class="setup-div">
+            <h1>Payment extensions</h1>
+
+            <div class="setting-div">
+                <agl-maui-icon-list heading="Helpful hints">
+                    <agl-maui-icon-list-item iconPath="./svg/maui/iconList/showcase/icon-calendar.svg">Add a <a class='link' (click)='linkClicked()'>calendar reminder now</a> to keep track of your extended due date.</agl-maui-icon-list-item>
+                    <agl-maui-icon-list-item iconPath="./svg/maui/iconList/showcase/icon-alert.svg">It's important you pay by the extended due date to get back on track. If you need further assistance, please call us on <a href="tel:131 245">131 245</a></agl-maui-icon-list-item>
+                </agl-maui-icon-list>
+            </div>
+        </div>
+        <div class="setup-div">
+            <h1>Monthly billing</h1>
+
+            <div class="setting-div">
+                <agl-maui-icon-list heading="What happens now?">
+                    <agl-maui-icon-list-item iconPath="./svg/maui/iconList/showcase/icon_clock.svg">Please allow up to 24 hours for your new issue date to update in My Account and the app.</agl-maui-icon-list-item>
+                    <agl-maui-icon-list-item iconPath="./svg/maui/iconList/showcase/icon-elec_meter.svg">For more accurate electricity and gas bills <a class='link' (click)='linkClicked()'>submit a meter read</a>.</agl-maui-icon-list-item>
+                </agl-maui-icon-list>
+            </div>
+        </div>
+        <div class="setup-div">
+                <h1>Icon list without a heading</h1>
+
+                <div class="setting-div">
+                    <agl-maui-icon-list>
+                        <agl-maui-icon-list-item iconPath="./svg/maui/iconList/showcase/icon-calendar.svg">Add a <a class='link' (click)='linkClicked()'>calendar reminder</a> now to keep track of your extended due date.</agl-maui-icon-list-item>
+                        <agl-maui-icon-list-item iconPath="./svg/maui/iconList/showcase/icon_clock.svg">Please allow up to 24 hours for your new issue date to update in My Account and the app.</agl-maui-icon-list-item>
+                        <agl-maui-icon-list-item iconPath="./svg/maui/iconList/showcase/icon-elec_meter.svg">For more accurate electricity and gas bills <a class='link' (click)='linkClicked()'>submit a meter read</a>.</agl-maui-icon-list-item>
+                        <agl-maui-icon-list-item iconPath="./svg/maui/iconList/showcase/icon-alert.svg">It's important you pay by the extended due date to get back on track. If you need further assistance, please call us on <a href="tel:131 245">131 245</a></agl-maui-icon-list-item>
+                    </agl-maui-icon-list>
+                </div>
+            </div>
+        </div>
+</agl-maui-showcase-template>

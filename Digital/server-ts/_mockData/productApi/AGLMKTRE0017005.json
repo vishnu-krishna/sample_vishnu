@@ -1,0 +1,51 @@
+{
+    "id": "AGLMKTRE0017005",
+    "description": "Employee Freedom",
+    "fuelType": "Electricity",
+    "invalid": false,
+    "attributes": [{
+        "id": "ZBRAND_TYP",
+        "description": "Brand",
+        "value": "AGL",
+        "valueDescription": "AGL"
+    }, {
+        "id": "ZCNTRCTTYPE",
+        "description": "Contract Type",
+        "value": "EGCN",
+        "valueDescription": "No Fixed Term Contract"
+    }, {
+        "id": "ZCUST_TYP",
+        "description": "Customer Type",
+        "value": "RESI",
+        "valueDescription": "Residential"
+    }, {
+        "id": "ZEMP_DISCOUNT",
+        "description": "Employee Discount",
+        "dataType": "Numeric",
+        "value": "35",
+        "valueDescription": "35%",
+        "unitOfMeasure": "Percentage"
+    }, {
+        "id": "ZPIES",
+        "description": "PIES",
+        "dataType": "Numeric",
+        "value": "4",
+        "valueDescription": "Prior Notice"
+    }, {
+        "id": "ZPRICING_OPTION",
+        "description": "Rate Type",
+        "value": "VR",
+        "valueDescription": "Variable rate"
+    }, {
+        "id": "ZPROD_TYPE",
+        "description": "Product Type",
+        "dataType": "Numeric",
+        "value": "MKT",
+        "valueDescription": "Market Product"
+    }, {
+        "id": "ZSOLAR",
+        "description": "Solar",
+        "value": "A",
+        "valueDescription": "All"
+    }]
+}

@@ -1,0 +1,33 @@
+[
+    {
+        "number": "23965742",
+        "firstName": "Shahrukh",
+        "lastName": "Khan",
+        "contracts": [
+            {
+                "address": "55 FONGEO DRIVE|POINT COOK VIC 3030",
+                "accountNumber": "23965742",
+                "fuelType": "Electricity",
+                "nameId": "AGL_E395B5CFC36FFEF18D470000C99D68E2",
+                "number": "9400780769",
+                "planName": "Savers",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false
+            },
+            {
+                "address": "55 FONGEO DRIVE|POINT COOK VIC 3030",
+                "accountNumber": "23965742",
+                "fuelType": "Gas",
+                "nameId": "AGL_E395B5CFC36FFEF18D470000C99D68E2",
+                "number": "9400780910",
+                "planName": "Savers",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false
+            }
+        ]
+    }
+]

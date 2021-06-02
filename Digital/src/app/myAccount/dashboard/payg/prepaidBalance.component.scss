@@ -1,0 +1,159 @@
+@import '../../../shared/style/variables';
+
+.payg-section {
+    margin-bottom: 30px;
+
+    &__heading {
+        top: 0px;
+        font-size: 16px;
+        font-weight: bold;
+        color: $brand-grey-g1;
+        font-family: $secondary-font-stack;
+        height: 56px;
+        margin-top: -5px;
+
+        &__prepayment {
+            margin-top: 53px;
+            @media #{$agl-layout-mobile} {
+                margin-top: 35px !important;
+            }
+
+            &.indent-space {
+                padding-top: 31px;
+                @media #{$agl-layout-xs} {
+                    padding-top: 0px;
+                }
+
+                &.billing {
+                    @media #{$agl-layout-xs} {
+                        padding-top: 31px;
+                    }
+                }
+            }
+
+            &__left-panel {
+                width: calc(100% - 150px);
+                float: left;
+
+                @media #{$agl-layout-mobile} {
+                    width: calc(100% - 120px);
+                }
+
+                @media #{$agl-layout-xs} {
+                    width: calc(100% - 140px);
+                }
+
+                &.billing {
+                    @media #{$agl-layout-mobile} {
+                        width: calc(100% - 116px) !important;
+                    }
+
+                    @media #{$agl-layout-xs} {
+                        width: calc(100% - 140px)!important;
+                    }
+                }
+
+            }
+
+            &__right-panel {
+                font-size: 18px;
+                float: left;
+                width: 54px;
+                text-align: right;
+                @media #{$agl-layout-xs} {
+                    width: 60px;
+                }
+                @media #{$agl-layout-mobile} {
+                    width: 36px;
+                }
+
+                &.dollar {
+                    color: $brand-grey-g3;
+                }
+            }
+
+            &__value {
+                text-align: right;
+                font-size: 18px;
+                width: 70px;
+                float: left;
+
+                &.credit {
+                    width: 80px;
+                }
+
+                &.balance {
+                    color: $brand-fire;
+                }
+
+            }
+
+            &.billing {
+                margin-top: 0px !important;
+            }
+        }
+    }
+
+    &__amount {
+        text-align: left !important;
+        display: table;
+        height: calc(100% - 30px);
+
+        &.indent {
+            padding-left: 12px;
+        }
+
+        &__unavailable {
+            color: $brand-grey-g1;
+            font-family: $primary-font-stack;
+        }
+
+        &__value {
+            height: 36px;
+            line-height: 36px;
+            display: table-cell;
+            vertical-align: middle;
+            color: $brand-leaf;
+            font-weight: bold;
+            font-size: 30px;
+
+            &.large {
+                font-size: 40px;
+                font-family: $primary-font-stack;
+            }
+
+            .figure {
+                font-size: 50px;
+
+                &.large {
+                    font-size: 64px;
+                }
+
+            }
+        }
+
+        .low {
+            color: $brand-sun;
+        }
+
+        .debit {
+            color: $brand-fire;
+        }
+
+    }
+
+    &.prepayment {
+        margin-bottom: 54px !important;
+    }
+}
+
+.estimated-tool-tip {
+    vertical-align: top;
+    margin-top: -24px;
+    margin-left: -10px;
+    display: inline-block;
+}
+
+.clear {
+    clear: both;
+}

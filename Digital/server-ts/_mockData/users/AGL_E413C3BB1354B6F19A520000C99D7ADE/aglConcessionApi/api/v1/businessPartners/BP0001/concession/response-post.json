@@ -1,0 +1,9 @@
+{
+  "status": 400,
+  "body": {
+    "message": "Mock server error for card does not match region",
+    "internalError": {
+      "errorNumber": "003"
+    }
+  }
+}

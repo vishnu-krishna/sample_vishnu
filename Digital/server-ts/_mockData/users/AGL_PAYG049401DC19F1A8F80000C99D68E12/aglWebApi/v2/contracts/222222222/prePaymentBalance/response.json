@@ -1,0 +1,20 @@
+{
+    "contractNumber": 222222222,
+    "balance": 158.45,
+    "balanceType": "Debit",
+    "balanceTopUpUrgency": "Medium",
+    "calculationDate": "2017-01-20T01:00:00Z",
+    "remainingDays": 11.12,
+    "firstPrepaymentDueDate": "2018-01-23T13:59:59Z",
+    "isProductSwapUser": true,
+    "isEligibleForFullBonus": false,
+    "hasOutstandingBalanceWithinFPDD": true,
+    "previousPlanFinalBalance": {
+      "balance": 150.24,
+      "balanceType": "Debit"
+    },
+    "prepaidPlanBalance": {
+      "balance": 8.21,
+      "balanceType": "Debit"
+    }
+  }

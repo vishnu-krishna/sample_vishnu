@@ -1,0 +1,27 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "number": "56606452",
+            "firstName": "BEVIN",
+            "lastName": "BOD",
+            "contracts": [
+                {
+                    "address": "12 CUNGENA AVENUE|PARKHOLME SA 5043",
+                    "accountNumber": "56606452",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_000D3AD07CE31ED789CB2D22118528E6",
+                    "number": "9035268396",
+                    "planName": "MUT",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "LG0701RE00",
+                    "regionId": "SA"
+                }
+            ]
+        }
+    ]
+}

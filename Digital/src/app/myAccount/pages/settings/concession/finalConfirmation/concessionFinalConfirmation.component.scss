@@ -1,0 +1,175 @@
+@import '../../../../maui/maui';
+
+$containerMaxWidth: 600px;
+$svgIconSize: 166px;
+
+.concession-final-confirmation {
+    @media #{$agl-layout-mobile} {
+        padding-left: $space-03;
+        padding-right: $space-03;
+    }
+
+    &__container-top {
+        margin-top: -$space-04;
+        max-width: $containerMaxWidth;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__wrapper {
+        padding: $space-04;
+        @media #{$agl-layout-mobile} {
+            padding: $space-04 $space-03 $space-04 $space-03;
+        }
+    }
+
+    &__heading-text {
+        font-family: $display-font-stack;
+        font-size: $display-font-size-delta;
+        color: $primary-dark;
+        line-height: $line-height-heading;
+    }
+
+    &__address {
+        &:not(:last-child) {
+            padding-bottom: $space-04;
+            @media #{$agl-layout-mobile} {
+                padding-bottom: $space-03;
+            }
+        }
+    }
+
+    &__content {
+        margin-top: $space-04;
+        border-top: 1px solid $neutral-04;
+        padding-bottom: $space-04;
+
+        &-row {
+            padding-top: $space-04;
+            display: flex;
+
+            &-label {
+                padding-right: $space-03;
+                font-family: $body-font-stack;
+                font-size: $body-font-size-normal;
+                min-width: 120px;
+            }
+        }
+
+    }
+
+    &__whats-happens-now {
+        @extend .text-normal;
+        font-family: $body-font-stack;
+    }
+
+    &__close-button {
+        display: block;
+        margin: $space-06 auto $space-05;
+        text-align: center;
+    }
+
+    &__banner {
+        max-width: $containerMaxWidth;
+        margin-left: auto;
+        margin-right: auto;
+        background: linear-gradient(295.32deg, #00DFED -55%, #001CB0 80%);
+
+        &-heading {
+            color: $neutral-08;
+            font-family: $display-font-stack;
+            font-size: $display-font-size-delta;
+            margin-bottom: $space-03;
+        }
+
+        &-sub-heading {
+            color: $neutral-08;
+            font-family: $body-font-stack;
+            font-size: $body-font-size-small;
+            margin-bottom: $space-04;
+        }
+
+        &-wrapper {
+            display: grid;
+            grid: auto / 1.4fr 1fr;
+            // TODO Remove all the -ms- stuff when the autoprefixer is upgraded to 7.2.3 as part of cli upgrade.
+            display: -ms-grid;
+            -ms-grid-columns: 1.4fr 1fr;
+            -ms-grid-rows: auto;
+            padding: $space-04;
+
+            @media #{$agl-layout-mobile} {
+                padding: $space-04 $space-03 $space-03 $space-03;
+            }
+        }
+
+        &-text-section {
+            margin-top: -20px;
+
+            @media #{$agl-layout-mobile} {
+                grid-area: 1 / 1 / 2 / 3;
+                -ms-grid-row: 1;
+                -ms-grid-column: 1;
+                -ms-grid-column-span: 3;
+            }
+        }
+
+        &-button-section {
+            display: block;
+            width: 90%;
+            justify-self: start;
+            grid-area: 2 / 1 / 3 / 2;
+            -ms-grid-column-align: start;
+            -ms-grid-row: 2;
+            -ms-grid-column: 1;
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            @media #{$agl-layout-mobile} {
+                width: 100%;
+                grid-area: 2 / 1 / 3 / 3;
+                -ms-grid-row: 2;
+                -ms-grid-column: 1;
+                -ms-grid-column-span: 2;
+            }
+
+            &-btn {
+                height: 40px;
+                border-radius: 5px;
+                background-color: $secondary-action-light;
+                box-shadow: 0 1px 4px 0 rgba(51, 51, 51, 0.25);
+                color: $neutral-01;
+                font-family: $display-font-stack;
+                font-size: $body-font-size-small;
+                font-weight: bold;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-transform: uppercase;
+
+                @media #{$agl-layout-mobile} {
+                    margin-bottom: $space-03;
+                }
+            }
+        }
+
+        &-icon-section {
+            @include maui-icon('svg/concession/icon-buoy.svg', $svgIconSize, $svgIconSize);
+            background-size: contain;
+            grid-area: 1 / 2 / 3 / 3;
+            justify-self: end;
+            align-self: end;
+            -ms-grid-row: 1;
+            -ms-grid-row-span: 2;
+            -ms-grid-column: 2;
+            -ms-grid-column-align: end;
+            -ms-grid-row-align: end;
+
+            @media #{$agl-layout-mobile} {
+                display: none;
+            }
+        }
+    }
+}

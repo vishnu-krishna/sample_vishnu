@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\featureIntro\featureIntroDetail\featureIntroDetail.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/myAccount/featureIntro/featureIntroDetail/</a> featureIntroDetail.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">54.55% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>12/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">58.82% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>10/17</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, HostBinding, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
+&nbsp;
+import { FeatureIntro } from '../shared/featureIntro';
+&nbsp;
+@Component({
+    selector: 'agl-feature-intro',
+    template: require('./featureIntroDetail.component.html'),
+    styles: [require('./featureIntroDetail.component.scss')]
+})
+export class FeatureIntroDetailComponent {
+    @Input() public <span class="cstat-no" title="statement not covered" >featureIntro: FeatureIntro = new FeatureIntro();</span>
+    @Output() public <span class="cstat-no" title="statement not covered" >dismissFeatureIntro = new EventEmitter&lt;boolean&gt;();</span>
+&nbsp;
+    @HostBinding('class.viewed') <span class="fstat-no" title="function not covered" >get hasViewed() {</span>
+<span class="cstat-no" title="statement not covered" >        return this.featureIntro.hasViewed;</span>
+    }
+&nbsp;
+    constructor(private <span class="cstat-no" title="statement not covered" >router: Router<span class="fstat-no" title="function not covered" >)</span> {}</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public ctaPositiveAction() {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (this.featureIntro.content.positiveCtaRoute) {</span>
+<span class="cstat-no" title="statement not covered" >            this.router.navigate([this.featureIntro.content.positiveCtaRoute]).then(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+&nbsp;
+                // The history.pushState is needed because when the modal closes (via call to dismissFeatureIntro) it calls location.back
+                // to handle browser back button scenarios.
+                // Without the pushState added here the location.back will return us to where we were before the router.navigate (cancelling out the route)
+                // making it look like nothing happened
+<span class="cstat-no" title="statement not covered" >                window.history.pushState(window.history.state, window.document.title, window.location.href);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                this.dismissFeatureIntro.emit(true);</span>
+            });
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public ctaNegativeAction() {</span>
+<span class="cstat-no" title="statement not covered" >        this.dismissFeatureIntro.emit(false);</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

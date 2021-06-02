@@ -1,0 +1,18 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": {
+        "hasMultipleBusinessPartners": false,
+        "businessPartners": [
+            {
+                "firstName": "Iain",
+                "lastName": "Sanders",
+                "businessPartnerNumber": "BP0042",
+                "phone": "",
+                "mobile": "0444555888",
+                "hasDateOfBirth": false,
+                "email": "i.sanders@agl.com.au"
+            }
+        ]
+    }
+}

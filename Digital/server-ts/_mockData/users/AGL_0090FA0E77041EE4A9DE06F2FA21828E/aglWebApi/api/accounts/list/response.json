@@ -1,0 +1,29 @@
+[
+  {
+    "number": "7024130895",
+    "firstName": "Jay",
+    "lastName": "McDonald",
+    "contracts": [
+      {
+        "address": "6 BAYSTONE COURT|TRARALGON VIC 3844",
+        "accountNumber": "7024130895",
+        "fuelType": "Electricity",
+        "nameId": "AGL_0090FA0E77041EE4A9DE06F2FA21828E",
+        "number": "9403551883",
+        "pointOfDeliveryId": null,
+        "planName": "",
+        "inFlight": true,
+        "contractStatus": "PTMI",
+        "isRestricted": false,
+        "isSmartMeter": true,
+        "hasElectricVehicle": false,
+        "hasSolar": false,
+        "solarCheckRegistered": false,
+        "generationStartDate": null,
+        "lastUsageDate": null,
+        "lastActualUsageDate": null,
+        "numberValidSolarCheckDays": null
+      }
+    ]
+  }
+]

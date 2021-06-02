@@ -1,0 +1,70 @@
+@import '../../../../shared/style/variables';
+@import '../../../style/settings';
+@import './billSmoothingCommonStyles';
+
+.intro {
+    font-size: 16px;
+    line-height: 20px;
+    color: $brand-grey-g1;
+}
+
+.account-info {
+    padding: 25px 50px;
+    margin: 0 -50px;
+    background-color: $brand-grey-c1;
+
+    @media #{$agl-layout-tablet} {
+        padding: 20px 25px;
+        margin: 0 -25px;
+    }
+
+    @media #{$agl-layout-mobile} {
+        padding: 10px 20px;
+        margin: 0 -20px;
+    }
+}
+
+.bs {
+    margin-bottom: -10px;
+
+    &-wrapper {
+        padding-bottom: 0;
+    }
+
+    &-fuel {
+        border-bottom: 1px solid $brand-grey-g5;
+
+        &--last {
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    &-button {
+        margin-bottom: 25px;
+    }
+
+    &-alert {
+        padding-top: 10px;
+        margin-bottom: -5px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid $brand-grey-g5;
+}
+
+.button-line {
+    border-top: 1px solid $brand-grey-g5;
+    padding-top: 25px;
+}
+
+.settings-container {
+    .mat-card {
+        padding-bottom: 0px;
+    }
+}
+
+.loading-component {
+    padding-bottom: 25px;
+}

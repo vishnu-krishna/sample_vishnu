@@ -1,0 +1,35 @@
+<span *ngIf="!isAwaitingDeregisterResponse" id="modal-close-button" class="deregister__close-button" (click)="closeModal()" #cancelButtonTopRight>
+    <span>&#x2715;</span>
+</span>
+
+<div class="solar-check-deregister deregister dialog-container" #confirmationModal>
+    <div *ngIf="!isAwaitingDeregisterResponse">
+        <div class="">
+            <span class="deregister__header">Remove Solar Command Check</span>
+        </div>
+
+        <p class="deregister__body">
+            Are you sure you no longer want to receive information about the health of your solar system?
+        </p>
+
+        <p class="deregister__body">
+            If you change your mind you can always sign-up again.
+        </p>
+
+        <div class="deregister__action-bar row">
+            <div class="col-sm-6">
+                <button mat-raised-button class="mat-accent mat-raised-button deregister__button" (click)="attemptDeregistration()" #okButton>Confirm</button>
+            </div>
+            <div class="col-sm-6">
+                <button mat-raised-button class="mat-raised-button deregister__cancel-button deregister__button" (click)="closeModal()" #cancelButton>Cancel</button>
+            </div>
+        </div>
+    </div>
+    
+    <agl-loader *ngIf="isAwaitingDeregisterResponse" [isLargeText]="true" loadingMessage="Processing your request..." loadingSubMessage="We're sorry to see you leave." [fullScreen]="false" ></agl-loader>
+</div>
+
+
+
+
+

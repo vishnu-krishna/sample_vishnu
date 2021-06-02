@@ -1,0 +1,16 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [{
+            "id": "LLL76PJW",
+            "creditCard": {
+                "cardHolderName": "MR G DERRIMAN",
+                "cardType": "Visa",
+                "creditCardReference": "1234-1234-1234-5689",
+                "expiryDate": "2020-03"
+            },
+            "directDebitContractAccounts": [],
+            "oneTouchPayContractAccounts": [1400000000]
+        }
+    ]
+}

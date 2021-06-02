@@ -1,0 +1,32 @@
+[{
+    "number": "20845020",
+    "firstName": "Roger",
+    "lastName": "Patson",
+    "contracts": [{
+        "address": "32 Collins St|Docklands|Melbourne, VIC 3008",
+        "accountNumber": "20845020",
+        "fuelType": "Electricity",
+        "nameId": "AGL_OMM049401DC19F1A8F80000C99D68F6",
+        "number": "9002002507",
+        "planName": "Savers",
+        "inFlight": true,
+        "contractStatus": "",
+        "isRestricted": false,
+        "hasElectricVehicle": false,
+        "productId": "AGLMKTREPP1",
+        "regionId": "VIC"
+    },{
+        "address": "32 Bourke St|Melbourne, VIC 3000",
+        "accountNumber": "20845020",
+        "fuelType": "Gas",
+        "nameId": "AGL_OMM049401DC19F1A8F80000C99D68F6",
+        "number": "9401786528",
+        "planName": "Savers",
+        "inFlight": false,
+        "contractStatus": "",
+        "isRestricted": true,
+        "hasElectricVehicle": false,
+        "productId": "AGLMKTREPP2",
+        "regionId": "VIC"
+    }]
+}]

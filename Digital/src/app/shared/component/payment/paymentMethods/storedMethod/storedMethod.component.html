@@ -1,0 +1,52 @@
+<div class="saved-method-loader" *ngIf="!cardsLoaded" >
+    <div class="spinner">
+        <div class="logo">
+            <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="hand">
+                        <line class="first" x1="7" y1="28.7" x2="17" y2="30.2"></line>
+                        <line class="second" x1="10" y1="12.6" x2="18.7" y2="22.8"></line>
+                        <line class="third" x1="21.9" y1="6" x2="23.5" y2="18.9"></line>
+                        <line class="fourth" x1="32.7" y1="9.5" x2="29" y2="19.1"></line>
+                        <line class="fifth" x1="38.5" y1="17" x2="34.1" y2="21.6"></line>
+                    </g>
+                </g>
+            </svg>
+            <p class="text">Loading payment methods</p>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="cardsFailedToLoad" class="failed-loading">
+    <agl-alert alertType="error" body="Sorry, we've had a problem retrieving your saved payment methods."></agl-alert>
+</div>
+
+<div *ngIf="cardsLoaded" >
+    <div *ngIf="!methodSelected" class="stored-method">
+        <button
+        *ngFor="let savedMethod of paymentMethods"
+        class="button-dropdown__button long-button"
+        mat-raised-button
+        (click)="selectedItem({methodId: savedMethod.id, methodTitle: savedMethod.shortReference, methodMonth: savedMethod.expiryMonth, methodYear: savedMethod.expiryYear, methodLabel: savedMethod.title, methodCCRef: savedMethod.ccNumber})">
+            {{savedMethod.title}} {{savedMethod.shortReference}}
+        </button>
+    </div>
+
+    <div *ngIf="methodSelected" class="stored-method-pay-with">
+        <div class="stored-method-pay-with__selected-card">
+            {{methodLabel}} {{methodTitle}}<span (click)="changeMethod()">Change</span>
+        </div>
+        <div class="stored-method-pay-with__selected-card-tf">
+            {{transactionText}}
+        </div>
+        <div class="stored-method-pay-with__make-payment">
+            <agl-alert class="error-above-button" *ngIf="generalPaymentError" alertType="error" body="Sorry, we've had a problem processing your payment, please try again."></agl-alert>
+            <button [class.is-loading]="isSaving" mat-raised-button color="accent" (click)="methodMakePayment()">MAKE PAYMENT</button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!cardsEmpty" class="payment-methods__or-container">
+    <div *ngIf="!methodSelected" class="payment-methods__or-container__or">Or</div>
+</div>
+

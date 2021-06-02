@@ -1,0 +1,52 @@
+<div class="dashboard-smart-meter" [class.hidden]="hasElectricVehicle">
+    <div class="col-xs-12 no-pad title-sm-meter" *ngIf="!contract.isPayg">
+        <div class="billing-period no-pad row">
+            <div class="billing-period__heading col-xs-12">{{subHeadingText ? 'Bill period' : 'Current bill period'}}</div>
+            <div class="billing-period__sub-heading col-xs-12">
+                <span class="billing-period__sub-heading-text">{{subHeadingText}}</span>
+                <br *ngIf="daysToGo" class="visible-md visible-sm">
+                <span *ngIf="daysToGo" class="billing-period__days-to-go">{{daysToGo}}</span>
+                <span *ngIf="contractIsInactive" class="billing-period__inactive-pill">Inactive</span>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="contract.isPayg" class="prepaid-balance">
+        <agl-prepaid-balance [contract]="contract" [isDashboard]="true"></agl-prepaid-balance>
+    </div>
+    <div class="chart-container">
+        <div class="chart-container__chart" [class.chart-container__chart--hidden]="contract.isPayg">
+            <canvas class="smart-meter-chart" attr.data-percent="{{percent}}" #canvas></canvas>
+            <div class="radial-gauge" [ngClass]="{'radial-gauge__tool-tip': showProjection }">
+                <div class="cost-heading">Cost to date</div>
+                <div class="cost">
+                    <span class="cost__symbol">$</span><span class="cost__amount">{{costToDate | number:'.2-2' | aglExtractBeforeDecimal}}</span><span
+                        class="cost__decimal">{{costToDate | number:'.2-2' | aglExtractDecimal}}</span>
+                </div>
+                <agl-smart-meter-tooltip *ngIf="showProjection" [projection]="contract.projectedBill"></agl-smart-meter-tooltip>
+            </div>
+            <div class="date-container">
+                <div class="leftDate">{{currentBillStartDate}}</div>
+                <div class="rightDate">{{currentBillEndDate}}</div>
+            </div>
+        </div>
+        <a class="chart-container-view-usage" [routerLink]="['/usage']" *ngIf="!contract.showOutstandingBillPayg">View usage</a>
+    </div>
+</div>
+<div class="dashboard-electric-vehicle" [class.hidden]="!hasElectricVehicle">
+    <div class="ev-vehicle">
+        <div class="ev-vehicle__image-clouds">
+            <img class="ev-vehicle__image-clouds-main" src="svg/image_evVehicle_clouds_opacity.svg">
+            <img class="ev-vehicle__image-clouds-sec" src="svg/image_evVehicle_clouds_opacity.svg">
+        </div>
+        <div class="ev-vehicle__image-car">
+            <img class="ev-vehicle__image-car-body" src="svg/image_evVehicle_car.svg">
+            <img class="ev-vehicle__image-car-wheels" src="svg/image_evVehicle.svg">
+        </div>
+        <div class="ev-vehicle__message">
+            <p>It looks like you're on the <strong>AGL Electric Car Plan</strong> which means we are currently unable to
+                show your usage. You can still view household usage and costs on your recent bills.</p>
+            <p><strong>For assistance please call us on 1300&nbsp;001&nbsp;515.</strong></p>
+            <p>9am to 5pm AEST Mon to Fri.</p>
+        </div>
+    </div>
+</div>

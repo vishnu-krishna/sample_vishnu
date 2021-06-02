@@ -1,0 +1,60 @@
+{
+  "status": 200,
+  "headers": {},
+  "body": [
+    {
+      "contractNumber": 9400902583,
+      "instalmentPlans": [
+        {
+          "instalments": [
+            {
+              "instalmentDate": "2018-04-10",
+              "instalmentAmount": 152,
+              "dueAmount": 0
+            },
+            {
+              "instalmentDate": "2018-05-21",
+              "instalmentAmount": 152,
+              "dueAmount": 0
+            },
+            {
+              "instalmentDate": "2018-06-24",
+              "instalmentAmount": 152.23,
+              "dueAmount": 152.23
+            }
+          ],
+          "status": "Open"
+        }
+      ]
+    },
+    {
+      "contractNumber": 9400902584,
+      "instalmentPlans": [
+        {
+          "instalments": [
+            {
+              "instalmentDate": "2018-04-18",
+              "instalmentAmount": 167,
+              "dueAmount": 0
+            },
+            {
+              "instalmentDate": "2018-05-25",
+              "instalmentAmount": 167,
+              "dueAmount": 120
+            },
+            {
+              "instalmentDate": "2018-06-28",
+              "instalmentAmount": 167.32,
+              "dueAmount": 167.32
+            }
+          ],
+          "status": "Open"
+        }
+      ]
+    },
+    {
+      "contractNumber": 9400902585,
+      "instalmentPlans": []
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+@import '../../shared/style/variables';
+@import '../../shared/style/mixins';
+
+// Custom variables
+$icon-width-height: 16.5px;
+
+.agl-desktop-wrapper {
+    position: fixed;
+    width: 100%;
+    z-index: 998;
+}
+
+.agl-desktop-header {
+    background-color: $brand-white;
+    height: 70px;
+    box-shadow: $agl-box-shadow;
+    position: relative;
+    z-index: 1;
+
+    &__container {
+        height: 100%;
+        max-width: 1170px;
+        margin: 0px auto;
+        padding-left: 15px;
+        padding-right: 15px;
+        @media #{$agl-layout-mobile} {
+            max-width: 750px;
+        }
+    }
+
+    &-logo {
+        display: inline-block;
+        padding-right: 60px;
+        padding-top: 10px;
+        @media #{$agl-layout-tablet-and-smaller} {
+            padding-right: 40px;
+        }
+    }
+
+    &-menu {
+        display: inline-block;
+        vertical-align: top;
+
+        &__tabs {
+            margin: 0px;
+            padding: 0px;
+
+            li {
+                @include unselectable;
+                display: inline-block;
+                vertical-align: top;
+                height: 70px;
+                margin-right: 20px;
+                margin-top: 0px;
+                cursor: pointer;
+                position: relative;
+                @media #{$agl-layout-tablet} {
+                    margin-right: 5px;
+                }
+
+                &:after {
+                    display: inline-block;
+                    content: '';
+                    height: 5px;
+                    width: 100%;
+                    background-color: $brand-water;
+                    position: absolute;
+                    bottom: 0px;
+                    transform: scaleX(0);
+                    transition: transform 250ms ease;
+                }
+
+                a {
+                    padding: 40px 20px 16px 20px;
+                    line-height: 14px;
+                    display: block;
+                    text-transform: uppercase;
+                    font-family: $primary-font-stack;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    color: $brand-sky;
+                    transition: color 0.3s ease;
+
+                    &:hover,
+                    &:focus {
+                        text-decoration: none;
+                        color: $brand-grey-g1;
+                    }
+
+                    @media #{$agl-layout-tablet} {
+                        padding-left: 13px;
+                        padding-right: 13px;
+                    }
+                }
+
+                &.router-link-active {
+                    &:after {
+                        bottom: 0px;
+                        transform: scaleX(1);
+                    }
+
+                    a {
+                        &:hover,
+                        &:focus {
+                            color: $brand-sky;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &-user {
+        float: right;
+        color: $brand-sky;
+        padding: 35px 0 13px 0;
+        margin-right: -5px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $brand-grey-g1;
+        }
+
+        &__person-icon {
+            display: none;
+            height: 16px;
+            width: 16px;
+            position: relative;
+            top: 2px;
+            @media #{$agl-layout-tablet} {
+                display: inline-block;
+                right: -8px;
+            }
+        }
+
+        &__name {
+            text-transform: capitalize;
+            font-weight: bold;
+            font-size: 14px;
+            font-family: $secondary-font-stack;
+            display: inline-block;
+            @media #{$agl-layout-tablet} {
+                display: none;
+            }
+        }
+
+        &__dropdown-icon {
+            display: inline-block;
+            vertical-align: top;
+            @media #{$agl-layout-tablet} {
+                height: 18px;
+                position: relative;
+                top: -1px;
+            }
+        }
+    }
+}

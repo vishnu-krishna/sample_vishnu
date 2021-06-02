@@ -1,0 +1,78 @@
+@import '../maui';
+
+@include maui-component-reset();
+
+$checkbox-dimension: 21px;
+
+.maui-checkbox {
+
+    &__label {
+        @extend .text-normal;
+        font-weight: normal;
+        display: inline-block;
+        position: relative;
+        padding-left: calc(#{$checkbox-dimension} + #{$space-03});
+        margin-bottom: 0;
+        cursor: pointer;
+        color: $neutral-01;
+        font-family: $body-font-stack;
+
+        &--selected {
+            color: $primary-dark;
+        }
+
+        &--full-width {
+            display: block;
+        }
+    }
+
+    &__input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+
+        &:checked {
+            ~ .maui-checkbox__custom {
+                border: 0;
+                background: $primary-dark;
+
+                &:after {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &__custom {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $checkbox-dimension;
+        height: $checkbox-dimension;
+        border-radius: $border-radius-01;
+        border: 1px solid $neutral-04;
+        overflow: hidden;
+        background-color: $neutral-08;
+
+        &:after {
+            content: '';
+            position: absolute;
+            display: none;
+            width: $checkbox-dimension;
+            height: $checkbox-dimension;
+            background-image: url('svg/maui/termsAndConditions/icon_tick_checkbox.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+    }
+
+    &__content {
+        display: none;
+
+        &--display {
+            padding-top: $space-04;
+            display: block;
+        }
+    }
+}

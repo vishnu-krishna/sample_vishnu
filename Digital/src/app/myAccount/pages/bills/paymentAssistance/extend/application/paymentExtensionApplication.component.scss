@@ -1,0 +1,190 @@
+@import '../../../../../maui/maui';
+
+$footer-background: rgba($primary-dark, 0.06);
+$primary-dark-lighten-15: lighten($primary-dark, 15%);
+$fuel-chip-pad-20: 20px;
+$click-pad: 10px;
+
+@mixin rowStyles {
+    display: flex;
+    justify-content: space-between;
+
+    div {
+        line-height: $line-height-short;
+
+        &:last-child {
+            text-align: right;
+        }
+    }
+}
+
+@mixin blockStyles {
+    text-align: center;
+    font-size: $body-font-size-small;
+    color: $neutral-01;
+}
+
+@mixin messageBlockStyles {
+    @include blockStyles;
+    @include anchor-styling;
+    margin-bottom: $space-04;
+    line-height: $line-height-short;
+}
+
+.opa-extend {
+    padding-top: 50px;
+    max-width: $content-width;
+    margin: 0 auto;
+
+    @media #{$agl-layout-mobile} {
+        padding-left: $space-03;
+        padding-right: $space-03;
+    }
+
+    &__loader {
+        position: relative;
+        height: calc(100vh - 70px);
+
+        @media #{$agl-layout-mobile} {
+            height: calc(100vh - 50px);
+        }
+
+        agl-loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__error {
+        padding: 0 15px;
+    }
+
+    &__header {
+        margin-top: $space-06;
+        margin-bottom: $space-03;
+
+        @media #{$agl-layout-mobile} {
+            margin-top: $space-04;
+        }
+    }
+
+    &__options {
+        margin-bottom: $space-04;
+        padding-bottom: $space-04;
+        border-bottom: 1px solid $neutral-04;
+
+        &-header {
+            @extend .text-normal-long;
+            padding-bottom: $space-03;
+            color: $neutral-01;
+        }
+    }
+
+    &__summary {
+        margin-top: $space-04;
+
+        &-wrapper {
+            padding: 0 $space-04;
+            padding-top: $space-04;
+            margin-bottom: $space-04;
+
+            @media #{$agl-layout-mobile} {
+                padding: 0 $space-03;
+                padding-top: $fuel-chip-pad-20;
+            }
+        }
+
+        &-wrapper--with-flash-message {
+            margin-bottom: $space-03;
+
+            @media #{$agl-layout-mobile} {
+                margin-bottom: $space-03;
+            }
+        }
+
+        &-body {
+            padding-bottom: $space-04;
+
+            &-header {
+                font-family: $display-font-stack;
+                font-size: $display-font-size-delta;
+                line-height: $line-height-short;
+                color: $primary-dark;
+            }
+
+            &-table-row {
+                @include rowStyles;
+
+                div {
+                    margin-top: $space-04;
+                }
+            }
+        }
+
+        &-footer {
+            @include rowStyles;
+            margin: 0 (-$space-04);
+            padding: $fuel-chip-pad-20 $space-04;
+            background-color: $footer-background;
+            color: $primary-dark;
+            font-weight: bold;
+
+            @media #{$agl-layout-mobile} {
+                margin: 0 (-$space-03);
+                padding: $fuel-chip-pad-20 $space-03;
+            }
+        }
+    }
+
+    &__payment-extension-error {
+        margin-bottom: $space-06;
+
+        @media #{$agl-layout-mobile} {
+            margin: 0 (-$space-03) $space-05 (-$space-03);
+        }
+    }
+
+    &__call-us-header-message {
+        @include messageBlockStyles;
+
+        a {
+            white-space: nowrap;
+        }
+    }
+
+    &__call-us-message {
+        @extend .text-small;
+        @include anchor-styling;
+        text-align: left;
+        padding-top: $space-03;
+
+        a {
+            white-space: nowrap;
+        }
+    }
+
+    &__disclaimer-message {
+        @include messageBlockStyles;
+        font-size: $body-font-size-smallest;
+        line-height: 17px;
+        margin-bottom: $space-06;
+
+        div {
+            &:last-child {
+                margin-top: $space-01;
+            }
+        }
+
+    }
+
+    &__cta {
+        @include blockStyles;
+
+        &-button {
+            margin-bottom: $space-04;
+        }
+
+    }
+}

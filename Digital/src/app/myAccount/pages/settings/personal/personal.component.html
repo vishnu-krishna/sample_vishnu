@@ -1,0 +1,95 @@
+<div class="settings-container">
+    <div class="row">
+        <div class="col-md-12">
+            <mat-card>
+                <div class="main-card-header">Personal</div>
+                <div class="main-card-message">
+                    We are busy working hard on the new My Account and this page isn't quite finished. <br/>
+                    The below sections will open in a new window on the existing site.
+                </div>
+                <div class="main-card-options">
+                    <div class="main-card-options__edit settings-container__contact-details">
+                        <h4>Contact details</h4>
+                        <a *ngIf="!isFeatureFlagContactDetails && !!updateDetailsUrl"
+                           class="settings-container__contact-details-link"
+                           href="{{updateDetailsUrl}}" target="_blank">Edit</a>
+                        <a *ngIf="isFeatureFlagContactDetails && !hasMultipleBusinessPartners"
+                           class="settings-container__contact-details-link"
+                           [routerLink]="['/settings/contactdetails']">Edit</a>
+                    </div>
+                    <div *ngIf="!hasMultipleBusinessPartners" class="main-card-options__content">
+                        Update your personal details.
+                    </div>
+                    <div *ngIf="isFeatureFlagContactDetails">
+                        <agl-contact-details-update-confirmation class="settings-container__contact-details--success">
+                        </agl-contact-details-update-confirmation>
+
+                        <agl-maui-flash-message *ngIf="hasMultipleBusinessPartners"
+                                                class="settings-container__contact-details--info" type="Inform">
+                            <div heading>Sorry, Contact Details cannot be updated online for your account.</div>
+                            <div subheading>
+                                <agl-webchat #contactDetailsMultiBPChat
+                                             chatButtonId="LPContactDetailsMultipleBusinessPartners"
+                                             [contentIsHostedInLivePerson]="false"
+                                             [autoScanForWebChatAvailability]="true">
+                                    <div agent-status-unresolved>&nbsp;<!-- reserve some space to reduce the popping effect --></div>
+                                    <div agent-offline>
+                                        If you wish to update your contact details, contact us 24/7 on <a href="tel:131 245">131 245</a>.
+                                        <br class="visible-md visible-lg">
+                                        Calling from overseas? You can call us on <a href="tel:+61386336000">+61 3 8633 6000</a>.
+                                    </div>
+                                    <div agent-online>
+                                        If you wish to update your contact details, <a
+                                        (click)="contactDetailsMultiBPChat.requestChat()">chat with us now</a>.
+                                    </div>
+                                </agl-webchat>
+                            </div>
+                        </agl-maui-flash-message>
+                    </div>
+                </div>
+
+                <div class="main-card-options" *ngIf="!isFeatureFlagLoginDetails">
+                    <div class="main-card-options__edit">
+                        <h4>Change password</h4>
+                        <a href="{{changePasswordUrl}}" target="_blank">Edit</a>
+                    </div>
+                    <div class="main-card-options__content">
+                        Change your My Account password.
+                    </div>
+                </div>
+
+                <div class="main-card-options" *ngIf="isFeatureFlagLoginDetails">
+                    <div class="main-card-options__edit">
+                        <h4>Login details</h4>
+                        <a [href]="loginDetailsUrl">Edit</a>
+                    </div>
+                    <div class="main-card-options__content">
+                        Manage your personal and login details.
+                    </div>
+                </div>
+
+                <div class="main-card-options">
+                    <div class="main-card-options__edit">
+                        <h4>Authorised person</h4>
+                        <a href="{{manageAuthorizedPersonsUrl}}" target="_blank">Manage</a>
+                    </div>
+                    <div class="main-card-options__content">
+                        Give a person authority to make account enquiries or updates.
+                    </div>
+                </div>
+                <div class="main-card-options">
+                    <agl-concession></agl-concession>
+                </div>
+                <div *ngIf="!isFeatureFlagNotifications" class="main-card-options">
+                    <div class="main-card-options__edit">
+                        <h4>Communication</h4>
+                        <a id="contact-details-link" href="{{preferencesUrl}}" target="_blank">Manage</a>
+                    </div>
+                    <div class="main-card-options__content">
+                        Manage your communication preferences.
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

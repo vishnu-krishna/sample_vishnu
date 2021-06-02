@@ -1,0 +1,51 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "account": "59553974",
+            "contract": "9035268231",
+            "costs": [
+                {
+                    "value": 413.81,
+                    "startDateTime": "2016-01-05T00:00:00",
+                    "endDateTime": "2016-04-01T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 274.38,
+                    "startDateTime": "2016-04-02T00:00:00",
+                    "endDateTime": "2016-06-30T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 444.13,
+                    "startDateTime": "2016-07-01T00:00:00",
+                    "endDateTime": "2016-10-01T00:00:00",
+                    "estimatedRead": false
+                }
+            ],
+            "consumption": [
+                {
+                    "value": 1442,
+                    "startDateTime": "2016-01-05T00:00:00",
+                    "endDateTime": "2016-04-01T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 1149,
+                    "startDateTime": "2016-04-02T00:00:00",
+                    "endDateTime": "2016-06-30T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 1538,
+                    "startDateTime": "2016-07-01T00:00:00",
+                    "endDateTime": "2016-10-01T00:00:00",
+                    "estimatedRead": false
+                }
+            ],
+            "hasNoBill": false
+        }
+    ]
+}

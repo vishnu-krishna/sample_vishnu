@@ -1,0 +1,12 @@
+{
+    "status": 400,
+    "headers": {},
+    "body": {
+        "message": "Eligibility Check Failed.No valid Contracts Found",
+        "internalError": {
+            "errorId": "ZIBI105",
+            "errorNumber": "147",
+            "description": "Eligibility Check Failed.No valid Contracts Found"
+        }
+    }
+}

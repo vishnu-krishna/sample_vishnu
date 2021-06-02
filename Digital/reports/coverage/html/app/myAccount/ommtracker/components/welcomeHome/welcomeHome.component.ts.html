@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\ommtracker\components\welcomeHome\welcomeHome.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/ommtracker/components/welcomeHome/</a> welcomeHome.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>14/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">44.44% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">48% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>12/25</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, Input, OnInit } from '@angular/core';
+import { TrackerMode } from '../../../../shared/globals/ommTrackerConstants';
+import { HeaderViewModel } from '../../../../shared/model/ommTracker/trackStatusHeader.model';
+import { ConfigService } from '../../../../shared/service/config.service';
+&nbsp;
+import { DataLayerService } from '../../../../shared/service/dataLayer.service';
+&nbsp;
+declare let leanengage;
+&nbsp;
+@Component({
+    selector: 'agl-tracker-welcome-home',
+    template: require('./welcomeHome.component.html'),
+    styles: [require('./welcomeHome.component.scss')]
+})
+export class WelcomeHomeComponent implements OnInit {
+    @Input() public headerStatus: HeaderViewModel;
+    @Input() public trackerMode: TrackerMode;
+    @Input() public referenceCode: string;
+    @Input() public accountName: string;
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >surveyCompleted: boolean = false;</span>
+    constructor(
+        public <span class="cstat-no" title="statement not covered" >configService: ConfigService,</span>
+        private <span class="cstat-no" title="statement not covered" >dataLayerService: DataLayerService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" ></span></span></span>
+    ) {
+&nbsp;
+    }
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public ngOnInit() {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.dataLayerService.pushSingleEvents({</span>
+            event: 'VirtualPageview',
+            virtualPageURL: '/welcomeHome',
+            virtualPageTitle: 'OMMWelcomeHomePage'
+        });
+<span class="cstat-no" title="statement not covered" >        if (localStorage.getItem('ommTracker.surveyCompleted') &amp;&amp; localStorage.getItem('ommTracker.surveyCompleted') === this.referenceCode) {</span>
+<span class="cstat-no" title="statement not covered" >            this.surveyCompleted = true;</span>
+<span class="cstat-no" title="statement not covered" >            this.dataLayerService.pushSingleEvents({ event: 'OMM Tracker', state: 'COMPLETE' });</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.dataLayerService.pushSingleEvents({ event: 'OMM Tracker', state: 'SURVEY' });</span>
+&nbsp;
+            let leanAppId = <span class="cstat-no" title="statement not covered" >this.configService.current.leanEngageTrackerAppId;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            leanengage('triggerSurvey', 'one-minute-move-process-survey', {</span>
+                appId: leanAppId,
+                elementId: 'tracker-survey',
+                customData: { referenceNumber: this.referenceCode },
+                onComplete: <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    localStorage.setItem('ommTracker.surveyCompleted', this.referenceCode);</span>
+<span class="cstat-no" title="statement not covered" >                    this.surveyCompleted = true;</span>
+<span class="cstat-no" title="statement not covered" >                    this.dataLayerService.pushSingleEvents({ event: 'OMM Tracker', state: 'COMPLETE' });</span>
+                }
+            });
+        }
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

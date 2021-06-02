@@ -1,0 +1,1397 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\mockManager\mockIdentity.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/myAccount/mockManager/</a> mockIdentity.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">17.78% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>40/225</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">14.29% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>12/84</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.36% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/56</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">17.73% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>36/203</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
+&nbsp;
+import { Http } from '@angular/http';
+import * as jwtsimple from 'jwt-simple';
+import * as _ from 'lodash';
+import { Observable } from 'rxjs/Observable';
+&nbsp;
+import { AccountApiModel } from './../../shared/service/api.service';
+import { MockIndex } from './mockIndex';
+import { MockCustomer } from './models/mockCustomer';
+&nbsp;
+import { ActivatedRoute } from '@angular/router';
+import { Guid } from '../../shared/utils/guid';
+import { FeatureFlagService } from '../services/featureFlag.service';
+&nbsp;
+@Component({
+    selector: 'agl-mockidentity',
+    template: require('./mockIdentity.component.html'),
+    styles: [require('./mockIdentity.component.scss')]
+})
+export class MockIdentityComponent implements OnInit {
+&nbsp;
+    // Filters
+    public <span class="cstat-no" title="statement not covered" >showGas: boolean = true;</span>
+    public <span class="cstat-no" title="statement not covered" >showElec: boolean = true;</span>
+    public <span class="cstat-no" title="statement not covered" >showSolar: boolean = true;</span>
+    public <span class="cstat-no" title="statement not covered" >showSingleAccount: boolean = true;</span>
+    public <span class="cstat-no" title="statement not covered" >showMultiAccount: boolean = true;</span>
+    public <span class="cstat-no" title="statement not covered" >showSingleContract: boolean = true;</span>
+    public <span class="cstat-no" title="statement not covered" >showMultiContract: boolean = true;</span>
+    public <span class="cstat-no" title="statement not covered" >showEV: boolean = true;</span>
+    public <span class="cstat-no" title="statement not covered" >tags: Tag[] = [];</span>
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >filterTitleText: string = '';</span>
+    public <span class="cstat-no" title="statement not covered" >filterNameIdText: string = '';</span>
+    public filterControlAccountComparisonType: string;
+    public <span class="cstat-no" title="statement not covered" >filterControlAccountLengthEnabled: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >filterControlAccountLength: number = 1;</span>
+    public <span class="cstat-no" title="statement not covered" >filterControlSelectedElec: string = 'Any';</span>
+    public <span class="cstat-no" title="statement not covered" >filterControlSelectedGas: string = 'Any';</span>
+    public <span class="cstat-no" title="statement not covered" >filterControlSelectedEV: string = 'Any';</span>
+    public <span class="cstat-no" title="statement not covered" >filterControlSelectedSolar: string = 'Any';</span>
+    public <span class="cstat-no" title="statement not covered" >filterControlSelectedInflight: string = 'Any';</span>
+    public <span class="cstat-no" title="statement not covered" >filterControlSelectedRestricted: string = 'Any';</span>
+&nbsp;
+    public mockCustomer: MockCustomer;
+    public <span class="cstat-no" title="statement not covered" >filteredMockCustomers: MockCustomer[] = [];</span>
+    // A list of the mock accounts we can use
+    public <span class="cstat-no" title="statement not covered" >mockCustomers: MockCustomer[] = [];</span>
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >numericalComparisonTypes: string[] = [</span>
+        'Any',
+        'Equal',
+        'Not equal',
+        'Less than',
+        'Less than or equal to',
+        'More than',
+        'More than or equal to',
+    ];
+    public <span class="cstat-no" title="statement not covered" >booleanComparisonTypes: string[] = [</span>
+        'Any',
+        'Must have',
+        'Must not have'
+    ];
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >payload = {</span>
+        'aud': 'https://aglsts.accesscontrol-website.windows.net/',
+        'iss': 'AGL Azure',
+        'nbf': 0,
+        'exp': 0,
+        'http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod': 'OAuth2',
+        'http://identity.agl.com.au/claims/profileclaims/customertype': 'MM',
+        'http://identity.agl.com.au/claims/profileclaims/betaeligible': 'True'
+    };
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >tokenSecret: string = `myaccountmocking`;</span>
+&nbsp;
+    public nameFilterEvents: Subject&lt;any&gt;;
+    public nameIdFilterEvents: Subject&lt;any&gt;;
+&nbsp;
+    constructor(
+        public <span class="cstat-no" title="statement not covered" >mockIndex: MockIndex,</span>
+        public <span class="cstat-no" title="statement not covered" >http: Http<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >activatedRoute: ActivatedRoute<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >featureFlagService: FeatureFlagService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" ></span></span></span>
+    ) {
+<span class="cstat-no" title="statement not covered" >        this.nameFilterEvents = new Subject();</span>
+<span class="cstat-no" title="statement not covered" >        this.nameIdFilterEvents = new Subject();</span>
+<span class="cstat-no" title="statement not covered" >        this.listenToTextFilters();</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public ngOnInit() {</span></span>
+        let allFeatureFlagsTrueRequested = <span class="cstat-no" title="statement not covered" >this.activatedRoute.snapshot.queryParamMap.get('afft') === '1';</span>
+<span class="cstat-no" title="statement not covered" >        if (allFeatureFlagsTrueRequested) {</span>
+<span class="cstat-no" title="statement not covered" >            this.featureFlagService.setAllFeatureFlags(true);</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.mockIndex.loadMockCustomers().subscribe(</span>
+            (mockCustomers: MockCustomer[]<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.mockCustomers = mockCustomers;</span>
+                let tags = <span class="cstat-no" title="statement not covered" >mockCustomers.filter((mc<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >mc.tags &amp;&amp; mc.tags.length)</span></span></span>
+&nbsp;
+                                               .map((mc<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >mc.tags.map((tag<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >new Tag(tag, false))</span></span>)</span></span>;
+<span class="cstat-no" title="statement not covered" >                this.tags = _.orderBy(_.uniqBy([].concat(...tags), 'key'), 'displayName');</span>
+<span class="cstat-no" title="statement not covered" >                for (let tag<span class="cstat-no" title="statement not covered" ></span> of this.tags) {</span>
+                    let val: string = <span class="cstat-no" title="statement not covered" >localStorage.getItem(`selfService.mockIdentity.tags.${tag.key}`);</span>
+<span class="cstat-no" title="statement not covered" >                    if (val &amp;&amp; val.toLowerCase() === `true`) {</span>
+<span class="cstat-no" title="statement not covered" >                        tag.isChecked = true;</span>
+                    }
+                }
+<span class="cstat-no" title="statement not covered" >                this.populateData();</span>
+            },
+            (err<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                console.warn('Unable to retrieve mock business partners from mockIndex');</span>
+<span class="cstat-no" title="statement not covered" >                Observable.throw(err);</span>
+            }
+        );
+&nbsp;
+    }
+&nbsp;
+    public tagChanged(tag: Tag, event: any<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        tag.isChecked = event.target.checked;</span>
+<span class="cstat-no" title="statement not covered" >        localStorage.setItem(`selfService.mockIdentity.tags.${tag.key}`, `${tag.isChecked}`);</span>
+<span class="cstat-no" title="statement not covered" >        this.updateFilters();</span>
+    }
+&nbsp;
+    public onChangeFilterAccountComparison(event: any<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.filterControlAccountComparisonType = event.target.value;</span>
+<span class="cstat-no" title="statement not covered" >        this.filterControlAccountLengthEnabled = (this.filterControlAccountComparisonType !== 'Any');</span>
+<span class="cstat-no" title="statement not covered" >        this.updateFilters();</span>
+    }
+&nbsp;
+    public onChangeFilterAccountLength(event: any<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        if (!isNaN(event.target.value)) {</span>
+<span class="cstat-no" title="statement not covered" >            this.filterControlAccountLength = parseInt(event.target.value, 0);</span>
+<span class="cstat-no" title="statement not covered" >            this.updateFilters();</span>
+        }
+    }
+&nbsp;
+    public onChangeFilterElec(event: any<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.filterControlSelectedElec = event.target.value;</span>
+<span class="cstat-no" title="statement not covered" >        this.updateFilters();</span>
+    }
+&nbsp;
+    public onChangeFilterGas(event: any<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.filterControlSelectedGas = event.target.value;</span>
+<span class="cstat-no" title="statement not covered" >        this.updateFilters();</span>
+    }
+&nbsp;
+    public onChangeFilterEv(event: any<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.filterControlSelectedEV = event.target.value;</span>
+<span class="cstat-no" title="statement not covered" >        this.updateFilters();</span>
+    }
+&nbsp;
+    public onChangeFilterSolar(event: any<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.filterControlSelectedSolar = event.target.value;</span>
+<span class="cstat-no" title="statement not covered" >        this.updateFilters();</span>
+    }
+&nbsp;
+    public onChangeFilterInflight(event: any<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.filterControlSelectedInflight = event.target.value;</span>
+<span class="cstat-no" title="statement not covered" >        this.updateFilters();</span>
+    }
+&nbsp;
+    public onChangeFilterRestricted(event: any<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.filterControlSelectedRestricted = event.target.value;</span>
+<span class="cstat-no" title="statement not covered" >        this.updateFilters();</span>
+    }
+&nbsp;
+    public onKeyUp(event: any<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        console.log(event);</span>
+    }
+&nbsp;
+    public onClickInfo(mockBusinessPartner: MockCustomer<span class="fstat-no" title="function not covered" >) {</span>
+        // TODO: show modal with more info
+    }
+&nbsp;
+    public onClickLogin(mockBusinessPartner: MockCustomer<span class="fstat-no" title="function not covered" >) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.mockCustomer = mockBusinessPartner;</span>
+&nbsp;
+        let now = <span class="cstat-no" title="statement not covered" >new Date();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.payload['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'] = this.mockCustomer.emailAddress;</span>
+<span class="cstat-no" title="statement not covered" >        this.payload['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'] = this.mockCustomer.businessPartnerNumber;</span>
+<span class="cstat-no" title="statement not covered" >        this.payload['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/authenticationinstant'] = now.toISOString();</span>
+<span class="cstat-no" title="statement not covered" >        this.payload['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/mockserversessionid'] = Guid.newGuid();</span>
+&nbsp;
+        // Encode the fake token
+        let mockToken = <span class="cstat-no" title="statement not covered" >jwtsimple.encode(this.payload, this.tokenSecret);</span>
+&nbsp;
+        // Redirect to the site with the token appended, the same as in a deployed environment
+<span class="cstat-no" title="statement not covered" >        setTimeout(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            window.location.href = `${window.location.origin}/?bearer=${mockToken}`;</span>
+        }, 100);
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    private updateFilters(): void {</span></span>
+&nbsp;
+        let filteredCustomers = <span class="cstat-no" title="statement not covered" >this.mockCustomers;</span>
+&nbsp;
+        // If we need to apply a text filter
+<span class="cstat-no" title="statement not covered" >        if (this.filterTitleText &amp;&amp; this.filterTitleText.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            filteredCustomers = filteredCustomers.filter(</span>
+                (mc: MockCustomer<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    return (mc.title.toLowerCase().indexOf(this.filterTitleText.toLowerCase()) !== -1);</span>
+                }
+            );
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.filterNameIdText &amp;&amp; this.filterNameIdText.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            filteredCustomers = filteredCustomers.filter(</span>
+                (mc: MockCustomer<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    return (mc.businessPartnerNumber.toLowerCase().indexOf(this.filterNameIdText.toLowerCase()) !== -1);</span>
+                }
+            );
+        }
+&nbsp;
+        let boolFilters: BooleanFilter[] = <span class="cstat-no" title="statement not covered" >[</span>
+            { val: this.filterControlSelectedElec, prop: 'hasElecContract' },
+            { val: this.filterControlSelectedGas, prop: 'hasGasContract' },
+            { val: this.filterControlSelectedEV, prop: 'hasEvContract' },
+            { val: this.filterControlSelectedSolar, prop: 'hasSolarContract' },
+            { val: this.filterControlSelectedInflight, prop: 'hasInflight' },
+            { val: this.filterControlSelectedRestricted, prop: 'hasRestricted' },
+        ];
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.filterControlAccountComparisonType !== `Any`) {</span>
+<span class="cstat-no" title="statement not covered" >            filteredCustomers = filteredCustomers.filter(</span>
+                (mc: MockCustomer<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+&nbsp;
+                    let numberOfAccounts: number = <span class="cstat-no" title="statement not covered" >mc.accounts.length;</span>
+                    let filterAccountLength: number = <span class="cstat-no" title="statement not covered" >this.filterControlAccountLength;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    switch (this.filterControlAccountComparisonType) {</span>
+                        case 'Equal': {
+<span class="cstat-no" title="statement not covered" >                            return (numberOfAccounts === filterAccountLength);</span>
+                        }
+                        case 'Not equal': {
+<span class="cstat-no" title="statement not covered" >                            return (numberOfAccounts !== filterAccountLength);</span>
+                        }
+                        case 'Less than': {
+<span class="cstat-no" title="statement not covered" >                            return (numberOfAccounts &lt; filterAccountLength);</span>
+                        }
+                        case 'Less than or equal to': {
+<span class="cstat-no" title="statement not covered" >                            return (numberOfAccounts &lt;= filterAccountLength);</span>
+                        }
+                        case 'More than': {
+<span class="cstat-no" title="statement not covered" >                            return (numberOfAccounts &gt; filterAccountLength);</span>
+                        }
+                        case 'More than or equal to': {
+<span class="cstat-no" title="statement not covered" >                            return (numberOfAccounts &gt;= filterAccountLength);</span>
+                        }
+                        default: {
+<span class="cstat-no" title="statement not covered" >                            return true;</span>
+                        }
+                    }
+                }
+            );
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        for (let filter<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span> of boolFilters) {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (filter.val !== `Any`) {</span>
+<span class="cstat-no" title="statement not covered" >                filteredCustomers = filteredCustomers.filter(</span>
+                    (mc: MockCustomer<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        if (filter.val === 'Must have') {</span>
+<span class="cstat-no" title="statement not covered" >                            return mc[filter.prop];</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        if (filter.val === 'Must not have') {</span>
+<span class="cstat-no" title="statement not covered" >                            return !mc[filter.prop];</span>
+                        }
+                    }
+                );
+            }
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        filteredCustomers = filteredCustomers.filter(</span>
+            (mc: MockCustomer<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                return this.matchesFilterTagCriteria(mc.tags);</span>
+            }
+        );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.filteredMockCustomers = filteredCustomers;</span>
+&nbsp;
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    private listenToTextFilters() {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.nameFilterEvents</span>
+            .asObservable()
+            .map((x<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                return &lt;string&gt; x.target.value;</span>
+            })
+            .distinctUntilChanged()
+            .subscribe(
+                (x<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    this.filterTitleText = x;</span>
+<span class="cstat-no" title="statement not covered" >                    this.updateFilters();</span>
+                }
+        );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.nameIdFilterEvents</span>
+            .asObservable()
+            .map((x<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                return &lt;string&gt; x.target.value;</span>
+            })
+            .distinctUntilChanged()
+            .subscribe(
+                (x<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    this.filterNameIdText = x;</span>
+<span class="cstat-no" title="statement not covered" >                    this.updateFilters();</span>
+                }
+        );
+    }
+&nbsp;
+    private matchesFilterTagCriteria(customerTagKeys: string[]<span class="fstat-no" title="function not covered" >): boolean {</span>
+        let matchesCriteria: boolean = <span class="cstat-no" title="statement not covered" >this.tags.filter((t<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >t.isChecked)</span></span>.length === 0;</span> // default is true if no selected tags
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (customerTagKeys &amp;&amp; this.tags.some((t<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >t.isChecked &amp;&amp; customerTagKeys.some((ct<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >ct.toUpperCase() === t.key.toUpperCase())</span></span>)</span></span>) {</span>
+<span class="cstat-no" title="statement not covered" >            matchesCriteria = true;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return matchesCriteria;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    private populateData() {</span></span>
+&nbsp;
+        let customerInfoData: Array&lt;Observable&lt;AccountApiModel[]&gt;&gt; = <span class="cstat-no" title="statement not covered" >[];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.mockCustomers.forEach(</span>
+            (mc: MockCustomer<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                customerInfoData.push(this.loadAccounts(mc.businessPartnerNumber));</span>
+            }
+        );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        Observable</span>
+            .forkJoin(customerInfoData)
+            // tslint:disable-next-line:array-type
+            .subscribe(
+                    (results: AccountApiModel[][]<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                        this.mockCustomers.forEach(</span>
+                            (customer: MockCustomer, index: number<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+                                let callResults = <span class="cstat-no" title="statement not covered" >results[index];</span>
+<span class="cstat-no" title="statement not covered" >                                customer.accounts = callResults;</span>
+&nbsp;
+                                // do some data processing
+<span class="cstat-no" title="statement not covered" >                                for (let account<span class="cstat-no" title="statement not covered" ></span> of customer.accounts) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                                    if (account.contracts.filter((contract<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >contract.fuelType.toLowerCase() === 'gas')</span></span>.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                                        customer.hasGasContract = true;</span>
+                                    }
+<span class="cstat-no" title="statement not covered" >                                    if (account.contracts.filter((contract<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >contract.fuelType.toLowerCase() === 'electricity')</span></span>.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                                        customer.hasElecContract = true;</span>
+                                    }
+<span class="cstat-no" title="statement not covered" >                                    if (account.contracts.filter((contract<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >contract.hasSolar)</span></span>.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                                        customer.hasSolarContract = true;</span>
+                                    }
+<span class="cstat-no" title="statement not covered" >                                    if (account.contracts.filter((contract<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >contract.hasElectricVehicle)</span></span>.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                                        customer.hasEvContract = true;</span>
+                                    }
+<span class="cstat-no" title="statement not covered" >                                    if (account.contracts.filter((contract<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >contract.inFlight)</span></span>.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                                        customer.hasInflight = true;</span>
+                                    }
+<span class="cstat-no" title="statement not covered" >                                    if (account.contracts.filter((contract<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >contract.isRestricted)</span></span>.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                                        customer.hasRestricted = true;</span>
+                                    }
+                                }
+                            }
+                        );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                        this.filteredMockCustomers = this.mockCustomers;</span>
+<span class="cstat-no" title="statement not covered" >                        this.loadSettings();</span>
+<span class="cstat-no" title="statement not covered" >                        this.updateFilters();</span>
+                    }
+            );
+    }
+&nbsp;
+    private loadAccounts(customerNameId: string<span class="fstat-no" title="function not covered" >): Observable&lt;AccountApiModel[]&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (customerNameId &amp;&amp; customerNameId.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            return this.http</span>
+                .get(`/_mockData/BusinessPartnerMock/${customerNameId}/aglWebApi/api/accounts/list/response.json`)
+                .map(
+                        (x<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+                        let result = <span class="cstat-no" title="statement not covered" >x.json();</span>
+<span class="cstat-no" title="statement not covered" >                        if (result) {</span>
+<span class="cstat-no" title="statement not covered" >                            if (result.body) {</span>
+<span class="cstat-no" title="statement not covered" >                                return result.body;</span>
+                            }
+<span class="cstat-no" title="statement not covered" >                            return result;</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        return undefined;</span>
+                    }
+                );
+        }
+<span class="cstat-no" title="statement not covered" >        console.error(`ERROR: customerNameId was empty`);</span>
+<span class="cstat-no" title="statement not covered" >        return Observable.throw(`ERROR: customerNameId was empty`);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private loadSettings() {</span>
+&nbsp;
+        let currentValue = <span class="cstat-no" title="statement not covered" >sessionStorage.getItem(`Bearer`);</span>
+<span class="cstat-no" title="statement not covered" >        if (currentValue &amp;&amp; currentValue.length &gt; 0) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            try {</span>
+                let decoded = <span class="cstat-no" title="statement not covered" >jwtsimple.decode(currentValue, this.tokenSecret);</span>
+                let mockAccountNumber = <span class="cstat-no" title="statement not covered" >decoded['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'];</span>
+<span class="cstat-no" title="statement not covered" >                if (mockAccountNumber &amp;&amp; mockAccountNumber.length &gt; 0) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    this.mockCustomer = _.find(</span>
+                        this.mockCustomers,
+                        (p<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >p.businessPartnerNumber === mockAccountNumber</span></span>
+                    );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    if (this.mockCustomer) {</span>
+<span class="cstat-no" title="statement not covered" >                        console.log(`Token detected, mocking account: ${mockAccountNumber} for ${this.mockCustomer.title}`);</span>
+                    }
+                }
+&nbsp;
+            } catch (err) {
+<span class="cstat-no" title="statement not covered" >                console.warn(`The bearer token could not be decoded`);</span>
+            }
+&nbsp;
+        }
+&nbsp;
+    }
+}
+&nbsp;
+export class Tag {
+<span class="fstat-no" title="function not covered" >    public get displayName(): string {</span>
+<span class="cstat-no" title="statement not covered" >        return _.startCase(this.key);</span>
+    }
+&nbsp;
+    constructor(public readonly <span class="cstat-no" title="statement not covered" >key: string,</span>
+                public <span class="cstat-no" title="statement not covered" >isChecked: boolean<span class="fstat-no" title="function not covered" >)</span> {</span>
+    }
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >export class BooleanFilter {</span>
+    public val: string;
+    public prop: keyof MockCustomer;
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

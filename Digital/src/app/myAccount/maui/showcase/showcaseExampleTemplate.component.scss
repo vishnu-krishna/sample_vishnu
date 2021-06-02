@@ -1,0 +1,15 @@
+@import '../maui';
+
+.example {
+    margin-bottom: $space-04;
+    font-size: $body-font-size-normal;
+
+    &-label {
+        display: block;
+        margin-bottom: $space-02;
+    }
+
+    &-content {
+        display: block;
+    }
+}

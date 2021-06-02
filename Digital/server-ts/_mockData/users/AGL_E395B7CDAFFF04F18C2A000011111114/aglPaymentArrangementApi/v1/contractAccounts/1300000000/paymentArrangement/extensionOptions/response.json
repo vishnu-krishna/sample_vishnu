@@ -1,0 +1,109 @@
+{
+    "status": 200,
+    "headers": {},
+    "body":
+        {
+            "contractAccountNumber": 1300000000,
+            "extensionOptions": [
+                {
+                    "contractNumber": 1311111111,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Invalid for OPA: Contract Account hs an auto Assist Routing available",
+                        "internalError": {
+                            "errorNumber": "015",
+                            "description": "Broken arrangement etc (route to webchat)"
+                        }
+                    }
+                },
+                {
+                    "contractNumber": 1322222222,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Invalid for OPA: Contract & 1 has an open balance or less than &2",
+                        "internalError": {
+                            "errorNumber": "016",
+                            "description": "Your balance is below $10"
+                        }
+                    }
+                },
+                {
+                    "contractNumber": 1333333333,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Invalid for OPA: Contract & 1 has an open balance or less than &2",
+                        "internalError": {
+                            "errorNumber": "016",
+                            "description": "You dont' has an open bill (=$0 account balance)"
+                        }
+                    }
+                },
+                {
+                    "contractNumber": 1344444444,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Invalid for OPA: Contract & 1 has an open balance or less than &2",
+                        "internalError": {
+                            "errorNumber": "016",
+                            "description": "Your account is in credit (<$0 account balance)"
+                        }
+                    }
+                },
+                {
+                    "contractNumber": 1355555555,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Invalid for OPA: Contract &1 hass an open balance of more than &2",
+                        "internalError": {
+                            "errorNumber": "017",
+                            "description": "Your balance is above $5000"
+                        }
+                    }
+                },
+                {
+                    "contractNumber": 1366666666,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Unable to calculate next business day",
+                        "internalError": {
+                            "errorNumber": "21",
+                            "description": "Generic Ineligible (tech error)"
+                        }
+                    }
+                },
+                {
+                    "contractNumber": 1377777777,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Invalid for OPA: Contract &1 has an active Promise to pay.",
+                        "internalError": {
+                            "errorNumber": "27",
+                            "description": "If this response and extended date available"
+                        }
+                    }
+                },
+                {
+                    "contractNumber": 1388888888,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Invalid for OPA: Contract &1 has an active Promise to pay.",
+                        "internalError": {
+                            "errorNumber": "27",
+                            "description": "If this response and no extended date available"
+                        }
+                    }
+                },
+                {
+                    "contractNumber": 1399999999,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Invalid for OPA: Contract &1 has no Date available for Payment Extensions",
+                        "internalError": {
+                            "errorNumber": "28",
+                            "description": "Ineligible"
+                        }
+                    }
+                }
+            ]
+        }
+}

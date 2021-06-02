@@ -1,0 +1,91 @@
+<div class="payment-amount" id="payment-amount">
+
+    <div id="payment-amount-title" class="payment-amount__title">Payment amount</div>
+
+    <div id="payment-amount-text-section" *ngIf="currentView !== PaymentAmountView.PAYGBonusSelect">
+        <!-- PAYG - Debit description -->
+        <div id="payment-amount-debit-bonus-text" class="payment-amount__description" *ngIf="showDebitDescription()">{{content.bonusTextDebit}}</div>
+        <div id="payment-amount-debit-bonus-outstanding-text" class="payment-amount__description" *ngIf="paymentDetails.showOutstandingBillPayg">Pay the ${{paymentDetails.outstandingBill}} owing from your old plan PLUS your first top-up amount.</div>
+        <!-- PAYG - Credit free selection description -->
+        <!--<div id="payment-amount-bonus-text" class="payment-amount__description" *ngIf="currentView === PaymentAmountView.PAYGFreeText">Bonus amounts may not include any pending payments</div>-->
+
+        <!-- Payment Amount for all views -->
+        <form id="payment-amount-form" class="payment-amount__form" [formGroup]="form">
+            <span id="payment-amount-symbol" class="payment-amount__symbol" [class.payment-amount__symbol--invalid]="form.controls.amount.touched && !form.controls.amount.valid">$</span>
+            <!-- text entry for all views -->
+            <input id="payment-amount-input" #amountField class="payment-amount__text" step="0.01" maxLength="10" [class.ng-invalid]="form.controls.amount.touched && !form.controls.amount.valid" (blur)="onBlurNumberTwoDecimalInput($event)" (keyup)="onKeyup($event)" type="number" aglCurrencyField formControlName="amount">
+            <!-- PAYG free selection bonus amount -->
+            <div id="payment-amount-input-bonus" *ngIf="currentView === PaymentAmountView.PAYGFreeText" class="payment-amount__bonus" [class.loading-background]="isLoading">+ ${{bonus}} bonus <img src="svg/Button_Load_spinner.svg" class="is-loading" *ngIf = "isLoading"></div>
+            <!-- validation -->
+            <div id="payment-amount-min-validation" class="agl-error" *ngIf="isMinAmountInvalid()">{{content.paymentAmountMinValidationError}}</div>
+            <div id="payment-amount-paypal-validation" class="agl-error" *ngIf="isPaypalMaxInvalid()">{{content.paymentAmountPaypalMaxValidationError}}</div>
+            <div id="payment-amount-cc-validation" class="agl-error" *ngIf="isDefaultEntryInvalid()">{{content.paymentAmountCreditMaxValidationError}}</div>
+            <!-- Add bonus message tooltip -->
+            <div id="payment-amount-addbonus-message" *ngIf="currentView === PaymentAmountView.PAYGFreeText" class="payment-amount__addbonus"
+                [class.show]="showBonusTopUp && !paymentDetails.showOutstandingBillPayg">
+                <div id="addbonus-text" class="add-bonus-info">
+                    <div id="add-bonus-text" class="add-bonus-info__message">
+                        <span id="add-bonus-amount" class="add-bonus-info__message__text" (click)="addBonus()">Top up ${{topUpAmount}} </span>to
+                        get a ${{addBonusAmount}} bonus.
+                    </div>
+                </div>
+                <div class="tooltip--tip"></div>
+            </div>
+            <!-- back button -->
+            <div id="payment-amount-payg-back" *ngIf="currentView === PaymentAmountView.PAYGFreeText && !paymentDetails.showOutstandingBillPayg" class="payment-amount__choose bluelink"
+                (click)="gotoBonus()">{{content.bonusEnterStandardTopuptText}}</div>
+
+        </form>
+        <!-- bonus error !-->
+        <div id="bonus-error" class="payment-amount__bonus-error" *ngIf=" (showBonusError() && !paymentDetails.showOutstandingBillPayg) || isBonusBandException">
+            <agl-alert id="bonus-error-message" alertType="warning" [heading]="content?.bonusUnavailableHeading" [body]="getBonusUnavailableContent()"></agl-alert>
+        </div>
+        <div id="outstanding-text" class="payment-amount__bonus__outstanding" *ngIf="paymentDetails.showOutstandingBillPayg">Payments may take up to 2 business days to appear on your account balance. Bonus credit shown above won’t reflect any pending payments.</div>
+        <!-- PAYG Debit state bonus table -->
+        <div id="payment-amount-bonus-list" class="payment-amount__bonus-list" *ngIf="(currentView === PaymentAmountView.PAYGDebit || paymentDetails.showOutstandingBillPayg)  && !hasBonusBandError">
+            <div id="payment-amount-view" class="bluelink" (click)="showBonuses = true" [class.hide]="showBonuses === true">View bonuses <span class="down-arrow"></span></div>
+            <div id="payment-amount-show" class="bluelink" (click)="showBonuses = false" [class.hide]="showBonuses === false">Hide bonuses <span class="up-arrow"></span></div>
+            <div id="payment-amount-bonus-table" class="payment-amount__bonus-list__table" [class.hide]="showBonuses === false">
+                <div class="payment-amount__bonus-list__table__row">
+                    <div id="bonus-table-header1" class="payment-amount__bonus-list__table__headercell">
+                        Prepaid Top Up
+                    </div>
+                    <div id="bonus-table-header2" class="payment-amount__bonus-list__table__headercell">
+                        Bonus Credit
+                    </div>
+                </div>
+                <div *ngFor="let bonusBand of bonusBandsSorted let index = index" class="payment-amount__bonus-list__table__row">
+                    <div id="bonus-table-amount-{{index}}" class="payment-amount__bonus-list__table__cell">
+                        ${{bonusBand?.lowerBand}}
+                    </div>
+                    <div id="bonus-table-bonus-{{index}}" class="payment-amount__bonus-list__table__cell">
+                        ${{bonusBand?.bonus}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- prepaid unavailable error !-->
+        <div id="prepaid-unavailable" class="payment-amount__bonus-error" *ngIf="prepaidBalanceUnavailable">
+            <agl-alert id="prepaid-unavailable-message" alertType="warning" [heading]="content?.prepaidBalanceUnavailableAlertHeading" [body]="content?.prepaidBalanceUnavailableAlertContent"></agl-alert>
+        </div>
+    </div>
+    <!-- PAYG Credit Preselected amount -->
+    <div id="payment-amount-paygfixed" class="payment-amount__paygfixed" *ngIf="currentView === PaymentAmountView.PAYGBonusSelect">
+        <div id="payment-amount-paygfixed-container" class="payment-amount__paygfixed__bonus bonus-box dark">
+            <div id="payment-amount-paygfixed-amount" class="bonus-box__topupamount">
+                <span class="bonus-box__topupamount__dollar">$</span>
+                <span id="payment-select-amount-label" class="bonus-box__topupamount__value">{{paymentAmount}}</span>
+            </div>
+            <div id="payment-amount-paygfixed-bonus" class="bonus-box__bonusamount">get ${{bonus}}.00<br /> bonus </div>
+            <div id="payment-amount-paygfixed-button" class="bonus-box__button">SELECTED</div>
+        </div>
+        <!-- Preselected view for mobile -->
+        <div id="payment-amount-paygfixed-mobile-container" class="payment-amount__paygfixed--mobile">
+            <input id="payment-amount-paygfixed-mobile" class="payment-amount__paygfixed--mobile__text" type="text" value="${{paymentAmount}}.00"
+                readonly />
+            <!-- PAYG free selection bonus amount -->
+            <div id="payment-amount-input-bonus" class="payment-amount__paygfixed--mobile__bonus">+ ${{bonus}} bonus</div>
+        </div>
+        <div id="payment-amount-paygfixed-change" class="bluelink" (click)="gotoBonus()">Change</div>
+    </div>
+</div>

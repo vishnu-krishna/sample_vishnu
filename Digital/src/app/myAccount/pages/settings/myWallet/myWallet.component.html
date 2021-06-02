@@ -1,0 +1,85 @@
+<div class="settings-container">
+    <div class="row">
+        <div class="col-md-12">
+            <mat-card class="my-wallet">
+                <div class="main-card-header">My Wallet</div>
+                <p>You can save a payment method here for easier payments.</p>
+                <div *ngIf="showContactUs" class="my-wallet-container">
+                    <agl-loader *ngIf="!getContactDetailsReady"></agl-loader>
+                    <agl-alert *ngIf="getContactDetailsReady" alertType="error" heading="Sorry, My Wallet isn't currently available for your account.">
+                        <div>Please get in touch with us <a href="https://www.agl.com.au/residential/contact-us">here</a> and we’ll sort it out.</div>
+                    </agl-alert>
+                </div>
+                <div *ngIf="!showContactUs" class="my-wallet-container">
+                    <agl-loader *ngIf="!ready"></agl-loader>
+                    <div *ngIf="ready" class="my-wallet--add-card">
+                        <div class="my-wallet-contact-us" *ngIf="showContactUs">
+                            <agl-alert alertType="error">
+                                <div>Sorry. We can’t action your request to save your payment method. Please get in touch with us <a href="https://www.agl.com.au/residential/contact-us" target="_blank">here</a> and we’ll sort it out.</div>
+                            </agl-alert>
+                        </div>
+                        <div class="my-wallet__alert-messages">
+                            <!--My Wallet default message-->
+                            <agl-alert *ngIf="showWarning && !showContactUs && !showAlertMessage && ready" (closeEvent)="closedWarning($event)" alertType="warning" isDismissible="true" body="Access your wallet for easy bill payments. It contains all the payment methods you’re using with AGL, and you can add or delete methods at any time."></agl-alert>
+
+                            <!--No links-->
+                            <agl-alert *ngIf="showAlertMessage && !containsLinks" [alertType]="alertMessageType" [body]="alertMessageBody" isDismissible="true"></agl-alert>
+
+                            <!--With links-->
+                            <agl-alert *ngIf="showAlertMessage && containsLinks" [alertType]="alertMessageType" [heading]="alertMessageHeading" isDismissible="true">
+                                <div *ngIf="deletePaymentMethodSuccess">{{alertMessageBody}}</div>
+                                <div *ngIf="deletePaymentMethodError">If the issue persists, you can get in touch with us <a href="https://www.agl.com.au/residential/contact-us" target="_blank">here</a> and we'll help sort it out. If you’re trying to replace an expired card, remember to delete the old card in My Wallet first.</div>
+                                <div *ngIf="deletePaymentMethodLinkDirectDebitError">{{alertMessageBody}}</div>
+                                <div *ngIf="savePaymentMethodError">If the issue persists, you can get in touch with us <a href="https://www.agl.com.au/residential/contact-us" target="_blank">here</a> and we’ll help sort it out.</div>
+                            </agl-alert>
+                        </div>
+                        <div class="my-wallet-card-container" *ngIf="!showContactUs">
+                            <div class="col-sm-6">
+                                <div class="my-wallet__card my-wallet--add-method" (click)="addNewCard()">
+                                    <div class="my-wallet--circle">
+                                        <mat-icon svgIcon="icon-payment-method-add"></mat-icon>
+                                    </div>
+                                    <p class="my-wallet--add-new-card">ADD A PAYMENT METHOD</p>
+                                </div>
+                                <button mat-raised-button color="accent" (click)="addNewCard()" class="my-wallet--add-method-button">ADD NEW CARD</button>
+                            </div>
+                            <div class="col-sm-6 payment-method" *ngFor="let paymentMethod of paymentMethods">
+                                <div class="my-wallet__card" [class.expired]="paymentMethod.expired">
+                                    <div class="my-wallet__icons-wrapper" [class.expired]="paymentMethod.expired">
+                                        <div class="my-wallet__icon">
+                                            <mat-icon [svgIcon]="paymentMethod.icon"></mat-icon>
+                                        </div>
+                                        <mat-icon *ngIf="paymentMethod.hasDirectDebitService" svgIcon="icon-direct-debit-ribbon" class="my-wallet__ribbon--direct-debit"></mat-icon>
+                                        <mat-icon *ngIf="paymentMethod.hasSmsPayService" svgIcon="icon-sms-pay-ribbon" class="my-wallet__ribbon--sms-pay"></mat-icon>
+                                    </div>
+                                    <div class="my-wallet__details-wrapper">
+                                        <div class="my-wallet__details" [class.expired]="paymentMethod.expired">
+                                            <div class="my-wallet__details-title">{{paymentMethod.title}}</div>
+                                            <div class="my-wallet__details-label">{{paymentMethod.reference}}</div>
+                                        </div>
+                                        <div *ngIf="paymentMethod.isCreditCard"
+                                            class="my-wallet__expiry"
+                                            [class.expires-soon]="paymentMethod.expiresSoon"
+                                            [class.expired]="paymentMethod.expired">
+                                            <div>
+                                                <div *ngIf="paymentMethod.expirationState === ExpirationState.expiresSoon" class="my-wallet__details-title">Expires soon</div>
+                                                <div *ngIf="paymentMethod.expirationState === ExpirationState.expired" class="my-wallet__details-title">Expired</div>
+                                                <div *ngIf="paymentMethod.expirationState === ExpirationState.valid" class="my-wallet__details-title">Expires</div>
+                                            </div>
+                                            <div class="my-wallet__details-label">{{paymentMethod.expiryDate}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="my-wallet__delete-button">
+                                    <a routerLink="." (click)="deletePaymentMethod(paymentMethod.id)">
+                                        <mat-icon svgIcon="icon-close-blue"></mat-icon> DELETE {{paymentMethod.title}}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

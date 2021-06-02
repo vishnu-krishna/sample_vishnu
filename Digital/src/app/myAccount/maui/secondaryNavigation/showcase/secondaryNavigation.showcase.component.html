@@ -1,0 +1,60 @@
+<agl-maui-showcase-template heading='Secondary Navigation'>
+    <div description>
+        <p>Secondary navigation takes four input parameters</p>
+        <div class="showcase-attributes">
+            <div class="header">Attributes for &lt;agl-maui-secondary-navigation&gt;</div>
+            <table>
+                <tr><td>text</td> <td>string</td> <td class="required">required</td></tr>
+                <tr><td>textMobile</td> <td>string</td> <td>(if not set, 'text' will be used for all breakpoints.)</td></tr>
+                <tr><td>display</td> <td>boolean</td> <td>(false by default)</td></tr>
+                <tr><td>displayBackButton</td> <td>boolean</td> <td>(false by default)</td></tr>
+                <tr><td>pageNumber</td> <td>number</td> <td></td></tr>
+                <tr><td>pageTotal</td> <td>number</td> <td></td></tr>
+                <tr><td>displayPageNumber</td> <td>string</td> <td>'OnDesktop' | 'OnMobile'<br>By default, the pageNumber and pageTotal are displayed when both are provided.</td></tr>
+            </table>
+        </div>
+        <p>Refer to <a href="https://aglenergy.atlassian.net/wiki/spaces/AGLDST/pages/135532216/Secondary+nav">Secondary Nav</a> for details.</p>
+    </div>
+    <div exampleCodeUsage>
+        {{codeUsage}}
+    </div>
+    <div exampleImplementation>
+        <agl-maui-showcase-example>
+            <div class="checkbox">
+                <label><input type="checkbox" (change)="changeShowNavigation($event)">Display Secondary Navigation</label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" [disabled]="!displaySecondaryNav" (change)="changeDisplayBackButton($event)"/>Display Back Button</label>
+            </div>
+            <div class="checkbox">
+                <label class="page-indicator">Page Indicator:</label>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-8 col-xs-12">
+                        <div class="row">
+                            <div class="form-group col-sm-6 col-xs-12">
+                                <label for="secondary-navigation-showcase__current-page">Page number
+                                    <input [disabled]="!displaySecondaryNav" class="form-control" id="secondary-navigation-showcase__current-page" type="number" [value]="pageInfo.pageNumber" #pageNumberInput (change)="changePageNumber(pageNumberInput.value, pageTotalInput.value)">
+                                </label>
+                            </div>
+                            <div class="form-group col-sm-6 col-xs-12">
+                                <label for="secondary-navigation-showcase__total-pages">Page total
+                                    <input [disabled]="!displaySecondaryNav" class="form-control" id="secondary-navigation-showcase__total-pages" type="number" [value]="pageInfo.pageTotal" #pageTotalInput (change)="changePageNumber(pageNumberInput.value, pageTotalInput.value)">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-4 col-xs-12">
+                        <label for="secondary-navigation-showcase__page-option">Display when:
+                            <agl-maui-dropdown [disabled]="!displaySecondaryNav" (notify)="changePageNumberVisibility($event)" id="secondary-navigation-showcase__page-option">
+                                <agl-maui-dropdown-option value="" text="Default behaviour" [selected]="true"></agl-maui-dropdown-option>
+                                <agl-maui-dropdown-option value="OnDesktop" text="On desktop"></agl-maui-dropdown-option>
+                                <agl-maui-dropdown-option value="OnMobile" text="On mobile"></agl-maui-dropdown-option>
+                            </agl-maui-dropdown>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            (Tick the 'Display Secondary Navigation' checkbox and scroll up to see the Secondary Navigation, scroll down to make it disappear.)
+        </agl-maui-showcase-example>
+     </div>
+</agl-maui-showcase-template>

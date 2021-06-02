@@ -1,0 +1,13 @@
+@import '../../shared/style/variables';
+@import '../../shared/style/mixins';
+// Plus imports for other components in your app.
+@import '~@angular/material/theming';
+// Include the base styles for Angular Material core. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+@include mat-core();
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($agl-app-theme);
+@import './styleGuide/main';
+@import './omm';

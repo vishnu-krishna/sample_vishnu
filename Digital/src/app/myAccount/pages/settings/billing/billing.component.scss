@@ -1,0 +1,11 @@
+@import '../../../../shared/style/variables';
+@import '../../../../shared/style/mixins';
+@import '../../../style/settings';
+
+.grouped-pad-none {
+    padding: 0 !important;
+}
+
+a {
+    cursor: pointer;
+}

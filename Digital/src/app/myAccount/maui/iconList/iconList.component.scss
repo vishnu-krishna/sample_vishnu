@@ -1,0 +1,25 @@
+@import '../maui';
+
+@include maui-component-reset();
+
+.maui-icon-list {
+    &__container {
+        font-family: $body-font-stack;
+        font-size: $body-font-size-normal;
+        line-height: $line-height-short;
+        background: $neutral-08;
+        padding: 0;
+    }
+
+    &__heading {
+        font-family: $display-font-stack;
+        font-size: $display-font-size-delta;
+        line-height: $line-height-heading;
+        color: $primary-dark;
+        padding-bottom: $space-04;
+    }
+
+    &__grid {
+        display: flex;
+    }
+}

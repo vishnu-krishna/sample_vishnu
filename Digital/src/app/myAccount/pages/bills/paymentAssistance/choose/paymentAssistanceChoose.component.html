@@ -1,0 +1,86 @@
+<div class="payment-assistance-choose__loader" *ngIf="showLoader">
+    <agl-loader loadingSubMessage="We're looking into your options, please stand by."></agl-loader>
+</div>
+
+<div class="payment-assistance-choose__error" *ngIf="showError">
+    <agl-payment-extension-error></agl-payment-extension-error>
+</div>
+<agl-maui-secondary-navigation display="true" displayBackButton="true" text="Payment assistance" textMobile="Payment assistance"
+    (click)="backClicked()"></agl-maui-secondary-navigation>
+<div class="payment-assistance-choose" *ngIf="!showLoader && !showError">
+    <agl-maui-heading heading="Select the type of assistance you need"></agl-maui-heading>
+    <div class="payment-assistance-choose__subheading">
+        Based on your current financial situation, are you confident that you are able to pay <span class="payment-assistance-choose__highlight">{{amountToPayMessage}}</span> within {{daysToPayMessage}} ({{dateToPayMessage}})?
+    </div>
+    <agl-maui-container>
+        <div class="payment-assistance-choose__container">
+            <div class="payment-assistance-choose__fuel">
+                <agl-maui-fuel-chip *ngIf="selectedFuelChip"
+                    [fuelChipState]="selectedFuelChip.state"
+                    [fuelType]="selectedFuelChip.fuelType"
+                    [fuelContext]="selectedFuelChip.fuelContext"
+                    [contractAccountDetails]="selectedFuelChip.accountDetails"
+                    [contractNumber]="selectedFuelChip.contractNumber">
+                </agl-maui-fuel-chip>
+            </div>
+            <div class="payment-assistance-choose__content payment-assistance-choose__show-desktop">
+                <div class="payment-assistance-choose__item">
+                    <img class="payment-assistance-choose__icon" src="svg/paymentAssistance/payment_extension_icon.svg" />
+                    <div class="payment-assistance-choose___primary-message">
+                        <span class="payment-assistance-choose__highlight">Yes</span>, set up a payment extension
+                    </div>
+                    <div class="payment-assistance-choose__secondary-message">
+                        {{paymentExtensionMessage}}
+                    </div>
+                    <agl-maui-button class="payment-assistance-choose__button" (click)="navigateExtendConfirm()" type="secondary">EXTEND MY DUE DATE</agl-maui-button>
+                </div>
+                <div class="payment-assistance-choose__divider">
+                </div>
+                <div class="payment-assistance-choose__item">
+                    <img class="payment-assistance-choose__icon" src="svg/paymentAssistance/instalment_plan_icon.svg" />
+                    <div class="payment-assistance-choose___primary-message">
+                        <span class="payment-assistance-choose__highlight">No</span>, set up an instalment plan
+                    </div>
+                    <div class="payment-assistance-choose__secondary-message">
+                        {{instalmentPlanMessage}}
+                    </div>
+                    <agl-maui-button class="payment-assistance-choose__button" (click)="navigatePlanOptions()" type="secondary" [loading]="isLoadingInstalmentPlan">SET UP INSTALMENTS</agl-maui-button>
+                </div>
+            </div>
+            <div class="payment-assistance-choose__content payment-assistance-choose__show-mobile">
+                <div class="payment-assistance-choose__item">
+                    <agl-maui-button class="payment-assistance-choose__button" (click)="navigateExtendConfirm()" type="secondary">YES, EXTEND MY DUE DATE</agl-maui-button>
+                    <div class="payment-assistance-choose__secondary-message">
+                        {{paymentExtensionMessage}}
+                    </div>
+                </div>
+                <div class="payment-assistance-choose__item">
+                    <agl-maui-button class="payment-assistance-choose__button" (click)="navigatePlanOptions()" type="secondary" [loading]="isLoadingInstalmentPlan">NO, SET UP INSTALMENT PLAN</agl-maui-button>
+                    <div class="payment-assistance-choose__secondary-message">
+                        {{instalmentPlanMessage}}
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="tertiaryMessage" class="payment-assistance-choose__tertiary-message">
+                <span class="payment-assistance-choose__highlight">
+                    Important:
+                </span>
+                {{tertiaryMessage}}
+            </div>
+        </div>
+    </agl-maui-container>
+    <div *ngIf="selectedContract && selectedContract.hasPayOnTimeDiscount" class="payment-assistance-choose__payment-on-time-discount">
+        <div>
+            By applying for payment assistance your current Pay on Time discount will be forfeited.
+        </div>
+        <div>
+            You can still take advantage of your Pay on Time discount on your upcoming bills.
+        </div>
+    </div>
+    <div class="payment-assistance-choose__setup-instalments-error" *ngIf="showSetUpInstalmentsError">
+        <agl-maui-flash-message [type]="flashMessageType.Error" [dismissable]="true">
+            <div heading>That wasn't supposed to happen.</div>
+            <div subheading>Please try again, or <a href="https://www.agl.com.au/residential/contact-us" target="_blank">contact us</a> if this error persists.</div>
+        </agl-maui-flash-message>
+    </div>
+</div>

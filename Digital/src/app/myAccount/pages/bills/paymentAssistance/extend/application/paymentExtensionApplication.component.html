@@ -1,0 +1,86 @@
+<div class="opa-extend__loader" *ngIf="showLoader">
+    <agl-loader loadingSubMessage="We're looking into your options, please stand by."></agl-loader>
+</div>
+
+<div class="opa-extend__error" *ngIf="showError">
+    <agl-payment-extension-error></agl-payment-extension-error>
+</div>
+<agl-maui-secondary-navigation display="true" displayBackButton="true" text="Payment extensions" textMobile="Payment extensions"
+            (click)="backClicked()"></agl-maui-secondary-navigation>
+<div class="opa-extend" *ngIf="!showLoader && !showError">
+    <div class="opa-extend__header">
+        <agl-maui-heading heading="{{headerText}}" subheading="{{subHeaderText}}"></agl-maui-heading>
+    </div>
+
+    <div class="opa-extend__call-us-header-message" *ngIf="!hasMultipleAvailableExtensionDates()">
+        If you need more time to pay, please call us on
+        <a href="tel:131245">131 245.</a>
+    </div>
+
+    <div class="opa-extend__summary">
+        <agl-maui-container>
+            <div class="opa-extend__summary-wrapper" [ngClass]="{'opa-extend__summary-wrapper--with-flash-message': showPaymentExtensionError}" >
+                <div class="opa-extend__summary-header">
+                    <agl-maui-fuel-chip
+                        [fuelChipState]="fuelChipData.state"
+                        [fuelType]="fuelChipData.fuelType"
+                        [fuelContext]="fuelChipData.fuelContext"
+                        [contractAccountDetails]="fuelChipData.accountDetails"
+                        [contractNumber]="fuelChipData.contractNumber">
+                    </agl-maui-fuel-chip>
+                </div>
+
+                <div class="opa-extend__options" *ngIf="hasMultipleAvailableExtensionDates()">
+                    <div class="opa-extend__options-header">How many more days do you need?</div>
+                    <agl-maui-segmented-buttons [(value)]="selectedValue" (change)="updateExtensionOptions($event)">
+                        <agl-maui-segmented-button *ngFor="let option of extensionDates" value="{{option.value}}" text="{{option.text}}" [selected]="option.selected">
+                        </agl-maui-segmented-button>
+                    </agl-maui-segmented-buttons>
+
+                    <div class="opa-extend__call-us-message" *ngIf="isMaxExtensionDaysSelected">
+                        If you need more time to pay, please call us on
+                        <a href="tel:131245">131 245.</a>
+                    </div>
+                </div>
+
+                <div class="opa-extend__summary-body">
+                    <div class="opa-extend__summary-body-header">Payment extension summary</div>
+                    <div class="opa-extend__summary-body-table">
+                        <div class="opa-extend__summary-body-table-row">
+                            <div>Amount due</div>
+                            <div class="opa-extend__summary-amount-due">${{contractEligibility.totalAmountDue | number : '1.2-2'}}</div>
+                        </div>
+                        <div class="opa-extend__summary-body-table-row">
+                            <div>Original due date</div>
+                            <div class="opa-extend__summary-original-due-date">{{contractEligibility.dueDate | aglFormatDate}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="opa-extend__summary-footer">
+                    <div>Extended due date</div>
+                    <div class="opa-extend__summary-extended-due-date">{{extendedDate | aglFormatDate}}</div>
+                </div>
+            </div>
+        </agl-maui-container>
+    </div>
+    <div class="opa-extend__payment-extension-error" *ngIf="showPaymentExtensionError">
+        <agl-maui-flash-message [type]="flashMessageType.Error" [dismissable]="true">
+            <div heading>That wasn't supposed to happen.</div>
+            <div subheading>We were unable to extend your bill. Please try again, or <agl-link [href]="'https://www.agl.com.au/residential/contact-us'" size="linkSize.large">contact us</agl-link> if this error persists.</div>
+        </agl-maui-flash-message>
+    </div>
+
+    <div *ngIf="showPayOnTimeDiscount" class="opa-extend__disclaimer-message">
+        <div>By extending your due date, your current Pay on Time discount on this bill will be forfeited.</div>
+        <div>You can still take advantage of your Pay on Time discount on your upcoming bills.</div>
+    </div>
+
+    <div class="opa-extend__cta">
+        <div class="opa-extend__cta-button">
+            <agl-maui-button (click)="confirmExtension()" [loading]="isConfirmExtensionLoading" >Confirm</agl-maui-button>
+        </div>
+        <agl-maui-button type="link" (clicked)="cancelClicked()">
+            cancel
+        </agl-maui-button>
+    </div>
+</div>

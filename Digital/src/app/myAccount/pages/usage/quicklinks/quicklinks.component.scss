@@ -1,0 +1,134 @@
+@import '../../../../shared/style/variables';
+@import '../../../../shared/style/mixins';
+@import '../../../../shared/style/tempdls';
+
+.quicklinks-section {
+
+    margin: 10px 0 30px 20px;
+    float: left;
+    background-color: $brand-white;
+
+    @media #{$agl-layout-tablet} {
+        margin-top: 23px;
+    }
+
+    .quicklinks-title {
+
+        width: 35%;
+        height: 1.57%;
+        line-height: 30px;
+        position: relative;
+
+        @media #{$agl-layout-tablet-and-smaller} {
+            width: 100%;
+        }
+
+        @media #{$agl-layout-mobile} {
+            margin-left: 15px;
+        }
+
+        @media #{$agl-layout-xs} {
+            margin-left: -7px;
+        }
+    }
+
+    .usage-quicklinks-list {
+
+        width: 50%;
+        margin-top: 30px;
+
+        a {
+            text-decoration: none;
+        }
+
+        &__item {
+
+            width: 250px;
+            height: 36px;
+            margin-bottom: 30px;
+            background-color: $brand-white;
+            text-align: left;
+            padding-left: 43px;
+            font-family: $primary-font-stack;
+            font-weight: bold;
+            font-size: 14px;
+
+            @media #{$agl-layout-tablet-and-smaller} {
+                width: 221%;
+                height: 40px;
+            }
+
+            @media #{$agl-layout-xs} {
+                width: 250px;
+                height: 40px;
+            }
+
+            &_text {
+
+                font-family: $primary-font-stack;
+                font-size: 14px;
+                font-weight: bold;
+                text-align: center;
+                line-height: 14px;
+                letter-spacing: 1px;
+
+                @media #{$agl-layout-tablet-and-smaller} {
+                    position: absolute;
+                    left: 47px;
+                    top: 13px;
+                }
+            }
+        }
+    }
+
+    #DirectDebitLink {
+
+        background-image: url('svg/icon_direct_debit.svg'), url('svg/triangle 2.svg');
+        background-repeat: no-repeat, no-repeat;
+        background-position: left 15px center, right 15px center;
+
+        &:hover {
+            background-image: url('svg/icon_direct_debit_blue.svg'), url('svg/triangle_blue.svg');
+            background-repeat: no-repeat, no-repeat;
+            background-position: left 15px center, right 15px center;
+        }
+
+    }
+
+    #EbillingSetting {
+
+        background-image: url('svg/ebilling.svg'), url('svg/triangle 2.svg');
+        background-repeat: no-repeat, no-repeat;
+        background-position: left 15px center, right 15px center;
+
+        &:hover {
+            background-image: url('svg/ebilling_blue.svg'), url('svg/triangle_blue.svg');
+            background-repeat: no-repeat, no-repeat;
+            background-position: left 15px center, right 15px center;
+        }
+
+    }
+
+    #ChangeMyPlan {
+
+        background-image: url('svg/icon-reports.svg'), url('svg/triangle 2.svg');
+        background-repeat: no-repeat, no-repeat;
+        background-position: left 15px center, right 15px center;
+
+        &:hover {
+            background-image: url('svg/icon-reports_blue.svg'), url('svg/triangle_blue.svg');
+            background-repeat: no-repeat, no-repeat;
+            background-position: left 15px center, right 15px center;
+        }
+
+    }
+}
+
+.col-xs-12 {
+
+    @media #{$agl-layout-tablet-and-smaller} {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+}

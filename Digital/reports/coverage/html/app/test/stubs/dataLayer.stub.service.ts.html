@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\test\stubs\dataLayer.stub.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/test/stubs/</a> dataLayer.stub.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">65.63% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>42/64</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">8% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/25</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">64.52% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>40/62</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { ModalName, PageChannel, PageType, SiteSubSection, EventCategory, EventAction, EventLabel } from '../../shared/service/dataLayer.service';
+&nbsp;
+export enum EventTypes {
+    Payment = &lt;any&gt; 'payment',
+    OmmSuccess = &lt;any&gt; 'omm-success',
+    OmmError = &lt;any&gt; 'omm-error',
+    PaygButton = &lt;any&gt; 'PAYGButton',
+    SccRegisterBatteryError = &lt;any&gt; 'scc-register-battery-error',
+    SccRegisterHasBattery = &lt;any&gt; 'scc-register-has-battery',
+    SccRegisterSolarDetails = &lt;any&gt; 'scc-register-solar-details',
+    SccRegisterSuccess = &lt;any&gt; 'scc-register-success',
+    SccRegisterError = &lt;any&gt; 'scc-register-error',
+    SccUpdateSystemDetailsCorrection = &lt;any&gt; 'scc-update-system-details-correction',
+    SccUpdateSystemDetailsCorrectionError = &lt;any&gt; 'scc-update-system-details-correction-error',
+    SccUpdateSystemDetailsModification = &lt;any&gt; 'scc-update-system-details-modification',
+    SccUpdateSystemDetailsModificationError = &lt;any&gt; 'scc-update-system-details-modification-error',
+    ContractAccountsReturned = &lt;any&gt; 'Contract Accounts returned'
+}
+&nbsp;
+type PaymentTypes = 'credit-card' | 'paypal';
+&nbsp;
+@Injectable()
+<span class="fstat-no" title="function not covered" >export class DataLayerStubService {</span>
+    public pushPayment(
+        type: PaymentTypes,
+        receiptNumber: any,
+        reference: any,
+        amount: any<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('Method not implemented.');</span>
+    }
+<span class="fstat-no" title="function not covered" >    public pushFormFailure() {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('Method not implemented.');</span>
+    }
+<span class="fstat-no" title="function not covered" >    public pushFormSuccess() {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('Method not implemented.');</span>
+    }
+<span class="fstat-no" title="function not covered" >    public setPrePushPageChangeFormSubmissionSuccessEventData() {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('Method not implemented.');</span>
+    }
+    public pushNewPageEvent(modalName: ModalName, pageChannel: PageChannel, pageType: PageType, siteSubSection1: SiteSubSection, accountNumbers: string[], optionalData?: any<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('Method not implemented.');</span>
+    }
+<span class="fstat-no" title="function not covered" >    public pushSccRegisterHasBattery() {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('Method not implemented.');</span>
+    }
+<span class="fstat-no" title="function not covered" >    public pushSccRegisterBatteryError() {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('Method not implemented.');</span>
+    }
+<span class="fstat-no" title="function not covered" >    public pushSccRegisterSolarDetails() {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('Method not implemented.');</span>
+    }
+<span class="fstat-no" title="function not covered" >    public pushSccRegisterError() {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('Method not implemented.');</span>
+    }
+<span class="fstat-no" title="function not covered" >    public pushSccRegisterSuccess() {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('Method not implemented.');</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public pushSccUpdateSystemDetailsCorrection() {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('Method not implemented.');</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public pushSccUpdateSystemDetailsCorrectionError() {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('Method not implemented.');</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public pushSccUpdateSystemDetailsModification() {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('Method not implemented.');</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public pushSccUpdateSystemDetailsModificationError() {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('Method not implemented.');</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public pushOmmSuccess() {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('Method not implemented.');</span>
+    }
+<span class="fstat-no" title="function not covered" >    public pushPaygButton() {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('Method not implemented.');</span>
+    }
+    public pushPayg(paygBand: string<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('Method not implemented.');</span>
+    }
+    public pushError(
+        type: EventTypes,
+        message: string<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('Method not implemented.');</span>
+    }
+    public pushContractAccounts(
+        accountNumbers: {}<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('Method not implemented.');</span>
+    }
+    public pushPaymentError(failureEvent: string, errorMessage: string<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('Method not implemented.');</span>
+    }
+    public pushPaymentSuccess(successMessage: string, buttonLabel: string<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('Method not implemented.');</span>
+    }
+    public pushClickEvent(modalName: ModalName, eventCategory: EventCategory, eventAction: EventAction, eventLabel: EventLabel<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('Method not implemented.');</span>
+    }
+&nbsp;
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

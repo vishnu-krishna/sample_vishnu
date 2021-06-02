@@ -1,0 +1,25 @@
+/* Base, reset and config */
+
+@import 'base/reset';
+@import 'base/normalise';
+@import 'settings/fonts';
+@import 'settings/vars';
+@import 'settings/mixins';
+@import 'settings/utils';
+
+/* Vendor libraries */
+
+@import 'vendor/materialize/variables';
+@import 'vendor/materialize/grid';
+
+/* Global styles */
+
+@import 'typography';
+@import 'structure';
+@import 'scroll-fade-in';
+@import 'angled-background';
+@import 'modal';
+
+/* Import the snippets using gulp-sass-glob */
+
+// @import '../../snippets/**/*';

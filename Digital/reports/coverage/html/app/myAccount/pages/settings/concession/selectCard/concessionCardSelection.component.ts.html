@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\settings\concession\selectCard\concessionCardSelection.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/settings/concession/selectCard/</a> concessionCardSelection.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">36.36% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>12/33</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">44.44% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.11% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">35.71% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>10/28</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+&nbsp;
+import { IConcessionStateService } from '../services/concessionState.service';
+import { Concession } from './../concession';
+import { ConcessionCard } from '../concessionCard';
+import { IssuerCards } from '../issuerCards';
+&nbsp;
+@Component({
+    selector: 'agl-concession-card-selection',
+    template: require('./concessionCardSelection.component.html'),
+    styles: [require('./concessionCardSelection.component.scss')],
+})
+&nbsp;
+export class ConcessionCardSelectionComponent implements OnInit {
+    public <span class="cstat-no" title="statement not covered" >issuerCards: IssuerCards[] = [];</span>
+    public selectedValue: string;
+    private concession: Concession;
+    private regionId: string;
+&nbsp;
+    constructor(private <span class="cstat-no" title="statement not covered" >router: Router,</span>
+                private <span class="cstat-no" title="statement not covered" >concessionStateService: IConcessionStateService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >)</span> {</span></span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public ngOnInit(): void {</span>
+<span class="cstat-no" title="statement not covered" >        this.concession = this.concessionStateService.getCurrentConcession();</span>
+<span class="cstat-no" title="statement not covered" >        this.regionId = this.concession.regionId;</span>
+<span class="cstat-no" title="statement not covered" >        this.issuerCards = this.concession.eligibleCards;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.concession.selectedCard) {</span>
+<span class="cstat-no" title="statement not covered" >            this.selectedValue = this.concession.selectedCard.uniqueKey;</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public get selectedCardExcludedFuelWarning(): string {</span>
+        let selectedCard = <span class="cstat-no" title="statement not covered" >this.resolveSelectedConcessionCard(this.selectedValue);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (!selectedCard.isEligibleForAllSelectedFuels(this.concession.fuelTypes)) {</span>
+<span class="cstat-no" title="statement not covered" >            return `Concessions only apply to ${selectedCard.eligibleFuelTypes.join(', ').toLowerCase()} for ${this.regionId.toUpperCase()} ${selectedCard.cardDescription} card holders`;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return '';</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public get continueButtonEnabled(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return !!this.selectedValue;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public continue(): void {</span>
+        let selectedCard = <span class="cstat-no" title="statement not covered" >this.resolveSelectedConcessionCard(this.selectedValue);</span>
+<span class="cstat-no" title="statement not covered" >        this.concession.setSelectedCard(selectedCard);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.router.navigate(['/settings/concession/apply']);</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    private resolveSelectedConcessionCard(value: string<span class="fstat-no" title="function not covered" >): ConcessionCard {</span></span>
+        let allCards: ConcessionCard[] = <span class="cstat-no" title="statement not covered" >[].concat.apply([], this.issuerCards.map((ic: IssuerCards<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >ic.cards)</span></span>);</span>
+<span class="cstat-no" title="statement not covered" >        return allCards.find((c<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >c.uniqueKey === this.selectedValue)</span></span>;</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+@import '../notifications.component';
+
+.main-card-options {
+    &__toggle {
+        &__link {
+            @include link-styling;
+            font-weight: bold;
+        }
+
+        &__label,
+        agl-maui-toggle {
+            margin-top: 0;
+            padding-top: $space-02;
+        }
+    }
+}
+
+.ebill-container {
+    margin-top: $space-03;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &__message {
+        padding-top: $space-03;
+        margin-bottom: $space-04;
+
+        &--multi-bp {
+            padding-top: $space-01;
+            margin-bottom: $space-04;
+        }
+    }
+}
+
+.account {
+    margin-bottom: 0;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

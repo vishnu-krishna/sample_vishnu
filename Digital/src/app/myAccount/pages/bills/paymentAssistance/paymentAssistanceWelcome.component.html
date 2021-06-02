@@ -1,0 +1,28 @@
+<div class="payment-assistance-welcome">
+    <div *ngIf="showPage">
+        <div>
+            <agl-maui-heading
+                heading="Welcome to payment assistance"
+                subheading="We understand that energy bills can have a big impact on your budget.">
+            </agl-maui-heading>
+            <agl-maui-heading
+                subheading="If you need more time to pay, or would like to split up your bill into smaller instalments, you may be eligible for assistance by logging in to My Account.">
+            </agl-maui-heading>
+        </div>
+
+        <div class="payment-assistance-welcome__button-login">
+            <agl-maui-button (clicked)="login()">Log in</agl-maui-button>
+        </div>
+
+        <div class="payment-assistance-welcome__text-login">Log in using your usual My <span class="payment-assistance-welcome__text-no-wrap">Account credentials.</span>
+        </div>
+
+        <div class="payment-assistance-welcome__button-register">
+            <agl-maui-button type="secondary" (clicked)="register()">New user? Register now</agl-maui-button>
+        </div>
+
+        <div class="payment-assistance-welcome__text-register">
+            To register, you will need your account number, <span>the name that appears on your first bill,</span> <span class="payment-assistance-welcome__text-no-wrap">and your date of birth.</span>
+        </div>
+    </div>
+</div>

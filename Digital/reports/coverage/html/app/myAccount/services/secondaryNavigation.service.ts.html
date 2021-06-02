@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\services\secondaryNavigation.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/myAccount/services/</a> secondaryNavigation.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25.81% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>16/62</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">44.44% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>16/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.56% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>14/56</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
+&nbsp;
+import { MonthlyBillingService } from './monthlyBilling.service';
+import { IPaymentExtensionApplication } from './paymentScheme/paymentExtensionApplication.service';
+import { IPaymentAssistanceChooseService } from './paymentScheme/paymentAssistanceChoose.service';
+&nbsp;
+@Injectable()
+export class SecondaryNavigationService {
+    public url: string;
+&nbsp;
+    private <span class="cstat-no" title="statement not covered" >concessionPaths: string[] = [</span>
+        '/settings/concession/selectaccount',
+        '/settings/concession/selectfuel',
+        '/settings/concession/selectcard',
+        '/settings/concession/confirmdetails',
+        '/settings/concession/apply'
+    ];
+&nbsp;
+    constructor(
+        private <span class="cstat-no" title="statement not covered" >router: Router,</span>
+        private <span class="cstat-no" title="statement not covered" >location: Location<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >monthlyBillingService: MonthlyBillingService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >paymentExtensionApplicationService: IPaymentExtensionApplication<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >paymentAssistanceChooseService: IPaymentAssistanceChooseService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" ></span></span></span>
+    ) {}
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public get display(): boolean {</span>
+        const urlsWithSecondaryNav = <span class="cstat-no" title="statement not covered" >[</span>
+            '/bills/paymentassistance/welcome',
+            '/bills/paymentassistance/extend/select',
+            '/bills/paymentassistance/extend/confirm',
+            '/bills/paymentassistance/select',
+            '/bills/paymentassistance/choose',
+            '/bills/paymentassistance/plan',
+            '/settings/monthlybilling/services',
+            '/settings/monthlybilling/date',
+            '/usage/meterreadcheck',
+            '/bills/paymentassistance'
+        ].concat(this.concessionPaths);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.url = this.normaliseURLToCompare();</span>
+<span class="cstat-no" title="statement not covered" >        return urlsWithSecondaryNav.indexOf(this.url.toLowerCase()) &gt; -1;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public get displayBack(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.backClick !== null;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public get desktopText(): string {</span>
+        const urlToDesktopTextMap = {
+            ['/bills/paymentassistance/welcome']: 'Payment extensions',
+            ['/bills/paymentassistance/extend/select']: 'Payment extensions',
+            ['/bills/paymentassistance/extend/confirm']: 'Payment extensions',
+            ['/bills/paymentassistance/extend/success']: 'Payment extensions',
+            ['/bills/paymentassistance/select']: 'Payment assistance',
+            ['/bills/paymentassistance/choose']: 'Payment assistance',
+            ['/bills/paymentassistance/plan']: 'Instalment plans',
+            ['/settings/monthlybilling/services']: 'Monthly billing',
+            ['/settings/monthlybilling/date']: 'Monthly billing',
+            ['/usage/meterreadcheck']: 'Self Service Meter Read'
+        };
+<span class="cstat-no" title="statement not covered" >        this.concessionPaths.forEach((path<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >urlToDesktopTextMap[path] = 'Concessions')</span></span>;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.url = this.normaliseURLToCompare();</span>
+<span class="cstat-no" title="statement not covered" >        return urlToDesktopTextMap[this.url.toLowerCase()] || '';</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public get mobileText(): string {</span>
+        // only required if the mobile text is different to the desktop text
+        const urlToMobileTextMap = <span class="cstat-no" title="statement not covered" >{};</span>
+<span class="cstat-no" title="statement not covered" >        this.url = this.normaliseURLToCompare();</span>
+<span class="cstat-no" title="statement not covered" >        return urlToMobileTextMap[this.url.toLowerCase()] || '';</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public get backClick() {</span></span>
+        const urlToBackActionMap = {
+            ['/settings/concession/selectfuel']: <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >this.router.navigate(['/settings/concession']),</span></span>
+            ['/bills/paymentassistance/extend/confirm']: <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >this.paymentExtensionApplicationService.backClick(),</span></span>
+            ['/bills/paymentassistance/choose']: <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >this.paymentAssistanceChooseService.backClick(),</span></span>
+            ['/bills/paymentassistance/plan']: <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >this.location.back(),</span></span>
+            ['/usage/meterreadcheck']: <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >this.router.navigate(['/overview']),</span></span>
+            ['/settings/monthlybilling/date']: <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >this.router.navigate(['/settings/monthlybilling/services']),</span></span>
+            ['/settings/monthlybilling/services']: <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >this.router.navigate([this.monthlyBillingService.getEntryPointUrl()])</span></span>
+        };
+<span class="cstat-no" title="statement not covered" >        this.concessionPaths.forEach((path<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >urlToBackActionMap[path] = <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >this.location.back())</span></span></span></span>;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.url = this.normaliseURLToCompare();</span>
+<span class="cstat-no" title="statement not covered" >        return urlToBackActionMap[this.url.toLowerCase()] || null;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private normaliseURLToCompare() {</span>
+        const containsExtensionConfirmUrl = <span class="cstat-no" title="statement not covered" >window.location.pathname.includes('/bills/paymentassistance/extend/confirm');</span>
+        const containsAssistanceChooseUrl = <span class="cstat-no" title="statement not covered" >window.location.pathname.includes('/bills/paymentassistance/choose');</span>
+        const selectConcessionFuelUrl = <span class="cstat-no" title="statement not covered" >window.location.pathname.includes('/settings/concession/selectfuel');</span>
+        const containsAssistancePlanUrl = <span class="cstat-no" title="statement not covered" >window.location.pathname.includes('/bills/paymentassistance/plan');</span>
+        const containsAssistancePlanSuccessUrl = <span class="cstat-no" title="statement not covered" >window.location.pathname.includes('/bills/paymentassistance/plan/success');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (containsExtensionConfirmUrl) {</span>
+<span class="cstat-no" title="statement not covered" >            return '/bills/paymentassistance/extend/confirm';</span>
+        } else <span class="cstat-no" title="statement not covered" >if (containsAssistanceChooseUrl) {</span>
+<span class="cstat-no" title="statement not covered" >            return '/bills/paymentassistance/choose';</span>
+        } else <span class="cstat-no" title="statement not covered" >if (containsAssistancePlanSuccessUrl) {</span>
+<span class="cstat-no" title="statement not covered" >            return '/bills/paymentassistance/plan/success';</span>
+        } else <span class="cstat-no" title="statement not covered" >if (selectConcessionFuelUrl) {</span>
+<span class="cstat-no" title="statement not covered" >            return '/settings/concession/selectfuel';</span>
+        } else <span class="cstat-no" title="statement not covered" >if (containsAssistancePlanUrl) {</span>
+<span class="cstat-no" title="statement not covered" >            return '/bills/paymentassistance/plan';</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return window.location.pathname;</span>
+        }
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

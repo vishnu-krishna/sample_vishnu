@@ -1,0 +1,47 @@
+<div class="agl-desktop-wrapper desktop">
+    <div class="agl-menu agl-desktop-header">
+        <div class="agl-desktop-header__container">
+            <div class="agl-desktop-header-logo">
+                <a href="https://www.agl.com.au" target="_blank">
+                    <img class="agl-logo" src="svg/icon-header-desktop.svg">
+                </a>
+            </div>
+            <div class="agl-desktop-header-menu">
+                <ul class="agl-desktop-header-menu__tabs">
+                    <li *ngFor="let item of mainMenu" id="agl-desktop-header-menu{{item?.route | aglConvertCase}}" [routerLinkActive]="['router-link-active']">
+                        <a [routerLink]="[item?.route]" [queryParams]="{}">
+                            <span class="agl-desktop-header-menu__menu-item-text">
+                                <agl-menu-item [menuItem]="item"></agl-menu-item>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="agl-desktop-header-user" [matMenuTriggerFor]="menu">
+                <!--<mat-icon class="agl-desktop-header-user__icon">person</mat-icon>-->
+                <mat-icon class="agl-desktop-header-user__person-icon" svgIcon="icon-person"></mat-icon>
+                <span class="agl-desktop-header-user__name" [class.hide]="!(name | async)">Hi {{(name | async)?.firstName | lowercase}}</span>
+                <span class="agl-desktop-header-user__name" [class.hide]="(name | async)">Loading...</span>
+                <mat-icon class="agl-desktop-header-user__dropdown-icon">arrow_drop_down</mat-icon>
+            </div>
+            <mat-menu #menu="matMenu" [overlapTrigger]="false" class="agl-header-dropdown-menu">
+                <a mat-menu-item href="https://www.agl.com.au/residential/help-and-support" target="_blank">
+                    <span>Help</span>
+                </a>
+                <a mat-menu-item href="https://www.agl.com.au/residential/contact-us" target="_blank">
+                    <span>Contact Us</span>
+                </a>
+                <a mat-menu-item (click)="logout($event)">
+                    <span>Logout</span>
+                </a>
+            </mat-menu>
+        </div>
+    </div>
+    <agl-maui-secondary-navigation
+        [display]="secondaryNavigationService.display"
+        [displayBackButton]="secondaryNavigationService.displayBack"
+        [text]="secondaryNavigationService.desktopText"
+        [textMobile]="secondaryNavigationService.mobileText"
+        (clicked)="secondaryNavigationService.backClick($event)">
+    </agl-maui-secondary-navigation>
+</div>

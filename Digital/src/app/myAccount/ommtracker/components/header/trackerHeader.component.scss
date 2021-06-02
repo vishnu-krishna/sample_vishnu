@@ -1,0 +1,41 @@
+@import '../../../../shared/style/omm/_omm_variables.scss';
+
+.tracker-header {
+    background-color: $omm-blue;
+    padding: 20px 20px 45px 11px;
+    margin: 0 auto;
+    height: $omm-header-desktop-height;
+    @media #{$medium-and-down} {
+        padding: 15px 0px 0px 5px;
+        height: auto;
+    }
+
+    &__logo {
+        height: 54px;
+        width: 50px;
+        @media #{$medium-and-down} {
+            display: none;
+        }
+    }
+
+    &__mobilelogo {
+        display: none;
+        float: left;
+        height: 30px;
+        width: 50px;
+        @media #{$medium-and-down} {
+            display: block;
+        }
+    }
+
+    &__referencenumber {
+        color: $omm-white;
+        width: 100%;
+        text-align: right;
+        padding-top: 10px;
+        @media #{$medium-and-down} {
+            padding-top: 5px;
+            font-size: 12px;
+        }
+    }
+}

@@ -1,0 +1,158 @@
+<div class="maui-fuel-chip"
+    (mouseenter)="selectorHover = true"
+    (mouseleave)="selectorHover = false"
+    (click)="fuelChipClick()"
+    [ngClass]="{'maui-fuel-chip': !isFCStateDisplay,
+                'maui-fuel-chip--pre-setup': isFCStatePreSetup,
+                'maui-fuel-chip--display': isFCStateDisplay ,
+                'maui-fuel-chip__border-shadow': showBorder, 'maui-fuel-chip__ineligible': isIneligible,
+                'maui-fuel-chip__border-shadow--hover': containerHover}">
+    <div class="maui-table">
+        <div class="maui-table-body">
+            <div class="maui-table-row" [ngClass]="{'maui-fuel-chip__status-divider' : showAccountDetailsDivider}">
+
+                <!-- Icon section -->
+                <div class="maui-table-cell maui-fuel-chip__electricity-icon" [ngClass]="{'maui-fuel-chip__ineligible-icon': isIneligible}" *ngIf="isElectricity">
+                    <span class="maui-fuel-icon-electricity"></span>
+                </div>
+                <div class="maui-table-cell maui-fuel-chip__gas-icon" [ngClass]="{'maui-fuel-chip__ineligible-icon': isIneligible}" *ngIf="isGas">
+                    <span class="maui-fuel-icon-gas"></span>
+                </div>
+                <!-- End Icon section -->
+
+                <div class="maui-table-cell">
+                    <div class="container-fluid maui-fuel-chip-title-offset">
+                        <!-- fuel chip title section -->
+                        <div class="row" [ngClass]="{'maui-fuel-display-without-address-offset': useNoAccountDetailsOffset }">
+                            <div class="col-xs-12 maui-fuel-chip__title">
+                                {{fuelChipTitle}}</div>
+                        </div>
+                        <!-- end fuel chip title section -->
+
+                        <!-- Account details section -->
+                        <div class="row maui-fuel-chip__account-details" *ngIf='showAccountDetails'>
+                            <div class="col-xs-12 col-sm-4 maui-fuel-chip__number"
+                                [ngClass]="{'maui-fuel-chip__number--ineligible': isIneligible}">{{fuelChipNumberTitle}} {{fuelChipNumber | aglAddSpaces}}</div>
+                            <div class="col-xs-12 col-sm-8 maui-fuel-chip__address">{{fuelChipAddress}}</div>
+                        </div>
+                        <!-- End Account details section -->
+
+                        <!-- There are 2 sections that show the primary messages - this version shows the messages with the chevron spanning the full set of messages when there is no address  -->
+                        <!-- messages section primary /seconday message -->
+                        <ng-template ngFor let-fuelChipMessage [ngForOf]="fuelChipMessages" let-statusCount="index" let-lastRow="last" *ngIf="!includeMessageWithAddress">
+                            <div class="row" [ngClass]="{'maui-fuel-chip__message-divider': statusCount > 0}">
+                                <div class="maui-fuel-chip__primary-status-with-address"
+                                    [ngClass]="{'col-xs-9': fuelChipMessage.primaryMessageLink,
+                                                'col-xs-12': !fuelChipMessage.primaryMessageLink }">
+                                    {{fuelChipMessage.primaryMessage}}
+                                </div>
+                                <div class="maui-fuel-chip__primary-status-link-with-address" [ngClass]="{'col-xs-3': fuelChipMessage.primaryMessageLink}"
+                                    (click)="fuelChipMessage.primaryMessageLinkClick(fuelChipMessage.primaryMessageLink.key)"
+                                    (mouseenter)="containerHover = true;" (mouseleave)="containerHover = false;"
+                                    *ngIf="fuelChipMessage.primaryMessageLink"
+                                >
+                                    {{fuelChipMessage.primaryMessageLink.title}}
+                                </div>
+                            </div>
+
+                            <div class="row" *ngIf="fuelChipMessage.secondaryMessage">
+                                <div class="col-xs-12 maui-fuel-chip__secondary-status-message-with-address"
+                                    [ngClass]="{'maui-fuel-chip__secondary-status--success': fuelChipMessage.secondaryMessageStatus === secondaryMessageStatus.Success,
+                                                'maui-fuel-chip__secondary-status--warning': fuelChipMessage.secondaryMessageStatus === secondaryMessageStatus.Warning ,
+                                                'maui-fuel-chip__secondary-status--ineligible': fuelChipMessage.secondaryMessageStatus === secondaryMessageStatus.Warning && isIneligible,
+                                                'maui-fuel-chip__last-secondary-status-message': lastRow }">
+                                    {{fuelChipMessage.secondaryMessage}}
+                                </div>
+                            </div>
+                        </ng-template>
+                        <!-- end messages section primary /seconday message -->
+                    </div>
+                </div>
+
+                <!-- Selector region -->
+                <div class="maui-table-cell maui-fuel-chip__header-selector-container maui-fuel-selector-offset"
+                    [ngClass]="{'maui-fuel-selector-offset-without-address': !includeMessageWithAddress,
+                                'maui-fuel-selector-offset-with-address': includeMessageWithAddress }"
+                    *ngIf="fuelChipState === FuelChipState.PreSetup">
+                    <div class="maui-fuel-chip__header-selector">
+                        <span class="maui-fuel-selector--regular" *ngIf="!selectorHover"></span>
+                        <span class="maui-fuel-selector--hover" *ngIf="selectorHover"></span>
+                    </div>
+                </div>
+                <!-- End Selector region -->
+            </div>
+            <!-- messages section primary /seconday message -->
+            <!-- There are 2 sections that show the primary messages - this version shows the messages below the line with the chevron and the address above the line -->
+
+            <ng-template ngFor let-fuelChipMessage [ngForOf]="fuelChipMessages" let-statusCount="index" let-lastRow="last" *ngIf="includeMessageWithAddress">
+                <div class="maui-table-row maui-fuel-chip__status-divider" *ngIf="statusCount > 0">
+                    <div class="maui-table-cell"></div>
+                    <div class="maui-table-cell">&nbsp;</div>
+                    <div class="maui-table-cell" *ngIf="fuelChipState === FuelChipState.PreSetup">&nbsp;</div>
+                </div>
+                <div class="maui-table-row">
+                    <div class="maui-table-cell">&nbsp;</div>
+                    <div class="maui-table-cell">
+                        <div class="maui-table">
+                            <div class="maui-table-row">
+                                <div class="maui-table-cell maui-fuel-chip__primary-status-without-address" [ngClass]="{'maui-fuel-chip__primary-message-offset': showAccountDetails === true}">
+                                    {{fuelChipMessage.primaryMessage}}
+                                </div>
+                                <div class="maui-table-cell maui-fuel-chip__primary-status-link-without-address" *ngIf="fuelChipMessage.primaryMessageLink"
+                                    (click)="fuelChipMessage.primaryMessageLinkClick(fuelChipMessage.primaryMessageLink.key)"
+                                    (mouseenter)="containerHover = true;" (mouseleave)="containerHover = false;"
+                                >
+                                    {{fuelChipMessage.primaryMessageLink.title}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="maui-table-row" *ngIf="fuelChipMessage.secondaryMessage">
+                    <div class="maui-table-cell"></div>
+                    <div class="maui-table-cell">
+                        <div class="maui-table">
+                            <div class="maui-table-row">
+                                <div class="maui-table-cell maui-fuel-chip__secondary-status-message-without-address"
+                                    [ngClass]="{'maui-fuel-chip__secondary-status--success': fuelChipMessage.secondaryMessageStatus === secondaryMessageStatus.Success,
+                                    'maui-fuel-chip__secondary-status--warning': fuelChipMessage.secondaryMessageStatus === secondaryMessageStatus.Warning,
+                                    'maui-fuel-chip__secondary-status--ineligible': fuelChipMessage.secondaryMessageStatus === secondaryMessageStatus.Warning && isIneligible,
+                                    'maui-fuel-chip__last-secondary-status-message': lastRow}">
+                                    {{fuelChipMessage.secondaryMessage}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+            <!-- end messages section primary /seconday message -->
+
+            <!-- footer section  -->
+            <div class="maui-table-row maui-fuel-chip__tertiary-message-spacer" *ngIf="showFooterSpacerAndBorder()">
+                    <div class="maui-table-cell">&nbsp;</div>
+                    <div class="maui-table-cell">&nbsp;</div>
+                    <div class="maui-table-cell" *ngIf="fuelChipState === FuelChipState.PreSetup">&nbsp;</div>
+                </div>
+            <div class="maui-table-row maui-fuel-chip__tertiary-message-border" *ngIf="showFooterSpacerAndBorder()">
+                <div class="maui-table-cell">&nbsp;</div>
+                <div class="maui-table-cell">&nbsp;</div>
+                <div class="maui-table-cell" *ngIf="fuelChipState === FuelChipState.PreSetup">&nbsp;</div>
+            </div>
+            <div class="maui-table-row" *ngIf="fuelChipFooterComponent?.tertiaryMessage">
+                <div class="maui-table-cell"></div>
+                <div class="maui-table-cell maui-fuel-chip__tertiary-message-details-container"
+                    [ngClass]="{'maui-fuel-chip__no-messages-offset': showFooterNoMessageOffset}">{{fuelChipFooterComponent.tertiaryMessage}}</div>
+                <div class="maui-table-cell" *ngIf="fuelChipState === FuelChipState.PreSetup">&nbsp;</div>
+            </div>
+            <div class="maui-table-row" *ngIf="fuelChipFooterComponent?.cancelText">
+                <div class="maui-table-cell"></div>
+                <div class="maui-table-cell maui-fuel-chip__cancel-details-container"
+                    [ngClass]="{'maui-fuel-chip__no-messages-offset': showFooterNoMessageOffset}"
+                    (click)="fuelChipFooterComponent.fuelChipCancelClick()"
+                    (mouseenter)="containerHover = true;" (mouseleave)="containerHover = false;">{{fuelChipFooterComponent.cancelText}}</div>
+                <div class="maui-table-cell" *ngIf="fuelChipState === FuelChipState.PreSetup">&nbsp;</div>
+            </div>
+            <!-- end footer section  -->
+        </div>
+    </div>
+</div>

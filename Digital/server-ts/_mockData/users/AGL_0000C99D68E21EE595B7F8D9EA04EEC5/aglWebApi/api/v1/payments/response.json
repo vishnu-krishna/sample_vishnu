@@ -1,0 +1,66 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "account": "7004437310",
+            "contract": "9117813087",
+            "overdue": 0,
+            "dueDate": null,
+            "currentBalance": 0,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": false
+        },
+        {
+            "account": "7004437310",
+            "contract": "9400671979",
+            "overdue": 231.7,
+            "dueDate": null,
+            "currentBalance": 0,
+            "totalPayment": 231.7,
+            "billSmoothing": false,
+            "directDebit": false
+        },
+        {
+            "account": "7004437310",
+            "contract": "9400686273",
+            "overdue": 0,
+            "dueDate": null,
+            "currentBalance": 0,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": false
+        },
+        {
+            "account": "7004437310",
+            "contract": "9400733459",
+            "overdue": 0,
+            "dueDate": null,
+            "currentBalance": 0,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": false
+        },
+        {
+            "account": "7020624784",
+            "contract": "9400619503",
+            "overdue": 0,
+            "dueDate": null,
+            "currentBalance": 0,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": false
+        },
+        {
+            "account": "7020624784",
+            "contract": "9400732978",
+            "overdue": 0,
+            "dueDate": null,
+            "currentBalance": 0,
+            "totalPayment": 0,
+            "billSmoothing": false,
+            "directDebit": false
+        }
+    ]
+}

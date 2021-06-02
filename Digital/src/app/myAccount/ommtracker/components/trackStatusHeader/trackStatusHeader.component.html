@@ -1,0 +1,17 @@
+<div class="status-header ">
+    <mat-icon [svgIcon]='getStatusIcon()' class="status-header__status--icon"></mat-icon>
+    <h1 class="status-header__status--text">
+        {{getStatusText()}}
+    </h1>
+    <div class="status-header__subheader">
+        <div *ngIf="trackerMode === TrackerModeEnum.Track" class="status-header__subheader__text">
+            <mat-icon  svgIcon='icon-question-tooltip' id="status-header-what-happens-next-icon" class="status-header__subheader__text__tooltip hover_tooltip" (click)="toggleContent(true)"></mat-icon>
+            <div *ngIf="getSubText() !== ''" id="status-header-what-happens-next-link" class="status-header__subheader__text__wording  link" (click)="toggleContent(true)">{{getSubText()}}</div>
+        </div>
+        <div *ngIf="trackerMode !== TrackerModeEnum.Track" class="status-header__subheader__text">
+            <div *ngIf="getSubText() !== ''" class="status-header__subheader__text__wording">{{getSubText()}}</div>
+        </div>
+        <agl-what-happens-next *ngIf="isOpen" (clickClose)="toggleContent(false)" [whatHappensNextContent]="whatHappensNextContent"></agl-what-happens-next>
+        
+    </div>
+</div>

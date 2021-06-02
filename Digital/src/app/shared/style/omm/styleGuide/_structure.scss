@@ -1,0 +1,27 @@
+$superNarrowContentWidth: 400px;
+$narrowContentWidth: 940px;
+$contentWidth: 1200px;
+$wideContentWidth: 1400px;
+$contentGutter: 20px;
+
+.content-width {
+    max-width: $contentWidth + ($contentGutter * 2);
+    margin: 0 auto;
+    padding: 0 $contentGutter;
+}
+
+.content-width--wide {
+    max-width: $wideContentWidth + ($contentGutter * 2);
+}
+
+.content-width--narrow {
+    max-width: $narrowContentWidth + ($contentGutter * 2);
+}
+
+.content-width--supernarrow {
+    max-width: $superNarrowContentWidth + ($contentGutter * 2);
+}
+
+.bg--gray {
+    background-color: $col-g5;
+}

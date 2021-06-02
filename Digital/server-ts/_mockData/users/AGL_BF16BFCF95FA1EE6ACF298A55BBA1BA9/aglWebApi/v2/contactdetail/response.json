@@ -1,0 +1,18 @@
+{
+  "status": 200,
+  "headers": { },
+  "body": {
+    "hasMultipleBusinessPartners": false,
+    "businessPartners": [
+      {
+        "firstName": "Sunil",
+        "lastName": "Bhandary",
+        "businessPartnerNumber": "0128722292",
+        "phone": "",
+        "mobile": "0481877310",
+        "email": "sunil.bhandary@gmail.com",
+        "hasDateOfBirth": true
+      }
+    ]
+  }
+}

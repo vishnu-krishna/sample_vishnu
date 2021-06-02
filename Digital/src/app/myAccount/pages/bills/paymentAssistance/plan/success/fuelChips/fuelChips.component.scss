@@ -1,0 +1,25 @@
+@import '../../../../../../maui/maui';
+
+.payment-assistance-plan-success-fuel-chips {
+    &__heading {
+        &-secondline {
+            margin-top: -$space-03;
+        }
+    }
+
+    &__fuel-chip {
+        margin-top: $space-03;
+        @media #{$agl-layout-mobile} {
+            margin-left: (-$space-03);
+            margin-right: (-$space-03);
+        }
+
+        &--first {
+            margin-top: $space-04;
+        }
+
+        &--last {
+            margin-bottom: $space-06;
+        }
+    }
+}

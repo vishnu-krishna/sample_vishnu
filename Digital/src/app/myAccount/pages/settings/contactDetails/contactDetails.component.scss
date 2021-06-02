@@ -1,0 +1,150 @@
+@import '../../../maui/maui';
+@import '../../../../shared/component/webChat/webChat-common';
+
+$primary-dark-lighten-15: lighten($primary-dark, 15%);
+$click-pad: 10px;
+
+@mixin wrapper-padding {
+    padding: $space-04;
+    @media #{$agl-layout-mobile} {
+        padding: $space-03;
+    }
+}
+
+agl-maui-secondary-navigation {
+    position: relative;
+    z-index: 2; /* to prevent the nav appearing under maui flash messages. TODO: fix this in the maui library */
+}
+
+.contact-details-error {
+
+    &__message {
+        padding: 140px 0 35px 0;
+        text-align: center;
+
+        @media #{$agl-layout-mobile} {
+            margin: 0 15px 35px;
+        }
+
+        &-header {
+            display: block;
+            font-weight: bold;
+            color: $primary-dark;
+            font-family: $display-font-stack;
+            font-size: $display-font-size-gamma;
+            line-height: $line-height-heading;
+            margin-bottom: 10px;
+            @media #{$agl-layout-mobile} {
+                margin-bottom: 25px;
+            }
+        }
+
+        &-body {
+            display: block;
+            font-family: $body-font-stack;
+            line-height: $line-height-short;
+
+            a {
+                color: $primary-dark;
+            }
+        }
+    }
+
+    &__overview-button {
+        margin-top: $space-06;
+        text-align: center;
+
+        @media #{$agl-layout-mobile} {
+            margin: 0 15px;
+        }
+    }
+
+    &__dog-of-doom {
+        @media #{$agl-layout-mobile} {
+            margin: 0 -15px;
+        }
+    }
+}
+
+.contact-details {
+    padding-top: 50px;
+    max-width: $content-width;
+    margin: 0 auto;
+
+    &__loader {
+        margin-top: 125px;
+    }
+
+    @media #{$agl-layout-mobile} {
+        padding-left: $space-03;
+        padding-right: $space-03;
+    }
+
+    &__heading {
+        margin-top: $space-06;
+        margin-bottom: $space-04;
+
+        @media #{$agl-layout-mobile} {
+            margin-top: $space-04;
+        }
+    }
+
+    &__form {
+        &-wrapper {
+            @include wrapper-padding;
+        }
+
+        &-mobile-number,
+        &-email-address {
+            padding-bottom: $space-04;
+        }
+    }
+
+    &__chat-container {
+        margin-top: $space-03;
+    }
+
+    &__cta {
+        text-align: center;
+        font-size: $body-font-size-small;
+        color: $neutral-01;
+
+        &-error {
+            margin-top: $space-03;
+        }
+
+        &-submit {
+            margin-top: $space-05;
+            margin-bottom: $space-04;
+        }
+
+        &-cancel {
+            font-family: $display-font-stack;
+            line-height: 1;
+            font-weight: bold;
+            color: $primary-dark;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            padding: $click-pad;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $primary-dark-lighten-15;
+            }
+        }
+    }
+
+    .label-form {
+        font-weight: normal;
+        margin-bottom: 15px;
+    }
+
+    .has-error {
+        @include form-textbox-error-text-styling;
+    }
+
+    .form-textbox {
+        @include form-textbox-styling;
+    }
+}

@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\bills\paymentAssistance\plan\success\paymentAssistancePlanSuccess.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/bills/paymentAssistance/plan/success/</a> paymentAssistancePlanSuccess.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.04% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>17/106</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">64% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>32/50</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">3.45% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">15.31% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>15/98</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs/Observable';
+import * as moment from 'moment';
+import { MauiFuelChipFuelType, MauiFuelChipFuelContext, FuelChipContractAccountDetails } from '../../../../../maui/fuelChip';
+import { FlashMessageType } from '../../../../../maui/flashMessage';
+import { PaymentExtensionContractEligibility, PaymentArrangementInstalmentSummaryItem } from '../../../../../services/paymentScheme';
+import { DataLayerService, ModalName, EventCategory, EventAction, EventLabel, Now } from '../../../../../../shared/service';
+import { IAccountServiceMA, AccountViewModel } from '../../../../../services/account.service';
+import { PaymentService } from '../../../../../services/payment.service';
+import { IPaymentAssistancePlanConfirmStateService, PaymentAssistancePlanConfirmStateModel } from '../confirm';
+import { PaymentAssistancePlanInstalmentsModel, InstalmentStatus, PaymentAssistancePlanInstalmentsProgressItem } from '../instalments';
+import { PaymentAssistancePlanSuccessFuelChipsModel } from './fuelChips';
+import { PaymentAssistancePlanSuccessSummaryModel } from './summary';
+import { PaymentAssistancePlanSuccessFuelChipHeaderModel } from './fuelChipHeader';
+import { FuelChipService, ClassifiedFuelChips } from '../../services';
+import { FuelChipDataModel } from '../../models';
+import { IPaymentExtensionStateService } from '../../extend/services/paymentExtensionState.service';
+&nbsp;
+@Component({
+    selector: 'agl-payment-assistance-plan-success',
+    template: require('./paymentAssistancePlanSuccess.component.html'),
+    styles: [require('./paymentAssistancePlanSuccess.component.scss')]
+})
+export class PaymentAssistancePlanSuccessComponent implements OnInit, OnDestroy {
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >flashMessageType = FlashMessageType;</span>
+&nbsp;
+    public fuelChipHeaderModel: PaymentAssistancePlanSuccessFuelChipHeaderModel;
+    public summaryModel: PaymentAssistancePlanSuccessSummaryModel;
+    public instalmentsModel: PaymentAssistancePlanInstalmentsModel;
+    public fuelChipsModel: PaymentAssistancePlanSuccessFuelChipsModel;
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >showLoader = true;</span>
+    public <span class="cstat-no" title="statement not covered" >showMakeAPayment = false;</span>
+    public <span class="cstat-no" title="statement not covered" >showFuelChips = false;</span>
+    public <span class="cstat-no" title="statement not covered" >showMakeAPaymentLoading = false;</span>
+&nbsp;
+    public accountNumber: string;
+    public contractNumber: string;
+    public firstInstalmentAmount: number;
+&nbsp;
+    private <span class="cstat-no" title="statement not covered" >subscriptions: Subscription[] = [];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    constructor(</span>
+        private <span class="cstat-no" title="statement not covered" >now: Now,</span>
+        private <span class="cstat-no" title="statement not covered" >fuelChipService: FuelChipService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >router: Router<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >route: ActivatedRoute<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >paymentAssistancePlanConfirmStateService: IPaymentAssistancePlanConfirmStateService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >paymentService: PaymentService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >dataLayerService: DataLayerService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >accountService: IAccountServiceMA<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >paymentExtensionStateService: IPaymentExtensionStateService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" ></span></span></span>
+    ) {}
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public ngOnInit() {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.subscriptions.push(this.route.params.subscribe((routeParams<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+&nbsp;
+            // Extract route parameters
+<span class="cstat-no" title="statement not covered" >            this.accountNumber = routeParams.contractAccountNumber;</span>
+<span class="cstat-no" title="statement not covered" >            this.contractNumber = routeParams.contractNumber;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            this.subscriptions.push(this.fuelChipService.init()</span>
+                .finally(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >(this.showLoader = false))</span></span>
+                .subscribe((classifiedFuelChips<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >this.createModels(this.accountNumber, this.contractNumber, classifiedFuelChips)</span></span>
+            ));
+        }));
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public ngOnDestroy() {</span>
+<span class="cstat-no" title="statement not covered" >        this.subscriptions.forEach((subscription<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >subscription.unsubscribe())</span></span>;</span>
+    }
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >makeAPaymentClicked = <span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.showMakeAPaymentLoading = true;</span>
+&nbsp;
+        const accountNumber = <span class="cstat-no" title="statement not covered" >this.accountNumber;</span>
+        const contractNumber = <span class="cstat-no" title="statement not covered" >this.contractNumber;</span>
+        const amount = <span class="cstat-no" title="statement not covered" >this.firstInstalmentAmount;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.subscriptions.push(</span>
+            this.accountService.getAccounts()
+                .subscribe((accounts<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >this.openPaymentModal(accounts, accountNumber, contractNumber, amount)</span></span>
+            )
+        );
+    }
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >goToOverviewClicked = <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >this.router.navigate(['/overview']);</span></span></span>
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >onFuelChipSelected = ($event: {accountNumber: string, contractNumber: string}<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.paymentExtensionStateService.clearSelectedFuelChip();</span>
+<span class="cstat-no" title="statement not covered" >        this.router.navigate([`/bills/paymentassistance/choose/${$event.accountNumber}/${$event.contractNumber}`]);</span>
+    }
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >openPaymentModal = (accounts: AccountViewModel[], accountNumber: string, contractNumber: string, amount: number<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+        const contract = <span class="cstat-no" title="statement not covered" >this.getAccountContract(accounts, accountNumber, contractNumber);</span>
+        const address = <span class="cstat-no" title="statement not covered" >contract.address;</span>
+<span class="cstat-no" title="statement not covered" >        this.dataLayerService.pushClickEvent(ModalName.None, EventCategory.AccountsPush, EventAction.ClickAction, EventLabel.MakePayment);</span>
+<span class="cstat-no" title="statement not covered" >        this.paymentService.openPaymentModal(contract, amount, address).subscribe((result<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >this.showMakeAPaymentLoading = false)</span></span>;</span>
+    }
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >getAccountContract = (accounts: AccountViewModel[], accountNumber: string, contractNumber: string<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+        const account = <span class="cstat-no" title="statement not covered" >accounts.find((a<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >a.accountNumber === accountNumber)</span></span>;</span>
+        const contract = <span class="cstat-no" title="statement not covered" >account.contracts.find((c<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >c.contractNumber === contractNumber)</span></span>;</span>
+<span class="cstat-no" title="statement not covered" >        return contract;</span>
+    }
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >createModels = (accountNumber: string, contractNumber: string, classifiedFuelChips: ClassifiedFuelChips<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+        // Create fuel chip models
+        const fuelChip = <span class="cstat-no" title="statement not covered" >this.fuelChipService.getFuelChip(accountNumber, contractNumber);</span>
+<span class="cstat-no" title="statement not covered" >        this.fuelChipsModel = this.createFuelChipsModel(classifiedFuelChips);</span>
+<span class="cstat-no" title="statement not covered" >        this.fuelChipHeaderModel = this.createFuelChipHeaderModel(fuelChip);</span>
+<span class="cstat-no" title="statement not covered" >        this.showFuelChips = this.shouldShowFuelChips(classifiedFuelChips);</span>
+&nbsp;
+        // Check to see if we have a state object from the Confirm screen
+<span class="cstat-no" title="statement not covered" >        if (this.paymentAssistancePlanConfirmStateService.hasState()) {</span>
+            // State object detected
+            const state = <span class="cstat-no" title="statement not covered" >this.paymentAssistancePlanConfirmStateService.getState();</span>
+<span class="cstat-no" title="statement not covered" >            this.createStateBasedModels(state);</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.router.navigate(['/bills']);</span>
+        }
+    }
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >shouldShowFuelChips = (classifiedFuelChips: ClassifiedFuelChips<span class="fstat-no" title="function not covered" >): boolean =&gt;</span></span>
+<span class="cstat-no" title="statement not covered" >        !!classifiedFuelChips.eligibleFuelChips.length</span>
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >isDateToday = (date: Date<span class="fstat-no" title="function not covered" >): boolean =&gt;</span></span>
+<span class="cstat-no" title="statement not covered" >        date ? moment(date).isSame(moment(this.now.date()), 'day') : true</span>
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >createFuelChipHeaderModel = (fuelChip: FuelChipDataModel<span class="fstat-no" title="function not covered" >): PaymentAssistancePlanSuccessFuelChipHeaderModel =&gt;</span></span>
+<span class="cstat-no" title="statement not covered" >        ({ fuelChip: fuelChip })</span>
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >createFuelChipsModel = (classifiedFuelChips: ClassifiedFuelChips<span class="fstat-no" title="function not covered" >): PaymentAssistancePlanSuccessFuelChipsModel =&gt;</span></span>
+<span class="cstat-no" title="statement not covered" >        ({ classifiedFuelChips: classifiedFuelChips })</span>
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >createInstalmentsModel = (instalments: PaymentArrangementInstalmentSummaryItem[]<span class="fstat-no" title="function not covered" >): PaymentAssistancePlanInstalmentsModel =&gt; {</span></span>
+        const progressItems = <span class="cstat-no" title="statement not covered" >this.mapPaymentArrangementInstalmentSummaryItems(instalments);</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            progressItems: progressItems
+        };
+    }
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >mapPaymentArrangementInstalmentSummaryItems = (summaryItems: PaymentArrangementInstalmentSummaryItem[]<span class="fstat-no" title="function not covered" >): PaymentAssistancePlanInstalmentsProgressItem[] =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        return summaryItems.reduce((progressItems: PaymentAssistancePlanInstalmentsProgressItem[], summaryItem: PaymentArrangementInstalmentSummaryItem, index: number<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+            const instalmentStatus = <span class="cstat-no" title="statement not covered" >(index === 0) ? InstalmentStatus.Due : InstalmentStatus.Upcoming;</span>
+            const instalmentDate = <span class="cstat-no" title="statement not covered" >new Date(summaryItem.instalmentDate);</span>
+            const progressItem = <span class="cstat-no" title="statement not covered" >new PaymentAssistancePlanInstalmentsProgressItem(summaryItem.instalmentAmount, instalmentDate, instalmentStatus);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            progressItems.push(progressItem);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            return progressItems;</span>
+        }, []);
+    }
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >createSummaryModel = (state: PaymentAssistancePlanConfirmStateModel, firstInstalmentDate: Date<span class="fstat-no" title="function not covered" >): PaymentAssistancePlanSuccessSummaryModel =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            totalDue: state.totalDue,
+            frequency: state.frequency,
+            startDate: state.startDate,
+            firstInstalmentDue: firstInstalmentDate
+        };
+    }
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >createStateBasedModels = (state: PaymentAssistancePlanConfirmStateModel<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+        const instalments = <span class="cstat-no" title="statement not covered" >state.paymentArrangementInstalmentSummary.instalments;</span>
+        const firstInstalmentDate = <span class="cstat-no" title="statement not covered" >this.getFirstInstalmentDate(instalments);</span>
+<span class="cstat-no" title="statement not covered" >        this.firstInstalmentAmount = this.getFirstInstalmentAmount(instalments);</span>
+&nbsp;
+        // Create state based models
+<span class="cstat-no" title="statement not covered" >        this.instalmentsModel = this.createInstalmentsModel(instalments);</span>
+<span class="cstat-no" title="statement not covered" >        this.summaryModel = this.createSummaryModel(state, firstInstalmentDate);</span>
+&nbsp;
+        // Only show the payment button if the first instalment date is today
+<span class="cstat-no" title="statement not covered" >        this.showMakeAPayment = this.isDateToday(firstInstalmentDate);</span>
+    }
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >getFirstInstalmentDate = (instalments: PaymentArrangementInstalmentSummaryItem[]<span class="fstat-no" title="function not covered" >) =&gt;</span></span>
+<span class="cstat-no" title="statement not covered" >        !!instalments.length ? new Date(instalments[0].instalmentDate) : null</span>
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >getFirstInstalmentAmount = (instalments: PaymentArrangementInstalmentSummaryItem[]<span class="fstat-no" title="function not covered" >): number =&gt;</span></span>
+<span class="cstat-no" title="statement not covered" >        !!instalments.length ? instalments[0].instalmentAmount : 0</span>
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../../sorter.js"></script>
+</body>
+</html>

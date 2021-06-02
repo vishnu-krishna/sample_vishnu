@@ -1,0 +1,16 @@
+{
+"status": 200,
+"headers": {},
+  "body": [
+    {
+      "frequency": "BiMonthly",
+      "preferredDayOfMonth": null,
+      "contractNumber": 9402893992
+    },
+    {
+      "frequency": "FlexibleMonthly",
+      "preferredDayOfMonth": 22,
+      "contractNumber": 9403010402
+    }
+  ]
+}

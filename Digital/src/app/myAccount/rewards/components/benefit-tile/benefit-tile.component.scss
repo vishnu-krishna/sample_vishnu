@@ -1,0 +1,125 @@
+@import '../../../maui/maui';
+@import '../../rewards';
+
+$highlight-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.12);
+$highlight-bg-color: #FFE344;
+$highlight-color: black;
+
+$shorter-tile-breakpoint: $agl-layout-mobile;
+
+:host {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: $rewards-tile-shadow;
+    background-color: $neutral-08;
+    font-family: $display-font-stack;
+
+    &.dark-theme {
+        background: $gradient-01;
+
+        .benefit-tile__cta {
+            color: $neutral-08;
+
+            &:hover {
+                color: $neutral-05;
+            }
+        }
+    }
+}
+
+.benefit-tile__content,
+.benefit-tile__cta  {
+    cursor: pointer;
+}
+
+.benefit-tile__summary {
+    position: relative;
+    flex-grow: 1;
+    padding: 20px;
+    min-height: 120px;
+
+    @media #{$shorter-tile-breakpoint} {
+        padding: 15px;
+    }
+}
+
+.benefit-tile__title {
+    font-size: 18px;
+    font-weight: 600;
+    min-height: 51px;
+    max-height: 180px;
+    margin-bottom: 15px;
+    overflow: hidden;
+
+    @media #{$shorter-tile-breakpoint} {
+        font-size: 16px;
+        margin-top: 5px;
+        min-height: 31px;
+        max-height: 158px;
+    }
+}
+
+.benefit-tile__benefit {
+    font-weight: 600;
+    font-size: 18px;
+    max-height: 105px;
+    overflow: hidden;
+
+    @media #{$shorter-tile-breakpoint} {
+        font-size: 16px;
+        max-height: 92px;
+    }
+}
+
+.benefit-tile__description {
+    font-family: $body-font-stack;
+    font-size: 15px;
+    line-height: 20px;
+    color: $neutral-02;
+    margin: 14px 0 40px 0;
+    max-height: 250px;
+    overflow-y: hidden;
+
+    @media #{$shorter-tile-breakpoint} {
+        font-size: 14px;
+        line-height: 17px;
+        margin-top: 18px;
+    }
+}
+
+.benefit-tile__cta {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    font-size: 14px;
+    line-height: 100%;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $primary-dark;
+
+    @media #{$shorter-tile-breakpoint} {
+        left: 17px;
+        bottom: 17px;
+    }
+
+    &:hover {
+        text-decoration: none;
+        color: $neutral-01;
+    }
+}
+
+.benefit-tile__highlight {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: $highlight-color;
+    background-color: $highlight-bg-color;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    box-shadow: $highlight-shadow;
+}

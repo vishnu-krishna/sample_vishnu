@@ -1,0 +1,6 @@
+<a *ngIf="isRoute()" [routerLink]="[item?.route]" [queryParams]="{}">
+    {{item?.label}}
+</a>
+<a *ngIf="!isRoute()" href="{{item?.route}}">
+    {{item?.label}}
+</a>

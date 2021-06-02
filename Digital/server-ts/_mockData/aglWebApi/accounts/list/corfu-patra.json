@@ -1,0 +1,30 @@
+[{
+    "number": "7023461093",
+    "firstName": "ANGELIKI",
+    "lastName": "PANGALIS",
+    "contracts": [{
+            "address": "14 Fernbank Court|Kilsyth VIC 3137",
+            "accountNumber": "7023461093",
+            "fuelType": "Electricity",
+            "nameId": "AGL_0090FA0E77041ED5B3E2595A7EE6673D",
+            "number": "9401106584",
+            "planName": "Savers",
+            "inFlight": false,
+            "contractStatus": "",
+            "isRestricted": false,
+            "hasElectricVehicle": false
+        },
+        {
+            "address": "14 Fernbank Court|Kilsyth VIC 3137",
+            "accountNumber": "7023461093",
+            "fuelType": "Gas",
+            "nameId": "AGL_0090FA0E77041ED5B3E2595A7EE6673D",
+            "number": "9401106585",
+            "planName": "Savers",
+            "inFlight": false,
+            "contractStatus": "",
+            "isRestricted": false,
+            "hasElectricVehicle": false
+        }
+    ]
+}]

@@ -1,0 +1,11 @@
+@import '../../../../../shared/style/variables';
+
+.bill-panel-notice {
+    font-family: $secondary-font-stack;
+    font-size: 12px;
+    line-height: 15px;
+    color: $brand-grey-g1;
+    @media #{$agl-layout-mobile} {
+        margin-bottom: 20px;
+    }
+}

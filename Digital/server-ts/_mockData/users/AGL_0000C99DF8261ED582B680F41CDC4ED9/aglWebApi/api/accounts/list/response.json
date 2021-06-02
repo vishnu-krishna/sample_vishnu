@@ -1,0 +1,102 @@
+{
+    "status": 200,
+    "body": [
+        {
+            "number": "7018263504",
+            "firstName": "Iain",
+            "lastName": "Sanders",
+            "contracts": [
+                {
+                    "address": "10 CREST DRIVE|ROSEBUD VIC 3939",
+                    "accountNumber": "7018263504",
+                    "fuelType": "Gas",
+                    "nameId": "AGL_0000C99DF8261ED582B680F41CDC4ED9",
+                    "number": "9400902585",
+                    "planName": "Savers",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "hasSolar": false,
+                    "solarHealthCheckRegistered": false
+                },
+                {
+                    "address": "10 CREST DRIVE|ROSEBUD VIC 3939",
+                    "accountNumber": "7018263504",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_0000C99DF8261ED582B680F41CDC4ED9",
+                    "number": "9400921596",
+                    "planName": "Savers",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "hasSolar": true,
+                    "solarHealthCheckRegistered": true
+                }
+            ]
+        },
+        {
+            "number": "7014235472",
+            "firstName": "Iain",
+            "lastName": "Sanders",
+            "contracts": [
+                {
+                    "address": "6 HOTHAM STREET|MOONEE PONDS VIC 3039",
+                    "accountNumber": "7014235472",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_0000C99DF8261ED582B680F41CDC4ED9",
+                    "number": "9401005102",
+                    "planName": "Employee Freedom",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false
+                },
+                {
+                    "address": "6 HOTHAM STREET|MOONEE PONDS VIC 3039",
+                    "accountNumber": "7014235472",
+                    "fuelType": "Gas",
+                    "nameId": "AGL_0000C99DF8261ED582B680F41CDC4ED9",
+                    "number": "9401005103",
+                    "planName": "Employee Freedom",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false
+                }
+            ]
+        },
+        {
+            "number": "7035252860",
+            "firstName": "Iain",
+            "lastName": "Sanders",
+            "contracts": [
+                {
+                    "address": "U15/117 ALBION STREET|BRUNSWICK VIC 3056",
+                    "accountNumber": "7035252860",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_0000C99DF8261ED582B680F41CDC4ED9",
+                    "number": "9402766055",
+                    "planName": "Employee Freedom",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false
+                },
+                {
+                    "address": "U15/117 ALBION STREET|BRUNSWICK VIC 3056",
+                    "accountNumber": "7035252860",
+                    "fuelType": "Gas",
+                    "nameId": "AGL_0000C99DF8261ED582B680F41CDC4ED9",
+                    "number": "9402766056",
+                    "planName": "Employee Freedom",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false
+                }
+            ]
+        }
+    ]
+}

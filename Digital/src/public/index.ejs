@@ -1,0 +1,444 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>AGL | Electricity Providers | Gas Suppliers | Solar Energy</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Titillium+Web:400,600,700" rel="stylesheet">
+    <link href="<%= htmlWebpackPlugin.options.baseUrl %>css/bootstrap.min.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/AGL_Logo_hand_57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/AGL_Logo_hand_60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/AGL_Logo_hand_72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/AGL_Logo_hand_76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/AGL_Logo_hand_114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/AGL_Logo_hand_120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/AGL_Logo_hand_144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/AGL_Logo_hand_152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/AGL_Logo_hand_180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/AGL_Logo_hand_192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/AGL_Logo_hand_32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/AGL_Logo_hand_96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/AGL_Logo_hand_16x16.png">
+    <link rel="msapplication-TileImage" content="AGL_Logo_hand_144x144.png">
+    <base href="<%= htmlWebpackPlugin.options.baseUrl %>">
+    <style>
+        @keyframes loader {
+            0% {
+                stroke: #001cb0;
+                stroke-dashoffset: -15;
+            }
+            25% {
+                stroke: #001cb0;
+                stroke-dashoffset: 0;
+            }
+            50% {
+                stroke: #00dfed;
+                stroke-dashoffset: 16;
+            }
+            100% {
+                stroke-dashoffset: 16;
+            }
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        agl-apps {
+            height: auto;
+            width: 100%;
+            position: absolute;
+        }
+
+        agl-apps.loaded + .app-shell {
+            opacity: 0;
+            transition: opacity 1s linear, visibility 1s linear;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            visibility: hidden;
+            overflow-x: hidden; /* without this a horiz scrollbar shows at res between 767px and 1139px */
+        }
+
+        .app-shell__header {
+            background-color: #ffffff;
+            height: 70px;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .app-shell__header-box {
+            min-height: 50px;
+            padding-bottom: 19px;
+            padding-top: 15px;
+            font-size: 14px;
+            padding-left: 16px;
+            padding-right: 20px;
+        }
+
+        .app-shell__header-box div {
+            display: block;
+            background: #cecece;
+            height: 15px;
+            width: 353px;
+            border-radius: 0px;
+        }
+
+        .app-shell__header-box div:last-child {
+            display: none;
+        }
+
+        .app-shell__container {
+            height: 100%;
+            max-width: 1170px;
+            margin: 0px auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .app-shell__header img {
+            display: inline-block;
+            padding-right: 60px;
+            padding-top: 10px;
+        }
+
+        .app-shell__body {
+            background-color: #f5f5f5;
+            height: 101%;
+            position: absolute;
+            width: 100%;
+        }
+
+        .app-shell__container-body {
+            height: 100%;
+            max-width: 1170px;
+            margin: 0px auto;
+            padding-top: 107px;
+        }
+
+        .app-shell__box-left {
+            width: 75%;
+            float: left;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-top: -7px;
+            margin-left: -4px;
+        }
+
+        .app-shell__box-left svg {
+            width: 100%;
+            height: 501px;
+        }
+
+        .app-shell__box-right {
+            width: 25%;
+            float: left;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-top: -4px;
+        }
+
+        .app-shell__box-right svg {
+            width: 275px;
+            height: 511px;
+            margin-left: -5px;
+        }
+
+        .spinner-container {
+            display: table;
+            width: 100%;
+            height: 100%;
+            visibility: visible;
+            opacity: 1
+        }
+
+        .spinner {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .text {
+            font-family: 'Open Sans', sans-serif;
+            color: #006ce5;
+            margin-top: 0;
+            margin-left: 21px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        @media (min-width: 767px) {
+            .app-shell__header-mobile, .app-shell__box-mobile {
+                display: none;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .app-shell__header {
+                display: none;
+            }
+
+            .app-shell__header-mobile {
+                background-color: #ffffff;
+                height: 50px;
+                position: fixed;
+                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+                padding-right: 15px;
+                padding-left: 15px;
+                width: 100%;
+                z-index: 1000;
+                display: block;
+            }
+
+            .app-shell__header-mobile svg {
+                fill: #001CB0;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 21px;
+            }
+
+            .app-shell__header-mobile img {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 50%;
+                margin-left: -35px;
+                height: 30px;
+                padding: 0;
+            }
+
+            .app-shell__container-body {
+                padding-top: 51px;
+            }
+
+            .app-shell__box-left, .app-shell__box-right {
+                display: none;
+            }
+
+            .app-shell__box-mobile {
+                display: block;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .app-shell__box-mobile img {
+                width: 100%;
+            }
+
+            .app-shell__header-box {
+                padding-left: 14px;
+                padding-right: 14px;
+                padding-bottom: 5px;
+            }
+
+            .app-shell__header-box div {
+                display: block;
+                background: #cecece;
+                height: 15px;
+                width: 100%;
+                border-radius: 0px;
+                margin-bottom: 8px;
+            }
+
+            .app-shell__header-box div:last-child {
+                display: block;
+            }
+        }
+
+    </style>
+    <script src="./config/config.js"></script>
+    <script src="./config/tealium.config.js"></script>
+
+    <script type="text/javascript">
+        <%- include src/public/templates/deeplinks -%>
+    </script>
+    <script type="text/javascript">
+        <%- include src/public/templates/livePersonButton -%>
+    </script>
+    <script type="text/javascript">
+        <%- include src/public/templates/generalScripts -%>
+    </script>
+
+    <script>
+        console.time('main');
+    </script>
+
+     <% if (htmlWebpackPlugin.options.newRelic) { %>
+        <script src="./config/newRelic.config.js"></script>
+     <% } %>
+     <% if (htmlWebpackPlugin.options.serviceWorker) { %>
+    <script>
+        if ('serviceWorker' in navigator) {
+            console.log('SW: Attempting registration');
+            navigator.serviceWorker.register('/service-worker.js');
+        }
+    </script>
+    <% } else { %>
+    <script>
+    if ('serviceWorker' in navigator) {
+        console.log('SW: supported');
+        navigator.serviceWorker.getRegistration().then(function (registration) {
+            if (registration) {
+                console.log('SW: Attempting to unregister');
+                var unregisterPromise = registration.unregister();
+                unregisterPromise.then(function() {
+                    console.log('SW: unregistered successfully');
+                }).catch(function(error) {
+                    console.error('SW: unregister failed:', error);
+                });
+            }
+        });
+    } else {
+        console.log('SW: not supported');
+    }
+    </script>
+    <% } %>
+  </head>
+  <body>
+        <agl-apps></agl-apps>
+        <div class="app-shell">
+            <div class="app-shell__header">
+                <div class="app-shell__container">
+                    <img src="svg/icon-header-desktop.svg">
+                </div>
+            </div>
+            <div class="app-shell__header-mobile">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 12" xml:space="preserve" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false">
+                <g id="SYMBOLS">
+                    <g id="Header_x2F_Public_x2F_EnergyPlans_x5F_mobile" transform="translate(-15.000000, -20.000000)">
+                        <g id="Hamburgz" transform="translate(16.000000, 19.000000)">
+                            <rect x="-0.8" y="1" width="15.5" height="1.5"></rect>
+                            <rect x="-0.8" y="6" width="15.5" height="1.5"></rect>
+                            <rect x="-0.8" y="11" width="15.5" height="1.5"></rect>
+                        </g>
+                    </g>
+                </g>
+                </svg>
+                <img src="svg/icon-header-mobile.svg">
+            </div>
+            <div class="app-shell__body">
+                <div class="app-shell__container-body">
+                    <div class="app-shell__header-box">
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="app-shell__box-left">
+                        <?xml version="1.0" encoding="UTF-8"?>
+                        <svg viewBox="0 0 859 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <defs>
+                                <rect id="path-1" x="0" y="0" width="847" height="495"></rect>
+                                <filter x="-1.1%" y="-1.8%" width="102.1%" height="103.6%" filterUnits="objectBoundingBox" id="filter-2">
+                                    <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+                                    <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+                                    <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.100628397 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+                                </filter>
+                            </defs>
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="Skeleton-Screen" transform="translate(-24.000000, -158.000000)">
+                                    <g id="Smart-Meter" transform="translate(30.000000, 164.000000)">
+                                        <g id="Group-27">
+                                            <g id="Mask-Copy-13">
+                                                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                                                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                                            </g>
+                                            <rect id="Mask-Copy-13" fill="#F9F9F9" x="425" y="0" width="422" height="495"></rect>
+                                            <g id="summary" transform="translate(148.000000, 423.000000)" stroke-linecap="square" stroke="#E8E8E8">
+                                                <g id="Group-2" transform="translate(0.883255, 0.000000)">
+                                                    <path d="M0.998820755,0 L0.998820755,30" id="divider"></path>
+                                                    <path d="M120.880896,0 L120.880896,30" id="divider"></path>
+                                                </g>
+                                            </g>
+                                            <g id="Group-13" transform="translate(60.000000, 176.000000)">
+                                                <g id="horseShow-/-8daysToGo" transform="translate(0.863619, 0.000000)" stroke="#E8E8E8" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M282.147801,201 C288.887138,184.160801 292.594137,165.776566 292.594137,146.525367 C292.594137,65.6095482 227.094158,0.0133192771 146.297068,0.0133192771 C65.4999784,0.0133192771 4.54747351e-13,65.6095482 4.54747351e-13,146.525367 C4.54747351e-13,165.730554 3.69007151,184.07362 10.3979735,200.880127" id="0_daysToGo"></path>
+                                                </g>
+                                                <g id="Group-9" transform="translate(96.171221, 72.010638)"></g>
+                                            </g>
+                                            <g id="Group-14" transform="translate(263.000000, 349.000000)" font-size="11" font-family="Gilroy-Bold, Gilroy" line-spacing="18" fill="#FFFFFF" font-weight="bold">
+                                                <g id="I">
+                                                    <text id="i">
+                                                        <tspan x="0.1415" y="10">i</tspan>
+                                                    </text>
+                                                </g>
+                                            </g>
+                                        </g>
+                                        <rect id="Rectangle" fill="#E8E8E8" x="25" y="25" width="44" height="44"></rect>
+                                        <rect id="Rectangle-3" fill="#E8E8E8" x="84" y="56" width="134" height="13"></rect>
+                                        <rect id="Rectangle-3-Copy-41" fill="#CCCCCC" opacity="0.70386096" x="485" y="132" width="134" height="13"></rect>
+                                        <rect id="Rectangle-3-Copy-2" fill="#E8E8E8" x="84" y="33" width="95" height="13"></rect>
+                                        <rect id="Rectangle-3-Copy-42" fill="#CCCCCC" opacity="0.70386096" x="485" y="186" width="144" height="13"></rect>
+                                        <rect id="Rectangle-3-Copy-43" fill="#CCCCCC" opacity="0.70386096" x="485" y="109" width="118" height="13"></rect>
+                                        <rect id="Rectangle-3-Copy-11" fill="#E8E8E8" x="60" y="418" width="57.4257812" height="13"></rect>
+                                        <rect id="Rectangle-3-Copy-13" fill="#E8E8E8" x="182" y="418" width="57.4257812" height="13"></rect>
+                                        <rect id="Rectangle-3-Copy-26" fill="#E8E8E8" x="138" y="286" width="139" height="44"></rect>
+                                        <rect id="Rectangle-3-Copy-15" fill="#E8E8E8" x="301" y="418" width="57.4257812" height="13"></rect>
+                                        <rect id="Rectangle-3-Copy-44" fill="#CCCCCC" opacity="0.70386096" x="485" y="209" width="107" height="13"></rect>
+                                        <rect id="Rectangle-3-Copy-45" fill="#CCCCCC" opacity="0.70386096" x="485" y="262" width="302" height="52"></rect>
+                                        <rect id="Rectangle-3-Copy-12" fill="#E8E8E8" x="60" y="441" width="44" height="13"></rect>
+                                        <rect id="Rectangle-3-Copy-14" fill="#E8E8E8" x="182" y="441" width="44" height="13"></rect>
+                                        <rect id="Rectangle-3-Copy-16" fill="#E8E8E8" x="301" y="441" width="44" height="13"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="app-shell__box-right">
+                        <?xml version="1.0" encoding="UTF-8"?>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <defs>
+                                <rect id="path-1" x="0" y="0" width="263" height="388"></rect>
+                                <filter x="-3.4%" y="-2.3%" width="106.8%" height="104.6%" filterUnits="objectBoundingBox" id="filter-2">
+                                    <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+                                    <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+                                    <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+                                </filter>
+                            </defs>
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="Skeleton-Screen" transform="translate(-901.000000, -158.000000)">
+                                    <g id="Sidebar-1" transform="translate(907.000000, 164.000000)">
+                                        <g id="Group-12">
+                                            <g id="Rectangle-Copy-4">
+                                                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                                                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                                            </g>
+                                            <g id="Group-8" transform="translate(26.000000, 243.000000)">
+                                                <path d="M0,1.58285476 L209,1.58285476" id="Line-Copy-11" stroke="#E8E8E8" stroke-linecap="square"></path>
+                                                <path d="M0,48.5828548 L208.999147,47.9857143" id="Line-Copy-11" stroke="#E8E8E8" stroke-linecap="square"></path>
+                                                <polygon id="Triangle" fill="#CCCCCC" transform="translate(208.000000, 25.000000) scale(1, -1) rotate(90.000000) translate(-208.000000, -25.000000) " points="208 22 213 28 203 28"></polygon>
+                                            </g>
+                                            <g id="Group-8" transform="translate(26.000000, 290.000000)">
+                                                <path d="M0,1.6799898 L182.999253,1.15713479" id="Line-Copy-11" stroke="#E8E8E8" stroke-linecap="square"></path>
+                                                <path d="M0,48.5828548 L208.999147,47.9857143" id="Line-Copy-11" stroke="#E8E8E8" stroke-linecap="square"></path>
+                                                <polygon id="Triangle" fill="#CCCCCC" transform="translate(208.000000, 25.000000) scale(1, -1) rotate(90.000000) translate(-208.000000, -25.000000) " points="208 22 213 28 203 28"></polygon>
+                                            </g>
+                                            <g id="Group-8" transform="translate(231.000000, 357.000000)" fill="#CCCCCC">
+                                                <polygon id="Triangle" transform="translate(3.000000, 5.000000) scale(1, -1) rotate(90.000000) translate(-3.000000, -5.000000) " points="3 2 8 8 -2 8"></polygon>
+                                            </g>
+                                        </g>
+                                        <rect id="Rectangle-3-Copy-37" fill="#E8E8E8" x="26" y="48" width="134" height="13"></rect>
+                                        <rect id="Rectangle-3-Copy-33" fill="#E8E8E8" x="26" y="102" width="144" height="13"></rect>
+                                        <rect id="Rectangle-3-Copy-35" fill="#E8E8E8" x="26" y="25" width="118" height="13"></rect>
+                                        <rect id="Rectangle-3-Copy-34" fill="#E8E8E8" x="26" y="125" width="107" height="13"></rect>
+                                        <rect id="Rectangle-3-Copy-36" fill="#E8E8E8" x="26" y="178" width="211" height="38"></rect>
+                                        <rect id="Rectangle-3-Copy-30" fill="#E8E8E8" x="26" y="353" width="107" height="13"></rect>
+                                        <rect id="Rectangle-3-Copy-31" fill="#E8E8E8" x="26" y="308" width="107" height="13"></rect>
+                                        <rect id="Rectangle-3-Copy-32" fill="#E8E8E8" x="26" y="261" width="107" height="13"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="app-shell__box-mobile">
+                        <img src="img/gg-min.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+  </body>
+</html>

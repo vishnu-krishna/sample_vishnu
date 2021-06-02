@@ -1,0 +1,60 @@
+<div class="attach-photo">
+    <div class="header">
+        Attach & submit a photo
+    </div>
+    <div class="description">
+        Attach and submit your photo here for further review.
+    </div>
+
+    <div *ngFor="let meter of ssmrService?.selfServicePhotoReadings; let i=index">
+        <div class="meter-box">
+            <div class="meter-box__top">
+                <div class="meter-box__top__icon">
+                    <img src="svg/icon_blue_elec_meter.svg">
+                </div>
+                <div class="meter-index">
+                    {{i+1}}
+                </div>
+                <div class="meter-serial__container">
+                    <div class="meter-prefix">
+                        Meter no.
+                    </div>
+                    <div class="meter-serial">
+                        {{meter.meterSerial}}
+                    </div>
+                </div>
+            </div>
+            <input class="file-input" id="file-upload{{i}}" type="file" multiple="false" accept="image/*" (change)="onChangeFileInput(i)">
+
+            <div class="thumbnail-image" *ngIf="meter?.isThumbnailAvailable">
+                <div class="vertical-alignment-helper">
+                </div>
+                <img id="previewImage{{i}}" src="" height="200" alt="Image preview...">
+                <div class="close-button" (click)="onClickCloseThumbnail(i)">&times;</div>
+            </div>
+            <div class="thumbnail-placeholder" *ngIf="!meter?.isThumbnailAvailable" (click)="onClickThumbnailPlaceholder(i)">
+                <div class="thumbnail-placeholder__icon">
+                </div>
+                <div class="thumbnail-placeholder__heading">
+                    Please attach a photo
+                </div>
+                <div class="thumbnail-placeholder__message" [class.thumbnail-placeholder__message--error]="hasFileError(i)">
+                    File type must be jpg, png or gif and not exceed 5MB
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="button__continue">
+        <a mat-raised-button color="accent" class="tempdls-button" (click)="onClickSubmit()" [disabled]="isSubmitDisabled">SUBMIT PHOTOS</a>
+    </div>
+
+    <div class="footer">
+        <div class="footer__content">
+            <a href="https://www.agl.com.au/residential/help-and-support/how-to-read-your-meter" target="_blank"> 
+                <img class="icon_size" src="svg/help_icon.svg">
+                How to read your meter
+            </a>
+        </div>
+    </div>
+</div>

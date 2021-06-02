@@ -1,0 +1,45 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": {
+        "eligible": false,
+        "contracts": [
+            {
+                "contractNumber": "9117813087",
+                "registered": false,
+                "registrationStatus": "NotRegistered",
+                "eligible": false
+            },
+            {
+                "contractNumber": "9400671979",
+                "registered": false,
+                "registrationStatus": "NotRegistered",
+                "eligible": false
+            },
+            {
+                "contractNumber": "9400686273",
+                "registered": false,
+                "registrationStatus": "NotRegistered",
+                "eligible": false
+            },
+            {
+                "contractNumber": "9400733459",
+                "registered": false,
+                "registrationStatus": "NotRegistered",
+                "eligible": false
+            },
+            {
+                "contractNumber": "9400619503",
+                "registered": false,
+                "registrationStatus": "NotRegistered",
+                "eligible": false
+            },
+            {
+                "contractNumber": "9400732978",
+                "registered": false,
+                "registrationStatus": "NotRegistered",
+                "eligible": false
+            }
+        ]
+    }
+}

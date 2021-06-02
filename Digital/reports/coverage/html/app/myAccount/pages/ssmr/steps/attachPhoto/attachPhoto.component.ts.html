@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\ssmr\steps\attachPhoto\attachPhoto.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/ssmr/steps/attachPhoto/</a> attachPhoto.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">22.22% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>16/72</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">15.38% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">6.25% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20.9% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>14/67</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, ElementRef, OnInit, ViewEncapsulation } from '@angular/core';
+import { ContractDisplayViewModel } from '../../../../model/ssmr/contractDisplayView.model';
+import { ISsmrService } from '../../../../services/contract/issmr.service';
+&nbsp;
+@Component({
+    selector: 'agl-ssmr-attach-photo',
+    template: require('./attachPhoto.component.html'),
+    styles: [require('./attachPhoto.component.scss')],
+    encapsulation: ViewEncapsulation.None
+})
+&nbsp;
+export class AttachPhotoComponent implements OnInit {
+    public <span class="cstat-no" title="statement not covered" >contractList: ContractDisplayViewModel[] = [];</span>
+    public <span class="cstat-no" title="statement not covered" >isSubmitDisabled: boolean = true;</span>
+    public <span class="cstat-no" title="statement not covered" >meterIndex = 1;</span>
+    public selectedContract: ContractDisplayViewModel;
+    public meters;
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >multiple: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >VALID_FILE_TYPES: string[] = ['image/bmp', 'image/gif', 'image/jpeg', 'image/png', 'image/tiff'];</span>
+    public <span class="cstat-no" title="statement not covered" >MAX_FILE_SIZE: number = 5000000; </span>// 5MB
+&nbsp;
+    constructor(
+        public <span class="cstat-no" title="statement not covered" >ssmrService: ISsmrService,</span>
+        public <span class="cstat-no" title="statement not covered" >elementRefService: ElementRef<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" ></span></span></span>
+    ) { }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public ngOnInit() {</span>
+<span class="cstat-no" title="statement not covered" >        this.selectedContract = this.ssmrService.selectedContract;</span>
+<span class="cstat-no" title="statement not covered" >        this.ssmrService.selfServicePhotoReadings = this.selectedContract.ssmrModel.meters;</span>
+<span class="cstat-no" title="statement not covered" >        this.ssmrService.selfServicePhotoReadings.map((m<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >m.isThumbnailAvailable = false </span></span>);</span>
+    }
+&nbsp;
+    public onClickThumbnailPlaceholder(index: number<span class="fstat-no" title="function not covered" >) {</span>
+        let id = <span class="cstat-no" title="statement not covered" >'#file-upload' +  index;</span>
+        let inputElement = <span class="cstat-no" title="statement not covered" >this.elementRefService.nativeElement.querySelector(id);</span>
+<span class="cstat-no" title="statement not covered" >        inputElement.click();</span>
+    }
+&nbsp;
+    public validateFileTypeAndSize(file: File<span class="fstat-no" title="function not covered" >) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (!file || !this.validateFileType(file.type) || !this.validateFileSize(file.size)) {</span>
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+    }
+&nbsp;
+    public validateFileType(fileType: string<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        return fileType &amp;&amp; this.VALID_FILE_TYPES.includes(fileType);</span>
+    }
+&nbsp;
+    public validateFileSize(fileSize: number<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        return fileSize &amp;&amp; fileSize &lt;= this.MAX_FILE_SIZE;</span>
+    }
+&nbsp;
+    public hasFileError(index: number<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        if (!this.ssmrService.selfServicePhotoReadings[index] || !this.ssmrService.selfServicePhotoReadings[index].fileMetadata) {</span>
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return !this.validateFileTypeAndSize(this.ssmrService.selfServicePhotoReadings[index].fileMetadata);</span>
+    }
+&nbsp;
+    public onChangeFileInput(index: number<span class="fstat-no" title="function not covered" >) {</span>
+        let id = <span class="cstat-no" title="statement not covered" >'#file-upload' + index;</span>
+        let inputElement = <span class="cstat-no" title="statement not covered" >this.elementRefService.nativeElement.querySelector(id);</span>
+        let hasFile: boolean = <span class="cstat-no" title="statement not covered" >!!inputElement.files.length;</span>
+        let file: File = <span class="cstat-no" title="statement not covered" >inputElement.files[0];</span>
+        let formData = <span class="cstat-no" title="statement not covered" >new FormData();</span>
+<span class="cstat-no" title="statement not covered" >        this.ssmrService.selfServicePhotoReadings[index].fileMetadata = file;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (hasFile &amp;&amp; this.validateFileTypeAndSize(file)) { // a file was selected</span>
+<span class="cstat-no" title="statement not covered" >            formData.append('file', inputElement.files.item(0));</span>
+<span class="cstat-no" title="statement not covered" >            this.previewFile(file, index); </span>// We only allow one file per meter at this time. Not multiple.
+        }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    public previewFile( file: File, index: number<span class="fstat-no" title="function not covered" >) {</span></span>
+        let previewId = <span class="cstat-no" title="statement not covered" >'#previewImage' + index;</span>
+        let preview;
+        let reader: FileReader = <span class="cstat-no" title="statement not covered" >new FileReader();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        reader.onloadend = <span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            this.ssmrService.selfServicePhotoReadings[index].isThumbnailAvailable = true;</span>
+<span class="cstat-no" title="statement not covered" >            setTimeout(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                preview = this.elementRefService.nativeElement.querySelector(previewId);</span>
+<span class="cstat-no" title="statement not covered" >                preview.src = reader.result;</span>
+<span class="cstat-no" title="statement not covered" >                this.ssmrService.selfServicePhotoReadings[index].fileData = reader.result;</span>
+<span class="cstat-no" title="statement not covered" >                this.isSubmitDisabled = false;</span>
+            });
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (file) {</span>
+<span class="cstat-no" title="statement not covered" >            reader.readAsDataURL(file);</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            preview = document.getElementById(previewId);</span>
+<span class="cstat-no" title="statement not covered" >            preview.src = '';</span>
+        }
+    }
+&nbsp;
+    public onClickCloseThumbnail(index: number<span class="fstat-no" title="function not covered" >) {</span>
+        let sourceId = <span class="cstat-no" title="statement not covered" >'#file-upload' + index;</span>
+        let inputEl = <span class="cstat-no" title="statement not covered" >this.elementRefService.nativeElement.querySelector(sourceId);</span>
+<span class="cstat-no" title="statement not covered" >        inputEl.value = ''; </span>// Empty files array
+<span class="cstat-no" title="statement not covered" >        this.ssmrService.selfServicePhotoReadings[index].isThumbnailAvailable = false;</span>
+        let isSomePhoto = <span class="cstat-no" title="statement not covered" >this.ssmrService.selfServicePhotoReadings.some((m<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >!!m.isThumbnailAvailable)</span></span>;</span>
+<span class="cstat-no" title="statement not covered" >        this.isSubmitDisabled = !isSomePhoto;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public onClickSubmit() {</span>
+<span class="cstat-no" title="statement not covered" >        if (!this.isSubmitDisabled) {</span>
+<span class="cstat-no" title="statement not covered" >            this.ssmrService.submissionType = 'Photo';</span>
+<span class="cstat-no" title="statement not covered" >            this.ssmrService.goToStep('Submitting');</span>
+        }
+    }
+&nbsp;
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

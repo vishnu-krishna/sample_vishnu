@@ -1,0 +1,63 @@
+@import '../../../../shared/style/omm/_omm_variables.scss';
+
+.welcome-home {
+    height: 50vw;
+
+    &__survey {
+        width: 680px;
+        margin: auto;
+        background-color: $omm-white;
+        position: absolute;
+        top: 270px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        @media ( max-width: 700px) {
+            top: 190px;
+            width: 90%;
+        }
+
+        &.completed {
+            top: 200px;
+            height: 400px;
+            @media ( max-width: 700px) {
+                top: 150px;
+            }
+
+            .pageContainer {
+                text-align: center;
+                color: $omm-vdark-grey;
+                padding: 50px 70px;
+                @media ( max-width: 700px) {
+                    padding: 40px;
+
+                    svg {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+            }
+
+            .icon {
+                width: 70px;
+                height: 70px;
+            }
+
+            .heading {
+                margin-top: 21px;
+                font-family: $headerStack;
+                font-size: 24px;
+                font-weight: 600;
+            }
+
+            .content {
+                font-family: $bodyStack;
+                font-size: 14px;
+                line-height: 1.4;
+                letter-spacing: 0px;
+                text-align: center;
+                margin-top: 26px;
+            }
+        }
+    }
+}

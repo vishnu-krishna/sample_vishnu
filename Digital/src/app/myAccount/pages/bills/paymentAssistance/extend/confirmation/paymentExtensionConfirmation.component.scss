@@ -1,0 +1,124 @@
+@import '../../../../../maui/maui';
+
+$footer-background: rgba($primary-dark, 0.06);
+$fuel-chip-pad-20: 20px;
+
+@mixin rowStyles {
+    display: flex;
+    justify-content: space-between;
+
+    div {
+        line-height: $line-height-short;
+
+        &:last-child {
+            text-align: right;
+        }
+    }
+}
+
+.banner-wrapper {
+    @media #{$agl-layout-mobile} {
+        padding-left: $space-03;
+        padding-right: $space-03;
+    }
+
+    agl-maui-confirmation-banner {
+        // required due to no max width on maui-confirmation-banner-content
+        // TODO: to be discussed further
+        ::ng-deep {
+            .maui-confirmation-banner-content {
+                max-width: $content-width;
+            }
+        }
+    }
+}
+
+.opa-extend {
+    max-width: $content-width;
+    margin: -$space-04 auto 0 auto;
+
+    @media #{$agl-layout-mobile} {
+        padding-left: $space-03;
+        padding-right: $space-03;
+    }
+
+    &__summary {
+        @include deep-anchor-styling;
+
+        &-wrapper {
+            padding: 0 $space-04;
+            padding-top: $space-04;
+
+            @media #{$agl-layout-mobile} {
+                padding: 0 $space-03;
+                padding-top: $fuel-chip-pad-20;
+                margin-bottom: $space-05;
+            }
+        }
+
+        &-body {
+            padding-bottom: $space-04;
+
+            &-header {
+                font-family: $display-font-stack;
+                font-size: $display-font-size-delta;
+                line-height: $line-height-short;
+                color: $primary-dark;
+            }
+
+            &-table-row {
+                @include rowStyles;
+
+                div {
+                    margin-top: $space-04;
+                }
+            }
+        }
+
+        &-footer {
+            @include rowStyles;
+            margin: 0 (-$space-04);
+            padding: $fuel-chip-pad-20 $space-04;
+            background-color: $footer-background;
+            color: $primary-dark;
+            font-weight: bold;
+
+            @media #{$agl-layout-mobile} {
+                margin: 0 (-$space-03);
+                padding: $fuel-chip-pad-20 $space-03;
+            }
+        }
+
+        &-more-eligible {
+            margin: $space-06 auto $space-04 auto;
+            max-width: $content-width;
+            padding: 0 $space-06;
+            text-align: center;
+            font-size: $body-font-size-big;
+            line-height: $line-height-long;
+
+            @media #{$agl-layout-mobile} {
+                max-width: initial;
+                margin: 0 (-$container-side-space);
+                padding: 0 $space-04;
+            }
+        }
+
+        &-hint {
+            padding: $space-04 0;
+        }
+
+        &-fuel-chip {
+            margin-top: $space-03;
+        }
+
+        &-calendar-container {
+            margin-top: $space-03;
+        }
+    }
+}
+
+.overview-button {
+    margin-top: $space-06;
+    text-align: center;
+}

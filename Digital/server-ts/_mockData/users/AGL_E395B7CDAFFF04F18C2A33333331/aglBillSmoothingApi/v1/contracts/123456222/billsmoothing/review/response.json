@@ -1,0 +1,21 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": {
+        "contractNumber": 123456222,
+        "reviewDate": "2018-05-12",
+        "reviewPeriodStartDate": "2018-08-10",
+        "reviewPeriodEndDate": "2018-10-10",
+        "actionRequiredByDate": "2018-10-20",
+        "planEndDate": "2018-12-29",
+        "accountBalance": 450,
+        "currentPaymentsAmount": 150,
+        "proposedPaymentsAmount": 225,
+        "onceOffPaymentAmount": 500,
+        "forecastedFutureCharges": 255,
+        "forecastedTotalAmount": 294,
+        "numberOfInstalmentsRemaining": 3,
+        "reviewScenario": "Under",
+        "autoActioned": false
+    }
+}

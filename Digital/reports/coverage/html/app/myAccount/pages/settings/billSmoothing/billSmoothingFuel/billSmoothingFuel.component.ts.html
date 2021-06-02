@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\settings\billSmoothing\billSmoothingFuel\billSmoothingFuel.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/settings/billSmoothing/billSmoothingFuel/</a> billSmoothingFuel.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">41.38% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>12/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">26.67% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">38.46% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>10/26</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, Input, OnInit } from '@angular/core';
+import { PaymentService } from '../../../../services/payment.service';
+import { BillSmoothingFrequency, BillSmoothingFuelDisplayModel } from '../billSmoothing.model';
+import { BillSmoothingService } from '../billSmoothing.service';
+&nbsp;
+@Component({
+    selector: 'agl-billsmoothing-fuel',
+    template: require('./billSmoothingFuel.component.html'),
+    styles: [require('./billSmoothingFuel.component.scss')]
+})
+export class BillSmoothingFuelComponent implements OnInit {
+    @Input() public fuelInformation: BillSmoothingFuelDisplayModel;
+    @Input() public hasDuplicateFuels: boolean;
+&nbsp;
+    public fortnightlyPayment: string;
+    public nextPaymentAmount: number;
+    public nextPaymentDate: string;
+    public previousPaymentAmount: number;
+    public previousPaymentDate: string;
+    public isWeeklyPayment: boolean;
+    public isFortnightlyPayment: boolean;
+    public isMonthlyPayment: boolean;
+&nbsp;
+    constructor(
+        private <span class="cstat-no" title="statement not covered" >billSmoothingAccountsService: BillSmoothingService,</span>
+        private <span class="cstat-no" title="statement not covered" >paymentService: PaymentService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >,</span></span></span>
+    ) { }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public ngOnInit() {</span>
+<span class="cstat-no" title="statement not covered" >        if (!this.fuelInformation.hasBillSmoothing) {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.fuelInformation.paymentOptions) {</span>
+<span class="cstat-no" title="statement not covered" >                this.fortnightlyPayment = this.fuelInformation.paymentOptions.find((p<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >p.frequency === BillSmoothingFrequency.Fortnightly.toString())</span></span>.amount;</span>
+            }
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.fuelInformation.hasBillSmoothing) {</span>
+<span class="cstat-no" title="statement not covered" >            this.isWeeklyPayment = this.fuelInformation.paymentScheme.frequency === BillSmoothingFrequency.Weekly.toString();</span>
+<span class="cstat-no" title="statement not covered" >            this.isFortnightlyPayment = this.fuelInformation.paymentScheme.frequency === BillSmoothingFrequency.Fortnightly.toString();</span>
+<span class="cstat-no" title="statement not covered" >            this.isMonthlyPayment = this.fuelInformation.paymentScheme.frequency === BillSmoothingFrequency.Monthly.toString();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (this.fuelInformation.paymentScheme.nextPayment) {</span>
+<span class="cstat-no" title="statement not covered" >                this.nextPaymentAmount = Math.round(this.fuelInformation.paymentScheme.nextPayment.amount);</span>
+<span class="cstat-no" title="statement not covered" >                this.nextPaymentDate = BillSmoothingService.generateLongDate(this.fuelInformation.paymentScheme.nextPayment.date);</span>
+            } else <span class="cstat-no" title="statement not covered" >if (this.fuelInformation.paymentScheme.previousPayment) {</span>
+<span class="cstat-no" title="statement not covered" >                this.previousPaymentAmount = Math.round(this.fuelInformation.paymentScheme.previousPayment.amount);</span>
+<span class="cstat-no" title="statement not covered" >                this.previousPaymentDate = BillSmoothingService.generateLongDate(this.fuelInformation.paymentScheme.previousPayment.date);</span>
+            }
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public openPaymentPopup() {</span>
+<span class="cstat-no" title="statement not covered" >        this.paymentService.openPaymentModal(this.fuelInformation.paymentContractInfo, this.fuelInformation.paymentOverdue, this.fuelInformation.paymentContractInfo.addressRaw).subscribe();</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

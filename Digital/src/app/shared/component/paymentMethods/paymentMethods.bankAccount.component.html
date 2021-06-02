@@ -1,0 +1,36 @@
+<div id="direct-debit-bank-account" class="dd-bank">
+    <div id="direct-debit-bank-account-new" class="dd-bank__panel">
+        <form [formGroup]="bankAccountForm" (ngSubmit)="saveBankAccount()" novalidate autocomplete="off">
+            <fieldset id="bank-account-name" class="card-block">
+                <label id="bank-account-name-label" for="account-name">{{content?.bankAccountNameLabelText}}</label>
+                <input id="account-name" class="textbox" type="text" formControlName="accountHolderName" placeholder="{{content?.bankAccountNameLabelText}}"
+                    aglNameMask [class.invalid]="bankAccountForm.controls.accountHolderName.touched && !bankAccountForm.controls.accountHolderName.valid"
+                    maxLength="90" />
+                <div id="bank-account-name-warning" class="message warning" *ngIf="bankAccountForm.controls.accountHolderName.touched && !bankAccountForm.controls.accountHolderName.valid">{{content?.bankAccountNameError}}</div>
+            </fieldset>
+            <fieldset id="bank-account-bsb" class="card-block">
+                <label id="bank-account-bsb-label">{{content?.bSBNumberLabelText}}</label><br />
+                <input id="bsb" class="textbox  dd-bank__panel__bsb  bsb" type="tel" formControlName="bsb" maxLength="7" placeholder="{{content?.bSBNumberLabelText}}"
+                    [class.invalid]="bankAccountForm.controls.bsb.touched && !bankAccountForm.controls.bsb.valid" aglBsbMask
+                />
+                <div id="bank-account-bsb-required" class="message warning" *ngIf="bankAccountForm.controls.bsb.touched && !bankAccountForm.controls.bsb.valid">{{content?.bSBInvalidError}}</div>
+            </fieldset>
+            <fieldset id="bank-account-number" class="card-block">
+                <label id="bank-account-number-label">{{content?.bankAccountNumberLabelText}}</label>
+                <input id="account-number" class="textbox" formControlName="accountNumber" placeholder="{{content?.bankAccountNumberLabelText}}"
+                    [class.invalid]="bankAccountForm.controls.accountNumber.touched && !bankAccountForm.controls.accountNumber.valid"
+                    maxlength="9" pattern="\d*" autocomplete="off" type="tel" aglNumberField/>
+                <div id="bank-account-number-warning" class="message warning" *ngIf="bankAccountForm.controls.accountNumber.touched && !bankAccountForm.controls.accountNumber.valid">{{content?.bankAccountNumberError}}</div>
+            </fieldset>
+            <div id="bank-terms" class="dd-check">
+                <input id="terms-conditions-check-bank" formControlName="terms" type="checkbox">
+                <label id="terms-conditions-bank-label" for="terms-conditions-check-bank" [innerHTML]="content?.paymentArrangementTermsAndConditionCheckBox"></label>
+            </div>
+            <div id="bank-terms-warning" class="message warning" *ngIf="bankAccountForm.controls.terms.touched && !bankAccountForm.controls.terms.valid">{{content?.paymentArrangementTermsAndConditionError}}</div>
+            <button mat-raised-button color="accent" class="dd-bank__panel__save-button small-button" [class.is-loading]="isSaving" type="submit">{{content?.paymentArrangementSaveButtonText}}</button>
+            <div id="cancel-button-bank" class="dd-bank__panel__cancel bluelink" (click)="cancelPayment()">
+                {{content?.cancelPaymentMethodButtonText}}
+            </div>
+        </form>
+    </div>
+</div>

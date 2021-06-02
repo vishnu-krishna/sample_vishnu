@@ -1,0 +1,80 @@
+[
+    {
+        "issuerCode": "CTLK",
+        "issuer": "Centrelink",
+        "cards": [
+            {
+                "cardCode": "HEALTHCARE",
+                "name": "Health Care Card",
+                "eligibleFuelTypes": [
+                    "Electricity"
+                ]
+            },
+            {
+                "cardCode": "PENSIONER",
+                "name": "Pensioner Concession Card",
+                "eligibleFuelTypes": [
+                    "Electricity",
+                    "Gas"
+                ]
+            }
+        ]
+    },
+    {
+        "issuerCode": "DOI",
+        "issuer": "Department Of Immigration",
+        "cards": [
+            {
+                "cardCode": "IMMI",
+                "name": "QLD - Immigration Card",
+                "eligibleFuelTypes": [
+                    "Electricity"
+                ]
+            }
+        ]
+    },
+    {
+        "issuerCode": "DVA",
+        "issuer": "Department of Veterans Affairs",
+        "cards": [
+            {
+                "cardCode": "GOLD_TPI",
+                "name": "Gold Card Totally and Permanently Incapacitated (TPI)",
+                "eligibleFuelTypes": [
+                    "Electricity",
+                    "Gas"
+                ]
+            },
+            {
+                "cardCode": "GOLD_WW",
+                "name": "Gold Card War Widow (WW)",
+                "eligibleFuelTypes": [
+                    "Electricity",
+                    "Gas"
+                ]
+            },
+            {
+                "cardCode": "PENSIONER",
+                "name": "Pensioner Concession Card",
+                "eligibleFuelTypes": [
+                    "Electricity",
+                    "Gas"
+                ]
+            }
+        ]
+    },
+    {
+        "issuerCode": "QDC",
+        "issuer": "Queensland Dept. of Communities",
+        "cards": [
+            {
+                "cardCode": "QSC_GOV",
+                "name": "QLD Government Seniors Card",
+                "eligibleFuelTypes": [
+                    "Electricity",
+                    "Gas"
+                ]
+            }
+        ]
+    }
+]

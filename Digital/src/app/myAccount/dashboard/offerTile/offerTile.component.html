@@ -1,0 +1,10 @@
+<mat-card *ngIf="offer" class="promo-card">
+    <img mat-card-image [src]="offer.assetUrl">
+    <mat-card-content>
+        <h2 *ngIf="offer.displayHeading">{{offer.displayHeading}}</h2>
+        <p *ngIf="offer.displayText">
+            {{offer.displayText}}
+        </p>
+        <a [href]="offer.ctaUrl" target="_blank" class="button-more" (click)="offerClicked($event)">{{offer.ctaText}}</a>
+    </mat-card-content>
+</mat-card>

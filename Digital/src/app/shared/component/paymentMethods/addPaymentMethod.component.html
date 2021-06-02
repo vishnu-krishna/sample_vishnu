@@ -1,0 +1,96 @@
+<div *ngIf="isShowPaymentMethods" class="add-payment">
+    <div class="add-payment-block">
+        <div class="add-payment-block--box" [class.add-payment-block--box-thin]="isDirectDebit">
+            <div class="add-payment-block--icon" [class.add-payment-block--iconcc]="isDirectDebit">
+                <mat-icon svgIcon="icon-exp-bill" alt="Credit Card"></mat-icon>
+            </div>
+            <div class="add-payment-block--title">
+                Credit or debit card
+            </div>
+            <div class="add-payment-block--subtext">
+                You can add a Mastercard or Visa card. A 0.45% fee will apply to each payment transaction.
+            </div>
+            <div class="add-payment-block--button">
+                <button id="add-card-button" mat-raised-button (click)="addCreditCard()" color="primary">{{buttonTxtCC}}</button>
+            </div>
+        </div>
+
+        <div class="add-payment-block--box"[class.add-payment-block--box-thin]="isDirectDebit" *ngIf="canUseBankAccount()">
+            <div class="add-payment-block--icon">
+                <mat-icon svgIcon="icon-bank-two-tone" alt="Bank account"></mat-icon>
+            </div>
+            <div class="add-payment-block--title">
+                Bank account
+            </div>
+            <div class="add-payment-block--subtext">
+                You can use a savings or cheque account. No payment processing fees apply.
+            </div>
+            <div class="add-payment-block--button">
+                <button id="apa-account-button" mat-raised-button (click)="addBank()" color="primary">{{buttonTxtBank}}</button>
+            </div>
+        </div>
+
+        <div class="add-payment-block--box"[class.add-payment-block--box-thin]="isDirectDebit" *ngIf="!canUseBankAccount()">
+            <div class="add-payment-block--icon">
+                <mat-icon svgIcon="icon-bank-disabled" alt="Bank account"></mat-icon>
+            </div>
+            <div class="add-payment-block--title payment-method-text-disabled">
+                Bank account
+            </div>
+            <div class="add-payment-block--subtext">
+                Sorry, payments via Bank Account are currently unavailable.
+            </div>
+            <div class="add-payment-block--button">
+                <button id="apa-account-button" mat-raised-button disabled color="primary">{{buttonTxtBank}}</button>
+            </div>
+        </div>
+
+        <div class="add-payment-block--box" [class.add-payment-block--box-thin]="isDirectDebit" *ngIf="isDirectDebit && enablePayPal">
+            <div class="add-payment-block--icon">
+                <mat-icon svgIcon="icon-paypal" alt="Paypal"></mat-icon>
+            </div>
+            <div class="add-payment-block--title">
+                PayPal
+            </div>
+            <div class="add-payment-block--subtext">
+                PayPal supports payments via bank transfer, credit card, debit card and AMEX.
+            </div>
+            <div class="add-payment-block--button">
+                <button id="add-paypal-button" mat-raised-button (click)="addPaypal()" color="primary">{{buttonTxtPaypal}}</button>
+            </div>
+        </div>
+
+        <!--Disable PayPal. Remove when feature flag is not needed.-->
+        <div class="add-payment-block--box" [class.add-payment-block--box-thin]="isDirectDebit" *ngIf="isDirectDebit && !enablePayPal">
+            <div class="add-payment-block--icon payment-method-icon-disabled">
+                <mat-icon svgIcon="icon-paypal-grey" alt="Paypal"></mat-icon>
+            </div>
+            <div class="add-payment-block--title payment-method-text-disabled">
+                PayPal
+            </div>
+            <div class="add-payment-block--subtext">
+                Sorry, PayPal Direct Debit is currently unavailable. You can still set it up <a href="https://www.agl.com.au/apps/vas/verify" class="payment-method-link-disabled" target="_blank">here</a>. 
+            </div>
+            <div class="add-payment-block--button">
+                <button id="add-paypal-button" mat-raised-button disabled>{{buttonTxtPaypal}}</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="add-payment-mobile">
+        <div class="add-payment-mobile--text">Select a payment method</div>
+        <button mat-raised-button (click)="addCreditCard()" color="primary">{{buttonTxtCCMobile}}</button>
+        <button mat-raised-button (click)="addBank()" color="primary">{{buttonTxtBank}}</button>
+        <button mat-raised-button *ngIf="isDirectDebit && enablePayPal" (click)="addPaypal()" color="primary">{{buttonTxtPaypal}}</button>
+        <button mat-raised-button *ngIf="isDirectDebit && !enablePayPal" disabled>{{buttonTxtPaypal}}</button>
+    </div>
+    <div class="add-payment-text-block" *ngIf="!isDirectDebit && !isSmsPay">
+        <p>
+            Adding this payment method to your wallet doesn't mean you're setting up direct debit. Want to set up Direct Debit? It’s easy, <a [routerLink]="['/settings/directdebit']" (click)="closeModal()">sign up now</a>.
+        </p>
+    </div>
+</div>
+
+<agl-store-credit-card-form *ngIf="isShowCreditCard" (returnToPreviousPage)="hideCreditCard()" [data]="args"></agl-store-credit-card-form>
+<agl-store-bank-form *ngIf="isShowBank" (returnToPreviousPage)="hideBank()" [data]="args"></agl-store-bank-form>
+<agl-store-paypal-form *ngIf="isShowPaypal" (returnToPreviousPage)="hidePaypal()" [data]="args"></agl-store-paypal-form>

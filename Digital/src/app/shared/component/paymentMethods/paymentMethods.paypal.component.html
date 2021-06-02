@@ -1,0 +1,12 @@
+<div id="direct-debit-paypal" class="dd-paypal">
+    <div id="paypal-new-description" [innerHTML]="content?.paypalDescription" class="dd-paypal__description">
+    </div>
+    <form [formGroup]="paypalForm" (submit)="setupPaypal()">
+        <div id="paypal-terms" class="dd-check">
+            <mat-checkbox class="save-and-pay-checkbox" disableRipple="true" formControlName="terms" color="primary">I confirm that I have read and agree to the <a target="_blank" href="https://www.agl.com.au/residential/help-and-support/billing-and-payments/bill-payment-options/direct-debit-terms-and-conditions">Direct Debit terms and conditions.</a></mat-checkbox>
+        </div>
+        <div id="paypal-terms-warning" class="message warning dd-paypal__nopadding" *ngIf="paypalForm.controls.terms.touched && !paypalForm.controls.terms.valid">{{content?.paymentArrangementTermsAndConditionError}}</div>
+        <button id="paypal-directdebit-setup" mat-raised-button color="accent" class="dd-paypal__save-button med-button" [class.is-loading]="isSaving" [disabled]="!paypalForm.controls.terms.valid" type="submit">{{content?.paypalButtonLabelText}}</button>        <!-- <div id="paypal-payment-condition" [innerHTML]="content?.paypalPaymentCondition" class="dd-paypal__paymentCondition"></div> -->
+        <br/><br/><br/><br/><br/><br/>
+    </form>
+</div>

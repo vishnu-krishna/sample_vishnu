@@ -1,0 +1,96 @@
+@import '../../../../../shared/style/variables';
+@import '../../../../../shared/style/mixins';
+
+.bs-fuel {
+    &-setup {
+        padding: 25px 0;
+    }
+
+    &-first-row {
+        font-size: 16px;
+        font-family: $secondary-font-stack;
+        line-height: 16px;
+        padding-bottom: 15px;
+
+        @media #{$agl-layout-xs} {
+            font-size: 15px;
+        }
+
+        span {
+            font-size: 20px;
+            font-weight: bold;
+            font-family: $primary-font-stack;
+
+            @media #{$agl-layout-xs} {
+                font-size: 18px;
+            }
+        }
+
+        .alert-success {
+            height: 15px;
+        }
+
+        &--disabled {
+            color: $brand-grey-g3;
+        }
+    }
+
+    &-second-row {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 20px;
+    }
+
+    &-third-row {
+        font-size: 14px;
+        line-height: 20px;
+
+        &--link {
+            color: $brand-sky;
+        }
+
+        &--not-directdebit {
+            padding-bottom: 25px;
+        }
+    }
+
+    &-next-payment {
+        background-color: $brand-grey-c1;
+        padding: 25px;
+        margin-top: 25px;
+
+        @media #{$agl-layout-mobile} {
+            padding: 20px;
+        }
+
+        &--first-row {
+            font-size: 16px;
+            font-weight: bold;
+            padding-bottom: 5px;
+        }
+
+        &--second-row {
+            font-size: 14px;
+        }
+    }
+
+    &-payment-modal-link {
+        color: $brand-sky;
+        cursor: pointer;
+        transition: color .3s ease;
+
+        &:hover {
+            color: $brand-sky-darker;
+        }
+    }
+
+    &-custom-text {
+        div {
+            padding-bottom: 8px;
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+    }
+}

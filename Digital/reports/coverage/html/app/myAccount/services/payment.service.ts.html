@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\services\payment.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/myAccount/services/</a> payment.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">32.43% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>12/37</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.33% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>8/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.5% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">32.26% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>10/31</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { Observable, Observer } from 'rxjs';
+import { BonusBand } from '../../shared/model/payment/bonusBand.model';
+import { IProductApiService } from '../../shared/service/contract/iproductApi.service';
+import { ModalService } from '../modal/modal.service';
+import { ContractViewModel } from '../services/account.service';
+import { EventService } from '../services/event.service';
+&nbsp;
+declare let leanengage: any;
+&nbsp;
+@Injectable()
+export class PaymentService {
+    private address: string;
+    private amount: string;
+    private bonusBands: BonusBand[];
+    private contract: ContractViewModel;
+&nbsp;
+    constructor(
+        private <span class="cstat-no" title="statement not covered" >_confirmService: ModalService,</span>
+        private <span class="cstat-no" title="statement not covered" >_productService: IProductApiService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >_eventService: EventService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >)</span> {</span></span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    public openPaymentModal(contract: ContractViewModel, <span class="cstat-no" title="statement not covered" >paymentAmount: number = 0,</span> <span class="cstat-no" title="statement not covered" >address: string = ''<span class="fstat-no" title="function not covered" >)</span>: Observable&lt;true&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.amount = paymentAmount &lt; 1 ? '' : paymentAmount.toFixed(2);</span>
+<span class="cstat-no" title="statement not covered" >        this.address = address === '' ? contract.address : address;</span>
+<span class="cstat-no" title="statement not covered" >        this.contract = contract;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return Observable.create((observer<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (contract.isPayg) {</span>
+<span class="cstat-no" title="statement not covered" >                this._productService.GetBonusBand(contract.productId, contract.regionId).subscribe(</span>
+                    (bonusBands<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        this.bonusBands = bonusBands;</span>
+<span class="cstat-no" title="statement not covered" >                        this.activateModal(observer, this.getModalParameters());</span>
+                    });
+            } else {
+<span class="cstat-no" title="statement not covered" >                this.activateModal(observer, this.getModalParameters());</span>
+            }
+        });
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private getModalParameters() {</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            title: 'Make a Payment',
+            cancelText: '',
+            okText: '',
+            modalType: 'componentForm',
+            fullScreen: true,
+            componentData: {
+                reference: this.contract.accountNumber + this.contract.contractNumber,
+                amount: this.amount,
+                address: this.address,
+                fuelType: this.contract.fuelType,
+                contractNumber: this.contract.contractNumber,
+                paygBand: this.contract.paygBand,
+                bonusBands: this.bonusBands,
+                prePaymentDate: this.contract.paygPrepaymentEligibile,
+                showOutstandingBillPayg: this.contract.showOutstandingBillPayg,
+                outstandingBill: this.contract.outstandingBill
+            }
+        };
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    private activateModal(observer: Observer&lt;true&gt;, parameters: any<span class="fstat-no" title="function not covered" >) {</span></span>
+<span class="cstat-no" title="statement not covered" >        this._confirmService.activate(parameters)</span>
+        .then(
+            (res<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+                let paymentMade = <span class="cstat-no" title="statement not covered" >this._eventService.getPayment();</span>
+<span class="cstat-no" title="statement not covered" >                if (paymentMade) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (this.contract.isPayg) {</span>
+<span class="cstat-no" title="statement not covered" >                        leanengage('triggerSurvey', 'my-account-v2-survey-pay-now', { customData: { version: 'payg' } });</span>
+                    } else {
+<span class="cstat-no" title="statement not covered" >                        leanengage('triggerSurvey', 'my-account-v2-survey-pay-now', { customData: { version: 'non-payg' } });</span>
+                    }
+                }
+<span class="cstat-no" title="statement not covered" >                observer.next(true);</span>
+<span class="cstat-no" title="statement not covered" >                observer.complete();</span>
+            }
+        );
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

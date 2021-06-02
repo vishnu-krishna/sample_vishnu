@@ -1,0 +1,31 @@
+<div class="banner__offer" *ngIf="!showSuccess && !errorMessage" >
+    <div class="banner__offer-container container">
+        <div class="banner__image">
+            <ng-content select="[image]"></ng-content>
+        </div>
+        <div class="banner__content">
+            <div class="banner__heading">
+                {{ title }}
+            </div>
+            <div class="banner__text">{{ description }}</div> <!-- keep on one line - using pre-wrap -->
+        </div>
+        <ng-content select="[cta]"></ng-content>
+    </div>
+</div>
+<div class="banner__success" *ngIf="showSuccess && !errorMessage" >
+    <ng-content select="[success]"></ng-content>
+</div>
+<div class="banner__error" *ngIf="errorMessage">
+    <div class="banner__error-container container">
+        <div class="close-btn" (click)="closeClicked()"></div>
+        <div>
+            <div class="banner__error-heading">
+                That wasn't supposed to happen.
+            </div>
+            <p>
+                {{ errorMessage }}
+            </p>
+            <ng-content select="[errorFooter]"></ng-content>     
+        </div>
+    </div>
+</div>

@@ -1,0 +1,130 @@
+@import '../../../maui/maui';
+
+:host {
+    display: block;
+    width: 100%;
+
+    &.mobile-only {
+        @media #{$agl-layout-tablet-and-greater} {
+            .horizontal-scroller__indicators {
+                display: none;
+            }
+
+            .horizontal-scroller__content-container {
+                display: block;
+            }
+        }
+    }
+}
+
+.horizontal-scroller__content {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .padding-item-left,
+    .padding-item-right {
+        width: 50px;
+        height: 1px;
+        background-color: $primary-dark;
+    }
+}
+
+.horizontal-scroller__content-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.horizontal-scroller-spacer {
+    &__left,
+    &__right {
+        height: 1px;
+        width: 0;
+        display: none;
+
+        @media #{$agl-layout-mobile} {
+            display: block;
+        }
+    }
+}
+
+.horizontal-scroller__indicators {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.horizontal-scroller__indicator {
+    padding: 5px 8px;
+    cursor: pointer;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: $neutral-04;
+    }
+
+    &.active {
+        &::after {
+            background-color: $primary-dark;
+        }
+    }
+}
+
+.scroll-item-btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .15);
+    border: 1px solid rgba(0, 0, 0, .1);
+    background-color: $neutral-08;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    &.scroll-prev-item-btn {
+        left: 15px;
+
+        &::after {
+            border-width: 5px 6px 5px 0;
+            border-color: transparent $primary-dark transparent transparent;
+            margin: 0 2px 0 0;
+        }
+    }
+
+    &.scroll-next-item-btn {
+        right: 15px;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 0 5px 6px;
+        border-color: transparent transparent transparent $primary-dark;
+        margin: 0 0 0 2px;
+    }
+}

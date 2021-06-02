@@ -1,0 +1,108 @@
+@import '../../../shared/style/variables';
+@import '../../../shared/style/mixins';
+
+.placeholder-section {
+
+    h3 {
+        color: $brand-white;
+        margin-bottom: 45px;
+        @media (max-width: 414px) {
+            margin-top: 0px;
+        }
+        @media (max-width: $device-min-xs) {
+            margin-bottom: 15px;
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .lights-out {
+        z-index: 1;
+        margin-top: -20px;
+
+        .col-sm-4 {
+            text-align: center;
+        }
+
+        img {
+            width: 85%;
+            filter: blur(3px);
+            opacity: 0.10;
+            @media (max-width: 414px) {
+                height: 345px;
+            }
+        }
+    }
+
+    .lights-out-message {
+        text-align: center;
+        z-index: 2;
+        position: absolute;
+        padding-right: 15px;
+        margin-right: auto;
+
+        @media (max-width: $device-min-xs) {
+            padding-right: 0;
+        }
+        @media (min-width: $device-min-sm) {
+            width: 750px;
+        }
+        @media (min-width: $device-min-med) {
+            width: 970px;
+        }
+        @media (min-width: $device-min-lge) {
+            width: 1170px;
+        }
+
+        .lights-out-message__header {
+            height: 103px;
+
+            h4 {
+                font-weight: bold;
+                color: $brand-white;
+                text-align: left;
+            }
+
+            img {
+                padding-right: 20px;
+                @media (max-width: $device-min-xs) {
+                    padding-right: 0;
+                }
+            }
+
+            img,
+            h4 {
+                display: inline-block;
+                margin-bottom: 35px;
+            }
+        }
+
+        .lights-out-message__content {
+            p {
+                color: $brand-white;
+                font-family: $secondary-font-stack;
+                font-size: 16px;
+                max-width: 400px;
+                margin: 0px auto;
+            }
+
+            .lights-out-button {
+                margin-top: 30px;
+                @media (max-width: $device-min-xs) {
+                    margin-top: 20px;
+                }
+
+                .lights-out-button_btn {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    @media (max-width: 414px) {
+                        display: inline-block;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+      }
+}

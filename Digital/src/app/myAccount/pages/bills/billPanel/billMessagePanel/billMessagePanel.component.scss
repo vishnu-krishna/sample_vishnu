@@ -1,0 +1,52 @@
+@import '../../../../../shared/style/variables';
+
+.bill-panel-message-panel {
+    &__tick-icon {
+        height: 34px;
+        width: 36px;
+        margin-bottom: 24px;
+    }
+
+    &__subtext {
+        color: $brand-grey-g1;
+        line-height: 20px;
+        font-size: 14px;
+        max-width: 350px;
+        padding-bottom: 10px;
+        @media #{$agl-layout-mobile} {
+            max-width: 100%;
+        }
+    }
+
+    &__title {
+        color: $brand-grey-g1;
+        font-size: 30px;
+        font-family: $primary-font-stack;
+        font-weight: bold;
+        line-height: 33px;
+        padding-bottom: 10px;
+        @media #{$agl-layout-mobile} {
+            max-width: 100%;
+        }
+    }
+
+    &__red {
+        color: $brand-fire;
+        font-weight: bold;
+    }
+
+    &__charges-container {
+        font-size: 12px;
+        letter-spacing: 0px;
+        color: $brand-grey-g1;
+        padding-top: 20px;
+    }
+
+    .dls-button {
+        width: 240px;
+        height: 50px;
+        @media #{$agl-layout-mobile} {
+            width: 100%;
+        }
+    }
+}

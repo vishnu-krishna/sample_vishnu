@@ -1,0 +1,412 @@
+<agl-maui-showcase-template heading='Fuel Chip'>
+    <div description>
+        Refer to
+        <a href="https://aglenergy.atlassian.net/wiki/spaces/AGLDST/pages/135013963/Fuel+chips">Fuel Chip</a> for details
+    </div>
+    <div exampleCodeUsage>
+        {{codeUsage}}
+    </div>
+    <div exampleImplementation>
+        <div class="setup-div">
+            <h1>Pre setup</h1>
+
+            <div class="setting-div">
+                <h2>Monthly billing</h2>
+                <h3>Single contract account</h3>
+                <agl-maui-fuel-chip
+                    [fuelChipState]="MauiFuelChipState.PreSetup"
+                    [fuelType]="MauiFuelChipFuelType.Electricity"
+                    [fuelContext]="MauiFuelChipFuelContext.None"
+                    [contractAccountDetails]="singleAccountDetail"
+                    [contractNumber]="contractNumber"
+                    (selectorClick)='mySelectorClick()'>
+                    <agl-maui-fuel-chip-message
+                        [primaryMessage]='monthlyBillingMessages(MauiFuelChipState.PreSetup)[0].primaryMessage'>
+                    </agl-maui-fuel-chip-message>
+                </agl-maui-fuel-chip>
+
+                <h3>Multi contract accounts</h3>
+                <agl-maui-fuel-chip
+                    [fuelChipState]="MauiFuelChipState.PreSetup"
+                    [fuelType]="MauiFuelChipFuelType.Electricity"
+                    [fuelContext]="MauiFuelChipFuelContext.None"
+                    [contractAccountDetails]="multiAccountDetails"
+                    [contractNumber]="contractNumber"
+                    (selectorClick)='mySelectorClick()'>
+                    <agl-maui-fuel-chip-message
+                        [primaryMessage]='monthlyBillingMessages(MauiFuelChipState.PreSetup)[0].primaryMessage'>
+                    </agl-maui-fuel-chip-message>
+                </agl-maui-fuel-chip>
+            </div>
+
+            <div class="setting-div">
+                <h2>Payment extensions</h2>
+                <h3>Single contract account</h3>
+                <agl-maui-fuel-chip
+                    [fuelChipState]="MauiFuelChipState.PreSetup"
+                    [fuelType]="MauiFuelChipFuelType.Electricity"
+                    [fuelContext]="MauiFuelChipFuelContext.Bill"
+                    [contractAccountDetails]="singleAccountDetail"
+                    [contractNumber]="contractNumber"
+                    (selectorClick)='mySelectorClick()'>
+                    <agl-maui-fuel-chip-message
+                        [primaryMessage]='paymentExtensionMessages(MauiFuelChipState.PreSetup)[0].primaryMessage'
+                        [secondaryMessage]='paymentExtensionMessages(MauiFuelChipState.PreSetup)[0].secondaryMessage'
+                        [secondaryMessageStatus]='paymentExtensionMessages(MauiFuelChipState.PreSetup)[0].secondaryMessageStatus'>
+                    </agl-maui-fuel-chip-message>
+                </agl-maui-fuel-chip>
+
+                <h3>Multi contract accounts</h3>
+                <agl-maui-fuel-chip
+                    [fuelChipState]="MauiFuelChipState.PreSetup"
+                    [fuelType]="MauiFuelChipFuelType.Gas"
+                    [fuelContext]="MauiFuelChipFuelContext.Bill"
+                    [contractAccountDetails]="multiAccountDetails"
+                    [contractNumber]="contractNumber">
+                    <agl-maui-fuel-chip-message
+                        [primaryMessage]='paymentExtensionMessages(MauiFuelChipState.PreSetup)[0].primaryMessage'
+                        [secondaryMessage]='paymentExtensionMessages(MauiFuelChipState.PreSetup)[0].secondaryMessage'
+                        [secondaryMessageStatus]='paymentExtensionMessages(MauiFuelChipState.PreSetup)[0].secondaryMessageStatus'>
+                    </agl-maui-fuel-chip-message>
+                </agl-maui-fuel-chip>
+            </div>
+
+            <div class="setting-div">
+                <h2>Bill Smoothing</h2>
+                <h3>Single contract account dual fuel </h3>
+                <agl-maui-fuel-chip
+                    [fuelChipState]="MauiFuelChipState.PreSetup"
+                    [fuelType]="MauiFuelChipFuelType.Electricity"
+                    [fuelContext]="MauiFuelChipFuelContext.None"
+                    [contractAccountDetails]="singleAccountDetail"
+                    [contractNumber]="contractNumber"
+                    (selectorClick)='mySelectorClick()'>
+                    <agl-maui-fuel-chip-message
+                        [primaryMessage]='billSmoothingMessages(MauiFuelChipState.PreSetup)[0].primaryMessage'
+                        [secondaryMessage]='billSmoothingMessages(MauiFuelChipState.PreSetup)[0].secondaryMessage'>
+                    </agl-maui-fuel-chip-message>
+                </agl-maui-fuel-chip>
+
+                <h3>Single contract account duplicate fuel</h3>
+                <agl-maui-fuel-chip
+                    [fuelChipState]="MauiFuelChipState.PreSetup"
+                    [fuelType]="MauiFuelChipFuelType.Electricity"
+                    [fuelContext]="MauiFuelChipFuelContext.None"
+                    [contractAccountDetails]="singleAccountDetailDuplicate"
+                    [contractNumber]="contractNumber"
+                    (selectorClick)='mySelectorClick()'>
+                    <agl-maui-fuel-chip-message
+                        [primaryMessage]='billSmoothingMessages(MauiFuelChipState.PreSetup)[0].primaryMessage'
+                        [secondaryMessage]='billSmoothingMessages(MauiFuelChipState.PreSetup)[0].secondaryMessage'>
+                    </agl-maui-fuel-chip-message>
+                </agl-maui-fuel-chip>
+
+                <h3>Multi contract accounts dual fuel</h3>
+                <agl-maui-fuel-chip
+                    [fuelChipState]="MauiFuelChipState.PreSetup"
+                    [fuelType]="MauiFuelChipFuelType.Gas"
+                    [fuelContext]="MauiFuelChipFuelContext.Bill"
+                    [contractAccountDetails]="multiAccountDetails"
+                    [contractNumber]="contractNumber"
+                    (selectorClick)='mySelectorClick()'>
+                    <agl-maui-fuel-chip-message
+                        [primaryMessage]='billSmoothingMessages(MauiFuelChipState.PreSetup)[0].primaryMessage'
+                        [secondaryMessage]='billSmoothingMessages(MauiFuelChipState.PreSetup)[0].secondaryMessage'>
+                    </agl-maui-fuel-chip-message>
+                </agl-maui-fuel-chip>
+
+                <h3>Multi contract accounts duplicate fuel</h3>
+                <agl-maui-fuel-chip
+                    [fuelChipState]="MauiFuelChipState.PreSetup"
+                    [fuelType]="MauiFuelChipFuelType.Gas"
+                    [fuelContext]="MauiFuelChipFuelContext.Bill"
+                    [contractAccountDetails]="multiAccountDetailsDuplicate"
+                    [contractNumber]="contractNumber"
+                    (selectorClick)='mySelectorClick()'>
+                    <agl-maui-fuel-chip-message
+                        [primaryMessage]='billSmoothingMessages(MauiFuelChipState.PreSetup)[0].primaryMessage'
+                        [secondaryMessage]='billSmoothingMessages(MauiFuelChipState.PreSetup)[0].secondaryMessage'>
+                    </agl-maui-fuel-chip-message>
+                </agl-maui-fuel-chip>
+            </div>
+
+            <div class="setting-div">
+                <h2>Self-service meter read</h2>
+                <h3>Single contract account</h3>
+                <agl-maui-fuel-chip
+                    [fuelChipState]="MauiFuelChipState.PreSetup"
+                    [fuelType]="MauiFuelChipFuelType.Electricity"
+                    [fuelContext]="MauiFuelChipFuelContext.Meter"
+                    [contractAccountDetails]="singleAccountDetail"
+                    [contractNumber]="contractNumber"
+                    (selectorClick)='mySelectorClick()'>
+                    <agl-maui-fuel-chip-message
+                        [primaryMessage]='selfServiceMeterReadMessages()[0].primaryMessage'>
+                    </agl-maui-fuel-chip-message>
+                </agl-maui-fuel-chip>
+
+                <h3>Multi contract accounts</h3>
+                <agl-maui-fuel-chip
+                    [fuelChipState]="MauiFuelChipState.PreSetup"
+                    [fuelType]="MauiFuelChipFuelType.Gas"
+                    [fuelContext]="MauiFuelChipFuelContext.None"
+                    [contractAccountDetails]="multiAccountDetails"
+                    [contractNumber]="contractNumber"
+                    (selectorClick)='mySelectorClick()'>
+                    <agl-maui-fuel-chip-message
+                        [primaryMessage]='selfServiceMeterReadMessages()[0].primaryMessage'>
+                    </agl-maui-fuel-chip-message>
+                </agl-maui-fuel-chip>
+            </div>
+        </div>
+
+        <div class="setup-div">
+            <h1>Post setup</h1>
+
+            <div class="setting-div">
+                <h2>Monthly billing</h2>
+                <h3>Single contract account</h3>
+                <agl-maui-fuel-chip
+                    [fuelChipState]="MauiFuelChipState.PostSetupManage"
+                    [fuelType]="MauiFuelChipFuelType.Electricity"
+                    [fuelContext]="MauiFuelChipFuelContext.None"
+                    [contractAccountDetails]="singleAccountDetail"
+                    [contractNumber]="contractNumber"
+                    (selectorClick)='mySelectorClick()'>
+                    <agl-maui-fuel-chip-message
+                        [primaryMessage]='monthlyBillingMessages(MauiFuelChipState.PostSetupManage)[0].primaryMessage'
+                        [primaryMessageLink]='monthlyBillingMessages(MauiFuelChipState.PostSetupManage)[0].primaryMessageLink'
+                        (linkClick)='myLinkClicked($event)'>
+                    </agl-maui-fuel-chip-message>
+                    <agl-maui-fuel-chip-footer
+                        cancelText="Cancel Monthly Billing" (cancelClick)='myCancelClick()'>
+                    </agl-maui-fuel-chip-footer>
+                </agl-maui-fuel-chip>
+
+                <h3>Multi contract accounts</h3>
+                <agl-maui-fuel-chip
+                    [fuelChipState]="MauiFuelChipState.PostSetupManage"
+                    [fuelType]="MauiFuelChipFuelType.Gas"
+                    [fuelContext]="MauiFuelChipFuelContext.None"
+                    [contractAccountDetails]="multiAccountDetails"
+                    [contractNumber]="contractNumber"
+                    (selectorClick)='mySelectorClick()'>
+                    <agl-maui-fuel-chip-message
+                        [primaryMessage]='monthlyBillingMessages(MauiFuelChipState.PostSetupManage)[0].primaryMessage'
+                        [primaryMessageLink]='monthlyBillingMessages(MauiFuelChipState.PostSetupManage)[0].primaryMessageLink'
+                        (linkClick)='myLinkClicked($event)'>
+                    </agl-maui-fuel-chip-message>
+                    <agl-maui-fuel-chip-footer
+                        cancelText="Cancel Monthly Billing" (cancelClick)='myCancelClick()'>
+                    </agl-maui-fuel-chip-footer>
+                </agl-maui-fuel-chip>
+
+                <h3>Multi contract accounts with no messages</h3>
+                <agl-maui-fuel-chip
+                    [fuelChipState]="MauiFuelChipState.PostSetupManage"
+                    [fuelType]="MauiFuelChipFuelType.Gas"
+                    [fuelContext]="MauiFuelChipFuelContext.None"
+                    [contractAccountDetails]="multiAccountDetails"
+                    [contractNumber]="contractNumber"
+                    (selectorClick)='mySelectorClick()'>
+                    <agl-maui-fuel-chip-footer
+                        cancelText="Cancel Monthly Billing" (cancelClick)='myCancelClick()'>
+                    </agl-maui-fuel-chip-footer>
+                </agl-maui-fuel-chip>
+
+            </div>
+
+            <div class="setting-div">
+                <h2>Payment extensions</h2>
+                <h3>Single contract account</h3>
+                <agl-maui-fuel-chip
+                    [fuelChipState]="MauiFuelChipState.PostSetupComplete"
+                    [fuelType]="MauiFuelChipFuelType.Electricity"
+                    [fuelContext]="MauiFuelChipFuelContext.None"
+                    [contractAccountDetails]="singleAccountDetail"
+                    [contractNumber]="contractNumber"
+                    (selectorClick)='mySelectorClick()'>
+                    <agl-maui-fuel-chip-message
+                        [primaryMessage]='paymentExtensionMessages(MauiFuelChipState.PostSetupComplete)[0].primaryMessage'
+                        [secondaryMessage]='paymentExtensionMessages(MauiFuelChipState.PostSetupComplete)[0].secondaryMessage'
+                        [secondaryMessageStatus]='paymentExtensionMessages(MauiFuelChipState.PostSetupComplete)[0].secondaryMessageStatus'>
+                    </agl-maui-fuel-chip-message>
+                </agl-maui-fuel-chip>
+
+                <h3>Multi contract accounts</h3>
+                <agl-maui-fuel-chip
+                    [fuelChipState]="MauiFuelChipState.PostSetupComplete"
+                    [fuelType]="MauiFuelChipFuelType.Gas"
+                    [fuelContext]="MauiFuelChipFuelContext.None"
+                    [contractAccountDetails]="multiAccountDetails"
+                    [contractNumber]="contractNumber"
+                    (selectorClick)='mySelectorClick()'>
+                    <agl-maui-fuel-chip-message
+                        [primaryMessage]='paymentExtensionMessages(MauiFuelChipState.PostSetupComplete)[0].primaryMessage'
+                        [secondaryMessage]='paymentExtensionMessages(MauiFuelChipState.PostSetupComplete)[0].secondaryMessage'
+                        [secondaryMessageStatus]='paymentExtensionMessages(MauiFuelChipState.PostSetupComplete)[0].secondaryMessageStatus'>
+                    </agl-maui-fuel-chip-message>
+                </agl-maui-fuel-chip>
+            </div>
+        </div>
+
+        <div class="setup-div">
+            <h1>Ineligible</h1>
+
+            <div class="setting-div">
+                <h2>Monthly billing</h2>
+                <h3>Single contract account</h3>
+                <agl-maui-fuel-chip
+                    [fuelChipState]="MauiFuelChipState.Ineligible"
+                    [fuelType]="MauiFuelChipFuelType.Electricity"
+                    [fuelContext]="MauiFuelChipFuelContext.None"
+                    [contractAccountDetails]="singleAccountDetail"
+                    [contractNumber]="contractNumber"
+                    (selectorClick)='mySelectorClick()'>
+                    <agl-maui-fuel-chip-message
+                        [primaryMessage]='monthlyBillingMessages(MauiFuelChipState.Ineligible)[0].primaryMessage'>
+                    </agl-maui-fuel-chip-message>
+                    <agl-maui-fuel-chip-footer
+                        [tertiaryMessage]="'Your account is not eligible for monthly billing because...'">
+                    </agl-maui-fuel-chip-footer>
+                </agl-maui-fuel-chip>
+
+                <h3>Multi contract accounts</h3>
+                <agl-maui-fuel-chip
+                    [fuelChipState]="MauiFuelChipState.Ineligible"
+                    [fuelType]="MauiFuelChipFuelType.Gas"
+                    [fuelContext]="MauiFuelChipFuelContext.None"
+                    [contractAccountDetails]="multiAccountDetails"
+                    [contractNumber]="contractNumber"
+                    (selectorClick)='mySelectorClick()'>
+                    <agl-maui-fuel-chip-message
+                        [primaryMessage]='monthlyBillingMessages(MauiFuelChipState.Ineligible)[0].primaryMessage'>
+                    </agl-maui-fuel-chip-message>
+                    <agl-maui-fuel-chip-footer
+                        [tertiaryMessage]="'Your account is not eligible for monthly billing because...'">
+                    </agl-maui-fuel-chip-footer>
+                </agl-maui-fuel-chip>
+
+            </div>
+
+            <div class="setting-div">
+                <h2>Payment extensions</h2>
+                <h3>Single contract account</h3>
+                <agl-maui-fuel-chip
+                    [fuelChipState]="MauiFuelChipState.Ineligible"
+                    [fuelType]="MauiFuelChipFuelType.Electricity"
+                    [fuelContext]="MauiFuelChipFuelContext.Bill"
+                    [contractAccountDetails]="singleAccountDetail"
+                    [contractNumber]="contractNumber"
+                    (selectorClick)='mySelectorClick()'>
+                    <agl-maui-fuel-chip-message
+                        [primaryMessage]='paymentExtensionMessages(MauiFuelChipState.Ineligible)[0].primaryMessage'
+                        [secondaryMessage]='paymentExtensionMessages(MauiFuelChipState.Ineligible)[0].secondaryMessage'
+                        [secondaryMessageStatus]='paymentExtensionMessages(MauiFuelChipState.Ineligible)[0].secondaryMessageStatus'>
+                    </agl-maui-fuel-chip-message>
+                    <agl-maui-fuel-chip-footer
+                        [tertiaryMessage]="'Your account is not eligible for monthly billing because...'">
+                    </agl-maui-fuel-chip-footer>
+                </agl-maui-fuel-chip>
+
+                <h3>Single contract account without a primary or secondary message</h3>
+
+                <agl-maui-fuel-chip
+                    [fuelChipState]="MauiFuelChipState.Ineligible"
+                    [fuelType]="MauiFuelChipFuelType.Gas"
+                    [fuelContext]="MauiFuelChipFuelContext.None"
+                    [contractAccountDetails]="singleAccountDetail"
+                    [contractNumber]="contractNumber">
+                    <agl-maui-fuel-chip-footer
+                        [tertiaryMessage]="'You\'ve got an existing payment arrangement set up. Please call us to discuss your options.'">
+                    </agl-maui-fuel-chip-footer>
+                </agl-maui-fuel-chip>
+
+                <h3>Multi contract accounts</h3>
+                <agl-maui-fuel-chip
+                    [fuelChipState]="MauiFuelChipState.Ineligible"
+                    [fuelType]="MauiFuelChipFuelType.Gas"
+                    [fuelContext]="MauiFuelChipFuelContext.Bill"
+                    [contractAccountDetails]="multiAccountDetails"
+                    [contractNumber]="contractNumber"
+                    (selectorClick)='mySelectorClick()'>
+                    <agl-maui-fuel-chip-message
+                        [primaryMessage]='paymentExtensionMessages(MauiFuelChipState.Ineligible)[0].primaryMessage'
+                        [secondaryMessage]='paymentExtensionMessages(MauiFuelChipState.Ineligible)[0].secondaryMessage'
+                        [secondaryMessageStatus]='paymentExtensionMessages(MauiFuelChipState.Ineligible)[0].secondaryMessageStatus'>
+                    </agl-maui-fuel-chip-message>
+                    <agl-maui-fuel-chip-footer
+                        [tertiaryMessage]="'Your account is not eligible for monthly billing because...'">
+                    </agl-maui-fuel-chip-footer>
+                </agl-maui-fuel-chip>
+            </div>
+
+            <div class="setting-div">
+                <h2>Bill Smoothing</h2>
+                <h3>Single contract account</h3>
+
+                <agl-maui-fuel-chip
+                    [fuelChipState]="MauiFuelChipState.Ineligible"
+                    [fuelType]="MauiFuelChipFuelType.Electricity"
+                    [fuelContext]="MauiFuelChipFuelContext.None"
+                    [contractAccountDetails]="singleAccountDetail"
+                    [contractNumber]="contractNumber"
+                    (selectorClick)='mySelectorClick()'>
+                    <agl-maui-fuel-chip-message
+                        [primaryMessage]='billSmoothingMessages(MauiFuelChipState.Ineligible)[0].primaryMessage'
+                        [secondaryMessage]='billSmoothingMessages(MauiFuelChipState.Ineligible)[0].secondaryMessage'>
+                    </agl-maui-fuel-chip-message>
+                    <agl-maui-fuel-chip-footer
+                        [tertiaryMessage]="'Your account cannot be switched to Bill Smoothing because you are already on AGL Prepaid.'">
+                    </agl-maui-fuel-chip-footer>
+                </agl-maui-fuel-chip>
+
+                <h3>Multi contract accounts</h3>
+                <agl-maui-fuel-chip
+                    [fuelChipState]="MauiFuelChipState.Ineligible"
+                    [fuelType]="MauiFuelChipFuelType.Electricity"
+                    [fuelContext]="MauiFuelChipFuelContext.None"
+                    [contractAccountDetails]="multiAccountDetails"
+                    [contractNumber]="contractNumber"
+                    (selectorClick)='mySelectorClick()'>
+                    <agl-maui-fuel-chip-message
+                        [primaryMessage]='billSmoothingMessages(MauiFuelChipState.Ineligible)[0].primaryMessage'
+                        [secondaryMessage]='billSmoothingMessages(MauiFuelChipState.Ineligible)[0].secondaryMessage'>
+                    </agl-maui-fuel-chip-message>
+                    <agl-maui-fuel-chip-footer
+                        [tertiaryMessage]="'Your account cannot be switched to Bill Smoothing because you are already on AGL Prepaid.'">
+                    </agl-maui-fuel-chip-footer>
+                </agl-maui-fuel-chip>
+
+            </div>
+
+            <div class="setting-div">
+                <h2>Display</h2>
+                <h3>Single contract account</h3>
+                <div class="display-container">
+                    <agl-maui-fuel-chip
+                        [fuelChipState]="MauiFuelChipState.Display"
+                        [fuelType]="MauiFuelChipFuelType.Electricity"
+                        [fuelContext]="MauiFuelChipFuelContext.Meter"
+                        [contractAccountDetails]="singleAccountDetail"
+                        [contractNumber]="contractNumber">
+                    </agl-maui-fuel-chip>
+                </div>
+
+                <h3>Multi contract accounts</h3>
+                <div class="display-container">
+                    <agl-maui-fuel-chip
+                        [fuelChipState]="MauiFuelChipState.Display"
+                        [fuelType]="MauiFuelChipFuelType.Gas"
+                        [fuelContext]="MauiFuelChipFuelContext.Meter"
+                        [contractAccountDetails]="multiAccountDetails"
+                        [contractNumber]="contractNumber">
+                    </agl-maui-fuel-chip>
+                </div>
+                <h4>The "display" state makes the fuel chip available for use in other situations where the fuel icon needs to
+                    vertically align with other text on the page </h4>
+            </div>
+        </div>
+
+    </div>
+</agl-maui-showcase-template>

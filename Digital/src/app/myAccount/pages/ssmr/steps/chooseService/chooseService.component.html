@@ -1,0 +1,53 @@
+<div class="choose-service">
+    <div class="header">
+        Choose a service
+    </div>
+    <div class="description">
+        What type of read are you entering?
+    </div>
+
+    <agl-loader [customClass]="'greyBackground'" *ngIf="contractList?.length<1" class="loader"></agl-loader>
+    <div *ngFor="let contract of contractList">
+
+        <div class="contract col-sm-12" [class.contract--disabled]="!contract?.isEligible && !contract.suggestPhotoUpload"
+            [class.selected]="contract?.isEligible"
+            [class.elec]="contract?.isElectricity && contract?.isEligible"
+            [class.elec-disabled]= "contract?.isElectricity && !contract?.isEligible"
+            [class.gas]="contract?.isGas && contract?.isEligible"
+            [class.gas-disabled]="contract?.isGas && !contract?.isEligible"
+            (click)="contractSelected(contract)">
+            <div class="contract__details">
+                <div>
+                    <span class="meter-type" *ngIf="!contract?.isSmartMeter" [class.fueltype-disabled]="!contract?.isEligible" >
+                        {{contract?.fuelType}} meter
+                    </span>
+                    <span class="meter-type" *ngIf="contract?.isSmartMeter" [class.fueltype-disabled]="!contract?.isEligible" >
+                        {{contract?.fuelType}}
+                    </span>
+                    <span class="account-number">
+                        Account no. {{contract?.accountNumber}}
+                    </span>
+                </div>
+                <div>
+                    <span class="address">{{contract?.address}}</span>
+                </div>
+                <a *ngIf="contract?.suggestPhotoUpload" class="suggest-photo-upload" (click)="onClickPhotoUpload(contract)">
+                    <span>
+                        <span class="photo-upload-text">Send us a photo</span>
+                        <span class="cta-arrow"></span>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <div class="last-read-label" *ngIf="contract?.isEligible">Last read date - 
+            <span class="last-read-date">{{contract?.lastReadDate}}</span>
+        </div>
+        <div *ngIf="!contract?.isEligible" class="last-read-label">
+            <span [innerHTML]="contract?.eligibilityMessage" class="last-read-date" *ngIf="!contract?.showWebChatLink">
+            </span>
+            <a *ngIf="contract?.showWebChatLink" (click)="onClickChat()">
+                <span  [innerHTML]="contract?.eligibilityMessage" class="last-read-date"></span>
+            </a>
+        </div>
+    </div>
+</div>

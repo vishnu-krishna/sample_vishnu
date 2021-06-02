@@ -1,0 +1,45 @@
+@import 'maui';
+
+p {
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+ul {
+    margin-top: 5px;
+    padding-left: 25px;
+}
+
+.wrapper-600 {
+    max-width: $content-width;
+}
+
+.showcase-attributes {
+    display: inline-block;
+    padding: 15px;
+    background-color: $neutral-06;
+    border-radius: $border-radius-01;
+
+    .header {
+        font-weight: bold;
+        padding-bottom: 5px;
+    }
+
+    .required {
+        color: $secondary-warning-dark;
+    }
+
+    td {
+        padding-right: 15px;
+        vertical-align: top;
+
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+}

@@ -1,0 +1,78 @@
+@import '../../../../../../maui/maui';
+@import '../../../../../../../shared/style/mixins';
+
+$amount-font-size: $body-font-size-normal;
+$amount-height: $input-text-height;
+$amount-min-width: 100px;
+$amount-line-height: 24px;
+$amount-dollar-sign-width: 25px;
+
+.payment-assistance-plan-custom-amount {
+    img {
+        @include spinner();
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 20px;
+        transform: translate(-50%, -50%);
+    }
+
+    &__copy {
+        padding-bottom: $space-03;
+    }
+
+    &__amount {
+        font-family: $body-font-stack;
+        line-height: $amount-line-height;
+        width: 100%;
+        min-width: $amount-min-width;
+
+        &-control {
+            width: 100%;
+            height: $amount-height;
+            position: relative;
+            font-size: $amount-font-size;
+
+            &--dollarSign {
+                &:before {
+                    position: absolute;
+                    left: $space-03;
+                    top: ($amount-height - $amount-line-height + 1) / 2;
+                    pointer-events: none;
+                    content: '$';
+                }
+            }
+
+        }
+
+        &-input {
+            width: 100%;
+            height: 100%;
+            padding-left: $space-03;
+            box-sizing: border-box;
+            border-width: 1px;
+            border-style: solid;
+            border-color: $neutral-03;
+            border-radius: $border-radius-01;
+
+            &--dollarSign {
+                padding-left: $amount-dollar-sign-width;
+            }
+        }
+
+        &--error-message {
+            @include form-textbox-error-text-styling();
+            line-height: $line-height-long;
+            display: block;
+        }
+
+        &-error {
+            border-color: $secondary-warning-dark;
+        }
+    }
+}
+
+// helper classes
+.hidden {
+    display: none;
+}

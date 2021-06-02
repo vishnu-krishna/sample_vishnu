@@ -1,0 +1,54 @@
+@import '../../../../../shared/style/variables';
+@import '../../../../../shared/style/mixins';
+@import '../../../../../shared/style/tempdls';
+
+.ssmr-chat-screen {
+    text-align: center;
+    padding: 0 20px;
+
+    .heading {
+        font-size: 36px;
+        line-height: 42px;
+        font-weight: bold;
+
+        @media #{$agl-layout-tablet-and-smaller} {
+            font-size: 25px;
+        }
+    }
+
+    .icon {
+        margin-top: 20px;
+    }
+
+    .content {
+        margin-top: 25px;
+        line-height: 22px;
+    }
+
+    #lpButtonDivSSMR {
+        width: 275px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+    }
+
+    .button__continue {
+        margin-top: 20px;
+
+        a {
+            height: 50px;
+            padding: 7px 100px;
+            border-radius: 4px;
+        }
+    }
+
+    .dismiss-link {
+        margin-top: 32px;
+
+        a {
+            color: $brand-grey-g3;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}

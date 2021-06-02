@@ -1,0 +1,47 @@
+{
+    "scenarios": [{
+        "context": {
+            "contractAccountNumber": 123456789,
+            "deliveryMethod": "Postal"
+        },
+        "outcome": {
+            "status": 401,
+            "body": {
+                "message": "Unauthorized user"
+            }
+        }
+    }, {
+        "context": {
+            "contractAccountNumber": 123456789,
+            "deliveryMethod": "Email"
+        },
+        "outcome": {
+            "status": 401,
+            "body": {
+                "message": "Unauthorized user"
+            }
+        }
+    }, {
+        "context": {
+            "contractAccountNumber": 987654321,
+            "deliveryMethod": "Postal"
+        },
+        "outcome": {
+            "status": 401,
+            "body": {
+                "message": "Unauthorized user"
+            }
+        }
+    }, {
+        "context": {
+            "contractAccountNumber": 987654321,
+            "deliveryMethod": "Email"
+        },
+        "outcome": {
+            "status": 401,
+            "body": {
+                "message": "Unauthorized user"
+            }
+        }
+    }]
+}

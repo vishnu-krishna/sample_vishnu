@@ -1,0 +1,79 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": {
+        "contractAccountNumber": 7021129726,
+        "estimates": [
+            {
+                "contractNumber": 9400717581,
+                "paymentOptions": [
+                    {
+                        "frequency": "Weekly",
+                        "amount": 30,
+                        "minDate": "2017-05-01T14:00:00Z",
+                        "maxDate": "2017-06-15T14:00:00Z",
+                        "excludedDates": [
+                            "2017-05-12T14:00:00Z",
+                            "2017-05-27T14:00:00Z"
+                        ]
+                    },
+                    {
+                        "frequency": "Fortnightly",
+                        "amount": 50,
+                        "minDate": "2017-05-01T14:00:00Z",
+                        "maxDate": "2017-06-15T14:00:00Z",
+                        "excludedDates": [
+                            "2017-05-12T14:00:00Z",
+                            "2017-05-27T14:00:00Z"
+                        ]
+                    },
+                    {
+                        "frequency": "Monthly",
+                        "amount": 80,
+                        "minDate": "2017-05-01T14:00:00Z",
+                        "maxDate": "2017-06-15T14:00:00Z",
+                        "excludedDates": [
+                            "2017-05-12T14:00:00Z",
+                            "2017-05-27T14:00:00Z"
+                        ]
+                    }
+                ]
+            },
+            {
+                "contractNumber": 9400717466,
+                "paymentOptions": [
+                    {
+                        "frequency": "Weekly",
+                        "amount": 10,
+                        "minDate": "2017-05-01T14:00:00Z",
+                        "maxDate": "2017-06-15T14:00:00Z",
+                        "excludedDates": [
+                            "2017-05-12T14:00:00Z",
+                            "2017-05-27T14:00:00Z"
+                        ]
+                    },
+                    {
+                        "frequency": "Fortnightly",
+                        "amount": 20,
+                        "minDate": "2017-05-01T14:00:00Z",
+                        "maxDate": "2017-06-15T14:00:00Z",
+                        "excludedDates": [
+                            "2017-05-12T14:00:00Z",
+                            "2017-05-27T14:00:00Z"
+                        ]
+                    },
+                    {
+                        "frequency": "Monthly",
+                        "amount": 30,
+                        "minDate": "2017-05-01T14:00:00Z",
+                        "maxDate": "2017-06-15T14:00:00Z",
+                        "excludedDates": [
+                            "2017-05-12T14:00:00Z",
+                            "2017-05-27T14:00:00Z"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

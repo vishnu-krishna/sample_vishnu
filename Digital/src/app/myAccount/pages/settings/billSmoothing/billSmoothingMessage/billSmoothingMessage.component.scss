@@ -1,0 +1,12 @@
+@import '../../../../../shared/style/variables';
+
+.bs-message {
+    font-size: 14px;
+    line-height: 20px;
+
+    padding-bottom: 25px;
+
+    &__link {
+        color: $brand-sky;
+    }
+}

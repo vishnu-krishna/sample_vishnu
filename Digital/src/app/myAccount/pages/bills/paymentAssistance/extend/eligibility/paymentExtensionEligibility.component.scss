@@ -1,0 +1,75 @@
+@import '../../../../../maui/maui';
+
+.payment-extension-eligibility {
+    &__loader {
+        transform: translate(-50%, -50%);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+
+        @media #{$agl-layout-mobile} {
+            top: 35%;
+        }
+    }
+
+    &__content {
+        margin: 0 auto;
+        padding-top: $space-08;
+        max-width: $content-width;
+
+        @media #{$agl-layout-mobile} {
+            padding-left: $space-03;
+            padding-right: $space-03;
+        }
+    }
+
+    &__subheading {
+        text-align: center;
+        font-family: $body-font-stack;
+        color: $neutral-01;
+        font-size: $body-font-size-big;
+        line-height: $line-height-long;
+        margin-top: $space-03;
+    }
+
+    &__potd-message {
+        @extend .text-small;
+        text-align: center;
+        margin-top: -$space-04;
+        margin-bottom: $space-06;
+        line-height: 17px;
+        font-size: $body-font-size-smallest;
+
+        div {
+            &:first-child {
+                padding-bottom: $space-02;
+            }
+        }
+    }
+
+    &__fuel-chip {
+        margin-top: $space-03;
+        @media #{$agl-layout-mobile} {
+            margin-left: (-$space-03);
+            margin-right: (-$space-03);
+        }
+
+        &--first {
+            margin-top: $space-04;
+        }
+
+        &--last {
+            margin-bottom: $space-06;
+        }
+    }
+
+    &__phone-number {
+        a {
+            color: $primary-dark;
+        }
+    }
+
+    &__button-overview {
+        text-align: center;
+    }
+}

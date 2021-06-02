@@ -1,0 +1,181 @@
+@import '../../../shared/style/variables';
+
+$feature-intro-gradient-start: #3046BC;
+$device-max-height-xs: 320px;
+$device-max-height-small: 420px;
+$device-min-small: 375px;
+
+$agl-layout-mobile-landscape-xs: (max-height: $device-max-height-xs);
+$agl-layout-mobile-landscape-small: (max-height: $device-max-height-small);
+$agl-layout-small: (max-width: $device-min-small);
+
+:host {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    background-color: $brand-sky;
+    background: linear-gradient($feature-intro-gradient-start, $brand-sky);
+    transition: opacity 1.0s ease-in-out;
+
+    @media #{$agl-layout-mobile} {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 30px;
+    }
+
+    &.viewed {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.intro-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 63%;
+    overflow: hidden;
+
+    @media #{$agl-layout-mobile} {
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .image-wrapper { /* need the wrapper so ie flex doesn't mess with the img size */
+        max-width: 80%;
+
+        @media #{$agl-layout-mobile} {
+            max-width: 65%;
+        }
+
+        @media #{$agl-layout-small} {
+            max-width: 60%;
+        }
+
+        @media #{$agl-layout-xs} {
+            max-width: 50%;
+        }
+
+        @media #{$agl-layout-mobile-landscape-xs}, #{$agl-layout-mobile-landscape-small} {
+            max-width: 15%;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.intro-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 37%;
+    background-color: $brand-white;
+    padding: 0 30px;
+    text-align: center;
+
+    @media #{$agl-layout-mobile} {
+        width: 100%;
+        background-color: transparent;
+        margin-top: 10px;
+        padding: 0;
+    }
+
+    .intro-heading {
+        font-family: $primary-font-stack;
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 1.05;
+        color: $brand-sky;
+
+        @media #{$agl-layout-mobile} {
+            color: $brand-white;
+        }
+
+        @media #{$agl-layout-small} {
+            font-size: 20px;
+        }
+
+        @media #{$agl-layout-mobile-landscape-xs} {
+            font-size: 18px;
+        }
+    }
+
+    p {
+        color: $brand-black;
+        line-height: 1.5;
+        max-width: 450px;
+        width: 100%; // ie fix for max-width & margin auto
+        margin: 25px auto 0 auto;
+        font-size: 14px;
+
+        @media #{$agl-layout-mobile} {
+            color: $brand-white;
+            max-width: 280px;
+            margin: 15px auto 0 auto;
+        }
+
+        @media #{$agl-layout-mobile-landscape-xs} {
+            font-size: 11px;
+        }
+    }
+}
+
+.cta-spacer {
+    margin-top: 30px;
+
+    @media #{$agl-layout-mobile} {
+        margin-top: 5px;
+    }
+
+    @media  #{$agl-layout-mobile-landscape-small} {
+        margin-top: 0;
+    }
+}
+
+.feature-intro-cta {
+    margin-top: 100px;
+
+    @media #{$agl-layout-mobile} {
+        margin-top: 38px;
+    }
+
+    @media #{$agl-layout-small} {
+        margin-top: 25px;
+    }
+
+    @media #{$agl-layout-mobile-landscape-small} {
+        margin-top: 10px;
+    }
+}
+
+.feature-intro-positive-cta {
+    @media #{$agl-layout-mobile} {
+        margin: auto;
+        max-width: 250px;
+    }
+}
+
+.feature-intro-negative-cta {
+    text-transform: uppercase;
+    color: $brand-sky;
+    font-size: 14px;
+    font-family: $primary-font-stack;
+    margin-top: 25px;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+        color: $brand-grey-g1;
+    }
+
+    @media #{$agl-layout-mobile} {
+        color: $brand-white;
+        margin-top: 15px;
+    }
+}

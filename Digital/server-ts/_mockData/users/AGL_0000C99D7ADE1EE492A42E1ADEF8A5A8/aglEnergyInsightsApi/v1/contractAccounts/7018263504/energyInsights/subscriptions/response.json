@@ -1,0 +1,53 @@
+[{
+	"contractNumber": 9400902583,
+	"isEligible": false,
+	"ineligibleReason": {
+		"message": "Energy Insights does not support meter registration configuration",
+		"internal": {
+			"id": "ZIDM_ENERGY_INSIGHT",
+			"number": "030",
+			"description": "Energy Insights does not support meter registration configuration"
+		}
+	},
+	"subscribedToMidBillEnergyBreakdown": false,
+	"subscribedToEndBillEnergyBreakdown": false
+}, {
+	"contractNumber": 9400902584,
+	"isEligible": false,
+	"ineligibleReason": {
+		"message": "Energy Insights does not support meter registration configuration",
+		"internal": {
+			"id": "ZIDM_ENERGY_INSIGHT",
+			"number": "030",
+			"description": "Energy Insights does not support meter registration configuration"
+		}
+	},
+	"subscribedToMidBillEnergyBreakdown": false,
+	"subscribedToEndBillEnergyBreakdown": false
+}, {
+	"contractNumber": 9400902585,
+	"isEligible": false,
+	"ineligibleReason": {
+		"message": "Non-elec site. not eligible for energy insight registration",
+		"internal": {
+			"id": "ZIDM_ENERGY_INSIGHT",
+			"number": "024",
+			"description": "Non-elec site. not eligible for energy insight registration"
+		}
+	},
+	"subscribedToMidBillEnergyBreakdown": false,
+	"subscribedToEndBillEnergyBreakdown": false
+}, {
+	"contractNumber": 9400921596,
+	"isEligible": false,
+	"ineligibleReason": {
+		"message": "Energy Insights does not support meter registration configuration",
+		"internal": {
+			"id": "ZIDM_ENERGY_INSIGHT",
+			"number": "030",
+			"description": "Energy Insights does not support meter registration configuration"
+		}
+	},
+	"subscribedToMidBillEnergyBreakdown": false,
+	"subscribedToEndBillEnergyBreakdown": false
+}]

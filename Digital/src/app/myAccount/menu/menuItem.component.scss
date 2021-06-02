@@ -1,0 +1,22 @@
+@import '../../shared/style/variables';
+
+:host {
+    position: relative;
+    display: inline;
+
+    &.menu-item--mobile {
+        .menu-item__indicator {
+            right: -12px;
+        }
+    }
+}
+
+.menu-item__indicator {
+    position: absolute;
+    top: 2px;
+    right: -10px;
+    background-color: $brand-water;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}

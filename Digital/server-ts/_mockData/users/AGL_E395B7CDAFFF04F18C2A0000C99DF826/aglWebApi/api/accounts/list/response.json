@@ -1,0 +1,65 @@
+
+[
+    {
+        "number": "7016135894",
+        "firstName": "Richard",
+        "lastName": "Munt",
+        "contracts": [
+            {
+                "address": "8 ARMSTRONG STREET|SPRINGVALE VIC 3171",
+                "accountNumber": "7016135894",
+                "fuelType": "Electricity",
+                "nameId": "AGL_E395B7CDAFFF04F18C2A0000C99DF826",
+                "number": "9139723694",
+                "planName": "Standard Energy Plan",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false
+            },
+            {
+                "address": "8 ARMSTRONG STREET|SPRINGVALE VIC 3171",
+                "accountNumber": "7016135894",
+                "fuelType": "Gas",
+                "nameId": "AGL_E395B7CDAFFF04F18C2A0000C99DF826",
+                "number": "9139723699",
+                "planName": "Standard Energy Plan",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false
+            }
+        ]
+    },
+    {
+        "number": "7029521254",
+        "firstName": "Richard",
+        "lastName": "Munt",
+        "contracts": [
+            {
+                "address": "4 CLOVELLY DRIVE|CRAIGIEBURN VIC 3064",
+                "accountNumber": "7029521254",
+                "fuelType": "Electricity",
+                "nameId": "AGL_E395B7CDAFFF04F18C2A0000C99DF826",
+                "number": "9401786227",
+                "planName": "Savers",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false
+            },
+            {
+                "address": "4 CLOVELLY DRIVE|CRAIGIEBURN VIC 3064",
+                "accountNumber": "7029521254",
+                "fuelType": "Gas",
+                "nameId": "AGL_E395B7CDAFFF04F18C2A0000C99DF826",
+                "number": "9401786228",
+                "planName": "Savers",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false
+            }
+        ]
+    }
+]

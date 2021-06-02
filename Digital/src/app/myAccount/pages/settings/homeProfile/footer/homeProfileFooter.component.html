@@ -1,0 +1,20 @@
+<div class="homeprofile-footer">
+
+    <div *ngIf="isError" class="homeprofile-footer__error">
+        <agl-maui-flash-message [type]="flashMessageType.Error" [dismissable]="true">
+            <div heading>
+                Sorry, we're unable to process your request right now. Please try again.
+            </div>
+            <div subheading>
+                If the issue persists, you can get in touch with us <a href="https://www.agl.com.au/residential/contact-us" target="_blank">here</a> and we'll sort it out.
+            </div>
+        </agl-maui-flash-message>
+    </div>
+
+    <div class="homeprofile-footer__navigation">
+        <agl-maui-button class="homeprofile-footer__navigation-next" data-test="next" (clicked)="next()" type="primary"
+            [loading]="isNextLoading" [disabled]="isLoading">Next</agl-maui-button>
+        <agl-maui-button class="homeprofile-footer__navigation-save-and-close" data-test="save-and-close" (clicked)="saveAndClose()"
+            type="link" [loading]="isSaveAndCloseLoading" [disabled]="isLoading">Save and Close</agl-maui-button>
+    </div>
+</div>

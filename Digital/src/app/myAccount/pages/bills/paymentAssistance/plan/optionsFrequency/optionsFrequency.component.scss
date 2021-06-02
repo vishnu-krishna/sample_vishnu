@@ -1,0 +1,24 @@
+@import '../../../../../maui/maui';
+
+$error-color: $secondary-warning-dark;
+$disabled-background-color: $neutral-07;
+$disabled-border-color: $neutral-04;
+
+.payment-assistance-plan-options-frequency {
+    &__row {
+        padding-bottom: $space-04;
+
+        &-copy {
+            @extend .text-normal-long;
+            color: $neutral-01;
+            padding-bottom: $space-03;
+        }
+
+        &--start-date-error {
+            @extend .text-smallest-long;
+            color: $error-color;
+            padding-top: 8px;
+            padding-bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "screenCode": "SSMR_MRE",
+    "meters": [
+        {
+            "meterSerial": "S574483",
+            "registers": [
+                {
+                    "registerId": "001",
+                    "dialFormat": "05",
+                    "currentMeterRead": "",
+                    "lastMeterRead": "4549",
+                    "lastReadQuality": "Actual Read by MDP",
+                    "lastReadDate": "2016-08-24"
+                }
+            ]
+        }
+    ],
+    "error": null
+}

@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\shared\service\productApi.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/shared/service/</a> productApi.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">31.43% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>11/35</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">9.09% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">28.13% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>9/32</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Product } from '../../shared/model/product/product.model';
+import { BonusBand } from '../model/payment/bonusBand.model';
+import { BonusBandApiModel } from '../model/payment/bonusBandApi.model';
+import { IProductRepository } from '../repository/contract/iproduct.repository';
+import { IProductApiService } from './contract/iproductApi.service';
+&nbsp;
+@Injectable()
+export class ProductApiService implements IProductApiService {
+&nbsp;
+    constructor(
+        private <span class="cstat-no" title="statement not covered" >_repository: IProductRepository<span class="fstat-no" title="function not covered" ></span></span>
+    ) {
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    public GetProductAttribute(productId: string<span class="fstat-no" title="function not covered" >): Observable&lt;Product&gt; {</span></span>
+        let endpoint = <span class="cstat-no" title="statement not covered" >`/products/${productId}`;</span>
+<span class="cstat-no" title="statement not covered" >        return this._repository.get&lt;Product&gt;(endpoint, null)</span>
+        .map((product<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.isEmpty(product)) {</span>
+<span class="cstat-no" title="statement not covered" >                console.warn(`The product "${productId}" returned by the Product API is associated with the user but does not exist (it was returned as a property-less object). Discarding it.`);</span>
+<span class="cstat-no" title="statement not covered" >                return null;</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            return product;</span>
+        })
+        .catch((err<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            return Observable.of(null); </span>// TODO: consider fixing / changing
+        });
+    }
+    public GetBonusBand(productId: string, regionId: string<span class="fstat-no" title="function not covered" >): Observable&lt;BonusBand[]&gt; {</span>
+        let endpoint = <span class="cstat-no" title="statement not covered" >`/products/${productId}/bonuses?regionId=${regionId}`;</span>
+<span class="cstat-no" title="statement not covered" >        return this._repository.get&lt;BonusBandApiModel[]&gt;(endpoint, null).map((result<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+            let bonusBandlist: BonusBand[] = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >            result.forEach((data<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                if (data.lowerBand &gt; 0) {</span>
+                    let bonusBand = <span class="cstat-no" title="statement not covered" >new BonusBand();</span>
+<span class="cstat-no" title="statement not covered" >                    bonusBand.lowerBand = data.lowerBand;</span>
+<span class="cstat-no" title="statement not covered" >                    bonusBand.upperBand = data.isUpperBandApplicable ? data.upperBand : 9999999999;</span>
+<span class="cstat-no" title="statement not covered" >                    bonusBand.bonus = data.bonus;</span>
+<span class="cstat-no" title="statement not covered" >                    bonusBandlist.push(bonusBand);</span>
+                }
+            });
+<span class="cstat-no" title="statement not covered" >            bonusBandlist = bonusBandlist.sort((a, b<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                return a.lowerBand - b.lowerBand;</span>
+            });
+<span class="cstat-no" title="statement not covered" >            return bonusBandlist;</span>
+        }).catch((err<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            return Observable.of([]);</span>
+        });
+    }
+&nbsp;
+    private isEmpty(product: Product<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return !product.attributes || !product.id;</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

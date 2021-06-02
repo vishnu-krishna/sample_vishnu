@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\shared\component\webChat\webChat.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/shared/component/webChat/</a> webChat.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">27.78% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>20/72</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.43% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/35</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.88% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">27.27% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>18/66</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { AfterViewInit, Component, Input } from '@angular/core';
+&nbsp;
+import { DocumentService } from '../../service/document.service';
+import { IIntervalService } from '../../service/interval.service';
+import { AgentStatus } from './agentStatus.enum';
+&nbsp;
+/**
+ * This component allows you to use angular components (for example components from the maui library) in web chat.`
+ *
+ * Usage:
+ * In live person:
+ *      for the online html use:
+ *          &lt;a style="display:none" data-LP-event="click"&gt;online&lt;/a&gt;
+ *      for the offline html use:
+ *          &lt;span style="display:none"&gt;offline&lt;/span&gt;
+ *
+ * Example component usage:
+ *      &lt;agl-webchat #chat chatButtonId="engagement-element-id-from-live-person" [contentIsHostedInLivePerson]="false"&gt;
+ *          &lt;div agent-status-unresolved&gt;Waiting...&lt;/div&gt;
+ *          &lt;div agent-online&gt;&lt;agl-maui-button (clicked)="chat.requestChat()"&gt;CHAT ONLINE NOW&lt;/agl-maui-button&gt;&lt;/div&gt;
+ *          &lt;div agent-offline&gt;Please call us on &lt;a href="tel:131 245"&gt;131 245&lt;/a&gt;.&lt;/div&gt;
+ *      &lt;/agl-webchat&gt;
+ */
+@Component({
+    selector: 'agl-webchat',
+    template: require('./webChat.component.html'),
+    styles: [require('./webChat.component.scss')]
+})
+export class WebChatComponent implements AfterViewInit {
+    /**
+     * The unique id of the chat element that matches the desired live person engagement (generate this in live person)
+     */
+    @Input() public chatButtonId: string;
+    /**
+     * Is the full chat html/css hosted in live person?
+     */
+    @Input() public <span class="cstat-no" title="statement not covered" >contentIsHostedInLivePerson: boolean = true;</span>
+    /**
+     * Should this component automatically check for the injected chat buttons. Use scanForWebChatAvailability() if this is set to false.
+     */
+    @Input() public <span class="cstat-no" title="statement not covered" >autoScanForWebChatAvailability: boolean = true;</span>
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >AgentStatus = AgentStatus;</span>
+    public <span class="cstat-no" title="statement not covered" >agentStatus: AgentStatus = AgentStatus.Unresolved;</span>
+&nbsp;
+    private <span class="cstat-no" title="statement not covered" >lpTagKey = 'lpTag.newPage';</span>
+    private <span class="cstat-no" title="statement not covered" >lpInjectedContentKey = 'injected.lp.content';</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private get timerKey() {</span>
+<span class="cstat-no" title="statement not covered" >        return `web chat resolution (${this.chatButtonId})`;</span>
+    }
+&nbsp;
+    private cachedInjectedChatButtonWrapper: HTMLElement;
+&nbsp;
+    constructor(private <span class="cstat-no" title="statement not covered" >intervalService: IIntervalService,</span>
+                private <span class="cstat-no" title="statement not covered" >documentService: DocumentService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >)</span> { }</span></span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public ngAfterViewInit(): void {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.autoScanForWebChatAvailability) {</span>
+<span class="cstat-no" title="statement not covered" >            this.scanForWebChatAvailability();</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public requestChat(): void {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.agentStatus === AgentStatus.Online) {</span>
+            let button = <span class="cstat-no" title="statement not covered" >this.injectedChatButton(this.injectedChatButtonWrapper());</span>
+<span class="cstat-no" title="statement not covered" >            if (button) {</span>
+<span class="cstat-no" title="statement not covered" >                button.click();</span>
+            }
+        }
+    }
+&nbsp;
+    /**
+     * Allows you to explicitly initiate a scan to see if web chat is available.
+     * May be required if you wrap the live person chat id tags in an *ngIf that is resolved asynchronously
+     * (e.g an *ngIf relying on an observable.subscribe() result that is kicked of in ngOnInit()).
+     */
+<span class="fstat-no" title="function not covered" >    public scanForWebChatAvailability(): void {</span>
+        // when the app is loading for the 1st time (page refresh, deep link etc) we need to give extra time to allow live person to load and inject its code
+        let isSPAReloadOrDeepLink = <span class="cstat-no" title="statement not covered" >!this.documentService.isReadyStateComplete();</span>
+<span class="cstat-no" title="statement not covered" >        this.triggerLivePersonInjection(this.contentIsHostedInLivePerson, isSPAReloadOrDeepLink);</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    private triggerLivePersonInjection(contentIsHostedInLivePerson: boolean, isSPAReloadOrDeepLink: boolean<span class="fstat-no" title="function not covered" >): void {</span></span>
+<span class="cstat-no" title="statement not covered" >        console.time(this.timerKey);</span>
+&nbsp;
+        // These timings have been agreed upon with the business so don't reduce them without consultation
+        const pollEveryMs = <span class="cstat-no" title="statement not covered" >100;</span>
+        const maxAttempts = <span class="cstat-no" title="statement not covered" >20 * (isSPAReloadOrDeepLink ? 2 : 1);</span> // allow extra time as the full page is loading
+&nbsp;
+        let wd = <span class="cstat-no" title="statement not covered" >window as any;</span>
+<span class="cstat-no" title="statement not covered" >        this.intervalService.safeSetInterval(</span>
+            `${this.chatButtonId}.${this.lpTagKey}`, pollEveryMs, maxAttempts,
+<span class="fstat-no" title="function not covered" >            (): boolean =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                return wd.lpTag &amp;&amp; wd.lpTag.newPage;</span>
+            }, <span class="fstat-no" title="function not covered" >(): void =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                wd.lpTag.newPage(this.documentService.URL);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if (!contentIsHostedInLivePerson) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.determineAgentStatusFromInjectedContent(isSPAReloadOrDeepLink);</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    console.timeEnd(this.timerKey);</span>
+                }
+            }, <span class="fstat-no" title="function not covered" >(): void =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.unableToResolve(`unable to resolve lpTag.newPage`);</span>
+            });
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    private determineAgentStatusFromInjectedContent(isSPAReloadOrDeepLink: boolean<span class="fstat-no" title="function not covered" >): void {</span></span>
+        // These timings have been agreed upon with the business so don't reduce them without consultation
+        const pollEveryMs = <span class="cstat-no" title="statement not covered" >100;</span>
+        const maxAttempts = <span class="cstat-no" title="statement not covered" >25 * (isSPAReloadOrDeepLink ? 2 : 1);</span> // allow extra time as the full page is loading
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.intervalService.safeSetInterval(</span>
+            `${this.chatButtonId}.${this.lpInjectedContentKey}`, pollEveryMs, maxAttempts,
+<span class="fstat-no" title="function not covered" >            (): boolean =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                return !!this.injectedChatButtonWrapper();</span>
+            }, <span class="fstat-no" title="function not covered" >(): void =&gt; {</span>
+                let btnWrapper = <span class="cstat-no" title="statement not covered" >this.injectedChatButtonWrapper();</span>
+<span class="cstat-no" title="statement not covered" >                this.agentStatus = !!this.injectedChatButton(btnWrapper) ? AgentStatus.Online : AgentStatus.Offline;</span>
+<span class="cstat-no" title="statement not covered" >                console.timeEnd(this.timerKey);</span>
+            }, <span class="fstat-no" title="function not covered" >(): void =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.unableToResolve(`unable to resolve injected lp content`);</span>
+            });
+    }
+&nbsp;
+    private unableToResolve(logMessage: string<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.agentStatus = AgentStatus.Offline;</span>
+<span class="cstat-no" title="statement not covered" >        console.timeEnd(this.timerKey);</span>
+<span class="cstat-no" title="statement not covered" >        console.warn(logMessage);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private injectedChatButtonWrapper(): HTMLElement {</span>
+<span class="cstat-no" title="statement not covered" >        if (!this.cachedInjectedChatButtonWrapper) {</span>
+            let chatButton: HTMLElement = <span class="cstat-no" title="statement not covered" >this.documentService.getElementById(`${this.chatButtonId}`);</span>
+<span class="cstat-no" title="statement not covered" >            if (chatButton) {</span>
+                // must have innerHtml content, otherwise it has not been detected and injected with content by live person yet
+<span class="cstat-no" title="statement not covered" >                if (chatButton.innerHTML) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.cachedInjectedChatButtonWrapper = chatButton;</span>
+                }
+            }
+        }
+<span class="cstat-no" title="statement not covered" >        return this.cachedInjectedChatButtonWrapper;</span>
+    }
+&nbsp;
+    private injectedChatButton(injectedChatButtonWrapper: HTMLElement<span class="fstat-no" title="function not covered" >): HTMLAnchorElement {</span>
+<span class="cstat-no" title="statement not covered" >        if (injectedChatButtonWrapper) {</span>
+            let hiddenAnchors: NodeListOf&lt;HTMLAnchorElement&gt; = <span class="cstat-no" title="statement not covered" >injectedChatButtonWrapper.getElementsByTagName('a');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (hiddenAnchors &amp;&amp; hiddenAnchors.length === 1) {</span>
+<span class="cstat-no" title="statement not covered" >                if (hiddenAnchors[0].hasAttribute('data-LP-event')) {</span>
+<span class="cstat-no" title="statement not covered" >                    return hiddenAnchors[0];</span>
+                }
+            }
+        }
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

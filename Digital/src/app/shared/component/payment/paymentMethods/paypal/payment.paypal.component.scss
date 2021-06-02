@@ -1,0 +1,33 @@
+@import '../../../../style/variables';
+@import '../../../../style/mixins';
+
+.payment-paypal {
+    &__content {
+        line-height: 17px;
+        font-weight: normal;
+        padding-top: 9px;
+        font-size: 12px;
+    }
+
+    &__button {
+        font-weight: bold;
+        height: 45px;
+        letter-spacing: 1px;
+        margin-top: 25px;
+        width: 100%;
+    }
+
+    &__footnote {
+        margin-top: 25px;
+
+        &-text {
+            font-weight: normal;
+            font-size: 12px;
+            padding-top: 15px;
+
+            &:first-child {
+                padding-top: 0;
+            }
+        }
+    }
+}

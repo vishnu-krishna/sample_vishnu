@@ -1,0 +1,15 @@
+<div *ngIf="instalmentPlan">
+    <div *ngIf="instalmentPlan.nextInstalment" class="bill-panel-instalment-plan-message-panel__title">
+        Instalment {{instalmentPlan.nextInstalment.index}} {{chargeDescription}} -
+        <span class="bill-panel-instalment-plan-message-panel__title--date">{{instalmentPlan.nextInstalment.dueDate | aglFormatDate}}</span>
+    </div>
+    <div *ngIf="isOverdue && instalmentPlan.nextInstalment" class="bill-panel-instalment-plan-message-panel__subtext">
+        You have missed one or more instalments. Your instalment amount now includes
+        <span class="bill-panel-instalment-plan-message-panel__subtext--warning">{{instalmentPlan.overdueAmount | aglCurrency}} overdue charges</span>,
+        as well as your next scheduled instalment of {{instalmentPlan.nextInstalment.dueAmount | aglCurrency}}.
+    </div>
+    <div *ngIf="isOverdue && !instalmentPlan.nextInstalment" class="bill-panel-instalment-plan-message-panel__subtext">
+        You have missed one or more instalments. Your final instalment is made up of
+        <span class="bill-panel-instalment-plan-message-panel__subtext--warning">{{instalmentPlan.overdueAmount | aglCurrency}} overdue charges</span>.
+    </div>
+</div>

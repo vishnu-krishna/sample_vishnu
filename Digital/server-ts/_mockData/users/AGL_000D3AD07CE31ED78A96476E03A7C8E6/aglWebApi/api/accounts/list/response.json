@@ -1,0 +1,76 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "number": "23227754",
+            "firstName": "SUS",
+            "lastName": "HEF",
+            "contracts": [
+                {
+                    "address": "2/227 UNION ROAD|SURREY HILLS VIC 3127",
+                    "accountNumber": "23227754",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_000D3AD07CE31ED78A96476E03A7C8E6",
+                    "number": "9002212353",
+                    "planName": "Savers",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "AGLMKTRE2415127",
+                    "regionId": "VIC"
+                },
+                {
+                    "address": "2/227 UNION ROAD|SURREY HILLS VIC 3127",
+                    "accountNumber": "23227754",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_000D3AD07CE31ED78A96476E03A7C8E6",
+                    "number": "9002212354",
+                    "planName": "Savers",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "AGLMKTRE2415127",
+                    "regionId": "VIC"
+                }
+            ]
+        },
+        {
+            "number": "23222490",
+            "firstName": "SUS",
+            "lastName": "HEF",
+            "contracts": [
+                {
+                    "address": "2|227 RAPA DRIVE|SURREY HILLS VIC 3127",
+                    "accountNumber": "23222490",
+                    "fuelType": "Gas",
+                    "nameId": "AGL_000D3AD07CE31ED78A96476E03A7C8E6",
+                    "number": "9002237175",
+                    "planName": "Savers",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "AGLMKTRG2415085",
+                    "regionId": "VIC"
+                },
+                {
+                    "address": "2|227 RAPA DRIVE|SURREY HILLS VIC 3127",
+                    "accountNumber": "23222490",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_000D3AD07CE31ED78A96476E03A7C8E6",
+                    "number": "9002237180",
+                    "planName": "Savers",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "AGLMKTRG2415085",
+                    "regionId": "VIC"
+                }
+            ]
+        }
+    ]
+}

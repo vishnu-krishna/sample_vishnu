@@ -1,0 +1,74 @@
+{
+    "status": 200,
+    "body": [{
+            "id": "MNOPQR",
+            "bank": {
+                "bsb": "123-456",
+                "accountNumber": "13371337",
+                "accountHolderName": "James Dunmore"
+            },
+            "directDebitContractAccounts": [
+                
+            ],
+            "oneTouchPayContractAccounts": [
+
+            ]
+        },
+        {
+            "id": "ZZZ6666",
+            "creditCard": {
+                "cardType": "Visa",
+                "creditCardReference": "4111113775971111",
+                "expiryDate": "2019-10",
+                "cardHolderName": "John Doe"
+            },
+            "directDebitContractAccounts": [],
+            "oneTouchPayContractAccounts": [
+
+            ]
+        },
+        {
+            "id": "ZZZ7777",
+            "creditCard": {
+                "cardType": "Master",
+                "creditCardReference": "5249021816111609",
+                "expiryDate": "2014-10",
+                "cardHolderName": "John Doe"
+            },
+            "directDebitContractAccounts": [],
+            "oneTouchPayContractAccounts": []
+        },
+        {
+            "id": "ZZZ8888",
+            "creditCard": {
+                "cardType": "Master",
+                "creditCardReference": "5249021816159753",
+                "expiryDate": "2018-10",
+                "cardHolderName": "John Doe"
+            },
+            "directDebitContractAccounts": [],
+            "oneTouchPayContractAccounts": []
+        },
+        {
+            "id": "ZZZ9999",
+            "creditCard": {
+                "cardType": "Visa",
+                "creditCardReference": "4111113775972222",
+                "expiryDate": "2019-10",
+                "cardHolderName": "John Doe"
+            },
+            "directDebitContractAccounts": [7029690877],
+            "oneTouchPayContractAccounts": []
+        }, {
+            "id": "P000002",
+            "creditCard": null,
+            "bank": null,
+            "payPal": {
+                "email": "test@gmail.com"
+            },
+            "directDebitContractAccounts": [7029690877],
+            "oneTouchPayContractAccounts": []
+        }
+
+    ]
+}

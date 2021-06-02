@@ -1,0 +1,23 @@
+{
+    "isEligible": true,
+    "reason": "some reason",
+    "currentBonusLevel": {
+      "productId": "WERWERWER111",
+      "regionId": "VIC",
+      "bonus": 5,
+      "bonusUnit": "Dollar",
+      "lowerBand": 51,
+      "upperBand": 100,
+      "isUpperBandApplicable": true
+    },
+    "nextBonusLevel": {
+      "productId": "WERWERWER111",
+      "regionId": "VIC",
+      "bonus": 15,
+      "bonusUnit": "Dollar",
+      "lowerBand": 101,
+      "upperBand": 200,
+      "isUpperBandApplicable": true
+    }
+  }
+  

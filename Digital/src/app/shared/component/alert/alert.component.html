@@ -1,0 +1,13 @@
+<div class="alert alert--{{alertType}}" *ngIf="!dismissAlert">
+    <div *ngIf="!showClose && showIcon" class="alert__icon">
+        <mat-icon svgIcon="icon-alert-{{alertType}}"></mat-icon>
+    </div>
+    <div class="alert__text" [class.pad-fix]="!!showClose">
+        <div class="alert__text--heading" [class.no-heading]="!heading" [innerHTML]="headingHtml"></div>
+        <div class="alert__text--body" [class.no-body]="!body" [innerHTML]="bodyHtml"></div>
+        <div *ngIf="showClose && !dismissAlert" (click)="dismiss()" class="alert-close">
+            <mat-icon svgIcon="icon-close"></mat-icon>
+        </div>
+        <ng-content></ng-content>
+    </div>
+</div>

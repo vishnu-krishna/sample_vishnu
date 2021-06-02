@@ -1,0 +1,445 @@
+<div class="dls container">
+    <div class="dls-areas">
+        <div class="contained-heading">Typography</div>
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+        <p>Bacon ipsum dolor amet capicola turkey rump doner boudin flank, andouille sausage ham pancetta chicken bacon venison.
+            Pork biltong turkey cupim shoulder burgdoggen bresaola. Bresaola shoulder sausage frankfurter, salami meatball
+            meatloaf corned beef drumstick landjaeger ball tip. T-bone tenderloin turkey, corned beef ground round short
+            ribs beef tongue capicola. Kielbasa tail turkey, ham hock flank sausage short loin capicola. Porchetta ribeye
+            tongue strip steak ham drumstick beef chuck venison corned beef picanha.</p>
+    </div>
+    <div class="dls-areas">
+        <div class="contained-heading">Form Elements</div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="controls">
+                    <h5>Checkbox</h5>
+                    <mat-checkbox>Check me!</mat-checkbox>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="controls">
+                    <h5>Input</h5>
+                    <mat-input-container>
+                        <input matInput placeholder="Favorite food" value="Sushi">
+                    </mat-input-container>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="controls">
+                    <h5>Radio Button</h5>
+                    <mat-radio-group>
+                        <mat-radio-button value="1">Option 1</mat-radio-button>
+                        <mat-radio-button value="2">Option 2</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="controls">
+                    <h5>Select</h5>
+                    <mat-select placeholder="Favorite food">
+                        <mat-option *ngFor="let food of foods" [value]="food.value">
+                            {{ food.viewValue }}
+                        </mat-option>
+                    </mat-select>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="controls">
+                    <h5>Slider</h5>
+                    <mat-slider></mat-slider>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="controls">
+                    <h5>Slide Toggle</h5>
+                    <mat-slide-toggle>Slide me!</mat-slide-toggle>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dls-areas">
+        <div class="contained-heading">Form Elements - Custom Styling</div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="controls">
+                    <h5>Toggle</h5>
+                    <mat-button-toggle-group class="dls-toggle-list" #group="matButtonToggleGroup">
+                        <mat-button-toggle value="left">
+                            DAY
+                        </mat-button-toggle>
+                        <mat-button-toggle value="center">
+                            WEEK
+                        </mat-button-toggle>
+                        <mat-button-toggle value="center">
+                            MONTH
+                        </mat-button-toggle>
+                        <mat-button-toggle value="right" checked="true">
+                            YEAR
+                        </mat-button-toggle>
+                    </mat-button-toggle-group>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dls-areas">
+        <div class="contained-heading">Cards</div>
+        <div class="row">
+            <div class="col-lg-6">
+                <mat-card>Simple card</mat-card>
+            </div>
+
+            <div class="col-lg-6">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>Shiba Inu</mat-card-title>
+                        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src="/img/shiba2.jpg">
+                    <mat-card-content>
+                        <p>
+                            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes
+                            very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button>LIKE</button>
+                        <button mat-button>SHARE</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+    <div class="dls-areas">
+        <div class="contained-heading">Lists, cutstom grids and tabs</div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="controls">
+                    <h5>List Items with Icons</h5>
+                    <mat-list>
+                        <h3 mat-subheader>Folders</h3>
+                        <mat-list-item *ngFor="let folder of folders">
+                            <mat-icon mat-list-avatar>folder</mat-icon>
+                            <h4 mat-line>{{folder.name}}</h4>
+                            <p mat-line> {{folder.updated | date}} </p>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <h3 mat-subheader>Notes</h3>
+                        <mat-list-item *ngFor="let note of notes">
+                            <mat-icon mat-list-avatar>note</mat-icon>
+                            <h4 mat-line>{{note.name}}</h4>
+                            <p mat-line> {{note.updated | date}} </p>
+                        </mat-list-item>
+                    </mat-list>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="controls">
+                    <h5>Grid Creation, 4 Columns row height 228px</h5>
+                    <mat-grid-list cols="4" rowHeight="228px">
+                        <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows" [style.background]="tile.color">
+                            {{tile.text}}
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="controls">
+                    <h5>Tabs</h5>
+                    <mat-tab-group>
+                        <mat-tab label="Tab 1">
+                            <p>Tab content for the tab 1 would go in here.</p>
+                        </mat-tab>
+                        <mat-tab label="Tab 2">
+                            <p>Tab content for the tab 2 would go in here.</p>
+                        </mat-tab>
+                    </mat-tab-group>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dls-areas">
+        <div class="contained-heading">Buttons etc...</div>
+        <div class="example-container">
+            <h5>Normal Buttons</h5>
+            <div class="example-button-row">
+                <button mat-button>Flat button</button>
+                <button mat-raised-button>Raised button</button>
+                <button mat-fab><mat-icon>check</mat-icon></button>
+                <button mat-mini-fab><mat-icon>check</mat-icon></button>
+            </div>
+            <h5>Link Buttons</h5>
+            <div class="example-button-row">
+                <a mat-button routerLink=".">Flat button</a>
+                <a mat-raised-button routerLink=".">Raised button</a>
+                <a mat-fab routerLink=".">
+                    <mat-icon>check</mat-icon>
+                </a>
+                <a mat-mini-fab routerLink=".">
+                    <mat-icon>check</mat-icon>
+                </a>
+            </div>
+            <h5>Primary Colours</h5>
+            <div class="example-button-row">
+                <button mat-button color="primary">Flat button primary</button>
+                <button mat-raised-button color="primary">Raised button primary</button>
+                <button mat-raised-button color="accent">Raised button accent</button>
+                <button mat-raised-button color="warn">Raised button warn</button>
+            </div>
+        </div>
+
+        <h5>Button Toggles</h5>
+        <mat-button-toggle-group #group="ButtonToggleGroup">
+            <mat-button-toggle value="left">
+                <mat-icon>format_align_left</mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle value="center">
+                <mat-icon>format_align_center</mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle value="right">
+                <mat-icon>format_align_right</mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle value="justify" disabled>
+                <mat-icon>format_align_justify</mat-icon>
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+        <div class="example-selected-value">Selected value: {{group.value}}</div>
+        <h5>Custom icon sets</h5>
+        <mat-icon svgIcon="icon-gas" alt="gas icon"></mat-icon>
+        <h5>Progress Bar (loader)</h5>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        <h5>Progress Spinner (loader)</h5>
+        <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+    </div>
+    <div class="dls-areas">
+        <div class="contained-heading">Quick Modals and Tooltips</div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="controls">
+                    <h5>Simple Modal</h5>
+                    <button mat-raised-button color="primary" (click)="openDialog()">Launch dialog</button>
+                    <br/> You chose: {{selectedOption}}
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="controls">
+                    <h5>Tooltip</h5>
+                    <span matTooltip="Tooltip!">I have a tooltip</span>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="controls">
+                    <h5>Material Snack Bar</h5>
+                    <mat-input-container>
+                        <input matInput value="Disco party!" placeholder="Message" #message>
+                    </mat-input-container>
+
+                    <mat-input-container>
+                        <input matInput value="Dance" placeholder="Action" #action>
+                    </mat-input-container>
+
+                    <button mat-raised-button color="primary" (click)="openSnackBar(message.value, action.value)">Show snack-bar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dls-areas">
+        <div class="contained-heading">Page layout example 1 (profile)</div>
+        <div class="row">
+            <div class="col-md-9">
+                <mat-card>
+                    <div class="profile-card-header">Profile</div>
+                    <div class="profile-card-person">
+                        <mat-icon class="profile-card-person-face">face</mat-icon>
+                        <div class="profile-card-person-name">
+                            Sarah Hammans
+                        </div>
+                        <mat-icon class="profile-card-person-help">help</mat-icon>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="profile-card-edit-row">
+                        <h4>Email address</h4>
+                        <a routerLink=".">Edit</a>
+                    </div>
+                    <div class="profile-card-content-row">
+                        Sarahhammans@gmail.com
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="profile-card-edit-row">
+                        <h4>Mobile number</h4>
+                        <a routerLink=".">Edit</a>
+                    </div>
+                    <div class="profile-card-content-row">
+                        0400 777 333
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="profile-card-edit-row">
+                        <div class="profile-card-edit-row-only-one">
+                            <h4>Home number</h4>
+                            <a routerLink=".">Add number</a>
+                        </div>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="profile-card-edit-row">
+                        <h4>Mailing address</h4>
+                        <a routerLink=".">Edit</a>
+                    </div>
+                    <div class="profile-card-content-row">
+                        33 Park Street Monee Ponds VIC 3039
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="profile-card-edit-row">
+                        <h4>Concessions</h4>
+                        <a routerLink=".">Add concession</a>
+                    </div>
+                    <div class="profile-card-content-row">
+                        Concession card holders may be eligible for discounts
+                    </div>
+                </mat-card>
+                <mat-card>
+                    <div class="profile-card-header">Security</div>
+                   <div class="profile-card-edit-row">
+                        <h4>Password</h4>
+                        <a routerLink=".">Edit</a>
+                    </div>
+                    <div class="profile-card-content-row">
+                        *********
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="profile-card-edit-row">
+                        <h4>Authorised person</h4>
+                        <a routerLink=".">Add person</a>
+                    </div>
+                    <div class="profile-card-content-row">
+                        Give a person authority to make account enquiries or updates
+                    </div>
+                </mat-card>
+            </div>
+            <div class="col-md-3">
+                <mat-card class="promo-card">
+                    <img mat-card-image src="/img/flybuys-fancy-logo.png">
+                    <mat-card-content>
+                        <p>
+                            Link your flybuys account to receive 1 point for every $1 spent on your energy bill.
+                        </p>
+                        <button mat-raised-button color="primary">LINK FLYBUYS</button>
+                    </mat-card-content>
+                </mat-card>
+                <mat-card class="promo-card">
+                    <div class="promo-card-header">AGL Rewards</div>
+                    <mat-card-content>
+                        <p>
+                            With more than 1,600 great discounts and offers, AGL Rewards has the power to make energy that little bit cooler.
+                        </p>
+                        <button mat-raised-button color="primary">JOIN NOW</button>
+                        <div class="promo-card-button-subtext">
+                            With a single click
+                        </div>
+                        <a class="promo-card-button-link" mat-button color="primary" routerLink=".">View the rewards <mat-icon>play_arrow</mat-icon></a>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+    <div class="dls-areas">
+        <div class="contained-heading">Page layout example 2 (dashboard)</div>
+        <div class="row">
+            <div class="col-md-9">
+                <mat-card>
+                    <div class="overview-card-header">Charges</div>
+                    <div class="dashboard-information-panel">
+                        <div class="col-sm-3 dashboard-information-panel--charges">
+                            <div class="fuel-icon">
+                                <img src="img/energy-icon.png" alt="Electricty">
+                            </div>
+                            <div class="price">
+                                <span class="price-symbol">$</span><span class="price-whole-value">75</span><span class="price-decimal-value">.19</span>
+                            </div>
+                            <div class="fuel-title">
+                                Electricty Charges
+                                <div class="fuel-title-date">
+                                    3 Nov - 2 Dec 2016
+                                </div>
+                            </div>
+                            <div class="due-date">
+                                due date 12/Dec/2016
+                            </div>
+                        </div>
+                        <div class="col-sm-9 dashboard-information-panel--graphs">
+                            <div class="dashboard-information-panel--graphs-elec-charges">
+                                <div class="graphs-elec-charges--background">
+                                    <div class="graphs-elec-charges--due">
+                                    </div>
+                                </div>
+                                <div class="graphs-elec-charges--amount">
+                                    This payment cycle: $75.19
+                                </div>
+                            </div>
+                            <div class="pay-fuel">
+                                <a class="pay-fuel-button-link" mat-button color="primary" routerLink=".">Pay electricty <mat-icon>play_arrow</mat-icon></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-information-panel">
+                        <div class="col-sm-3 dashboard-information-panel--charges">
+                            <div class="fuel-icon">
+                                <img src="img/gas-icon.png" alt="Electricty">
+                            </div>
+                            <div class="price">
+                                <span class="price-symbol">$</span><span class="price-whole-value">31</span><span class="price-decimal-value">.28</span>
+                            </div>
+                            <div class="fuel-title">
+                                Gas Charges
+                                <div class="fuel-title-date">
+                                    3 Nov - 2 Dec 2016
+                                </div>
+                            </div>
+                            <div class="due-date">
+                                due date 12/Dec/2016
+                            </div>
+                        </div>
+                        <div class="col-sm-9 dashboard-information-panel--graphs">
+                            <div class="dashboard-information-panel--graphs-gas-charges">
+                                <div class="graphs-gas-charges--background">
+                                    <div class="graphs-gas-charges--due">
+                                    </div>
+                                </div>
+                                <div class="graphs-gas-charges--amount">
+                                    This payment cycle: $31.28
+                                </div>
+                            </div>
+                            <div class="pay-fuel">
+                                <a class="pay-fuel-button-link" mat-button color="primary" routerLink=".">Pay gas <mat-icon>play_arrow</mat-icon></a>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+            <div class="col-md-3">
+                <mat-card class="promo-card">
+                    <div class="promo-card-header">Secondary Menu</div>
+                    <mat-card-content>
+                        <p>
+                            With more than 1,600 great discounts and offers, AGL Rewards has the power to make energy that little bit cooler.
+                        </p>
+                        <button mat-raised-button color="primary">JOIN NOW</button>
+                        <div class="promo-card-button-subtext">
+                            With a single click
+                        </div>
+                        <a class="promo-card-button-link" mat-button color="primary" routerLink=".">View the rewards <mat-icon>play_arrow</mat-icon></a>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

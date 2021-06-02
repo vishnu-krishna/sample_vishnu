@@ -1,0 +1,110 @@
+@import '../../../shared/style/variables';
+@import '../../../shared/style/mixins';
+
+.store-bank__left-panel,
+.store-bank__form {
+    width: 50%;
+    float: left;
+
+    @media #{$agl-layout-mobile} {
+        width: 100%;
+    }
+}
+
+.store-bank {
+    &__left-panel {
+        padding: 30px 50px;
+        text-align: center;
+
+        @media #{$agl-layout-mobile} {
+            padding: 0;
+        }
+
+        .mobile {
+            .mobile-change-method {
+                font-size: 16px;
+                padding: 10px;
+                width: 100%;
+                margin-top: 6px;
+                height: 45px;
+                text-align: left;
+                border: 1px solid $brand-grey-g3;
+                border-radius: 4px;
+                outline: none;
+                background-color: $brand-white;
+
+                span {
+                    color: $brand-sky;
+                    font-family: $primary-font-stack;
+                    font-weight: bold;
+                    font-size: 14px;
+                    float: right;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $lighten-sky-20;
+                    }
+                }
+            }
+
+            p {
+                text-align: left;
+            }
+        }
+    }
+
+    &__icon {
+        height: 75px;
+        width: 73px;
+
+        @media #{$agl-layout-mobile} {
+            display: none;
+        }
+
+        &--wallet {
+            margin-top: 10px;
+            width: 80px;
+            height: 50px;
+        }
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 31px;
+        padding: 15px 0;
+    }
+
+    &__desc {
+        font-size: 12px;
+        line-height: 20px;
+        font-weight: normal;
+    }
+
+    &__change {
+        color: $brand-sky;
+        font-family: $primary-font-stack;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 24px;
+        cursor: pointer;
+        padding-top: 13px;
+        transition: color .3s ease;
+
+        &:hover {
+            color: $lighten-sky-20;
+        }
+    }
+
+    &__form {
+        padding-left: 50px;
+        border-left: 1px solid $brand-grey-g4;
+
+        @media #{$agl-layout-mobile} {
+            border-left: none;
+            padding: 0;
+        }
+    }
+}
+
+

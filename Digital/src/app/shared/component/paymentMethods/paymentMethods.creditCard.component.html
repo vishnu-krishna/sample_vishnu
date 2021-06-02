@@ -1,0 +1,83 @@
+<div id="direct-debit-creditcard" class="dd-credit-card">
+    <form [formGroup]="creditCardForm" (submit)="saveCreditCard()" novalidate (aglClickOnEnter)="saveCreditCard()">
+        <div *ngIf="isSmsPay && content.storedPaymentArrangementText">
+            <fieldset>
+                <div>
+                    <label>Payment Method</label>
+                    <input class="dd-credit-card--stored-payment-method" mat-input value="{{content.storedPaymentArrangementText}}" disabled="disabled">
+                </div>
+            </fieldset>
+        </div>
+        <div *ngIf="!isSmsPay || !content.storedPaymentArrangementText">
+            <fieldset>
+                <label>{{content.creditCardNameOnCardLabelText}}</label>
+                <input type="text" maxLength="90" formControlName="creditCardName" [class.invalid]="creditCardForm.get('creditCardName').touched && !creditCardForm.get('creditCardName').valid"
+                    autocomplete="cc-name" aglNameMask />
+                <div class="warning" *ngIf="creditCardForm.get('creditCardName').touched && !creditCardForm.get('creditCardName').valid">{{content.creditCardNameOnCardError}}</div>
+            </fieldset>
+            <!--<fieldset>
+                <label>{{content.creditCardNumberLabelText}}</label>
+                <input
+                    formControlName="creditCardNumber"
+                    type="tel"
+                    maxlength="19"
+                    [class.invalid]="creditCardForm.get('creditCardNumber').touched && !creditCardForm.get('creditCardNumber').valid"
+                    autocomplete="cc-number"
+                    (keypress)="spitCCNumber($event.target.value)"
+                    >
+                <div class="warning" *ngIf="creditCardForm.get('creditCardNumber').touched && !creditCardForm.get('creditCardNumber').valid">{{content.creditCardNumberError}}</div>
+            </fieldset>-->
+            <fieldset>
+                <label>{{content.creditCardNumberLabelText}}</label>
+                <iframe [src]="iframeSanitizedUrl" width="100%" [class.invalid]="iframeError" (onkeypress)="removeListeners()" #pciIframe></iframe>
+                <div class="warning" *ngIf="iframeError">Please enter a valid credit/debit card</div>
+            </fieldset>
+            <fieldset>
+                <label>{{content.creditCardExpiryDateLabelText}}</label>
+                <div [formGroup]="expiryDateForm">
+                    <div class="payment-method-grouped-form">
+                        <select class="styled-form__input" [class.invalid]="expiryDateForm.get('creditCardExpiryDateMonth').touched && !expiryDateForm.get('creditCardExpiryDateMonth').valid"
+                            formControlName="creditCardExpiryDateMonth" autocomplete="cc-exp-month">
+                            <option value="" disabled selected class="styled-form__input--option">Month</option>
+                            <option *ngFor="let month of months" [value]="month.value">{{month.viewValue}}</option>
+                        </select>
+                        <select class="styled-form__input" [class.invalid]="expiryDateForm.get('creditCardExpiryDateYear').touched && !expiryDateForm.get('creditCardExpiryDateYear').valid"
+                            formControlName="creditCardExpiryDateYear" autocomplete="cc-exp-year">
+                            <option value="" disabled selected class="styled-form__input--option">Year</option>
+                            <option *ngFor="let year of years" [value]="year.value">{{year.viewValue}}</option>
+                        </select>
+                    </div>
+                    <div class="warning" *ngIf="!expiryDateForm.valid && (expiryDateForm.get('creditCardExpiryDateYear').touched || expiryDateForm.get('creditCardExpiryDateYear').dirty) && (expiryDateForm.get('creditCardExpiryDateMonth').touched || expiryDateForm.get('creditCardExpiryDateMonth').dirty)">{{content.creditCardExpiryDateRequired}}</div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="disclaimer" *ngIf="showSmsPayDisclaimer()">
+            If you've authorised any payments with {{paymentArrangementString}} in the last 24 hours, please
+            <a href="https://www.agl.com.au/residential/contact-us" target="_blank">contact us</a>
+            to confirm if your payment will be processed.
+        </div>
+        <div class="dd-credit-card__message">
+            <mat-icon svgIcon="icon-wallet" class="dd-credit-card__dd-icon"></mat-icon>
+            <div class="dd-credit-card__dd-text">{{paymentSafetyMessage}}</div>
+        </div>
+
+        <agl-mobile-number *ngIf="isSmsPay" class="dd-credit-card__dd mobile-number" [value]="mobileNumber" webChatElementId="smspayupdatemobileexisting"></agl-mobile-number>
+        <div class="dd-credit-card__dd" *ngIf="isDirectDebit || isSmsPay">
+            <mat-checkbox class="save-and-pay-checkbox" disableRipple="true" formControlName="termsAndConditions"
+                color="primary">
+                <span class="toc-message">I confirm that I have read and agree to the <a href="{{termsConditionsLink}}" target="_blank">{{termsConditionsText}}</a> </span>
+            </mat-checkbox>
+        </div>
+        <div *ngIf="saveMethodOnly">
+            <button id="save-card" mat-raised-button color="accent" class="dd-credit-card__panel__save-button small-button" [disabled]="!creditCardForm.valid"
+                [class.is-loading]="isSaving">{{content.paymentArrangementSaveButtonText}}</button>
+            <span (click)="cancelPayment()">{{content.cancelPaymentMethodButtonText}}</span>
+        </div>
+        <div *ngIf="saveAndPay">
+            <mat-checkbox *ngIf="myWalletEnabled && !hideStoredCheckBox" class="save-and-pay-checkbox" disableRipple="true" formControlName="storeCardCheckbox"
+                color="primary">Store this card for future payments in My Wallet.</mat-checkbox>
+            <button id="save-card-make-payment" mat-raised-button color="accent" class="dd-credit-card__panel__save-button small-button" [disabled]="!creditCardForm.valid"
+                [class.is-loading]="isSaving">{{content.paymentArrangementSaveButtonText}}</button>
+        </div>
+    </form>
+</div>

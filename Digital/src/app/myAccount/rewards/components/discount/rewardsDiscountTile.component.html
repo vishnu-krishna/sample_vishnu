@@ -1,0 +1,7 @@
+<agl-dls-cta-tile [args]="ctaTile" class="cta-tile--no-margin" [ngClass]="{'cta-tile--row': isSingleTile}" (onCTAButton1Clicked)="ctaClick($event)">
+    <div class="discount-content">
+        <p>Since {{discountArgs.summary.startDate | aglFormatDate:DateFormat.SHORT_DATE_FORMAT}}, you've received</p>
+        <div class="discount-amount" [ngClass]="{'wide-left-align': isSingleTile}"><strong>{{discountArgs.summary.totalDiscount | currency:"AUD":"symbol-narrow":"1.0-0"}}</strong><p class="pt">inc GST</p></div>
+        <p>in energy discounts and credits</p>
+    </div>
+</agl-dls-cta-tile>

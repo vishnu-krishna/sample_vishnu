@@ -1,0 +1,36 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "number": "7042397252",
+            "firstName": "Zoe",
+            "lastName": "Hannah",
+            "pushEnabled": true,
+            "contracts": [
+                {
+                    "address": "37 Farnley Way|DUNCRAIG WA 6023",
+                    "accountNumber": "7042397252",
+                    "fuelType": "Gas",
+                    "nameId": "AGL_0000C99D68E21ED79FA05C243D489E0F",
+                    "number": "9403881265",
+                    "pointOfDeliveryId": "56000254778",
+                    "planName": "Savers",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "isSmartMeter": false,
+                    "hasElectricVehicle": false,
+                    "productId": "AGLMKTRG2417073",
+                    "regionId": "WA",
+                    "hasSolar": false,
+                    "solarCheckRegistered": false,
+                    "generationStartDate": null,
+                    "lastUsageDate": null,
+                    "lastActualUsageDate": null,
+                    "numberValidSolarCheckDays": null
+                }
+            ]
+        }
+    ]
+}

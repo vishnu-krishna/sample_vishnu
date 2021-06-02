@@ -1,0 +1,43 @@
+@import '../../../../maui';
+
+.instalment-right-pane {
+    $red: $secondary-warning-dark;
+    $green: $secondary-success-dark;
+
+    &__primary-message {
+        font-family: $body-font-stack;
+        font-size: $body-font-size-small;
+
+        font-weight: bold;
+        line-height: $line-height-short;
+        color: $neutral-01;
+        float: left;
+    }
+
+    &__secondary-message {
+        font-family: $body-font-stack;
+        font-size: $body-font-size-small;
+        line-height: $line-height-short;
+        color: $neutral-01;
+        clear: left;
+    }
+
+    &__tertiary-message {
+        font-family: $body-font-stack;
+        font-size: $body-font-size-smallest;
+        font-weight: bold;
+        line-height: $line-height-short;
+    }
+
+    &__message--red {
+        color: $red;
+    }
+
+    &__message--green {
+        color: $green;
+    }
+
+    &__message--grey {
+        color: $neutral-02 !important;
+    }
+}

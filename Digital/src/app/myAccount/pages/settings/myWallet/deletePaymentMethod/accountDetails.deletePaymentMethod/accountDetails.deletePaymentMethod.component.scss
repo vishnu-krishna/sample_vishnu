@@ -1,0 +1,79 @@
+@import '../../../../../../shared/style/variables';
+@import '../../../../../../shared/style/mixins';
+
+.accountdetails-pm {
+
+    &__body {
+        margin-top: 25px;
+        line-height: 22px;
+    }
+
+    &__account {
+        margin-top: 10px;
+        padding: 10px 15px;
+        background-color: $brand-grey-g6;
+        border-radius: $agl-border-radius;
+        font-size: 14px;
+        width: 100%;
+
+        &--details {
+            display: inline-block;
+        }
+
+        @media #{$agl-layout-mobile} {
+            background-color: $brand-white;
+            display: block;
+        }
+
+        mat-icon {
+            width: 11px;
+            height: 15px;
+            margin-top: 2px;
+        }
+
+        &--account-no {
+            padding-right: 10px;
+            white-space: nowrap;
+            font-weight: bold;
+            display: inline-block;
+            @media #{$agl-layout-mobile} {
+                padding-right: 5px;
+            }
+        }
+
+        &--fuel-icons {
+            padding-right: 10px;
+            white-space: nowrap;
+            display: inline-block;
+        }
+
+        &--address {
+            padding-right: 0;
+            white-space: normal;
+        }
+
+        &--payment-arrangement {
+            margin-left: 10px;
+            margin-top: 13px;
+            height: 18px;
+            width: 90px;
+            border-radius: 12px;
+            background-color: $brand-blue;
+            color: $brand-white;
+            font-family: $secondary-font-stack;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            float: right;
+
+            @media #{$agl-layout-mobile} {
+                float: none;
+                margin-left: 0px;
+            }
+        }
+
+        .hide-address {
+            color: transparent;
+        }
+    }
+}

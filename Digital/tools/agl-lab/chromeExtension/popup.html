@@ -1,0 +1,108 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+
+<head>
+    <title>AGL Lab My Account Assistant</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Titillium+Web:400,700" rel="stylesheet">
+
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Cascading Style Sheets -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/custom.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="styles.css">
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+    -->
+    <script src="popup.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img style="height: 32px; margin: -7px;" src="./img/icon-header-desktop.svg" />
+            </a>
+        </div>
+        <!-- <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="#">Feature Flags</a>
+                </li>
+            </ul>
+        </div> -->
+    </nav>
+
+
+    <div id="loader">
+        <div>Loading...</div>
+    </div>
+
+
+    <section id="featureFlagConfigPanel">
+
+        <h3>Light Mode:</h3>
+
+        <div id="light-mode-config">
+
+        </div>
+        <div id="light-mode-override-values">
+
+        </div>
+
+        <h3>Feature Flags</h3>
+        <div class="alert alert-info" role="alert">
+            <p>Below is a list of feature flags that are available for the instance of MyAccount in your current tab
+                (<span style="font-weight: bold;" id="currentUrl"></span>)
+            </p>
+            <p>The 'Hosted' values indicate the setting that everyone accessing this site will see; a 'tick' icon
+                <img class="tick-icon" src='img/tick.svg'/> indicates the feature is ON.
+            </p>
+            <p>The 'Override' values below allow you to override the hosted values and set a feature flag value that is
+               only applicable to your local Chrome browser.
+            </p>
+        </div>
+
+
+        <table class="table table-hover table-striped table-condensed">
+            <thead>
+                <tr>
+                    <th>Flag</th>
+                    <th>Hosted</th>
+                    <th style="width: 150px;">Override</th>
+                </tr>
+            </thead>
+            <tbody id="flag-settings">
+            </tbody>
+        </table>
+
+    </section>
+
+    <div id="errors">
+        <ul id="error-list">
+
+        </ul>
+    </div>
+
+    <div>
+        <strong>Version
+            <span id="version-number">ERROR: Manifest information did not load properly</span>
+            (April 20th 2018)
+        </strong>
+    </div>
+
+</body>
+
+</html>

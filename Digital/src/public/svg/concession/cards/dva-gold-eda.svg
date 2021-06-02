@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="251px" height="146px" viewBox="0 0 251 146" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Department of Veterans' Affairs EDA Card</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M11,0 L232,-1.77635684e-15 C238.075132,-2.89234053e-15 243,4.92486775 243,11 L243,127 C243,133.075132 238.075132,138 232,138 L11,138 C4.92486775,138 7.43989126e-16,133.075132 0,127 L0,11 C-7.43989126e-16,4.92486775 4.92486775,1.11598369e-15 11,0 Z" id="path-1"></path>
+        <filter x="-2.9%" y="-3.6%" width="105.8%" height="110.1%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.25 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Cards" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-7" transform="translate(4.000000, 2.000000)">
+            <g id="Rectangle-2-Copy-18">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#EBCC6C" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

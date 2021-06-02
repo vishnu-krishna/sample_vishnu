@@ -1,0 +1,269 @@
+﻿@import '../../../../shared/style/variables';
+
+@mixin vertical-center() {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin horizontal-vertical-center() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin secondary-button-text($back-color: white) {
+    font-family: $primary-font-stack;
+    font-size: 14px;
+    font-weight: bold;
+    color: $back-color;
+    line-height: 21px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.solar-check-status {
+    box-shadow: $agl-box-shadow;
+    margin: 0px 0px 12px 0px;
+    border: 0px;
+    background-image: none;
+    border-image: none;
+    border-image-width: 0px;
+    padding: 0px;
+
+    .col {
+        display: inline-block;
+        height: 80px;
+        vertical-align: middle;
+        background-image: none;
+        border-image-width: 0px;
+        padding: 0px;
+    }
+
+    .icon {
+        border: none;
+        width: 80px;
+        height: 80px;
+        position: relative;
+        background-color: $brand-grey-c1;
+
+        .main-image {
+            @include horizontal-vertical-center();
+        }
+    }
+
+    .status {
+        border: none;
+        width: 70px;
+        position: relative;
+
+        .main-image {
+            @include  horizontal-vertical-center();
+        }
+    }
+
+    .message {
+        padding-top: 20px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 20px;
+        position: relative;
+        width: 512px;
+        height: 80px;
+
+        &.good {
+            @media #{$agl-layout-desktop-medium-and-smaller} {
+                width: inherit;
+            }
+        }
+
+        @media #{$agl-layout-desktop-medium-and-smaller} {
+            width: 385px;
+        }
+
+        @media #{$agl-layout-mobile} {
+            width: inherit;
+            height: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 14px;
+            padding-bottom: 11px;
+        }
+
+        .message-pos {
+            @media #{$agl-layout-desktop-medium-and-smaller} {
+                @include vertical-center();
+            }
+
+            @media #{$agl-layout-mobile} {
+                width: inherit;
+                height: auto;
+                padding-left: 0px;
+                padding-right: 0px;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                transform: none;
+            }
+        }
+
+        .message-header {
+            display: table-row;
+            letter-spacing: normal;
+            height: 22px;
+            color: $brand-grey-g1;
+            font-family: $secondary-font-stack;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 22px;
+        }
+
+        .message-details {
+            display: table-row;
+            font-size: 12px;
+            letter-spacing: normal;
+            font-weight: normal;
+            color: $brand-grey-g2;
+            height: 17px;
+            font-family: $secondary-font-stack;
+            line-height: 17px;
+        }
+    }
+
+    .more-link {
+        float: right;
+        position: relative;
+        padding-right: 20px;
+        height: 80px;
+        color: $brand-sky;
+
+        .vertical-center {
+            @include vertical-center();
+        }
+
+        .link-text {
+            font-family: $primary-font-stack;
+            font-size: 14px;
+            font-weight: bold;
+            color: $brand-sky;
+            line-height: 21px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+
+            &:hover {
+                color: $brand-sky-darker;
+            }
+
+            @media #{$agl-layout-desktop-medium-and-smaller} {
+                font-size: 13px;
+            }
+        }
+    }
+
+    .status-checkSystem {
+
+        .icon,
+        .status,
+        .more-button,
+        .message {
+            @media #{$agl-layout-desktop-medium-and-smaller} {
+                height: 100px;
+            }
+
+            @media #{$agl-layout-mobile} {
+                width: inherit;
+                height: auto;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-top: 2px;
+                padding-bottom: 11px;
+            }
+        }
+
+        .message {
+            padding-top: 20px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-bottom: 20px;
+            width: 365px;
+
+            @media #{$agl-layout-desktop-medium-and-smaller} {
+                width: 310px;
+            }
+
+            @media #{$agl-layout-mobile} {
+                width: inherit;
+                height: auto;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-top: 14px;
+                padding-bottom: 11px;
+            }
+        }
+
+        .more-button {
+            padding: 23px 10px 23px 2px;
+
+            @media #{$agl-layout-desktop-medium-and-smaller} {
+                height: 100px;
+                padding: 33px 17px 33px 7px;
+            }
+
+            @media #{$agl-layout-mobile} {
+                padding-right: 2px;
+            }
+
+            .dls-button-override {
+                &:hover {
+                    background-color: $lighten-sky-6;
+                }
+            }
+        }
+
+        .icon {
+            background-color: $orange;
+        }
+    }
+
+    .upper-panel {
+        background-color: $brand-white;
+    }
+
+    .lower-panel {
+        background-color: $brand-grey-c1;
+        height: 65px;
+
+        .vertical-center {
+            @include vertical-center();
+        }
+
+        .left-side {
+            height: inherit;
+        }
+
+        .mobile-status {
+            padding-left: 0px;
+        }
+
+        .mobile-link {
+            .mobile-more-detail-link {
+                float: right;
+                position: relative;
+                color: $brand-sky;
+                height: 65px;
+
+                .mob-pos {
+                    transform: translateY(-50%);
+                }
+
+                .mob-link-text {
+                    @include secondary-button-text($brand-sky);
+
+                    &:hover {
+                        color: $brand-sky-darker;
+                    }
+                }
+            }
+        }
+    }
+}

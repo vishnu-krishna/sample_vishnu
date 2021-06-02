@@ -1,0 +1,20 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": {
+        "contractAccountNumber": 7021129735,
+        "estimates": [
+            {
+                "contractNumber": 566652,
+                "error": {
+                    "message": ".",
+                    "internalError": {
+                        "errorId": "a",
+                        "errorNumber": "004",
+                        "description": "."
+                    }
+                }
+            }
+        ]
+    }
+}

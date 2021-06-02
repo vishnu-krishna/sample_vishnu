@@ -1,0 +1,95 @@
+<div class="meter-entry-wrapper">
+    <div class="meter-heading">
+        {{meterHeading}}
+    </div>
+
+    <div class="content">
+        <div class="meter-serial-number">
+            Meter no. <span>{{meterSerial}}</span>
+        </div>
+
+        <div class="fuel-icon">
+            <span *ngFor="let item of meterIcons; let i=index">
+                <span *ngIf="selectedContract?.isElectricity && i===ssmrService?.meterEntryIndex" class="meter-information__icons--mobile">
+                    <img class="icon" src="svg/icon_blue_elec_meter.svg">
+                </span>
+                <span *ngIf="selectedContract?.isGas && i===ssmrService?.meterEntryIndex" class="meter-information__icons--mobile">
+                    <img class="icon" src="svg/icon_blue_gas_meter.svg">
+                </span>
+
+                <span (click)="onClickIcon(i)" *ngIf="selectedContract?.isElectricity && (i!==ssmrService?.meterEntryIndex && selectedContract?.meterCount > 1)" class="meter-information__icons--mobile">
+                    <img class="icon--disabled" src="svg/grey_elec_meter.svg">
+                </span>
+                <span (click)="onClickIcon(i)" *ngIf="selectedContract?.isGas && (i!==ssmrService?.meterEntryIndex && selectedContract?.meterCount > 1)" class="meter-information__icons--mobile">
+                    <img class="icon--disabled" src="svg/grey_gas_meter.svg">
+                </span>
+                <span class="meter-separator" *ngIf="(i < selectedContract?.meterCount - 1) && selectedContract?.meterCount > 1">
+                </span>
+            </span>
+        </div>
+
+       <div class="submit-meter__message">
+            <div class="submit-meter__message--invalid" *ngIf="invalidValue">
+            {{invalidMeterMessage}}
+            </div>
+            <div class="submit-meter__message--valid" *ngIf="validValue">
+            {{validMeterMessage}}
+            </div>
+            <div class="submit-meter__message--register" *ngIf="!validValue && !invalidValue">
+                {{registerHeading}}
+            </div>
+        </div>
+
+        <div class="last-read__heading">
+                Last read
+        </div>
+
+        <div class="last-read__value">
+            {{lastReadValue}}
+        </div>
+
+        <div
+            [style.width.px]="(numberOfDigitsinRegister * 30)"
+            [class.responseInvalid]="invalidValue"
+            class="meter-input">
+            <input
+                class="rectangle"
+                id="meter-entry-input"
+                type="tel"
+                [textMask]="{mask: meterMask, placeholderChar: '\u2007', keepCharPositions: true}"
+                [style.width.px]="(numberOfDigitsinRegister * 27) + 127"
+                [attr.size]="numberOfDigitsinRegister"
+                [(ngModel)]="registerReadValue"
+            >
+        </div>
+
+        <div class="entry-instructions" [class.error-message]="failedValidation" >
+            Reading your meter from left to right,<br>
+            enter the first {{numberOfDigitsinRegister}} numbers including all zeroes.
+        </div>
+        <div class="entry-instructions error-message" *ngIf="isMeterSerialMatchesReadingError">
+            You have entered the meter serial number instead of the meter register read. Please try again.
+        </div>
+        <div class="entry-instructions error-message" *ngIf="isSkipMeterError">
+            Please enter at least 1 read
+        </div>
+
+    </div>
+
+    <div class="button__continue">
+        <a mat-raised-button color="accent" class="tempdls-button" (click)="onClickSubmit()">{{buttonContinueText}}</a>
+    </div>
+    <div class="skip-meter" *ngIf="showSkipMeter()" (click)="onClickSkipMeter()">
+        Skip
+        <mat-icon role="img" class="material-icons mat-icon" aria-label="play_arrow">play_arrow</mat-icon>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footer__content">
+        <a href="https://www.agl.com.au/residential/help-and-support/how-to-read-your-meter" target="_blank"> 
+            <img class="icon_size" src="svg/help_icon.svg">
+            How to read your meter
+        </a>
+    </div>
+</div>

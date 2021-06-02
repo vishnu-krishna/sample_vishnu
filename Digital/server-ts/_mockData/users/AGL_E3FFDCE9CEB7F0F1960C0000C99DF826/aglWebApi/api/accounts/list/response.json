@@ -1,0 +1,27 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "number": "7012709379",
+            "firstName": "MARK",
+            "lastName": "POLLEY",
+            "contracts": [
+                {
+                    "address": "18 Valley View Street|BURNSIDE QLD 4560",
+                    "accountNumber": "7012709379",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_E3FFDCE9CEB7F0F1960C0000C99DF826",
+                    "number": "9131915189",
+                    "planName": "Savers",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "AGLMKTRE2416147",
+                    "regionId": "QLD"
+                }
+            ]
+        }
+    ]
+}

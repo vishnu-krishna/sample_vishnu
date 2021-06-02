@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\maui\fuelChip\fuelChip.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/myAccount/maui/fuelChip/</a> fuelChip.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">19.27% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>21/109</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/58</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">6.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>19/95</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { AfterContentInit, Component, ContentChild, ContentChildren, EventEmitter, Input, OnInit, Output, QueryList } from '@angular/core';
+import { MauiFuelChipFuelContext, MauiFuelChipFuelType, MauiFuelChipState, MauiSecondaryMessageStatusType } from './fuelChip.component.enum';
+import { FuelChipContract, FuelChipContractAccountDetails } from './fuelChip.component.model';
+import { FuelChipFooterComponent } from './fuelChipFooter/fuelChipFooter.component';
+import { FuelChipMessageComponent } from './fuelChipMessage/fuelChipMessage.component';
+&nbsp;
+<span class="fstat-no" title="function not covered" >@Component({</span>
+    selector: 'agl-maui-fuel-chip',
+    template: require('./fuelChip.component.html'),
+    styles: [require('./fuelChip.component.scss')]
+})
+&nbsp;
+export class FuelChipComponent implements OnInit, AfterContentInit {
+&nbsp;
+    @ContentChildren( FuelChipMessageComponent) public fuelChipMessages: QueryList &lt;FuelChipMessageComponent&gt;;
+    @ContentChild(FuelChipFooterComponent) public fuelChipFooterComponent: FuelChipFooterComponent;
+&nbsp;
+    @Input() public fuelChipState: MauiFuelChipState;
+    @Input() public fuelType: MauiFuelChipFuelType;
+    @Input() public fuelContext: MauiFuelChipFuelContext;
+    @Input() public contractNumber: string;
+    @Input() public contractAccountDetails: FuelChipContractAccountDetails [];
+&nbsp;
+    @Output() public <span class="cstat-no" title="statement not covered" >selectorClick: EventEmitter&lt;string&gt; = new EventEmitter&lt;string&gt;();</span>
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >showBorder: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >showFooterNoMessageOffset: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >isElectricity: boolean = true;</span>
+    public <span class="cstat-no" title="statement not covered" >isGas: boolean = true;</span>
+    public <span class="cstat-no" title="statement not covered" >isIneligible: boolean = true;</span>
+    public <span class="cstat-no" title="statement not covered" >isFCStateDisplay: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >isFCStatePreSetup: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >FuelChipState = MauiFuelChipState;</span>
+    public <span class="cstat-no" title="statement not covered" >FuelType = MauiFuelChipFuelType;</span>
+    public fuelChipTitle: string;
+    public <span class="cstat-no" title="statement not covered" >secondaryMessageStatus = MauiSecondaryMessageStatusType;</span>
+    public includeMessageWithAddress: boolean;
+    public fuelChipNumberTitle: string;
+    public fuelChipNumber: string;
+    public fuelChipAddress: string;
+    public showAccountDetails: boolean;
+    public showAccountDetailsDivider: boolean;
+    public <span class="cstat-no" title="statement not covered" >useNoAccountDetailsOffset: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >containerHover: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >selectorHover: boolean = false;</span>
+    public cancelText: string;
+    public tertiaryMessage: string;
+    private <span class="cstat-no" title="statement not covered" >accountTitle: string = 'Account no: ';</span>
+    private <span class="cstat-no" title="statement not covered" >contractTitle: string = 'Contract no: ';</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public ngOnInit() {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.showBorder = ((this.fuelChipState === this.FuelChipState.PreSetup &amp;&amp; this.containerHover === false ) ||</span>
+                           (this.fuelChipState === this.FuelChipState.PostSetupManage  &amp;&amp; this.containerHover === false)
+                          );
+<span class="cstat-no" title="statement not covered" >        this.isFCStateDisplay = this.fuelChipState === this.FuelChipState.Display;</span>
+<span class="cstat-no" title="statement not covered" >        this.isFCStatePreSetup = this.fuelChipState === this.FuelChipState.PreSetup;</span>
+<span class="cstat-no" title="statement not covered" >        this.isIneligible = (this.fuelChipState === this.FuelChipState.Ineligible);</span>
+<span class="cstat-no" title="statement not covered" >        this.isElectricity = (this.fuelType === this.FuelType.Electricity);</span>
+<span class="cstat-no" title="statement not covered" >        this.isGas = (this.fuelType === this.FuelType.Gas);</span>
+<span class="cstat-no" title="statement not covered" >        this.fuelChipTitle = this.fuelType + ' ' + this.fuelContext;</span>
+<span class="cstat-no" title="statement not covered" >        this.showAccountDetails = false;</span>
+<span class="cstat-no" title="statement not covered" >        this.showAccountDetailsDivider = false;</span>
+<span class="cstat-no" title="statement not covered" >        this.loadAccountDetails();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public ngAfterContentInit() {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.fuelChipFooterComponent) {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.fuelChipFooterComponent.cancelText) {</span>
+<span class="cstat-no" title="statement not covered" >                this.cancelText = this.fuelChipFooterComponent.cancelText;</span>
+            }
+<span class="cstat-no" title="statement not covered" >            if (this.fuelChipFooterComponent.tertiaryMessage) {</span>
+<span class="cstat-no" title="statement not covered" >                this.tertiaryMessage = this.fuelChipFooterComponent.tertiaryMessage;</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (this.fuelChipMessages) {</span>
+<span class="cstat-no" title="statement not covered" >                if (this.showAccountDetails &amp;&amp; this.fuelChipMessages.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.showFooterNoMessageOffset = true;</span>
+                }
+            }
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public fuelChipClick() {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.isFCStatePreSetup) { <span class="cstat-no" title="statement not covered" >this.selectorClick.emit(); </span>}</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public showFooterSpacerAndBorder(): boolean {</span>
+        // only need the footer space and border if we have a footer ( with either the cancel or tertiary message) and we don't have any primary or secondary messages or its a single contract
+<span class="cstat-no" title="statement not covered" >        return ((this.fuelChipFooterComponent &amp;&amp; (this.fuelChipFooterComponent.cancelText || this.fuelChipFooterComponent.tertiaryMessage )) &amp;&amp; (this.fuelChipMessages.length &gt; 0));</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    private loadAccountDetails() {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (this.contractAccountDetails) {</span>
+            // deal with single contract account
+<span class="cstat-no" title="statement not covered" >            if (this.contractAccountDetails.length === 1) {</span>
+&nbsp;
+                let electricityContracts = <span class="cstat-no" title="statement not covered" >this.contractAccountDetails[0].contracts.filter((c: FuelChipContract<span class="fstat-no" title="function not covered" > ) =&gt; <span class="cstat-no" title="statement not covered" >c.fuelType === MauiFuelChipFuelType.Electricity)</span></span>;</span>
+<span class="cstat-no" title="statement not covered" >                if (electricityContracts &amp;&amp; electricityContracts.length &gt;= 1) {</span>
+                    // check for the contract in question
+                    let electricityContract = <span class="cstat-no" title="statement not covered" >electricityContracts.find((c: FuelChipContract<span class="fstat-no" title="function not covered" > ) =&gt; <span class="cstat-no" title="statement not covered" >c.contractNumber === this.contractNumber)</span></span>;</span>
+<span class="cstat-no" title="statement not covered" >                    if (electricityContract) {</span>
+<span class="cstat-no" title="statement not covered" >                        this.fuelChipAddress = electricityContract.address;</span>
+                    }
+                }
+&nbsp;
+                let gasContracts = <span class="cstat-no" title="statement not covered" >this.contractAccountDetails[0].contracts.filter((c: FuelChipContract<span class="fstat-no" title="function not covered" > ) =&gt; <span class="cstat-no" title="statement not covered" >c.fuelType === MauiFuelChipFuelType.Gas)</span></span>;</span>
+<span class="cstat-no" title="statement not covered" >                if (gasContracts &amp;&amp; gasContracts.length &gt;= 1) {</span>
+                    // check for the contract in question
+                    let gasContract = <span class="cstat-no" title="statement not covered" >gasContracts.find((c: FuelChipContract<span class="fstat-no" title="function not covered" > ) =&gt; <span class="cstat-no" title="statement not covered" >c.contractNumber === this.contractNumber)</span></span>;</span>
+<span class="cstat-no" title="statement not covered" >                    if (gasContract) {</span>
+<span class="cstat-no" title="statement not covered" >                        this.fuelChipAddress = gasContract.address;</span>
+                    }
+                }
+<span class="cstat-no" title="statement not covered" >                this.fuelChipNumberTitle = this.contractTitle;</span>
+<span class="cstat-no" title="statement not covered" >                this.fuelChipNumber = this.contractNumber;</span>
+&nbsp;
+                // if contract account has a duplicate fuel of elec or Gas have then need to show the address
+<span class="cstat-no" title="statement not covered" >                if ((electricityContracts &amp;&amp; electricityContracts.length &gt; 1) ||</span>
+                    (gasContracts &amp;&amp; gasContracts.length &gt; 1)) {
+<span class="cstat-no" title="statement not covered" >                        this.showAccountDetails = true;</span>
+<span class="cstat-no" title="statement not covered" >                        this.showAccountDetailsDivider = true;</span>
+                }
+&nbsp;
+            } else { // multi contract account
+&nbsp;
+                let tmpContractAccount<span class="cstat-no" title="statement not covered" >: FuelChipContractAccountDetails;</span>
+                let electricityContracts<span class="cstat-no" title="statement not covered" >: FuelChipContract [];</span>
+                let gasContracts<span class="cstat-no" title="statement not covered" >: FuelChipContract [];</span>
+                let duplicateFuelsFound: boolean = <span class="cstat-no" title="statement not covered" >false;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                for (let a<span class="cstat-no" title="statement not covered" ></span> of this.contractAccountDetails) {</span>
+                    // find the contract account that contains the contract number in question
+<span class="cstat-no" title="statement not covered" >                    if (a.contracts.find((c: FuelChipContract<span class="fstat-no" title="function not covered" > ) =&gt; <span class="cstat-no" title="statement not covered" >c.contractNumber === this.contractNumber)</span></span>) {</span>
+<span class="cstat-no" title="statement not covered" >                        tmpContractAccount = a;</span>
+                    }
+                    // determine if any of the contract accounts has duplicate fuels
+<span class="cstat-no" title="statement not covered" >                    electricityContracts = a.contracts.filter((c: FuelChipContract<span class="fstat-no" title="function not covered" > ) =&gt; <span class="cstat-no" title="statement not covered" >c.fuelType ===  MauiFuelChipFuelType.Electricity)</span></span>;</span>
+<span class="cstat-no" title="statement not covered" >                    gasContracts = a.contracts.filter((c: FuelChipContract<span class="fstat-no" title="function not covered" > ) =&gt; <span class="cstat-no" title="statement not covered" >c.fuelType ===  MauiFuelChipFuelType.Gas)</span></span>;</span>
+<span class="cstat-no" title="statement not covered" >                    if ((electricityContracts &amp;&amp; electricityContracts.length &gt; 1) || (gasContracts &amp;&amp; gasContracts.length &gt; 1)) {</span>
+<span class="cstat-no" title="statement not covered" >                        duplicateFuelsFound = true;</span>
+                    }
+                }
+&nbsp;
+                // get the contract with the contract number in question
+                let contract = <span class="cstat-no" title="statement not covered" >tmpContractAccount.contracts.find((c: FuelChipContract<span class="fstat-no" title="function not covered" > ) =&gt; <span class="cstat-no" title="statement not covered" >c.contractNumber === this.contractNumber)</span></span>;</span>
+<span class="cstat-no" title="statement not covered" >                this.fuelChipAddress = contract.address;</span>
+<span class="cstat-no" title="statement not covered" >                this.showAccountDetails = true;</span>
+<span class="cstat-no" title="statement not covered" >                this.showAccountDetailsDivider = true;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if (duplicateFuelsFound) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.fuelChipNumberTitle = this.contractTitle;</span>
+<span class="cstat-no" title="statement not covered" >                    this.fuelChipNumber = this.contractNumber;</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    this.fuelChipNumberTitle = this.accountTitle;</span>
+<span class="cstat-no" title="statement not covered" >                    this.fuelChipNumber = tmpContractAccount.accountNumber;</span>
+                }
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (this.fuelChipState === this.FuelChipState.Display) {</span>
+<span class="cstat-no" title="statement not covered" >                this.showAccountDetailsDivider = true;</span>
+<span class="cstat-no" title="statement not covered" >                this.useNoAccountDetailsOffset = !this.showAccountDetails &amp;&amp; this.showAccountDetailsDivider;</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            this.includeMessageWithAddress = this.showAccountDetails;</span>
+&nbsp;
+        }
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

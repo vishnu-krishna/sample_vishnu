@@ -1,0 +1,8 @@
+@import '../dls';
+
+:host {
+    @extend %dls-component-common;
+    @extend %dls-tile-base;
+
+    display: block;
+}

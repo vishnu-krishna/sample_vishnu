@@ -1,0 +1,51 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": {
+        "contractAccountNumber": 1200000000,
+        "extensionOptions": [
+            {
+                "contractNumber": 9404013612,
+                "isEligible": false,
+                "totalDueAmount": 1575.97,
+                "dueDateExtensions": [],
+                "error": {
+                    "message": "Unable to calculate the next business day",
+                    "internalError": {
+                        "errorId": "ZISS_OPA",
+                        "errorNumber": "021",
+                        "description": "Unable to calculate the next business day"
+                    }
+                }
+            },
+            {
+                "contractNumber": 9404013615,
+                "isEligible": false,
+                "totalDueAmount": 207.15,
+                "dueDateExtensions": [],
+                "error": {
+                    "message": "Unable to calculate the next business day",
+                    "internalError": {
+                        "errorId": "ZISS_OPA",
+                        "errorNumber": "021",
+                        "description": "Unable to calculate the next business day"
+                    }
+                }
+            },
+            {
+                "contractNumber": 9404117410,
+                "isEligible": false,
+                "totalDueAmount": 498.54,
+                "dueDateExtensions": [],
+                "error": {
+                    "message": "Unable to calculate the next business day",
+                    "internalError": {
+                        "errorId": "ZISS_OPA",
+                        "errorNumber": "021",
+                        "description": "Unable to calculate the next business day"
+                    }
+                }
+            }
+        ]
+    }
+}

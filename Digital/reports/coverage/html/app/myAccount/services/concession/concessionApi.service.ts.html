@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\services\concession\concessionApi.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/myAccount/services/concession/</a> concessionApi.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">39.66% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>23/58</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">30.77% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>8/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">37.25% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>19/51</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { Http, Headers, RequestOptions, RequestMethod, Response, URLSearchParams } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+&nbsp;
+import { ConfigService } from '../../../shared/service/config.service';
+import { AglAuthTokenProvider } from '../../../shared/repository/aglAuthTokenProvider';
+import { Guid } from '../../../shared/utils/guid';
+import { ErrorApiModel } from '../../../shared/service/api.service';
+&nbsp;
+<span class="fstat-no" title="function not covered" >export abstract class IConcessionApi {</span>
+    public abstract getEligibleConcessionCards(regionId: string, fuelTypes: string[]): Observable&lt;Issuer[]&gt;;
+    public abstract getConcessionStatus(bpId: string): Observable&lt;ConcessionStatus&gt;;
+&nbsp;
+    /**
+     * @returns 0 success else the internal error number
+     */
+    public abstract saveConcession(businessPartnerNumber: string, request: SaveConcessionRequest): Observable&lt;number&gt;;
+}
+&nbsp;
+@Injectable()
+export class ConcessionApiService implements IConcessionApi {
+    private basePath: string;
+&nbsp;
+    constructor(private <span class="cstat-no" title="statement not covered" >http: Http,</span>
+                private <span class="cstat-no" title="statement not covered" >configService: ConfigService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+                private <span class="cstat-no" title="statement not covered" >tokenProvider: AglAuthTokenProvider<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >)</span> {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.basePath = configService.current.aglConcessionApiBaseUrl;</span>
+    }
+&nbsp;
+    public getEligibleConcessionCards(regionId: string, fuelTypes: string[]<span class="fstat-no" title="function not covered" >): Observable&lt;Issuer[]&gt; {</span>
+        let getEndPoint = <span class="cstat-no" title="statement not covered" >`/v1/concession/${regionId.toLowerCase()}/issuers`;</span>
+&nbsp;
+        let params = <span class="cstat-no" title="statement not covered" >new URLSearchParams();</span>
+<span class="cstat-no" title="statement not covered" >        fuelTypes.forEach((ft<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >params.append('fuelTypes', ft))</span></span>;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return this.get&lt;Issuer[]&gt;(getEndPoint, params);</span>
+    }
+&nbsp;
+    public getConcessionStatus(bpId: string<span class="fstat-no" title="function not covered" >): Observable&lt;ConcessionStatus&gt; {</span>
+        let endpoint = <span class="cstat-no" title="statement not covered" >`/v1/businessPartners/${bpId}/concession`;</span>
+<span class="cstat-no" title="statement not covered" >        return this.get&lt;ConcessionStatus&gt;(endpoint, new URLSearchParams());</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    public saveConcession(businessPartnerNumber: string, request: SaveConcessionRequest<span class="fstat-no" title="function not covered" >): Observable&lt;number&gt; {</span></span>
+        const postEndPoint = <span class="cstat-no" title="statement not covered" >`/v1/businessPartners/${businessPartnerNumber}/concession`;</span>
+<span class="cstat-no" title="statement not covered" >        return this.post&lt;any&gt;(postEndPoint, request)</span>
+            .map(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                return 0; </span>// success
+            })
+            .catch((response: Response<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+                let body = <span class="cstat-no" title="statement not covered" >this.extractResponseBody(response);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if (response.status === 400) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (body.internalError &amp;&amp; body.internalError.errorNumber) {</span>
+<span class="cstat-no" title="statement not covered" >                        return Observable.of(Number(body.internalError.errorNumber));</span>
+                    }
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                return Observable.throw(body);</span>
+            });
+    }
+&nbsp;
+    private get&lt;T&gt;(url: string, searchParams: URLSearchParams<span class="fstat-no" title="function not covered" >): Observable&lt;T&gt; {</span>
+        let requestOptions = <span class="cstat-no" title="statement not covered" >new RequestOptions({</span>
+            method: RequestMethod.Get,
+            headers: this.commonHeaders(),
+            search: searchParams
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return this.http.get(`${this.basePath}${url}`, requestOptions)</span>
+            .map((response<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                return response.json();</span>
+            });
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    private post&lt;T&gt;(url: string, body: any<span class="fstat-no" title="function not covered" >): Observable&lt;T&gt; {</span></span>
+        let requestOptions = <span class="cstat-no" title="statement not covered" >new RequestOptions({ method: RequestMethod.Post, headers: this.commonHeaders() });</span>
+<span class="cstat-no" title="statement not covered" >        return this.http.post(`${this.basePath}${url}`, body, requestOptions)</span>
+            .map((response: Response<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                return this.extractResponseBody(response);</span>
+            });
+    }
+&nbsp;
+    private extractResponseBody(response: Response<span class="fstat-no" title="function not covered" >): any {</span>
+<span class="cstat-no" title="statement not covered" >        return (response.text() === '') ? response : response.json();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private commonHeaders(): Headers {</span>
+<span class="cstat-no" title="statement not covered" >        return new Headers({</span>
+            'Authorization': `Bearer ${this.tokenProvider.getToken()}`,
+            'X-Correlation-Id': Guid.newGuid(),
+            'Content-Type': 'application/json'
+        });
+    }
+}
+&nbsp;
+export interface ConcessionCard {
+    cardCode: string;
+    name: string;
+    eligibleFuelTypes: string[];
+}
+&nbsp;
+export interface Issuer {
+    issuerCode: string;
+    issuer: string;
+    cards: ConcessionCard[];
+}
+&nbsp;
+export interface ConcessionStatus {
+    cardAvailable: boolean;
+    concessionCard?: ConcessionStatusCardDetails;
+}
+&nbsp;
+export interface ConcessionStatusCardDetails {
+    cardCode: string;
+    issuerCode: string;
+    cardNumber: string;
+    cardName: string;
+    error?: ErrorApiModel;
+}
+&nbsp;
+export class SaveConcessionRequest {
+    constructor(public <span class="cstat-no" title="statement not covered" >cardNumber: string,</span>
+                public <span class="cstat-no" title="statement not covered" >issuerCode: string,</span>
+                public <span class="cstat-no" title="statement not covered" >cardCode: string,</span>
+                public <span class="cstat-no" title="statement not covered" >contracts: string[]<span class="fstat-no" title="function not covered" >)</span> {</span>
+<span class="cstat-no" title="statement not covered" >        if (!cardNumber || !issuerCode || !cardCode || (contracts || []).length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >            throw new Error('Invalid SaveConcessionRequest');</span>
+        }
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

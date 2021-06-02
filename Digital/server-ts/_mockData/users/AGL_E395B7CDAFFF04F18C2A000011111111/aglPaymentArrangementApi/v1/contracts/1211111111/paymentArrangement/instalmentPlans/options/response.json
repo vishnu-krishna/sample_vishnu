@@ -1,0 +1,25 @@
+[{
+    "frequency": "Weekly",
+    "instalmentSuggestions": [
+        { "instalmentAmount": 20, "numberOfInstalments": 10 },
+        { "instalmentAmount": 40, "numberOfInstalments": 5 }
+    ],
+    "instalmentMinAmount": 10,
+    "instalmentMaxAmount": 190
+},
+{
+    "frequency": "Fortnightly",
+    "instalmentSuggestions": [
+        { "instalmentAmount": 40, "numberOfInstalments": 5 }
+    ],
+    "instalmentMinAmount": 20,
+    "instalmentMaxAmount": 190
+},
+{
+    "frequency": "Monthly",
+    "instalmentSuggestions": [
+        { "instalmentAmount": 100, "numberOfInstalments": 2 }
+    ],
+    "instalmentMinAmount": 40,
+    "instalmentMaxAmount": 190
+}]

@@ -1,0 +1,73 @@
+@import '../../shared/style/omm/styleGuide/main.scss';
+@import '../../shared/style/omm/_omm_variables';
+@import '../../shared/style/variables';
+
+body {
+    font-family: $bodyStack;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: $omm-blue;
+    overflow-x: hidden;
+}
+
+div {
+    &:focus {
+        outline: none;
+    }
+}
+
+.omm-tracker {
+    position: relative;
+
+    &__content {
+        position: absolute;
+        top: 70px;
+        width: 100%;
+        @media #{$agl-layout-mobile} {
+            top: 40px;
+        }
+    }
+}
+
+mat-icon[svgicon='icon-elec-enabled'] {
+    path {
+        fill: $brand-blue-c1;
+    }
+}
+
+mat-icon {
+    &.hover_tooltip {
+        &:hover {
+            path {
+                opacity: 1;
+                fill: $brand-bright;
+            }
+        }
+    }
+}
+
+
+.agl-track-connection__tile--confirmed {
+    path {
+        fill: $brand-white !important;
+    }
+}
+
+.makechange__btncontainer {
+    text-align: center;
+}
+
+.makechange__subheading {
+    font-family: $bodyStack;
+    font-size: 14px;
+    text-align: center;
+    color: $omm-grey-text;
+    margin-bottom: 20px;
+}
+
+.didyouknow__container__row__content__description {
+    > ul {
+        margin-left: 16px;
+        list-style: disc;
+    }
+}

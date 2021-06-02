@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\dashboard\solarCheck\solarCheckStatus\solarCheckStatusView.model.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/dashboard/solarCheck/solarCheckStatus/</a> solarCheckStatusView.model.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">24.32% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>9/37</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>7/35</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { SolarCheckStatusDataSettings, SolarCheckStatusLinks } from '../../../../shared/globals/solarCheckConstants';
+&nbsp;
+/**
+ * Solar Check Status View Model class: use this class to hold the properties/ state of the viewModel for the SolarCheckStatusComponent.
+ *
+ * @export
+ * @class SolarCheckStatusViewModel
+ */
+export class SolarCheckStatusViewModel {
+&nbsp;
+    public solarImage: ImageViewModel;
+    public statusImage: ImageViewModel;
+    public heading: string;
+    public details: string;
+    public link: string;
+    public linkName: string;
+    public latestDataDate: string;
+    public statusExpectedDate: string;
+    public daysOfData: number;
+    public copyTextTime: string;
+    public iconBackgroundColour: string;
+    public isShowLearnMoreLink: boolean;
+    public isCheckSystem: boolean;
+    public isGoodStatus: boolean;
+&nbsp;
+<span class="fstat-no" title="function not covered" >    constructor() {</span>
+<span class="cstat-no" title="statement not covered" >        this.initialize();</span>
+    }
+<span class="fstat-no" title="function not covered" >    public clear() {</span>
+<span class="cstat-no" title="statement not covered" >        this.statusImage = undefined;</span>
+<span class="cstat-no" title="statement not covered" >        this.solarImage = undefined;</span>
+<span class="cstat-no" title="statement not covered" >        this.heading = undefined;</span>
+<span class="cstat-no" title="statement not covered" >        this.details = undefined;</span>
+<span class="cstat-no" title="statement not covered" >        this.link = undefined;</span>
+<span class="cstat-no" title="statement not covered" >        this.linkName = undefined;</span>
+<span class="cstat-no" title="statement not covered" >        this.isShowLearnMoreLink = undefined;</span>
+<span class="cstat-no" title="statement not covered" >        this.latestDataDate = undefined;</span>
+<span class="cstat-no" title="statement not covered" >        this.iconBackgroundColour = undefined;</span>
+<span class="cstat-no" title="statement not covered" >        this.isCheckSystem = undefined;</span>
+<span class="cstat-no" title="statement not covered" >        this.daysOfData = undefined;</span>
+<span class="cstat-no" title="statement not covered" >        this.isGoodStatus = undefined;</span>
+    }
+    // initializes with status = not available.
+<span class="fstat-no" title="function not covered" >    public initialize() {</span>
+<span class="cstat-no" title="statement not covered" >        this.statusImage = new ImageViewModel();</span>
+<span class="cstat-no" title="statement not covered" >        this.solarImage = new ImageViewModel();</span>
+<span class="cstat-no" title="statement not covered" >        this.solarImage.src = 'svg/scs_icon_normal.svg';</span>
+<span class="cstat-no" title="statement not covered" >        this.statusImage.src = 'svg/scs_status_notAvailable.svg';</span>
+<span class="cstat-no" title="statement not covered" >        this.solarImage.altText = 'AGL Solar Check icon';</span>
+<span class="cstat-no" title="statement not covered" >        this.heading = 'Sorry, your solar status isn\'t currently available.';</span>
+<span class="cstat-no" title="statement not covered" >        this.details = 'Check back soon.';</span>
+<span class="cstat-no" title="statement not covered" >        this.link = SolarCheckStatusLinks.DefaultLearnMoreLink;</span>
+<span class="cstat-no" title="statement not covered" >        this.linkName = 'LEARN MORE';</span>
+<span class="cstat-no" title="statement not covered" >        this.isShowLearnMoreLink = true;</span>
+<span class="cstat-no" title="statement not covered" >        this.latestDataDate = null;</span>
+<span class="cstat-no" title="statement not covered" >        this.iconBackgroundColour = null;</span>
+<span class="cstat-no" title="statement not covered" >        this.isCheckSystem = false;</span>
+<span class="cstat-no" title="statement not covered" >        this.daysOfData = SolarCheckStatusDataSettings.NumberOfDaysToProcess;</span>
+<span class="cstat-no" title="statement not covered" >        this.isGoodStatus = false;</span>
+    }
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >export class ImageViewModel {</span>
+    public src: string;
+    public altText: string;
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

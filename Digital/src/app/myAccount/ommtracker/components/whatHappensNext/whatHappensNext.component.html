@@ -1,0 +1,15 @@
+<div class="popup__container" [class.single]="whatHappensNextContent?.length === 1">
+    <div class="popup__content">
+        <div class="shadow shadow-back"></div>
+        <div class="popup__close" (click)="closeModal()">&#x2716;</div>
+        <div class="row popup">
+            <div class="col-md-{{getColValue()}} col-sm-12 popup__item" *ngFor="let whatHappensNextReference of whatHappensNextContent; let i = index">
+                <div ><img class="popup__item__icon" src="{{whatHappensNextReference?.icon}}" /></div>
+                <div class="popup__item__header">{{whatHappensNextReference?.heading}}</div>
+                <div class="popup__item__description">{{whatHappensNextReference?.description}}</div>
+                <div class="popup__item__divider" [class.no-border]="i === whatHappensNextContent.length - 1"></div>
+            </div>
+        </div>
+        <div class="popup__tip"></div>
+    </div>
+</div>

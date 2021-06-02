@@ -1,0 +1,18 @@
+<div class="row agl-track-connection-container">
+
+    <div 
+    class="col-xs-12" 
+    *ngFor="let item of connectionDetailsData" 
+    [ngClass]="{'col-md-6': connectionDetailsData.length > 1, 'col-md-8 col-md-offset-2':connectionDetailsData.length === 1}">
+
+        <agl-track-connection 
+        [scContent]="scContent.connectionDetails[item.connectionType]" 
+        [scStatuses]="scContent.connectionStatuses" 
+        [connectionData]="item.connectionData" 
+        [connectionAddress]="item.connectionAddress" 
+        [connectionType]="item.connectionType">
+        </agl-track-connection>
+
+    </div>
+
+</div>

@@ -1,0 +1,27 @@
+<agl-mobile-menu #mobileMenu></agl-mobile-menu>
+
+<agl-app-header [class.modalShown]="!showHeader()" [menu]="mobileMenu"></agl-app-header>
+
+<div class="mobile mobile-padding"></div>
+<div class="desktop desktop-padding"></div>
+
+<!-- TODO: Remove class binding mg-fix after 21st April -->
+<div *ngIf="!apiSyncError"
+     class="app-wrapper {{browserClass}}"
+     [class.push-toleft]="mobileMenu.isOpen"
+     [class.mg-fix]="isNewLogo"
+     [class.full-screen]="isFullscreenRoute()"
+     (click)="closeMobileMenu()">
+    <router-outlet></router-outlet>
+</div>
+
+<div *ngIf="mobileMenu.isOpen" (click)="closeMobileMenu()" class="dls-menu-overlay"></div>
+
+<agl-generic-error *ngIf="apiSyncError"></agl-generic-error>
+
+<agl-app-footer [class.modalShown]="!showFooter()" id="aglAppFooter"></agl-app-footer>
+
+<agl-modal-confirm></agl-modal-confirm>
+<agl-ssmr-modal [hidden]="!ssmrService.showSSMR" [class.transition1]="ssmrService.transition1"></agl-ssmr-modal>
+
+<agl-feature-intros></agl-feature-intros>

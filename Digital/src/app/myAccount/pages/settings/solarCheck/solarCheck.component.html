@@ -1,0 +1,51 @@
+<div class="settings-container">
+    <div class="row">
+        <div class="col-md-12">
+            <mat-card>
+                <a id="shc-deregister" *ngIf="isSolarRegistered" [class.disabled]="isPendingRegistration" class="deregister-button" (click)="deregister($event)">Remove</a>
+                <div class="main-card-header">
+                    <div>Solar Command Check</div>
+                </div>                
+                <div *ngIf="isPendingRegistration" class="pending">
+                    <agl-alert alertType="inform">
+                        <div>We are processing your registration. Once your registration is complete you can edit your system details.</div>
+                    </agl-alert>
+                </div>
+                <div *ngIf="isSignupEligible">
+                    <div class="message-text">
+                        Want to find out if your system is working hard or hardly working?
+                    </div>
+                    <div>
+                        <button id="shc-sign-up" mat-raised-button class="register-button dls-button" color="accent" (click)="signUp($event)">SIGN UP</button>
+                    </div>
+                </div>
+                <div *ngIf="isSolarRegistered">
+                    <div class="message-text">
+                        Our daily solar health check, using your last 30 days of data, can help you to find out if your system is working hard or hardly working.
+                    </div>
+                </div>
+                <div *ngIf="isCurrentlyDeregistering" class="deregister-status">
+                    <agl-alert alertType="inform">
+                        <div>
+                            Processing request to remove Solar Command Check.
+                        </div>
+                    </agl-alert>
+                </div>
+                <div *ngIf="hasBattery">
+                    <agl-alert alertType="inform">
+                        <div>
+                            Solar Command Check is unavailable when you have a solar battery.
+                        </div>
+                    </agl-alert>
+                </div>
+                <div *ngIf="displaySystemDeregistrationErrorAlert()">
+                    <agl-alert class="shc-deregistration-error" alertType="error" heading="Sorry, we seem to be experiencing a problem." body="We couldn't remove Solar Command Check. Please give it another try.">
+                    </agl-alert>
+                </div>
+
+                <agl-settings-solar-system-details *ngIf="isSolarRegistered" [contractNumber]="registeredContractNumber" [isDisabled]="isPendingRegistration">
+                </agl-settings-solar-system-details>
+            </mat-card>
+        </div>
+    </div>
+</div>

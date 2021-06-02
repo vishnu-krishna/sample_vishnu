@@ -1,0 +1,48 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "contractAccountNumbers": [
+                7021129726
+            ],
+            "billDeliveryMode": "Email"
+        },
+        {
+            "contractAccountNumbers": [
+                7021129727
+            ],
+            "billDeliveryMode": "Postal"
+        },
+        {
+            "contractAccountNumbers": [
+                7021129728
+            ],
+            "billDeliveryMode": "Email"
+        },
+        {
+            "contractAccountNumbers": [
+                7021129729
+            ],
+            "billDeliveryMode": "Postal"
+        },
+        {
+            "contractAccountNumbers": [
+                7021129730
+            ],
+            "billDeliveryMode": "Postal"
+        },
+        {
+            "contractAccountNumbers": [
+                7021129731
+            ],
+            "billDeliveryMode": "Postal"
+        },
+        {
+            "contractAccountNumbers": [
+                7021129736
+            ],
+            "billDeliveryMode": "Postal"
+        }
+    ]
+}

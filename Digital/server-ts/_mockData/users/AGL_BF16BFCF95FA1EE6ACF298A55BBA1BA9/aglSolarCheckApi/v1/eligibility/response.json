@@ -1,0 +1,27 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": {
+        "eligible": false,
+        "contracts": [
+            {
+                "contractNumber": "9402239719",
+                "registered": false,
+                "registrationStatus": "NotRegistered",
+                "eligible": false
+            },
+            {
+                "contractNumber": "9402273534",
+                "registered": false,
+                "registrationStatus": "NotRegistered",
+                "eligible": false
+            },
+            {
+                "contractNumber": "9404760834",
+                "registered": false,
+                "registrationStatus": "NotRegistered",
+                "eligible": false
+            }
+        ]
+    }
+}

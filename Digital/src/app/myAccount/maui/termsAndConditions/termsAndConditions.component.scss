@@ -1,0 +1,72 @@
+@import '../maui';
+
+@include maui-component-reset();
+
+.maui-terms-and-conditions {
+    align-items: baseline;
+    vertical-align: middle;
+    display: inline-flex;
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        display: inline-block;
+   }
+
+    .maui-terms-and-conditions-control {
+        display: inline-block;
+        position: relative;
+        height: 22px;
+        margin: auto;
+        margin-right: 10px;
+        vertical-align: middle;
+        white-space: nowrap;
+        width: 26px;
+        margin-top: 0px;
+
+        /* Style to hide the default input box*/
+        &__checkbox-hide {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
+
+        /* Style for the custom checkbox  */
+        &__customcheckbox {
+            box-shadow: $shadow-checkbox;
+            border-radius: 4px;
+            height: 21px;
+            width: 21px;
+            margin-right: 5px;
+            vertical-align: middle;
+            cursor: pointer;
+            background-color: $neutral-08;
+
+            /* Style for the checked state  */
+            &--checked {
+                background-image: url('svg/maui/termsAndConditions/icon_tick_checkbox.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 23px 23px;
+                background-color: $primary-dark;
+                box-shadow: $shadow-checkbox-checked;
+            }
+        }
+    }
+
+    @include deep-anchor-styling();
+
+    &--text {
+        font-family: $body-font-stack;
+        font-size: $body-font-size-small;
+        display: inline;
+
+        @media #{$agl-layout-mobile} {
+            width: auto;
+            padding-top: 2px;
+        }
+    }
+}
+

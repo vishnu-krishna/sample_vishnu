@@ -1,0 +1,17 @@
+<div id="button-dropdown-{{name}}" class="button-dropdown">
+    <fieldset id="button-dropdown__input" [hidden]="selectedName == ''">
+        <input type="text" id="button-dropdown-{{name}}-selected"  
+               class="button-dropdown__selection" [ngModel]="selectedName" readonly>
+        <div id="button-dropdown-{{name}}-change" class="button-dropdown__change" (click)="changeSelection()">
+            Change
+        </div>
+    </fieldset>
+
+    <div id="button-dropdown-{{name}}-options"  [hidden]="selectedName != ''">
+        <button 
+            id="dropdown-button-{{index}}" 
+            *ngFor="let item of list; let index = index" 
+            class="button-dropdown__button long-button"
+            mat-raised-button (click)="selectButton(item)">{{item.name}}</button>
+    </div>
+</div>

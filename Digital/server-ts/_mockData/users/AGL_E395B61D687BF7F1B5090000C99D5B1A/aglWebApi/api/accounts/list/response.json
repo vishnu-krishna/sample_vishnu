@@ -1,0 +1,36 @@
+{
+    "status": 200,
+    "body": [
+        {
+            "number": "20804027",
+            "firstName": "Bev",
+            "lastName": "Sanders",
+            "contracts": [
+                {
+                    "address": "U 6/36 Heatherdale Road|MITCHAM VIC 3132",
+                    "accountNumber": "20804027",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_E395B61D687BF7F1B5090000C99D5B1A",
+                    "number": "9402779865",
+                    "planName": "Employee Freedom",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false
+                },
+                {
+                    "address": "U 6/36 Heatherdale Road|MITCHAM VIC 3132",
+                    "accountNumber": "20804027",
+                    "fuelType": "Gas",
+                    "nameId": "AGL_E395B61D687BF7F1B5090000C99D5B1A",
+                    "number": "9402779867",
+                    "planName": "Employee Freedom",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="75px" height="80px" viewBox="0 0 75 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>TV &amp; Computer</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="75" height="80"></rect>
+        <rect id="path-3" x="0" y="0" width="42.0023708" height="42.600314"></rect>
+    </defs>
+    <g id="Version-06" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="tips-icons_all-sizes" transform="translate(-439.000000, -2566.000000)">
+            <g id="TV-&amp;-Computer" transform="translate(439.000000, 2566.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#FFFFFF" xlink:href="#path-1"></use>
+                <g mask="url(#mask-2)">
+                    <g transform="translate(4.000000, 8.000000)">
+                        <g id="Devices-&amp;-Network_flat-tv" stroke-linejoin="round">
+                            <g id="flat-tv" stroke="#50E3C2">
+                                <path d="M52.7856463,38.8689258 L0,38.8689258 L0,3.6439618 C0,1.63145733 1.6113368,0 3.59902134,0 L49.186625,0 C51.1743077,0 52.7856463,1.63145733 52.7856463,3.6439618 L52.7856463,38.8689258 Z" id="Shape" stroke-width="4" stroke-linecap="square"></path>
+                                <path d="M26.3928232,38.8689258 L26.3928232,46.1568494" id="Shape" stroke-width="4" stroke-linecap="round"></path>
+                                <path d="M19.1947805,46.7527174 L33.5908658,46.7527174" id="Shape" stroke-width="4" stroke-linecap="round"></path>
+                                <path d="M1.19967378,32.7956562 L51.5859725,32.7956562" id="Shape" stroke-width="2" stroke-linecap="round"></path>
+                            </g>
+                        </g>
+                        <g id="Devices-&amp;-Network_laptop" transform="translate(26.992296, 18.802669)">
+                            <mask id="mask-4" fill="white">
+                                <use xlink:href="#path-3"></use>
+                            </mask>
+                            <use id="Mask" fill="#FFFFFF" xlink:href="#path-3"></use>
+                            <g mask="url(#mask-4)" id="laptop" stroke-linejoin="round">
+                                <g transform="translate(3.113482, 5.761609)">
+                                    <g>
+                                        <rect id="Rectangle-path" stroke="#50E3C2" stroke-width="2" x="6.53712667" y="4.93852204" width="24.514225" height="19.6088375"></rect>
+                                        <path d="M1.63428167,27.9849582 L1.63428167,1.64617401 C1.63428167,0.737017292 2.36597457,0 3.26856333,0 L34.319915,0 C35.222503,0 35.9541967,0.737017292 35.9541967,1.64617401 L35.9541967,27.9849582" id="Shape" stroke="#50E3C2" stroke-width="4" stroke-linecap="square"></path>
+                                        <path d="M37.5884784,32.9234802 L0,32.9234802 C0,32.9234802 1.63428167,28.9452274 1.63428167,28.8080452 L35.9541967,28.8080452 C35.8861026,28.8080452 37.5884784,32.9234802 37.5884784,32.9234802 Z" id="Shape" stroke="#50E3C2" stroke-width="2"></path>
+                                        <path d="M37.5884784,33.7465672 L37.5884784,34.5696543 C37.5884784,35.4788102 36.8567847,36.2158283 35.9541967,36.2158283 L1.63428167,36.2158283 C0.731692744,36.2158283 0,35.4788102 0,34.5696543 L0,33.7465672" id="Shape" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" fill="#50E3C2"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

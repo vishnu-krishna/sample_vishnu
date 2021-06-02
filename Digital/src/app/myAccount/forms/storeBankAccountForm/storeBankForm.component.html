@@ -1,0 +1,59 @@
+<div *ngIf="!data.isSmsPay || !data.paymentArrangementPaymentMethodId">
+    <div class="store-bank__left-panel">
+        <div class="desktop">
+            <mat-icon class="store-bank__icon" svgIcon="icon-bank-two-tone" alt="Bank"></mat-icon>
+            <div class="store-bank__title">Bank account</div>
+            <div class="store-bank__desc">Use a savings or cheque account.<br/>No payment processing fees apply.</div>
+            <div class="store-bank__change" (click)="goBack()">Change</div>
+        </div>
+        <div class="mobile">
+            <div class="mobile-change-method">Bank account <span (click)="goBack()">Change</span></div>
+            <p>Use a savings or cheque account. No payment processing fees apply.</p>
+        </div>
+    </div>
+    <div class="store-bank__form">
+        <agl-payment-bankaccount 
+            *ngIf="data.loadedFromDirectDebitSettings" 
+            [isDirectDebit]="data.isDirectDebit"
+            [isSmsPay]="data.isSmsPay"
+            [saveOnly]="true" 
+            [isSwitchingPaymentArrangements]="isSwitchingPaymentArrangements"
+            (onSave)="saveBankAccount($event)" 
+            [directDebitSettings]="true">
+        </agl-payment-bankaccount>
+        <agl-payment-bankaccount
+            *ngIf="data.loadedFromMyWalletSettings" 
+            [isDirectDebit]="data.isDirectDebit"
+            [isSmsPay]="data.isSmsPay"
+            [saveOnly]="true" 
+            [isSwitchingPaymentArrangements]="isSwitchingPaymentArrangements"
+            (onSave)="saveBankAccount($event)"
+            [myWalletSettings]="true">
+        </agl-payment-bankaccount>
+    </div>
+</div>
+<div *ngIf="data.isSmsPay && data.paymentArrangementPaymentMethodId">
+    <div class="store-bank__left-panel">
+        <div class="desktop">
+            <mat-icon class="store-bank__icon--wallet" svgIcon="icon-wallet" alt="Wallet"></mat-icon>
+            <div class="store-bank__title">Wallet</div>
+            <div class="store-bank__desc">Use a savings or cheque account.<br/>No payment processing fees apply.</div>
+        </div>
+        <div class="mobile">
+            <div class="mobile-change-method">Bank account</div>
+            <p>Use a savings or cheque account. No payment processing fees apply.</p>
+        </div>
+    </div>
+    <div class="store-bank__form">
+        <agl-payment-bankaccount
+            [paymentMethodReference]="data.paymentMethodReference"
+            [isDirectDebit]="data.isDirectDebit"
+            [directDebitSettings]="true"
+            [isSmsPay]="data.isSmsPay"
+            [saveOnly]="true"
+            [isSwitchingPaymentArrangements]="isSwitchingPaymentArrangements"
+            (onSave)="saveBankAccount($event)"
+            [myWalletSettings]="false">
+        </agl-payment-bankaccount>
+    </div>
+</div>

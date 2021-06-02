@@ -1,0 +1,52 @@
+[
+    {
+        "dataGroup": "Account",
+        "status": "Complete",
+        "lastUpdated": "2017-01-25T01:14:05.7521109+00:00",
+        "failed": false
+    },
+    {
+        "dataGroup": "BillingHistory",
+        "status": "Complete",
+        "lastUpdated": "2017-01-25T01:14:06.7698155+00:00",
+        "failed": false
+    },
+    {
+        "dataGroup": "Dashboard",
+        "status": "Complete",
+        "lastUpdated": "2017-01-25T01:14:04.9295415+00:00",
+        "failed": true,
+        "errors": [
+            {
+                "dataType": "BillSimulation",
+                "account": "20845020",
+                "contract": "9401786528",
+                "message": "Sorry, we were unable to retrieve your information. Please try again later.",
+                "hasRfcError": true,
+                "errorId": "ZIEIQ001",
+                "errorNumber": "94"
+            },
+            {
+                "dataType": "UsageTwoWeeks",
+                "account": "20845020",
+                "contract": "9401786528",
+                "message": "Sorry, we were unable to retrieve your information. Please try again later.",
+                "hasRfcError": true,
+                "errorId": "ZIEIQ001",
+                "errorNumber": "14"
+            }
+        ]
+    },
+    {
+        "dataGroup": "Payments",
+        "status": "Complete",
+        "lastUpdated": "2017-01-25T01:14:04.6683611+00:00",
+        "failed": false
+    },
+    {
+        "dataGroup": "Usage",
+        "status": "Complete",
+        "lastUpdated": "2017-01-25T01:14:05.6480385+00:00",
+        "failed": false
+    }
+]

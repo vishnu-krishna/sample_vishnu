@@ -1,0 +1,66 @@
+<div class="solar-check-welcome agl-modal-body">
+    <span id="modal-close-button" class="close-button" (click)="closeModal()" #cancelButtonTopRight>
+        <span>&#x2715;</span>
+    </span>
+    <div class="visible-xs background">
+        <!-- mat-icon not used because image is not displaying correctly on firefox / chrome when used -->
+        <div class="center-image-horizontally-cropped-outer">
+            <div class="center-image-horizontally-cropped-inner">
+                <img src="svg/scc-houseonhill-intro-mb-768px.svg" />
+            </div>
+        </div>
+    </div>
+    <div class="body-text">
+        <div class="main-heading heading move-up-for-mobile">
+            Safeguard your solar savings
+        </div>
+        <p>
+            Our daily solar health check, using your last 30 days of data, can help you to find out if your system is working hard or hardly working.
+        </p>
+        <div class="section">
+            <div class="heading1">
+                What to expect
+            </div>
+            <div>
+                <div class="sub-section">
+                    <img src="svg/scc-tickgreen.svg" />
+                    <p><b>Green</b> means your panels are producing solar energy.</p>
+                </div>
+                <div class="sub-section right">
+                    <img src="svg/scc-alertorange.svg" />
+                    <p><b>Amber</b> indicates there could be a problem. We’ll provide guidance to help you get things back on track.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="solar-check-welcome bottom-section">
+    <div class="body-text">
+        <div class="section section__bottom">
+            <div class="heading1">What you'll need</div>
+            <div class="need-list">
+                <div>
+                    <img src="svg/scc-solarcircleblue.svg" />
+                    <span>Number of Panels</span>
+                </div>
+                <div>
+                    <img src="svg/scc-lightningboltcircleblue.svg" />
+                    <span>System Size</span>
+                </div>
+                <div>
+                    <img src="svg/scc-spannercircleblue.svg" />
+                    <span>Year of install</span>
+                </div>
+            </div>
+        </div>
+        <div class="next-button">
+            <button mat-raised-button class="dls-button" color="accent" (click)="submit()">LET’S GET STARTED</button>
+        </div>
+        <div class="link-faq">
+            Or <a href="https://solarstatus.agl.com.au/?page=faqs" target="_blank">find out more</a> about this free service.
+        </div>      
+    </div>   
+    <div class="hidden-xs background">
+        <img src="svg/scc-houseonhill-intro-wd-tb.svg" />
+    </div>
+</div>

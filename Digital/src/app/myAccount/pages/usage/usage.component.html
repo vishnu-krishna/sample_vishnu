@@ -1,0 +1,219 @@
+<div class="usage">
+    <!-- Usage beta with feature flag enbabled -->
+    <div class="row usage-bar__container">
+        <div class="col-lg-12 usage__container">
+
+            <mat-card class="toolbar">
+
+                <div [class.isLoading]="isToolbarLoading" class="toolbar__controls">
+                    <div class="account-selector">
+                        <div>
+                            <div class="account-selector__header accountHitArea" id="account-selector-header"
+                                 [class.expanded]="accountSelectorExpanded === true"
+                                 (click)="onToggleAccountSelector()">
+                                <img class="account-selector-header-contract_icon accountHitArea"
+                                     src="svg/contract_icon.svg">
+                                <span class="account-selector__header__title accountHitArea"
+                                      id="account-selector-header-title">
+                                        {{selectedAccount?.mismatchingAddress}}
+                                        {{selectedAccount?.groupedAddress}}
+                                </span>
+                                <img class="account-selector__header__dropdownarrow accountHitArea"
+                                     src="svg/dropdownuparrow.svg">
+                            </div>
+                            <div *ngIf="accountSelectorExpanded === true" class="account-selector__items">
+                                <div class="account-selector__items__item"
+                                     [class.selected]="account === selectedAccount"
+                                     *ngFor="let account of accountsList;let i = index;"
+                                     (click)="onSelectAccount(account)">
+
+                                    <div class="account-selector__items__item__fuelContracts">
+                                        <div *ngIf="account === selectedAccount">
+                                            <div
+                                                *ngIf="account.elecContracts.length > 0 && account.gasContracts.length > 0">
+                                                <img src="svg/multicontractselected.svg"/>
+                                            </div>
+                                            <div
+                                                *ngIf="account.elecContracts.length === 0 && account.gasContracts.length > 0">
+                                                <img src="svg/Gascontractselected.svg"/>
+                                            </div>
+                                            <div
+                                                *ngIf="account.elecContracts.length > 0 && account.gasContracts.length === 0">
+                                                <img src="svg/eleccontractselected.svg"/>
+                                            </div>
+                                        </div>
+                                        <div *ngIf="account !== selectedAccount">
+                                            <div
+                                                *ngIf="account.elecContracts.length > 0 && account.gasContracts.length > 0">
+                                                <img src="svg/multicontractnotselected.svg"/>
+                                            </div>
+                                            <div
+                                                *ngIf="account.elecContracts.length === 0 && account.gasContracts.length > 0">
+                                                <img src="svg/gascontract.svg"/>
+                                            </div>
+                                            <div
+                                                *ngIf="account.elecContracts.length > 0 && account.gasContracts.length === 0">
+                                                <img src="svg/eleccontract.svg"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="account-selector__items__item__fullAddress">
+                                        <div class="account-selector-items-item-fullAddress-primary">
+                                            {{account.groupedAddress}} {{account.mismatchingAddress}}
+                                        </div>
+                                    </div>
+                                    <div class="account-selector__items__item__selectionIcon">
+                                        <div>
+                                            <img class="selected-Icon_tick" src="svg/selected_icon.svg"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fuel-selector__container">
+
+                        <div class="fuel-selector__container__fuels">
+                            <div id="fuel-selector_container-fuels-fuel-elec"
+                                 class="fuel-selector__container__fuels__fuel"
+                                 [hidden]="selectedAccount?.elecContracts.length === 0"
+                                 [class.selected]="selectedFuel==='electricity'" (click)="onSelectFuel('electricity')">
+                                <img *ngIf="selectedFuel === 'electricity'" src="svg/icon_elec_enabled.svg">
+                                <img *ngIf="selectedFuel !== 'electricity'" src="svg/icon_elec_disabled.svg">
+                                ELECTRICITY
+                            </div>
+                            <div id="fuel-selector_container-fuels-fuel-gas"
+                                 class="fuel-selector__container__fuels__fuel"
+                                 [hidden]="selectedAccount?.gasContracts.length === 0"
+                                 [class.selected]="selectedFuel==='gas'" (click)="onSelectFuel('gas')">
+                                <img *ngIf="selectedFuel === 'gas'" src="svg/icon_gas_enabled.svg">
+                                <img *ngIf="selectedFuel !== 'gas'" src="svg/icon_gas_disabled.svg"> GAS
+                            </div>
+                            <div id="fuel-selector_container-fuels-fuel-solar"
+                                 class="fuel-selector__container__fuels__fuel hide-solar"
+                                 [class.selected]="selectedFuel==='solar'"
+                                 (click)="onSelectFuel('solar')">
+                                <img *ngIf="selectedFuel === 'solar'" src="svg/icon_solar_enabled.svg">
+                                <img *ngIf="selectedFuel !== 'solar'" src="svg/icon_solar_disabled.svg"> SOLAR
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </mat-card>
+        </div>
+    </div>
+
+    <div class="dls container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <mat-card class="solar tempdls-card" *ngIf="isSolarElec()">
+
+
+                    <div class="tempdls-card-header">Electricity and solar usage</div>
+
+                    <div class="solar-content">
+                        <div class="solar-content__header">Solar insights are coming soon</div>
+                        <div class="solar-content__body">
+                            <p>The good news is that you can still view your electicity usage and solar feed in data in
+                                AGL IQ.</p>
+                            <p class="gas-link" *ngIf="hasGas()" (click)="onSelectFuel('gas')">Your gas usage can be
+                                viewed<br class="mobile-link"> here in My Account.</p>
+                        </div>
+                    </div>
+
+                    <div class="solar-background">
+                        <img src="svg/foreground_full.svg"/>
+                    </div>
+
+                    <div class="solar-house">
+                        <img src="svg/icon_house.svg"/>
+                    </div>
+
+                    <div class="solar-sun">
+                        <img src="svg/icon_sun.svg"/>
+                    </div>
+
+                    <div class="solar-openaeo">
+                        <button mat-raised-button class="dls-button" (click)="openAeoSolar()">GO TO ELECTRICITY & SOLAR
+                            USAGE
+                        </button>
+                    </div>
+
+                </mat-card>
+
+                <mat-card class="usage-history tempdls-card" *ngIf="isElectricVehicle()">
+
+                    <div class="tempdls-card-header ">{{usageHistoryTitle}}</div>
+
+                    <div class="ev-vehicle">
+                        <div class="ev-vehicle__image-clouds">
+                            <img class="ev-vehicle__image-clouds-main" src="svg/image_evVehicle_clouds_opacity.svg">
+                            <img class="ev-vehicle__image-clouds-sec" src="svg/image_evVehicle_clouds_opacity.svg">
+                        </div>
+                        <div class="row ev-vehicle--content">
+                            <div class="col-md-5">
+                                <div class="ev-vehicle--content__image-car">
+                                    <img class="ev-vehicle--content__image-car-body" src="svg/image_evVehicle_car.svg">
+                                    <img class="ev-vehicle--content__image-car-wheels" src="svg/image_evVehicle.svg">
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="ev-vehicle--content__message">
+                                    <p>It looks like you’re on the <strong>AGL Electric Car Plan</strong> which means we
+                                        are
+                                        currently unable to show your usage. You can still view household usage and
+                                        costs
+                                        on your recent bills.</p>
+                                    <br/>
+                                    <p>You are charged <strong>$1 a day</strong> to power your vehicle.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </mat-card>
+
+                <mat-card class="usage-history tempdls-card" *ngIf="graphSupportedContract()">
+                    <div>
+
+                    <div class="tempdls-card-header" [class.usage-history__usage-header]="selectedFuel === 'electricity'">{{usageHistoryTitle}}</div>
+
+                        <div class="usage-history__download-usage" *ngIf="selectedFuel === 'electricity'">
+                           <div  class="usage-history__download-usage-content" (click)="downloadUsage()">Download usage data (csv)</div> 
+                            <agl-maui-tooltip id="tooltip-section-product-swap" [tooltipBody]="toolTipBody" [position]="'bottom'">
+                                <agl-maui-tooltip-icon>i</agl-maui-tooltip-icon>
+                            </agl-maui-tooltip>
+                        </div>
+
+                        <div *ngIf="isBillFreqChange === true && isBillFreqMessageHidden === false"
+                             class="row usage-history__bill-freq-change">
+                            <div class="col-md-11 usage-history__bill-freq-change__message">
+                                {{billFrequencyMessage}}
+                            </div>
+                            <div (click)="onCloseBillFreqMessage()"
+                                 class="col-md-1 usage-history__bill-freq-change__image">
+                                <img src="svg/icon_close.svg">
+                            </div>
+                        </div>
+
+                        <agl-usage-graph #aglUsageGraph
+                                         (isBillFreqChanged)="handleBillFreqChange($event)"></agl-usage-graph>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+
+        <div *ngIf="ssmrFeatureEnabled" class="row">
+            <div class="col-lg-12" *ngIf="!chartContractViewModel?.isSmartMeter && !allContractsAreRestricted">
+                <mat-card class="self-service tempdls-card" *ngIf="graphSupportedContract()">
+                    <agl-meter-read class="col-md-12 col-sm-12" [selected]="selectedFuel"></agl-meter-read>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

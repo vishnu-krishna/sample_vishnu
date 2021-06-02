@@ -1,0 +1,13 @@
+<div class="homeprofile-summary">
+    <div class="homeprofile-summary__heading">Home profile summary</div>
+    <div class="homeprofile-summary__sections">
+        <div *ngFor="let section of sections" class="homeprofile-summary__section">
+            <div class="homeprofile-summary__section-title">{{section.title}}</div>
+            <div class="homeprofile-summary__section-summary">
+                <span *ngIf="section.summary && section.summary.length > 0">{{section.summary[0]}}</span>
+                <span *ngIf="section.summary && section.summary.length > 1">{{section.summary[1]}}</span>
+            </div>
+            <div class="homeprofile-summary__section-edit-link" (click)="edit(section.page)">Edit</div>
+        </div>
+    </div>
+</div>

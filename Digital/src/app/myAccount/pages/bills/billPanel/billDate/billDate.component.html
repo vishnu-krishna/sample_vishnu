@@ -1,0 +1,14 @@
+<div class="bill-date">
+    <div class="bill-date__heading">Bill period</div>
+    <div class="bill-date__details">
+        <span class="bill-date__details-date-range">{{dateRangeDescription}}</span>
+        <br *ngIf="pill?.text" class="visible-md visible-sm">
+        <span *ngIf="pill?.text"
+              class="bill-date__details-pill"
+              [ngClass]="{'bill-date__details-pill--warning': pill.pillType === pillTypes.overdue,
+                        'bill-date__details-pill--info-direct-debit': pill.pillType === pillTypes.directDebit,
+                        'bill-date__details-pill--info-not-direct-debit': pill.pillType === pillTypes.notDirectDebit}">
+            {{pill.text}}
+        </span>
+    </div>
+</div>

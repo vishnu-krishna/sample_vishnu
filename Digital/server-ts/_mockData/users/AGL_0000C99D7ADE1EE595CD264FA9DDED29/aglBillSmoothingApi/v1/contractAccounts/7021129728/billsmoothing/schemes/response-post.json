@@ -1,0 +1,21 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": {
+        "contractAccountNumber": 7021129728,
+        "results": [
+            {
+                "contractNumber": 9400717583,
+                "isSuccess": true
+            },
+            {
+                "contractNumber": 9400717468,
+                "isSuccess": true
+            },
+            {
+                "contractNumber": 123,
+                "isSuccess": true
+            }
+        ]
+    }
+}

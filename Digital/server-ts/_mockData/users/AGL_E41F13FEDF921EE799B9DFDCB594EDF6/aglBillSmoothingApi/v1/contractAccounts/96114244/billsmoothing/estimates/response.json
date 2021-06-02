@@ -1,0 +1,70 @@
+{
+  "status": 200,
+  "headers": {},
+  "body": {
+    "contractAccountNumber": 96114244,
+    "estimates": [
+      {
+        "contractNumber": 9084936331,
+        "error": {
+          "message":
+            "Contract 9084936331 unbilled for 91 days – Ineligible for Payment scheme.",
+          "internalError": {
+            "errorId": "ZIFI511",
+            "errorNumber": "003",
+            "description":
+              "Contract 9084936331 unbilled for 91 days – Ineligible for Payment scheme."
+          }
+        }
+      },
+      {
+        "contractNumber": 9086003936,
+        "paymentOptions": [
+          {
+            "frequency": "Weekly",
+            "amount": 40.0,
+            "minDate": "2018-03-11T13:00:00Z",
+            "maxDate": "2018-04-11T14:00:00Z",
+            "excludedDates": [
+              "2018-03-16T13:00:00Z",
+              "2018-03-17T13:00:00Z",
+              "2018-03-23T13:00:00Z",
+              "2018-03-24T13:00:00Z",
+              "2018-03-30T13:00:00Z",
+              "2018-03-31T13:00:00Z",
+              "2018-04-06T14:00:00Z",
+              "2018-04-07T14:00:00Z"
+            ]
+          },
+          {
+            "frequency": "Fortnightly",
+            "amount": 78.0,
+            "minDate": "2018-03-11T13:00:00Z",
+            "maxDate": "2018-04-11T14:00:00Z",
+            "excludedDates": [
+              "2018-03-16T13:00:00Z",
+              "2018-03-17T13:00:00Z",
+              "2018-03-23T13:00:00Z",
+              "2018-03-24T13:00:00Z",
+              "2018-03-30T13:00:00Z",
+              "2018-03-31T13:00:00Z",
+              "2018-04-06T14:00:00Z",
+              "2018-04-07T14:00:00Z"
+            ]
+          },
+          {
+            "frequency": "Monthly",
+            "amount": 169.0,
+            "minDate": "2018-03-11T13:00:00Z",
+            "maxDate": "2018-04-11T14:00:00Z",
+            "excludedDates": [
+              "2018-03-28T13:00:00Z",
+              "2018-03-29T13:00:00Z",
+              "2018-03-30T13:00:00Z"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

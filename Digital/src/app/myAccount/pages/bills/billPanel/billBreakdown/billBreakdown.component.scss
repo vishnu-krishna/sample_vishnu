@@ -1,0 +1,39 @@
+@import '../../../../../shared/style/variables';
+@import '../../../../../shared/style/mixins';
+
+:host {
+    display: none;
+
+    &.isVisible {
+        display: block;
+    }
+}
+
+.bill-breakdown {
+    margin: 5px 0 0 0;
+    padding: 15px 0;
+
+    border-top: 1px solid $brand-grey-g5;
+    border-bottom: 1px solid $brand-grey-g5;
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        white-space: nowrap;
+
+        font-family: $secondary-font-stack;
+        font-size: 14px;
+        color: $brand-grey-g1;
+
+        &-value {
+            &--warning {
+                color: $brand-fire;
+            }
+
+            &--pill {
+                @include bill-pill-small($brand-fire, 85px);
+                padding-top: 2px;
+            }
+        }
+    }
+}

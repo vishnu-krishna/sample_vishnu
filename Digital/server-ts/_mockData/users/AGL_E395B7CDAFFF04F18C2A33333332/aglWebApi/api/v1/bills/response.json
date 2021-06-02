@@ -1,0 +1,98 @@
+[
+    {
+        "account": "123456",
+        "contract": "123456111",
+        "bills": [
+            {
+                "billIssued": "2016-07-13T00:00:00",
+                "newCharges": 52.16,
+                "totalDue": -70.28,
+                "dueDate": "2016-08-05T00:00:00",
+                "printDoc": "1211",
+                "startDate": "2016-03-05T00:00:00",
+                "endDate": "2016-06-06T00:00:00",
+                "consumptionNetAmount": 312.14,
+                "consumptionUsage": 1329,
+                "generatedNetAmount": -364.3,
+                "generatedUsage": 714
+            },
+            {
+                "billIssued": "2016-03-07T00:00:00",
+                "newCharges": 28.37,
+                "totalDue": -439.96,
+                "dueDate": "2016-03-30T00:00:00",
+                "printDoc": "1212",
+                "startDate": "2015-12-04T00:00:00",
+                "endDate": "2016-03-04T00:00:00",
+                "consumptionNetAmount": 390.67,
+                "consumptionUsage": 1633,
+                "generatedNetAmount": -419.04,
+                "generatedUsage": 819
+            }
+        ]
+    },
+    {
+        "account": "123456",
+        "contract": "123456222",
+        "bills": [
+            {
+                "billIssued": "2016-07-13T00:00:00",
+                "newCharges": 52.16,
+                "totalDue": -70.28,
+                "dueDate": "2016-08-05T00:00:00",
+                "printDoc": "1211",
+                "startDate": "2016-03-05T00:00:00",
+                "endDate": "2016-06-06T00:00:00",
+                "consumptionNetAmount": 312.14,
+                "consumptionUsage": 1329,
+                "generatedNetAmount": -364.3,
+                "generatedUsage": 714
+            },
+            {
+                "billIssued": "2016-03-07T00:00:00",
+                "newCharges": 28.37,
+                "totalDue": -439.96,
+                "dueDate": "2016-03-30T00:00:00",
+                "printDoc": "1212",
+                "startDate": "2015-12-04T00:00:00",
+                "endDate": "2016-03-04T00:00:00",
+                "consumptionNetAmount": 390.67,
+                "consumptionUsage": 1633,
+                "generatedNetAmount": -419.04,
+                "generatedUsage": 819
+            }
+        ]
+    },
+    {
+        "account": "456789",
+        "contract": "456789111",
+        "bills": [
+            {
+                "billIssued": "2016-07-13T00:00:00",
+                "newCharges": 52.16,
+                "totalDue": -70.28,
+                "dueDate": "2016-08-05T00:00:00",
+                "printDoc": "1211",
+                "startDate": "2016-03-05T00:00:00",
+                "endDate": "2016-06-06T00:00:00",
+                "consumptionNetAmount": 312.14,
+                "consumptionUsage": 1329,
+                "generatedNetAmount": -364.3,
+                "generatedUsage": 714
+            },
+            {
+                "billIssued": "2016-03-07T00:00:00",
+                "newCharges": 28.37,
+                "totalDue": -439.96,
+                "dueDate": "2016-03-30T00:00:00",
+                "printDoc": "1212",
+                "startDate": "2015-12-04T00:00:00",
+                "endDate": "2016-03-04T00:00:00",
+                "consumptionNetAmount": 390.67,
+                "consumptionUsage": 1633,
+                "generatedNetAmount": -419.04,
+                "generatedUsage": 819
+            }
+        ]
+    }
+]

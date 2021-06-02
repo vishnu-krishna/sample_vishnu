@@ -1,0 +1,48 @@
+@import '../homeProfile';
+
+.homeprofile-yourhome {
+    @include homeprofile-survey-page-styling();
+
+    &-body  {
+        @include homeprofile-body-styling();
+
+        @media #{$agl-layout-tablet-and-greater} {
+            background-image: url('svg/homeprofile/house.svg');
+            background-position: right -48px top 22px;
+        }
+    }
+
+    &-questionnaire {
+        @include homeprofile-survey-questionnaire-styling();
+
+        &__heading {
+            @include homeprofile-heading-styling();
+
+            &-no-margin {
+                @include homeprofile-heading-styling();
+                margin: 0;
+            }
+        }
+
+        &__subsection {
+            margin-bottom: $space-04;
+        }
+    }
+
+    &__number-of-people {
+        margin-bottom: $space-04;
+
+        &-header {
+            $font-size: $body-font-size-normal;
+            margin-bottom: $space-03;
+        }
+    }
+
+    &__number-of-rooms {
+        margin-bottom: $space-04;
+    }
+
+    &__segmented-button {
+        @include homeprofile-segmented-buttons-styling();
+    }
+}

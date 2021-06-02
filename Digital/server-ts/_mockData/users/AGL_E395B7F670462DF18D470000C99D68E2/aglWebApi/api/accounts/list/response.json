@@ -1,0 +1,41 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "number": "95455382",
+            "firstName": "Helen",
+            "lastName": "McFarlane",
+            "contracts": [
+                {
+                    "address": "4 HALEY CRESCENT|WODONGA VIC 3690",
+                    "accountNumber": "95455382",
+                    "fuelType": "Gas",
+                    "nameId": "AGL_E395B7F670462DF18D470000C99D68E2",
+                    "number": "9082935531",
+                    "planName": "Savers",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "AGLMKTRG2415191",
+                    "regionId": "VIC"
+                },
+                {
+                    "address": "5 HALEY CRESCENT|WODONGA VIC 3690",
+                    "accountNumber": "95455382",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_E395B7F670462DF18D470000C99D68E2",
+                    "number": "9082935532",
+                    "planName": "Savers",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "AGLMKTRG2415191",
+                    "regionId": "VIC"
+                }
+            ]
+        }
+    ]
+}

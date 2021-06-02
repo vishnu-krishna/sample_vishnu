@@ -1,0 +1,56 @@
+[
+  {
+    "productId": "AGLMKTRE1216301",
+    "regionId": "VIC",
+    "bonus": 0,
+    "bonusUnit": "Percentage",
+    "lowerBand": 0,
+    "upperBand": 49.99,
+    "isUpperBandApplicable": true
+  },
+  {
+    "productId": "AGLMKTRE1216301",
+    "regionId": "VIC",
+    "bonus": 0,
+    "bonusUnit": "Percentage",
+    "lowerBand": 50,
+    "upperBand": 79.99,
+    "isUpperBandApplicable": true
+  },
+  {
+    "productId": "AGLMKTRE1216301",
+    "regionId": "VIC",
+    "bonus": 15,
+    "bonusUnit": "Percentage",
+    "lowerBand": 80,
+    "upperBand": 119.99,
+    "isUpperBandApplicable": true
+  },
+  {
+    "productId": "AGLMKTRE1216301",
+    "regionId": "VIC",
+    "bonus": 25,
+    "bonusUnit": "Percentage",
+    "lowerBand": 120,
+    "upperBand": 149.99,
+    "isUpperBandApplicable": true
+  },
+  {
+    "productId": "AGLMKTRE1216301",
+    "regionId": "VIC",
+    "bonus": 35,
+    "bonusUnit": "Percentage",
+    "lowerBand": 150,
+    "upperBand": 249.99,
+    "isUpperBandApplicable": true
+  },
+  {
+    "productId": "AGLMKTRE1216301",
+    "regionId": "VIC",
+    "bonus": 65,
+    "bonusUnit": "Percentage",
+    "lowerBand": 250,
+    "upperBand": 99999,
+    "isUpperBandApplicable": true
+  }
+]

@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\shared\component\payment\paymentMethods\paypal\payment.paypal.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/shared/component/payment/paymentMethods/paypal/</a> payment.paypal.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">28.81% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>17/59</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">52.17% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>12/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.11% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">26.79% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>15/56</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, Input } from '@angular/core';
+import { PaymentMethodName } from '../../../../globals/paygConstants';
+import { PaymentContentModel } from '../../../../model/payment/paymentContent.model';
+import { PaymentDetails } from '../../../../model/payment/paymentDetails.model';
+import { ConfigService } from '../../../../service/config.service';
+import { PaypalApiService } from '../../../../service/paypalApi.service';
+&nbsp;
+import { IMessageBusService } from '../../../../service/contract/imessageBus.service';
+import { DataLayerService } from '../../../../service/dataLayer.service';
+&nbsp;
+@Component({
+    selector: 'agl-payment-paypal',
+    template: require('./payment.paypal.component.html'),
+    styles: [require('./payment.paypal.component.scss')]
+})
+export class PaymentPaypalComponent {
+&nbsp;
+    @Input() public paymentDetails: PaymentDetails;
+    @Input() public content: PaymentContentModel;
+&nbsp;
+    // Set properties
+    public paymentAmount: any;
+    public <span class="cstat-no" title="statement not covered" >amountValid: Boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >buttonDisabled: Boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >currentPage = window.location.href.replace('/bills', '/overview');</span>
+    public bonusAmount: number;
+    public hasError: Boolean;
+    public <span class="cstat-no" title="statement not covered" >errorMessageHeader: string = 'Paypal Error';</span>
+    public <span class="cstat-no" title="statement not covered" >errorMessage: string = 'There seems to be an error with your paypal transaction.  Please try again later.';</span>
+    public paypalLoading: Boolean;
+&nbsp;
+    // Name needs to be unique so just generating a random one
+    public <span class="cstat-no" title="statement not covered" >profileName = Math.random().toString(36).substring(7);</span>
+&nbsp;
+    constructor(
+        private <span class="cstat-no" title="statement not covered" >_config: ConfigService,</span>
+        private <span class="cstat-no" title="statement not covered" >_api: PaypalApiService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >_messageBusService: IMessageBusService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >_dataLayer: DataLayerService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >)</span> { }</span></span>
+&nbsp;
+    /**
+     * When a user clicks Pay by PayPal this function is called.
+     */
+<span class="fstat-no" title="function not covered" >    public payByPayPal() {</span>
+        // Code validation step
+<span class="cstat-no" title="statement not covered" >        if (this.amountValid) {</span>
+<span class="cstat-no" title="statement not covered" >            this.paypalConfiguration();</span>
+<span class="cstat-no" title="statement not covered" >            this.buttonDisabled = true;</span>
+        }
+    }
+&nbsp;
+    /**
+     * Configure paypal using our own API
+     * @return object paypal config
+     */
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    private paypalConfiguration() {</span></span>
+        /**
+         * The relevent payment details for paypal.
+         * @type {Object}
+         */
+<span class="cstat-no" title="statement not covered" >        this.paypalLoading = true;</span>
+<span class="cstat-no" title="statement not covered" >        this.hasError = false;</span>
+&nbsp;
+        // set off a timeout to make sure that it is not taking too long
+<span class="cstat-no" title="statement not covered" >        setTimeout(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (this.paypalLoading) {</span>
+<span class="cstat-no" title="statement not covered" >                this.showError();</span>
+            }
+        }, 10000);
+        let paymentDetails = <span class="cstat-no" title="statement not covered" >{</span>
+            intent: 'sale',
+            payer: {
+                payment_method: 'paypal'
+            },
+            redirect_urls: {
+                return_url: this.currentPage + '?successpp=true',
+                cancel_url: this.currentPage + '?cancelpp=true'
+            },
+            transactions: [{
+                amount: {
+                    total: this.paymentAmount,
+                    currency: 'AUD',
+                    details: {
+                        shipping: '0'
+                    }
+                },
+                description: `${this.paymentDetails.fuelType}|${this.paymentDetails.address}`,
+                custom: `${this.paymentDetails.referenceNumber}`
+            }],
+            experience_profile_id: '',
+        };
+&nbsp;
+        /**
+         * Sets the profile for PayPal, including logo's etc..
+         * @type {Object}
+         */
+        let webProfile = <span class="cstat-no" title="statement not covered" >{</span>
+            name: this.profileName,
+            presentation: {
+                brand_name: 'AGL',
+                logo_image: 'https://www.agl.com.au/-/media/Project/Primary/Logos/AGL_Logo_primary.png',
+                locale_code: 'AU'
+            },
+            input_fields: {
+                no_shipping: 1
+            }
+        };
+&nbsp;
+        // Get the API and follow the rest of the functionality.
+<span class="cstat-no" title="statement not covered" >        try {</span>
+<span class="cstat-no" title="statement not covered" >            this._api.getApiToken().subscribe((token<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+                let resultForToken: any = <span class="cstat-no" title="statement not covered" >token;</span>
+                // Set authToken in localStorage.
+<span class="cstat-no" title="statement not covered" >                localStorage.setItem('selfService.payPalAuthToken', 'Bearer ' + resultForToken.access_token);</span>
+&nbsp;
+                // Set the webapi profile
+<span class="cstat-no" title="statement not covered" >                this._api.setWebProfile(webProfile).subscribe((content<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+                    let webProfileContent: any = <span class="cstat-no" title="statement not covered" >content;</span>
+&nbsp;
+                    // Once the api profile is set, make the payment and redirect the user.
+<span class="cstat-no" title="statement not covered" >                    this._api.sendPayment(paymentDetails, webProfileContent.id).subscribe((details<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+                        let paymentDetailObject: any = <span class="cstat-no" title="statement not covered" >details;</span>
+<span class="cstat-no" title="statement not covered" >                        if (paymentDetailObject.payer.payment_method.toLowerCase() === 'paypal') {</span>
+                            let redirectUrl = <span class="cstat-no" title="statement not covered" >this.currentPage + this._config.current.sitecoreApiBaseUrl;</span>
+                            // tslint:disable-next-line:prefer-for-of
+<span class="cstat-no" title="statement not covered" >                            for (let i = 0; i &lt; paymentDetailObject.links.length; i++) {</span>
+                                let link = <span class="cstat-no" title="statement not covered" >paymentDetailObject.links[i];</span>
+<span class="cstat-no" title="statement not covered" >                                if (link.method === 'REDIRECT') {</span>
+<span class="cstat-no" title="statement not covered" >                                    redirectUrl = link.href + '&amp;useraction=commit';</span>
+                                }
+                            }
+                            // Store reference locally (cannot store elsewhere)
+                            let paypalDetails = <span class="cstat-no" title="statement not covered" >{</span>
+                                referenceNumber: this.paymentDetails.referenceNumber,
+                                contractNumber: this.paymentDetails.contractNumber,
+                                isPayg: this.paymentDetails.isPayg,
+                                paygBand: this.paymentDetails.paygBand,
+                                bonusAmount: this.bonusAmount,
+                                fuelType: this.paymentDetails.fuelType,
+                                address: this.paymentDetails.address,
+                                prePaymentDate: this.paymentDetails.prePaymentDate,
+                                showOutstandingBillPayg : this.paymentDetails.showOutstandingBillPayg
+                            };
+<span class="cstat-no" title="statement not covered" >                            localStorage.setItem('selfService.payPal', JSON.stringify(paypalDetails));</span>
+<span class="cstat-no" title="statement not covered" >                            window.location.href = redirectUrl;</span>
+                        }
+                    });
+                });
+            }
+            );
+        } catch (err) {
+<span class="cstat-no" title="statement not covered" >            this.showError();</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private showError() {</span>
+<span class="cstat-no" title="statement not covered" >        this._dataLayer.pushPaymentError('Payment outcome – paypal Failure', 'Error occurred while make payment using paypal', PaymentMethodName.PayPal, []);</span>
+<span class="cstat-no" title="statement not covered" >        this.hasError = true;</span>
+<span class="cstat-no" title="statement not covered" >        this.paypalLoading = false;</span>
+    }
+&nbsp;
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\dashboard\selfServiceMeterReadBanner\selfServiceMeterReadBanner.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/myAccount/dashboard/selfServiceMeterReadBanner/</a> selfServiceMeterReadBanner.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">29.85% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>20/67</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">17.78% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>8/45</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.88% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">29.51% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>18/61</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { SolarCheckEligiblity } from '../../../shared/model/solar/solarCheckEligibility.model';
+import { SolarCheckRegistrationStatusType } from '../../../shared/model/solar/solarCheckRegistrationStatus.model';
+import { AccountViewModel } from '../../services/account.service';
+import { ISolarCheckService } from '../../services/contract/isolarCheck.service';
+import { ISsmrService } from '../../services/contract/issmr.service';
+import { LocalStorageService } from '../../services/localStorage.service';
+&nbsp;
+import { get } from '@typed/hashmap';
+&nbsp;
+@Component({
+    selector: 'agl-ssmr-banner',
+    template: require('./selfServiceMeterReadBanner.component.html'),
+    styles: [require('./selfServiceMeterReadBanner.component.scss')]
+})
+export class SelfServiceMeterReadBannerComponent implements OnInit, OnChanges {
+    @Input() public accounts: AccountViewModel[];
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >showSSMRPanel: boolean = false;</span>
+    public accountNoSSMRPanel: object;
+&nbsp;
+    constructor(
+        public <span class="cstat-no" title="statement not covered" >solarCheckService: ISolarCheckService,</span>
+        public <span class="cstat-no" title="statement not covered" >ssmr: ISsmrService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >localStorageService: LocalStorageService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" ></span></span></span>
+    ) { }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public ngOnInit() {</span>
+<span class="cstat-no" title="statement not covered" >        this.setSSMRPanelMode();</span>
+<span class="cstat-no" title="statement not covered" >        this.ssmr.checkForBasicMeterByFuelType();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public ngOnChanges() {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.accounts) {</span>
+<span class="cstat-no" title="statement not covered" >            this.setSSMRPanelMode();</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public solarCheckRegistered() {</span>
+<span class="cstat-no" title="statement not covered" >        for (let account<span class="cstat-no" title="statement not covered" ></span> of this.accounts) {</span>
+<span class="cstat-no" title="statement not covered" >            for (let contract<span class="cstat-no" title="statement not covered" ></span> of account.contracts) {</span>
+<span class="cstat-no" title="statement not covered" >                if (contract.hasSolar) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (contract.solarCheckRegistered) {</span>
+<span class="cstat-no" title="statement not covered" >                        return true;</span>
+                    }
+                }
+            }
+        }
+<span class="cstat-no" title="statement not covered" >        return false;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public setSSMRPanelMode() {</span>
+<span class="cstat-no" title="statement not covered" >        this.accountNoSSMRPanel = JSON.parse(localStorage.getItem('accountWithNoSSMRPanel')) || {};</span>
+<span class="cstat-no" title="statement not covered" >        if (this.accounts</span>
+            &amp;&amp; this.accountNoSSMRPanel[this.accounts[0].accountNumber]) {
+<span class="cstat-no" title="statement not covered" >            this.showSSMRPanel = false;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.hideBannerForSolar();</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public closeSSMRPanel() {</span>
+<span class="cstat-no" title="statement not covered" >        this.accountNoSSMRPanel = JSON.parse(localStorage.getItem('accountWithNoSSMRPanel')) || {};</span>
+        let accountNo = <span class="cstat-no" title="statement not covered" >this.accounts[0].accountNumber;</span>
+<span class="cstat-no" title="statement not covered" >        this.accountNoSSMRPanel[accountNo] = true;</span>
+<span class="cstat-no" title="statement not covered" >        localStorage.setItem('accountWithNoSSMRPanel', JSON.stringify(this.accountNoSSMRPanel));</span>
+<span class="cstat-no" title="statement not covered" >        this.showSSMRPanel = false;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public accountHasSolar() {</span>
+<span class="cstat-no" title="statement not covered" >        return this.accounts</span>
+            .reduce((contracts, account<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                return [].concat(contracts, account.contracts);</span>
+            }, [])
+            .some((contract<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                return contract.hasSolar;</span>
+            });
+    }
+&nbsp;
+    /**
+     * Solar Check Eligiblity
+     * - Customer is not registered and eligible
+     */
+    public displaySolarOffer(solarCheckEligiblityResult: SolarCheckEligiblity<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        if (solarCheckEligiblityResult &amp;&amp; solarCheckEligiblityResult.contracts) {</span>
+<span class="cstat-no" title="statement not covered" >            return solarCheckEligiblityResult.contracts.some((x<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >x.eligible === true)</span></span></span>
+                &amp;&amp; solarCheckEligiblityResult.contracts.every((x<span class="fstat-no" title="function not covered" >) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                (x.registrationStatus &amp;&amp;</span>
+                 x.registrationStatus === SolarCheckRegistrationStatusType.NotRegistered
+                ));
+        }
+<span class="cstat-no" title="statement not covered" >        return false;</span>
+    }
+&nbsp;
+    /**
+     * SSMR banner is hidden for Solar Check Eligible customers
+     * - Customer hasSolar and is eligible via SolarCheckService
+     */
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public hideBannerForSolar() {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (!this.hasLocalStorageToHideSolarCheckOfferBeenCreated() &amp;&amp; this.accountHasSolar()) {</span>
+<span class="cstat-no" title="statement not covered" >            this.solarCheckService.isEligible()</span>
+                .subscribe(
+                (result<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    if (!this.displaySolarOffer(result)) {</span>
+<span class="cstat-no" title="statement not covered" >                        this.showSSMRPanel = true;</span>
+                    }
+                },
+                    (error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        console.error('customer has solar but eligibility call has failed - show SSMR banner', error);</span>
+<span class="cstat-no" title="statement not covered" >                        this.showSSMRPanel = true;</span>
+                    }
+                );
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.showSSMRPanel = true;</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public hasLocalStorageToHideSolarCheckOfferBeenCreated() {</span>
+        let storedOfferKey = <span class="cstat-no" title="statement not covered" >this.localStorageService.getKeys();</span>
+<span class="cstat-no" title="statement not covered" >        if (storedOfferKey</span>
+            &amp;&amp; storedOfferKey.localAlertDismissables
+            &amp;&amp; storedOfferKey.localAlertDismissables.displaySolarCheckOffer) {
+            let hideOffer = <span class="cstat-no" title="statement not covered" >get(this.accounts[0].accountNumber, storedOfferKey.localAlertDismissables.displaySolarCheckOffer);</span>
+<span class="cstat-no" title="statement not covered" >            if (hideOffer) {</span>
+<span class="cstat-no" title="statement not covered" >                return true;</span>
+            }
+        }
+<span class="cstat-no" title="statement not covered" >        return false;</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

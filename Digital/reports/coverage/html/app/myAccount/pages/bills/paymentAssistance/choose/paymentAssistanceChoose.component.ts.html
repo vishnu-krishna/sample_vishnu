@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\bills\paymentAssistance\choose\paymentAssistanceChoose.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/bills/paymentAssistance/choose/</a> paymentAssistanceChoose.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25.32% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>20/79</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>24/40</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">4.35% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25.71% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>18/70</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit } from '@angular/core';
+import * as moment from 'moment';
+import { IPaymentExtensionStateService } from '../extend/services/paymentExtensionState.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { PaymentExtensionAvailableDate } from '../../../../services/paymentScheme/paymentExtensionEligibility.service';
+import { FuelChipData } from '../extend/eligibility/fuelChipData';
+import { IPaymentExtensionFuelChipService } from '../extend/eligibility/services/paymentExtensionFuelChip.service';
+import { ClassifiedFuelChips } from '../extend/eligibility/services/fuelChipClassification.service';
+import { MauiFuelChipFuelType } from '../../../../maui/fuelChip';
+import { IAccountServiceMA, AccountViewModel, ContractViewModel } from '../../../../services/account.service';
+import { Now } from '../../../../../shared/service/now.service';
+import { IInstalmentPlanOptionsService } from '../../../../services/paymentScheme/instalmentPlanOptions.service';
+import { FlashMessageType } from '../../../../maui/flashMessage';
+&nbsp;
+@Component({
+    selector: 'agl-payment-assistance-choose',
+    template: require('./paymentAssistanceChoose.component.html'),
+    styles: [require('./paymentAssistanceChoose.component.scss')]
+})
+&nbsp;
+export class PaymentAssistanceChooseComponent implements OnInit {
+    public amountToPayMessage: string;
+    public daysToPayMessage: string;
+    public dateToPayMessage: string;
+    public showLoader: boolean;
+    public <span class="cstat-no" title="statement not covered" >showError: boolean = false;</span>
+    public paymentExtensionMessage: string;
+    public instalmentPlanMessage: string;
+    public tertiaryMessage: string;
+    public selectedFuelChip: FuelChipData;
+    public isLoadingInstalmentPlan: boolean;
+    public selectedContract: ContractViewModel;
+    public <span class="cstat-no" title="statement not covered" >showSetUpInstalmentsError: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >flashMessageType = FlashMessageType;</span>
+&nbsp;
+    constructor(
+        private <span class="cstat-no" title="statement not covered" >paymentExtensionStateService: IPaymentExtensionStateService,</span>
+        private <span class="cstat-no" title="statement not covered" >fuelChipService: IPaymentExtensionFuelChipService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >route: ActivatedRoute<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >router: Router<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >accountService: IAccountServiceMA<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >instalmentPlanOptionsService: IInstalmentPlanOptionsService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >_now: Now<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >,</span></span></span>
+    ) {}
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public ngOnInit(): void {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.paymentExtensionStateService.getSelectedFuelChip()) {</span>
+<span class="cstat-no" title="statement not covered" >            this.populatePageContent(this.paymentExtensionStateService.getSelectedFuelChip());</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.loadFuelChipData();</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public navigateExtendConfirm() {</span>
+<span class="cstat-no" title="statement not covered" >        this.showSetUpInstalmentsError = false;</span>
+<span class="cstat-no" title="statement not covered" >        this.router.navigate([`/bills/paymentassistance/extend/confirm/${this.paymentExtensionStateService.getSelectedFuelChip().accountNumber}/${this.paymentExtensionStateService.getSelectedFuelChip().contractNumber}`]);</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public navigatePlanOptions() {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.showSetUpInstalmentsError = false;</span>
+<span class="cstat-no" title="statement not covered" >        this.isLoadingInstalmentPlan = true;</span>
+<span class="cstat-no" title="statement not covered" >        this.instalmentPlanOptionsService.getInstalmentOptions(this.selectedFuelChip.contractNumber, { suggestInstalments: false })</span>
+            .finally(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >this.isLoadingInstalmentPlan = false)</span></span>
+            .subscribe((res<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.router.navigate([`/bills/paymentassistance/plan/custom/${this.selectedFuelChip.accountNumber}/${this.selectedFuelChip.contractNumber}`], { queryParamsHandling: 'preserve'});</span>
+            },
+            (error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.showSetUpInstalmentsError = true;</span>
+            });
+    }
+&nbsp;
+    public populatePageContent(selectedFuelChip: FuelChipData<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.selectedFuelChip = selectedFuelChip;</span>
+        const latestExtension = <span class="cstat-no" title="statement not covered" >this.getLatestExtension(selectedFuelChip.eligibility.availableExtensionDates);</span>
+<span class="cstat-no" title="statement not covered" >        this.amountToPayMessage = `$${selectedFuelChip.eligibility.totalAmountDue}`;</span>
+<span class="cstat-no" title="statement not covered" >        this.dateToPayMessage = moment(latestExtension.dueDate).format('DD MMM YYYY');</span>
+<span class="cstat-no" title="statement not covered" >        this.daysToPayMessage = `${latestExtension.numberOfDays} days`;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.paymentExtensionMessage = `Extend your bill due date for up to ${latestExtension.numberOfDays} business days.`;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.instalmentPlanMessage = 'Split up your bill into smaller instalments.';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.populateAccountMessages(selectedFuelChip);</span>
+    }
+&nbsp;
+    private getLatestExtension(extensions: PaymentExtensionAvailableDate[]<span class="fstat-no" title="function not covered" >): PaymentExtensionAvailableDate {</span>
+<span class="cstat-no" title="statement not covered" >        return extensions.slice().filter((e: PaymentExtensionAvailableDate<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            return !!e.dueDate;</span>
+        }).sort((a: PaymentExtensionAvailableDate, b: PaymentExtensionAvailableDate<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            return moment(b.dueDate).diff(moment(a.dueDate), 'days');</span>
+        })[0];
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    private loadFuelChipData() {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.route.params.subscribe((routeParams<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            this.showLoader = true;</span>
+<span class="cstat-no" title="statement not covered" >            this.fuelChipService.init()</span>
+            .finally(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >this.showLoader = false)</span></span>
+            .subscribe((fuelChips: ClassifiedFuelChips<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.selectedFuelChip = this.paymentExtensionStateService.initNewSession(routeParams.contractNumber, fuelChips.eligibleFuelChips);</span>
+<span class="cstat-no" title="statement not covered" >                if (this.selectedFuelChip) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.populatePageContent(this.selectedFuelChip);</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    this.showError = true;</span>
+                }
+            });
+        });
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    private populateAccountMessages(selectedFuelChip: FuelChipData<span class="fstat-no" title="function not covered" >) {</span></span>
+        const latestExtension = <span class="cstat-no" title="statement not covered" >this.getLatestExtension(selectedFuelChip.eligibility.availableExtensionDates);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.accountService.getAccounts().subscribe((accounts: AccountViewModel[]<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+            let account: AccountViewModel = <span class="cstat-no" title="statement not covered" >accounts.find((acc<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >acc.contracts.some((con<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >con.contractNumber === selectedFuelChip.contractNumber)</span></span>)</span></span>;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            this.selectedContract = account.contracts.find((con<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >con.contractNumber === selectedFuelChip.contractNumber)</span></span>;</span>
+&nbsp;
+            let otherContracts: ContractViewModel[] = <span class="cstat-no" title="statement not covered" >account.contracts.filter((con<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >con.contractNumber !== selectedFuelChip.contractNumber)</span></span>;</span>
+&nbsp;
+            const otherContractsWithUpcomingBill = <span class="cstat-no" title="statement not covered" >otherContracts.slice().filter((contract: ContractViewModel<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+                const isCurrentBillEndDateInFuture = <span class="cstat-no" title="statement not covered" >moment(contract.currentBillEndDate).isAfter(this._now.date());</span>
+<span class="cstat-no" title="statement not covered" >                return isCurrentBillEndDateInFuture &amp;&amp; moment(contract.currentBillEndDate).isSameOrBefore(moment(latestExtension.dueDate), 'day');</span>
+            });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (otherContractsWithUpcomingBill.length &gt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >                this.tertiaryMessage = `It looks like you also have other bills issued within this period, so please keep these, and other finances you have to pay in mind.`;</span>
+            } else <span class="cstat-no" title="statement not covered" >if (otherContractsWithUpcomingBill.length === 1) {</span>
+<span class="cstat-no" title="statement not covered" >                this.tertiaryMessage = `It looks like you also have your ${otherContractsWithUpcomingBill[0].fuelType} bill issued within this period, so please keep this, and other finances you have to pay in mind.`;</span>
+            }
+        });
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

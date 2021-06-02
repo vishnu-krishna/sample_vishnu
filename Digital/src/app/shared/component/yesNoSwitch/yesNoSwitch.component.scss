@@ -1,0 +1,108 @@
+@import '../../style/variables';
+@import '../../style/mixins';
+@import '../../../myAccount/style/settings';
+
+.yes-no-switch {
+    float: right;
+
+    &-controls {
+        padding-left: 30px;
+    }
+
+    &-toggle {
+        text-align: center;
+        color: $brand-grey-g3;
+        font-size: 14px;
+        @media #{$agl-layout-mobile} {
+            display: none;
+        }
+
+        &__off,
+        &__on {
+            width: 66px;
+            height: 36px;
+            display: inline-block;
+            padding-top: 4px;
+            border: 1px solid $brand-grey-c6;
+            position: relative;
+            cursor: pointer;
+        }
+
+        &__off {
+            border-right: 0;
+            border-radius: 4px 0 0 4px;
+        }
+
+        &__on {
+            margin-left: -4px;
+            border-left: 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .active {
+            border: 1px solid $brand-sky;
+            color: $brand-white;
+            background-color: $brand-sky;
+            cursor: default;
+            z-index: 2;
+            vertical-align: top;
+            padding-top: 4px;
+            pointer-events: none;
+
+            &.disabled {
+                opacity: $brand-disabled-opacity;
+                background-color: $brand-disabled-grey;
+                border-color: $brand-disabled-grey;
+            }
+        }
+
+        mat-icon {
+            width: 18px;
+            height: 18px;
+            margin-left: 3px;
+            vertical-align: middle;
+        }
+
+        img {
+            margin-left: 3px;
+        }
+    }
+
+    &-slider {
+        display: none;
+        margin: 0;
+        margin-top: -3px;
+        @media #{$agl-layout-mobile} {
+            display: block;
+            float: right;
+            padding-top: 10px;
+        }
+    }
+
+    &-off {
+        font-size: 14px;
+        line-height: 18px;
+        font-family: $secondary-font-stack;
+        background-color: rgba($brand-sky, 0.07);
+        padding: 15px 18px;
+        margin-top: 18px;
+        margin-bottom: 5px;
+        position: relative;
+        border-radius: 4px;
+
+        &__icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &__note {
+            display: inline-block;
+            padding-left: 36px;
+        }
+    }
+
+    .disabled {
+        pointer-events: none;
+    }
+}

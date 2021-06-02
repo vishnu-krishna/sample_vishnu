@@ -1,0 +1,55 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "number": "7025466058",
+            "firstName": "PETER",
+            "lastName": "PELUSO",
+            "contracts": [
+                {
+                    "address": "4A Camroc Avenue|TRANMERE SA 5073",
+                    "accountNumber": "7025466058",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_000D3AD07CE31ED78A974C62099A48E6",
+                    "number": "9401430437",
+                    "planName": "Savers",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "AGLMKTRE1215212",
+                    "regionId": "SA"
+                },
+                {
+                    "address": "4A Camroc Avenue|TRANMERE SA 5073",
+                    "accountNumber": "7025466058",
+                    "fuelType": "Gas",
+                    "nameId": "AGL_000D3AD07CE31ED78A974C62099A48E6",
+                    "number": "9401430438",
+                    "planName": "Savers",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "AGLMKTRG1215016",
+                    "regionId": "SA"
+                },
+                {
+                    "address": "4/1194 Grand Junction Road|HOPE VALLEY SA 5090",
+                    "accountNumber": "7025466058",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_000D3AD07CE31ED78A974C62099A48E6",
+                    "number": "9402638730",
+                    "planName": "Freedom",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "AGLMKTRE1216197",
+                    "regionId": "SA"
+                }
+            ]
+        }
+    ]
+}

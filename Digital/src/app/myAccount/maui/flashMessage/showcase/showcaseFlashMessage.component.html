@@ -1,0 +1,133 @@
+<agl-maui-showcase-template heading='Flash Message'>
+    <div description>
+        Shows a flash message which can be dismissed with optional
+        <b>heading</b>
+        <b>subheading</b> and accordian
+        <b>body</b> section. Refer to
+        <a href="https://aglenergy.atlassian.net/wiki/spaces/AGLDST/pages/135530377/MAUI+Component+Library">MAUI Component Library</a> for details
+    </div>
+    <div exampleCodeUsage>
+        {{codeUsage}}
+    </div>
+    <div exampleImplementation>
+        <agl-maui-showcase-example label="Inform Flash Message">
+            <agl-maui-flash-message [type]="FlashMessageType.Inform" [dismissable]="true">
+                <div heading>Heading</div>
+                <div subheading>Sub-heading</div>
+            </agl-maui-flash-message>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label="Inform Flash Message (non-dismissable)">
+            <agl-maui-flash-message [type]="FlashMessageType.Inform" [dismissable]="false">
+                <div heading>Heading</div>
+                <div subheading>Sub-heading</div>
+            </agl-maui-flash-message>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label="Warning Flash Message">
+            <agl-maui-flash-message [type]="FlashMessageType.Warning" [dismissable]="true">
+                <div heading>Heading</div>
+                <div subheading>Sub-heading</div>
+            </agl-maui-flash-message>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label="Warning Flash Message (non-dismissable)">
+            <agl-maui-flash-message [type]="FlashMessageType.Warning" [dismissable]="false">
+                <div heading>Heading</div>
+                <div subheading>Sub-heading</div>
+            </agl-maui-flash-message>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label="Success Flash Message">
+            <agl-maui-flash-message [type]="FlashMessageType.Success" [dismissable]="true">
+                <div heading>Heading</div>
+                <div subheading>Sub-heading</div>
+            </agl-maui-flash-message>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label="Success Flash Message (non-dismissable)">
+            <agl-maui-flash-message [type]="FlashMessageType.Success" [dismissable]="false">
+                <div heading>Heading</div>
+                <div subheading>Sub-heading</div>
+            </agl-maui-flash-message>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label="Error Flash Message">
+            <agl-maui-flash-message [type]="FlashMessageType.Error" [dismissable]="true">
+                <div heading>Heading</div>
+                <div subheading>Sub-heading</div>
+            </agl-maui-flash-message>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label="Error Flash Message (non-dismissable)">
+            <agl-maui-flash-message [type]="FlashMessageType.Error" [dismissable]="false">
+                <div heading>Heading</div>
+                <div subheading>Sub-heading</div>
+            </agl-maui-flash-message>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label="Inform Flash Message (longer text)">
+            <agl-maui-flash-message [type]="FlashMessageType.Inform" [dismissable]="true">
+                <div heading>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc id cursus metus aliquam eleifend mi. At varius vel pharetra vel turpis nunc. Posuere ac ut consequat semper. Sagittis eu volutpat odio facilisis.</div>
+                <div subheading>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc id cursus metus aliquam eleifend mi. At varius vel pharetra vel turpis nunc. Posuere ac ut consequat semper. Sagittis eu volutpat odio facilisis. Feugiat in ante metus dictum at. Pharetra et ultrices neque ornare aenean euismod. Volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris. Id cursus metus aliquam eleifend mi in. Nunc congue nisi vitae suscipit tellus mauris a diam maecenas. Pharetra magna ac placerat vestibulum lectus. Nisi est sit amet facilisis. Turpis in eu mi bibendum neque. Massa tincidunt dui ut ornare lectus. Mattis pellentesque id nibh tortor id aliquet lectus proin. Volutpat odio facilisis mauris sit amet massa vitae tortor. Fringilla phasellus faucibus scelerisque eleifend. Egestas diam in arcu cursus euismod quis viverra. Nunc lobortis mattis aliquam faucibus purus in massa tempor.</div>
+            </agl-maui-flash-message>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label="Inform Flash Message (heading only)">
+            <agl-maui-flash-message [type]="FlashMessageType.Inform" [dismissable]="true">
+                <div heading>Heading</div>
+            </agl-maui-flash-message>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label="Inform Flash Message (subheading only)">
+            <agl-maui-flash-message [type]="FlashMessageType.Inform" [dismissable]="true">
+                <div subheading>Sub-heading</div>
+            </agl-maui-flash-message>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label="Inform Flash Message (heading and subheading)">
+            <agl-maui-flash-message [type]="FlashMessageType.Inform" [dismissable]="true">
+                <div heading>Heading</div>
+                <div subheading>Sub-heading</div>
+            </agl-maui-flash-message>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label="Inform Flash Message (non-dismissable)">
+            <agl-maui-flash-message [type]="FlashMessageType.Inform" [dismissable]="false">
+                <div heading>Heading</div>
+                <div subheading>Sub-heading</div>
+            </agl-maui-flash-message>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label="Inform Flash Message (with link and dismiss callback)">
+            <agl-maui-flash-message [type]="FlashMessageType.Inform" [dismissable]="true" (dismiss)="onDismiss()">
+                <div heading>Heading</div>
+                <div subheading>
+                    Sub-heading
+                    <div>
+                        <a href="https://agl.com.au" target="blank">Best site</a> in the world
+                    </div>
+                </div>
+            </agl-maui-flash-message>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label="Inform Flash Message (with accordion expanded)">
+            <agl-maui-flash-message
+                [type]="FlashMessageType.Inform"
+                [accordion]="true"
+                [accordionExpanded]="true">
+                    <div heading>Heading</div>
+                    <div subheading>subheading</div>
+                    <div body>
+                        body body body body body.
+                    </div>
+            </agl-maui-flash-message>
+        </agl-maui-showcase-example>
+
+        <agl-maui-showcase-example label="Inform Flash Message (with accordion not expanded)">
+                <agl-maui-flash-message
+                    [type]="FlashMessageType.Inform"
+                    [accordion]="true"
+                    [accordionExpanded]="false"
+                >
+                    <div heading>Heading</div>
+                    <div subheading>Here is some more text in the subheading. Here is some more text in the subheading. Here is some more text in the subheading. Here is some more text in the subheading. Here is some more text in the subheading.</div>
+                    <div body>
+                        More text is in the body. More text is in the body. More text is in the body. More text is in the body. More text is in the body. More text is in the body. More text is in the body. More text is in the body. More text is in the body. More text is in the body.
+                    </div>
+                </agl-maui-flash-message>
+            </agl-maui-showcase-example>
+        <agl-maui-showcase-example label="Inform Flash Message (with link and dismiss callback)">
+            <agl-maui-flash-message [type]="FlashMessageType.Inform" [dismissable]="true" (dismiss)="onDismiss()">
+                <div subheading>
+                    <a href="https://agl.com.au" target="blank">Best site</a> in the world</div>
+            </agl-maui-flash-message>
+        </agl-maui-showcase-example>
+    </div>
+</agl-maui-showcase-template>

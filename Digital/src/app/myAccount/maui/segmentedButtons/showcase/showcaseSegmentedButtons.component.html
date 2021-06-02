@@ -1,0 +1,54 @@
+<agl-maui-showcase-template heading='Segmented Buttons'>
+    <div description>
+        <p>Segmented Buttons are a graphical representation of an option/radio button, allowing the user to select the data option from a list.</p>
+        <p>This component has a 2 way binding relationship and has a property [(value)] and event binding (change) which has to be invoked on the host component &lt;agl-maui-segmented-buttons&gt;.</p>
+        <div class="showcase-attributes">
+            <div class="header">Attributes for &lt;agl-maui-segmented-button&gt;</div>
+            <table>
+                <tr><td>value</td> <td>string</td> <td class="required">required</td></tr>
+                <tr><td>text</td> <td>string</td> <td class="required">required</td></tr>
+                <tr><td>textMobile</td> <td>string</td> <td>(if not set, 'text' will be used for all breakpoints.)</td></tr>
+                <tr><td>selected</td> <td>boolean</td> <td class="required">required</td></tr>
+            </table>
+        </div>
+        <p>Refer to <a href="https://aglenergy.atlassian.net/wiki/spaces/AGLDST/pages/135530377/MAUI+Component+Library">MAUI Component Library</a> for details.</p>
+    </div>
+    <div exampleCodeUsage>
+        {{codeUsage}}
+    </div>
+    <div exampleImplementation>
+        <div class="wrapper-600">
+            <agl-maui-showcase-example label='2 Option Segmented Button'>
+                <agl-maui-segmented-buttons [(value)]="selectedValueA" (change)="setSelectedValue($event)">
+                    <agl-maui-segmented-button value="Y" text="Yes" [selected]="true"></agl-maui-segmented-button>
+                    <agl-maui-segmented-button value="N" text="No" [selected]="false"></agl-maui-segmented-button>
+                </agl-maui-segmented-buttons>
+            </agl-maui-showcase-example>
+            <br>
+             <agl-maui-showcase-example label='3 Option Segmented Button'>
+                <agl-maui-segmented-buttons [(value)]="selectedValueB" (change)="setSelectedValue($event)">
+                    <agl-maui-segmented-button *ngFor="let day of days" value="{{day.value}}" text="{{day.text}}" [selected]="day.selected"></agl-maui-segmented-button>
+                </agl-maui-segmented-buttons>
+            </agl-maui-showcase-example>
+            <br>
+             <agl-maui-showcase-example label='4 Option Segmented Button with mobile text'>
+                <agl-maui-segmented-buttons [(value)]="selectedValueC" (change)="setSelectedValue($event)">
+                    <agl-maui-segmented-button value="A" text="Amsterdam" textMobile="AMS" [selected]="false"></agl-maui-segmented-button>
+                    <agl-maui-segmented-button value="B" text="Budapest" textMobile="BUD" [selected]="true"></agl-maui-segmented-button>
+                    <agl-maui-segmented-button value="C" text="Copenhagen" textMobile="CPH" [selected]="false"></agl-maui-segmented-button>
+                    <agl-maui-segmented-button value="D" text="Dublin" textMobile="DUB" [selected]="false"></agl-maui-segmented-button>
+                </agl-maui-segmented-buttons>
+            </agl-maui-showcase-example>
+            <br>
+            <agl-maui-showcase-example label='5 Option Segmented Button with mobile text'>
+                <agl-maui-segmented-buttons [(value)]="selectedValueD" (change)="setSelectedValue($event)">
+                    <agl-maui-segmented-button value="M" text="Monday" textMobile="Mon" [selected]="false"></agl-maui-segmented-button>
+                    <agl-maui-segmented-button value="T" text="Tuesday" textMobile="Tue" [selected]="false"></agl-maui-segmented-button>
+                    <agl-maui-segmented-button value="W" text="Wednesday" textMobile="Wed" [selected]="false"></agl-maui-segmented-button>
+                    <agl-maui-segmented-button value="TH" text="Thursday" textMobile="Thu"  [selected]="true"></agl-maui-segmented-button>
+                    <agl-maui-segmented-button value="F" text="Friday" textMobile="Fri" [selected]="false"></agl-maui-segmented-button>
+                </agl-maui-segmented-buttons>
+            </agl-maui-showcase-example>
+        </div>
+    </div>
+</agl-maui-showcase-template>

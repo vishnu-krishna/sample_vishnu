@@ -1,0 +1,14 @@
+<div class="maui-radio-button-container">
+    <label class="maui-radio-button-label" [ngClass]="{'maui-radio-button-label__selected': isSelected()}">
+        <input class="maui-radio-button__input" type="radio" name="{{name}}" value="{{value}}" (change)="onChange($event)" [checked]="checked">
+        <div class="maui-radio-button__radio-div">&nbsp;</div>
+        <div class="maui-radio-button-label-container">
+            <ng-content select="[label]"></ng-content>
+        </div>
+    </label>
+    <div *ngIf="isSelected()">
+        <div class="content">
+            <ng-content select="[content]"></ng-content>
+        </div>
+    </div>
+</div>

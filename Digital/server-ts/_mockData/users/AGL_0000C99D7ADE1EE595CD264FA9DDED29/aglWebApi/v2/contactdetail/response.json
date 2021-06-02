@@ -1,0 +1,18 @@
+{
+  "status": 200,
+  "headers": { },
+  "body": {
+    "hasMultipleBusinessPartners": false,
+    "businessPartners": [
+      {
+        "firstName": "Philip",
+        "lastName": "MacLaren",
+        "businessPartnerNumber": "BP0001",
+        "phone": "03 8663 6721x",
+        "mobile": "0438 770 119x",
+        "hasDateOfBirth": false,
+        "email": "invalid..email@agl.com.au"
+      }
+    ]
+  }
+}

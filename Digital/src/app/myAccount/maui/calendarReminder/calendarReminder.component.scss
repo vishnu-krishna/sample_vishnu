@@ -1,0 +1,7 @@
+@import '../maui';
+
+@include maui-component-reset();
+
+.maui-calendar-reminder__add {
+    margin-top: $space-03;
+}

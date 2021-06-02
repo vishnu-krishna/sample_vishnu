@@ -1,0 +1,75 @@
+<div class="banner-wrapper">
+    <agl-maui-confirmation-banner text="You've successfully extended the due date of your {{fuelChipData.fuelType.toString() | lowercase}} bill">
+    </agl-maui-confirmation-banner>
+</div>
+<div class="opa-extend" *ngIf="isReady">
+    <div class="opa-extend__summary">
+        <agl-maui-container>
+            <div class="opa-extend__summary-wrapper">
+                <div class="opa-extend__summary-header">
+                    <agl-maui-fuel-chip [fuelChipState]="fuelChipData.state" [fuelType]="fuelChipData.fuelType" [fuelContext]="fuelChipData.fuelContext"
+                        [contractAccountDetails]="fuelChipData.accountDetails" [contractNumber]="fuelChipData.contractNumber">
+                    </agl-maui-fuel-chip>
+                </div>
+                <div class="opa-extend__summary-body">
+                    <div class="opa-extend__summary-body-header">Payment extension summary</div>
+                    <div class="opa-extend__summary-body-table">
+                        <div class="opa-extend__summary-body-table-row">
+                            <div>Amount due:</div>
+                            <div class="opa-extend__summary-amount-due">${{fuelChipData.eligibility.totalAmountDue | number : '1.2-2'}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="opa-extend__summary-footer">
+                    <div>Extended due date</div>
+                    <div class="opa-extend__summary-extended-due-date">{{fuelChipData.eligibility.dueDate | aglFormatDate}}</div>
+                </div>
+                <div class="opa-extend__summary-hint">
+                    <agl-maui-icon-list heading="Helpful hints">
+                        <agl-maui-icon-list-item iconPath="/svg/maui/iconList/showcase/icon-calendar.svg">
+                            Set yourself a reminder to keep track of your extended due date.
+                            <div class="opa-extend__summary-calendar-container">
+                                <agl-maui-calendar-reminder
+                                    [model]="calendarReminderModel" (calendarSelected)="calendarSelected($event)">
+                                </agl-maui-calendar-reminder>
+                            </div>
+                        </agl-maui-icon-list-item>
+                        <agl-maui-icon-list-item iconPath="/svg/maui/iconList/showcase/icon-alert.svg">
+                            <span *ngIf="isVicRegion">
+                                It's important you pay by the extended due date to get back on track and prevent any collections activities by AGL. If you
+                                need further assistance, please call us on
+                                <a href="tel:131245" class="link">131 245</a>.
+                            </span>
+                            <span *ngIf="!isVicRegion">
+                                It's important you pay by the extended due date to avoid late payment fees and prevent any collections activities by AGL.
+                                If you need further assistance, please call us on
+                                <a href="tel:131245" class="link">131 245</a>.
+                            </span>
+                        </agl-maui-icon-list-item>
+                    </agl-maui-icon-list>
+                </div>
+            </div>
+        </agl-maui-container>
+
+        <div class="opa-extend__summary-more-eligible" *ngIf="hasMoreEligibleFuelChips">
+            You have other bills that are available to be extended.
+            <br/> Do you need more time to pay?
+        </div>
+
+        <div *ngFor="let fuelChip of eligibleFuelChips; let first = first; let last = last">
+            <agl-maui-container [hasShadow]="false" class="opa-extend__summary-fuel-chip" [class.payment-extension-eligibility__fuel-chip--first]="first"
+                [class.payment-extension-eligibility__fuel-chip--last]="last">
+                <agl-maui-fuel-chip [fuelChipState]="fuelChip.state" [fuelType]="fuelChip.fuelType" [fuelContext]="fuelChip.fuelContext"
+                    [contractNumber]="fuelChip.contractNumber" [contractAccountDetails]="fuelChip.accountDetails" (selectorClick)='onFuelChipSelected(fuelChip.accountNumber, fuelChip.contractNumber)'>
+                    <agl-maui-fuel-chip-message *ngIf="fuelChip.statusMessage[0].primaryMessage" [primaryMessage]="fuelChip.statusMessage[0].primaryMessage"
+                        [secondaryMessage]="fuelChip.statusMessage[0].secondaryMessage" [secondaryMessageStatus]="fuelChip.statusMessage[0].secondaryMessageStatus">
+                    </agl-maui-fuel-chip-message>
+                </agl-maui-fuel-chip>
+            </agl-maui-container>
+        </div>
+
+        <div class="overview-button">
+            <agl-maui-button (clicked)="goToOverview()" [type]="buttonType">GO TO OVERVIEW</agl-maui-button>
+        </div>
+    </div>
+</div>

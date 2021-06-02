@@ -1,0 +1,44 @@
+@import '../../../../../maui/maui';
+
+@mixin textDescription($margin-top) {
+    text-align: center;
+    margin: $margin-top auto 0 auto;
+    max-width: 400px;
+    font-family: $body-font-stack;
+    font-size: $body-font-size-normal;
+    line-height: $line-height-short;
+}
+
+.payment-extension-welcome {
+    margin: $space-09 auto 0 auto;
+    max-width: $content-width;
+    min-height: 600px;
+
+    @media #{$agl-layout-mobile} {
+        margin-top: $space-08;
+        padding-left: $space-03;
+        padding-right: $space-03;
+    }
+
+    &__button-login {
+        text-align: center;
+        margin-top: $space-06;
+    }
+
+    &__text-login {
+        @include textDescription($space-03);
+    }
+
+    &__text-no-wrap {
+        white-space: nowrap;
+    }
+
+    &__button-register {
+        text-align: center;
+        margin-top: $space-04;
+    }
+
+    &__text-register {
+        @include textDescription($space-04);
+    }
+}

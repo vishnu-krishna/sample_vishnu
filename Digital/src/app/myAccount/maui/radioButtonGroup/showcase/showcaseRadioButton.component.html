@@ -1,0 +1,101 @@
+<agl-maui-showcase-template heading="Radio Button List">
+    <div description>
+        <p>The radio button group allows the user to select the data option from a list of radio buttons.</p>
+        <p>The group exposes the change event if required. The radio button group also accepts the name and the selected value
+            ie default value</p>
+        <p>Each radio button takes a label which can be text or HTML (passed in the label section). If passed the radio button
+            also has an accordion section (passed in the body section) that is displayed after the relevant radio button
+            is selected. This section is automatically hidden once another radio button is chosen</p>
+        <div class="showcase-attributes">
+            <table>
+                <tr>
+                    <td colspan="3" class="header">Attributes for &lt;agl-maui-radio-button-group&gt;</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>string</td>
+                    <td class="required">required</td>
+                </tr>
+                <tr>
+                    <td>selectedValue</td>
+                    <td>string</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="header">Attributes for &lt;agl-maui-radio-button&gt;</td>
+                </tr>
+                <tr>
+                    <td>value</td>
+                    <td>string</td>
+                    <td class="required">required</td>
+                </tr>
+                <tr>
+                    <td>label</td>
+                    <td>string/HTML</td>
+                    <td class="required">required</td>
+                </tr>
+                <tr>
+                    <td>body</td>
+                    <td>string/HTML</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <p>Refer to
+            <a href="https://aglenergy.atlassian.net/wiki/spaces/AGLDST/pages/135530377/MAUI+Component+Library">MAUI Component Library</a> for details.</p>
+    </div>
+    <div exampleCodeUsage>
+        {{codeUsage}}
+    </div>
+    <div exampleImplementation>
+        <div class="wrapper-600">
+            <agl-maui-showcase-example>
+                Radio Button example using ngFor (selectedValue is {{ngforSelectedValue}})
+                <agl-maui-radio-button-group [(selectedValue)]="ngforSelectedValue" name="groupA">
+                    <agl-maui-radio-button *ngFor="let radio of radioOptions" value="{{radio.value}}">
+                        <div label>
+                            {{radio.label}}
+                        </div>
+                        <div content class="content" *ngIf="radio.content">
+                            {{radio.content}}
+                        </div>
+                    </agl-maui-radio-button>
+                </agl-maui-radio-button-group>
+                <br>
+                <br> Radio Button example using static html (selectedValue is {{staticSelectedValue || '...'}})
+                <agl-maui-radio-button-group [selectedValue]="staticSelectedValue" name="groupB" (selectedValueChange)="myChange($event)">
+                    <agl-maui-radio-button value="aa">
+                        <div label class="fill-background">
+                            Click this <u>one</u> (note background colour to show width of content)
+                        </div>
+                        <div content class="content fill-background">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </div>
+                    </agl-maui-radio-button>
+                    <agl-maui-radio-button value="bb">
+                        <div label>Now click this one</div>
+                        <div content class="content">
+                            <div>Are you sure you have selected the correct option?</div>
+                            <agl-maui-segmented-buttons>
+                                <agl-maui-segmented-button value="Y" text="Yes" textMobile="Y" [selected]="true">
+                                </agl-maui-segmented-button>
+                                <agl-maui-segmented-button value="N" text="No" textMobile="N" [selected]="false">
+                                </agl-maui-segmented-button>
+                            </agl-maui-segmented-buttons>
+                        </div>
+                    </agl-maui-radio-button>
+                    <agl-maui-radio-button value="cc">
+                        <div label>
+                            <div class="container-fluid maui-radio-button-container">
+                                <div class="row">
+                                    <div class="col-xs-8">Why not click this one with 2 columns</div>
+                                    <div class="col-xs-4">Other column</div>
+                                </div>
+                            </div>
+                        </div>
+                    </agl-maui-radio-button>
+                </agl-maui-radio-button-group>
+            </agl-maui-showcase-example>
+        </div>
+    </div>
+</agl-maui-showcase-template>

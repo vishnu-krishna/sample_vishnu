@@ -1,0 +1,29 @@
+@import '../../maui';
+
+.maui-icon-list {
+
+    &__item-container {
+        padding-bottom: $space-04;
+        display: flex;
+
+        &--no-padding {
+            padding-bottom: 0;
+        }
+    }
+
+    &__item-text--no-padding {
+        padding-bottom: 0;
+    }
+
+    &__item-icon-container {
+        flex-basis: 40px;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+
+    &__item-icon {
+        max-width: 20px;
+        max-height: 20px;
+    }
+
+}

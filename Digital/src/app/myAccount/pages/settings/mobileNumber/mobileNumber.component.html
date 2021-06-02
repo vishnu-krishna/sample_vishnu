@@ -1,0 +1,8 @@
+<fieldset class="mobile-number__container">
+    <label class="mobile-number__label">Mobile number</label>
+    <div class="mobile-number__input--container">
+        <input class="mobile-number__input" mat-input value="{{value}}" disabled="disabled">
+        <!-- Liveperson chat button injection -->
+        <div id="{{webChatElementId}}" *ngIf="!isContactDetailsEnabled"></div>
+    </div>
+</fieldset>

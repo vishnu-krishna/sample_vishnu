@@ -1,0 +1,121 @@
+<div class="payment-assistance-confirm__loader" *ngIf="showLoader">
+    <agl-loader loadingSubMessage="We're looking into your options, please stand by."></agl-loader>
+</div>
+<agl-maui-secondary-navigation display="true" displayBackButton="true" text="Payment assistance" textMobile="Payment assistance"
+    (click)="backClicked()"></agl-maui-secondary-navigation>
+<div class="payment-assistance-confirm" *ngIf="!showLoader">
+    <div>
+        <agl-maui-heading class="payment-assistance-confirm__heading" heading="Confirm your instalment plan" subheading="Have a look and review the plan we've calculated for you based on what you've told us.">
+        </agl-maui-heading>
+    </div>
+
+    <agl-maui-container class="payment-assistance-confirm__summary" [hasShadow]="true">
+        <div class="payment-assistance-confirm__summary-body">
+            <div class="payment-assistance-confirm__summary-body-table">
+                <div class="payment-assistance-confirm__summary-body-fuelchip-row">
+                    <agl-maui-fuel-chip
+                        [fuelChipState]="MauiFuelChipState.Display"
+                        [fuelType]="instalmentsModel.fuelChip.fuelType"
+                        [fuelContext]="MauiFuelChipFuelContext.None"
+                        [contractAccountDetails]="instalmentsModel.fuelChip.accountDetails"
+                        [contractNumber]="instalmentsModel.fuelChip.contractNumber">
+                    </agl-maui-fuel-chip>
+                </div>
+                <div class="payment-assistance-confirm__summary-body-header1">
+                    Instalment plan summary
+                </div>
+
+                <div class="payment-assistance-confirm__summary-body-table-row">
+                    <div>
+                        Total to pay:
+                    </div>
+                    <div>
+                        ${{ instalmentsModel.totalDue }}
+                    </div>
+                </div>
+                <div class="payment-assistance-confirm__summary-body-table-row">
+                    <div class="no-wrap">
+                        Instalments due:
+                    </div>
+                    <div class="text-right test-instalment-due">{{ instalmentsModel.instalmentsDueCopy }}</div>
+                </div>
+                <div class="payment-assistance-confirm__summary-body-table-row">
+                    <div class="no-wrap">
+                        First instalment due:
+                    </div>
+                    <div class="text-right test-first-instalment-due">{{ instalmentsModel.isFirstStartDateToday ? 'Today' : instalmentsModel.firstStartDate | aglFormatDate }}</div>
+                </div>
+                <div class="payment-assistance-confirm__summary-body-table-instalments">
+                    <agl-payment-assistance-plan-instalments [instalmentsModel]="{ progressItems: instalmentsModel.progressItems }" [headerText]="'Upcoming Instalments'"></agl-payment-assistance-plan-instalments>
+                </div>
+            </div>
+        </div>
+    </agl-maui-container>
+
+    <agl-maui-container class="payment-assistance-confirm__options" [hasShadow]="true">
+        <div class="payment-assistance-confirm__options-body">
+            <div class="payment-assistance-confirm__options-body-header">Are you confident you can pay this?</div>
+            <div class="payment-assistance-confirm__options-body-table">
+                <div class="payment-assistance-confirm__options-body-table-row">
+                    <div>{{ instalmentsModel.currentBillEndDateFormatted }} </div>
+                </div>
+            </div>
+            <div class="payment-assistance-confirm__options-body-chat-container">
+                <div class="web-chat">
+                    <span class="web-chat-icon"></span>
+                    <agl-webchat #paymentAssistanceChat chatButtonId="LPPaymentAssistanceConfirm" [contentIsHostedInLivePerson]="false">
+                        <div agent-status-unresolved>
+                            <div class="web-chat-title--unresolved-agent-status">
+                                &nbsp;
+                            </div>
+                            <div class="web-chat-button--unresolved-agent-status">
+                                &nbsp;
+                            </div>
+                        </div>
+                        <div agent-offline>
+                            <div class="web-chat-agent-offline-message">
+                                To learn about other payment assistance options we have available to you, call 
+                                <a href="tel:131 245">131 245</a>.
+                            </div>
+                            <div class="web-chat-agent-offline-message-bottom">
+                                Calling from overseas? You can call us on 
+                                <a href="tel:+61386336000">+61 3 8633 6000</a>.
+                            </div>
+                        </div>
+                        <div agent-online>
+                            <div class="web-chat-button">
+                                To learn about other payment assistance options we have available to you,  
+                                <a (click)="paymentAssistanceChat.requestChat()">chat with us now</a> or call 
+                                <a href="tel:131 245">131 245</a>.
+                            </div>
+                        </div>
+                    </agl-webchat>
+                </div>
+            </div>
+        </div>
+    </agl-maui-container>
+
+    <div class="payment-assistance-confirm__cta">
+        <div class="payment-assistance-confirm__cta-instalments-error" *ngIf="showInstalmentsError">
+            <agl-maui-flash-message [type]="flashMessageType.Error" [dismissable]="true">
+                <div heading>That wasn't supposed to happen.</div>
+                <div subheading>We were unable to set up your instalment plan. Please try again, or <agl-link [href]="'https://www.agl.com.au/residential/contact-us'" size="linkSize.large">contact us</agl-link> if this error persists.</div>
+            </agl-maui-flash-message>
+        </div>
+
+        <agl-maui-terms-and-conditions [isChecked]="isTermConditionChecked" class="payment-assistance-confirm__cta-tc" (checked)="termsAndConditionChecked($event)">
+            <agl-payment-assistance-terms-conditions (termAccepted)="onTermAccepted()"></agl-payment-assistance-terms-conditions>
+        </agl-maui-terms-and-conditions>
+
+        <div class="payment-assistance-confirm__cta-button">
+            <agl-maui-button [disabled]="!isTermConditionChecked" (clicked)="confirmClicked()" [loading]="isConfirmButtonLoading">Confirm</agl-maui-button>
+        </div>
+
+        <div>
+            <agl-maui-button type="link" (clicked)="cancelClicked()">
+                cancel
+            </agl-maui-button>
+        </div>
+    </div>
+
+</div>

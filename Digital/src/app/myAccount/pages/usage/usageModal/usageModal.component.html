@@ -1,0 +1,77 @@
+<div [@loadedState]="visibility" class="modal fade show in usage-modal" id="UsageModal">
+    <div class="modal-content usage-modal-content">
+        <div class="modal-header header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="col-sm-3 header__details">
+                            <span *ngIf="isMonthComplete">Total</span>
+                            <span *ngIf="!isMonthComplete">So far</span> $ 
+                            <span class="value">{{monthSoFarCost}}</span> | <span class="value">{{monthSoFarConsumption}}</span> kWh
+                        </div>
+                        <div class="col-xs-12 col-sm-6 header__month">
+                            <div class="header__month__text">{{selectedGraphItem?.startDateTime | date:'MMMM yyyy'}}</div>
+                        </div>
+                        <div class="header__closebutton" (click)="usageModalClose()">
+                            <img class="header__closebutton--image" src="svg/icon_modal_close.svg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dailygraphwidget">
+            <div class="dls container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="dailygraphwidget-container">
+                            <agl-usage-graph-daily 
+                                (itemSelected)="onDailyGraphItemSelected($event)"
+                            ></agl-usage-graph-daily>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="middle-panel">
+                <div class="middle-panel__item">
+                    <span>Total &nbsp;&nbsp;$</span>
+                    <div class="cost">
+                        {{valueCost | aglTwoDecimalPipe}}
+                    </div>
+                    <div class="separator">
+                    </div>
+                    <div class="consumption">
+                        {{valueConsumption}}
+                    </div>
+                    <span>kWh</span>
+                </div>
+        </div>
+        <div class="hourly-graph-widget">
+            <div class="hourly-graph-widget-container">
+                <agl-usage-graph-hourly [ContractAccount]="activeContract"></agl-usage-graph-hourly>
+            </div>
+            <div
+                *ngIf="selectedGraphItem?.estimatedRead" 
+                class="estimated-reads">    
+                <div class="estimated-reads__heading">
+                    <div class="legend--daily"></div>
+                    <div class="legend--low"></div>
+                    <div class="legend--high"></div>
+                    Estimated reads
+                </div>
+                <div class="estimated-reads__message">
+                    It appears we're missing some data from your account.
+                    <span (click)= "usageEstimatedMessageReadMore(true)" 
+                        *ngIf= "!isEstimatedMessageReadMore" 
+                        class="read-more-less" >Read more
+                    </span>
+                    <span  *ngIf= "isEstimatedMessageReadMore"> 
+                        While we're working on getting it, estimated data based on your previous usage has been used until the actual data is available. 
+                    <span class="read-more-less" (click)= "usageEstimatedMessageReadMore(false)">Read less</span>
+                    </span>
+                </div>
+            </div>
+            <agl-usage-legal-message class="disclaimer"></agl-usage-legal-message>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,466 @@
+<div class="usage-graph">
+
+    <agl-loader [customClass]="'greyBackground'" *ngIf="isGraphLoading" class="loader"></agl-loader>
+
+    <div class="error" *ngIf="isChartError" >
+        <div class="error-message">
+            <div class="error-message__heading">Sorry, there was an error retrieving your usage data.</div>
+            <div class="error-message__body">Please reload this page to see your usage graph. </div>
+        </div>
+        <div class="error__fill"></div>
+    </div>
+
+    <div class="controls" *ngIf="isDesktop()" >
+        <div class="controls--previous" *ngIf="!isScrollLeftDisabled" (click)="scrollLeft()">
+            <svg height="12" width="8">
+                <polygon points="0,6 8,0 8,12" style="fill:#0000ff;"/>
+            </svg>
+        </div>
+        <div class="controls--previous" *ngIf="isScrollLeftDisabled" >
+            <svg height="12" width="8">
+                <polygon points="0,6 8,0 8,12" style="fill: #E8E8E8;"/>
+            </svg>
+        </div>
+        <div class="controls--next" *ngIf="!isScrollRightDisabled" (click)="scrollRight()">
+            <svg height="12" width="8">
+                <polygon points="8,6 0,0 0,12" style="fill:#0000ff;"/>
+            </svg>
+        </div>
+        <div class="controls--next" *ngIf="isScrollRightDisabled" >
+            <svg height="12" width="8">
+                <polygon points="8,6 0,0 0,12" style="fill: #E8E8E8;"/>
+            </svg>
+        </div>
+    </div>
+
+    <div class="yaxis" [class.isGraphLoading]="isGraphLoading" >
+        
+        <div class="labelgroup">
+            <div class="labelgroup__label">${{yAxisLabels[3]}}</div>
+            <div class="labelgroup__label">${{yAxisLabels[2]}}</div>
+            <div class="labelgroup__label">${{yAxisLabels[1]}}</div>
+            <div class="labelgroup__label">${{yAxisLabels[0]}}</div>
+            <div class="labelgroup__label">$0</div>
+        </div>
+
+        <div class="gridlines">
+            <div class="gridlines__line"></div>
+            <div class="gridlines__line"></div>
+            <div class="gridlines__line"></div>
+            <div class="gridlines__line"></div>
+        </div>
+
+    </div>
+
+    <div class="viewport" 
+        #chartViewPort 
+        [class.isGraphLoading]="isGraphLoading" 
+        id="viewport" >
+
+        <div
+            id="usage-graph-basicmonthly"  
+            class="items" 
+            #chartViewPortItems 
+            [style.margin-left.px]="graphScrollOffset" 
+            [(style.width.px)]="chartViewPortItemsWidth"
+            (panleft)="pan($event)" (panright)="pan($event)" (panend)="panEnd($event)"
+            [class.isPanning]="isPanning"
+            >
+
+            <div class="item" 
+                *ngFor="let usageGraphItem of chartData?.graphItems; let i = index;"
+                [class.selected]="usageGraphItem === selectedGraphItem" 
+                (click)="graphItemSelected(usageGraphItem)">
+
+                <div class="dateRange--mobile" 
+                    *ngIf="!isDesktop()" >
+                    {{usageGraphItem?.timeSpanTitleMobile | uppercase}}
+                </div>
+
+                <div class="graph" 
+                    *ngIf="!usageGraphItem?.isFutureItemPlaceholder"
+                    [class.gas]="activeContract?.fuelType==='Gas'"
+                    [class.elec]="activeContract?.fuelType==='Electricity'"
+                    [class.ripple]="isDesktop()"
+                    [class.ripple2]="!isDesktop()"  
+                    [class.incompleteMonth]="usageGraphItem?.incompleteData"                
+                    [style.height.px]="calculateGraphItemSize(usageGraphItem)"
+                    >
+                </div>
+
+                <div 
+                    class="estimated--read"
+                    *ngIf="usageGraphItem?.estimatedRead"
+                    [style.bottom.px]="calculateGraphItemSize(usageGraphItem) + (isDesktop() ? 60 : 32)">
+                </div>
+
+                <div class="graph placeholder--new ripple"
+                    *ngIf="showFutureItemPlaceHolder(i)" >
+                </div>
+
+                <div class="dateRange" 
+                    *ngIf="isDesktop()" >
+                    {{usageGraphItem?.timeSpanTitle | uppercase}}
+                </div>
+
+                <div class="chevron" [hidden]="usageGraphItem !== selectedGraphItem" >
+                    <svg height="9" width="18">
+                        <polygon points="0,9 9,0 18,9" style="fill:#0000ff;" />
+                    </svg>
+                </div>
+
+            </div>
+
+            <div class="gunSight">
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="graphWidgetContainer" [hidden]="selectedGraphItem === undefined">
+    <div class="controls" *ngIf="!isDesktop()" >
+        <div class="controls--previous" *ngIf="!isScrollLeftDisabled" (click)="scrollLeft()">
+            <svg height="12" width="8">
+                <polygon points="0,6 8,0 8,12" style="fill:#fff;"/>
+            </svg>
+        </div>
+        <div class="controls--previous" *ngIf="isScrollLeftDisabled" >
+            <svg height="12" width="8">
+                <polygon points="0,6 8,0 8,12" style="fill: #8c8a8a;"/>
+            </svg>
+        </div>
+        <div class="controls--next" *ngIf="!isScrollRightDisabled" (click)="scrollRight()">
+            <svg height="12" width="8">
+                <polygon points="8,6 0,0 0,12" style="fill:#fff;"/>
+            </svg>
+        </div>
+        <div class="controls--next" *ngIf="isScrollRightDisabled" >
+            <svg height="12" width="8">
+                <polygon points="8,6 0,0 0,12" style="fill: #8c8a8a;"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Basic meter value insight starts here -->
+    <div  *ngIf= "!activeContract?.isSmartMeter && selectedWidgetItem !== undefined" 
+        class="graph-selected-widget"
+        [class.masked]="widgetAnimationMask">
+
+        <div class="stats">
+            <div  class="row">
+                <div class="dates col-md-4">
+                    {{selectedWidgetItem?.timeSpanTitleInsight}}
+                </div>
+                <div class="totals col-xs-6 col-md-4">
+                    <span class="insight__margin--right mobile-nodisplay">
+                        Total
+                    </span>
+                    <span class="total-unit" *ngIf ="!(selectedWidgetItem?.isFutureItemPlaceholder)">$</span> 
+
+                    <span id="GraphInsightTotalCost" 
+                        class="total-value insight__margin--right" 
+                        *ngIf="!(selectedWidgetItem?.isFutureItemPlaceholder)"> 
+                        {{selectedWidgetItem?.valueCost | aglTwoDecimalPipe}}
+                    </span>
+                    <span id="GraphInsightTotalCostFuture" 
+                        class="total-value insight__margin--right" 
+                        *ngIf="selectedWidgetItem?.isFutureItemPlaceholder"> - </span>
+                    <span
+                        class="value-separator insight__margin--right mobile-nodisplay" 
+                        *ngIf="!selectedWidgetItem?.isFutureItemPlaceholder"></span>
+                    <span class="mobile-display">
+                        Total
+                    </span>
+                    <span id="GraphInsightTotalConsumption" 
+                        class="consumption-value" 
+                        *ngIf ="!selectedWidgetItem?.isFutureItemPlaceholder">
+                        {{selectedWidgetItem?.valueConsumption | number:'1.0-0'}}
+                    </span> 
+                    <span id="GraphInsightTotalConsumptionFuture" 
+                        class="total-value insight__margin--right mobile-nodisplay"  
+                        *ngIf="selectedWidgetItem?.isFutureItemPlaceholder"> - 
+                    </span>
+                    <span class="total-unit" *ngIf="!selectedWidgetItem?.isFutureItemPlaceholder">
+                        <span *ngIf="activeContract?.fuelType ==='Electricity'">kWh</span>
+                        <span *ngIf="activeContract?.fuelType ==='Gas'">{{gasUnitMeasurement}}</span>
+                    </span>
+                </div>
+                <div class="averages col-xs-6 col-md-4">
+                    <span class="insight__margin--right mobile-nodisplay">
+                        Daily avg.
+                    </span>
+                    <span class="total-unit" *ngIf="!selectedWidgetItem?.isFutureItemPlaceholder">
+                        $
+                    </span> 
+                    <span class="avg-value insight__margin--right" 
+                        *ngIf="!selectedWidgetItem?.isFutureItemPlaceholder">
+                        {{selectedWidgetItem?.averageCost }}
+                    </span>
+                    <span class="total-value insight__margin--right" 
+                        *ngIf="selectedWidgetItem?.isFutureItemPlaceholder"> - </span>
+                    <span class="value-separator insight__margin--right mobile-nodisplay" *ngIf="!selectedWidgetItem?.isFutureItemPlaceholder"></span>
+                    <span class="mobile-display">
+                        Daily avg.
+                    </span>
+                    <span class="consumption-value" 
+                        *ngIf="!selectedWidgetItem?.isFutureItemPlaceholder">
+                        {{selectedWidgetItem?.averageConsumption}}</span>
+                    <span class="total-value insight__margin--right mobile-nodisplay" 
+                        *ngIf="selectedWidgetItem?.isFutureItemPlaceholder"> - 
+                    </span>
+
+                    <span class="total-unit" *ngIf="!selectedWidgetItem?.isFutureItemPlaceholder">
+                        <span *ngIf="activeContract?.fuelType ==='Electricity'">kWh</span>
+                        <span *ngIf="activeContract?.fuelType ==='Gas'">{{gasUnitMeasurement}}</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Basic meter value insight ends here -->
+    
+    <!-- Smart meter value insight starts here -->
+    <div *ngIf= "activeContract?.isSmartMeter && selectedWidgetItem !== undefined" 
+        class="graph-selected-widget"
+        [class.masked]="widgetAnimationMask">
+
+        <div class="stats">
+            <div  class="row">
+                <div class="dates col-md-2">
+                    {{selectedWidgetItem?.timeSpanTitleInsight}}
+                </div>
+                <div class="totals col-xs-6 col-md-3">
+                    <span class="insight__margin--right mobile-nodisplay">
+                        Total
+                    </span>
+                    <span class="total-unit" 
+                        *ngIf ="!selectedWidgetItem?.isFutureItemPlaceholder">$</span> 
+
+                    <span id="GraphInsightTotalCost" 
+                        class="total-value insight__margin--right" 
+                        *ngIf ="!selectedWidgetItem?.isFutureItemPlaceholder"> 
+                        {{selectedWidgetItem?.valueCost | aglTwoDecimalPipe}}
+                    </span>
+                    <span id="GraphInsightTotalCostFuture" 
+                        class="total-value insight__margin--right" 
+                        *ngIf ="selectedWidgetItem?.isFutureItemPlaceholder"> 
+                    - </span>
+                    <span
+                        class="value-separator insight__margin--right mobile-nodisplay"
+                        *ngIf="!selectedWidgetItem?.isFutureItemPlaceholder"></span>
+                    <span class="mobile-display">
+                        Total
+                    </span>
+                    <span id="GraphInsightTotalConsumption" 
+                        class="consumption-value" 
+                        *ngIf ="!selectedWidgetItem?.isFutureItemPlaceholder">
+                        {{selectedWidgetItem?.valueConsumption | number:'1.0-0'}}
+                    </span> 
+                    <span id="GraphInsightTotalConsumptionFuture" 
+                        class="total-value insight__margin--right mobile-nodisplay"  
+                        *ngIf="selectedWidgetItem?.isFutureItemPlaceholder"> - 
+                    </span>
+                    <span class="total-unit" 
+                        *ngIf ="!selectedWidgetItem?.isFutureItemPlaceholder">
+                        <span *ngIf ="activeContract?.fuelType ==='Electricity'">kWh</span>
+                        <span *ngIf ="activeContract?.fuelType ==='Gas'">{{gasUnitMeasurement}}</span>
+                    </span>
+                </div>
+                <div class="averages col-xs-6 col-md-4">
+                    <span class="insight__margin--right mobile-nodisplay">
+                        Daily avg.
+                    </span>
+                    <span class="total-unit" *ngIf="!selectedWidgetItem?.isFutureItemPlaceholder">
+                        $
+                    </span> 
+                    <span class="avg-value insight__margin--right" 
+                        *ngIf="!selectedWidgetItem?.isFutureItemPlaceholder">
+                        {{selectedWidgetItem?.averageCost }}
+                    </span>
+                    <span class="total-value insight__margin--right" 
+                        *ngIf="selectedWidgetItem?.isFutureItemPlaceholder"> - </span>
+                    <span class="value-separator insight__margin--right mobile-nodisplay" *ngIf="!selectedWidgetItem?.isFutureItemPlaceholder"></span>
+                    <span class="mobile-display">
+                        Daily avg.
+                    </span>
+                    <span class="consumption-value" 
+                        *ngIf="!selectedWidgetItem?.isFutureItemPlaceholder">
+                        {{selectedWidgetItem?.averageConsumption}}</span>
+                    <span class="total-value insight__margin--right mobile-nodisplay" 
+                        *ngIf="selectedWidgetItem?.isFutureItemPlaceholder"> - 
+                    </span>
+
+                    <span class="total-unit" *ngIf="!selectedWidgetItem?.isFutureItemPlaceholder">
+                        <span *ngIf="activeContract?.fuelType ==='Electricity'">kWh</span>
+                        <span *ngIf="activeContract?.fuelType ==='Gas'">{{gasUnitMeasurement}}</span>
+                    </span>
+                </div>
+                 <div class="col-md-3" >
+                     <div class="view-daily-usage-button" >
+                        <button  mat-raised-button class="dailyusage" 
+                            (click)="triggerUsageModalOpenClose(true)" 
+                            [disabled] = "!isMonthlyDetailsDisplayed" >VIEW DAILY USAGE 
+                        </button>
+                        <div class="tooltip-trigger">
+                            <img 
+                                class="icon_position" 
+                                *ngIf = "!isMonthlyDetailsDisplayed"
+                                (mouseover)="onMouseOver(true)"
+                                (mouseout)="onMouseOver(false)"
+                                src="svg/icon_tooltip.svg"
+                                >
+                            <div 
+                                class="usage-tooltip"
+                                [hidden]="!isToolTipVisible"
+                                >
+                                <div class="chevron">
+                                    <svg height="9" width="18">
+                                        <polygon points="0,9 9,0 18,9" style="fill:#fff;" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="tooltip-header">Sorry, we can only show you up to three months of daily usage.</div>
+                                    <div class="tooltip-body">Don't panic, if you ever need this information you can always contact us.</div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                           
+                </div>
+  
+            </div>
+        </div>
+    </div>
+    <!-- Smart meter value insight ends here -->
+
+    <!-- Basic meter message insight starts here -->
+    <div *ngIf= "!activeContract?.isSmartMeter && selectedGraphItem !== undefined"
+        class="smart-graph-insight" 
+        [class.masked]="widgetAnimationMask">
+         <div class="row">            
+            <div class="col-xs-2 col-md-3">              
+            </div>
+            <div class="col-xs-8 col-md-7">
+                <!-- The usage insight monthly summary message -->
+                <span *ngIf ="smartInsightSummaryIndex === selectedInsightItemIndex" id="SmartInsightMonthlySummary">
+                    <div *ngIf= "usageInsightMonthSummary?.isHighlightDisplayed" class="col-md-4 smart-graph-insight--highlight">                       
+                        <div>
+                            <div>
+                                <span class="insight-symbol"><img class="icon_position" src="{{usageInsightMonthSummary?.usageCostIcon}}">  $</span>
+                                <span class="insight-value">{{usageInsightMonthSummary?.usageCostDifference}}</span>
+                            </div>
+                            <div class="insight-value-text">{{usageInsightMonthSummary?.comparisonPhrase}}</div>
+                        </div>
+                    </div>
+                    <div  [class.full-width-insightmsg]="!usageInsightMonthSummary?.isHighlightDisplayed" class="col-md-8 smart-graph-insight--summary">
+                        {{usageInsightMonthSummary?.summary}}
+                        <agl-usage-legal-message></agl-usage-legal-message>                        
+                    </div>
+                </span>
+            </div>
+            <div class="col-xs-2 col-md-2">             
+            </div>           
+        </div>
+    </div>
+    <!-- Basic meter message insight ends here -->
+
+    <!-- Smart meter message insight starts here -->
+    <div *ngIf = "activeContract?.isSmartMeter && selectedGraphItem !== undefined"
+        class="smart-graph-insight" 
+        [class.masked]="widgetAnimationMask">
+        <div class="row">            
+            <div class="col-xs-2 col-md-3">
+               <img *ngIf = "isMonthlyDetailsDisplayed" 
+                    id="usageInsightSummaryLeft"  
+                    (click) = previousSmartInsightMessage()  
+                    class="insight_arrows floatright" 
+                    src="svg/icon_insight_left.svg">
+            </div>
+            <div class="col-xs-8 col-md-6">
+                <!-- The usage insight monthly summary message -->
+                <span *ngIf ="smartInsightSummaryIndex === selectedInsightItemIndex" id="SmartInsightMonthlySummary">
+                    <div *ngIf= "currentGraphIndex !== 0" class="col-md-4 smart-graph-insight--highlight">
+                        <div *ngIf = "selectedGraphItem?.incompleteData">
+                            <div>
+                                <img class="icon_position" src="svg/icon_calender.svg">
+                                <span class="insight-daysleft">{{usageInsightMonthSummary?.usageRemainingDays}}</span>
+                                <span class="insight-daysleft-phrase">days</span>
+                            </div> 
+                            <span class="insight-remaining-text">remaining</span>
+                        </div>
+                        <div *ngIf ="!selectedGraphItem?.incompleteData">
+                            <div>
+                                <span class="insight-symbol"><img class="icon_position" src="{{usageInsightMonthSummary?.usageCostIcon}}">  $</span>
+                                <span class="insight-value">{{usageInsightMonthSummary?.usageCostDifference}}</span>
+                            </div>
+                            <div class="insight-value-text">{{usageInsightMonthSummary?.comparisonPhrase}}</div>
+                        </div>
+                    </div>
+                    <div  [class.full-width-insightmsg]="currentGraphIndex === 0" class="col-md-8 smart-graph-insight--summary">
+                        {{usageInsightMonthSummary?.summary}}
+                        <agl-usage-legal-message></agl-usage-legal-message>
+                    </div>
+                </span>
+                <span *ngIf="isMonthlyDetailsDisplayed">
+                <!-- The usage insight monthly peak message-->
+                    <span *ngIf ="smartInsightPeakIndex === selectedInsightItemIndex" id="SmartInsightMonthlyPeak">
+                        <div class="col-md-4 smart-graph-insight--highlight">
+                                <div>                                   
+                                    <span class="insight-symbol">$ </span> 
+                                    <span class="insight-value">{{usageInsightMonthPeaks?.usageCost}}</span>
+                                </div>
+                                <span>maximum <br> elec. used</span>
+                        </div>
+                        <div class="col-md-8 smart-graph-insight--summary">
+                            {{usageInsightMonthPeaks?.summary}}
+                            <agl-usage-legal-message></agl-usage-legal-message>
+                        </div>
+                    </span>
+                    <!-- The usage insight weekend daily avg message -->
+                    <span *ngIf="smartInsightWeekendAverageIndex === selectedInsightItemIndex && !hideWeekendInsight"
+                          id="SmartInsightMonthlyPeak">
+                        <div class="col-md-4 smart-graph-insight--highlight">
+                                <div> 
+                                    <img class="icon_position" src="svg/icon_weekend.svg">
+                                    <span class="insight-symbol">$</span>
+                                    <span class="insight-value">{{usageInsightMonthAverages?.weekendAverageCost}}</span>
+                                </div>
+                                <span>Weekend <br> daily avg.</span> 
+                        </div> 
+                        <div class="col-md-8 smart-graph-insight--summary">
+                            {{usageInsightMonthAverages?.summary}}
+                            <agl-usage-legal-message></agl-usage-legal-message>
+                        </div>
+                    </span>
+                </span>
+            </div>
+            <div class="col-xs-2 col-md-3">
+               <img *ngIf = "isMonthlyDetailsDisplayed" 
+               id="usageInsightSummaryRight" 
+               (click) = nextSmartInsightMessage() 
+               class="insight_arrows" 
+               src="svg/icon_insight_right.svg">
+            </div>           
+        </div>
+
+        <div 
+            class="estimated-reads" 
+            *ngIf="selectedGraphItem?.estimatedRead">
+            <div class="heading">
+                <div class="legend--monthlyandbasic"></div>
+                Estimated reads
+            </div>
+        </div>
+
+    </div>
+    <!-- Smart meter message insight ends here -->
+</div>
+
+
+<agl-usage-modal 
+    [hidden]="!isDailyUsageModalDisplayed"
+    [activeContract]="activeContract"
+    (isDailyUsageModalDisplayed)="triggerUsageModalOpenClose($event)">
+</agl-usage-modal>

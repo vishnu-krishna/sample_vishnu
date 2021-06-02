@@ -1,0 +1,26 @@
+<div id="payment-credit-card" class="credit-card">
+    <div class="credit-card__logo">
+        <mat-icon class="elec" svgIcon="icon-mastercard" id="direct-debit-credit-card-mc-icon"></mat-icon>
+        <mat-icon class="elec" svgIcon="icon-visa" id="direct-debit-credit-card-visa-icon"></mat-icon>
+        <span class="credit-card__logo-text">Use Mastercard or Visa. Fees apply.</span>
+    </div>
+    <agl-directdebitcreditcard
+        *ngIf="!errorInPayment"
+        #creditCardView
+        [paymentAmount]="paymentAmount"
+        [isSmsPay]="isSmsPay"
+        [isDirectDebit]="isDirectDebit"
+        [content]="creditCardContent"
+        [saveAndPay]="true"
+        [saveMethodOnly]="false"
+        [hideStoredCheckBox]="hideStoredCheckBox"
+        (onSave)="saveCreditCard($event)">
+    </agl-directdebitcreditcard>
+    <agl-alert *ngIf="errorInPayment" alertType="error" heading="Sorry, your payment was unsuccessful." body="Don't worry, you weren't charged. Please give it another try." class="credit-card__iframe-processing-error"></agl-alert>
+    <div class="credit-card__disclaimer">
+        <div>By proceeding with this payment, you are agreeing to the online payment <a href="https://www.agl.com.au/site-pages/terms" target="_blank">Terms and Conditions</a>.</div>
+        <div class="credit-card__disclaimer-row">A fee of 0.45% (incl. GST) may apply if you pay by credit, debit, prepaid or charge card.</div>
+        <div class="credit-card__disclaimer-row">Payments submitted before 6pm AEST will reach your account by the next business day.</div>
+        <div class="credit-card__disclaimer-row">Any payments submitted after 6pm AEST will take up to 2 business days to reach your account. If you have paid your outstanding bills in full, you can disregard any payment reminder notices during this period.</div>
+    </div>
+</div>

@@ -1,0 +1,442 @@
+@import '../../shared/style/variables';
+@import '../../shared/style/mixins';
+@import '../maui/maui';
+
+$ellipses-button-content-width: 180px;
+
+.bill-history {
+    padding: 35px 30px 0;
+    @media #{$agl-layout-mobile} {
+        padding: 0;
+    }
+
+    &__single-bill {
+        margin-bottom: -14px;
+    }
+
+    &__header {
+        height: 40px;
+        font-family: $primary-font-stack;
+        font-size: 16px;
+
+        &--heading {
+            font-weight: bold;
+        }
+    }
+
+    &__container {
+        overflow: visible;
+    }
+
+    &-bills {
+        transition: height 0.5s ease;
+
+        &__row {
+            display: inline-block;
+            vertical-align: middle;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            border-top: 1px solid $brand-grey-light-borders;
+            font-size: 14px;
+            font-family: $secondary-font-stack;
+            position: relative;
+            transition: background 0.3s ease;
+
+            @media(max-width: 450px) {
+                font-size: 14px;
+            }
+
+            &--left-wrap {
+                @media(max-width: 374px) {
+                    width: 100%;
+                    height: 40px;
+                    line-height: 38px;
+                }
+            }
+
+            &--right-wrap {
+                float: right;
+                @media(max-width: 374px) {
+                    position: absolute;
+                    top: 0;
+                    right: 20px;
+                }
+            }
+
+            &--bottom-wrap {
+                display: none;
+                @media(max-width: 374px) {
+                    display: block;
+                    width: 100%;
+                    text-align: left;
+                    height: 20px;
+                    font-weight: bold;
+                    line-height: 5px;
+                }
+            }
+
+            &--days-grey {
+                height: 60px;
+                float: left;
+                text-align: left;
+                width: 75px;
+                font-weight: bold;
+                @media #{$agl-layout-mobile} {
+                    display: none;
+                }
+            }
+
+            &--date {
+                float: left;
+                padding-left: 0;
+                min-width: 180px;
+                text-align: left;
+                @media(max-width: 450px) {
+                    padding: 0px;
+                    min-width: 150px;
+                }
+            }
+
+            &--pay-status {
+                padding-left: 6px;
+                float: left;
+                position: relative;
+                height: 60px;
+                @media #{$agl-layout-mobile} {
+                    padding-left: 0;
+                    display: none;
+                }
+
+                &-paynow {
+                    cursor: pointer;
+                    color: $brand-sky;
+                    font-weight: bold;
+                    transition: color .3s ease;
+
+                    &:hover {
+                        color: $brand-grey-g1;
+                    }
+                }
+
+                &-paid {
+                    color: $brand-leaf;
+                    font-weight: bold;
+                }
+
+                &-overdue {
+                    @include bill-pill($brand-fire);
+                    padding: 4px 10px 4px 10px;
+                    font-weight: bold;
+                }
+            }
+
+            &--pay-status-mob {
+                display: none;
+                float: left;
+                position: relative;
+                height: 60px;
+                @media #{$agl-layout-mobile} {
+                    display: inline-block;
+                }
+                @media (max-width: 374px) {
+                    position: absolute;
+                    top: -10px;
+
+                }
+
+                &-paid {
+                    @include bill-pill-mob($brand-leaf);
+                    background: url('img/icon-paid-tick@2x.png') no-repeat center;
+                    background-size: 12px 9px;
+                    @media (max-width: 450px) {
+                        width: 16px;
+                        height: 16px;
+                        background-size: 11px 8px;
+                    }
+                }
+
+                &-overdue {
+                    @include bill-pill-mob($brand-fire);
+                    font-size: 14px;
+                    text-align: center;
+                    padding-top: 1px;
+                    font-weight: bolder;
+                    @media (max-width: 450px) {
+                        width: 16px;
+                        height: 16px;
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            &--payment-amount {
+                text-align: right;
+                display: inline-block;
+                font-weight: bold;
+                padding-right: 0;
+                @media #{$agl-layout-mobile} {
+                    padding: 0px;
+                }
+                @media(max-width: 374px) {
+                    display: none;
+                }
+
+            }
+
+            .credit {
+                color: $brand-leaf;
+            }
+
+            .overdue {
+                color: $brand-fire;
+            }
+
+            &--pdf {
+                display: inline-block;
+                text-align: center;
+                margin-left: 40px;
+                cursor: pointer;
+                @media #{$agl-layout-mobile} {
+                    margin-left: 20px;
+                }
+                @media (max-width: 475px) {
+                    margin-left: 12px;
+                }
+
+                .pdf-button,
+                .ellipses-button {
+                    border: 1px solid $brand-grey-g4;
+                    width: 50px;
+                    height: 30px;
+                    border-radius: 3px;
+                    color: $brand-sky;
+                    line-height: 28px;
+                    font-size: 12px;
+                    font-weight: bold;
+
+                    &:hover {
+                        color: $brand-white;
+                        background-color: $brand-sky;
+                    }
+                }
+
+                .ellipses-button {
+                    position: relative;
+                    line-height: 12px;
+                    font-size: 28px;
+                    letter-spacing: 2px;
+                    color: $neutral-02;
+
+                    &__content {
+                        position: absolute;
+                        z-index: $ellipses-button-content-z-index;
+                        box-shadow: $shadow-agl-ellipses-button;
+                        right: -5px;
+                        min-width: $ellipses-button-content-width;
+                        background: $neutral-08;
+                        border: 1px solid $brand-grey-g4;
+                        border-radius: $border-radius-03;
+                        padding: $space-03;
+                    }
+
+                    &-content {
+
+                        &--top {
+                            top: -76px;
+                        }
+
+                        &--bottom {
+                            top: 50px;
+                        }
+
+                        &__row {
+                            max-height: $space-04;
+                            line-height: $space-04;
+                            text-align: left;
+
+                            a {
+                                font-weight: bold;
+                                color: $brand-sky;
+                                transition: color .3s ease;
+
+                                &:hover {
+                                    color: $brand-grey-g1;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .pdf-button-na {
+                    cursor: not-allowed;
+                    border: 1px solid $brand-grey-g4;
+                    width: 50px;
+                    height: 30px;
+                    border-radius: 3px;
+                    color: $brand-grey-g4;
+                    background-color: $brand-grey-g6;
+                    line-height: 28px;
+                    font-size: 12px;
+                    font-weight: bold;
+                }
+            }
+
+            &--see-more {
+                text-align: center;
+                color: $brand-primary;
+                cursor: pointer;
+                font-weight: 600;
+                display: inline-block;
+                vertical-align: middle;
+                width: 100%;
+                padding: 17px 0 0;
+                border-top: 1px solid $brand-grey-light-borders;
+                font-size: 14px;
+                font-family: $secondary-font-stack;
+                line-height: 27px;
+                transition: background 0.3s ease;
+                margin-bottom: -8px;
+
+                &.click-disabled {
+                    cursor: default;
+                    pointer-events: none;
+                    color: $label-colour;
+                    font-weight: normal;
+                    background-color: $brand-sky-lighten-60;
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 100%;
+                    font-size: 16px;
+                    line-height: 22px;
+                    font-family: $secondary-font-stack;
+                    position: relative;
+                    text-align: left;
+                    padding: 15px 0;
+                    border-top: none;
+                    margin-bottom: -2px;
+
+                    &:before {
+                        background-color: $brand-sky-lighten-60;
+                        content: '';
+                        display: block;
+                        height: 100%;
+                        width: 15px;
+                        position: absolute;
+                        top: 0;
+                        left: -15px;
+                        border-left: 5px solid $brand-sky;
+                    }
+
+                    &:after {
+                        display: block;
+                        content: '';
+                        height: 100%;
+                        width: 15px;
+                        position: absolute;
+                        top: 0;
+                        right: -15px;
+                        background-color: $brand-sky-lighten-60;
+                    }
+
+                    &:hover {
+                        background-color: transparent;
+                    }
+                }
+
+                .pdf-message {
+                    display: none;
+                    font-size: 14px;
+                    font-weight: 600;
+                    margin-top: -6px;
+                }
+
+                .pdf-unavailable {
+                    display: block;
+                    padding-top: 5px;
+                }
+
+                &:hover {
+                    svg {
+                        animation: bounce 1.2s infinite linear;
+                    }
+                }
+
+                svg {
+                    fill: $brand-primary;
+                    margin: 7px 0 0 8px;
+                    width: 14px;
+                    height: 14px;
+                    position: absolute;
+                }
+            }
+        }
+    }
+}
+
+.bill-issued {
+    &--active {
+        background-color: $brand-sky-lighten-60;
+        display: inline-block;
+        width: 100%;
+        font-size: 16px;
+        line-height: 22px;
+        font-family: $secondary-font-stack;
+        position: relative;
+        padding: 15px 0;
+
+        &:before {
+            background-color: $brand-sky-lighten-60;
+            content: '';
+            display: block;
+            height: 100%;
+            width: 15px;
+            position: absolute;
+            top: 0;
+            left: -15px;
+            border-left: 5px solid $brand-sky;
+        }
+
+        &:after {
+            display: block;
+            content: '';
+            height: 100%;
+            width: 15px;
+            position: absolute;
+            top: 0;
+            right: -15px;
+            background-color: $brand-sky-lighten-60;
+        }
+
+        &--bill-smoothing {
+            font-size: 14px;
+            line-height: 19px;
+            padding-top: 5px;
+
+            &--link {
+                color: $brand-sky;
+                cursor: pointer;
+
+                &:hover {
+                    color: $brand-sky-darker;
+                }
+            }
+        }
+    }
+}
+
+@keyframes bounce {
+    0%,
+    50%,
+    100% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-1.5px);
+    }
+
+    75% {
+        transform: translateY(1.5px);
+    }
+}

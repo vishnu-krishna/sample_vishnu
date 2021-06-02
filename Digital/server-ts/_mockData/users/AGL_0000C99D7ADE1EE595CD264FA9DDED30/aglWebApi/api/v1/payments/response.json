@@ -1,0 +1,26 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "account": "7021129726",
+            "contract": "9400717466",
+            "overdue": 0,
+            "currentBalance": 150,
+            "totalPayment": 0,
+            "billSmoothing": true,
+            "directDebit": true
+        },
+        {
+            "account": "7021129726",
+            "contract": "9400717581",
+            "overdue": 0,
+            "currentBalance": 116.09,
+            "totalPayment": 0,
+            "billSmoothing": true,
+            "directDebit": true
+        }
+      
+        
+    ]
+}

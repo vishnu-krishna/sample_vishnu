@@ -1,0 +1,47 @@
+@import '../../maui';
+@import '../../showcase';
+
+.showcase-btn {
+    flex-grow: 1;
+    vertical-align: top;
+    max-width: 400px;
+    width: 100%;
+
+    &:first-child {
+        margin-right: $space-03;
+    }
+
+    &:last-child {
+        @media #{$agl-layout-mobile} {
+            margin-top: $space-03;
+            margin-left: 0;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+
+        @media #{$agl-layout-mobile} {
+            display: block;
+        }
+    }
+
+    &__toggles {
+        padding-bottom: $space-04;
+
+        label {
+            display: inline-block;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        input {
+            margin-right: 5px;
+            margin-top: 0;
+            width: 15px;
+            height: 15px;
+            vertical-align: middle;
+        }
+    }
+}

@@ -1,0 +1,65 @@
+@import 'variables';
+
+/*
+
+This file contains global styles that are required to make the current material design implementation appear DLS like.
+
+Created by Obsidian for the Usage page on 18/02/2017
+
+This can be removed/reviewed when the Loud & Clear DLS is implemented.
+
+*/
+
+/*
+COLOURS FROM USAGE THAT NEED TO FIND A HOME IN THE NEW DLS
+To be fixed when the DLS work by diamond is merged down
+*/
+
+$new-zealand-sky-blue: #A9DAF6;
+$victorian-sky-blue: #EDFAFF;
+$usage-beta-blue: #0260C9;
+$usage-beta-darkblue: #2C42B8;
+$cbd-blue: #0E2BC2;
+$st-kilda-blue: #DDF6F8;
+$ssmr-read-date-color: #4A4A4A;
+$ssmr-toolbar-icon-color: #666;
+$ssmr-black: #000000;
+$ssmr-pill-blue: #7FEFF6 ;
+$ssmr-banner-heading-color: #00DFF3;
+$usage-graph-gunsight: rgba(216, 216, 216, 0.30);
+$usage-brand-bright-hover: darken($brand-bright, 10);
+$ssmr-button-tertiary-hover-grey: #FAFAFA;
+$ssmr-next-bill-side-banner-orange: #F7A623;
+$ssmr-button-tertiary-hover-grey: #FAFAFA;
+
+.tempdls {
+
+    &-button {
+        font-weight: bold;
+        font-family: $primary-font-stack;
+    }
+
+    &-heading-primary {
+        font-family: $primary-font-stack;
+        font-size: 22px;
+        font-weight: bold;
+        color: $brand-grey-g1;
+    }
+
+    &-card {
+
+        margin-bottom: 32px;
+
+        &-header {
+            font-size: 16px;
+            font-weight: bold;
+            color: $brand-black;
+            padding-bottom: 10px;
+            font-family: $primary-font-stack;
+
+            @media #{$agl-layout-mobile} {
+                padding-bottom: 0px;
+            }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+<agl-maui-showcase-template heading='Checkbox'>
+    <div description>
+        <p>A checkbox element for use in forms and elsewhere.</p>
+        <p>Transcluded content is allowed in place of label where custom styling can be applied.</p>
+        <p>If anchor tags are used in transcluded content, event.preventDefault() should be declared in the event binding to prevent checkbox from being selected when link is clicked.</p>
+
+        <div class="showcase-attributes">
+            <div class="header">Attributes</div>
+            <table>
+                <tr><td>label</td> <td>string</td></tr>
+                <tr><td>value</td> <td>string</td></tr>
+                <tr><td>isChecked</td> <td>boolean</td> <td>selects the checkbox</td></tr>
+                <tr><td>isFullWidth</td> <td>boolean</td> <td>allows block to be clickable</td></tr>
+            </table>
+        </div>
+
+        <p>There is also a wrapper component to display checkboxes in a group, see Checkbox Group.</p>
+        <p>Refer to <a href="https://aglenergy.atlassian.net/wiki/spaces/AGLDST/pages/200672615/Radio+Button+List+-+Planned+1816">MAUI Component Library</a> for details</p>
+    </div>
+    <div exampleCodeUsage>
+        {{codeUsage}}
+    </div>
+    <div exampleImplementation>
+        <div class="showcase-checkbox">
+            <h4>Basic checkbox</h4>
+            <agl-maui-checkbox
+                label="Full width"
+                value="value"
+                [isFullWidth]="isFullWidth"
+                (checked)="toggleFullWidthCheckBox()">
+            </agl-maui-checkbox>
+        </div>
+        <div class="showcase-checkbox">
+            <h4>Basic checkbox with expanded content</h4>
+            <agl-maui-checkbox
+                label="Air conditioning"
+                value="value2"
+                [isFullWidth]="true"
+                (checked)="toggleCheckbox()">
+                <div content class="showcase-checkbox__content">
+                    <div class="showcase-checkbox__content-heading">How many split systems?</div>
+                    <agl-maui-segmented-buttons [(value)]="selectedValue" (change)="setSelectedValue($event)">
+                        <agl-maui-segmented-button value="1" text="1"></agl-maui-segmented-button>
+                        <agl-maui-segmented-button value="2" text="2"></agl-maui-segmented-button>
+                        <agl-maui-segmented-button value="3" text="3" [selected]="true"></agl-maui-segmented-button>
+                        <agl-maui-segmented-button value="4" text="4"></agl-maui-segmented-button>
+                        <agl-maui-segmented-button value="5" text="5+"></agl-maui-segmented-button>
+                    </agl-maui-segmented-buttons>
+                </div>
+            </agl-maui-checkbox>
+        </div>
+        <div class="showcase-checkbox">
+            <h4>Basic checkbox with transcluded content</h4>
+            <agl-maui-checkbox
+                value="value3">
+                <div class="showcase-checkbox__tnc" label>I confirm that I have read and agree to the <a (click)="showModal()">Direct Debit terms and Conditions</a></div>
+            </agl-maui-checkbox>
+        </div>
+    </div>
+</agl-maui-showcase-template>

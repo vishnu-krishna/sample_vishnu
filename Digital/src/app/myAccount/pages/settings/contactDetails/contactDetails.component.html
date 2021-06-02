@@ -1,0 +1,120 @@
+<agl-maui-secondary-navigation *ngIf="!isLoading" display="true" displayBackButton="true" text="Contact details" (clicked)="goBack()">
+</agl-maui-secondary-navigation>
+
+<div *ngIf="isLoading" class="contact-details__loader main-card-loader">
+    <agl-loader></agl-loader>
+</div>
+
+<div class="contact-details-error" *ngIf="getContactDetailFailed">
+    <div class="contact-details-error__message">
+        <span class="contact-details-error__message-header">Unable to fetch your contact information</span>
+        <span class="contact-details-error__message-body">We're sorry for the inconvenience.</span>
+        <span class="contact-details-error__message-body">Please check back soon, or get in touch with us
+            <a href="https://www.agl.com.au/residential/contact-us" target="_blank">here</a>.</span>
+    </div>
+
+    <div class="contact-details-error__dog-of-doom">
+        <agl-generic-error-image></agl-generic-error-image>
+    </div>
+
+    <div class="contact-details-error__overview-button">
+        <agl-maui-button (clicked)="goToOverview()">Go To Overview</agl-maui-button>
+    </div>
+</div>
+
+<div class="contact-details" *ngIf="!isLoading && !getContactDetailFailed">
+    <div class="contact-details__heading">
+        <agl-maui-heading [heading]="headingText" [subheading]="subHeadingText"></agl-maui-heading>
+    </div>
+
+    <agl-maui-container>
+        <div class="contact-details__form-wrapper">
+            <form [formGroup]="contactDetailsForm" novalidate autocomplete="off">
+                <div class="contact-details__form-mobile-number">
+                    <label class="label-form" for="mobile-number">Mobile Number</label>
+                    <input id="mobile-number" class="form-textbox" type="tel" formControlName="mobile" maxlength="20"
+                           [ngClass]="{'error': !!mobileErrorMessage}" (focus)="runValidation('mobile')"/>
+                    <div class="has-error" *ngIf="!!mobileErrorMessage">
+                        {{mobileErrorMessage}}
+                    </div>
+                </div>
+                <div class="contact-details__form-email-address">
+                    <label class="label-form" for="email-address">Email Address</label>
+                    <!-- we don't use input type="email" as it causes oddities with how whitspace is handled in some browsers -->
+                    <input id="email-address" class="form-textbox" type="text" formControlName="email" maxlength="50"
+                           [ngClass]="{'error': !!emailErrorMessage}" (focus)="runValidation('email')"/>
+                    <div class="has-error" *ngIf="!!emailErrorMessage">
+                        {{emailErrorMessage}}
+                    </div>
+                </div>
+            </form>
+
+            <div class="contact-details__form-message">
+                <agl-maui-flash-message type="Inform">
+                    <div subheading>
+                        Updating your contact details will not affect your login settings. Your contact details will only be used for your selected communications.
+                    </div>
+                </agl-maui-flash-message>
+            </div>
+        </div>
+    </agl-maui-container>
+
+    <div class="contact-details__chat-container">
+        <agl-maui-container class="web-chat">
+            <div class="web-chat-padding-for-container">
+                <span class="web-chat-icon"></span>
+                <agl-webchat #chat chatButtonId="LPContactDetailsHomePhoneAndPostalAddress" [contentIsHostedInLivePerson]="false">
+                    <div agent-status-unresolved>
+                        <div class="web-chat-title web-chat-title--unresolved-agent-status">
+                            &nbsp;
+                        </div>
+                        <div class="web-chat-button web-chat-button--unresolved-agent-status">
+                            &nbsp;
+                        </div>
+                    </div>
+                    <div agent-online>
+                        <div class="web-chat-title">
+                            Want to update your home phone number or postal address?
+                        </div>
+                        <div class="web-chat-button">
+                            <a (click)="chat.requestChat()">Chat online now</a>
+                        </div>
+                    </div>
+                    <div agent-offline>
+                        <div class="web-chat-title">
+                            Want to update your home phone number or postal address?
+                        </div>
+                        <div class="web-chat-agent-offline-message">
+                            To get in touch, contact us 24/7 on <a href="tel:131 245">131 245</a>.
+                            <br>
+                            Calling from overseas? You can call us on <a href="tel:+61386336000">+61 3 8633 6000</a>.
+                        </div>
+                    </div>
+                </agl-webchat>
+            </div>
+        </agl-maui-container>
+    </div>
+
+    <div class="contact-details__cta">
+        <agl-maui-flash-message *ngIf="updateContactDetailFailed" class="contact-details__cta-error" type="Error">
+            <div heading>{{apiErrorMessage}}</div>
+            <div subheading>
+                <agl-webchat #updateFailureChat chatButtonId="LPContactDetailsUpdateFailure" [contentIsHostedInLivePerson]="false">
+                    <div agent-online>
+                        Please try again, or <a (click)="updateFailureChat.requestChat();">chat</a> with us now if this error persists.
+                    </div>
+                    <div agent-offline>
+                        Please try again, or contact us 24/7 on <br class="visible-xs"><a href="tel:131 245">131 245</a>.
+                        <br class="visible-lg visible-md">
+                        Calling from overseas? You can call us on <a href="tel:+61386336000">+61 3 8633 6000</a>.
+                    </div>
+                </agl-webchat>
+            </div>
+        </agl-maui-flash-message>
+
+        <div class="contact-details__cta-submit">
+            <agl-maui-button (clicked)="submitDetails()" [loading]="updateContactDetailInProgress">Update Contact Details</agl-maui-button>
+        </div>
+        <a class="contact-details__cta-cancel" (click)="goBack()" *ngIf="!updateContactDetailInProgress">CANCEL</a>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="33px" height="23px" viewBox="0 0 33 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.1 (35376) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-directDebit</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="33" height="23" rx="2"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="33" height="23" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-/-settings_directDebit" transform="translate(0.000000, -2.000000)">
+            <g id="icon_settings_directDebit" transform="translate(0.000000, 2.000000)">
+                <rect id="Rectangle-path" fill="#48515F" x="4.114" y="20" width="5.159" height="1.12200004"></rect>
+                <rect id="Rectangle-path" fill="#48515F" x="10.648" y="20" width="5.159" height="1.11100004"></rect>
+                <rect id="Rectangle-path" fill="#48515F" x="17.193" y="20" width="5.159" height="1.11100004"></rect>
+                <rect id="Rectangle-path" fill="#48515F" x="23.727" y="20" width="5.159" height="1.12200004"></rect>
+                <rect id="Rectangle-path" fill="#48515F" x="4.114" y="13.0130004" width="11.704" height="3.49800011"></rect>
+                <path d="M22.891,17.3250005 C23.5266015,17.3228331 24.1385189,17.0835577 24.607,16.6540005 C25.6349561,17.5902478 27.2206393,17.5409106 28.1884023,16.5425682 C29.1561652,15.5442258 29.1561652,13.9577751 28.1884023,12.9594327 C27.2206393,11.9610903 25.6349561,11.9117531 24.607,12.8480004 C23.7554501,12.0896482 22.5052996,11.9850722 21.5395925,12.5914095 C20.5738853,13.1977469 20.1248904,14.3691631 20.4379248,15.4656323 C20.7509592,16.5621016 21.7507328,17.3199044 22.891,17.3250005 L22.891,17.3250005 Z" id="Shape" fill="#48515F"></path>
+                <rect id="Rectangle" fill="#48515F" x="1" y="4" width="31" height="5"></rect>
+                <use id="Rectangle-2" stroke="#48515F" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

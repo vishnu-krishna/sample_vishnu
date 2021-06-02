@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\settings\homeProfile\homeProfileState.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/settings/homeProfile/</a> homeProfileState.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>22/44</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">35.29% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>6/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">21.43% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">48.72% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>19/39</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { HomeProfileViewModel } from './homeProfileViewModel';
+import { IHomeProfileMapper } from './homeProfileMapper';
+import { IHomeProfileApi, HomeProfileApiModel, HomeProfileApiService, HomeProfileSummaryApiModel } from '../../../services/homeProfile/homeProfileApi.service';
+import { Console } from '@angular/core/src/console';
+import { Observable } from 'rxjs/Observable';
+&nbsp;
+<span class="fstat-no" title="function not covered" >export abstract class IHomeProfileStateService {</span>
+    public abstract homeProfile: HomeProfileViewModel;
+    public abstract getContractId(): Observable&lt;string&gt;;
+    public abstract setContractId(contractId: string): void;
+    public abstract getProfile(): Observable&lt;HomeProfileViewModel&gt;;
+    public abstract saveProfile(): Observable&lt;boolean&gt;;
+    public abstract getStatus(): HomeProfileStatus;
+}
+&nbsp;
+// This service is still under development, will revisit later after the other payment extension pages are ready.
+@Injectable()
+export class HomeProfileStateService implements IHomeProfileStateService {
+    public homeProfile: HomeProfileViewModel;
+    private contractId: string;
+&nbsp;
+    constructor(
+        private <span class="cstat-no" title="statement not covered" >homeProfileApi: IHomeProfileApi,</span>
+        private <span class="cstat-no" title="statement not covered" >homeProfileMapper: IHomeProfileMapper<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" ></span></span></span>
+    ) {
+<span class="cstat-no" title="statement not covered" >        this.homeProfile = new HomeProfileViewModel();</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public getContractId(): Observable&lt;string&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (this.contractId) {</span>
+<span class="cstat-no" title="statement not covered" >            return Observable.of(this.contractId);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return this.homeProfileApi.getProfiles().map((result: HomeProfileSummaryApiModel[]<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            this.contractId = (result.length &gt; 0) ? result[0].contractNumber : null;</span>
+<span class="cstat-no" title="statement not covered" >            return this.contractId;</span>
+        });
+    }
+&nbsp;
+    public setContractId(contractId: string<span class="fstat-no" title="function not covered" >): void {</span>
+<span class="cstat-no" title="statement not covered" >        this.contractId = contractId;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public getProfile(): Observable&lt;HomeProfileViewModel&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.ensureContractIdIsSet();</span>
+<span class="cstat-no" title="statement not covered" >        return this.homeProfileApi.getProfile(this.contractId).map((result: HomeProfileApiModel<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                this.homeProfile = this.homeProfileMapper.toViewModel(result);</span>
+<span class="cstat-no" title="statement not covered" >                return this.homeProfile;</span>
+            });
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public saveProfile(): Observable&lt;boolean&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        this.ensureContractIdIsSet();</span>
+        let profile = <span class="cstat-no" title="statement not covered" >this.homeProfileMapper.fromViewModel(this.homeProfile);</span>
+<span class="cstat-no" title="statement not covered" >        return this.homeProfileApi.saveProfile(this.contractId, profile).map((result<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                return true;</span>
+            });
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public getStatus(): HomeProfileStatus {</span>
+        // We are not yet using the 'Complete' status since we do not know at this stage when it is supposed to be complete
+<span class="cstat-no" title="statement not covered" >        return (!this.homeProfile || JSON.stringify(this.homeProfile) === '{}') ? HomeProfileStatus.NotStarted : HomeProfileStatus.Incomplete;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private ensureContractIdIsSet() {</span>
+<span class="cstat-no" title="statement not covered" >        if (!this.contractId) {</span>
+<span class="cstat-no" title="statement not covered" >            return Observable.throw('Contract id not set');</span>
+        }
+    }
+&nbsp;
+}
+&nbsp;
+export enum HomeProfileStatus {
+    NotStarted,
+    Incomplete,
+    Complete
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

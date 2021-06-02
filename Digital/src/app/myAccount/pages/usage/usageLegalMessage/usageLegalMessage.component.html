@@ -1,0 +1,8 @@
+<div class="usage-legal-warning">
+    Usage charge is indicative only and you should refer to your bill for actual amount. 
+    <span (click)= "usageInsightWarningReadMore(true)" *ngIf= "!isUsageInsightWarningReadMore" class="read-more-less" >Read more</span>
+    <span  *ngIf= "isUsageInsightWarningReadMore"> This excludes concessions, conditional discounts, fixed charges and other adjustments. 
+        Usage charge amounts have been rounded up. 
+        <span class="read-more-less" (click)= "usageInsightWarningReadMore(false)">Read less</span>
+    </span> 
+</div>

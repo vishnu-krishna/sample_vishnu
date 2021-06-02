@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\settings\billSmoothing\billSmoothingSetupModal\billSmoothingSetupModal.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/settings/billSmoothing/billSmoothingSetupModal/</a> billSmoothingSetupModal.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.33% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>17/51</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">52.17% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>12/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.69% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">32.61% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>15/46</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit } from '@angular/core';
+import { AccountDetailComponentModel } from '../../../../../myAccount/settings/accountDetail/accountDetail.component';
+import { SetUpBillSmoothingResultMessage } from '../../../../../shared/messages/setUpBillSmoothingResultMessage';
+import { IMessageBusService } from '../../../../../shared/service/contract/imessageBus.service';
+import { DataLayerService, ModalName, PageChannel, PageType, SiteSubSection } from '../../../../../shared/service/dataLayer.service';
+import { ModalService } from '../../../../modal/modal.service';
+import { BillDeliveryMethodType } from '../../../../services/settings/model/billDeliveryMethodType';
+import { BillSmoothingFuelDisplayModel } from '../billSmoothing.model';
+import { BillSmoothingService } from '../billSmoothing.service';
+&nbsp;
+@Component({
+    selector: 'agl-billsmoothing-setup-modal',
+    template: require('./billSmoothingSetupModal.component.html'),
+    styles: [require('./billSmoothingSetupModal.component.scss')]
+})
+export class BillSmoothingSetupModalComponent implements OnInit {
+    public args;
+&nbsp;
+    public address: string;
+    public hasMultiAccount: boolean;
+    public acctInfo: AccountDetailComponentModel;
+    public fuelInfo: BillSmoothingFuelDisplayModel[];
+    public hasGasFuel: boolean;
+    public hasElecFuel: boolean;
+    public displayRadioButtons: boolean;
+    public <span class="cstat-no" title="statement not covered" >fuelTypes = [];</span>
+    public <span class="cstat-no" title="statement not covered" >selectedValue: BillSmoothingFuelDisplayModel[] = [];</span>
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >setupSuccessful: boolean = false;</span>
+    public billDeliveryMethodType: BillDeliveryMethodType;
+    public setUpBillSmoothingResultMessage: SetUpBillSmoothingResultMessage;
+&nbsp;
+    constructor(
+        public <span class="cstat-no" title="statement not covered" >billSmoothingService: BillSmoothingService,</span>
+        public <span class="cstat-no" title="statement not covered" >modalService: ModalService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >messageBusService: IMessageBusService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >dataLayerService: DataLayerService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" ></span></span></span>
+    ) { }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public ngOnInit() {</span>
+<span class="cstat-no" title="statement not covered" >        this.generateModalView();</span>
+<span class="cstat-no" title="statement not covered" >        this.generateFuelSelector();</span>
+<span class="cstat-no" title="statement not covered" >        this.messageBusListener();</span>
+<span class="cstat-no" title="statement not covered" >        this.billDeliveryMethodType = this.fuelInfo[0].billDeliveryMethod;</span>
+<span class="cstat-no" title="statement not covered" >        this.dataLayerService.pushNewPageEvent(</span>
+            ModalName.BillSmoothingSetup,
+            PageChannel.ManageAccount,
+            PageType.Modal,
+            SiteSubSection.BillSmoothing,
+            [this.acctInfo.contractAccountNumber]
+        );
+    }
+&nbsp;
+    public isSelected(fuelType: BillSmoothingFuelDisplayModel[]<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        if (fuelType.map((elem<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >elem.contractNumber </span></span>).join('-') === this.selectedValue.map((elem<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >elem.contractNumber </span></span>).join('-')) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return false;</span>
+    }
+&nbsp;
+    public generateEstimates(fuelInfo: BillSmoothingFuelDisplayModel[]<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.selectedValue = fuelInfo;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public generateModalView() {</span>
+<span class="cstat-no" title="statement not covered" >        this.args = [].concat.apply([], this.args);</span>
+<span class="cstat-no" title="statement not covered" >        this.hasMultiAccount = this.args.shift();</span>
+<span class="cstat-no" title="statement not covered" >        this.acctInfo = this.args.shift();</span>
+<span class="cstat-no" title="statement not covered" >        this.fuelInfo = this.args;</span>
+<span class="cstat-no" title="statement not covered" >        this.address = this.acctInfo.supplyAddresses.length &gt; 1 ? 'and associated addresses' : this.acctInfo.supplyAddresses[0];</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public generateFuelSelector() {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.isOneELecAndOneGas()) {</span>
+<span class="cstat-no" title="statement not covered" >            this.displayRadioButtons = true;</span>
+<span class="cstat-no" title="statement not covered" >            this.fuelTypes.push(</span>
+                {
+                    value: [this.fuelInfo[0], this.fuelInfo[1]],
+                    viewValue: 'Electricity and Gas'
+                },
+                {
+                    value: [this.fuelInfo[0]],
+                    viewValue: this.fuelInfo[0].fuel
+                },
+                {
+                    value: [this.fuelInfo[1]],
+                    viewValue: this.fuelInfo[1].fuel
+                });
+<span class="cstat-no" title="statement not covered" >            this.selectedValue = [this.fuelInfo[0], this.fuelInfo[1]];</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.selectedValue = [this.fuelInfo[0]];</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public isOneELecAndOneGas(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.fuelInfo.length === 2 &amp;&amp; this.fuelInfo[0].fuel !== this.fuelInfo[1].fuel;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public messageBusListener() {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.messageBusService.listen(SetUpBillSmoothingResultMessage).subscribe(</span>
+            (result<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.setUpBillSmoothingResultMessage = result;</span>
+<span class="cstat-no" title="statement not covered" >                this.setupSuccessful = true;</span>
+            },
+            (error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                console.error('An error occurred', error);</span>
+            }
+        );
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+@import '../../../../maui/_maui.scss';
+
+.bill-panel-instalment-plan-message-panel {
+    &__title {
+        font-size: $body-font-size-normal;
+        font-weight: bold;
+        padding-top: $space-03;
+
+        &--date {
+            @media (max-width: $device-min-lge - 1) {
+                white-space: nowrap;
+                display: block;
+            }
+        }
+    }
+
+    &__subtext {
+        font-size: $body-font-size-small;
+        font-weight: normal;
+        padding-top: $space-03;
+
+        &--warning {
+            color: $secondary-warning-dark;
+        }
+    }
+}

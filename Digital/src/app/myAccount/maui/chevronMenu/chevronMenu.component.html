@@ -1,0 +1,7 @@
+<div #menu class="maui-chevron-menu" (click)="toggle()">
+    <span>{{isUp ? upMessage : downMessage}}</span>
+    <div class="maui-chevron-menu__icon"
+        [ngClass]="{
+        'maui-chevron-menu__icon--up': isUp
+    }"></div>
+</div>

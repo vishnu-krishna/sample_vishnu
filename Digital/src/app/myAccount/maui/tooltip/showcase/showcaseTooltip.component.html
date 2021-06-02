@@ -1,0 +1,54 @@
+<agl-maui-showcase-template heading="Tooltip Component">
+    <div description>
+        <p>A tooltip element that can be used to provide a user with additional information.</p>
+        <p>The tooltip will shift if its default position would appear out of screen bounds.</p>
+        <p>The tool tip will be focused on whatever item is placed in the <b>&lt;agl-maui-tooltip&gt;</b> element.</p>
+        <p><b>&lt;agl-maui-tooltip-icon&gt;</b> is used to give a 15px circle around a character.</p>
+        <div class="showcase-attributes">
+                <div class="header">Attributes</div>
+                <table>
+                    <tr>
+                        <td>tooltipBody</td>
+                        <td>string</td>
+                        <td>The text in the tooltip bubble <span class="required">required</span>.</td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td>position</td>
+                        <td>string</td>
+                        <td><strong>top</strong><em>(default)</em> or <strong>bottom</strong> - position determines where the tooltip will be placed relative to the icon.</td>
+                    </tr>
+                </table>
+            </div>
+    </div>
+    <div exampleCodeUsage>
+        {{codeUsage}}
+    </div>
+    <div exampleImplementation>
+        <div class="showcase-tooltip">
+            <agl-maui-showcase-example label="Tooltip with a question mark tooltip icon">
+                <agl-maui-tooltip tooltipBody="I'm a tooltip, that's what I am. I give tips about tools, to placate the man.">
+                    <agl-maui-tooltip-icon>?</agl-maui-tooltip-icon>
+                </agl-maui-tooltip>
+            </agl-maui-showcase-example>
+        </div>
+        <div class="showcase-tooltip">
+            <agl-maui-showcase-example label="Tooltip bottom aligned with an i icon.">
+                <agl-maui-tooltip [tooltipBody]="'I am a tooltip, that is what I am. I give tips about tools, to placate the man.'" [position]="'bottom'">
+                    <agl-maui-tooltip-icon>i</agl-maui-tooltip-icon>
+                </agl-maui-tooltip>
+            </agl-maui-showcase-example>
+        </div>
+        <div class="showcase-tooltip">
+            <agl-maui-showcase-example label="Tooltip after a heading with an i icon.">
+                <h4>Heading of Interest</h4>
+                <agl-maui-tooltip class="after-heading"
+                    [tooltipBody]="'Why is it interesting? Who can really say. However it could be interesting. Real interesting.'"
+                >
+                    <agl-maui-tooltip-icon>i</agl-maui-tooltip-icon>
+                </agl-maui-tooltip>
+            </agl-maui-showcase-example>
+        </div>
+
+    </div>
+</agl-maui-showcase-template>

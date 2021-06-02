@@ -1,0 +1,15 @@
+@import '../dls';
+
+:host {
+    display: inline-block;
+
+    a {
+        @include link(false);
+    }
+
+    &.link--text {
+        a {
+            @include link(true);
+        }
+    }
+}

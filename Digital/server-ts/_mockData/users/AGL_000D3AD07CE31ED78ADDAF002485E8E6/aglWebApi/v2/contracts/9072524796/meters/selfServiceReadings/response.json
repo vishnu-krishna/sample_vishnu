@@ -1,0 +1,28 @@
+{
+    "isSuccess": true,
+    "screenCode": "SSMR_PROJ1",
+    "dailyUsage": 0.14,
+    "accountBalance": 0.00,
+    "invoiceDueDate": null,
+    "nextScheduledBillDate": "2017-08-05",
+    "numberOfDaysTillNextBill": 87,
+    "currentBill": {
+        "amount": 32.97,
+        "startDate": "2016-09-24",
+        "endDate": "2017-05-10"
+    },
+    "projectedBill": {
+        "amount": 195.04,
+        "startDate": "2016-09-24",
+        "endDate": "2017-08-05"
+    },
+    "lastInvoice": {
+        "amount": 149.92,
+        "startDate": "2016-06-28",
+        "endDate": "2016-09-23",
+        "quality": "Actual Read by MDP"
+    },
+    "adjustment": null,
+    "meters": [],
+    "error": null
+}

@@ -1,0 +1,53 @@
+@import '../../../../shared/style/variables';
+@import '../../../../shared/style/mixins';
+
+span {
+    &.link {
+        color: $brand-sky;
+        cursor: pointer;
+
+        &:hover {
+            color: $brand-sky-darker;
+        }
+    }
+}
+
+.bs-modal {
+    // Align the header #hack
+    margin-top: -37px;
+    display: block;
+
+    .bs-modal-header {
+        font-size: 26px;
+        line-height: 39px;
+        font-family: $primary-font-stack;
+        padding-right: 40px;
+
+        @media #{$agl-layout-mobile} {
+            font-size: 20px;
+        }
+    }
+
+    .bs-modal-content {
+        min-height: 100px;
+        margin: 25px 0;
+    }
+}
+
+.setup-radio-button {
+    box-sizing: border-box;
+    height: 22px;
+    width: 22px;
+    border: 1px solid $brand-grey-g4;
+    border-radius: 22px;
+    background-color: $brand-white;
+}
+
+.setup-radio-button-selected {
+    border: 7px solid $brand-sky;
+}
+
+.border {
+    background-color: $brand-grey-g5;
+    height: 1px;
+}

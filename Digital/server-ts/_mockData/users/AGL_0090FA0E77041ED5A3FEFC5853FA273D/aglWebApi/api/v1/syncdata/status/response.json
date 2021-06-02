@@ -1,0 +1,81 @@
+[
+    {
+        "dataGroup": "Account",
+        "status": "Complete",
+        "lastUpdated": "2017-01-25T01:17:23.7571914+00:00",
+        "failed": false
+    },
+    {
+        "dataGroup": "BillingHistory",
+        "status": "Complete",
+        "lastUpdated": "2017-01-25T01:17:21.9069104+00:00",
+        "failed": false
+    },
+    {
+        "dataGroup": "Dashboard",
+        "status": "Complete",
+        "lastUpdated": "2017-01-25T01:17:32.4121833+00:00",
+        "failed": true,
+        "errors": [
+            {
+                "dataType": "BillSimulation",
+                "account": "22389365",
+                "contract": "9002294179",
+                "message": "Sorry, we were unable to retrieve your information. Please try again later.",
+                "hasRfcError": true,
+                "errorId": "ZIEIQ001",
+                "errorNumber": "50"
+            },
+            {
+                "dataType": "BillSimulation",
+                "account": "76683366",
+                "contract": "9062897132",
+                "message": "Sorry, we were unable to retrieve your information. Please try again later.",
+                "hasRfcError": true,
+                "errorId": "ZICONTRACT001",
+                "errorNumber": "13"
+            },
+            {
+                "dataType": "UsageTwoWeeks",
+                "account": "22389365",
+                "contract": "9002294179",
+                "message": "Sorry, we were unable to retrieve your information. Please try again later.",
+                "hasRfcError": true,
+                "errorId": "ZIEIQ001",
+                "errorNumber": "54"
+            },
+            {
+                "dataType": "UsageTwoWeeks",
+                "account": "76683366",
+                "contract": "9062897132",
+                "message": "Sorry, we were unable to retrieve your information. Please try again later.",
+                "hasRfcError": true,
+                "errorId": "ZIEIQ001",
+                "errorNumber": "54"
+            }
+        ]
+    },
+    {
+        "dataGroup": "Payments",
+        "status": "Complete",
+        "lastUpdated": "2017-01-25T01:17:19.7774362+00:00",
+        "failed": false
+    },
+    {
+        "dataGroup": "Usage",
+        "status": "Complete",
+        "lastUpdated": "2017-01-25T01:17:21.1984195+00:00",
+        "failed": true,
+        "errors": [
+            {
+                "dataType": "Usage13Months",
+                "account": "76683366",
+                "contract": "9062897132",
+                "message": "Sorry, we were unable to retrieve your information. Please try again later.",
+                "hasRfcError": true,
+                "errorId": "ZIEIQ001",
+                "errorNumber": "54"
+            }
+        ]
+    }
+]

@@ -1,0 +1,56 @@
+window.lpTag = window.lpTag || {}; if (typeof window.lpTag._tagCount === 'undefined') { window.lpTag = { site: '<%= htmlWebpackPlugin.options.webChat.siteId %>' || '', section: lpTag.section || '', autoStart: lpTag.autoStart === false ? false : true, ovr: lpTag.ovr || {}, _v: '1.6.0', _tagCount: 1, protocol: 'https:', events: { bind: function (app, ev, fn) { lpTag.defer(function () { lpTag.events.bind(app, ev, fn); }, 0); }, trigger: function (app, ev, json) { lpTag.defer(function () { lpTag.events.trigger(app, ev, json); }, 1); } }, defer: function (fn, fnType) { if (fnType == 0) { this._defB = this._defB || []; this._defB.push(fn); } else if (fnType == 1) { this._defT = this._defT || []; this._defT.push(fn); } else { this._defL = this._defL || []; this._defL.push(fn); } }, load: function (src, chr, id) { var t = this; setTimeout(function () { t._load(src, chr, id); }, 0); }, _load: function (src, chr, id) { var url = src; if (!src) { url = this.protocol + '//' + ((this.ovr && this.ovr.domain) ? this.ovr.domain : 'lptag.liveperson.net') + '/tag/tag.js?site=' + this.site; } var s = document.createElement('script'); s.setAttribute('charset', chr ? chr : 'UTF-8'); if (id) { s.setAttribute('id', id); } s.setAttribute('src', url); document.getElementsByTagName('head').item(0).appendChild(s); }, init: function () { this._timing = this._timing || {}; this._timing.start = (new Date()).getTime(); var that = this; if (window.attachEvent) { window.attachEvent('onload', function () { that._domReady('domReady'); }); } else { window.addEventListener('DOMContentLoaded', function () { that._domReady('contReady'); }, false); window.addEventListener('load', function () { that._domReady('domReady'); }, false); } if (typeof (window._lptStop) == 'undefined') { this.load(); } }, start: function () { this.autoStart = true; }, _domReady: function (n) { if (!this.isDom) { this.isDom = true; this.events.trigger('LPT', 'DOM_READY', { t: n }); } this._timing[n] = (new Date()).getTime(); }, vars: lpTag.vars || [], dbs: lpTag.dbs || [], ctn: lpTag.ctn || [], sdes: lpTag.sdes || [], ev: lpTag.ev || [] }; lpTag.init(); } else { window.lpTag._tagCount += 1; }
+
+/****webchat settings***/
+var lpTag = lpTag || {};
+lpTag.sdes = lpTag.sdes || [];
+lpTag.section = 'agl-service-myaccount';
+var browserTitle = document.getElementsByTagName('title')[0].innerHTML;;
+if (lpTag.section == "agl-outofscope") {
+    if (browserTitle.localeCompare("Energy Provider for Businesses | AGL") == 0 || browserTitle.localeCompare("Your Business | AGL") == 0) {
+        lpTag.section = 'agl-sales-business'; //this should always get the same value as 'unit' 
+        // ----------------- 1: Sending when the page loads -------------------- 
+        var arrLPvars = [
+            // 'unit' must be defined on the page - this routes the chat to the correct team 
+            { value: 'agl-sales-business' }
+        ];
+    } else {
+        lpTag.section = 'agl-service-myaccount'; //this should always get the same value as 'unit' 
+        // ----------------- 1: Sending when the page loads -------------------- 
+        var arrLPvars = [
+            // 'unit' must be defined on the page - this routes the chat to the correct team 
+            { value: 'agl-service-myaccount' }
+        ];
+    }
+}
+// lpTag.sdes.push(arrLPvars); 
+/****end of webchat settings***/ 
+
+var arrLPvars = [{"value":"agl-service-myaccount"}];
+lpTag.sdes.push(arrLPvars);
+
+// register page chat button
+(function () { 
+    var x = 0;
+    var timer = setInterval(function () { 
+        var browserTitle = document.getElementsByTagName('title')[0].innerHTML;
+        if (browserTitle.localeCompare("Bill Payment Options | AGL") == 0) { 
+            if(document.getElementById("lpButtonDiv") !=null) {
+                document.getElementById("lpButtonDiv").style.display = "block"; 
+                if(document.getElementById("lpButtonDiv").innerHTML!=null && document.getElementById("lpButtonDiv").innerHTML!= "") {
+                    document.getElementById("lpButtonDiv-mobile-disabled").style.display = "none"; 
+                }
+            }
+        } else if (browserTitle.localeCompare("Register | AGL") == 0) { 
+            if (document.getElementById("lpButtonDiv2") !=null) {
+                document.getElementById("lpButtonDiv2").style.display = "block"; 
+                if(document.getElementById("lpButtonDiv2").innerHTML!=null && document.getElementById("lpButtonDiv2").innerHTML!= "") {
+                    document.getElementById("lpButtonDiv-mobile-disabled").style.display = "none"; 
+                }
+            }
+        }
+        if (x === 15) {
+            clearInterval(timer); 
+        } 
+        x++; 
+    }, 2000); 
+})(); 

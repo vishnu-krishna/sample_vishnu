@@ -1,0 +1,1622 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\dashboard\solarCheck\solarCheckRegisterProcess\solarCheckSolarDetails\solarCheckSolarDetails.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/dashboard/solarCheck/solarCheckRegisterProcess/solarCheckSolarDetails/</a> solarCheckSolarDetails.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.98% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>87/256</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.03% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>16/133</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">3.45% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/58</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.47% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>82/245</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, EventEmitter, Injectable, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+&nbsp;
+import { NativeDateAdapter } from '@angular/material/core';
+import { ModalService } from '../../../../modal/modal.service';
+&nbsp;
+import * as moment from 'moment';
+import { KeyCodes }  from '../../../../../shared/globals/keyCodes';
+import { DateFormat, Locale }  from '../../../../../shared/globals/localisation';
+import { SolarDetailsTitleText, SolarDetailsTooltipText, SolarDetailsValidationConstants } from '../../../../../shared/globals/solarCheckConstants';
+import { SolarCheckEligibilityContract } from '../../../../../shared/model/solar/solarCheckEligibility.model';
+import { SolarCheckPvInfoResponse } from '../../../../../shared/model/solar/solarCheckPvInfoResponse.model';
+import { SolarCheckSolarDetailsUpdateType } from '../../../../../shared/model/solar/solarCheckSolarDetails.model';
+import { IMessageBusService } from '../../../../../shared/service/contract/imessageBus.service';
+import { DataLayerService } from '../../../../../shared/service/dataLayer.service';
+import { SolarCheckUpdateDetailsState } from '../../../../pages/settings/solarCheck/systemDetails/updateProcess/solarCheckUpdateDetailsProcess.component';
+import { ISolarCheckService } from '../../../../services/contract/isolarCheck.service';
+import { SolarCheckEvents, SolarCheckUpdateDetailsMessage } from '../../../../services/solarCheck.service';
+import { SolarCheckRegisterState } from '../solarCheckRegisterProcess.component';
+import { SolarDetailsValidator } from './solarCheckSolarDetails.validator';
+&nbsp;
+@Injectable()
+<span class="fstat-no" title="function not covered" >export class MyDateAdapterService extends NativeDateAdapter {</span>
+&nbsp;
+    public parse(value: any<span class="fstat-no" title="function not covered" >): Date | null {</span>
+<span class="cstat-no" title="statement not covered" >        if (typeof value === 'number') {</span>
+<span class="cstat-no" title="statement not covered" >            return new Date(value);</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (value) {</span>
+<span class="cstat-no" title="statement not covered" >            return moment(value, DateFormat.AUSTRALIA).toDate();</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return null;</span>
+        }
+    }
+}
+&nbsp;
+export const APP_DATE_FORMATS = {
+    parse: {
+        dateInput: DateFormat.AUSTRALIA,
+    },
+    display: {
+        dateInput: 'input',
+        monthYearLabel: { year: 'numeric', month: 'numeric' },
+        dateA11yLabel: { year: 'numeric', month: 'long', day: 'numeric' },
+        monthYearA11yLabel: { year: 'numeric', month: 'long' },
+    }
+};
+/**
+ * Solar Check's Solar Details' component, use this componenet as a form to acquire the necessary user details when registering their system for Solar Check.
+ *
+ * @export
+ * @class SolarCheckSolarDetailsComponent
+ * @implements {OnInit}
+ */
+@Component({
+    selector: 'agl-solar-check-solar-details',
+    template: require('./solarCheckSolarDetails.component.html'),
+    styles: [require('./solarCheckSolarDetails.component.scss')]
+})
+&nbsp;
+export class SolarCheckSolarDetailsComponent implements OnInit {
+&nbsp;
+    @Input() public contract: SolarCheckEligibilityContract;
+    @Input() public scDetailsModel: SolarCheckSolarDetailsUpdateType;
+    @Input() public updateReason: SolarCheckUpdateDetailsState;
+    @Input() public isUpdate: boolean;
+&nbsp;
+    @Output() public <span class="cstat-no" title="statement not covered" >update = new EventEmitter();</span>
+    @Output() public <span class="cstat-no" title="statement not covered" >next = new EventEmitter&lt;SolarCheckRegisterState&gt;();</span>
+    @Output() public <span class="cstat-no" title="statement not covered" >back = new EventEmitter&lt;SolarCheckRegisterState&gt;();</span>
+&nbsp;
+    @ViewChild('picker') public datePickerElement;
+    @ViewChild('datetoggle') public dateToggleElement;
+    @ViewChild('datepickerinput') public datePickerInputElement;
+&nbsp;
+    public solarDetailsForm: FormGroup;
+    public submitInProgress: Boolean;
+    public hideErrorWhenSubmitting: Boolean;
+&nbsp;
+    // Tooltip Settings and Text
+    public <span class="cstat-no" title="statement not covered" >solarCheckToolTipSize: string = 'large';</span>
+    public <span class="cstat-no" title="statement not covered" >solarCheckToolTipPosition: string = 'left';</span>
+    public <span class="cstat-no" title="statement not covered" >panelQuantiyToolTipHeader: string = SolarDetailsTooltipText.PanelQuantiyToolTipHeaderText;</span>
+    public <span class="cstat-no" title="statement not covered" >panelQuantityToolTipBody: string = SolarDetailsTooltipText.PanelQuantityToolTipBodyText;</span>
+    public <span class="cstat-no" title="statement not covered" >systemSizeToolTipHeader: string = SolarDetailsTooltipText.SystemSizeToolTipHeaderText;</span>
+    public <span class="cstat-no" title="statement not covered" >systemSizeToolTipBody: string = SolarDetailsTooltipText.SystemSizeToolTipBodyText;</span>
+    public <span class="cstat-no" title="statement not covered" >installationYearToolTipHeader: string = SolarDetailsTooltipText.InstallationYearToolTipHeaderText;</span>
+    public <span class="cstat-no" title="statement not covered" >installationYearToolTipBody: string = SolarDetailsTooltipText.InstallationYearToolTipBodyText;</span>
+    public <span class="cstat-no" title="statement not covered" >upgradeDateToolTipHeader: string = SolarDetailsTooltipText.UpgradeDateToolTipHeaderText;</span>
+    public <span class="cstat-no" title="statement not covered" >upgradeDateToolTipBody: string = SolarDetailsTooltipText.UpgradeDateToolTipBodyText;</span>
+    public <span class="cstat-no" title="statement not covered" >selectedValue: string = 'Please select an option';</span>
+&nbsp;
+    private originalScDetailsModel: SolarCheckSolarDetailsUpdateType;
+    private hasDatePickerBeenOpened: boolean;
+&nbsp;
+    constructor(
+        private <span class="cstat-no" title="statement not covered" >modalService: ModalService,</span>
+        private <span class="cstat-no" title="statement not covered" >solarCheckService: ISolarCheckService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >formBuilder: FormBuilder<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >messageBusService: IMessageBusService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >dataLayer: DataLayerService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" ></span></span></span>
+    ) {
+<span class="cstat-no" title="statement not covered" >        this.scDetailsModel = this.scDetailsModel ? this.scDetailsModel : new SolarCheckSolarDetailsUpdateType();</span>
+<span class="cstat-no" title="statement not covered" >        moment.locale(Locale.DEFAULT);</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public ngOnInit() {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.originalScDetailsModel = this.copyModel(this.scDetailsModel);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.solarDetailsForm = this.formBuilder.group({</span>
+            panelsQuantity: [this.scDetailsModel.numberPanels, [Validators.required, SolarDetailsValidator.validatePanelQuantity]],
+            systemSize: [this.scDetailsModel.systemSizeKw, [Validators.required, SolarDetailsValidator.validateSystemSize]],
+            installationYear: [this.scDetailsModel.installationYear, [Validators.required, SolarDetailsValidator.validateInstallationYear]]
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.solarDetailsForm.get('panelsQuantity').valueChanges.subscribe((data<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >this.crossFieldSystemSizeValidation(data))</span></span>;</span>
+<span class="cstat-no" title="statement not covered" >        if (this.update) {</span>
+<span class="cstat-no" title="statement not covered" >            this.crossFieldSystemSizeValidation(this.solarDetailsForm.get('panelsQuantity').value);</span>
+        }
+    }
+    public onSystemChange(target<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.selectedValue = target.options[target.selectedIndex].innerHTML;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public submitSolarDetails() {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.isUpdate) {</span>
+<span class="cstat-no" title="statement not covered" >            this.submitInProgress = true;</span>
+<span class="cstat-no" title="statement not covered" >            this.updateSolarDetails();</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.saveSolarDetails();</span>
+<span class="cstat-no" title="statement not covered" >            this.next.emit(SolarCheckRegisterState.REGISTER);</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public validUpdateForm() {</span>
+<span class="cstat-no" title="statement not covered" >        if ((!this.isUpdatedValuesSameAsSaved())</span>
+            &amp;&amp; this.solarDetailsForm.valid) {
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (this.isUpdateSystemChange) {</span>
+<span class="cstat-no" title="statement not covered" >                if (this.effectiveChangedDateValue === null) {</span>
+<span class="cstat-no" title="statement not covered" >                    return false;</span>
+                }
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return false;</span>
+    }
+&nbsp;
+    /**
+     * Modal Navigation
+     */
+    public tabPrevious(event<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        if (event.keyCode === KeyCodes.enter) {</span>
+<span class="cstat-no" title="statement not covered" >            this.previous();</span>
+        }
+    }
+&nbsp;
+    public tabCloseModal(event<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        if (event.keyCode === KeyCodes.enter) {</span>
+<span class="cstat-no" title="statement not covered" >            this.closeModal();</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public previous() {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.isUpdate) {</span>
+<span class="cstat-no" title="statement not covered" >            this.resetFormDetails();</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.back.emit(SolarCheckRegisterState.PREREQUISTE);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public closeModal() {</span>
+<span class="cstat-no" title="statement not covered" >        this.modalService.close();</span>
+    }
+&nbsp;
+    /**
+     * Title Text
+     */
+<span class="fstat-no" title="function not covered" >    public getTitleText() {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.isUpdateCorrection) {</span>
+<span class="cstat-no" title="statement not covered" >            return SolarDetailsTitleText.systemCorrectionTitle;</span>
+        } else <span class="cstat-no" title="statement not covered" >if (this.isUpdateSystemChange) {</span>
+<span class="cstat-no" title="statement not covered" >            return SolarDetailsTitleText.systemChangeTitle;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return SolarDetailsTitleText.registerTitle;</span>
+        }
+    }
+&nbsp;
+    /**
+     * Input Formatters
+     */
+    public onlyNumericCharacters(event<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        return SolarDetailsValidator.onlyNumericCharacters(event);</span>
+    }
+    public onlyDecimalOrNumericCharacters(event<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        return SolarDetailsValidator.onlyDecimalOrNumericCharacters(event);</span>
+    }
+    public convertToIntegerElseReset(event<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        return SolarDetailsValidator.convertToIntegerElseReset(event);</span>
+    }
+    public convertToTwoDecimalPlacesElseReset(event<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        return SolarDetailsValidator.convertToTwoDecimalPlacesElseReset(event);</span>
+    }
+&nbsp;
+    /**
+     * Hide or display validation error messages
+     */
+<span class="fstat-no" title="function not covered" >    public isPanelValidationErrorTextDisplayed() {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.isUpdate) {</span>
+<span class="cstat-no" title="statement not covered" >            return this.solarDetailsForm.get('panelsQuantity').dirty &amp;&amp;</span>
+                !this.solarDetailsForm.get('panelsQuantity').valid;
+        } else {
+<span class="cstat-no" title="statement not covered" >            return this.solarDetailsForm.get('panelsQuantity').touched &amp;&amp;</span>
+                !this.solarDetailsForm.get('panelsQuantity').valid;
+        }
+    }
+<span class="fstat-no" title="function not covered" >    public isSystemSizeError() {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.isUpdate) {</span>
+<span class="cstat-no" title="statement not covered" >            return this.solarDetailsForm.get('systemSize').dirty &amp;&amp;</span>
+                !this.solarDetailsForm.get('systemSize').valid;
+        } else {
+<span class="cstat-no" title="statement not covered" >            return this.solarDetailsForm.get('systemSize').touched &amp;&amp;</span>
+                !this.solarDetailsForm.get('systemSize').valid;
+        }
+    }
+<span class="fstat-no" title="function not covered" >    public isDefaultSystemSizeErrorTextDisplayed() {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.isUpdate) {</span>
+<span class="cstat-no" title="statement not covered" >            return (</span>
+                !this.solarDetailsForm.get('systemSize').valid &amp;&amp;
+                !this.solarDetailsForm.get('panelsQuantity').valid);
+        } else {
+<span class="cstat-no" title="statement not covered" >            return (this.solarDetailsForm.get('systemSize').touched &amp;&amp;</span>
+                !this.solarDetailsForm.get('systemSize').valid &amp;&amp;
+                !this.solarDetailsForm.get('panelsQuantity').valid);
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public isCalculatedSystemSizeErrorTextDisplayed() {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.isUpdate) {</span>
+<span class="cstat-no" title="statement not covered" >            return (</span>
+                !this.solarDetailsForm.get('systemSize').valid &amp;&amp;
+                this.solarDetailsForm.get('panelsQuantity').valid);
+        } else {
+<span class="cstat-no" title="statement not covered" >            return (this.solarDetailsForm.get('systemSize').touched &amp;&amp;</span>
+                !this.solarDetailsForm.get('systemSize').valid &amp;&amp;
+                this.solarDetailsForm.get('panelsQuantity').valid);
+        }
+    }
+<span class="fstat-no" title="function not covered" >    public isSystemSizeHintErrorTextDisplayed() {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.isUpdate) {</span>
+<span class="cstat-no" title="statement not covered" >            return (this.solarDetailsForm.get('systemSize').valid &amp;&amp;</span>
+                this.solarDetailsForm.get('panelsQuantity').valid);
+        } else {
+<span class="cstat-no" title="statement not covered" >            return (this.solarDetailsForm</span>
+                    .get('systemSize')
+                    .valid &amp;&amp;
+                    this.solarDetailsForm.get('panelsQuantity').valid) ||
+                (!this.solarDetailsForm.get('systemSize').touched &amp;&amp;
+                    !this.solarDetailsForm.get('systemSize').valid &amp;&amp;
+                    this.solarDetailsForm.get('panelsQuantity').valid);
+        }
+    }
+<span class="fstat-no" title="function not covered" >    public isInstallationYearErrorTextDisplayed() {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.isUpdate) {</span>
+<span class="cstat-no" title="statement not covered" >            return (this.solarDetailsForm.get('installationYear').dirty &amp;&amp;</span>
+                !this.solarDetailsForm.get('installationYear').valid);
+        } else {
+<span class="cstat-no" title="statement not covered" >            return (this.solarDetailsForm.get('installationYear').touched &amp;&amp;</span>
+                !this.solarDetailsForm.get('installationYear').valid);
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public isSystemChangeDateValidationErrorTextDisplayed() {</span>
+<span class="cstat-no" title="statement not covered" >        return (this.hasDatePickerBeenOpened &amp;&amp; !this.isDatePickerOpen() &amp;&amp; this.effectiveChangedDateValue === null);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public showExistingDetailsUnchangedErrorText() {</span>
+<span class="cstat-no" title="statement not covered" >        return (this.effectiveChangedDateValue !== null &amp;&amp; this.isSystemDetailsSameAsSaved() &amp;&amp; !this.hideErrorWhenSubmitting);</span>
+    }
+&nbsp;
+    /**
+     * Retrieve validation text
+     */
+<span class="fstat-no" title="function not covered" >    public getPanelQuantiyValidationText() {</span>
+<span class="cstat-no" title="statement not covered" >        return 'Panel quantity must be between '</span>
+            + SolarDetailsValidationConstants.minPanelQuantity
+            + ' and ' + SolarDetailsValidationConstants.maxPanelQuantity;
+    }
+<span class="fstat-no" title="function not covered" >    public getSystemSizeHintText() {</span>
+        let inputPanelQuantity = <span class="cstat-no" title="statement not covered" >this.solarDetailsForm.get('panelsQuantity').value;</span>
+<span class="cstat-no" title="statement not covered" >        return 'A system with ' + inputPanelQuantity + ' panels should have a size between '</span>
+            + SolarDetailsValidator.convertFloatToTwoDecimalPlaces(SolarDetailsValidator.minSuggestedSystemSize)
+            + 'kW and ' + SolarDetailsValidator.convertFloatToTwoDecimalPlaces(SolarDetailsValidator.maxSuggestedSystemSize) + 'kW.';
+    }
+<span class="fstat-no" title="function not covered" >    public getCalculatedSystemSizeValidationText() {</span>
+        let inputPanelQuantity = <span class="cstat-no" title="statement not covered" >this.solarDetailsForm.get('panelsQuantity').value;</span>
+<span class="cstat-no" title="statement not covered" >        return 'A system with ' + inputPanelQuantity + ' panels should have a size between '</span>
+            + SolarDetailsValidator.convertFloatToTwoDecimalPlaces(SolarDetailsValidator.minSuggestedSystemSize)
+            + 'kW and ' + SolarDetailsValidator.convertFloatToTwoDecimalPlaces(SolarDetailsValidator.maxSuggestedSystemSize)
+            + 'kW. Please check your system size and number of panels.';
+    }
+<span class="fstat-no" title="function not covered" >    public getDefaultSystemSizeValidationText() {</span>
+<span class="cstat-no" title="statement not covered" >        return 'System size must be from ' +</span>
+            SolarDetailsValidator.convertFloatToTwoDecimalPlaces(SolarDetailsValidationConstants.minSystemSize)
+            + ' to ' + SolarDetailsValidator.convertFloatToTwoDecimalPlaces(SolarDetailsValidationConstants.maxSystemSize) + ' kW';
+    }
+<span class="fstat-no" title="function not covered" >    public getInstallationYearValidationText() {</span>
+<span class="cstat-no" title="statement not covered" >        return 'Installation year must be between ' + SolarDetailsValidationConstants.minInstallationYear</span>
+            + ' and ' + SolarDetailsValidator.currentYear;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public getSystemChangeDateValidationText() {</span>
+<span class="cstat-no" title="statement not covered" >        return 'Please choose a date.';</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public getSystemChangeDetailsUnchangedErrorText() {</span>
+<span class="cstat-no" title="statement not covered" >        return 'Please update your system size and/or panels';</span>
+    }
+&nbsp;
+    /**
+     * Update Details
+     */
+<span class="fstat-no" title="function not covered" >    public get isUpdateCorrection(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.isUpdate &amp;&amp;</span>
+            this.updateReason !== null &amp;&amp;
+            this.updateReason === SolarCheckUpdateDetailsState.CORRECTION;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public get isUpdateSystemChange(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.isUpdate &amp;&amp;</span>
+            this.updateReason !== null &amp;&amp;
+            this.updateReason === SolarCheckUpdateDetailsState.UPGRADE;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public getMinDate() {</span>
+<span class="cstat-no" title="statement not covered" >        return SolarDetailsValidationConstants.minSystemChangedDate;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public getMaxDate() {</span>
+<span class="cstat-no" title="statement not covered" >        return new Date(); </span>// current date
+    }
+&nbsp;
+    public markDatePickerOpened(event<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.datePickerElement.opened) {</span>
+<span class="cstat-no" title="statement not covered" >            this.hasDatePickerBeenOpened = true;</span>
+        }
+    }
+&nbsp;
+    public openDatePickerAndMarkOpened(event<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.datePickerElement.open();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.datePickerElement.opened) {</span>
+<span class="cstat-no" title="statement not covered" >            this.hasDatePickerBeenOpened = true;</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public isDatePickerOpen(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.datePickerElement.opened;</span>
+    }
+&nbsp;
+    public updateDatePickerValue(event<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.scDetailsModel.effectiveChangedDate = moment(this.effectiveChangedDateValue).format(DateFormat.IS0_8601);</span>
+    }
+&nbsp;
+    /**
+     * Validation
+     */
+<span class="fstat-no" title="function not covered" >    private isUpdatedValuesSameAsSaved() {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (!this.isUpdateSystemChange) {</span>
+<span class="cstat-no" title="statement not covered" >            if (+this.solarDetailsForm.get('installationYear').value !== +this.scDetailsModel.installationYear) {</span>
+<span class="cstat-no" title="statement not covered" >                return false;</span>
+            }
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (!this.isSystemDetailsSameAsSaved()) {</span>
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private isSystemDetailsSameAsSaved() {</span>
+<span class="cstat-no" title="statement not covered" >        return (+this.solarDetailsForm.get('panelsQuantity').value === +this.scDetailsModel.numberPanels &amp;&amp;</span>
+            +SolarDetailsValidator.convertFloatToTwoDecimalPlaces(this.solarDetailsForm.get('systemSize').value) === +this.scDetailsModel.systemSizeKw);
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private get effectiveChangedDateValue(): Date {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.datePickerInputElement.nativeElement.value === null ||</span>
+            this.datePickerInputElement.nativeElement.value === undefined ||
+            this.datePickerInputElement.nativeElement.value === '') {
+<span class="cstat-no" title="statement not covered" >            return null;</span>
+        } else {
+            let dateString = <span class="cstat-no" title="statement not covered" >this.datePickerInputElement.nativeElement.value;</span>
+<span class="cstat-no" title="statement not covered" >            return moment(dateString, DateFormat.AUSTRALIA).toDate();</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private get isValidUpdateReason(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.updateReason !== null &amp;&amp;</span>
+            (this.updateReason === SolarCheckUpdateDetailsState.CORRECTION ||
+                this.updateReason === SolarCheckUpdateDetailsState.UPGRADE);
+    }
+&nbsp;
+    private crossFieldSystemSizeValidation(data?: any<span class="fstat-no" title="function not covered" >) {</span>
+        let isPanelQuantityValid = <span class="cstat-no" title="statement not covered" >this.solarDetailsForm.get('panelsQuantity').valid;</span>
+<span class="cstat-no" title="statement not covered" >        if (isPanelQuantityValid) {</span>
+<span class="cstat-no" title="statement not covered" >            SolarDetailsValidator.calculateSystemSizeRange(data);</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            SolarDetailsValidator.setSystemSizeRangeToDefault();</span>
+<span class="cstat-no" title="statement not covered" >            this.solarDetailsForm.get('systemSize').updateValueAndValidity();</span>
+        }
+<span class="cstat-no" title="statement not covered" >        this.solarDetailsForm.get('systemSize').updateValueAndValidity();</span>
+    }
+&nbsp;
+    // Reset form details if navigating to previous screen in Update Details
+<span class="fstat-no" title="function not covered" >    private resetFormDetails() {</span>
+<span class="cstat-no" title="statement not covered" >        this.solarDetailsForm.controls['panelsQuantity'].setValue(this.originalScDetailsModel.numberPanels);</span>
+<span class="cstat-no" title="statement not covered" >        this.solarDetailsForm.controls['systemSize'].setValue(this.originalScDetailsModel.systemSizeKw);</span>
+<span class="cstat-no" title="statement not covered" >        this.solarDetailsForm.controls['installationYear'].setValue(this.originalScDetailsModel.installationYear);</span>
+<span class="cstat-no" title="statement not covered" >        this.datePickerInputElement.nativeElement.value = null;</span>
+<span class="cstat-no" title="statement not covered" >        this.hasDatePickerBeenOpened = false;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private saveSolarDetails() {</span>
+<span class="cstat-no" title="statement not covered" >        this.scDetailsModel.numberPanels = this.solarDetailsForm.get('panelsQuantity').value;</span>
+<span class="cstat-no" title="statement not covered" >        this.scDetailsModel.installationYear = this.solarDetailsForm.get('installationYear').value;</span>
+        let unparsedSystemSize = <span class="cstat-no" title="statement not covered" >this.solarDetailsForm.get('systemSize').value;</span>
+<span class="cstat-no" title="statement not covered" >        this.scDetailsModel.systemSizeKw = +SolarDetailsValidator.convertFloatToTwoDecimalPlaces(unparsedSystemSize);</span>
+    }
+&nbsp;
+    private copyModel(original<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        return JSON.parse(JSON.stringify(original));</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private resetModel() { // necessary to use because copyModel will break reference not work as expected</span>
+<span class="cstat-no" title="statement not covered" >        this.scDetailsModel.numberPanels = this.originalScDetailsModel.numberPanels;</span>
+<span class="cstat-no" title="statement not covered" >        this.scDetailsModel.systemSizeKw = this.originalScDetailsModel.systemSizeKw;</span>
+<span class="cstat-no" title="statement not covered" >        this.scDetailsModel.installationYear = this.originalScDetailsModel.installationYear;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private saveUpdateDetails() {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.updateReason === SolarCheckUpdateDetailsState.UPGRADE) {</span>
+<span class="cstat-no" title="statement not covered" >            this.scDetailsModel.systemChanged = true;</span>
+&nbsp;
+            let dateInApiRequiredFormat = <span class="cstat-no" title="statement not covered" >moment(this.effectiveChangedDateValue).format(DateFormat.IS0_8601);</span>
+<span class="cstat-no" title="statement not covered" >            this.scDetailsModel.effectiveChangedDate = dateInApiRequiredFormat;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.scDetailsModel.systemChanged = false;</span>
+<span class="cstat-no" title="statement not covered" >            this.scDetailsModel.effectiveChangedDate = null;</span>
+        }
+    }
+&nbsp;
+    private broadcastSolarSystemUpdate(statusExpectedDate: Date<span class="fstat-no" title="function not covered" >) {</span>
+&nbsp;
+        let solarCheckMessage = <span class="cstat-no" title="statement not covered" >new SolarCheckUpdateDetailsMessage();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.updateReason === SolarCheckUpdateDetailsState.UPGRADE) {</span>
+<span class="cstat-no" title="statement not covered" >            solarCheckMessage.solarCheckEvent = SolarCheckEvents.systemChange;</span>
+<span class="cstat-no" title="statement not covered" >            solarCheckMessage.statusExpectedDate = statusExpectedDate;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            solarCheckMessage.solarCheckEvent = SolarCheckEvents.systemCorrection;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.messageBusService.broadcast(solarCheckMessage);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private broadcastSolarUpdateError() {</span>
+        let solarCheckMessage = <span class="cstat-no" title="statement not covered" >new SolarCheckUpdateDetailsMessage();</span>
+<span class="cstat-no" title="statement not covered" >        solarCheckMessage.solarCheckEvent = SolarCheckEvents.updateError;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.messageBusService.broadcast(solarCheckMessage);</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    private updateSolarDetails() {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.hideErrorWhenSubmitting = true;</span>
+<span class="cstat-no" title="statement not covered" >        this.saveSolarDetails();</span>
+<span class="cstat-no" title="statement not covered" >        this.saveUpdateDetails();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.solarCheckService.setPVInfo(this.contract.contractNumber, this.scDetailsModel)</span>
+            .subscribe(
+            (data<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.solarCheckService.refreshEligibility();</span>
+&nbsp;
+                let pvInfoResponse = <span class="cstat-no" title="statement not covered" >data as SolarCheckPvInfoResponse;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if (pvInfoResponse &amp;&amp; pvInfoResponse.statusExpectedDate) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.dataLayer.pushSccUpdateSystemDetailsModification();</span>
+<span class="cstat-no" title="statement not covered" >                    this.broadcastSolarSystemUpdate(pvInfoResponse.statusExpectedDate);</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    this.dataLayer.pushSccUpdateSystemDetailsCorrection();</span>
+<span class="cstat-no" title="statement not covered" >                    this.broadcastSolarSystemUpdate(null);</span>
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                this.update.emit();</span>
+            },
+            (error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                console.error('system details: error while trying to update', error);</span>
+<span class="cstat-no" title="statement not covered" >                this.resetModel();</span>
+<span class="cstat-no" title="statement not covered" >                if (this.scDetailsModel.systemChanged) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.dataLayer.pushSccUpdateSystemDetailsModificationError();</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    this.dataLayer.pushSccUpdateSystemDetailsCorrectionError();</span>
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                this.broadcastSolarUpdateError();</span>
+<span class="cstat-no" title="statement not covered" >                this.modalService.close();</span>
+            },
+<span class="fstat-no" title="function not covered" >            () =&gt; {</span>
+                // completed
+<span class="cstat-no" title="statement not covered" >                this.submitInProgress = false;</span>
+            }
+            );
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

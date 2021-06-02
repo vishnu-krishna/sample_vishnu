@@ -1,0 +1,88 @@
+<agl-ssmr-banner *ngIf="ssmrFeatureEnabled && accounts && !allContractsAreRestricted"
+                 [accounts]="accounts"></agl-ssmr-banner>
+<div (aglDeepLinkAction)="popupSsmrModal($event)"></div>
+
+<agl-solar-check-offer *ngIf="solarCheckFeatureEnabled && accounts" [accounts]="accounts"></agl-solar-check-offer>
+<div class="dashboard container {{browserClass}}">
+    <div id="dashboard-accounts" class="container col-md-9 col-sm-12 dashboard__accounts">
+        <div *ngFor="let account of accounts; trackBy: trackById, let x=index" class="overview">
+            <div *ngFor="let contract of account.contracts; let i=index">
+                <div class="overview--header">
+                    <div class="address-header" *ngIf="account.groupedAddress && i === 0">
+                        <div id="dashboard-account-number" class="number">
+                            Account no: {{account.accountNumber | aglAddSpaces}}
+                            <span *ngFor="let contract of account.contracts">
+                                <mat-icon *ngIf="contract.isElectricity" class="elec" svgIcon="icon-elec-enabled"></mat-icon>
+                                <mat-icon *ngIf="contract.isGas" class="gas" svgIcon="icon-gas-enabled"></mat-icon>
+                            </span>
+                            <div *ngIf="account.allContractsAreRestricted" class="contract-state-pill__inactive">Inactive account</div>
+                            <div *ngIf="account.allContractsAreNewConnection" class="contract-state-pill__new-connection">New connection</div>
+                        </div>
+                        <div id="dashboard-address" class="address">{{account.groupedAddress}}</div>
+                    </div>
+                    <div class="address-header" *ngIf="!account.groupedAddress">
+                        <div id="dashboard-account-number" class="number">
+                            Account no: {{account.accountNumber | aglAddSpaces}}
+                            <mat-icon *ngIf="contract.isElectricity" class="elec" svgIcon="icon-elec-enabled"></mat-icon>
+                            <mat-icon *ngIf="contract.isGas" class="gas" svgIcon="icon-gas-enabled"></mat-icon>
+                            <div *ngIf="account.allContractsAreRestricted" class="contract-state-pill__inactive">Inactive account</div>
+                            <div *ngIf="account.allContractsAreNewConnection" class="contract-state-pill__new-connection">New connection</div>
+                        </div>
+                        <div id="dashboard-address" class="address">{{contract.address}}</div>
+                    </div>
+                </div>
+                <div class="row solar-check-row">
+                    <agl-solar-check-status *ngIf="solarCheckFeatureEnabled && x === 0 && i === 0 && accounts" [accounts]="accounts"></agl-solar-check-status>
+                </div>
+                <div id="overview-account-{{contract.contractNumber}}" class="overview--account">
+                    <div class="overview--account__right col-md-6">
+                        <agl-fuel-title [contract]="contract" class="contract-fuel"></agl-fuel-title>
+                        <div *ngIf="contract.instalmentPlan">
+                            <agl-payment-assistance-plan-instalments [instalmentsModel]="contract.instalmentPlan.progressTrackerData">
+                            </agl-payment-assistance-plan-instalments>
+                        </div>
+                        <div *ngIf="!contract.instalmentPlan">
+                            <div *ngIf="contract.isInFlight && !account.allContractsAreNewConnection" class="contract-fuel__new-connection">New connection</div>
+                            <div *ngIf="!contract.isPayg">
+                                <agl-no-data-chart *ngIf="!contract.isDataAvailable" [contract]="contract"></agl-no-data-chart>
+                                <div *ngIf="contract.isDataAvailable">
+                                    <agl-smart-meter-chart *ngIf="!contract.isBillSmoothingV2 && contract.isSmartMeter" width="300" [contract]="contract" [allContractsRestricted]="account.allContractsAreRestricted"></agl-smart-meter-chart>
+                                    <agl-basic-meter-chart *ngIf="contract.isBillSmoothingV2 || !contract.isSmartMeter" [contract]="contract" [allContractsRestricted]="account.allContractsAreRestricted"></agl-basic-meter-chart>
+                                </div>
+                                <div *ngIf="contract.isBillSmoothingV2" class="tooltip-billsmoothing">
+                                    How does this relate to Bill Smoothing?
+                                    <agl-usage-tooltip [tooltipHtml]="generateBillSmoothingTooltip(contract)"></agl-usage-tooltip>
+                                </div>
+                            </div>
+                            <agl-smart-meter-chart *ngIf="contract.isPayg && contract.isSmartMeter" width="300" [contract]="contract" [allContractsRestricted]="account.allContractsAreRestricted"></agl-smart-meter-chart>
+                        </div>
+                    </div>
+                    <div class="overview--account__left col-md-6">
+                        <agl-bill-panel [contract]="contract" [address]="account.groupedAddress" isDashboard="true"></agl-bill-panel>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="restricted-account-re-sign col-sm-6 col-xs-12" [class.pad-fix]="!groupedAccounts" [class.hidden]="!isContractAccountRestricted">
+            <agl-restricted-account-re-sign class="wd-100"></agl-restricted-account-re-sign>
+        </div>
+        <agl-dashboard-loading [(paypalStatus)]="payPalModal" [(status)]="loadedAccount" [(contentStatus)]="loadedContent"></agl-dashboard-loading>
+    </div>
+
+    <div class="container col-md-3 col-sm-12 dashboard-right-panel">
+        <div class="col-md-12 col-xs-12 col-sm-6" *ngIf="!allContractsAreRestricted">
+            <agl-button-stack
+                heading="Online services"
+                content="jumpLinks"
+                [isReadOnly]="isButtonStackReadOnly()"></agl-button-stack>
+        </div>
+        <div class="col-md-12 col-xs-12 col-sm-6 promo-area">
+            <agl-offer-tile *ngIf="decisioningEnabled" context="MyAccount_Overview_Page"></agl-offer-tile>
+            <agl-marketing-tile *ngIf="marketingTileEnabled"></agl-marketing-tile>
+        </div>
+    </div>
+
+    <agl-back-to-top></agl-back-to-top>
+
+</div>

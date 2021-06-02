@@ -1,0 +1,9 @@
+@mixin vertical-rhythm {
+    @include fluid-prop('margin-bottom', 320px, 960px, 20px, 40px);
+    @include cf;
+}
+
+@mixin vertical-rhythm--large {
+    @include fluid-prop('margin-bottom', 320px, 960px, 30px, 84px);
+    @include cf;
+}

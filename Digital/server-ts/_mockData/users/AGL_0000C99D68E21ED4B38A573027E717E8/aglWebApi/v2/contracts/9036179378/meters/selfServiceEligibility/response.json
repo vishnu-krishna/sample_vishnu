@@ -1,0 +1,35 @@
+{
+    "screenCode": "SSMR_MRE",
+    "meters": [
+        {
+            "meterSerial": "000000000001308655",
+            "registers": [
+                {
+                    "registerId": "001",
+                    "dialFormat": "05",
+                    "currentMeterRead": "",
+                    "lastMeterRead": "1680",
+                    "lastReadQuality": "Meter reading by customer - SAP",
+                    "lastReadDate": "2017-05-04"
+                },
+                {
+                    "registerId": "002",
+                    "dialFormat": "05",
+                    "currentMeterRead": "",
+                    "lastMeterRead": "3632",
+                    "lastReadQuality": "Actual Read by MDP",
+                    "lastReadDate": "2016-09-06"
+                },
+                {
+                    "registerId": "003",
+                    "dialFormat": "05",
+                    "currentMeterRead": "",
+                    "lastMeterRead": "17231",
+                    "lastReadQuality": "Actual Read by MDP",
+                    "lastReadDate": "2016-09-06"
+                }
+            ]
+        }
+    ],
+    "error": null
+}

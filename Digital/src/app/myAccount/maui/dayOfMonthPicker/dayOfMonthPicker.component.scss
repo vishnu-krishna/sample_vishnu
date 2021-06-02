@@ -1,0 +1,75 @@
+
+@import '../maui';
+
+@include maui-component-reset();
+
+$calendarWidth: 400px;
+$calendarHeight: 275px;
+
+.day-of-month-picker {
+    width: 100%;
+    background-color: $neutral-08;
+    font-family: $body-font-stack;
+    text-align: center;
+
+    &__calendar {
+        list-style: none;
+        display: block;
+        max-width: $calendarWidth;
+        max-height: $calendarHeight;
+        overflow: hidden;
+        padding: 0px 0px 20px 0px;
+        margin: 0px auto;
+
+        @media #{$agl-layout-tablet-and-smaller} {
+            max-width: 290px;
+        }
+
+        &-item {
+            width: 45px;
+            height: 45px;
+            font-size: $body-font-size-small;
+            display: block;
+            float: left;
+            padding: 12px;
+            margin: 2px 6px;
+            cursor: pointer;
+
+            @media #{$agl-layout-tablet-and-smaller} {
+                width: 40px;
+                height: 40px;
+                padding: 10px;
+                margin: 0px;
+            }
+
+            &:hover {
+                font-weight: normal;
+            }
+
+            &--standard {
+                @extend .day-of-month-picker__calendar-item;
+                color: $neutral-01;
+                text-decoration: none;
+            }
+
+            &--excluded {
+                @extend .day-of-month-picker__calendar-item;
+                color: $neutral-05;
+                cursor: default;
+            }
+
+            &--highlight {
+                @extend .day-of-month-picker__calendar-item;
+                border: 1px solid $primary-dark;
+                border-radius: 50%;
+                background-color: $primary-dark;
+                color: $neutral-08;
+                font-weight: bold;
+
+                &:hover {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

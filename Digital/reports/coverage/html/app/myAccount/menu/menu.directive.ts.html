@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\menu\menu.directive.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/myAccount/menu/</a> menu.directive.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10.27% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>15/146</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/55</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">3.7% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/27</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10.37% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>14/135</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { OnInit }  from '@angular/core';
+import { Http }               from '@angular/http';
+import { Router }             from '@angular/router';
+import { Observable }         from 'rxjs/Observable';
+import { IAccountServiceMA }  from '../../myAccount/services/account.service';
+import { ISolarCheckOfferService } from '../../myAccount/services/contract/isolarCheckOffer.service';
+import { ApiService }         from '../../shared/service/api.service';
+import { ContentService }     from '../../shared/service/content.service';
+import { FeatureFlagService, FeatureFlagTypes } from '../services/featureFlag.service';
+import { MenuItemModel } from './menuItem.model';
+&nbsp;
+import { MenuIndicatorMessage } from '../../shared/messages/menuIndicator.message';
+import { IMessageBusService } from '../../shared/service/contract/imessageBus.service';
+import { IRewardsEligibilityService, RewardsEligibility } from '../rewards';
+import { IDecisioningService } from '../services/contract/idecisioning.service';
+import { HomeProfileEligibilityService } from '../pages/settings/homeProfile/homeProfileEligibility.service';
+&nbsp;
+export class MenuDirective implements OnInit {
+&nbsp;
+    public isOpen: boolean;
+    public isSubMenuOpen: boolean;
+    public <span class="cstat-no" title="statement not covered" >isLoaded: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >visibility: string = 'shown';</span>
+    public showMyWallet;
+    public <span class="cstat-no" title="statement not covered" >smsPayEnabled: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >manageNotificationsEnabled: boolean = false;</span>
+&nbsp;
+    public name: Observable&lt;Object&gt;;
+    public _content: any;
+    public isNewLogo: boolean;
+    public <span class="cstat-no" title="statement not covered" >mainMenu: any[] = [];</span>
+    public <span class="cstat-no" title="statement not covered" >subMenu: any[] = [];</span>
+    public <span class="cstat-no" title="statement not covered" >leftHandMenu: MenuItemModel[] = [];</span>
+    public <span class="cstat-no" title="statement not covered" >mobileSettingsView: MenuItemModel[] = [];</span>
+    public myWalletMenuItem: MenuItemModel;
+    public solarMenuItemSettings: MenuItemModel;
+    public <span class="cstat-no" title="statement not covered" >hasSolar: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >isSolarRegistered: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >isSolarEligible: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >monthlyBillingEnabled: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >settingsSolarKey: string = 'solar';</span>
+    public <span class="cstat-no" title="statement not covered" >settingsMyWalletKey: string = 'myWallet';</span>
+    public <span class="cstat-no" title="statement not covered" >settingsOffersKey: string = 'offers';</span>
+    public <span class="cstat-no" title="statement not covered" >settingsBillSmoothingKey: string = 'billSmoothing';</span>
+    public <span class="cstat-no" title="statement not covered" >settingsHomeProfileKey: string = 'homeProfile';</span>
+    public showBillSmoothing: boolean;
+    public showHomeProfile: boolean;
+    public isSolarDeregistrationPending;
+    public readonly <span class="cstat-no" title="statement not covered" >rewardsMenuItemKey: string = 'rewards';</span>
+    public rewardsEligibility: RewardsEligibility;
+&nbsp;
+    constructor(
+        protected <span class="cstat-no" title="statement not covered" >_http: Http,</span>
+        protected <span class="cstat-no" title="statement not covered" >_contentService: ContentService,</span>
+        protected <span class="cstat-no" title="statement not covered" >_api: ApiService,</span>
+        public <span class="cstat-no" title="statement not covered" >router: Router,</span>
+        protected <span class="cstat-no" title="statement not covered" >_accountService: IAccountServiceMA,</span>
+        public <span class="cstat-no" title="statement not covered" >_featureFlagService: FeatureFlagService,</span>
+        protected <span class="cstat-no" title="statement not covered" >_solarCheckOfferService: ISolarCheckOfferService,</span>
+        protected <span class="cstat-no" title="statement not covered" >_rewardsEligibilityService: IRewardsEligibilityService,</span>
+        protected <span class="cstat-no" title="statement not covered" >_decisioningService: IDecisioningService,</span>
+        protected <span class="cstat-no" title="statement not covered" >_messageBusService: IMessageBusService,</span>
+        protected <span class="cstat-no" title="statement not covered" >_homeProfileEligibilityService: HomeProfileEligibilityService<span class="fstat-no" title="function not covered" ></span></span>
+    ) {
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public ngOnInit() {</span></span>
+<span class="cstat-no" title="statement not covered" >        this._contentService.load()</span>
+            .subscribe((content<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this._content = content.selfService.menu;</span>
+<span class="cstat-no" title="statement not covered" >                this.isNewLogo = content.selfService.isNewLogo;</span>
+&nbsp;
+                let featureFlagValues: FeatureFlagTypes[] = <span class="cstat-no" title="statement not covered" >[</span>
+                    FeatureFlagTypes.billSmoothingEnabled,
+                    FeatureFlagTypes.monthlyBillingEnabled,
+                    FeatureFlagTypes.manageNotificationsEnabled,
+                    FeatureFlagTypes.homeProfileEnabled
+                ];
+<span class="cstat-no" title="statement not covered" >                Observable.forkJoin(</span>
+                    this._accountService.getAccounts(),
+                    this._decisioningService.isSmsPayEntryPointAvailableForCustomer(),
+                    this._rewardsEligibilityService.checkEligibility(),
+                    this._featureFlagService.featureFlagValues(featureFlagValues)
+                ).subscribe(([
+<span class="cstat-no" title="statement not covered" >                    accounts,</span>
+<span class="cstat-no" title="statement not covered" >                    smsPayEntryPointAvailableForCustomer,</span>
+<span class="cstat-no" title="statement not covered" >                    rewardsEligibility,</span>
+<span class="cstat-no" title="statement not covered" >                    [</span>
+<span class="cstat-no" title="statement not covered" >                        billSmoothingFeatureFlag,</span>
+<span class="cstat-no" title="statement not covered" >                        monthlyBillingFeatureFlag,</span>
+<span class="cstat-no" title="statement not covered" >                        manageNotificationsFeatureFlag,</span>
+<span class="cstat-no" title="statement not covered" >                        homeProfileFeatureFlag</span>
+                    ]
+                ]<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        this.isLoaded = true;</span>
+<span class="cstat-no" title="statement not covered" >                        this.visibility = 'hidden';</span>
+<span class="cstat-no" title="statement not covered" >                        this.showMyWallet = (accounts.length === 1);</span>
+<span class="cstat-no" title="statement not covered" >                        this.hasSolar = this._solarCheckOfferService.checkAccountHasSolar(accounts);</span>
+<span class="cstat-no" title="statement not covered" >                        this.showBillSmoothing = billSmoothingFeatureFlag &amp;&amp; !this._accountService.isExcludedFromBillSmoothing(accounts);</span>
+<span class="cstat-no" title="statement not covered" >                        this.showHomeProfile = homeProfileFeatureFlag &amp;&amp; this._homeProfileEligibilityService.isEligibleForHomeProfile(accounts);</span>
+<span class="cstat-no" title="statement not covered" >                        this.rewardsEligibility = rewardsEligibility;</span>
+<span class="cstat-no" title="statement not covered" >                        this.monthlyBillingEnabled = monthlyBillingFeatureFlag;</span>
+<span class="cstat-no" title="statement not covered" >                        this.manageNotificationsEnabled = manageNotificationsFeatureFlag;</span>
+<span class="cstat-no" title="statement not covered" >                        this.smsPayEnabled = smsPayEntryPointAvailableForCustomer;</span>
+                    },
+                    (err<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        console.error('Error in menu directive', err);</span>
+                    },
+<span class="fstat-no" title="function not covered" >                    () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        this.buildMenu();</span>
+<span class="cstat-no" title="statement not covered" >                        this.evaluateSolarMenuVisibility();</span>
+                    });
+&nbsp;
+            });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.name = this._accountService.getName();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this._messageBusService.listen(MenuIndicatorMessage).subscribe((message<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+            let menuItem = <span class="cstat-no" title="statement not covered" >this.findTopLevelMenuItem(message.menuLabel);</span>
+<span class="cstat-no" title="statement not covered" >            if (menuItem) {</span>
+<span class="cstat-no" title="statement not covered" >                menuItem.showIndicator = message.showIndicator;</span>
+            }
+        });
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public evaluateSolarMenuVisibility() {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.hasSolar) {</span>
+<span class="cstat-no" title="statement not covered" >            this._solarCheckOfferService.isEligible()</span>
+                .subscribe(
+                    (isEligible<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        this.isSolarEligible = isEligible;</span>
+<span class="cstat-no" title="statement not covered" >                        this.updateSolarSettingsVisibility();</span>
+                    },
+                    (err<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        console.error('Error in solar menu creation when retreiving eligibility', err);</span>
+                    }
+                );
+<span class="cstat-no" title="statement not covered" >            this._solarCheckOfferService.isRegistered()</span>
+                .subscribe(
+                    (isRegistered<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        this.isSolarRegistered = isRegistered;</span>
+<span class="cstat-no" title="statement not covered" >                        this.updateSolarSettingsVisibility();</span>
+                    },
+                    (err<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        console.error('Error in solar menu creation when retreiving registered status', err);</span>
+                    }
+                );
+<span class="cstat-no" title="statement not covered" >            this._solarCheckOfferService.isDeregistrationPending()</span>
+                .subscribe(
+                    (isDeregistrating<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        this.isSolarDeregistrationPending = isDeregistrating;</span>
+<span class="cstat-no" title="statement not covered" >                        this.updateSolarSettingsVisibility();</span>
+                    },
+                    (err<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        console.error('Error in solar menu creation when retreiving registered status', err);</span>
+                    }
+                );
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public buildMenu() {</span>
+<span class="cstat-no" title="statement not covered" >        for (let key<span class="cstat-no" title="statement not covered" ></span> of Object.keys(this._content)) {</span>
+            let item = <span class="cstat-no" title="statement not covered" >this._content[key];</span>
+<span class="cstat-no" title="statement not covered" >            if (!item.isEnabled) { <span class="cstat-no" title="statement not covered" >continue; </span>}</span>
+            // Get sub menu out of settings menu Item from content
+<span class="cstat-no" title="statement not covered" >            if (key === 'settings') {</span>
+<span class="cstat-no" title="statement not covered" >                for (let settingKey<span class="cstat-no" title="statement not covered" ></span> of Object.keys(item)) {</span>
+                    let settingItem = <span class="cstat-no" title="statement not covered" >item[settingKey];</span>
+<span class="cstat-no" title="statement not covered" >                    if (settingItem instanceof Object) {</span>
+<span class="cstat-no" title="statement not covered" >                        if (settingKey === this.settingsSolarKey) {</span>
+<span class="cstat-no" title="statement not covered" >                            this.solarMenuItemSettings = settingItem;</span>
+                            // solar settings to be added conditionally elsewhere
+<span class="cstat-no" title="statement not covered" >                            continue;</span>
+                        } else <span class="cstat-no" title="statement not covered" >if (settingKey === this.settingsBillSmoothingKey &amp;&amp; !this.showBillSmoothing) {</span>
+<span class="cstat-no" title="statement not covered" >                            continue;</span>
+                        } else <span class="cstat-no" title="statement not covered" >if (settingKey === this.settingsHomeProfileKey &amp;&amp; !this.showHomeProfile) {</span>
+<span class="cstat-no" title="statement not covered" >                            continue;</span>
+                        }  else <span class="cstat-no" title="statement not covered" >if (settingKey === this.settingsOffersKey &amp;&amp; this.rewardsEligibility.isEligible) {</span>
+<span class="cstat-no" title="statement not covered" >                            continue;</span>
+                        } else {
+<span class="cstat-no" title="statement not covered" >                            this.leftHandMenu.push(settingItem);</span>
+<span class="cstat-no" title="statement not covered" >                            this.mobileSettingsView.push(settingItem);</span>
+                        }
+                    }
+                }
+            }
+<span class="cstat-no" title="statement not covered" >            if (key === this.rewardsMenuItemKey) {</span>
+<span class="cstat-no" title="statement not covered" >                if (!this.rewardsEligibility.isEligible) {</span>
+<span class="cstat-no" title="statement not covered" >                    continue;</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    item.showIndicator = this.rewardsEligibility.hasRedeemableOffers;</span>
+                }
+            }
+&nbsp;
+            let location = <span class="cstat-no" title="statement not covered" >(item.isSubItem) ? this.subMenu : this.mainMenu;</span>
+<span class="cstat-no" title="statement not covered" >            location.push(item);</span>
+        }
+        // Add SMS Pay
+<span class="cstat-no" title="statement not covered" >        if (this.smsPayEnabled) {</span>
+<span class="cstat-no" title="statement not covered" >            this.addMenuItem('SMS Pay', '/settings/smspay');</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (this.manageNotificationsEnabled) {</span>
+<span class="cstat-no" title="statement not covered" >            this.addMenuItem('Notifications', '/settings/notifications');</span>
+        }
+    }
+&nbsp;
+    public addMenuItem(label, route<span class="fstat-no" title="function not covered" >) {</span>
+        const item: any = <span class="cstat-no" title="statement not covered" >{</span>
+            icon: 'icon_settings_white',
+            isEnabled: true,
+            isSubItem: true,
+            label: label,
+            route: route
+        };
+&nbsp;
+        const location = <span class="cstat-no" title="statement not covered" >(item.isSubItem) ? this.subMenu : this.mainMenu;</span>
+<span class="cstat-no" title="statement not covered" >        this.leftHandMenu.push(item);</span>
+<span class="cstat-no" title="statement not covered" >        this.mobileSettingsView.push(item);</span>
+<span class="cstat-no" title="statement not covered" >        location.push(item);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public updateSolarSettingsVisibility() {</span>
+        let isDisplaySolarSettings: boolean = <span class="cstat-no" title="statement not covered" >this.isSolarEligible || this.isSolarRegistered || this.isSolarDeregistrationPending;</span>
+<span class="cstat-no" title="statement not covered" >        this.updateSolarSettingsMenuItem(isDisplaySolarSettings);</span>
+    }
+&nbsp;
+    public updateSolarSettingsMenuItem(isDisplaySolarSettings: boolean<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        if (isDisplaySolarSettings) {</span>
+<span class="cstat-no" title="statement not covered" >            this.addSettingsMenuItem(this.solarMenuItemSettings);</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.removeSettingsMenuItem(this.solarMenuItemSettings);</span>
+        }
+    }
+&nbsp;
+    public addSettingsMenuItem(menuItem: MenuItemModel<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        if (!menuItem || !menuItem.isEnabled) {</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            if (!this.leftHandMenu.some((x<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >x === menuItem)</span></span>) {</span>
+<span class="cstat-no" title="statement not covered" >                this.leftHandMenu.push(menuItem);</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (!this.mobileSettingsView.some((x<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >x === menuItem)</span></span>) {</span>
+<span class="cstat-no" title="statement not covered" >                this.mobileSettingsView.push(menuItem);</span>
+            }
+        }
+    }
+&nbsp;
+    public removeSettingsMenuItem(menuItem: MenuItemModel<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.leftHandMenu = this.leftHandMenu.filter((x<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >x !== menuItem)</span></span>;</span>
+<span class="cstat-no" title="statement not covered" >        this.mobileSettingsView = this.mobileSettingsView.filter((x<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >x !== menuItem)</span></span>;</span>
+    }
+&nbsp;
+    private findTopLevelMenuItem(menuLabel: string<span class="fstat-no" title="function not covered" >): MenuItemModel {</span>
+        let results = <span class="cstat-no" title="statement not covered" >this.mainMenu.filter( (m: MenuItemModel<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >(m.label + '').toUpperCase() === (menuLabel + '').toUpperCase())</span></span>;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return results.length &gt; 0 ? results[0] : null;</span>
+    }
+&nbsp;
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

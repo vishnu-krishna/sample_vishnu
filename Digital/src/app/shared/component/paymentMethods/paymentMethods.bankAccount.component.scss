@@ -1,0 +1,26 @@
+@import '../../style/variables';
+@import '../../../myAccount/DLS/dls.component';
+
+.dd-bank {
+    &__method-button {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    &__panel {
+        margin-top: 10px;
+
+        &__cancel {
+            margin-left: 30px;
+            display: inline-block;
+        }
+
+        &__bsb {
+            width: 182px!important;
+        }
+
+        &__save-button {
+            margin-top: 20px;
+        }
+    }
+}

@@ -1,0 +1,81 @@
+[{
+        "number": "7029690877",
+        "firstName": "GIANNA",
+        "lastName": "MAFODDA",
+        "contracts": [{
+            "address": "U2/18 GRANTHAM STREET|BRUNSWICK WEST VIC 3055",
+            "accountNumber": "7029690877",
+            "fuelType": "Electricity",
+            "nameId": "AGL_0000C99DF8261EE6BCB63B0C1F2DB418",
+            "number": "9162241313",
+            "planName": "",
+            "inFlight": false,
+            "contractStatus": "",
+            "isRestricted": false,
+            "hasElectricVehicle": false,
+            "productId": "AGLMKTRE1216302"
+        }]
+    },
+    {
+        "number": "9403165457",
+        "firstName": "GIANNA",
+        "lastName": "MAFODDA",
+        "contracts": [{
+                "address": "U2/19 Spencer STREET|BRUNSWICK WEST VIC 3055",
+                "accountNumber": "9403165457",
+                "fuelType": "Gas",
+                "nameId": "AGL_0000C99DF8261EE6BCB63B0C1F2DB418",
+                "number": "9403165457",
+                "planName": "",
+                "inFlight": false,
+                "contractStatus": "PTIS",
+                "isRestricted": false,
+                "hasElectricVehicle": false,
+                "productId": "AGLMKTRE1216303"
+            },
+            {
+                "address": "U2/19 Spencer STREET|BRUNSWICK WEST VIC 3055",
+                "accountNumber": "9403165457",
+                "fuelType": "Electricity",
+                "nameId": "AGL_0000C99DF8261EE6BCB63B0C1F2DB418",
+                "number": "9403165458",
+                "planName": "",
+                "inFlight": false,
+                "contractStatus": "PTIS",
+                "isRestricted": false,
+                "hasElectricVehicle": false,
+                "productId": "AGLMKTRE1216303"
+            }
+        ]
+    },
+    {
+        "number": "9403165458",
+        "firstName": "GIANNA",
+        "lastName": "MAFODDA",
+        "contracts": [{
+                "address": "U2/18 GRANTHAM STREET|BRUNSWICK WEST VIC 3055",
+                "accountNumber": "9403165457",
+                "fuelType": "Gas",
+                "nameId": "AGL_0000C99DF8261EE6BCB63B0C1F2DB418",
+                "number": "9403165457",
+                "planName": "",
+                "inFlight": false,
+                "contractStatus": "PTIS",
+                "isRestricted": false,
+                "hasElectricVehicle": false
+            },
+            {
+                "address": "U2/19 Spencer STREET|BRUNSWICK WEST VIC 3055",
+                "accountNumber": "9403165457",
+                "fuelType": "Electricity",
+                "nameId": "AGL_0000C99DF8261EE6BCB63B0C1F2DB418",
+                "number": "9403165458",
+                "planName": "",
+                "inFlight": false,
+                "contractStatus": "PTIS",
+                "isRestricted": false,
+                "hasElectricVehicle": false
+            }
+        ]
+    }
+]

@@ -1,0 +1,113 @@
+@import '../solarCheckRegisterProcess';
+
+.solar-check-solar-details {
+
+    .solar-details-title {
+        padding: 10px;
+        text-align: center;
+
+        @media #{$agl-layout-mobile} {
+            padding: 15px;
+        }
+
+        &-text {
+            color: $brand-grey-g1;
+            font-family: $primary-font-stack;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 36px;
+            text-align: center;
+        }
+    }
+
+    .question {
+        &-section {
+            text-align: left;
+            width: 325px;
+            padding-top: 15px;
+
+            @media #{$agl-layout-mobile} {
+                width: 315px;
+            }
+        }
+
+        &-text {
+            width: 305px;
+
+            @media #{$agl-layout-mobile} {
+                width: 275px;
+                padding-left: 5px;
+            }
+        }
+
+        &-tooltip {
+            float: right;
+        }
+
+        &-input-size {
+            width: 325px;
+            height: 50px;
+
+            @media #{$agl-layout-mobile} {
+                width: 310px;
+                padding-left: 10px;
+            }
+        }
+
+        &-datepicker-size {
+            width: 280px;
+            height: 50px;
+
+            @media #{$agl-layout-mobile} {
+                width: 270px;
+            }
+        }
+    }
+}
+
+.dls-select {
+
+    &__field {
+        position: relative;
+    }
+
+    &__input--select {
+        height: 60px;
+        width: 100%;
+        cursor: pointer;
+        font-size: 100%;
+        line-height: 1.15;
+        margin: 0;
+        text-transform: none;
+    }
+
+    &__input--fake {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $brand-white;
+        border: 1px solid $brand-grey-g4;
+        padding: 0 15px;
+        border-radius: 4px;
+        line-height: 60px;
+        pointer-events: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        ::after {
+            content: '';
+            background-image: url('data:image/svg+xml, %3Csvg width="13px" height="13px" viewBox="368 13 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"%3E%3Cpolygon id="Arrow" stroke="none" fill="%23333333" fill-rule="evenodd" transform="translate%28374.500000, 19.500000%29 rotate%28-315%29 translate%28-374.500000, -19.500000%29 " points="379 15 379 24 370 24"%3E%3C/polygon%3E%3C/svg%3E');
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: 13px;
+            width: 13px;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            margin-top: -10px;
+        }
+    }
+}

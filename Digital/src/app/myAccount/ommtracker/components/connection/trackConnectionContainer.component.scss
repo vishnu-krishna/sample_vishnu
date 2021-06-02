@@ -1,0 +1,7 @@
+@import '../../../../shared/style/omm/_omm_variables';
+
+.agl-track-connection-container {
+    @media #{$vlarge-and-up} {
+        display: flex;
+    }
+}

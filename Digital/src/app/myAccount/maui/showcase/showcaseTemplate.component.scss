@@ -1,0 +1,59 @@
+@import '../maui';
+
+$toggle-width: 335px;
+
+.component {
+    padding: $space-06 0;
+    padding-bottom: $space-05;
+    border-bottom: 1px solid $neutral-05;
+
+    &__header {
+        padding-bottom: $space-06;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media #{$agl-layout-mobile} {
+            display: block;
+        }
+
+        span {
+            font-size: $display-font-size-beta;
+            line-height: $line-height-heading;
+            padding-right: $space-04;
+        }
+
+        agl-maui-segmented-buttons {
+            width: $toggle-width;
+            min-width: $toggle-width;
+
+            @media #{$agl-layout-mobile} {
+                width: 100%;
+                min-width: auto;
+                margin-top: $space-04;
+            }
+        }
+    }
+
+    &__body {
+        font-family: $body-font-stack;
+
+        .display {
+            display: block;
+        }
+
+        &-visual {
+            display: none;
+        }
+
+        &-info {
+            padding-bottom: $space-04;
+            display: none;
+        }
+
+        &-code {
+            padding-bottom: $space-04;
+            display: none;
+        }
+    }
+}

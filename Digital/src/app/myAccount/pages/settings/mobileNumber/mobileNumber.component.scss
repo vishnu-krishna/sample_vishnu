@@ -1,0 +1,31 @@
+@import '../../../../shared/style/variables';
+@import '../../../../shared/style/mixins';
+
+.mobile-number {
+    &__label {
+        display: block;
+    }
+
+    &__input {
+        padding-left: 36px;
+        background-image: url('svg/icon_phone.svg');
+        background-repeat: no-repeat;
+        background-position: 10px center;
+        width: 100%;
+
+        @media #{$agl-layout-tablet-and-greater} {
+            max-width: 310px;
+        }
+
+        &--container {
+            position: relative;
+        }
+    }
+
+    &__chat {
+        color: $brand-sky;
+        font-family: $secondary-font-stack;
+        font-size: 14px;
+        font-weight: bold;
+    }
+}

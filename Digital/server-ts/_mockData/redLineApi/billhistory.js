@@ -1,0 +1,14 @@
+localStorage.setItem('selfService.mock.redline.bills/contract/9138824851:data', '[{"FxPrintDoc":"10000000","SapPrintDoc":"3379772101"},{"FxPrintDoc":"10000001","SapPrintDoc":"33797720102"},{"FxPrintDoc":"10000002","SapPrintDoc":"3379772103"},{"FxPrintDoc":"10000003","SapPrintDoc":"3379772104"},{"FxPrintDoc":"10000004","SapPrintDoc":"3379772105"},{"FxPrintDoc":"10000005","SapPrintDoc":"3379772106"}]');
+localStorage.setItem('selfService.mock.redline.bills/contract/9138824922:data', '[{"FxPrintDoc":"10000006","SapPrintDoc":"3379772107"},{"FxPrintDoc":"10000007","SapPrintDoc":"33797720108"},{"FxPrintDoc":"10000008","SapPrintDoc":"3379772109"},{"FxPrintDoc":"10000009","SapPrintDoc":"3379772110"},{"FxPrintDoc":"10000010","SapPrintDoc":"3379772111"},{"FxPrintDoc":"10000011","SapPrintDoc":"3379772112"}]');
+localStorage.setItem('selfService.mock.redline.bills/pdf/9138824851/10000000:data', '"https://localhost:8080/bills/fakeBill.pdf?contractAccount=9138824851&printDoc=10000000"');
+localStorage.setItem('selfService.mock.redline.bills/pdf/9138824851/10000001:data', '"https://localhost:8080/bills/fakeBill.pdf?contractAccount=9138824851&printDoc=10000001"');
+localStorage.setItem('selfService.mock.redline.bills/pdf/9138824851/10000002:data', '"https://localhost:8080/bills/fakeBill.pdf?contractAccount=9138824851&printDoc=10000002"');
+localStorage.setItem('selfService.mock.redline.bills/pdf/9138824851/10000003:data', '"https://localhost:8080/bills/fakeBill.pdf?contractAccount=9138824851&printDoc=10000003"');
+localStorage.setItem('selfService.mock.redline.bills/pdf/9138824851/10000004:data', '"https://localhost:8080/bills/fakeBill.pdf?contractAccount=9138824851&printDoc=10000004"');
+localStorage.setItem('selfService.mock.redline.bills/pdf/9138824851/10000005:data', '"https://localhost:8080/bills/fakeBill.pdf?contractAccount=9138824851&printDoc=10000005"');
+localStorage.setItem('selfService.mock.redline.bills/pdf/9138824922/10000006:data', '"https://localhost:8080/bills/fakeBill.pdf?contractAccount=9138824922&printDoc=10000006"');
+localStorage.setItem('selfService.mock.redline.bills/pdf/9138824922/10000007:data', '"https://localhost:8080/bills/fakeBill.pdf?contractAccount=9138824922&printDoc=10000007"');
+localStorage.setItem('selfService.mock.redline.bills/pdf/9138824922/10000008:data', '"https://localhost:8080/bills/fakeBill.pdf?contractAccount=9138824922&printDoc=10000008"');
+localStorage.setItem('selfService.mock.redline.bills/pdf/9138824922/10000009:data', '"https://localhost:8080/bills/fakeBill.pdf?contractAccount=9138824922&printDoc=10000009"');
+localStorage.setItem('selfService.mock.redline.bills/pdf/9138824922/10000010:data', '"https://localhost:8080/bills/fakeBill.pdf?contractAccount=9138824922&printDoc=10000010"');
+localStorage.setItem('selfService.mock.redline.bills/pdf/9138824922/10000011:data', '"https://localhost:8080/bills/fakeBill.pdf?contractAccount=9138824922&printDoc=10000011"');

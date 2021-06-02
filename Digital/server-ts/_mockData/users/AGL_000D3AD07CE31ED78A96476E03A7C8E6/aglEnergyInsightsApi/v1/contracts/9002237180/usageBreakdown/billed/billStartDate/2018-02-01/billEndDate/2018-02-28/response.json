@@ -1,0 +1,42 @@
+{
+    "totalUsageCost": 70.23,
+    "highestMeasuredUsageCategory": "LaundryDishwasher",
+    "hasUsageAmount": true,
+    "usageBreakdown": [
+      {
+        "category": "FridgesFreezers",
+        "usagePercentage": 10.3,
+        "usageAmount": 7.23
+      },
+      {
+        "category": "LaundryDishwasher",
+        "usagePercentage": 42.2,
+        "usageAmount": 29.63
+      },
+      {
+        "category": "Cooling",
+        "usagePercentage": 20.6,
+        "usageAmount": 14.47
+      },
+      {
+        "category": "HomeEntertainment",
+        "usagePercentage": 11.5,
+        "usageAmount": 8.08
+      },
+      {
+        "category": "Other",
+        "usagePercentage": 5.9,
+        "usageAmount": 4.14
+      },
+      {
+        "category": "Lighting",
+        "usagePercentage": 8.4,
+        "usageAmount": 5.90
+      },
+      {
+        "category": "Standby",
+        "usagePercentage": 1.1,
+        "usageAmount": 0.77
+      }
+    ]
+  }

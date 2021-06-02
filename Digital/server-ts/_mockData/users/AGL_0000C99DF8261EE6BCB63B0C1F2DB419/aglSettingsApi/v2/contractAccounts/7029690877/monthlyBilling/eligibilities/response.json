@@ -1,0 +1,19 @@
+[
+    {
+        "contractNumber": 9162241313,
+        "setup": {
+            "isEligible": true
+        },
+        "cancellation": {
+            "isEligible": false,
+            "reason" : {
+                    "internal":
+                            {
+                            "number":"086"
+                            },
+                            "friendlyMessage":""
+            }
+
+        }
+    }
+]

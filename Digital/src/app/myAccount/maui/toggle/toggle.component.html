@@ -1,0 +1,20 @@
+<div class="maui-toggle">
+    <label *ngIf="!isLoading" class="maui-toggle"
+        [ngClass]="{
+            'maui-toggle--active': isActive(),
+            'maui-toggle--disabled': isDisabled
+        }">
+      <input type="checkbox" class="maui-toggle--active__input" 
+            [disabled]="!isActive()"
+            [checked]="toggleValue" 
+            (click)="toggleChanged()">
+      <span class="maui-toggle--active__tablet"
+            [ngClass]="{'maui-toggle--active__tablet--checked': toggleValue}"></span>
+      <span class="maui-toggle--active__circle" 
+            [ngClass]="{'maui-toggle--active__circle--checked': toggleValue}"></span>
+    </label>
+
+    <div *ngIf="isLoading" class="maui-toggle__loader">
+        <img src="svg/button-spinner.svg" alt="loading"/>
+    </div>
+</div>

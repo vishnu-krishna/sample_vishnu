@@ -1,0 +1,161 @@
+@import '../../../../shared/style/variables';
+
+.dd-button {
+    position: relative;
+
+    button {
+        box-shadow: none !important;
+    }
+
+    &__check-icon {
+        margin-left: -20px;
+        margin-right: 1px;
+        vertical-align: middle;
+        font-size: 15px;
+        height: 15px;
+        width: 15px;
+    }
+
+    &__dropdown-wallet {
+        padding-top: 8px;
+
+        .button-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        ul {
+            text-align: left;
+            border-radius: 10px;
+            display: none;
+            position: absolute;
+            background-color: $brand-white;
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: $agl-box-shadow;
+            z-index: 1;
+            padding: 5px 0 10px 0;
+            margin-top: -40px;
+            margin-left: 2.5%;
+            width: 95%;
+        }
+
+        li {
+            list-style: none;
+            font-family: $secondary-font-stack;
+            padding: 0 20px;
+            font-size: 15px;
+
+            &:hover {
+                cursor: pointer;
+                background: $brand-grey-c5;
+
+                a {
+                    color: $brand-white;
+                }
+            }
+        }
+
+        .chosen {
+            background: $brand-sky-light;
+            color: $brand-white;
+            pointer-events: none;
+            cursor: default;
+
+            a {
+                color: $brand-white;
+            }
+
+            &:hover {
+                background: $brand-sky-light;
+                color: $brand-white;
+                pointer-events: none;
+                cursor: default;
+
+                a {
+                    color: $brand-white;
+                }
+            }
+        }
+
+        .show {
+            display: block;
+         }
+
+        .disabled {
+            pointer-events: none;
+            opacity: 0.6;
+        }
+    }
+
+    &__button-single {
+        border-radius: $agl-border-radius;
+        height: 50px;
+        width: 100%;
+        box-shadow: $agl-button-shadow;
+    }
+
+    &__button-multi {
+        border-radius: $agl-border-radius;
+        width: 100%;
+        box-shadow: $agl-button-shadow;
+        font-family: $secondary-font-stack;
+
+        &:hover {
+            background-color: $lighten-sky-6;
+            box-shadow: $agl-button-hover-shadow;
+        }
+    }
+
+    &__button-with-wallet {
+        border: 1px solid $brand-sky;
+        border-radius: $agl-border-radius;
+        height: 45px;
+        width: 100%;
+        text-transform: none;
+        padding: 0 15px;
+
+        &:hover {
+            background-color: $lighten-sky-6;
+            box-shadow: $agl-button-hover-shadow;
+        }
+
+        &--existing {
+            background-color: $brand-white;
+            border: 1px solid $brand-grey-g4;
+            border-radius: $agl-border-radius;
+            height: 45px;
+            width: 100%;
+            text-transform: none;
+            padding: 0 15px;
+
+            &:hover {
+                box-shadow: $agl-button-hover-shadow;
+            }
+        }
+    }
+
+    &__button-text {
+        float: left;
+        font-weight: bold;
+        letter-spacing: normal;
+        font-family: $secondary-font-stack;
+
+        &__existing {
+            font-family: $secondary-font-stack;
+            color: $brand-grey-g2;
+        }
+    }
+
+    &__button-icon {
+        margin-right: -6px;
+        -webkit-text-fill-color: $brand-grey-g2;
+
+        &--white {
+            margin-right: -6px;
+            -webkit-text-fill-color: $brand-white;
+        }
+    }
+}
+

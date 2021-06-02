@@ -1,0 +1,51 @@
+@import '../maui/maui';
+@import '../../shared/style/variables';
+
+.header-unauthorised {
+    position: fixed;
+    width: 100%;
+    z-index: 998;
+
+    &__container {
+        background-color: $neutral-08;
+        height: 70px;
+        box-shadow: $agl-box-shadow;
+        position: relative;
+        z-index: 1;
+
+        @media #{$agl-layout-mobile} {
+            height: 50px;
+        }
+    }
+
+    &__main {
+        padding: 0 $space-03;
+        height: 100%;
+        max-width: $max-navigation-width;
+        margin: 0 auto;
+    }
+
+    &__logo {
+
+        &__mobile {
+            display: none;
+            @media #{$agl-layout-mobile} {
+                position: absolute;
+                margin-top: 10px;
+                height: 30px;
+                display: block;
+                left: 50%;
+                margin-left: -35px;
+            }
+        }
+
+        &__desktop {
+            display: block;
+            position: absolute;
+            margin-top: 10px;
+            @media #{$agl-layout-mobile} {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,54 @@
+@import '../homeProfile';
+
+.homeprofile {
+
+    &-poolandspa {
+        @include homeprofile-survey-page-styling();
+
+        &-body  {
+            @include homeprofile-body-styling();
+
+            @media #{$agl-layout-tablet-and-greater} {
+                background-image: url('svg/homeprofile/pool.svg');
+                background-position: right 30px top 45px;
+            }
+        }
+
+        &-questionnaire {
+            @include homeprofile-survey-questionnaire-styling();
+
+            &__heading {
+                @include homeprofile-heading-styling();
+            }
+
+            &-item {
+                @include homeprofile-question-stack-segment-styling();
+
+                &__question {
+                    @include homeprofile-survey-question-styling();
+                    font-size: $body-font-size-small;
+                    font-weight: bold;
+                }
+
+                &__sub-question {
+                    font-size: $body-font-size-small;
+                    font-weight: bold;
+                    margin-top: $space-03;
+
+                    &:first-child {
+                        margin-top: $space-04;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+        }
+
+
+        &__segmented-buttons {
+            @include homeprofile-segmented-buttons-styling();
+        }
+    }
+}

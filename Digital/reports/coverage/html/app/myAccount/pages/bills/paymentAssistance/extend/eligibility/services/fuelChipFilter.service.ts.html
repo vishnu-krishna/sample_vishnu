@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\bills\paymentAssistance\extend\eligibility\services\fuelChipFilter.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/bills/paymentAssistance/extend/eligibility/services/</a> fuelChipFilter.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">56% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>14/25</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">54.17% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>13/24</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
+import * as _ from 'lodash';
+import * as moment from 'moment';
+import { Observable } from 'rxjs/Observable';
+import { Now } from '../../../../../../../shared/service/now.service';
+import { ContractViewModel } from '../../../../../../services/account.service';
+import { PaymentExtensionIneligibilityReasons } from '../../../../../../services/paymentScheme/paymentExtensionEligibility.service';
+import { FuelChipData } from '../fuelChipData';
+&nbsp;
+export abstract class FuelChipFilterService {
+    constructor(private <span class="cstat-no" title="statement not covered" >now: Now<span class="fstat-no" title="function not covered" >)</span> {}</span>
+&nbsp;
+    public abstract filter(fuelChipDetails: FuelChipData[]): Observable&lt;FuelChipData[]&gt;;
+&nbsp;
+    protected daysBeforeNow(date: Date<span class="fstat-no" title="function not covered" >): number {</span>
+<span class="cstat-no" title="statement not covered" >        return this.now.date().diff(moment(date).startOf('day'), 'days');</span>
+    }
+&nbsp;
+    protected daysAfterNow(date: Date<span class="fstat-no" title="function not covered" >): number {</span>
+<span class="cstat-no" title="statement not covered" >        return moment(date).diff(this.now.date().startOf('day'), 'days');</span>
+    }
+&nbsp;
+    protected daysAway(untilDate: moment.Moment<span class="fstat-no" title="function not covered" >): string {</span>
+        let days: number = <span class="cstat-no" title="statement not covered" >Math.abs(untilDate.diff(this.now.date(), 'days'));</span>
+        let dayText = <span class="cstat-no" title="statement not covered" >(days &lt; 2) ? 'day' : 'days';</span>
+<span class="cstat-no" title="statement not covered" >        return `${days} ${dayText}`;</span>
+    }
+&nbsp;
+    protected sort(fuelChipData: FuelChipData[]<span class="fstat-no" title="function not covered" >): FuelChipData[] {</span>
+<span class="cstat-no" title="statement not covered" >        return _.orderBy(fuelChipData, ['fuelType', 'contractNumber'], ['asc', 'asc']);</span>
+    }
+&nbsp;
+    protected formatDate(date: Date<span class="fstat-no" title="function not covered" >): string {</span>
+<span class="cstat-no" title="statement not covered" >        return moment(date).format('ddd DD MMM YYYY');</span>
+    }
+&nbsp;
+    protected isAlreadyExtended(fuelChipData: FuelChipData, contract: ContractViewModel<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return !fuelChipData.eligibility.isEligible</span>
+            &amp;&amp; fuelChipData.eligibility.reasonForIneligibility === PaymentExtensionIneligibilityReasons.AlreadyExtended
+            &amp;&amp; !!contract.extendedDueDate;
+    }
+&nbsp;
+    protected hasNoIssuedBill(fuelChipData: FuelChipData, contract: ContractViewModel<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return !fuelChipData.eligibility.isEligible</span>
+            &amp;&amp; (fuelChipData.eligibility.reasonForIneligibility === PaymentExtensionIneligibilityReasons.NoIssuedBill
+                ||
+                (fuelChipData.eligibility.reasonForIneligibility === PaymentExtensionIneligibilityReasons.UnableToExtendOnlineOrNoIssuedBill &amp;&amp; contract.currentBalance &lt;= 0)
+                ||
+                (fuelChipData.eligibility.reasonForIneligibility === PaymentExtensionIneligibilityReasons.Unknown &amp;&amp; contract.paymentTotal &lt;= 0)
+               );
+    }
+&nbsp;
+    protected isBrokenAccountWithNoBill(fuelChipData: FuelChipData, contract: ContractViewModel<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return !fuelChipData.eligibility.isEligible</span>
+            &amp;&amp; fuelChipData.eligibility.reasonForIneligibility === PaymentExtensionIneligibilityReasons.BrokenAccount
+            &amp;&amp; !contract.getNewestBill();
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../../../sorter.js"></script>
+</body>
+</html>

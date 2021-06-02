@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\dashboard\buttonStack\buttonStack.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/myAccount/dashboard/buttonStack/</a> buttonStack.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">29.41% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>30/102</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">38.36% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>28/73</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">14.29% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">29.67% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>27/91</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {
+    Component,
+    Inject,
+    Input,
+    OnInit
+} from '@angular/core';
+import { ConfigService } from './../../../shared/service/config.service';
+&nbsp;
+import * as _ from 'lodash';
+import * as moment from 'moment';
+import 'rxjs/Rx';
+import { Observable } from 'rxjs/Rx';
+import { RequestStatusType } from '../../../shared/globals/oneMinuteMove/requestStatusType';
+import { EligibilityModel } from '../../../shared/model/oneMinMove/index';
+import { MoveGetResponseModel } from '../../../shared/model/oneMinMove/moveGetResponse.model';
+import { ContentService } from '../../../shared/service/content.service';
+import { IEligibilityService } from '../../../shared/service/contract/ieligibility.service';
+import { IMoveJoinApiService } from '../../../shared/service/contract/imoveJoinApi.service';
+import { Now } from '../../../shared/service/now.service';
+import { AccountViewModel, IAccountServiceMA } from '../../services/account.service';
+import { ISsmrService } from '../../services/contract/issmr.service';
+import { FeatureFlagService, FeatureFlagTypes } from '../../services/featureFlag.service';
+&nbsp;
+@Component({
+    selector: 'agl-button-stack',
+    template: require('./buttonStack.component.html'),
+    styles: [require('./buttonStack.component.scss')]
+})
+export class ButtonStackComponent implements OnInit {
+&nbsp;
+    @Input() public heading: string;
+    @Input() public jumpLinks: LinkButton[];
+    @Input() public <span class="cstat-no" title="statement not covered" >arrows: boolean = true;</span>
+    @Input() public content: string;
+    @Input() public isReadOnly: boolean;
+    public doesCustomerhaveBasicMeter: boolean;
+    public hideLink: boolean;
+    public loaded: boolean;
+    public showLink: boolean;
+    public apiData: MoveGetResponseModel;
+    public <span class="cstat-no" title="statement not covered" >monthlyBillingEnabled: boolean = true;</span>
+    public ommLink: string;
+&nbsp;
+    public expiryDate: string;
+    public status: string;
+    public <span class="cstat-no" title="statement not covered" >ssmrFeatureEnabled: boolean = true;</span>
+    public <span class="cstat-no" title="statement not covered" >jumpLinksPopulated: boolean = false;</span>
+&nbsp;
+    constructor(
+        public <span class="cstat-no" title="statement not covered" >_ssmr: ISsmrService,</span>
+        public <span class="cstat-no" title="statement not covered" >_contentService: ContentService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >_accountsService: IAccountServiceMA<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >featureService: FeatureFlagService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >_api: IMoveJoinApiService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >_now: Now<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >_configService: ConfigService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >_eligibilityService: IEligibilityService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        @Inject('AppContentBranch') public <span class="cstat-no" title="statement not covered" >_appContentBranch: string<span class="fstat-no" title="function not covered" ></span></span>
+    ) { }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public ngOnInit() {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.featureService</span>
+            .featureFlagged(FeatureFlagTypes.monthlyBillingEnabled)
+            .subscribe(
+                (result: boolean<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    this.monthlyBillingEnabled = result;</span>
+                }
+            );
+<span class="cstat-no" title="statement not covered" >        Observable.forkJoin(</span>
+            this._api.GetOMMTracker(),
+            this._contentService.getContent()
+        ).subscribe(
+            ([<span class="cstat-no" title="statement not covered" >moveGetResponseModel,</span> <span class="cstat-no" title="statement not covered" >content]<span class="fstat-no" title="function not covered" ></span>) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                if (moveGetResponseModel) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.expiryDate = moveGetResponseModel.oneMinuteMove.expiryDate;</span>
+<span class="cstat-no" title="statement not covered" >                    this.status = RequestStatusType[moveGetResponseModel.oneMinuteMove.status];</span>
+                }
+&nbsp;
+                let showTrackerFeatureFlag = <span class="cstat-no" title="statement not covered" >false;</span>
+<span class="cstat-no" title="statement not covered" >                if (content[this._appContentBranch]['oMMTracker'] &amp;&amp; content[this._appContentBranch]['oMMTracker']['showTracker']) {</span>
+<span class="cstat-no" title="statement not covered" >                    showTrackerFeatureFlag =  content[this._appContentBranch]['oMMTracker']['showTracker'];</span>
+                }
+<span class="cstat-no" title="statement not covered" >                this.setOMMButton(this.status, this.expiryDate, showTrackerFeatureFlag);</span>
+                let contentNode = <span class="cstat-no" title="statement not covered" >content[this._appContentBranch][this.content];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                this._eligibilityService.CheckEligibilityMyAccount().subscribe((eligibilityModel: EligibilityModel[]<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+                    const eligibility = <span class="cstat-no" title="statement not covered" >_.find(eligibilityModel, (e<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >!!e.oneMinuteMove)</span></span>;</span>
+                    let isEligibile = <span class="cstat-no" title="statement not covered" >false;</span>
+<span class="cstat-no" title="statement not covered" >                    if (eligibility) {</span>
+<span class="cstat-no" title="statement not covered" >                        isEligibile = eligibility.oneMinuteMove.isEligible;</span>
+                    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    this.jumpLinks = [];</span>
+<span class="cstat-no" title="statement not covered" >                    for (let key<span class="cstat-no" title="statement not covered" ></span> of Object.keys(contentNode)) {</span>
+                        let item = <span class="cstat-no" title="statement not covered" >contentNode[key];</span>
+<span class="cstat-no" title="statement not covered" >                        this.hideLink = false;</span>
+<span class="cstat-no" title="statement not covered" >                        if (item.code === 'omm') {</span>
+<span class="cstat-no" title="statement not covered" >                            this.hideLink = this.ommLink !== key;</span>
+                        }
+                        let webSiteUrl = <span class="cstat-no" title="statement not covered" >this._configService.current.aglSiteCoreWebsiteBaseUrl;</span>
+<span class="cstat-no" title="statement not covered" >                        if ((item.url === `${webSiteUrl}/signup#connection/requestType/MI`) &amp;&amp; isEligibile) {</span>
+<span class="cstat-no" title="statement not covered" >                            item.url = `${webSiteUrl}/sts/account/login?returnApp=OneMinuteMove&amp;returnPath=${encodeURIComponent('/apps/one-minute-move')}`;</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        if (!this.hideLink) {</span>
+<span class="cstat-no" title="statement not covered" >                            if (this.isJumpLinkValid(item)) {</span>
+<span class="cstat-no" title="statement not covered" >                                this.jumpLinks.push(new LinkButton(item.label, item.isFeatured, item.url, item.image, item.note, item.title));</span>
+                            }
+                        }
+                    }
+<span class="cstat-no" title="statement not covered" >                    this.jumpLinksPopulated = true;</span>
+                });
+            });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.checkCustomerhaveBasicMeter();</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public checkCustomerhaveBasicMeter() {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.doesCustomerhaveBasicMeter = true;</span>
+<span class="cstat-no" title="statement not covered" >        this._accountsService.getAccounts().subscribe(</span>
+            (result<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+                let accountArray: AccountViewModel[];
+<span class="cstat-no" title="statement not covered" >                accountArray = result;</span>
+<span class="cstat-no" title="statement not covered" >                for (let account<span class="cstat-no" title="statement not covered" ></span> of accountArray) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.doesCustomerhaveBasicMeter = (account.contracts.find((contract<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >(contract.isSmartMeter === false))</span></span> !== undefined);</span>
+<span class="cstat-no" title="statement not covered" >                    if (this.doesCustomerhaveBasicMeter) {</span>
+<span class="cstat-no" title="statement not covered" >                        break; </span>// breaking if atleast one basic meter is found for the account
+                    }
+                }
+            }
+        );
+    }
+&nbsp;
+    public isJumpLinkValid(item<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        return !item.title || ((item.title === 'monthlyBilling' &amp;&amp; this.monthlyBillingEnabled));</span>
+    }
+&nbsp;
+    public setOMMButton(status: string, expiryDate: string, showTracker: boolean<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        if (status !== null &amp;&amp; status !== undefined &amp;&amp; status !== '') {</span>
+<span class="cstat-no" title="statement not covered" >            if (showTracker &amp;&amp; status === 'WelcomeHome' &amp;&amp; moment(new Date(expiryDate)).isAfter(this._now.date())) {</span>
+<span class="cstat-no" title="statement not covered" >                this.ommLink = 'rateMyMove';</span>
+            } else <span class="cstat-no" title="statement not covered" >if (showTracker &amp;&amp; (['RequestReceived', 'ProcessingTenPercent', 'ProcessingNinetyPercent', 'ReadyToConnect'].indexOf(status) &gt; -1) &amp;&amp; moment(new Date(expiryDate)).isAfter(this._now.date())) {</span>
+<span class="cstat-no" title="statement not covered" >                this.ommLink = 'trackMyMove';</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                this.ommLink = 'moveHome';</span>
+            }
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.ommLink = 'moveHome';</span>
+        }
+    }
+}
+&nbsp;
+export class LinkButton {
+    constructor(
+        public <span class="cstat-no" title="statement not covered" >label: string,</span>
+        public <span class="cstat-no" title="statement not covered" >isFeatured: boolean,</span>
+        public <span class="cstat-no" title="statement not covered" >url: string,</span>
+        public <span class="cstat-no" title="statement not covered" >image: string,</span>
+        public <span class="cstat-no" title="statement not covered" >note: string,</span>
+        public <span class="cstat-no" title="statement not covered" >title: string<span class="fstat-no" title="function not covered" >)</span> {</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+@mixin link-underline() {
+    color: currentColor;
+    text-decoration: none;
+    transition-duration: 100ms;
+    display: inline-block;
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        pointer-events: none;
+        opacity: 0;
+        top: 100%;
+        margin-top: 0.2em;
+        height: 1px;
+        background-color: currentColor;
+        left: 0;
+        transition: 200ms;
+    }
+
+    @include hover-active(&) {
+        &::after {
+            margin-top: 0.01em;
+            opacity: 1;
+        }
+    }
+}

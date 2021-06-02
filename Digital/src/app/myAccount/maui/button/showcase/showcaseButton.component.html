@@ -1,0 +1,58 @@
+<agl-maui-showcase-template heading='Button'>
+    <div description>
+        <div>The MAUI Button component consists of:</div>
+        <ul>
+            <li>2 button sizes - Small and Large</li>
+            <li>3 button types in the MAUI library - Primary, Secondary and Tertiary</li>
+        </ul>
+        <p>It has a default state of a Large Primary Button.</p>
+        <p>The click event is handled at the parent component.</p>
+        <p>The event binding used here is `(clicked)` instead of `(click)`.</p>
+
+        <div class="showcase-attributes">
+            <div class="header">Attributes</div>
+            <table>
+                <tr><td>type</td> <td>enum / string</td> <td>(if not set, defaults to 'primary')</td></tr>
+                <tr><td>size</td> <td>enum / string</td> <td>(if not set, defaults to 'large')</td></tr>
+                <tr><td>disabled</td> <td>boolean</td></tr>
+                <tr><td>loader</td> <td>boolean</td></tr>
+            </table>
+        </div>
+
+        <p>If no attributes are passed in, button is set to its default state.</p>
+        <p>Refer to <a href="https://aglenergy.atlassian.net/wiki/spaces/AGLDST/pages/135530377/MAUI+Component+Library">MAUI Component Library</a> for details</p>
+    </div>
+    <div exampleCodeUsage>
+        {{codeUsage}}
+    </div>
+    <div exampleImplementation>
+        <div class="showcase-btn__toggles">
+            <label><input type="checkbox" [checked]="showDisabledState" (change)="toggleCheckBox()">Display inactive/disabled state</label>
+            <br/>
+            <label><input type="checkbox" [checked]="showLoadingState" (change)="toggleLoadingButtons()">Show loading state on click</label>
+        </div>
+        <agl-maui-showcase-example label="Primary Button">
+            <div class="showcase-btn__wrapper">
+                <div class="showcase-btn"><agl-maui-button [disabled]="showDisabledState" (clicked)="submitButton('primaryLarge')" [loading]="isLoadingPrimaryLarge">primary</agl-maui-button></div>
+                <div class="showcase-btn"><agl-maui-button [disabled]="showDisabledState" (clicked)="submitButton('primarySmall')" [loading]="isLoadingPrimarySmall" size="small">primary - small</agl-maui-button></div>
+            </div>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label="Secondary Button">
+            <div class="showcase-btn__wrapper">
+                <div class="showcase-btn"><agl-maui-button [disabled]="showDisabledState" (clicked)="submitButton('secondaryLarge')" [loading]="isLoadingSecondaryLarge" type="secondary">secondary</agl-maui-button></div>
+                <div class="showcase-btn"><agl-maui-button [disabled]="showDisabledState" (clicked)="submitButton('secondarySmall')" [loading]="isLoadingSecondarySmall" type="secondary" size="small">secondary - small</agl-maui-button></div>
+            </div>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label="Tertiary Button">
+            <div class="showcase-btn__wrapper">
+                <div class="showcase-btn"><agl-maui-button [disabled]="showDisabledState" (clicked)="submitButton('tertiaryLarge')" [loading]="isLoadingTertiaryLarge" type="tertiary">tertiary</agl-maui-button></div>
+                <div class="showcase-btn"><agl-maui-button [disabled]="showDisabledState" (clicked)="submitButton('tertiarySmall')" [loading]="isLoadingTertiarySmall" type="tertiary" size="small">tertiary - small</agl-maui-button></div>
+            </div>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label="Link">
+            <div class="showcase-btn__wrapper">
+                <div class="showcase-btn"><agl-maui-button [disabled]="showDisabledState" (clicked)="submitButton('link')" [loading]="isLoadingLink" type="link">link</agl-maui-button></div>
+            </div>
+        </agl-maui-showcase-example>
+    </div>
+</agl-maui-showcase-template>

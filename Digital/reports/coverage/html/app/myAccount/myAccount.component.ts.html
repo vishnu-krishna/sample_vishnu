@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\myAccount.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">app/myAccount/</a> myAccount.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">19.31% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>28/145</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">61.97% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>44/71</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.69% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">17.27% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>24/139</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, HostListener, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Http } from '@angular/http';
+import { MdIconRegistry } from '@angular/material';
+import { DomSanitizer } from '@angular/platform-browser';
+import { NavigationStart, Router } from '@angular/router';
+import { Angulartics2GoogleTagManager } from 'angulartics2';
+import { ApiService } from '../shared/service/api.service';
+import { ConfigService } from '../shared/service/config.service';
+import { ContentService } from '../shared/service/content.service';
+import { DeviceDetectorService } from '../shared/service/deviceDetector.service';
+import { MobileMenuComponent } from './menu/mobileMenu.component';
+import { IAuthenticationEventService } from './services/contract/iauthenticationEvent.service';
+import { ISsmrService } from './services/contract/issmr.service';
+import { FeatureFlagService, FeatureFlagTypes } from './services/featureFlag.service';
+&nbsp;
+/**
+ * My account application root container
+ */
+@Component({
+    selector: 'agl-account-app',
+    template: require('./myAccount.component.html'),
+    styles: [require('../shared/style/agltheme.scss'), require('./style/app.scss'), require('../shared/style/dls.scss')],
+    encapsulation: ViewEncapsulation.None
+})
+export class MyAccountComponent implements OnInit {
+&nbsp;
+    @ViewChild(MobileMenuComponent)
+    public _mobileMenu: MobileMenuComponent;
+    public browserClass: string;
+    public <span class="cstat-no" title="statement not covered" >apiSyncError: Boolean = false;</span>
+    public isNewLogo: boolean;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    constructor(private <span class="cstat-no" title="statement not covered" >_http: Http,</span></span>
+                private <span class="cstat-no" title="statement not covered" >_api: ApiService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+                private <span class="cstat-no" title="statement not covered" >_router: Router<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+                private <span class="cstat-no" title="statement not covered" >_device: DeviceDetectorService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+                private <span class="cstat-no" title="statement not covered" >_ga: Angulartics2GoogleTagManager<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+                private <span class="cstat-no" title="statement not covered" >_config: ConfigService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+                private <span class="cstat-no" title="statement not covered" >_contentService: ContentService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+                public <span class="cstat-no" title="statement not covered" >sanitizer: DomSanitizer<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+                public <span class="cstat-no" title="statement not covered" >iconRegistry: MdIconRegistry<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+                public <span class="cstat-no" title="statement not covered" >ssmrService: ISsmrService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+                public <span class="cstat-no" title="statement not covered" >authenticationEventService: IAuthenticationEventService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+                private <span class="cstat-no" title="statement not covered" >_featureService: FeatureFlagService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >)</span> {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this._api.startSync();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this._api.getProfile();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this._api.startTimeout();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this._router.events.subscribe((val<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (val instanceof NavigationStart) {</span>
+                // Track pages
+<span class="cstat-no" title="statement not covered" >                this._ga.pageTrack(val.url);</span>
+            }
+            // whenever the route changes
+<span class="cstat-no" title="statement not covered" >            this.closeMobileMenu();</span>
+<span class="cstat-no" title="statement not covered" >            window.scrollTo(0, 0);</span>
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (_device.isIE) {</span>
+<span class="cstat-no" title="statement not covered" >            this.browserClass = 'ie';</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this._featureService.featureFlagged(FeatureFlagTypes.decisioningEnabled).subscribe(</span>
+            (featureIsEnabled: boolean<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                if (featureIsEnabled) {</span>
+<span class="cstat-no" title="statement not covered" >                    authenticationEventService.sendAuthenticationEvent();</span>
+                }
+            }
+        );
+&nbsp;
+        // All custom SVG icons to be added into the icon registry.
+        // Use as: &lt;md-icon svgIcon="icon-gas" alt="gas icon"&gt;&lt;/md-icon&gt;
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-gas', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_gas.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-settings-personal', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_settings_personal.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-settings-flybuys', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_settings_flyBuys.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-settings-billsmoothing', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_settings_billSmoothing.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-settings-billing', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_bills_white.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-settings-directdebit', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_ma_settings_directDebit.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-bill', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_bill.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-graph', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_graph.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-myaccount', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_myaccount.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-phone', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_phone.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-profile', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_profile.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-settings', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_settings.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-usage', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_usage.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-tick', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_tick.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-settings-elec', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_settings_elec.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-settings-gas', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_settings_gas.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-tick-in-box', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_tick_in_box.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-elec-enabled', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_elec_enabled.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-gas-enabled', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_gas_enabled.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-pay-bill-panel', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_pay_bill_panel.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-exp-bill', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_exp_bill.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-exp-smooth', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_exp_smooth.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-person', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_person.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-hamburger-menu', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_hamburger_menu.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-thermometer', sanitizer.bypassSecurityTrustResourceUrl('svg/icon-thermometer.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-low-graph', sanitizer.bypassSecurityTrustResourceUrl('svg/icon-low-graph.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-warning', sanitizer.bypassSecurityTrustResourceUrl('svg/icon-warning.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-payment-method-add', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_payment_method_add.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-mastercard', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_mastercard.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-visa', sanitizer.bypassSecurityTrustResourceUrl('svg/ico-visa.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-close', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_close.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-close-blue', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_close_blue.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-close-white', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_close_white.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-bank-two-tone', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_bank_two_tone.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-bank-disabled', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_bank_disabled.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-calendar2', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_calendar2.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-clock', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_clock.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-direct-debit-ribbon', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_direct_debit_ribbon.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-sms-pay-ribbon', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_sms_pay_ribbon.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-sc-solarhousequestion', sanitizer.bypassSecurityTrustResourceUrl('svg/sc-solarhousequestion.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-paypal', sanitizer.bypassSecurityTrustResourceUrl('svg/icon-paypal.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-pay-paypal', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_dd_paypal.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-wallet', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_wallet.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-dd-visa', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_dd_visa.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-dd-bank', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_dd_bankaccount.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-dd-master', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_dd_master.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-dog-of-doom', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_dog_of_doom.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-agl-logo-desktop', sanitizer.bypassSecurityTrustResourceUrl('svg/icon-header-desktop.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-agl-logo-mobile', sanitizer.bypassSecurityTrustResourceUrl('svg/icon-header-mobile.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-paypal-grey', sanitizer.bypassSecurityTrustResourceUrl('svg/icon_paypal_grey.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-tick-in-box-large', sanitizer.bypassSecurityTrustResourceUrl('svg/tick_icon.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-calendar', sanitizer.bypassSecurityTrustResourceUrl('svg/icon-calendar.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-email', sanitizer.bypassSecurityTrustResourceUrl('svg/icon-email.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-reminder', sanitizer.bypassSecurityTrustResourceUrl('svg/icon-reminder.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-alert-inform', sanitizer.bypassSecurityTrustResourceUrl('svg/ico_info.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-alert-success', sanitizer.bypassSecurityTrustResourceUrl('svg/alert_success.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-alert-warning', sanitizer.bypassSecurityTrustResourceUrl('svg/alert_warning.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-alert-error', sanitizer.bypassSecurityTrustResourceUrl('svg/alert_error.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-alert-pending', sanitizer.bypassSecurityTrustResourceUrl('svg/alert_pending.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-payment', sanitizer.bypassSecurityTrustResourceUrl('svg/icon-payment.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-chevron-desktop', sanitizer.bypassSecurityTrustResourceUrl('svg/chevron-desktop.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-chevron-mobile', sanitizer.bypassSecurityTrustResourceUrl('svg/chevron-mobile.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-web-chat', sanitizer.bypassSecurityTrustResourceUrl('svg/webchat/web-chat.svg'));</span>
+&nbsp;
+        // concession cards
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-concession-ctlk-healthcare', sanitizer.bypassSecurityTrustResourceUrl('svg/concession/cards/ctlk-healthcare.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-concession-ctlk-pensioner', sanitizer.bypassSecurityTrustResourceUrl('svg/concession/cards/ctlk-pensioner.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-concession-dva-pensioner', sanitizer.bypassSecurityTrustResourceUrl('svg/concession/cards/dva-pensioner.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-concession-dva-gold-eda', sanitizer.bypassSecurityTrustResourceUrl('svg/concession/cards/dva-gold-eda.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-concession-dva-gold-tpi', sanitizer.bypassSecurityTrustResourceUrl('svg/concession/cards/dva-gold-tpi.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-concession-dva-gold-ww', sanitizer.bypassSecurityTrustResourceUrl('svg/concession/cards/dva-gold-ww.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-concession-doi-immi', sanitizer.bypassSecurityTrustResourceUrl('svg/concession/cards/doi-immi.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-concession-qdc-qsc-gov', sanitizer.bypassSecurityTrustResourceUrl('svg/concession/cards/qdc-qsc-gov.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-concession-unknown', sanitizer.bypassSecurityTrustResourceUrl('svg/concession/cards/unknown.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-concession-general', sanitizer.bypassSecurityTrustResourceUrl('svg/concession/icon-card.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('icon-concession-buoy', sanitizer.bypassSecurityTrustResourceUrl('svg/concession/icon-buoy.svg'));</span>
+<span class="cstat-no" title="statement not covered" >        iconRegistry.addSvgIcon('payontime-applied-tick', sanitizer.bypassSecurityTrustResourceUrl('svg/payontime_applied_tick.svg'));</span>
+&nbsp;
+    }
+&nbsp;
+    // Interactions below
+    // Click
+    @HostListener('click')
+<span class="fstat-no" title="function not covered" >    public onClick() {</span>
+<span class="cstat-no" title="statement not covered" >        this._api.checkTimeout();</span>
+    }
+&nbsp;
+    // Key press
+    @HostListener('window:keydown')
+<span class="fstat-no" title="function not covered" >    public keyboardInput() {</span>
+<span class="cstat-no" title="statement not covered" >        this._api.checkTimeout();</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public ngOnInit() {</span></span>
+<span class="cstat-no" title="statement not covered" >        this._api.errors.subscribe((error<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            this.apiSyncError = true;</span>
+        });
+<span class="cstat-no" title="statement not covered" >        this._contentService.load()</span>
+            .subscribe((content<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.isNewLogo = content.selfService.isNewLogo;</span>
+            });
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public closeMobileMenu() {</span>
+<span class="cstat-no" title="statement not covered" >        if (this._mobileMenu.isOpen || this._mobileMenu.isSubMenuOpen) {</span>
+<span class="cstat-no" title="statement not covered" >            this._mobileMenu.isOpen = false;</span>
+<span class="cstat-no" title="statement not covered" >            this._mobileMenu.isSubMenuOpen = false;</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public isFullscreenRoute(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        if (this._router.url.indexOf('ssmr') !== -1) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public showHeader(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return (!this.apiSyncError &amp;&amp; this.ssmrService.showHeader);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public showFooter() {</span>
+<span class="cstat-no" title="statement not covered" >        return (!this.apiSyncError &amp;&amp; this.ssmrService.showFooter);</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

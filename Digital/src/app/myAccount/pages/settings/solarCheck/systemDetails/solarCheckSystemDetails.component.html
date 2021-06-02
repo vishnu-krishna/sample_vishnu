@@ -1,0 +1,97 @@
+<div *ngIf="isLoading" class="settings-system-details__loading">
+    <agl-loader></agl-loader>
+</div>
+<div class="settings-system-details" *ngIf="!isLoading && systemDetails!=null">
+    <div class="main-card-options" [class.disabled]="isDisabled">
+        <div class="heading">
+            Solar system
+            <div class="edit-button" (click)="update()" [class.disabled]="isDisabled">Edit</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 col-xs-8">
+                Number of panels
+            </div>
+            <div class="col-sm-4 col-xs-4" id="solar-system-details-panels">
+                {{systemDetails.numberPanels}}
+            </div>
+            <div class="col-sm-3">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 col-xs-8">
+                System size
+            </div>
+            <div class="col-sm-4 col-xs-4" id="solar-system-details-systemSize">
+                {{systemDetails.systemSizeKw}} kW
+            </div>
+            <div class="col-sm-3">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 col-xs-8">
+                Year of installation
+            </div>
+            <div class="col-sm-4 col-xs-4" id="solar-system-details-installationYear">
+                {{systemDetails.installationYear}}
+            </div>
+            <div class="col-sm-3">
+            </div>
+        </div>
+        <div *ngIf="displaySystemCorrectedAlert()">
+            <agl-alert class="solar-details-system-correction-alert" alertType="success">
+                <div>
+                    Your Solar Command Check settings have been updated.
+                </div>
+            </agl-alert>
+        </div>
+        <div *ngIf="displaySystemChangedAlert()">
+            <agl-alert class="solar-details-system-changed-alert" alertType="inform" heading="{{getSystemCorrectionHeaderText()}}" body="30 days of data are required to calculate your status - we'll email you when it is ready.">
+            </agl-alert>
+        </div>
+        <div *ngIf="displaySystemUpdateErrorAlert()">
+            <agl-alert class="solar-details-system-update-error" alertType="error" heading="Sorry, we seem to be experiencing a problem." body="We couldn't update your system details. Please give it another try.">
+            </agl-alert>
+        </div>
+    </div>
+    <div class="main-card-options" [class.disabled]="isDisabled">
+        <div class="row">
+            <div class="col-xs-6 heading-label">
+                Battery
+            </div>
+            <div class="col-xs-6">
+                <agl-yes-no-switch [isDisabled]="isDisabled" [yesNoModel]='yesNoModel' (switchChanged)="onSwitchChanged($event)"></agl-yes-no-switch>
+            </div>
+        </div>
+        <div *ngIf="displayBatteryUpdateErrorAlert()">
+            <agl-alert class="solar-details-battery-update-error" alertType="error" heading="Sorry, we seem to be experiencing a problem." body="We couldn't update your battery status. Please give it another try.">
+            </agl-alert>
+        </div>
+    </div>
+    <div class="main-card-options">
+        <div class="row">
+            <div class="col-xs-6 heading-label">
+                Communications
+            </div>
+        </div>
+        <div class="row com-row" *ngIf="monthlyEmailFeature">
+            <div class="col-xs-8 switch-label">
+                <span>
+                    I would like to receive a monthly email reminder.
+                </span>
+            </div>
+            <div class="col-xs-4 yes-no-switch">
+                <agl-yes-no-switch [isDisabled]="isDisabled" [yesNoModel]='monthlyEmail' (switchChanged)="onMonthlyEmail($event)"></agl-yes-no-switch>
+            </div>
+        </div>
+        <div class="row com-row">
+            <div class="col-xs-8 switch-label">
+                <span>
+                    I would like to receive an email when my status changes.
+                </span>
+            </div>
+            <div class="col-xs-4 yes-no-switch">
+                <agl-yes-no-switch [yesNoModel]='statusEmail' (switchChanged)="onStatusEmail($event)"></agl-yes-no-switch>
+            </div>
+        </div>
+    </div>
+</div>

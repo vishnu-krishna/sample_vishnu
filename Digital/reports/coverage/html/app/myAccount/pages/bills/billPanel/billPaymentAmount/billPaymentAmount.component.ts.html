@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\bills\billPanel\billPaymentAmount\billPaymentAmount.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/bills/billPanel/billPaymentAmount/</a> billPaymentAmount.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">62.69% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>42/67</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>26/52</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>5/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60.94% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>39/64</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, Input, OnInit }  from '@angular/core';
+import * as moment from 'moment';
+import { DisplayMessages } from '../../../../../shared/globals/displayMessages';
+import { ContentService } from '../../../../../shared/service/content.service';
+import { Now } from '../../../../../shared/service/now.service';
+import { ContractViewModel } from '../../../../services/account.service';
+import { BillTypes } from '../billPanel.component';
+import { BillSubtextComponent } from '../billSubtext/billSubtext.component';
+import { AlertMessages } from './../../../../../shared/messages/alertMessages';
+&nbsp;
+@Component({
+    selector: 'agl-bill-payment-amount',
+    template: require('./billPaymentAmount.component.html'),
+    styles: [require('./billPaymentAmount.component.scss')],
+    providers: [BillSubtextComponent]
+})
+export class BillPaymentAmountComponent implements OnInit {
+&nbsp;
+    @Input() public type: BillTypes;
+    @Input() public contract: ContractViewModel;
+    @Input() public address;
+    @Input() public isAmountOnly;
+    @Input() public isDashboard;
+    public paymentAmount;
+    public overdueAmount;
+    public newAmount;
+    public buttonText;
+    public overdueNewChargesSubtext;
+    public billIssuedIn;
+    public isDefaultMode = false;
+    public paygDebitMessage: string;
+    public isPaygDebit: Boolean;
+    public isPaygLowCredit: Boolean;
+    public amountUnavailable: Boolean;
+    public paymentPendingMessage = DisplayMessages.PAYMENT_PENDING;
+    public amountClass: string;
+    public nextPayment: string;
+    public billSmoothingFrequency: string;
+&nbsp;
+    constructor(
+        private _billSubtextComponent: BillSubtextComponent,
+        private _now: Now<span class="branch-2 cbranch-no" title="branch not covered" >,</span>
+        private _contentService: ContentService<span class="branch-2 cbranch-no" title="branch not covered" >,</span>
+        public _alertMessages: AlertMessages<span class="branch-2 cbranch-no" title="branch not covered" ></span>
+    ) { }
+&nbsp;
+    public ngOnInit() {
+        this._contentService.getContent().subscribe((result) =&gt; {
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (result.selfService !== undefined) {
+<span class="cstat-no" title="statement not covered" >                if (result.selfService.payg !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.paygDebitMessage = result.selfService.payg.highUrgencyTopupMessage;</span>
+                }
+            }
+        });
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (this.type.overdue) {
+<span class="cstat-no" title="statement not covered" >            this.paymentAmount = this.contract.paymentOverdue;</span>
+            // Overdue with a debit...
+<span class="cstat-no" title="statement not covered" >            if (this.type.hasDebit) {</span>
+<span class="cstat-no" title="statement not covered" >                this.paymentAmount = (this.contract.paymentOverdue + this.contract.currentBalance);</span>
+<span class="cstat-no" title="statement not covered" >                this.overdueNewChargesSubtext = true;</span>
+<span class="cstat-no" title="statement not covered" >                this.overdueAmount = this.contract.paymentOverdue;</span>
+<span class="cstat-no" title="statement not covered" >                this.newAmount = this.contract.currentBalance;</span>
+                // this.amount = (this.contract.currentBalance + this.contract.paymentOverdue);
+            }
+        } else <span class="missing-if-branch" title="if path not taken" >I</span>if (this.type.directDebit &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >this.type.hasCredit)</span> {
+<span class="cstat-no" title="statement not covered" >            this.paymentAmount = Math.abs(this.contract.currentBalance);</span>
+        } else {
+            this.paymentAmount = this.contract.currentBalance;
+&nbsp;
+            // Remove negative
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (this.type.hasCredit) {
+<span class="cstat-no" title="statement not covered" >               this.paymentAmount = Math.abs(this.contract.currentBalance);</span>
+            }
+&nbsp;
+            // No payments / no balance
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (!this.paymentAmount) {
+                this.paymentAmount = 0;
+            }
+        }
+&nbsp;
+        // If no address comes through, take the contract address
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (!this.address) {
+            this.address = this.contract.address;
+        }
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (this.type.outOfBillPeriod || this.type.billPaid) {
+            let nextBillDate = <span class="cstat-no" title="statement not covered" >moment(this.contract.currentBillEndDate).startOf('day');</span>
+<span class="cstat-no" title="statement not covered" >            this.billIssuedIn = `Next bill issued in ${this._billSubtextComponent.daysAway(nextBillDate)}`;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (nextBillDate.diff(this._now.date(), 'days') &lt; -2) {</span>
+<span class="cstat-no" title="statement not covered" >                this.billIssuedIn = 'Your next bill is on the way';</span>
+            }
+        }
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (this.isAmountOnly) {
+<span class="cstat-no" title="statement not covered" >            this.isDefaultMode = true;</span>
+        }
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (this.type.billSmoothingV2) {
+            let paymentScheme = <span class="cstat-no" title="statement not covered" >this.contract.paymentScheme;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            this.billSmoothingFrequency = `per ${paymentScheme.frequency.slice(0, -2).toLowerCase()}`;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (paymentScheme.nextPayment) {</span>
+<span class="cstat-no" title="statement not covered" >                this.paymentAmount = Math.abs(paymentScheme.nextPayment.amount);</span>
+                let billSmoothingDueMessage = <span class="cstat-no" title="statement not covered" >this.type.directDebit ? 'Direct Debited' : 'Payment Due';</span>
+                let nextPaymentDate = <span class="cstat-no" title="statement not covered" >moment(paymentScheme.nextPayment.date).format('ddd DD MMM YYYY');</span>
+<span class="cstat-no" title="statement not covered" >                this.billIssuedIn = `${billSmoothingDueMessage} - ${nextPaymentDate}`;</span>
+&nbsp;
+            } else {
+<span class="cstat-no" title="statement not covered" >                this.paymentAmount = Math.abs(paymentScheme.previousPayment.amount);</span>
+<span class="cstat-no" title="statement not covered" >                this.billIssuedIn = '';</span>
+            }
+        }
+    }
+&nbsp;
+    public showOverdueDDMessage() {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (this.type.directDebit &amp;&amp; (<span class="branch-1 cbranch-no" title="branch not covered" >this.type.newBillAndOverdue </span>|| <span class="branch-2 cbranch-no" title="branch not covered" >this.type.overdue)</span>) {
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        }
+        return false;
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

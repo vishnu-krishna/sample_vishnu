@@ -1,0 +1,53 @@
+{
+    "status": 200,
+    "headers": {},
+    "body":
+    {
+        "contractAccountNumber": 7018263504,
+        "extensionOptions": [
+            {
+                "contractNumber": 9400902583,
+                "isEligible": false,
+                "error": {
+                    "message": "Invalid for OPA: Contract & 1 has an active Payment Scheme",
+                    "internalError": {
+                        "errorNumber": "008",
+                        "description": "Could be Bill Smoothing 2.0, or APA"
+                    }
+                }
+            },
+            {
+                "contractNumber": 9400902584,
+                "isEligible": false,
+                "error": {
+                    "message": "Invalid for OPA: Contract & 1 has an active Payment Scheme",
+                    "internalError": {
+                        "errorNumber": "008",
+                        "description": "Could be Bill Smoothing 2.0, or APA"
+                    }
+                }
+            },
+            {
+                "contractNumber": 9400902585,
+                "isEligible": true,
+                "dueDate": "2016-03-11T14:00:00Z",
+                "totalDueAmount": 373.39,
+                "isEligibleForInstalment": true,
+                "dueDateExtensions": [
+                    {
+                        "numberOfDays": 7,
+                        "date": "2018-06-08T14:00:00Z"
+                    },
+                    {
+                        "numberOfDays": 14,
+                        "date": "2018-06-15T14:00:00Z"
+                    },
+                    {
+                        "numberOfDays": 21,
+                        "date": "2018-06-22T14:00:00Z"
+                    }
+                ]
+            }
+        ]
+    }
+}

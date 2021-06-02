@@ -1,0 +1,10 @@
+<div class="bill-breakdown">
+    <div class="bill-breakdown__row" *ngFor="let breakdownRow of breakdown">
+        <span class="bill-breakdown__row-description">{{breakdownRow.description}}</span>
+        <span *ngIf="!breakdownRow.pillText" class="bill-breakdown__row-value"
+            [class.bill-breakdown__row-value--warning]="breakdownRow.isWarning">
+            {{breakdownRow.value | aglCurrency}}
+        </span>
+        <span *ngIf="breakdownRow.pillText" class="bill-breakdown__row-value bill-breakdown__row-value--pill">{{breakdownRow.pillText}}</span>
+    </div>
+</div>

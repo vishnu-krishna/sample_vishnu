@@ -1,0 +1,20 @@
+<div class="month-date-picker">
+    <div class="header">
+        <div class="title">
+            Select monthly due date:
+        </div>
+        <div class="close-button">
+            <a (click)="close($event)">✕</a>
+        </div>
+    </div>
+    <ul class="calendar">
+        <li *ngFor="let date of monthlyDatePickerViewModel.Dates">
+            <a (click)="select($event, date)" 
+            [class.calendar-item-highlight]="date.IsHighlighted"
+            [class.calendar-item-standard]="!date.IsExcluded && !date.IsDefault"
+            [class.calendar-item-excluded]="date.IsExcluded">
+                {{date.DateNumber}}
+            </a>
+        </li>
+    </ul>
+</div>

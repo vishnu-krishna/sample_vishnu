@@ -1,0 +1,72 @@
+[
+    {
+        "dataGroup": "Account",
+        "status": "Complete",
+        "lastUpdated": "2017-01-30T21:38:47.4098478+00:00",
+        "failed": false
+    },
+    {
+        "dataGroup": "BillingHistory",
+        "status": "Complete",
+        "lastUpdated": "2017-01-17T18:05:23.781735+00:00",
+        "failed": false
+    },
+    {
+        "dataGroup": "Dashboard",
+        "status": "Complete",
+        "lastUpdated": "2017-01-29T23:16:11.6211042+00:00",
+        "failed": true,
+        "errors": [
+            {
+                "dataType": "BillSimulation",
+                "account": "23965742",
+                "contract": "9400780769",
+                "message": "Sorry, we were unable to calculate your bill projection. Please try again later.",
+                "hasRfcError": true,
+                "errorId": "002",
+                "errorNumber": ""
+            },
+            {
+                "dataType": "UsageTwoWeeks",
+                "account": "23965742",
+                "contract": "9400780769",
+                "message": "Sorry, we were unable to retrieve your usage charges. Please try again later.",
+                "hasRfcError": true,
+                "errorId": "002",
+                "errorNumber": ""
+            }
+        ]
+    },
+    {
+        "dataGroup": "Payments",
+        "status": "Complete",
+        "lastUpdated": "2017-01-17T18:05:27.0018645+00:00",
+        "failed": false
+    },
+    {
+        "dataGroup": "Usage",
+        "status": "Complete",
+        "lastUpdated": "2017-01-29T23:16:11.6211042+00:00",
+        "failed": true,
+        "errors": [
+            {
+                "dataType": "Usage13Months",
+                "account": "23965742",
+                "contract": "9400780769",
+                "message": "Sorry, we were unable to retrieve your usage charges. Please try again later.",
+                "hasRfcError": true,
+                "errorId": "002",
+                "errorNumber": ""
+            },
+            {
+                "dataType": "Usage13Months",
+                "account": "23965742",
+                "contract": "9400780769",
+                "message": "Sorry, we were unable to retrieve your usage charges. Please try again later.",
+                "hasRfcError": true,
+                "errorId": "002",
+                "errorNumber": ""
+            }
+        ]
+    }
+]

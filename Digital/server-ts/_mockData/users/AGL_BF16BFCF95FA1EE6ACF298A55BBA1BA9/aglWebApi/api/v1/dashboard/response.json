@@ -1,0 +1,54 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "account": "7032112521",
+            "contract": "9402239719",
+            "currentBillStartDate": "2018-01-29T00:00:00",
+            "currentBillEndDate": "2018-02-28T00:00:00",
+            "costToDate": 25.14,
+            "projectedBill": 48.98,
+            "usageCostThisWeek": 12.693692,
+            "usageCostLastWeek": 4.890286,
+            "usageThisWeek": "43.767",
+            "usageLastWeek": "16.865",
+            "balance": 0,
+            "dueDate": "0001-01-01T00:00:00",
+            "isSmartMeter": true,
+            "estimatedReads": false
+        },
+        {
+            "account": "7032112521",
+            "contract": "9402273534",
+            "currentBillStartDate": "0001-01-01T00:00:00",
+            "currentBillEndDate": "2018-03-06T00:00:00",
+            "costToDate": 0,
+            "projectedBill": 0,
+            "usageCostThisWeek": 0,
+            "usageCostLastWeek": 0,
+            "usageThisWeek": null,
+            "usageLastWeek": null,
+            "balance": 0,
+            "dueDate": "0001-01-01T00:00:00",
+            "isSmartMeter": false,
+            "estimatedReads": false
+        },
+        {
+            "account": "7032112521",
+            "contract": "9404760834",
+            "currentBillStartDate": "2018-02-21T00:00:00",
+            "currentBillEndDate": "2018-03-28T00:00:00",
+            "costToDate": 7.24,
+            "projectedBill": 130.32,
+            "usageCostThisWeek": 3.974976,
+            "usageCostLastWeek": 0,
+            "usageThisWeek": "13.6992",
+            "usageLastWeek": "0",
+            "balance": 0,
+            "dueDate": "0001-01-01T00:00:00",
+            "isSmartMeter": true,
+            "estimatedReads": true
+        }
+    ]
+}

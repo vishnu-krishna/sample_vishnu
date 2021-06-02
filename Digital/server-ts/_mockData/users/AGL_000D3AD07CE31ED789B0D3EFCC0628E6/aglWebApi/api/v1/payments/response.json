@@ -1,0 +1,16 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "account": "57439192",
+            "contract": "9035268318",
+            "overdue": 738.33,
+            "dueDate": "12/05/2017",
+            "currentBalance": 405.91,
+            "totalPayment": 1144.24,
+            "billSmoothing": false,
+            "directDebit": false
+        }
+    ]
+}

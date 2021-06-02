@@ -1,0 +1,243 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "webAppName": {
+      "type": "string"
+    },
+    "hostingPlanName": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "hostingEnvironment": {
+      "type": "string"
+    },
+    "serverFarmResourceGroup": {
+      "type": "string"
+    },
+    "subscriptionId": {
+      "type": "string"
+    },
+    "customUri": {
+      "type": "string"
+    },
+    "certThumbprint": {
+      "type": "string"
+    },
+    "stagingSlotName": {
+      "type": "string"
+    },
+    "sasUrl": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "apiVersion": "2016-03-01",
+      "name": "[parameters('webAppName')]",
+      "type": "Microsoft.Web/sites",
+      "properties": {
+        "name": "[parameters('webAppName')]",
+        "serverFarmId": "[concat('/subscriptions/', parameters('subscriptionId'),'/resourcegroups/', parameters('serverFarmResourceGroup'), '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
+        "hostingEnvironment": "[parameters('hostingEnvironment')]",
+        "hostNameSslStates": [
+          {
+            "condition": "[equals(parameters('customUri'),'myaccount.agl.com.au')]",
+            "name": "[parameters('customUri')]",
+            "sslState": "SniEnabled",
+            "virtualIP": null,
+            "thumbprint": "[parameters('certThumbprint')]",
+            "toUpdate": null,
+            "hostType": "Standard"
+          },
+          {
+            "name": "[concat(parameters('webAppName'),'.azurewebsites.net')]",
+            "sslState": "Disabled",
+            "virtualIP": null,
+            "thumbprint": null,
+            "toUpdate": null,
+            "hostType": "Standard"
+          },
+          {
+            "name": "[concat(parameters('webAppName'),'.scm.azurewebsites.net')]",
+            "sslState": "Disabled",
+            "virtualIP": null,
+            "thumbprint": null,
+            "toUpdate": null,
+            "hostType": "Repository"
+          }
+        ]
+      },
+      "location": "[parameters('location')]",
+      "resources": [
+        {
+          "name": "appsettings",
+          "type": "config",
+          "apiVersion": "2016-08-01",
+          "properties": {
+            "WEBSITE_LOAD_CERTIFICATES": "*",
+            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+            "DIAGNOSTICS_AZUREBLOBCONTAINERSASURL": "[parameters('sasUrl')]",
+            "DIAGNOSTICS_AZUREBLOBRETENTIONINDAYS": "0",
+            "NEWRELIC_HOME": "D:\\Home\\site\\wwwroot\\newrelic"
+          },
+          "dependsOn": [
+            "[resourceId('Microsoft.Web/Sites', parameters('webAppName'))]"
+          ]
+        },
+        {
+          "apiVersion": "2015-08-01",
+          "name": "logs",
+          "type": "config",
+          "dependsOn": [
+            "[resourceId('Microsoft.Web/Sites', parameters('webAppName'))]"
+          ],
+          "properties": {
+            "applicationLogs": {
+              "fileSystem": {
+                "level": "Off"
+              },
+              "azureTableStorage": {
+                "level": "Off"
+              },
+              "azureBlobStorage": {
+                "level": "Verbose",
+                "sasUrl": "[parameters('sasUrl')]",
+                "retentionInDays": 90
+              }
+            },
+            "httpLogs": {
+              "fileSystem": {
+                "enabled": false
+              },
+              "azureBlobStorage": {
+                "enabled": false
+              }
+            },
+            "failedRequestsTracing": {
+              "enabled": false
+            },
+            "detailedErrorMessages": {
+              "enabled": false
+            }
+          }
+        }
+      ],
+      "identity": {
+        "type": "systemAssigned"
+      },
+      "tags": {
+        "[concat('hidden-related:', '/subscriptions/', parameters('subscriptionId'),'/resourcegroups/', parameters('serverFarmResourceGroup'), '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]": "empty"
+      }
+    },
+    {
+      "type": "Microsoft.Web/sites/slots",
+      "kind": "app",
+      "name": "[concat(parameters('webAppName'),'/Staging')]",
+      "apiVersion": "2016-08-01",
+      "location": "[parameters('location')]",
+      "scale": null,
+      "properties": {
+        "enabled": true,
+        "serverFarmId": "[concat('/subscriptions/', parameters('subscriptionId'),'/resourcegroups/', parameters('serverFarmResourceGroup'), '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
+        "reserved": false,
+        "scmSiteAlsoStopped": false,
+        "hostingEnvironmentProfile": null,
+        "clientAffinityEnabled": true,
+        "clientCertEnabled": false,
+        "hostNamesDisabled": false,
+        "containerSize": 0,
+        "dailyMemoryTimeQuota": 0,
+        "cloningInfo": null
+      },
+      "resources": [
+        {
+          "apiVersion": "2015-08-01",
+          "name": "appsettings",
+          "type": "config",
+          "location": "[resourceGroup().location]",
+          "properties": {
+            "WEBSITE_LOAD_CERTIFICATES": "*",
+            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+            "DIAGNOSTICS_AZUREBLOBCONTAINERSASURL": "[parameters('sasUrl')]",
+            "DIAGNOSTICS_AZUREBLOBRETENTIONINDAYS": "0",
+            "NEWRELIC_HOME": "D:\\Home\\site\\wwwroot\\newrelic"
+          },
+          "dependsOn": [
+            "[resourceId('Microsoft.Web/sites/slots',parameters('webAppName'),parameters('stagingSlotName'))]"
+          ]
+        },
+        {
+          "apiVersion": "2015-08-01",
+          "name": "logs",
+          "type": "config",
+          "dependsOn": [
+            "[resourceId('Microsoft.Web/sites/slots',parameters('webAppName'),parameters('stagingSlotName'))]"
+          ],
+          "properties": {
+            "applicationLogs": {
+              "fileSystem": {
+                "level": "Off"
+              },
+              "azureTableStorage": {
+                "level": "Off"
+              },
+              "azureBlobStorage": {
+                "level": "Verbose",
+                "sasUrl": "[parameters('sasUrl')]",
+                "retentionInDays": 90
+              }
+            },
+            "httpLogs": {
+              "fileSystem": {
+                "enabled": false
+              },
+              "azureBlobStorage": {
+                "enabled": false
+              }
+            },
+            "failedRequestsTracing": {
+              "enabled": false
+            },
+            "detailedErrorMessages": {
+              "enabled": false
+            }
+          }
+        }
+      ],
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', parameters('webAppName'))]"
+      ]
+    },
+    {
+      "condition": "[equals(parameters('customUri'),'myaccount.agl.com.au')]",
+      "type": "Microsoft.Web/sites/hostNameBindings",
+      "name": "[concat(parameters('webAppName'),'/',parameters('customUri'))]",
+      "apiVersion": "2016-08-01",
+      "location": "[parameters('location')]",
+      "scale": null,
+      "properties": {
+        "siteName": "[parameters('webAppName')]",
+        "domainId": null,
+        "hostNameType": "Verified",
+        "sslState": "SniEnabled",
+        "thumbprint": "[parameters('certThumbprint')]"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', parameters('webAppName'))]"
+      ]
+    }
+  ],
+  "outputs": {
+    "tenantIdString": {
+      "type": "string",
+      "value": "[reference(parameters('webAppName'),'2016-08-01','Full').identity.tenantId]"
+    },
+    "principalIdString": {
+      "type": "string",
+      "value": "[reference(parameters('webAppName'),'2016-08-01','Full').identity.principalId]"
+    }
+  }
+}

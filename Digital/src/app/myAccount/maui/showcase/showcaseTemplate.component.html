@@ -1,0 +1,23 @@
+<div class="component">
+    <div class="component__header">
+        <span>{{heading}}</span>
+        <agl-maui-segmented-buttons [(value)]="selectedValue" (change)="setSelectedValue($event)">
+            <agl-maui-segmented-button value="visual" text="Visual" [selected]="true"></agl-maui-segmented-button>
+            <agl-maui-segmented-button value="info" text="Info"></agl-maui-segmented-button>
+            <agl-maui-segmented-button value="code" text="Code"></agl-maui-segmented-button>
+        </agl-maui-segmented-buttons>
+    </div>
+    <div class="component__body">
+        <div class="component__body-visual" [class.display]="displayVisual">
+            <ng-content select='[exampleImplementation]'></ng-content>  
+        </div>
+        <div class="component__body-info" [class.display]="displayInfo">
+            <ng-content select='[description]'></ng-content>
+        </div>
+        <div class="component__body-code" [class.display]="displayCode">
+            <pre class="prettyprint lang-html">
+                <ng-content select='[exampleCodeUsage]'></ng-content>
+            </pre>
+        </div>
+    </div>
+</div>

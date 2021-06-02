@@ -1,0 +1,10 @@
+<div class="continue-or-cancel__cta">
+    <agl-maui-button class="continue-or-cancel__cta-continue"
+                        (clicked)="continue()"
+                        [disabled]="!continueButtonEnabled"
+                        [loading]="continueButtonClickInProgress">Continue</agl-maui-button>
+    <agl-maui-button class="continue-or-cancel__cta-cancel"
+                     *ngIf="showCancel && !continueButtonClickInProgress"
+                     type="link"
+                     (clicked)="cancel()">Cancel</agl-maui-button>
+</div>

@@ -1,0 +1,85 @@
+(function processDeepLinks(window) {
+    <!-- Note this script runs prior to the polyfills and must work in older browsers -->
+    var analyticsQueryStringsToForward = ['cide'];
+    var path = window.location.pathname.toLowerCase();
+    var deepLinkIdx = path.indexOf("/d/");
+
+    if (deepLinkIdx !== -1) {
+        var deepLink = path.substring(deepLinkIdx).replace(/\/$/, '').toLowerCase();
+
+        var lookup = [
+            {dl: '/d/overview', actual: '/overview'},
+            {dl: '/d/usage', actual: '/usage'},
+            {dl: '/d/bills', actual: '/bills'},
+            {dl: '/d/personal', actual: '/settings/personal'},
+            {dl: '/d/rewards', actual: '/rewards'},
+            {dl: '/d/offers', actual: '/settings/offers'},
+            {dl: '/d/billing', actual: '/settings/billing'},
+            {dl: '/d/billsmoothing', actual: '/settings/billsmoothing'},
+            {dl: '/d/directdebit', actual: '/settings/directdebit'},
+            {dl: '/d/smspay', actual: '/settings/smspay'},
+            {dl: '/d/mywallet', actual: '/settings/mywallet'},
+            {dl: '/d/meterread', actual: '/overview?rdla=meterread'},
+            {dl: '/d/paymentextensions', actual: '/bills/paymentassistance/welcome', unauthenticated: true},
+            {dl: '/d/contactdetails', actual: '/settings/contactdetails'},
+            {dl: '/d/paymentassistance', actual: '/bills/paymentassistance', unauthenticated: true},
+            {dl: '/d/monthlybilling', actual: '/settings/monthlybilling/welcome'},
+            {dl: '/d/energyinsights', actual: '/settings/energyinsights'},
+            {dl: '/d/homeprofile', actual: '/settings/homeprofile'},
+            {dl: '/d/concessions', actual: '/settings/concession/dl'},
+            {dl: '/d/notifications', actual: '/settings/notifications'}
+        ];
+
+        var matches = lookup.filter(function(e) {
+            return deepLink === e.dl.toLowerCase();
+        });
+
+        if (matches && matches.length === 1) {
+            var match = matches[0];
+            var redirectUrl = addAnalyticsQueryStringsToRedirectUrl(match.actual, analyticsQueryStringsToForward);
+
+            <% if (htmlWebpackPlugin.options.deepLinkDirect) { %>
+                   // only occurs locally
+                   // we don't track analytics locally, so don't add analytics queryStrings, we use "match.actual" instead of "redirectUrl" here
+                   var newLocation = window.location.href.replace(path + window.location.search, '/?navigateUrl='+ encodeURIComponent(match.actual))
+                   window.location.replace(newLocation);
+            <% } else { %>
+                 if (match.unauthenticated) {
+                    var newLocation = redirectUrl;
+                    window.location.href = newLocation;
+                 } else {
+                   var newLocation = getTransformedConfig().aglSiteCoreWebsiteBaseUrl + '/sts/account/login?returnApp=MyAccount&returnPath=' + encodeURIComponent(redirectUrl);
+                   window.location.replace(newLocation);
+                }
+            <% } %>
+        }
+    }
+
+    function getQueryString(urlParameters, queryStringName) {
+        var queryStringParam = queryStringName + "=";
+        var searchPattern = new RegExp(queryStringParam + '\[^?&]+', 'i');
+        var match = searchPattern.exec(urlParameters);
+
+        return match ? match[0] : null;
+    }
+
+    function addAnalyticsQueryStringsToRedirectUrl(originalRedirectUrl, queryStringNames) {
+        var queryStrings = '';
+
+        for (var i = 0; i < queryStringNames.length; i++) {
+            var queryStringName = queryStringNames[i];
+            var queryString = getQueryString(window.location.search, queryStringName);
+
+            if (queryString) {
+                if (queryStrings === '') {
+                    queryStrings += '?' + queryString;
+                } else {
+                    queryStrings += '&' + queryString;
+                }
+            }
+        }
+        return originalRedirectUrl + queryStrings;
+    }
+
+})(window);
+

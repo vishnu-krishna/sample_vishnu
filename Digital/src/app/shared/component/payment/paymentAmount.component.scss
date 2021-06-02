@@ -1,0 +1,288 @@
+@import '../../style/variables';
+@import '../../style/mixins';
+@import './payment';
+
+.payment-amount {
+    padding-bottom: 26px;
+
+    &__text {
+        width: 100%;
+        padding-left: 20px;
+        @media #{$agl-layout-mobile} {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    &__description {
+        margin-top: 10px;
+    }
+
+    &__bonus {
+        position: absolute;
+        right: 1px;
+        top: 1px;
+        border: 1px solid transparent;
+        border-left: 1px solid $control-border-colour;
+        border-radius: 0px 4px 4px 0px;
+        background-color: $control-disabled-back;
+        height: 43px;
+        vertical-align: middle;
+        width: 110px;
+        line-height: 42px;
+        text-align: center;
+        color: $brand-grey-g1;
+        @media #{$agl-layout-mobile} {
+            width: 36%;
+            left: inherit;
+            right: 1px;
+        }
+
+        &.loading-background {
+            color: $brand-grey-c5;
+        }
+
+        &__outstanding {
+            font-weight: normal;
+            font-size: 12px;
+            padding-top: 15px;
+        }
+    }
+
+    &__form {
+        position: relative;
+        margin-top: 12px;
+    }
+
+    &__choose {
+        display: inline-block;
+    }
+
+    &__symbol {
+        position: absolute;
+        pointer-events: none;
+        font-size: 16px;
+        left: 10px;
+        top: 15px;
+
+        &--invalid {
+            color: $brand-fire;
+        }
+    }
+
+    &__bonus-list {
+        &__table {
+            display: block;
+            width: 240px;
+            margin-top: 10px;
+            font-size: 12px;
+            @media #{$agl-layout-mobile} {
+                width: 100%;
+            }
+
+            &__row {
+                display: table;
+                margin-bottom: 2px;
+                width: 100%;
+                box-shadow: $agl-tooltip-shadow;
+            }
+
+            &__headercell {
+                display: table-cell;
+                width: 50%;
+                font-weight: bold;
+                padding: 5px 15px;
+                background-color: $brand-white;
+            }
+
+            &__cell {
+                display: table-cell;
+                width: 50%;
+                padding: 5px 15px;
+                background-color: $brand-white;
+            }
+        }
+    }
+
+    &__paygfixed {
+        margin-top: 10px;
+
+        &__bonus {
+            display: block;
+            @media #{$agl-layout-mobile} {
+                display: none;
+            }
+        }
+
+        &--mobile {
+            margin-top: 0px;
+            position: relative;
+            display: none;
+            width: 100%;
+
+            &__text {
+                @extend .payment-amount__text;
+                margin-top: 0px;
+                padding-left: 15px;
+            }
+
+            &__bonus {
+                @extend .payment-amount__bonus;
+                top: 1px;
+            }
+            @media #{$agl-layout-mobile} {
+                display: block;
+            }
+        }
+
+        .bonus-box {
+            &.dark {
+                background-color: $brand-sky;
+                width: 138px;
+                color: $brand-white;
+            }
+
+            &__topupamount {
+                color: $brand-white;
+            }
+
+            &__bonusamount {
+                color: $brand-white;
+                font-size: 12px;
+            }
+
+            &__button {
+                background-color: $brand-sky-light;
+                line-height: 34px;
+                vertical-align: middle;
+                letter-spacing: 1px;
+            }
+        }
+    }
+
+    &__addbonus {
+        position: relative;
+        width: 240px;
+        height: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: none;
+        @media #{$agl-layout-mobile} {
+            width: 100%;
+            margin-bottom: 0px;
+        }
+
+        .add-bonus-info {
+            background: $brand-white;
+            padding: 12px 0px;
+            font-family: $secondary-font-stack;
+            font-size: 14px;
+            font-weight: 400;
+            text-align: center;
+            border-radius: 4px;
+
+            &__message {
+                display: inline;
+                font-size: 14px;
+                line-height: 18px;
+                padding-left: 5px;
+                vertical-align: middle;
+                color: $brand-grey-g1;
+
+                &__text {
+                    font-weight: bold;
+                    color: $brand-sky;
+                    cursor: pointer;
+                }
+            }
+
+            &:before,
+            &:after {
+                display: block;
+                content: '';
+                position: absolute;
+                z-index: -100;
+                width: 65%;
+                top: 0;
+                bottom: 10px;
+                box-shadow: 0px 2px 6px 1px rgba(184, 182, 184, 0.63);
+                transition: transform 200ms ease-out;
+                border-radius: 4px;
+                height: 43px;
+                @media #{$agl-layout-mobile} {
+                    width: 50%;
+                }
+            }
+
+            &:before {
+                left: 0;
+                width: 35%;
+                border-top-right-radius: 1rem;
+                @media #{$agl-layout-mobile} {
+                    width: 50%;
+                }
+            }
+
+            &:after {
+                right: 0;
+                border-top-left-radius: 1rem;
+            }
+        }
+
+        .tooltip--tip {
+            position: absolute;
+            z-index: -100;
+            display: block;
+            width: 15px;
+            height: 13px;
+            background: #FFFFFF;
+            left: 38%;
+            bottom: 43px;
+            transform: translateX(-50%) rotate(45deg);
+            box-shadow: 0px 2px 6px 1px rgba(184, 182, 184, 0.63);
+            transition: transform 200ms ease-out;
+            @media #{$agl-layout-mobile} {
+                left: 50%;
+            }
+        }
+    }
+}
+
+.ng-invalid {
+    border-color: $brand-fire;
+    color: $brand-fire;
+}
+
+.agl-error {
+    font-size: 12px;
+    color: $brand-fire;
+    padding-top: 5px;
+    font-weight: normal;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.down-arrow {
+    @include downArrow($brand-sky, 2px, 3px);
+}
+
+.up-arrow {
+    @include upArrow($brand-sky);
+    margin-bottom: 2px;
+}
+
+.is-loading {
+    position: absolute;
+    left: 40%;
+    top: 13%;
+}

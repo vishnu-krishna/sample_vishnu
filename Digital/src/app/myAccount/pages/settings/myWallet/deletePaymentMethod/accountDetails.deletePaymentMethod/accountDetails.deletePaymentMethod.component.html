@@ -1,0 +1,17 @@
+<div>
+    <div class="accountdetails-pm__body">Your {{paymentMethodType}} is currently linked with the following accounts:</div>
+    <div class="accountdetails-pm__account" *ngFor="let accountDetail of accountDetails; let i = index">
+        <div class="accountdetails-pm__account--details">
+            <div class="accountdetails-pm__account--account-no">Account no: {{accountDetail.accountNumber | aglAddSpaces}}</div>
+            <div class="accountdetails-pm__account--fuel-icons">
+                <mat-icon *ngFor="let icon of accountDetail.electricityFuel" svgIcon="icon-elec-enabled" alt="electricity icon"></mat-icon>
+                <mat-icon *ngFor="let icon of accountDetail.gasFuel" svgIcon="icon-gas-enabled" alt="gas icon"></mat-icon>
+            </div>
+            <div class="accountdetails-pm__account--address">{{accountDetail.address}}</div>
+        </div>
+        <div class="accountdetails-pm__account--payment-arrangement">
+            <span *ngIf="accountDetail.isDirectDebit" >Direct Debit</span>
+            <span *ngIf="accountDetail.isSmsPay">SMS Pay</span>
+        </div>
+    </div>
+</div>

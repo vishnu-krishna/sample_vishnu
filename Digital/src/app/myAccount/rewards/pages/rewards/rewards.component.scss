@@ -1,0 +1,76 @@
+@import '../../../maui/maui';
+@import '../../_rewards';
+
+.tiles-wrapper {
+    padding-top: 30px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+
+    @media #{$agl-layout-mobile} {
+        padding-top: 0;
+    }
+
+    &.data-loaded {
+        opacity: 1;
+    }
+}
+
+.rewards__tiles {
+    display: flex;
+    flex-wrap: wrap;
+
+    .rewards__tile-wrapper {
+        width: 50%;
+        padding: 0 15px 30px 15px;
+
+        @media #{$agl-layout-tablet-and-smaller} {
+            width: 100%;
+        }
+
+        @media #{$agl-layout-mobile} {
+            padding: 0 0 $rewards-tile-mobile-margin 0;
+        }
+    }
+
+    .rewards__tile-wrapper--full-width {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+
+        @media #{$agl-layout-mobile} {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    &.container {
+        &::before {
+            display: none; /* not needed and causes issues on safari with the two tiles needing to fit at 50% */
+        }
+
+        @media #{$agl-layout-mobile} {
+            padding-left: $rewards-tile-mobile-margin;
+            padding-right: $rewards-tile-mobile-margin;
+            padding-top: $rewards-tile-mobile-margin;
+        }
+    }
+}
+
+.benefits-container {
+    &.container {
+        @media #{$agl-layout-mobile} {
+            padding-left: $rewards-tile-mobile-margin;
+            padding-right: $rewards-tile-mobile-margin;
+        }
+    }
+
+    &.benefits-activated {
+        &.container {
+            @media #{$agl-layout-mobile} {
+                width: 100% !important;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+}

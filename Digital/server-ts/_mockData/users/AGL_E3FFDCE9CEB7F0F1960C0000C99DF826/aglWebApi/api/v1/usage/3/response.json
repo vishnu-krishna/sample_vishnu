@@ -1,0 +1,111 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "account": "7012709379",
+            "contract": "9131915189",
+            "costs": [
+                {
+                    "value": 63.030192,
+                    "startDateTime": "2016-03-29T00:00:00",
+                    "endDateTime": "2016-04-28T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 55.94976,
+                    "startDateTime": "2016-04-29T00:00:00",
+                    "endDateTime": "2016-05-28T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 66.839472,
+                    "startDateTime": "2016-05-29T00:00:00",
+                    "endDateTime": "2016-06-28T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 92.820672,
+                    "startDateTime": "2016-06-29T00:00:00",
+                    "endDateTime": "2016-07-28T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 89.790096,
+                    "startDateTime": "2016-07-29T00:00:00",
+                    "endDateTime": "2016-08-28T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 64.760736,
+                    "startDateTime": "2016-08-29T00:00:00",
+                    "endDateTime": "2016-09-28T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 52.60032,
+                    "startDateTime": "2016-09-29T00:00:00",
+                    "endDateTime": "2016-10-28T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 220.830912,
+                    "startDateTime": "2016-10-29T00:00:00",
+                    "endDateTime": "2017-01-28T00:00:00",
+                    "estimatedRead": false
+                }
+            ],
+            "consumption": [
+                {
+                    "value": 304,
+                    "startDateTime": "2016-03-29T00:00:00",
+                    "endDateTime": "2016-04-28T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 276,
+                    "startDateTime": "2016-04-29T00:00:00",
+                    "endDateTime": "2016-05-28T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 331,
+                    "startDateTime": "2016-05-29T00:00:00",
+                    "endDateTime": "2016-06-28T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 457,
+                    "startDateTime": "2016-06-29T00:00:00",
+                    "endDateTime": "2016-07-28T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 420,
+                    "startDateTime": "2016-07-29T00:00:00",
+                    "endDateTime": "2016-08-28T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 286,
+                    "startDateTime": "2016-08-29T00:00:00",
+                    "endDateTime": "2016-09-28T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 243,
+                    "startDateTime": "2016-09-29T00:00:00",
+                    "endDateTime": "2016-10-28T00:00:00",
+                    "estimatedRead": false
+                },
+                {
+                    "value": 964,
+                    "startDateTime": "2016-10-29T00:00:00",
+                    "endDateTime": "2017-01-28T00:00:00",
+                    "estimatedRead": false
+                }
+            ],
+            "hasNoBill": false
+        }
+    ]
+}

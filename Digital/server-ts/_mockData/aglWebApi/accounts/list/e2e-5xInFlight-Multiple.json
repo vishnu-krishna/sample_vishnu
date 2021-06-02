@@ -1,0 +1,127 @@
+[
+    {
+        "number": "111222333",
+        "firstName": "Rene",
+        "lastName": "Descartes",
+        "contracts": [
+            {
+                "address": "32/102 Cook St, Parramatta, Sydney, NSW 2150",
+                "fuelType": "Electricity",
+                "accountNumber": "111222333",
+                "nameId": "AGL_E395B892419209F1A8DCE150C6AD1CFB",
+                "number": "222222222",
+                "planName": "Select 6%",
+                "inFlight": true,
+                "isRestricted": false
+            },
+            {
+                "address": "32 Brewery Ln|North Willoughby|Sydney, NSW 2023",
+                "fuelType": "Gas",
+                "accountNumber": "111222333",
+                "nameId": "AGL_E395B892419209F1A8DCE150C6AD1CFB",
+                "number": "222222222",
+                "planName": "Select 6%",
+                "inFlight": false,
+                "isRestricted": false
+            }
+        ]
+    },
+    {
+        "number": "222333444",
+        "firstName": "Rene",
+        "lastName": "Descartes",
+        "contracts": [
+            {
+                "address": "32/102 Cook St, Parramatta, Sydney, NSW 2150",
+                "fuelType": "Electricity",
+                "accountNumber": "222333444",
+                "nameId": "AGL_E395B892419209F1A8DCE150C6AD1CFB",
+                "number": "222222222",
+                "planName": "Select 6%",
+                "inFlight": true,
+                "isRestricted": false
+            },
+            {
+                "address": "32 Brewery Ln|North Willoughby|Sydney, NSW 2023",
+                "fuelType": "Gas",
+                "accountNumber": "222333444",
+                "nameId": "AGL_E395B892419209F1A8DCE150C6AD1CFB",
+                "number": "222222222",
+                "planName": "Select 6%",
+                "inFlight": true,
+                "isRestricted": false
+            }
+        ]
+    },
+    {
+        "number": "333444555",
+        "firstName": "Rene",
+        "lastName": "Descartes",
+        "contracts": [
+            {
+                "address": "8 Townson St, Hurstville Grove, NSW 2220",
+                "fuelType": "Electricity",
+                "accountNumber": "333444555",
+                "nameId": "AGL_E395B892419209F1A8DCE150C6AD1CFB",
+                "number": "333333333",
+                "planName": "Select 6%",
+                "inFlight": true,
+                "isRestricted": false
+            },
+            {
+                "address": "8 Townson St, Hurstville Grove, NSW 2220",
+                "fuelType": "Gas",
+                "accountNumber": "333444555",
+                "nameId": "AGL_E395B892419209F1A8DCE150C6AD1CFB",
+                "number": "444444444",
+                "planName": "Select 6%",
+                "inFlight": false,
+                "isRestricted": false
+            }
+        ]
+    },
+    {
+        "number": "444555666",
+        "firstName": "Rene",
+        "lastName": "Descartes",
+        "contracts": [
+            {
+                "address": "8 Townson St, Hurstville Grove, NSW 2220",
+                "fuelType": "Electricity",
+                "accountNumber": "444555666",
+                "nameId": "AGL_E395B892419209F1A8DCE150C6AD1CFB",
+                "number": "333333333",
+                "planName": "Select 6%",
+                "inFlight": true,
+                "isRestricted": false
+            },
+            {
+                "address": "8 Townson St, Hurstville Grove, NSW 2220",
+                "fuelType": "Gas",
+                "accountNumber": "444555666",
+                "nameId": "AGL_E395B892419209F1A8DCE150C6AD1CFB",
+                "number": "444444444",
+                "planName": "Select 6%",
+                "inFlight": true,
+                "isRestricted": false
+            }
+        ]
+    },
+    {
+        "number": "555666777",
+        "firstName": "Rene",
+        "lastName": "Descartes",
+        "contracts": [
+            {
+                "address": "89 Beachview Parade, Point Cook, Vic, 3030",
+                "fuelType": "Electricity",
+                "accountNumber": "555666777",
+                "nameId": "AGL_E395B892419209F1A8DCE150C6AD1CFB",
+                "number": "333333333",
+                "planName": "Select 6%",
+                "inFlight": true,
+                "isRestricted": false
+            }
+        ]
+    }
+]

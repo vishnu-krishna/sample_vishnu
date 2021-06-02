@@ -1,0 +1,35 @@
+[
+    {
+        "number": "7013136192",
+        "firstName": "Doug",
+        "lastName": "Hansen",
+        "contracts": [
+            {
+                "address": "Unit|U4/6 Butler Street|NORTHCOTE VIC 3070",
+                "accountNumber": "7013136192",
+                "fuelType": "Electricity",
+                "nameId": "AGL_E413049401DC19F1A8F80000C99D68E2",
+                "number": "9400106800",
+                "planName": "Savers",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false,
+                "regionId": "VIC"
+            },
+            {
+                "address": "U 4/6 Butler Street|NORTHCOTE VIC 3070",
+                "accountNumber": "7013136192",
+                "fuelType": "Gas",
+                "nameId": "AGL_E413049401DC19F1A8F80000C99D68E2",
+                "number": "9400115422",
+                "planName": "Savers",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false,
+                "regionId": "VIC"
+            }
+        ]
+    }
+]

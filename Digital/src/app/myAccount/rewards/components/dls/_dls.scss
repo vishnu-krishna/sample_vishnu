@@ -1,0 +1,36 @@
+@import '../../../maui/maui';
+@import '../../rewards';
+
+$orange: #FFA500;
+
+%dls-component-common {
+    font-family: $body-font-stack;
+}
+
+%dls-tile-base {
+    background-color: $neutral-08;
+    box-shadow: $rewards-tile-shadow;
+}
+
+@mixin link($inverse-colors) {
+    font-weight: 700;
+    @if $inverse-colors {
+        color: $neutral-01;
+    } @else {
+        color: $primary-dark;
+    }
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+
+    @media #{$agl-layout-tablet-and-greater} {
+        &:hover {
+            @if $inverse-colors {
+                color: $primary-dark;
+            } @else {
+                color: $neutral-01;
+            }
+        }
+    }
+}
+

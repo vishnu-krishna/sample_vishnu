@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\settings\settings.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/settings/</a> settings.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">34.04% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>16/47</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">48% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>12/25</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">9.09% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">32.56% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>14/43</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Inject, Injectable, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { FeatureFlagService, FeatureFlagTypes } from '../../../myAccount/services/featureFlag.service';
+import { ContentService } from '../../../shared/service/content.service';
+import { IAccountServiceMA } from '../../services/account.service';
+&nbsp;
+@Component({
+    selector: 'agl-account-settings',
+    template: require('./settings.component.html'),
+    styles: [require('./settings.component.scss')]
+})
+@Injectable()
+export class SettingsComponent implements OnInit {
+    public <span class="cstat-no" title="statement not covered" >ready: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >lightMode: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >restrictedMode: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >isFeatureFlagSettings: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >isLoading: boolean = true;</span>
+&nbsp;
+    constructor(
+        private <span class="cstat-no" title="statement not covered" >_accountsService: IAccountServiceMA,</span>
+        private <span class="cstat-no" title="statement not covered" >_contentService: ContentService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >_featureFlagService: FeatureFlagService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >router: Router<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        @Inject('AppContentBranch') protected <span class="cstat-no" title="statement not covered" >appContentBranch: string<span class="fstat-no" title="function not covered" >)</span> {</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public ngOnInit() {</span></span>
+<span class="cstat-no" title="statement not covered" >        this._featureFlagService.featureFlagged(FeatureFlagTypes.manageAccountEnabled).subscribe(</span>
+            (featureIsEnabled: boolean<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.isFeatureFlagSettings = featureIsEnabled;</span>
+<span class="cstat-no" title="statement not covered" >                Observable.forkJoin(</span>
+                    this._contentService.getLightMode(),
+                    this._accountsService.getAccounts().first())
+                    .subscribe((results<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        this.ready = true;</span>
+<span class="cstat-no" title="statement not covered" >                        this.lightMode = results[0];</span>
+<span class="cstat-no" title="statement not covered" >                        this.restrictedMode = true;</span>
+                        let accounts = <span class="cstat-no" title="statement not covered" >results[1];</span>
+<span class="cstat-no" title="statement not covered" >                        this.isLoading = false;</span>
+                        // TODO: Diamond to fix.
+                        // tslint:disable-next-line:prefer-for-of
+<span class="cstat-no" title="statement not covered" >                        for (let i = 0; i &lt; accounts.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >                            if (!accounts[i].allContractsAreRestricted) {</span>
+<span class="cstat-no" title="statement not covered" >                                this.restrictedMode = false;</span>
+<span class="cstat-no" title="statement not covered" >                                break;</span>
+                            }
+                        }
+                    });
+        });
+    }
+&nbsp;
+    // SAP is down
+<span class="fstat-no" title="function not covered" >    public isLightMode(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.ready &amp;&amp; this.lightMode;</span>
+    }
+&nbsp;
+    // Don't have access to full features
+<span class="fstat-no" title="function not covered" >    public isRestrictedMode(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.ready &amp;&amp; !this.lightMode &amp;&amp; this.restrictedMode;</span>
+    }
+&nbsp;
+    // Default mode
+<span class="fstat-no" title="function not covered" >    public isSettingsMode(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.ready &amp;&amp; (!this.lightMode &amp;&amp; !this.restrictedMode);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public showLeftMenu(): boolean  {</span>
+        // TODO remove showLeftMenu() and use isFullPageRoute() instead
+<span class="cstat-no" title="statement not covered" >        return this.router.url.indexOf('monthlybilling') === -1;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public isFullPageRoute(): boolean {</span>
+        let routes = <span class="cstat-no" title="statement not covered" >[</span>
+            // TODO add routes here once this is merged up into team branches
+            // 'settings/contactdetails',
+            // 'settings/monthlybilling'
+            /* home profile etc */
+            'settings/energyinsights',
+            'settings/concession',
+            'settings/contactdetails',
+            'settings/homeprofile/'
+        ];
+&nbsp;
+        let url = <span class="cstat-no" title="statement not covered" >this.router.url.toLowerCase();</span>
+<span class="cstat-no" title="statement not covered" >        return routes.filter((r<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >url.indexOf(r) !== -1)</span></span>.length &gt; 0;</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

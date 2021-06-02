@@ -1,0 +1,20 @@
+<agl-maui-showcase-template heading='Terms and Conditions Component'>
+    <div description>
+        1. This sample terms and conditions checkbox
+
+        Refer to <a href="https://aglenergy.atlassian.net/wiki/spaces/AGLDST/pages/135530377/MAUI+Component+Library">MAUI Component Library</a> for details
+    </div>
+    <div exampleCodeUsage>
+        {{codeUsage}}
+    </div>
+    <div exampleImplementation>
+        <agl-maui-showcase-example label='Text with Url'>
+            <agl-maui-terms-and-conditions (checked)="checkBoxChanged($event)">I confirm that I have read and agree to the <a href="https://www.agl.com.au/residential" target="_blank">Direct Debit terms and Conditions</a>
+            </agl-maui-terms-and-conditions>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label='Text with Modal'>
+            <agl-maui-terms-and-conditions [isChecked]='true' (checked)="checkBoxChanged($event)">I confirm that I have read and agree to the <a (click)="showModal()">Direct Debit terms and Conditions</a>
+            </agl-maui-terms-and-conditions>
+        </agl-maui-showcase-example>
+    </div>
+</agl-maui-showcase-template>

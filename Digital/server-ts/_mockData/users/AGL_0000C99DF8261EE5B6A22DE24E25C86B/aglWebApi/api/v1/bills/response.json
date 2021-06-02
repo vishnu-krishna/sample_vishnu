@@ -1,0 +1,141 @@
+{
+    "status": 200,
+    "body": [
+        {
+            "account": "7027368187",
+            "contract": "9401726602",
+            "bills": [
+                {
+                    "billIssued": "2017-03-14T00:00:00",
+                    "newCharges": 28.31,
+                    "totalDue": 36.11,
+                    "dueDate": "2017-04-03T00:00:00",
+                    "printDoc": "3442828883",
+                    "startDate": "2017-02-14T00:00:00",
+                    "endDate": "2017-03-13T00:00:00",
+                    "consumptionNetAmount": 36.11,
+                    "consumptionUsage": 1136.3757920977,
+                    "generatedNetAmount": null,
+                    "generatedUsage": null
+                },
+                {
+                    "billIssued": "2017-02-14T00:00:00",
+                    "newCharges": 43.36,
+                    "totalDue": 33.16,
+                    "dueDate": "2017-03-06T00:00:00",
+                    "printDoc": "3067400846",
+                    "startDate": "2017-01-14T00:00:00",
+                    "endDate": "2017-02-13T00:00:00",
+                    "consumptionNetAmount": 37.8,
+                    "consumptionUsage": 1059.7760384706,
+                    "generatedNetAmount": null,
+                    "generatedUsage": null
+                },
+                {
+                    "billIssued": "2017-01-16T00:00:00",
+                    "newCharges": 42.03,
+                    "totalDue": 32.03,
+                    "dueDate": "2017-02-06T00:00:00",
+                    "printDoc": "3369607628",
+                    "startDate": "2016-12-14T00:00:00",
+                    "endDate": "2017-01-13T00:00:00",
+                    "consumptionNetAmount": 49.8,
+                    "consumptionUsage": 1867.235330928,
+                    "generatedNetAmount": null,
+                    "generatedUsage": null
+                },
+                {
+                    "billIssued": "2016-12-14T00:00:00",
+                    "newCharges": 27.62,
+                    "totalDue": 27.62,
+                    "dueDate": "2017-01-06T00:00:00",
+                    "printDoc": "3329607846",
+                    "startDate": "2016-11-14T00:00:00",
+                    "endDate": "2016-12-13T00:00:00",
+                    "consumptionNetAmount": 31.2,
+                    "consumptionUsage": 817.8716706237,
+                    "generatedNetAmount": null,
+                    "generatedUsage": null
+                },
+                {
+                    "billIssued": "2016-11-14T00:00:00",
+                    "newCharges": 105.11,
+                    "totalDue": 95.11,
+                    "dueDate": "2016-12-02T00:00:00",
+                    "printDoc": "3224745757",
+                    "startDate": "2016-10-14T00:00:00",
+                    "endDate": "2016-11-13T00:00:00",
+                    "consumptionNetAmount": 132.83,
+                    "consumptionUsage": 9051.0364930986,
+                    "generatedNetAmount": null,
+                    "generatedUsage": null
+                },
+                {
+                    "billIssued": "2016-10-14T00:00:00",
+                    "newCharges": 131.46,
+                    "totalDue": 111.44,
+                    "dueDate": "2016-11-04T00:00:00",
+                    "printDoc": "3245703377",
+                    "startDate": "2016-09-14T00:00:00",
+                    "endDate": "2016-10-13T00:00:00",
+                    "consumptionNetAmount": 167.67,
+                    "consumptionUsage": 12077.1170612664,
+                    "generatedNetAmount": null,
+                    "generatedUsage": null
+                },
+                {
+                    "billIssued": "2016-09-14T00:00:00",
+                    "newCharges": 140.98,
+                    "totalDue": 140.98,
+                    "dueDate": "2016-10-05T00:00:00",
+                    "printDoc": "3308578514",
+                    "startDate": "2016-08-14T00:00:00",
+                    "endDate": "2016-09-13T00:00:00",
+                    "consumptionNetAmount": 180.18,
+                    "consumptionUsage": 13066.5549446146,
+                    "generatedNetAmount": null,
+                    "generatedUsage": null
+                },
+                {
+                    "billIssued": "2016-08-15T00:00:00",
+                    "newCharges": 84.83,
+                    "totalDue": 84.83,
+                    "dueDate": "2016-09-02T00:00:00",
+                    "printDoc": "3369436899",
+                    "startDate": "2016-07-14T00:00:00",
+                    "endDate": "2016-08-13T00:00:00",
+                    "consumptionNetAmount": 106.3,
+                    "consumptionUsage": 6801.1317098736,
+                    "generatedNetAmount": null,
+                    "generatedUsage": null
+                },
+                {
+                    "billIssued": "2016-07-14T00:00:00",
+                    "newCharges": 166.86,
+                    "totalDue": 166.86,
+                    "dueDate": "2016-08-03T00:00:00",
+                    "printDoc": "3098637744",
+                    "startDate": "2016-06-14T00:00:00",
+                    "endDate": "2016-07-13T00:00:00",
+                    "consumptionNetAmount": 214.41,
+                    "consumptionUsage": 16042.4062532448,
+                    "generatedNetAmount": null,
+                    "generatedUsage": null
+                },
+                {
+                    "billIssued": "2016-06-14T00:00:00",
+                    "newCharges": 53.88,
+                    "totalDue": 53.88,
+                    "dueDate": "2016-07-04T00:00:00",
+                    "printDoc": "3224533256",
+                    "startDate": "2016-05-06T00:00:00",
+                    "endDate": "2016-06-13T00:00:00",
+                    "consumptionNetAmount": 55.41,
+                    "consumptionUsage": 2931.358023066,
+                    "generatedNetAmount": null,
+                    "generatedUsage": null
+                }
+            ]
+        }
+    ]
+}

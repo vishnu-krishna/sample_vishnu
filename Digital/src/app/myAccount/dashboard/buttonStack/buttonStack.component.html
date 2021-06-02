@@ -1,0 +1,38 @@
+<mat-card class="promo-card button-stack">
+    <div class="promo-card-header">{{heading}}</div>
+    <mat-card-content>
+        <ul>
+            <li *ngFor="let jumpLink of jumpLinks" class="promo-card-item" [ngClass]="jumpLink.title">
+                <div *ngIf="jumpLink.image" class="promo-card-item__image">
+                    <img src="{{jumpLink.image}}" alt="{{jumpLink.label}} image">
+                </div>
+                <div *ngIf="jumpLink.note" class="promo-card-item__note">
+                    {{jumpLink.note}}
+                </div>
+                <div class="promo-card-item__action">
+                    <div *ngIf="!jumpLink.isFeatured" class="promo-card-item__action--link">
+                        <a [href]="jumpLink.url" target="_blank" [class.read-only]="isReadOnly" *ngIf="jumpLink.title!=='monthlyBilling'">
+                            {{jumpLink.label}}
+                        </a>
+                        <mat-icon>play_arrow</mat-icon>
+                        <a *ngIf="jumpLink.title==='monthlyBilling'"[routerLink]="['/settings/billing']">
+                            {{jumpLink.label}}
+                        </a>
+                    </div>
+                    <a id="jump-link-button" *ngIf="jumpLink.isFeatured" class="promo-card-item__action--button" mat-raised-button color="primary" [href]="jumpLink.url"
+                        target="{{jumpLink.url.match('settings/directdebit') ? '_self' : '_blank'}}">
+                        {{jumpLink.label}}
+                    </a>
+                </div>
+            </li>
+            <li *ngIf="doesCustomerhaveBasicMeter && content==='vasLinks' && ssmrFeatureEnabled && jumpLinksPopulated" class="promo-card-item">
+                <div class="promo-card-item__action">
+                    <div class="promo-card-item__action--link">
+                        <a (click)="_ssmr.showModal()">Enter a meter read</a>
+                        <mat-icon>play_arrow</mat-icon>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </mat-card-content>
+</mat-card>

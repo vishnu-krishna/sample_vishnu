@@ -1,0 +1,215 @@
+@import '../maui';
+
+$sidenav-width: 288px;
+
+/* note that some maui component functionality needs to be viewed either side of 600px wide (e.g. container component) - so keep this breakpoint clear of that */
+$sidenav-breakpoint: $agl-layout-tablet-and-smaller;
+
+.showcase {
+    &--pd-fix {
+        padding-top: 50px;
+
+        @media #{$sidenav-breakpoint} {
+            padding-top: 0px;
+        }
+    }
+
+    &__secondary-navigation {
+        @media #{$sidenav-breakpoint} {
+            display: none;
+        }
+
+        &--mobile {
+            display: none;
+
+            @media #{$sidenav-breakpoint} {
+                display: block;
+                position: relative;
+                top: 75px;
+            }
+        }
+    }
+
+    agl-maui-secondary-navigation {
+        position: fixed;
+        z-index: 10;
+    }
+
+    &__sidenav {
+        position: fixed;
+        height: 100%;
+        width: $sidenav-width;
+        color: $neutral-08;
+        font-family: $display-font-stack;
+        background: linear-gradient(0deg, #3958FF 0%, #001CB0 80%);
+        padding: $space-04;
+        transition: all 0.3s ease-out;
+        z-index: 2;
+        overflow: auto;
+
+        @media #{$sidenav-breakpoint} {
+            width: 100%;
+            height: calc(100% - 75px);
+            top: calc(-100vh + 75px);
+            z-index: 1;
+        }
+
+        &--open {
+            @media #{$sidenav-breakpoint} {
+                top: 75px;
+            }
+        }
+
+        &-header {
+            padding-bottom: $space-04;
+
+            @media #{$sidenav-breakpoint} {
+                display: none;
+            }
+
+            img {
+                width: 60px;
+            }
+
+            span {
+                font-size: $display-font-size-delta;
+                line-height: $line-height-short;
+                padding-left: $space-03;
+                vertical-align: bottom;
+            }
+        }
+
+        &-links {
+            a {
+                display: block;
+                text-transform: capitalize;
+                color: $neutral-08;
+                font-size: $body-font-size-big;
+                padding-bottom: $space-03;
+            }
+        }
+    }
+
+    &__mobile-header {
+        display: none;
+
+        @media #{$sidenav-breakpoint} {
+            height: 75px;
+            width: 100%;
+            background: linear-gradient(334.32deg, #00DFED 0%, #001CB0 100%);
+            position: fixed;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: $space-03;
+            z-index: $showcase-mobile-header-z-index;
+        }
+
+        &-logo {
+            img {
+                width: 44px;
+                height: 44px;
+            }
+
+            span {
+                font-size: $display-font-size-delta;
+                font-family: $display-font-stack;
+                line-height: $line-height-short;
+                padding-left: $space-03;
+                vertical-align: bottom;
+                color: $neutral-08;
+            }
+        }
+
+        &-hamburger-menu {
+            cursor: pointer;
+            position: relative;
+            width: 25px;
+            height: 20px;
+
+            div {
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-color: $neutral-08;
+                transition: .25s ease-in-out;
+
+                &:nth-child(1) {
+                    top: 0px;
+                }
+
+                &:nth-child(2) {
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                &:nth-child(3) {
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                &:nth-child(4) {
+                    bottom: 0px;
+                }
+            }
+
+            &--open {
+                div {
+                    &:nth-child(1) {
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 0;
+                    }
+
+                    &:nth-child(2) {
+                        top: 50%;
+                        transform: translateY(-50%) rotate(45deg);
+                    }
+
+                    &:nth-child(3) {
+                        top: 50%;
+                        transform: translateY(-50%) rotate(-45deg);
+                    }
+
+                    &:nth-child(4) {
+                        bottom: 50%;
+                        transform: translateY(50%);
+                        width: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &__components {
+        font-family: $display-font-stack;
+        padding: 0 $space-07;
+        margin-left: $sidenav-width;
+
+        @media #{$sidenav-breakpoint} {
+            margin-left: 0;
+            padding: 0 $space-03;
+            padding-top: 75px;
+        }
+
+        &--pd-fix {
+            @media #{$sidenav-breakpoint} {
+                padding-top: 125px;
+            }
+        }
+
+        // prevents clashing styles from pretty print for code usage container
+        ::ng-deep {
+            .prettyprint {
+                margin: 0 auto;
+                padding: 0;
+                width: 100%;
+                white-space: pre;
+
+                div {
+                    margin: -20px 0 -30px 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "contractNumber": "9400717466",
+            "paymentDateTime": "2017-04-28T01:39:41.176Z",
+            "amount": 0,
+            "partitionKey": "9400717466",
+            "rowKey": "9400717466",
+            "timestamp": "2017-04-28T01:39:47.7527684+00:00",
+            "eTag": "W/\"datetime'2017-04-28T01%3A39%3A47.7527684Z'\""
+        }
+    ]
+}

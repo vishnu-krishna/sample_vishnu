@@ -1,0 +1,22 @@
+{
+  "status": 200,
+  "headers": {},
+  "body":
+  {
+    "cardAvailable": true,
+    "concessionCard": {
+      "cardNumber": "111 - 111 - 111A",
+      "cardCode": "HEALTHCARE",
+      "cardName": "Health Care Card",
+      "issuerCode": "CTLK",
+      "error": {
+        "message": "Card Invalid",
+        "internalError": {
+          "errorId": "Z00F22",
+          "errorNumber": "100",
+          "description": "Card details do not match Centrelink records"
+        }
+      }
+    }
+  }
+}

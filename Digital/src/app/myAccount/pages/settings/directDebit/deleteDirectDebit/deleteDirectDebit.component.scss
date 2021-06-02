@@ -1,0 +1,141 @@
+@import '../../../../../shared/style/variables';
+@import '../../../../../shared/style/mixins';
+
+
+.delete-dd {
+
+    @media #{$agl-layout-mobile} {
+        padding: 30px 5px;
+    }
+
+    &__header {
+        font-family: $primary-font-stack;
+        font-size: 20px;
+        line-height: 31px;
+        margin-bottom: 15px;
+
+        span {
+            @media (min-width: 450px) {
+                display: block;
+            }
+        }
+    }
+
+    &__body {
+        margin-top: 15px;
+        line-height: 22px;
+    }
+
+    &__address {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding: 25px 15px;
+        background-color: $brand-grey-g6;
+        border-radius: $agl-border-radius;
+        font-size: 14px;
+        width: 100%;
+
+        @media #{$agl-layout-mobile} {
+            background-color: $brand-white;
+        }
+
+        &__single-address {
+            display: inline-flex;
+            @media #{$agl-layout-mobile} {
+                display: block;
+            }
+        }
+
+        &__multi-addreses {
+            display: block;
+        }
+
+        &__acc-icon {
+            display: inline-flex;
+        }
+
+        mat-icon {
+            width: 11px;
+            height: 15px;
+            margin-top: 2px;
+        }
+
+        &--account-no {
+            padding-right: 10px;
+            white-space: nowrap;
+            font-weight: bold;
+
+            @media #{$agl-layout-mobile} {
+                display: inline-block;
+                padding-right: 5px;
+            }
+        }
+
+        &--fuel-icons {
+            padding-right: 10px;
+            white-space: nowrap;
+
+            @media #{$agl-layout-mobile} {
+                display: inline-block;
+            }
+        }
+
+        &--address {
+            padding-right: 0;
+            white-space: normal;
+        }
+
+        &--multiaddress {
+            display: inline-block;
+        }
+    }
+
+    &__button {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+
+        @media #{$agl-layout-mobile} {
+            display: block;
+        }
+
+        &--white {
+            transition: background .4s cubic-bezier(.25, .8, .25, 1), box-shadow 280ms cubic-bezier(.4, 0, .2, 1), color 0.3s ease;
+
+            &:hover {
+                background-color: $brand-white;
+                color: $brand-sky;
+            }
+        }
+
+        &.mg-fix {
+            margin-top: 0px;
+        }
+
+        .is-loading {
+            background-image: url('svg/spinner--loading--button.svg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            color: transparent;
+        }
+
+        button {
+            width: 320px;
+            height: 50px;
+            font-size: 14px;
+            letter-spacing: 1px;
+
+            @media #{$agl-layout-mobile} {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            &.disable-button {
+                background-color: $brand-grey-g5;
+                border: 1px solid rgba(0, 0, 0, 0.05);
+                pointer-events: none;
+                color: $brand-grey-g3;
+            }
+        }
+    }
+}

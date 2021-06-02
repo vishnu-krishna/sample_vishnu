@@ -1,0 +1,50 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": {
+            "screenCode": "SSMR_MRE",
+            "meters": [
+                {
+                    "meterSerial": "123123",
+                    "registers": [
+                        {
+                            "registerId": "001",
+                            "dialFormat": "8",
+                            "currentMeterRead": "1790824",
+                            "lastMeterRead": "12345678",
+                            "lastReadQuality": "Actual Read by MDP",
+                            "lastReadDate": "28.11.2016"
+                        }
+                    ]
+                },
+                {
+                    "meterSerial": "1454355",
+                    "registers": [
+                        {
+                            "registerId": "001",
+                            "dialFormat": "8",
+                            "currentMeterRead": "1790824",
+                            "lastMeterRead": "12345678",
+                            "lastReadQuality": "Actual Read by MDP",
+                            "lastReadDate": "28.11.2016"
+                        }
+                    ]
+                },
+                {
+                    "meterSerial": "873654",
+                    "registers": [
+                        {
+                            "registerId": "001",
+                            "dialFormat": "8",
+                            "currentMeterRead": "1790824",
+                            "lastMeterRead": "12345678",
+                            "lastReadQuality": "Actual Read by MDP",
+                            "lastReadDate": "28.11.2016"
+                        }
+                    ]
+                }
+            ],
+            "error": null
+    }
+}
+

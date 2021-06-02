@@ -1,0 +1,84 @@
+{
+    "scenarios": [{
+            "context": {
+                "contractAccountNumber": 7034382924,
+                "deliveryMethod": "Postal"
+            },
+            "outcome": {
+                "status": 200,
+                "body": {
+                    "message": "Internal server error"
+                }
+            }
+        },
+        {
+            "context": {
+                "contractAccountNumber": 7034382924,
+                "deliveryMethod": "Postal"
+            },
+            "outcome": {
+                "status": 400,
+                "body": {
+                    "message": "Invalid bill delivery method"
+                }
+            }
+        },
+        {
+            "context": {
+                "contractAccountNumber": 7034382924,
+                "deliveryMethod": "Postal"
+            },
+            "outcome": {
+                "status": 401,
+                "body": {
+                    "message": "Unauthorized user"
+                }
+            }
+        },
+        {
+            "context": {
+                "contractAccountNumber": 7034382924,
+                "deliveryMethod": "Postal"
+            },
+            "outcome": {
+                "status": 403,
+                "body": {
+                    "message": "User has no access to the contract account"
+                }
+            }
+        },
+        {
+            "context": {
+                "contractAccountNumber": 7034382924,
+                "deliveryMethod": "Postal"
+            },
+            "outcome": {
+                "status": 422,
+                "body": {
+                    "errors": [{
+                        "code": "Required",
+                        "field": "contractAccountNumber",
+                        "message": "Contract account number is required"
+                    }]
+                }
+            }
+        },
+        {
+            "context": {
+                "contractAccountNumber": 7034382924,
+                "deliveryMethod": "Postal"
+            },
+            "outcome": {
+                "status": 500,
+                "body": {
+                    "message": "Internal server error",
+                    "internalError": {
+                        "errorId": "",
+                        "errorNumber": 0,
+                        "description": ""
+                    }
+                }
+            }
+        }
+    ]
+}

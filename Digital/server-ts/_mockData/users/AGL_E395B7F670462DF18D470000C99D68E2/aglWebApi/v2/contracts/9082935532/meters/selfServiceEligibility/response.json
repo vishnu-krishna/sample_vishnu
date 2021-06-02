@@ -1,0 +1,19 @@
+{
+    "screenCode": "SSMR_MRE",
+    "meters": [
+        {
+            "meterSerial": "7583LM",
+            "registers": [
+                {
+                    "registerId": "001",
+                    "dialFormat": "04",
+                    "currentMeterRead": "",
+                    "lastMeterRead": "5226",
+                    "lastReadQuality": "Customer Read",
+                    "lastReadDate": "2016-12-02"
+                }
+            ]
+        }
+    ],
+    "error": null
+}

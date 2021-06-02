@@ -1,0 +1,127 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "contractNumber": 1211111111,
+            "instalmentPlans": [
+                {
+                    "instalments": [
+                        {
+                            "instalmentDate": "2018-04-16",
+                            "instalmentAmount": 40,
+                            "dueAmount": 0
+                        },
+                        {
+                            "instalmentDate": "2018-04-30",
+                            "instalmentAmount": 40,
+                            "dueAmount": 0
+                        },
+                        {
+                            "instalmentDate": "2018-05-12",
+                            "instalmentAmount": 34.75,
+                            "dueAmount": 0
+                        }
+                    ],
+                    "status": "Closed",
+                    "remark": "Fulfilled"
+                }
+            ]
+        },
+        {
+            "contractNumber": 1222222222,
+            "instalmentPlans": [
+                {
+                    "instalments": [
+                        {
+                            "instalmentDate": "2018-04-16",
+                            "instalmentAmount": 40,
+                            "dueAmount": 0
+                        },
+                        {
+                            "instalmentDate": "2018-04-30",
+                            "instalmentAmount": 40,
+                            "dueAmount": 40
+                        },
+                        {
+                            "instalmentDate": "2018-05-25",
+                            "instalmentAmount": 34.75,
+                            "dueAmount": 34.75
+                        }
+                    ],
+                    "status": "Open"
+                }
+            ]
+        },
+        {
+            "contractNumber": 1233333333,
+            "instalmentPlans": [
+                {
+                    "instalments": [
+                        {
+                            "instalmentDate": "2018-08-27",
+                            "instalmentAmount": 40,
+                            "dueAmount": 40
+                        },
+                        {
+                            "instalmentDate": "2018-03-03",
+                            "instalmentAmount": 40,
+                            "dueAmount": 40
+                        },
+                        {
+                            "instalmentDate": "2018-08-08",
+                            "instalmentAmount": 34.75,
+                            "dueAmount": 34.75
+                        }
+                    ],
+                    "status": "Open"
+                },
+                {
+                    "instalments": [
+                        {
+                            "instalmentDate": "2018-06-06",
+                            "instalmentAmount": 40,
+                            "dueAmount": 30
+                        },
+                        {
+                            "instalmentDate": "2018-07-07",
+                            "instalmentAmount": 40,
+                            "dueAmount": 40
+                        },
+                        {
+                            "instalmentDate": "2018-08-08",
+                            "instalmentAmount": 34.75,
+                            "dueAmount": 34.75
+                        }
+                    ],
+                    "status": "Open"
+                }
+            ]
+        },
+        {
+            "contractNumber": 1244444444,
+            "instalmentPlans": [
+                {
+                    "instalments": [
+                        {
+                            "instalmentDate": "2018-03-16",
+                            "instalmentAmount": 40,
+                            "dueAmount": 0
+                        },
+                        {
+                            "instalmentDate": "2018-03-30",
+                            "instalmentAmount": 40,
+                            "dueAmount": 0
+                        },
+                        {
+                            "instalmentDate": "2018-06-12",
+                            "instalmentAmount": 34.75,
+                            "dueAmount": 34.75
+                        }
+                    ],
+                    "status": "Open"
+                }
+            ]
+        }
+    ]
+}

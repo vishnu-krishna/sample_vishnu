@@ -1,0 +1,89 @@
+@import '../../../../maui/maui';
+@import '../../../rewards';
+
+:host {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0 -20px;
+    max-width: 800px;
+    padding: 30px;
+    height: 90vh;
+    @media #{$agl-layout-tablet-and-greater} {
+        height: 70vh;
+    }
+
+    @media #{$agl-layout-mobile} {
+        padding: 15px;
+    }
+}
+
+pre {
+    font-family: $body-font-stack;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    margin: 0;
+}
+
+.terms-conditions {
+    margin-top: 30px;
+    font-size: 12pt;
+    line-height: 1.5;
+    padding-right: 18px;
+    flex-grow: 1;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.tc-url {
+    color: $primary-dark;
+    cursor: pointer;
+    text-decoration: underline;
+    outline: none;
+}
+
+.tc-subcontent {
+    padding-left: 20px;
+    line-height: 25px;
+    font-size: 14px;
+}
+
+.tc-subheading {
+    font-family: $body-font-stack;
+    padding-top: 15px;
+    font-size: 24px;
+}
+
+.terms-conditions-heading,
+.tc-subheading {
+    font-family: $display-font-stack;
+    line-height: 32.5px;
+    padding-right: 15px;
+}
+
+.terms-conditions-heading {
+    font-size: 26px;
+    font-family: $display-font-stack;
+
+    @media #{$agl-layout-mobile} {
+        font-size: 22px;
+        line-height: 27.5px;
+    }
+}
+
+h2 {
+    margin-top: 0;
+    font-weight: normal;
+}
+
+.btn-close {
+    @include modal-btn-close;
+    right: 30px;
+    top: 10px;
+
+    @media #{$agl-layout-mobile} {
+        right: 15px;
+        top: 0;
+    }
+}

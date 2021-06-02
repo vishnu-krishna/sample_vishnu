@@ -1,0 +1,5 @@
+<ul class="settings-left-menu">
+    <li *ngFor="let item of leftHandMenu" [routerLinkActive]="['router-link-active']" [class.seperator]="item?.seperatorAfter">
+        <a [routerLink]="[item?.route]" class="settings-desktop-left-menu-{{item?.route | aglConvertCase}}" [attr.data-settings-left-menu]=item?.route>{{item.label}}</a>
+    </li>
+</ul>

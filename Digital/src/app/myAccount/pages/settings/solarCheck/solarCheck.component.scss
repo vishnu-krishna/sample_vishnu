@@ -1,0 +1,46 @@
+@import '../../../../shared/style/variables';
+@import '../../../../shared/style/mixins';
+@import '../../../style/settings';
+
+.pending {
+    padding-bottom: 25px;
+}
+
+.deregister {
+
+    &-button {
+        padding-top: 5px;
+        padding-left: 15px;
+        float: right;
+        text-align: right;
+        color: $brand-sky;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+            color: $lighten-sky-10;
+        }
+
+        &.disabled {
+            pointer-events: none;
+            opacity: $brand-disabled-opacity;
+            color: $brand-disabled-grey;
+        }
+    }
+
+    &-status {
+        padding-top: 15px;
+    }
+}
+
+.register-button {
+    margin-top: 15px;
+    width: 145px;
+    height: 50px;
+
+    @media #{$agl-layout-mobile} {
+        width: 100%;
+        min-width: 0px;
+    }
+}

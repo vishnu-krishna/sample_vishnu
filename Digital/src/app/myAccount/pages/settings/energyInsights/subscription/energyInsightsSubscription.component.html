@@ -1,0 +1,129 @@
+<agl-maui-secondary-navigation
+    *ngIf="!isLoading"
+    display="true"
+    [displayBackButton]="displayBackButton"
+    text="Energy Insights subscription"
+    (clicked)="goBack()">
+</agl-maui-secondary-navigation>
+
+<div class="energy-insights__controls" *ngIf="isLoading">
+    <agl-loader></agl-loader>
+</div>
+
+<div class="energy-insights" *ngIf="!isLoading">
+
+    <div class="energy-insights__header">
+        Knowledge is power
+    </div>
+
+    <div class="energy-insights__body">
+        Energy Insights is a powerful new service offering you the visibility and the power to take control of your energy usage. Best of all? It’s totally free.
+        <br><br>
+        We’ve developed smart technology that estimates how much energy you use in your home on heating, cooling, lighting, laundry, standby and more.
+        <br><br>
+        <span class="energy-insights__text--bold">How we estimate your energy use by appliance</span>
+        <br>
+        We take data from your smart meter and other sources, as well as local weather information, and generate an estimated breakdown of where you used electricity in your home.
+        <br><br>
+        <span class="energy-insights__text--bold">What to expect</span>
+        <br>
+        You can sign up for two Energy Insights emails in each bill period. We’ll send the first email halfway through your bill period, and the second a few days after your bill.
+        You’ll also get personalised insights and tips to help you reduce energy waste and save money.
+
+        <div class="link-button__container">
+            <a class="link-button" [href]="productEnergyInsightUrl" target="_blank">Learn more about Energy Insights</a>
+        </div>
+    </div>
+    <agl-maui-container *ngIf="!isLoading">
+        <div class="energy-insights__controls" [class.compact]="getEnergyInsightsFailed">
+            <div *ngIf="!getEnergyInsightsFailed">
+                <div class="energy-insights__controls__details">
+                    <div>Select the Energy Insights emails you’d like to receive for</div>
+                    <div class="contract__address">{{energyInsightsService?.selectedEnergyInsightsContract?.address}} </div>
+                    <div class="contract__email">Your emails will be delivered to {{energyInsightsService?.selectedEnergyInsightsContract?.email}}.
+                        <a *ngIf="isContactDetailsFeatureEnabled" class="energy-insights__controls--link" [routerLink]="['/settings/contactdetails', 'monthlybilling']">Update</a>
+                        <a *ngIf="!isContactDetailsFeatureEnabled" class="energy-insights__controls--link" [href]="aeoContactDetailsUrl" target="_blank">Update</a>
+                    </div>
+                </div>
+                <div class="energy-insights__controls__container">
+                    <div>
+                        <div class="subscription">
+                            <div class="subscription__heading">
+                                Mid bill Energy Insights update
+                            </div>
+                            <div class="subscription__subheading">Gives you time to lower your usage before your next bill.
+                            </div>
+                        </div>
+                        <agl-maui-toggle class="subscription__toggle"
+                            [(toggleValue)]="isMidSubscription"
+                            [isLoading]="isLoadingMidBill"
+                            (toggleValueChange)="midBillSubscription($event)">
+                        </agl-maui-toggle>
+                    </div>
+                    <div class="energy-insights__error" *ngIf="postEnergyInsightsMidFailed && !isLoading">
+                        <agl-maui-flash-message
+                            [type]="FlashMessageType.Error"
+                            [dismissable]="true"
+                            (dismiss)="onClickDismissFlashMessage(true)">
+                                <div heading>
+                                    Sorry, we’re unable to process your request right now. Please try again.
+                                </div>
+                                <div subheading>If the issue persists, you can get in touch with us <a href="https://www.agl.com.au/residential/contact-us" target="_blank">here</a> and we'll sort it out.
+                                </div>
+                        </agl-maui-flash-message>
+                    </div>
+                </div>
+                <div class="separator"></div>
+                <div class="energy-insights__controls__container">
+                    <div>
+                        <div class="subscription">
+                            <div class="subscription__heading">
+                                Energy Insights report
+                            </div>
+                            <div class="subscription__subheading">Get an estimate of where your energy went for the bill period.
+                            </div>
+                        </div>
+                        <agl-maui-toggle class="subscription__toggle"
+                            [(toggleValue)]="isEndSubscription"
+                            [isLoading]="isLoadingFullBill"
+                            (toggleValueChange)="endBillSubscription($event)">
+                        </agl-maui-toggle>
+                    </div>
+                    <div class="energy-insights__error" *ngIf="postEnergyInsightsEndFailed && !isLoading">
+                        <agl-maui-flash-message
+                            [type]="FlashMessageType.Error"
+                            [dismissable]="true"
+                            (dismiss)="onClickDismissFlashMessage(false)">
+                                <div heading>
+                                    Sorry, we’re unable to process your request right now. Please try again.
+                                </div>
+                                <div subheading>If the issue persists, you can get in touch with us <a href="https://www.agl.com.au/residential/contact-us" target="_blank">here</a> and we'll sort it out.
+                                </div>
+                        </agl-maui-flash-message>
+                    </div>
+                </div>
+                <div class="energy-insights__controls__message">
+                    Update these anytime in your <a class="energy-insights__controls--link" [routerLink]="['/settings/notifications']">Notifications.</a>
+                </div>
+            </div>
+            <div class="energy-insights__error--get" *ngIf="getEnergyInsightsFailed && !isLoading">
+
+                <div class="energy-insights__controls__message">
+                    You can update your Energy Insights subscription preferences in <a class="energy-insights__controls--link" [routerLink]="['/settings/notifications']">Notifications.</a>
+                </div>
+            </div>
+        </div>
+    </agl-maui-container>
+
+    <div class="energy-insights-home-profile">
+        <div class="energy-insights-home-profile__text">
+            Complete your home profile for a more personalised breakdown of your energy usage.
+        </div>
+        <div class="energy-insights-home-profile__button--primary">
+                <agl-maui-button type="tertiary" (clicked)="onClickHomeProfile()">SET UP YOUR HOME PROFILE</agl-maui-button>
+        </div>
+        <div class="energy-insights-home-profile__button--secondary">
+            <agl-maui-button type="link" (click)="onClickDone()">NO THANKS, I'M DONE </agl-maui-button>
+        </div>
+    </div>
+</div>

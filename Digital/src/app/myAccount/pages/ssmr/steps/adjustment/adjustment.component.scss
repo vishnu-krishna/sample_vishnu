@@ -1,0 +1,363 @@
+@import '../../../../../shared/style/variables';
+@import '../../../../../shared/style/mixins';
+@import '../../../../../shared/style/tempdls';
+
+.icon {
+    text-align: center;
+    margin-top: 35px;
+    }
+
+.heading {
+    margin-top: 30px;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+
+    @media #{$agl-layout-tablet-and-smaller} {
+        font-size: 25px;
+    }
+}
+
+.content {
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    margin: 20px auto 0px;
+
+    &.bill-smoothing {
+        font-size: 16px;
+        margin: 10px auto 0px;
+
+        @media #{$agl-layout-tablet-and-greater} {
+            width: 409px;
+        }
+    }
+
+    .description {
+        margin: 30px 20px 30px 20px;
+
+        &__details {
+            margin-top: 30px;
+        }
+    }
+
+    .smooth-bills {
+        color: $brand-sky;
+        font-weight: bold;
+        font-size: 20px;
+    }
+}
+
+.bill {
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 17px;
+    background-color: $brand-white;
+    box-shadow: $agl-box-shadow-c1;
+
+    .heading {
+        margin: 0 auto;
+        padding-top: 20px;
+        width: 280px;
+        color: $ssmr-black;
+        font-family: $secondary-font-stack;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .amount {
+        margin: 0 auto;
+        width: 280px;
+        color: $brand-grey-g1;
+        font-family: $primary-font-stack;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+
+        &.original {
+            position: relative;
+            color: $brand-grey-g4;
+
+            svg {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+        }
+
+        &.overdue {
+            color: $brand-error-red;
+        }
+
+        &.credit {
+            color: $brand-leaf;
+        }
+
+        &__number {
+            font-size: 56px;
+        }
+    }
+
+    .amount-proj1 {
+        padding-bottom: 15px;
+    }
+
+    .duration {
+        margin: 0 auto;
+        color: $brand-grey-g1;
+        font-family: $secondary-font-stack;
+        font-size: 14px;
+        padding-bottom: 20px;
+        text-align: center;
+
+        .days_pill {
+            display: inline-block;
+            margin-left: 10px;
+            height: 20px;
+            width: 90px;
+            border-radius: 12px;
+            background-color: $ssmr-pill-blue;
+            color: $ssmr-black;
+            font-family: $secondary-font-stack;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+
+    .due {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 50px;
+        height: 19px;
+        width: 280px;
+        color: $brand-grey-g2;
+        font-family: $secondary-font-stack;
+        font-weight: bold;
+        font-size: 14px;
+        text-align: center;
+
+        .number-of-days {
+            color: $brand-sky;
+            font-size: 18px;
+            font-weight: bold;
+
+            &.overdue {
+                color: $brand-error-red;
+            }
+        }
+
+        .account-balance {
+            color: $brand-green-dark;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+
+    .post-adjustment-credit {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 50px;
+        height: 19px;
+        width: 280px;
+        color: $brand-grey-g2;
+        font-family: $secondary-font-stack;
+        font-weight: bold;
+        font-size: 14px;
+        text-align: center;
+
+        .account-balance {
+            color: $brand-green-dark;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+
+    .overduecharges {
+
+        &__heading {
+            margin: 0 auto;
+            padding-top: 20px;
+            color: $brand-grey-g2;
+            font-family: $secondary-font-stack;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        &__amount {
+            margin: 0 auto;
+            color: $brand-error-red;
+            font-family: $secondary-font-stack;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .credit {
+            color: $brand-leaf;
+        }
+    }
+
+    .cost-to-date {
+        margin: 0 auto;
+        color:  $ssmr-black;
+        font-family: $secondary-font-stack;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .projected_bill {
+        &__heading {
+            margin: 0 auto;
+            padding-top: 30px;
+            color: $brand-grey-g2;
+            font-family: $secondary-font-stack;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        &__amount {
+            margin: 0 auto;
+            padding-top: 5px;
+            padding-bottom: 30px;
+            color: $brand-grey-g1;
+            font-family: $secondary-font-stack;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+
+    .average-usage {
+        margin: 0 auto;
+        padding-top: 30px;
+        padding-bottom: 5px;
+        color: $brand-grey-g2;
+        font-family: $secondary-font-stack;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-align: center;
+
+        &__amount {
+            color: $brand-grey-g1;
+            font-family: $secondary-font-stack;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        &__text {
+            color: $brand-grey-g1;
+            font-family: $secondary-font-stack;
+            font-size: 12px;
+            text-align: center;
+            @media #{$agl-layout-xs} {
+                font-size: 11px;
+            }
+        }
+    }
+
+    .average_values {
+        padding-bottom: 30px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+.next-bill {
+    height: 100px;
+    width: 87.5%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $brand-white;
+    margin-bottom: 200px;
+
+    .side-banner {
+        position: absolute;
+        height: 100px;
+        width: 1.8%;
+        padding-bottom: 10px;
+        background-color: $ssmr-next-bill-side-banner-orange;
+    }
+
+    &__content {
+        color: $brand-grey-g1;
+        font-family: $secondary-font-stack;
+        font-size: 14px;
+        line-height: 18px;
+        padding-left: 25px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 5px;
+
+        .title {
+            font-weight: bold;
+            padding-bottom: 10px;
+        }
+    }
+}
+
+.credit_bill_details {
+    margin-bottom: 50px;
+}
+
+.separator {
+    margin-top: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    height: 1px;
+    width: 80%;
+    border-bottom: 1px solid $brand-grey-g4;
+}
+
+.divider {
+    float: left;
+    box-sizing: border-box;
+    height: 30px;
+    width: 1px;
+    border: 1px solid $brand-grey;
+    margin-top: 10px;
+}
+
+.adjustment-button {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+
+    &.pay {
+        padding-bottom: 30px;
+    }
+
+    &.close-button {
+        :hover {
+            background-color: $brand-white;
+        }
+    }
+
+    a {
+        height: 50px;
+        width: 290px;
+        padding: 7px 50px;
+        border-radius: $agl-border-radius;
+    }
+}
+
+.disclaimer {
+    width: 90%;
+    margin: 0px auto;
+    color: $brand-grey-g3;
+    font-size: 12px;
+    font-family: $primary-font-stack;
+    text-align: center;
+}

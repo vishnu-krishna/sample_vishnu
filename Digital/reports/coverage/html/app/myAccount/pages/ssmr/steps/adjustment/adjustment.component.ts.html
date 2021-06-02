@@ -1,0 +1,1892 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\ssmr\steps\adjustment\adjustment.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/ssmr/steps/adjustment/</a> adjustment.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10.2% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>36/353</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">1.64% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/244</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">3.13% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/32</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">9.71% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>34/350</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit } from '@angular/core';
+&nbsp;
+import * as moment from 'moment';
+import { ISsmrService } from '../../../../services/contract/issmr.service';
+import { ContractDisplayViewModel } from '../../../../model/ssmr/contractDisplayView.model';
+import { SelfServiceReadingResponse } from '../../../../../shared/service/api.service';
+import { SsmrScreenCode } from '../../../../services/ssmr.service';
+import { PaymentService } from '../../../../services/payment.service';
+&nbsp;
+@Component({
+    selector: 'agl-ssmr-adjustment',
+    template: require('./adjustment.component.html'),
+    styles: [require('./adjustment.component.scss')]
+})
+export class AdjustmentComponent implements OnInit {
+    public invoiceDueDate: string;
+    public screenCode: SsmrScreenCode;
+    public selectedContract: ContractDisplayViewModel;
+    public adjustmentHeading: string;
+    public adjustmentMessage: string;
+    public numberOfDaysTillNextBill: string;
+    public selfServiceReadingResponse: SelfServiceReadingResponse; // Meter reading data received from API.
+    public billingHeading: string;
+    public billingHeadingOriginal: string;
+    public currentBillAmount: number;
+    public amountNumber: string;
+    public amountDecimal: string;
+    public <span class="cstat-no" title="statement not covered" >amountOriginal = {</span>
+        number: '',
+        decimal: ''
+    };
+    public <span class="cstat-no" title="statement not covered" >amountCredit = {</span>
+        number: '',
+        decimal: ''
+    };
+    public currentBillStartDate: Date;
+    public currentBillEndDate: Date;
+    public currentBillDateString: string;
+    public <span class="cstat-no" title="statement not covered" >isDirectDebit: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >isOverDue: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >daysUntilDue: string = '';</span>
+    public accountBalance: string;
+    public overDueHeading: string;
+    public isInCredit: boolean;
+    public <span class="cstat-no" title="statement not covered" >postAdjustmentIsCredit: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >postAdjustmentCredit: string = '';</span>
+    public projectedBillAmount: string;
+    public dailyUsage: string;
+    public weeklyUsage: string;
+    public creditHeading: string;
+    public payButtonMessage: string;
+    public paymentAmount: number;
+    public isAccountBalancePositive: boolean;
+    public projectedBillStartDate: Date;
+    public projectedBillEnddate: Date;
+    public projectedBillDateString: string;
+    public <span class="cstat-no" title="statement not covered" >isEntrySkipped: boolean = false;</span>
+&nbsp;
+    constructor(
+        public <span class="cstat-no" title="statement not covered" >ssmrService: ISsmrService,</span>
+        public <span class="cstat-no" title="statement not covered" >paymentService: PaymentService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" ></span></span></span>
+    ) {
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public ngOnInit() {</span>
+<span class="cstat-no" title="statement not covered" >        this.selectedContract = this.ssmrService.selectedContract;</span>
+<span class="cstat-no" title="statement not covered" >        this.selfServiceReadingResponse = this.ssmrService.selfServiceReadingResponse;</span>
+<span class="cstat-no" title="statement not covered" >        if (this.selectedContract.isDirectDebit) {</span>
+<span class="cstat-no" title="statement not covered" >            this.isDirectDebit = true;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        this.screenCode = this.ssmrService.screenCode;</span>
+<span class="cstat-no" title="statement not covered" >        this.isAnyMeterSkipped();</span>
+<span class="cstat-no" title="statement not covered" >        if (this.ssmrService.submissionType  === 'Photo') {</span>
+<span class="cstat-no" title="statement not covered" >            this.adjustmentHeading = 'Thanks!';</span>
+<span class="cstat-no" title="statement not covered" >            this.adjustmentMessage = `We'll review your meter reads and photos, and get back to you via email shortly.`;</span>
+        } else <span class="cstat-no" title="statement not covered" >if  (this.selectedContract.isBillSmoothing) {</span>
+<span class="cstat-no" title="statement not covered" >            this.adjustmentHeading = 'Thanks for your read';</span>
+<span class="cstat-no" title="statement not covered" >            this.adjustmentMessage = `Your meter read was taken within two days of your bill creation date, so we’ll use this to calculate your next bill.`;</span>
+<span class="cstat-no" title="statement not covered" >            this.billingHeading = 'Latest charges';</span>
+<span class="cstat-no" title="statement not covered" >            this.buildBill();</span>
+        } else <span class="cstat-no" title="statement not covered" >if ( this.screenCode === 'SSMR_ADJ1' || this.screenCode === 'SSMR_ADJ3') {</span>
+<span class="cstat-no" title="statement not covered" >            this.adjustmentHeading = 'Your revised charges';</span>
+<span class="cstat-no" title="statement not covered" >            this.adjustmentMessage = 'Great news, your meter read is lower than expected so we’ve adjusted your total to pay.';</span>
+<span class="cstat-no" title="statement not covered" >            this.billingHeading = 'Revised total to pay';</span>
+<span class="cstat-no" title="statement not covered" >            this.billingHeadingOriginal = 'Original total';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if ( this.numberOfDaysTillNextBillExists(this.selfServiceReadingResponse)) {</span>
+<span class="cstat-no" title="statement not covered" >                this.numberOfDaysTillNextBill = this.selfServiceReadingResponse.numberOfDaysTillNextBill;</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                this.numberOfDaysTillNextBill = '';</span>
+            }
+<span class="cstat-no" title="statement not covered" >            if ( this.preAdjustmentBalanceExists(this.selfServiceReadingResponse) ) {</span>
+                let preAdjustmentBalance = <span class="cstat-no" title="statement not covered" >this.selfServiceReadingResponse.adjustment.preAdjustmentBalance;</span>
+<span class="cstat-no" title="statement not covered" >                this.buildAmountToShow(preAdjustmentBalance, this.amountOriginal);</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                this.buildAmountToShow(0);</span>
+            }
+<span class="cstat-no" title="statement not covered" >            if ( this.postAdjustmentBalanceExists(this.selfServiceReadingResponse) ) {</span>
+                let postAdjustmentBalance = <span class="cstat-no" title="statement not covered" >this.selfServiceReadingResponse.adjustment.postAdjustmentBalance;</span>
+<span class="cstat-no" title="statement not covered" >                if (postAdjustmentBalance &lt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.postAdjustmentCredit = Math.abs(postAdjustmentBalance).toString();</span>
+<span class="cstat-no" title="statement not covered" >                    this.postAdjustmentIsCredit = true;</span>
+<span class="cstat-no" title="statement not covered" >                    this.buildAmountToShow(0);</span>
+<span class="cstat-no" title="statement not covered" >                    this.payButtonMessage = 'MAKE A PAYMENT';</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    this.buildAmountToShow(postAdjustmentBalance);</span>
+<span class="cstat-no" title="statement not covered" >                    this.payButtonMessage = 'PAY NOW';</span>
+<span class="cstat-no" title="statement not covered" >                    this.paymentAmount = postAdjustmentBalance;</span>
+                }
+            } else {
+<span class="cstat-no" title="statement not covered" >                this.buildAmountToShow(0);</span>
+            }
+<span class="cstat-no" title="statement not covered" >            if (this.adjustmentStartDateExists(this.selfServiceReadingResponse) &amp;&amp;</span>
+                this.adjustmentEndDateExists(this.selfServiceReadingResponse) ) {
+<span class="cstat-no" title="statement not covered" >                this.currentBillStartDate = this.selfServiceReadingResponse.adjustment.startDate;</span>
+<span class="cstat-no" title="statement not covered" >                this.currentBillEndDate = this.selfServiceReadingResponse.adjustment.endDate;</span>
+<span class="cstat-no" title="statement not covered" >                this.currentBillDateString = this.buildBillDateString( this.currentBillStartDate, this.currentBillEndDate );</span>
+            }
+<span class="cstat-no" title="statement not covered" >            if ( this.invoiceDueDateExists(this.selfServiceReadingResponse)) {</span>
+<span class="cstat-no" title="statement not covered" >                this.invoiceDueDate = this.buildDueDateString(this.selfServiceReadingResponse.invoiceDueDate);</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                this.invoiceDueDate = '';</span>
+            }
+        } else <span class="cstat-no" title="statement not covered" >if ( this.screenCode === 'SSMR_ADJ2') {</span>
+<span class="cstat-no" title="statement not covered" >            this.adjustmentHeading = `Credit applied`;</span>
+<span class="cstat-no" title="statement not covered" >            this.adjustmentMessage = `Great news, your meter read is lower than expected so we've credited your account.`;</span>
+<span class="cstat-no" title="statement not covered" >            this.billingHeading = 'Current bill period';</span>
+<span class="cstat-no" title="statement not covered" >            this.creditHeading = 'Your account will be credited';</span>
+<span class="cstat-no" title="statement not covered" >            this.buildBill();</span>
+<span class="cstat-no" title="statement not covered" >            if ( this.postAdjustmentBalanceExists(this.selfServiceReadingResponse) ) {</span>
+                let postAdjustmentBalance = <span class="cstat-no" title="statement not covered" >this.selfServiceReadingResponse.adjustment.postAdjustmentBalance;</span>
+<span class="cstat-no" title="statement not covered" >                if (postAdjustmentBalance &lt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.postAdjustmentIsCredit = true;</span>
+                }
+<span class="cstat-no" title="statement not covered" >                this.buildAmountToShow(Math.abs(postAdjustmentBalance), this.amountCredit);</span>
+<span class="cstat-no" title="statement not covered" >                this.paymentAmount = postAdjustmentBalance;</span>
+<span class="cstat-no" title="statement not covered" >                this.payButtonMessage = 'PAY NOW';</span>
+&nbsp;
+            } else {
+<span class="cstat-no" title="statement not covered" >                this.buildAmountToShow(0);</span>
+<span class="cstat-no" title="statement not covered" >                this.payButtonMessage = 'MAKE A PAYMENT';</span>
+&nbsp;
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if ( this.projectedBillAmountExists(this.selfServiceReadingResponse)) {</span>
+<span class="cstat-no" title="statement not covered" >                this.projectedBillAmount = this.selfServiceReadingResponse.projectedBill.amount.toFixed(2);</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (this.dailyUsageExists(this.selfServiceReadingResponse)) {</span>
+<span class="cstat-no" title="statement not covered" >                this.dailyUsage = this.selfServiceReadingResponse.dailyUsage;</span>
+<span class="cstat-no" title="statement not covered" >                this.weeklyUsage = (+this.dailyUsage * 7).toFixed(2);</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (this.projectedBillStartDateExists(this.selfServiceReadingResponse) &amp;&amp;</span>
+                this.projectedBillEndDateExists(this.selfServiceReadingResponse) ) {
+<span class="cstat-no" title="statement not covered" >                this.currentBillStartDate = this.selfServiceReadingResponse.projectedBill.startDate;</span>
+<span class="cstat-no" title="statement not covered" >                this.currentBillEndDate = this.selfServiceReadingResponse.projectedBill.endDate;</span>
+<span class="cstat-no" title="statement not covered" >                this.currentBillDateString = this.buildBillDateString( this.currentBillStartDate, this.currentBillEndDate );</span>
+            }
+        } else <span class="cstat-no" title="statement not covered" >if  (this.screenCode === 'SSMR_NSBD1') {</span>
+<span class="cstat-no" title="statement not covered" >            this.adjustmentHeading = 'Your bill is on the way';</span>
+<span class="cstat-no" title="statement not covered" >            this.adjustmentMessage = `Your meter read was taken within two days of your bill creation date, so we’ll use this to calculate your next bill.`;</span>
+<span class="cstat-no" title="statement not covered" >            this.billingHeading = '*Projected bill';</span>
+<span class="cstat-no" title="statement not covered" >            this.buildBill();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (this.projectedBillAmountExists(this.selfServiceReadingResponse)) {</span>
+<span class="cstat-no" title="statement not covered" >                this.currentBillAmount = this.selfServiceReadingResponse.projectedBill.amount;</span>
+<span class="cstat-no" title="statement not covered" >                this.paymentAmount = this.selfServiceReadingResponse.projectedBill.amount;</span>
+<span class="cstat-no" title="statement not covered" >                this.payButtonMessage = 'PAY NOW';</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                this.currentBillAmount = 0;</span>
+<span class="cstat-no" title="statement not covered" >                this.payButtonMessage = 'MAKE A PAYMENT';</span>
+            }
+<span class="cstat-no" title="statement not covered" >            this.buildAmountToShow(this.currentBillAmount);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (this.projectedBillStartDateExists(this.selfServiceReadingResponse) &amp;&amp;</span>
+                this.projectedBillEndDateExists(this.selfServiceReadingResponse) ) {
+<span class="cstat-no" title="statement not covered" >                this.currentBillStartDate = this.selfServiceReadingResponse.projectedBill.startDate;</span>
+<span class="cstat-no" title="statement not covered" >                this.currentBillEndDate = this.selfServiceReadingResponse.projectedBill.endDate;</span>
+<span class="cstat-no" title="statement not covered" >                this.currentBillDateString = this.buildBillDateString( this.currentBillStartDate, this.currentBillEndDate );</span>
+            }
+&nbsp;
+        } else <span class="cstat-no" title="statement not covered" >if (this.screenCode === 'SSMR_NSBD2') {</span>
+<span class="cstat-no" title="statement not covered" >            this.adjustmentHeading = 'Your bill is on the way';</span>
+<span class="cstat-no" title="statement not covered" >            this.adjustmentMessage = `Your meter read was taken within two days of your bill creation date, so we’ll use this to calculate your next bill.`;</span>
+<span class="cstat-no" title="statement not covered" >            this.billingHeading = '*Projected bill';</span>
+<span class="cstat-no" title="statement not covered" >            this.overDueHeading = 'PLUS OVERDUE CHARGES OF';</span>
+<span class="cstat-no" title="statement not covered" >            this.buildBill();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (this.projectedBillAmountExists(this.selfServiceReadingResponse) &amp;&amp; this.accountBalanceExists(this.selfServiceReadingResponse)) {</span>
+<span class="cstat-no" title="statement not covered" >                this.currentBillAmount = this.selfServiceReadingResponse.projectedBill.amount;</span>
+<span class="cstat-no" title="statement not covered" >                this.paymentAmount = this.selfServiceReadingResponse.projectedBill.amount + this.selfServiceReadingResponse.accountBalance;</span>
+<span class="cstat-no" title="statement not covered" >                this.payButtonMessage = 'PAY NOW';</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                this.currentBillAmount = 0;</span>
+<span class="cstat-no" title="statement not covered" >                this.payButtonMessage = 'MAKE A PAYMENT';</span>
+            }
+<span class="cstat-no" title="statement not covered" >            this.buildAmountToShow(this.currentBillAmount);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (this.projectedBillStartDateExists(this.selfServiceReadingResponse) &amp;&amp;</span>
+                this.projectedBillEndDateExists(this.selfServiceReadingResponse) ) {
+<span class="cstat-no" title="statement not covered" >                this.currentBillStartDate = this.selfServiceReadingResponse.projectedBill.startDate;</span>
+<span class="cstat-no" title="statement not covered" >                this.currentBillEndDate = this.selfServiceReadingResponse.projectedBill.endDate;</span>
+<span class="cstat-no" title="statement not covered" >                this.currentBillDateString = this.buildBillDateString( this.currentBillStartDate, this.currentBillEndDate );</span>
+            }
+        } else <span class="cstat-no" title="statement not covered" >if ( this.screenCode === 'SSMR_PROJ1' ) {</span>
+<span class="cstat-no" title="statement not covered" >            this.adjustmentHeading = 'Thanks for your read';</span>
+<span class="cstat-no" title="statement not covered" >            this.adjustmentMessage = 'Your meter read is what we expected. You’re now able to see your costs to date and a projection of your current billing cycle.';</span>
+<span class="cstat-no" title="statement not covered" >            this.billingHeading = 'Current bill period';</span>
+<span class="cstat-no" title="statement not covered" >            this.buildBill();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if ( this.projectedBillAmountExists(this.selfServiceReadingResponse)) {</span>
+<span class="cstat-no" title="statement not covered" >                this.projectedBillAmount = this.selfServiceReadingResponse.projectedBill.amount.toFixed(2);</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (this.dailyUsageExists(this.selfServiceReadingResponse)) {</span>
+<span class="cstat-no" title="statement not covered" >                this.dailyUsage = this.selfServiceReadingResponse.dailyUsage;</span>
+<span class="cstat-no" title="statement not covered" >                this.weeklyUsage = (+this.dailyUsage * 7).toFixed(2);</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (this.projectedBillStartDateExists(this.selfServiceReadingResponse) &amp;&amp;</span>
+                this.projectedBillEndDateExists(this.selfServiceReadingResponse) ) {
+<span class="cstat-no" title="statement not covered" >                this.currentBillStartDate = this.selfServiceReadingResponse.projectedBill.startDate;</span>
+<span class="cstat-no" title="statement not covered" >                this.currentBillEndDate = this.selfServiceReadingResponse.projectedBill.endDate;</span>
+<span class="cstat-no" title="statement not covered" >                this.currentBillDateString = this.buildBillDateString( this.currentBillStartDate, this.currentBillEndDate );</span>
+            }
+&nbsp;
+        } else <span class="cstat-no" title="statement not covered" >if ( this.screenCode === 'SSMR_PROJ2') {</span>
+<span class="cstat-no" title="statement not covered" >            this.adjustmentHeading = 'Thanks for your read';</span>
+<span class="cstat-no" title="statement not covered" >            this.adjustmentMessage = 'Your meter read is what we expected. &lt;br&gt; This ensures that your current charges are accurate.';</span>
+<span class="cstat-no" title="statement not covered" >            this.billingHeading = 'Total to pay';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if ( this.numberOfDaysTillNextBillExists(this.selfServiceReadingResponse)) {</span>
+<span class="cstat-no" title="statement not covered" >                this.numberOfDaysTillNextBill = this.selfServiceReadingResponse.numberOfDaysTillNextBill;</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                this.numberOfDaysTillNextBill = '';</span>
+            }
+<span class="cstat-no" title="statement not covered" >            if (this.accountBalanceExists(this.selfServiceReadingResponse)) {</span>
+                let accountBalance: number = <span class="cstat-no" title="statement not covered" >+this.selfServiceReadingResponse.accountBalance;</span>
+<span class="cstat-no" title="statement not covered" >                if (accountBalance &lt; 0 ) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.isInCredit = true;</span>
+<span class="cstat-no" title="statement not covered" >                    this.billingHeading = 'Account in Credit';</span>
+<span class="cstat-no" title="statement not covered" >                    accountBalance = Math.abs(accountBalance);</span>
+<span class="cstat-no" title="statement not covered" >                    this.payButtonMessage = 'MAKE A PAYMENT';</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    this.paymentAmount = accountBalance;</span>
+<span class="cstat-no" title="statement not covered" >                    this.payButtonMessage = 'PAY NOW';</span>
+                }
+<span class="cstat-no" title="statement not covered" >                this.buildAmountToShow(accountBalance);</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                this.buildAmountToShow(0);</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (this.lastInvoiceStartDateExists(this.selfServiceReadingResponse) &amp;&amp;</span>
+                this.lastInvoiceEndDateExists(this.selfServiceReadingResponse) ) {
+<span class="cstat-no" title="statement not covered" >                this.currentBillStartDate = this.selfServiceReadingResponse.lastInvoice.startDate;</span>
+<span class="cstat-no" title="statement not covered" >                this.currentBillEndDate = this.selfServiceReadingResponse.lastInvoice.endDate;</span>
+<span class="cstat-no" title="statement not covered" >                this.currentBillDateString = this.buildBillDateString( this.currentBillStartDate, this.currentBillEndDate );</span>
+            }
+<span class="cstat-no" title="statement not covered" >            if ( this.invoiceDueDateExists(this.selfServiceReadingResponse)) {</span>
+<span class="cstat-no" title="statement not covered" >                this.invoiceDueDate = this.buildDueDateString(this.selfServiceReadingResponse.invoiceDueDate);</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                this.invoiceDueDate = '';</span>
+            }
+        } else <span class="cstat-no" title="statement not covered" >if ( this.screenCode === 'SSMR_PROJ3') {</span>
+<span class="cstat-no" title="statement not covered" >            this.adjustmentHeading = 'Thanks for your read';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (this.accountBalanceExists(this.selfServiceReadingResponse)) {</span>
+<span class="cstat-no" title="statement not covered" >                if ( this.selfServiceReadingResponse.accountBalance &lt;= 0) { // Do behavior like PROJ1.</span>
+<span class="cstat-no" title="statement not covered" >                    this.adjustmentMessage = `By providing your meter read, you're now able to see your costs to date and a projection of your current billing cycle.`;</span>
+<span class="cstat-no" title="statement not covered" >                    this.isAccountBalancePositive = false;</span>
+<span class="cstat-no" title="statement not covered" >                    this.billingHeading = 'Current bill period';</span>
+<span class="cstat-no" title="statement not covered" >                    this.buildBill();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    if ( this.projectedBillAmountExists(this.selfServiceReadingResponse)) {</span>
+<span class="cstat-no" title="statement not covered" >                        this.projectedBillAmount = this.selfServiceReadingResponse.projectedBill.amount.toFixed(2);</span>
+                    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    if (this.dailyUsageExists(this.selfServiceReadingResponse)) {</span>
+<span class="cstat-no" title="statement not covered" >                        this.dailyUsage = this.selfServiceReadingResponse.dailyUsage;</span>
+<span class="cstat-no" title="statement not covered" >                        this.weeklyUsage = (+this.dailyUsage * 7).toFixed(2);</span>
+                    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    if (this.projectedBillStartDateExists(this.selfServiceReadingResponse) &amp;&amp;</span>
+                        this.projectedBillEndDateExists(this.selfServiceReadingResponse) ) {
+<span class="cstat-no" title="statement not covered" >                        this.currentBillStartDate = this.selfServiceReadingResponse.projectedBill.startDate;</span>
+<span class="cstat-no" title="statement not covered" >                        this.currentBillEndDate = this.selfServiceReadingResponse.projectedBill.endDate;</span>
+<span class="cstat-no" title="statement not covered" >                        this.currentBillDateString = this.buildBillDateString( this.currentBillStartDate, this.currentBillEndDate );</span>
+                    }
+                } else { // Do behavior like Proj2
+<span class="cstat-no" title="statement not covered" >                    this.adjustmentMessage = 'Providing your meter read ensures that your current charges are accurate and lets you see a projection of your next bill.';</span>
+<span class="cstat-no" title="statement not covered" >                    this.isAccountBalancePositive = true;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    this.billingHeading = 'Total to pay';</span>
+<span class="cstat-no" title="statement not covered" >                    if ( this.numberOfDaysTillNextBillExists(this.selfServiceReadingResponse)) {</span>
+<span class="cstat-no" title="statement not covered" >                        this.numberOfDaysTillNextBill = this.selfServiceReadingResponse.numberOfDaysTillNextBill;</span>
+                    } else {
+<span class="cstat-no" title="statement not covered" >                        this.numberOfDaysTillNextBill = '';</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    if (this.accountBalanceExists(this.selfServiceReadingResponse)) {</span>
+                        let accountBalance: number = <span class="cstat-no" title="statement not covered" >+this.selfServiceReadingResponse.accountBalance;</span>
+<span class="cstat-no" title="statement not covered" >                        if (accountBalance &lt; 0 ) {</span>
+<span class="cstat-no" title="statement not covered" >                            this.isInCredit = true;</span>
+<span class="cstat-no" title="statement not covered" >                            this.billingHeading = 'Account in Credit';</span>
+<span class="cstat-no" title="statement not covered" >                            accountBalance = Math.abs(accountBalance);</span>
+<span class="cstat-no" title="statement not covered" >                            this.payButtonMessage = 'MAKE A PAYMENT';</span>
+                        } else {
+<span class="cstat-no" title="statement not covered" >                            this.paymentAmount = accountBalance;</span>
+<span class="cstat-no" title="statement not covered" >                            this.payButtonMessage = 'PAY NOW';</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        this.buildAmountToShow(accountBalance);</span>
+                    } else {
+<span class="cstat-no" title="statement not covered" >                        this.buildAmountToShow(0);</span>
+                    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    if (this.lastInvoiceStartDateExists(this.selfServiceReadingResponse) &amp;&amp;</span>
+                        this.lastInvoiceEndDateExists(this.selfServiceReadingResponse) ) {
+<span class="cstat-no" title="statement not covered" >                        this.currentBillStartDate = this.selfServiceReadingResponse.lastInvoice.startDate;</span>
+<span class="cstat-no" title="statement not covered" >                        this.currentBillEndDate = this.selfServiceReadingResponse.lastInvoice.endDate;</span>
+<span class="cstat-no" title="statement not covered" >                        this.currentBillDateString = this.buildBillDateString( this.currentBillStartDate, this.currentBillEndDate );</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    if ( this.invoiceDueDateExists(this.selfServiceReadingResponse)) {</span>
+<span class="cstat-no" title="statement not covered" >                        this.invoiceDueDate = this.buildDueDateString(this.selfServiceReadingResponse.invoiceDueDate);</span>
+                    } else {
+<span class="cstat-no" title="statement not covered" >                        this.invoiceDueDate = '';</span>
+                    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    if ( this.projectedBillStartDateExists(this.selfServiceReadingResponse) &amp;&amp;</span>
+                        this.projectedBillEndDateExists(this.selfServiceReadingResponse) &amp;&amp;
+                        this.projectedBillAmountExists(this.selfServiceReadingResponse)) {
+<span class="cstat-no" title="statement not covered" >                        this.projectedBillAmount = this.selfServiceReadingResponse.projectedBill.amount.toFixed(2);</span>
+<span class="cstat-no" title="statement not covered" >                        this.projectedBillStartDate = this.selfServiceReadingResponse.projectedBill.startDate;</span>
+<span class="cstat-no" title="statement not covered" >                        this.projectedBillEnddate = this.selfServiceReadingResponse.projectedBill.endDate;</span>
+<span class="cstat-no" title="statement not covered" >                        this.projectedBillDateString = this.buildNextBillDateString(this.projectedBillStartDate, this.projectedBillEnddate);</span>
+                    }
+                }
+            }
+        }
+    }
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public isAnyMeterSkipped() {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.isEntrySkipped = this.selectedContract.meterCount !== this.ssmrService.selfServiceMeterReadings.length;</span>
+<span class="cstat-no" title="statement not covered" >        if (!this.isEntrySkipped) { // Checking is any register inside the meter is skipped</span>
+<span class="cstat-no" title="statement not covered" >            this.ssmrService.selfServiceMeterReadings.forEach((meter<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                if (!this.isEntrySkipped) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (meter) {</span>
+<span class="cstat-no" title="statement not covered" >                        this.isEntrySkipped = meter.registers.some((register<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                            if (register) {</span>
+<span class="cstat-no" title="statement not covered" >                                return register.reading === undefined;</span>
+                            }
+                        });
+                    } else {
+<span class="cstat-no" title="statement not covered" >                        this.isEntrySkipped = true;</span>
+                    }
+                }
+            });
+        }
+    }
+<span class="fstat-no" title="function not covered" >    public onClickPayNow() {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.paymentAmount &gt; 0) { // In Debit. Pre-populate amount owing.</span>
+<span class="cstat-no" title="statement not covered" >            this.ssmrService.onClickClose(true);</span>
+<span class="cstat-no" title="statement not covered" >            this.paymentService.openPaymentModal(this.selectedContract.contract, this.paymentAmount).subscribe();</span>
+        } else { // Amount to pay is blank.
+<span class="cstat-no" title="statement not covered" >            this.ssmrService.onClickClose(true);</span>
+<span class="cstat-no" title="statement not covered" >            this.paymentService.openPaymentModal(this.selectedContract.contract).subscribe();</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public onClickCloseButton() {</span>
+<span class="cstat-no" title="statement not covered" >        this.ssmrService.onClickClose();</span>
+    }
+&nbsp;
+    public numberOfDaysTillNextBillExists( response: SelfServiceReadingResponse<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        if ( response &amp;&amp; response.hasOwnProperty('numberOfDaysTillNextBill')) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+&nbsp;
+    public currentBillStartDateExists( response: SelfServiceReadingResponse<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        if ( response &amp;&amp; response.hasOwnProperty('currentBill') &amp;&amp; response.currentBill.hasOwnProperty('startDate')) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+&nbsp;
+    public currentBillEndDateExists( response: SelfServiceReadingResponse<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        if ( response &amp;&amp; response.hasOwnProperty('currentBill') &amp;&amp; response.currentBill.hasOwnProperty('endDate')) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+&nbsp;
+    public projectedBillStartDateExists( response: SelfServiceReadingResponse<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        if ( response &amp;&amp; response.hasOwnProperty('projectedBill') &amp;&amp; response.projectedBill.hasOwnProperty('startDate')) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+&nbsp;
+    public projectedBillEndDateExists( response: SelfServiceReadingResponse<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        if ( response &amp;&amp; response.hasOwnProperty('projectedBill') &amp;&amp; response.projectedBill.hasOwnProperty('endDate')) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+&nbsp;
+    public lastInvoiceStartDateExists( response: SelfServiceReadingResponse<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        if ( response &amp;&amp; response.hasOwnProperty('lastInvoice') &amp;&amp; response.lastInvoice.hasOwnProperty('startDate')) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+&nbsp;
+    public lastInvoiceEndDateExists( response: SelfServiceReadingResponse<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        if ( response &amp;&amp; response.hasOwnProperty('lastInvoice') &amp;&amp; response.lastInvoice.hasOwnProperty('endDate')) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+&nbsp;
+    public  adjustmentStartDateExists( response: SelfServiceReadingResponse<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        if ( response &amp;&amp; response.hasOwnProperty('adjustment') &amp;&amp; response.adjustment.hasOwnProperty('startDate')) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+&nbsp;
+    public  adjustmentEndDateExists( response: SelfServiceReadingResponse<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        if ( response &amp;&amp; response.hasOwnProperty('adjustment') &amp;&amp; response.adjustment.hasOwnProperty('endDate')) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+&nbsp;
+    public accountBalanceExists( response: SelfServiceReadingResponse<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        if ( response &amp;&amp; response.hasOwnProperty('accountBalance')) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+&nbsp;
+    public currentBillAmountExists( response: SelfServiceReadingResponse<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        if ( response &amp;&amp; response.hasOwnProperty('currentBill') &amp;&amp; response.currentBill.hasOwnProperty('amount')) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+&nbsp;
+    public invoiceDueDateExists( response: SelfServiceReadingResponse<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        if ( response &amp;&amp; response.hasOwnProperty('invoiceDueDate')) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+&nbsp;
+    public preAdjustmentBalanceExists( response: SelfServiceReadingResponse<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        if ( response &amp;&amp; response.hasOwnProperty('adjustment') &amp;&amp; response.adjustment.hasOwnProperty('preAdjustmentBalance')) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+    public postAdjustmentBalanceExists( response: SelfServiceReadingResponse<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        if ( response &amp;&amp; response.hasOwnProperty('adjustment') &amp;&amp; response.adjustment.hasOwnProperty('postAdjustmentBalance')) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+&nbsp;
+    public projectedBillAmountExists( response: SelfServiceReadingResponse<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >         if ( response &amp;&amp; response.hasOwnProperty('projectedBill') &amp;&amp; response.projectedBill.hasOwnProperty('amount')) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+&nbsp;
+    public dailyUsageExists( response: SelfServiceReadingResponse<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        if ( response &amp;&amp; response.hasOwnProperty('dailyUsage')) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public buildBill() {</span>
+<span class="cstat-no" title="statement not covered" >        if ( this.numberOfDaysTillNextBillExists(this.selfServiceReadingResponse)) {</span>
+<span class="cstat-no" title="statement not covered" >            this.numberOfDaysTillNextBill = this.selfServiceReadingResponse.numberOfDaysTillNextBill;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.numberOfDaysTillNextBill = '';</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.currentBillAmountExists(this.selfServiceReadingResponse)) {</span>
+<span class="cstat-no" title="statement not covered" >            this.currentBillAmount = this.selfServiceReadingResponse.currentBill.amount;</span>
+<span class="cstat-no" title="statement not covered" >            this.payButtonMessage = 'PAY NOW';</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.currentBillAmount = 0;</span>
+<span class="cstat-no" title="statement not covered" >            this.payButtonMessage = 'MAKE A PAYMENT';</span>
+        }
+<span class="cstat-no" title="statement not covered" >        this.buildAmountToShow(this.currentBillAmount);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.currentBillStartDateExists(this.selfServiceReadingResponse) &amp;&amp;</span>
+            this.currentBillEndDateExists(this.selfServiceReadingResponse) ) {
+<span class="cstat-no" title="statement not covered" >            this.currentBillStartDate = this.selfServiceReadingResponse.currentBill.startDate;</span>
+<span class="cstat-no" title="statement not covered" >            this.currentBillEndDate = this.selfServiceReadingResponse.currentBill.endDate;</span>
+<span class="cstat-no" title="statement not covered" >            this.currentBillDateString = this.buildBillDateString( this.currentBillStartDate, this.currentBillEndDate );</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if ( this.invoiceDueDateExists(this.selfServiceReadingResponse)) {</span>
+<span class="cstat-no" title="statement not covered" >            this.invoiceDueDate = this.buildDueDateString(this.selfServiceReadingResponse.invoiceDueDate);</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.invoiceDueDate = '';</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.accountBalanceExists(this.selfServiceReadingResponse)) {</span>
+<span class="cstat-no" title="statement not covered" >            this.isAccountInCredit();</span>
+<span class="cstat-no" title="statement not covered" >            this.accountBalance = Math.abs(this.selfServiceReadingResponse.accountBalance).toString(); </span>// To get the amount if it have cr at the end of it
+        }
+<span class="cstat-no" title="statement not covered" >        this.paymentAmount = +this.accountBalance + this.currentBillAmount;</span>
+    }
+&nbsp;
+    public buildBillDateString( billStartDate: Date, billEndDate: Date<span class="fstat-no" title="function not covered" >): string {</span>
+<span class="cstat-no" title="statement not covered" >        if ( billStartDate &amp;&amp; billEndDate) {</span>
+            let startDate = <span class="cstat-no" title="statement not covered" >moment(billStartDate);</span>
+            let endDate = <span class="cstat-no" title="statement not covered" >moment(billEndDate);</span>
+&nbsp;
+            let startDateFormat = (<span class="cstat-no" title="statement not covered" >startDate.year() === endDate.year() ? 'D MMM' : 'D MMM YYYY')</span>;
+&nbsp;
+            let billDateString = <span class="cstat-no" title="statement not covered" >startDate.format(startDateFormat) + ' - ' + endDate.format('D MMM YYYY');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            return billDateString;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return '';</span>
+        }
+    }
+&nbsp;
+    public buildNextBillDateString( billStartDate: Date, billEndDate: Date<span class="fstat-no" title="function not covered" >): string {</span>
+<span class="cstat-no" title="statement not covered" >        if ( billStartDate &amp;&amp; billEndDate) {</span>
+            let startDate = <span class="cstat-no" title="statement not covered" >moment(billStartDate);</span>
+            let endDate = <span class="cstat-no" title="statement not covered" >moment(billEndDate);</span>
+&nbsp;
+            let startDateFormat = (<span class="cstat-no" title="statement not covered" >startDate.year() === endDate.year() ? 'D MMM' : 'D MMM YYYY')</span>;
+&nbsp;
+            let billDateString = <span class="cstat-no" title="statement not covered" >startDate.format(startDateFormat) + ' to ' + endDate.format('D MMM YYYY');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            return billDateString;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return '';</span>
+        }
+    }
+&nbsp;
+    public buildDueDateString( invoiceDueDate: Date<span class="fstat-no" title="function not covered" >): string {</span>
+<span class="cstat-no" title="statement not covered" >        if ( invoiceDueDate ) {</span>
+            let invoiceDueDateString = <span class="cstat-no" title="statement not covered" >moment(invoiceDueDate).format('ddd D MMM YYYY');</span>
+<span class="cstat-no" title="statement not covered" >            this.checkOverDue(invoiceDueDate);</span>
+<span class="cstat-no" title="statement not covered" >            return invoiceDueDateString;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return '';</span>
+        }
+    }
+    public checkOverDue(date: Date<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        if ( date ) {</span>
+            let now = <span class="cstat-no" title="statement not covered" >moment().startOf('day');</span>
+<span class="cstat-no" title="statement not covered" >            this.daysUntilDue = now.diff(date, 'days').toString();</span>
+<span class="cstat-no" title="statement not covered" >            this.isOverDue = +this.daysUntilDue &lt;= 0 ? false : true ;</span>
+<span class="cstat-no" title="statement not covered" >            this.daysUntilDue = Math.abs(+this.daysUntilDue).toString();</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.isOverDue = false;</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public isAccountInCredit() {</span>
+<span class="cstat-no" title="statement not covered" >        this.isInCredit = this.selfServiceReadingResponse.accountBalance &lt; 0 ? true : false;</span>
+    }
+&nbsp;
+    public buildAmountToShow(amount: number, dest?: any<span class="fstat-no" title="function not covered" > ) {</span>
+<span class="cstat-no" title="statement not covered" >        if (amount &amp;&amp; dest) {</span>
+<span class="cstat-no" title="statement not covered" >            dest.number = amount.toString().split('.')[0];</span>
+<span class="cstat-no" title="statement not covered" >            dest.decimal = amount.toFixed(2).split('.')[1];</span>
+        } else <span class="cstat-no" title="statement not covered" >if (amount) {</span>
+<span class="cstat-no" title="statement not covered" >            this.amountNumber = amount.toString().split('.')[0];</span>
+<span class="cstat-no" title="statement not covered" >            this.amountDecimal = amount.toFixed(2).split('.')[1];</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.amountNumber = '0';</span>
+<span class="cstat-no" title="statement not covered" >            this.amountDecimal = '00';</span>
+        }
+    }
+&nbsp;
+    public showScreenCode( screenCode: SsmrScreenCode<span class="fstat-no" title="function not covered" > ) {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.selectedContract &amp;&amp; this.selectedContract.isBillSmoothing) { // Return false if contract has Bill Smoothing.</span>
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        } else { // Otherwise return true if screenCode matches this.screenCode.
+<span class="cstat-no" title="statement not covered" >            return this.screenCode === screenCode;</span>
+        }
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

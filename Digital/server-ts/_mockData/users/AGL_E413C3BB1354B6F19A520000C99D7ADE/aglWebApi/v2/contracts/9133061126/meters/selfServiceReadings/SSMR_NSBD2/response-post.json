@@ -1,0 +1,35 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": {
+            "screenCode": "SSMR_NSBD2",
+            "numberOfDaysTillNextBill": "2",
+            "accountBalance": "235.43",
+            "currentBill": {
+                    "amount": 58.677,
+                    "startDate": "2017-02-28T00:00:00",
+                    "endDate": "2017-03-28T00:00:00"
+                    },
+            "meters": [
+                {
+                    "meterSerial": "SSMR_MRE1",
+                    "registers": [
+                        {
+                            "registerId": "001",
+                            "dialFormat": "5",
+                            "currentMeterRead": "1790824",
+                            "lastMeterRead": "02180",
+                            "lastReadQuality": "Actual Read by MDP",
+                            "lastReadDate": "28.11.2016"
+                        }
+                    ]
+                }
+            ],
+            "error": {
+                "internalError": {
+                    "errorNumber": 68
+                }
+            }
+    }
+}
+

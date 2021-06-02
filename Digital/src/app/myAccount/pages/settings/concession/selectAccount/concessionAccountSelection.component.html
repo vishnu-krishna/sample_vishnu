@@ -1,0 +1,48 @@
+<div class="concession-accounts">
+    <div class="concession-accounts__spinner" *ngIf="isLoading">
+        <agl-loader></agl-loader>
+    </div>
+    <div *ngIf="!isLoading">
+        <agl-maui-heading class="concession-accounts__heading"
+                          heading="Choose an address">
+        </agl-maui-heading>
+
+        <agl-maui-container *ngFor="let account of accountsList; let i = index"
+                            class="concession-accounts__account"
+                            (mouseenter)="mouseEntered(i)"
+                            (mouseleave)="mouseLeave()"
+                            (click)="onClickSelectedAccount(account)">
+            <div class="concession-accounts__account-wrapper">
+                <div>
+                    <div class="concession-accounts__account-address" *ngFor="let singleAddress of account.uniqueFuelAndAddress">
+
+                        <div *ngIf="anyAccountHasElec" class="concession-accounts__account-address-fueltype">
+                            <div *ngIf="singleAddress.hasElec" class="concession-accounts__account-address-fueltype-electricity"></div>
+                        </div>
+
+                        <div *ngIf="anyAccountHasGas" class="concession-accounts__account-address-fueltype">
+                            <div *ngIf="singleAddress.hasGas" class="concession-accounts__account-address-fueltype-gas"></div>
+                        </div>
+
+                        <div class="concession-accounts__account-address-details">
+                            <div class="concession-accounts__account-address-details-address">
+                                {{singleAddress.address.addressPart1}}
+                                <span class="concession-accounts__account-address-details-address-no-wrap">{{singleAddress.address.addressPart2}}</span>
+                            </div>
+                            <div class="concession-accounts__account-address-details-account-number">
+                                Account no: {{account.accountNumber | aglAddSpaces}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concession-accounts__account-chevron">
+                    <div class="concession-accounts__account-chevron-regular-icon"
+                         *ngIf="hoveredAccount !== i"></div>
+                    <div class="concession-accounts__account-chevron-hover-icon"
+                         *ngIf="hoveredAccount === i"></div>
+                </div>
+            </div>
+        </agl-maui-container>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+
+<div *ngIf="!pageError" class="maui-page-progress-bar">
+    <span *ngFor="let pageNumber of pageNumbers" class="maui-page-progress-bar__page"
+        [ngClass]="{ 'maui-page-progress-bar__page-current': pageNumber === current }">
+        <span *ngIf="pageNumber === current">
+            <span class="maui-page-progress-bar__page-filler"></span>
+            <span class="maui-page-progress-bar__page-current-marker"></span>
+            <span label>Page <span class="maui-page-progress-bar__page-number">{{pageNumber}}</span> of <span class="maui-page-progress-bar__page-total">{{total}}</span></span>
+        </span>
+    </span>
+</div>
+<div *ngIf="pageError" class="maui-page-progress-bar--error"></div>

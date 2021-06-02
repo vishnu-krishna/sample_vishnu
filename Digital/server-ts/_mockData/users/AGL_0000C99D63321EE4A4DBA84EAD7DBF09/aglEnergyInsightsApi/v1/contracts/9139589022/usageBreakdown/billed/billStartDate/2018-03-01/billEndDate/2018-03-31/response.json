@@ -1,0 +1,67 @@
+{
+  "totalUsageCost": 100.63,
+  "highestMeasuredUsageCategory": "ElectricVehicle",
+  
+  "usageBreakdown": [
+    {
+      "category": "Heating",
+      "usagePercentage": 51.3,
+      "usageAmount": 22.01
+    },
+    {
+      "category": "PoolPump",
+      "usagePercentage": 21.1,
+      "usageAmount": 9.31
+    },
+    {
+      "category": "FridgesFreezers",
+      "usagePercentage": 21.1,
+      "usageAmount": 9.31
+    },
+    {
+      "category": "Cooling",
+      "usagePercentage": 11.1,
+      "usageAmount": 5.31
+    },
+    {
+      "category": "ElectricHotWater",
+      "usagePercentage": 21.1,
+      "usageAmount": 9.31
+    },
+    {
+      "category": "LaundryDishwasher",
+      "usagePercentage": 21.1,
+      "usageAmount": 9.31
+    },
+    {
+      "category": "HomeEntertainment",
+      "usagePercentage": 21.1,
+      "usageAmount": 9.31
+    },
+    {
+      "category": "Other",
+      "usagePercentage": 21.1,
+      "usageAmount": 9.31
+    },
+    {
+      "category": "Lighting",
+      "usagePercentage": 21.1,
+      "usageAmount": 9.31
+    },
+    {
+      "category": "Standby",
+      "usagePercentage": 21.1,
+      "usageAmount": 9.31
+    },
+    {
+      "category": "Cooking",
+      "usagePercentage": 21.1,
+      "usageAmount": 9.31
+    },
+    {
+      "category": "ElectricVehicle",
+      "usagePercentage": 55.9,
+      "usageAmount": 9.31
+    }
+  ]
+}

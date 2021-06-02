@@ -1,0 +1,29 @@
+<mat-card id="EnergyTips"  class="energy-saving-tips tempdls-card" [class.extend]="readMore === 'moreInfo' || readMore2 === 'moreInfo'">
+  <div class="tempdls-card-header ">Energy saving tips</div>
+  <div class = "arrow-container"> <img src="svg/arrow_previous.svg" (click)="onClickPreviousTip()"> </div>
+    <div class = "tips-container tips-container-left" (swipeLeft)="swipeLeft()" (swipeRight)="swipeRight()"> 
+      <div class = "tips_icon">
+        <img width="80" src="{{ tips[currentTipIndex].icon }}" />
+      </div>
+      <div class = "tips_title tempdls-heading-primary"> {{ tips[currentTipIndex].title }}</div>
+      <div class = "tips_summary"> {{ tips[currentTipIndex].summary }} </div>
+      <div class = "tips_question"> Why should I do this? </div>
+      <div class = "tips_info"> {{ tips[currentTipIndex].info }} </div>
+      <div *ngIf="readMore === 'moreInfo'" class = "tips_info"> {{ tips[currentTipIndex].infoExtended }} </div>
+      <div *ngIf="readMore === 'lessInfo'" class = "tips_readMore" (click)="onClickInfoChange('moreInfo')"> Read more.. </div>
+      <div *ngIf="readMore === 'moreInfo'" class = "tips_readMore" (click)="onClickInfoChange('lessInfo')"> Read less </div>
+    </div>
+    <div class = "tips-container tips-container-right" (swipeLeft)="swipeLeft()" (swipeRight)="swipeRight()"> 
+      <div class = "tips_icon">
+        <img width="80" src="{{ tips[currentTipIndex2].icon }}" />
+      </div>
+      <div class = "tips_title tempdls-heading-primary">  {{ tips[currentTipIndex2].title }} </div>
+      <div class = "tips_summary"> {{ tips[currentTipIndex2].summary }} </div>
+      <div class = "tips_question"> Why should I do this? </div>
+      <div class = "tips_info"> {{ tips[currentTipIndex2].info }} </div>
+      <div *ngIf="readMore2 === 'moreInfo'" class = "tips_info"> {{ tips[currentTipIndex2].infoExtended }} </div>
+      <div *ngIf="readMore2 === 'lessInfo'" class = "tips_readMore" (click)="onClickInfoChange2('moreInfo')"> Read more.. </div>
+      <div *ngIf="readMore2 === 'moreInfo'" class = "tips_readMore" (click)="onClickInfoChange2('lessInfo')"> Read less </div>
+    </div>
+  <div class = "arrow-container arrow-container__right"><img src="svg/arrow_next.svg" (click)="onClickNextTip()"> </div>
+</mat-card> 

@@ -1,0 +1,56 @@
+
+[
+    {
+        "number": "123456",
+        "firstName": "Matt",
+        "lastName": "Young",
+        "contracts": [
+            {
+                "address": "99 Swanston Street|Melbourne VIC 3000",
+                "accountNumber": "123456",
+                "fuelType": "Gas",
+                "nameId": "AGL_E395B7CDAFFF04F18C2A000011111111",
+                "number": "123456111",
+                "planName": "Standard Energy Plan",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false,
+                "regionId": "VIC"
+            },
+            {
+                "address": "99 Swanston Street|Melbourne VIC 3000",
+                "accountNumber": "123456",
+                "fuelType": "Electricity",
+                "nameId": "AGL_E395B7CDAFFF04F18C2A000011111111",
+                "number": "123456222",
+                "planName": "Standard Energy Plan",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false,
+                "regionId": "VIC"
+            }
+        ]
+    },
+    {
+        "number": "456789",
+        "firstName": "Matt",
+        "lastName": "Young",
+        "contracts": [
+            {
+                "address": "2 Albion Street|Brunswick VIC 3000",
+                "accountNumber": "456789",
+                "fuelType": "Electricity",
+                "nameId": "AGL_E395B7CDAFFF04F18C2A000011111111",
+                "number": "456789111",
+                "planName": "Standard Energy Plan",
+                "inFlight": false,
+                "contractStatus": "",
+                "isRestricted": false,
+                "hasElectricVehicle": false,
+                "regionId": "VIC"
+            }
+        ]
+    }
+]

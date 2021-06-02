@@ -1,0 +1,177 @@
+@import '../../../../shared/style/variables';
+// Loading this because I didn't want to risk a conflict between variables and maui
+// TODO: align with MAUI spacing
+@import '../../../maui/maui_space';
+@import '../../../maui/maui_font';
+@import '../../../maui/maui_colour';
+
+@mixin link-padding() {
+    padding-top: 25px;
+
+    a {
+        font-size: $body-font-size-small;
+        line-height: 31px;
+        letter-spacing: normal;
+        font-weight: bold;
+        color: $brand-sky;
+        transition: color .3s ease;
+
+        &:hover {
+            color: $brand-grey-g1;
+        }
+    }
+}
+
+@mixin opa-link() {
+    display: inline-block;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: left center;
+    transition: transform 0.28s cubic-bezier(0.25, 0.1, 0.37, 1.31);
+
+    &--display {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.bill-panel-information {
+    display: table;
+    width: 100%;
+
+    @media #{$agl-layout-mobile} {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .link-padding {
+        @include link-padding();
+        padding-top: 0;
+
+        .opa-link {
+            @include opa-link();
+        }
+    }
+
+    &__left-panel {
+        position: relative;
+        min-height: 100px;
+        display: table-cell;
+        vertical-align: top;
+        width: 50%;
+        padding-right: 52px;
+        padding-bottom: 45px;
+
+        @media #{$agl-layout-mobile} {
+            display: block;
+            border-right: none;
+            padding: 5px 0 $space-04 0;
+            margin-bottom: $space-04;
+            width: 100%;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            display: block;
+            border-right: 2px solid $brand-grey-g5;
+            height: 100%;
+            right: 0;
+            top: 0;
+
+            @media #{$agl-layout-mobile} {
+                border-right: none;
+                width: 100%;
+                border-bottom: 2px solid $brand-grey-g5;
+                top: 100%;
+                height: 0;
+            }
+        }
+
+        &.prepaid {
+            padding-right: 0;
+        }
+
+        &-bill-date {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__right-panel {
+        min-height: 100px;
+        display: table-cell;
+        padding-left: 50px;
+        vertical-align: top;
+        @media #{$agl-layout-mobile} {
+            display: block;
+            padding-left: 0;
+            min-height: 10px;
+        }
+    }
+
+    &__bottom {
+        display: block;
+        padding: 20px 30px 0;
+        @media #{$agl-layout-mobile} {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+.bill-panel-dashboard--panel {
+    padding: $space-02 25px 21px 25px;
+
+    @media #{$agl-layout-mobile} {
+        padding: 0;
+    }
+
+    .link-padding {
+        @include link-padding();
+
+        .opa-link {
+            @include opa-link();
+        }
+
+        &-opa {
+            padding-top: 0;
+        }
+    }
+
+    .pay-divider {
+        margin-top: $space-04;
+    }
+
+    &__pending-payment {
+        padding-bottom: 5px;
+        @media #{$agl-layout-mobile} {
+            padding-bottom: 15px;
+        }
+    }
+
+    &-bill-date {
+        margin-bottom: 25px;
+    }
+
+    &-instalment-plan-title {
+        font-size: $body-font-size-normal;
+        font-weight: bold;
+        padding-bottom: $space-04;
+    }
+
+    &__instalment-plan-bill-period {
+        margin-top: $space-04;
+        border-top: 1px solid $neutral-04;
+    }
+}
+
+.bill-panel-pending-payment {
+    padding: 0 30px;
+    @media #{$agl-layout-mobile} {
+        display: none;
+    }
+}
+
+.bill-panel-dashboard__payg {
+    padding-bottom: 30px;
+}

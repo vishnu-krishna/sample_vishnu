@@ -1,0 +1,48 @@
+<div class="settings-container">
+    <div class="row">
+        <div class="col-md-12">
+            <mat-card>
+                <div class="main-card-header">Bill Smoothing</div>
+                <div class="intro">
+                    It's time to take the uncertainty out of your energy bills. With Bill Smoothing, we estimate how much energy you'll use for
+                    the next year and average that out to equal, regular instalments. <span class="link"
+                        (click)="openLearnMoreModal()">Learn more</span>
+                </div>
+                <div class="main-card-options bs">
+                    <agl-loader *ngIf="loading" loadingSubMessage="We're crunching the numbers, please stand by."></agl-loader>
+                    <div *ngIf="!loading">
+                        <div *ngFor="let accountModel of accountModels" class="bs-wrapper" [class.border-top]="!hasMultiAccount">
+                            <div *ngIf="hasMultiAccount" class="account-info">
+                                <agl-settings-account-detail [model]="accountModel.accountDetailModel"></agl-settings-account-detail>
+                            </div>
+
+                            <div class="bs-fuel" [class.bs-fuel--last]="last" *ngFor="let fuelModel of accountModel.billSmoothingFuelModel; let last = last">
+                                <agl-billsmoothing-fuel [fuelInformation]="fuelModel" [hasDuplicateFuels]="accountModel.hasDuplicateFuels">
+                                </agl-billsmoothing-fuel>
+                                <agl-billsmoothing-message *ngIf="fuelModel.hasMessage" [hasDirectDebit]="fuelModel.hasDirectDebit">
+                                </agl-billsmoothing-message>
+                                <agl-billsmoothing-setup-button *ngIf="fuelModel.hasSetupButton" [hasMultiAccount]="hasMultiAccount" [accountInformation]="accountModel.accountDetailModel"
+                                    [fuelInformation]="fuelModel">
+                                </agl-billsmoothing-setup-button>
+                                <agl-billsmoothing-chat-button [chatButtonId]='fuelModel.livePersonEngagementType' *ngIf="fuelModel.hasChatButton">
+                                </agl-billsmoothing-chat-button>
+                            </div>
+
+                            <div [class.button-line]="accountModel.hasButtonLineAboveMessage">
+                                <agl-billsmoothing-message *ngIf="accountModel.hasConsolidatedMessages" [hasDirectDebit]="accountModel.allContractsHaveDirectDebit">
+                                </agl-billsmoothing-message>
+                                <div [class.button-line]="accountModel.hasButtonLineBelowMessage">
+                                    <agl-billsmoothing-setup-button *ngIf="accountModel.hasConsolidatedSetUpButton" [hasMultiAccount]="hasMultiAccount" [accountInformation]="accountModel.accountDetailModel"
+                                        [fuelInformation]="accountModel.billSmoothingFuelModel">
+                                    </agl-billsmoothing-setup-button>
+                                    <agl-billsmoothing-chat-button *ngIf="accountModel.hasConsolidatedChatButton" [chatButtonId]='accountModel.livePersonEngagementType'>
+                                    </agl-billsmoothing-chat-button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

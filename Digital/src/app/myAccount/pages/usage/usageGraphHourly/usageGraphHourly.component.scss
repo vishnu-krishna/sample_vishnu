@@ -1,0 +1,364 @@
+@import '../../../../shared/style/variables';
+@import '../../../../shared/style/tempdls';
+
+* {
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+    user-select: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.usage-graph {
+    position: relative;
+    width: 100%;
+    height: 360px;
+    font-family: $secondary-font-stack;
+    @media #{$agl-layout-tablet-and-smaller} {
+        margin-top: 0px;
+    }
+
+    .usage-unavailable {
+        color: $brand-white;
+        font-family: $secondary-font-stack;
+        font-size: 18px;
+        position: absolute;
+        width: 320px;
+        right: 0;
+        left: 0;
+        top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .times-of-day {
+        position: absolute;
+        width: 300px;
+        right: 0;
+        left: 0;
+        top: 85px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: $primary-font-stack;
+
+        .time-quadrant {
+            float: left;
+            width: 75px;
+            font-size: 11px;
+            color: $brand-white;
+            text-align: center;
+
+            &.secondary {
+                color: $brand-bright;
+            }
+
+            .icon-container {
+                height: 27px;
+                width: 27px;
+                margin: 0 auto;
+
+                img {
+                    margin: 0 auto;
+                    display: block;
+                }
+            }
+
+            .time-quadrant__cost {
+                font-size: 22px;
+                font-weight: bold;
+
+                .time-of-day_dollar-sign {
+                    font-size: 12px;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+
+    .yaxis {
+
+        height: 300px;
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 160px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 395px;
+        opacity: 1;
+        transition: 50ms;
+
+        &.isGraphLoading {
+            transition: 500ms;
+        }
+
+        .labelgroup {
+
+            width: 40px;
+            height: 300px;
+            padding-left: 2px;
+            color: $brand-white;
+            font-size: 10px;
+            float: left;
+
+            &__label {
+
+                height: 15px;
+                width: 35px;
+                margin-bottom: 22px;
+                margin-top: 20px;
+            }
+        }
+
+        .gridlines {
+
+            height: 300px;
+            margin-left: 35px;
+            margin-right: 35px;
+            margin-top: 7px;
+
+            @media #{$agl-layout-mobile} {
+                margin-top: 28px;
+            }
+            @media #{$agl-layout-tablet} {
+                margin-top: 39px;
+            }
+
+            &__line {
+
+                height: 72px;
+                width: 100%;
+                border: none;
+
+                @media #{$agl-layout-mobile} {
+                    height: 64px;
+                }
+
+                &:last-child {
+                    border: none;
+                }
+            }
+        }
+    }
+
+    .viewport {
+
+        left: 0px;
+        right: 0px;
+        top: 160px;
+        height: 274px;
+        position: absolute;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch; // sass-lint:disable-line no-misspelled-properties
+        opacity: 1;
+        transition: 500ms;
+
+        .items {
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 20px;
+
+            height: 350px;
+            width: 300px;
+            transition: all 500ms;
+
+            @media #{$agl-layout-mobile} {
+                width: 240px;
+                transition: all 250ms;
+            }
+
+            .item {
+
+                height: 85px;
+                float: left;
+                transition: background 60ms linear;
+                position: relative;
+                width: 12px;
+
+                @media #{$agl-layout-mobile} {
+                    width: 10px;
+                }
+
+                .graph {
+                    transition: height 2s;
+                    position: absolute;
+                    left: 0px;
+                    right: 1px;
+                    bottom: 0px;
+                    border-radius: 1px;
+                    background: $brand-white;
+                    border: 1px solid $brand-white;
+
+                    &.estimatedRead {
+                        background-image: url('svg/usage-graph-hatchpattern.svg');
+                        background-color: transparent;
+                    }
+
+                    &.secondary {
+                        background-color: $brand-bright;
+                        border: 1px solid $brand-bright;
+
+                        &.estimatedRead {
+                            background-image: url('svg/usage-graph-hatchpattern.svg');
+                            background-color: transparent;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    .xaxis {
+        position: absolute;
+        top: 270px;
+        right: 0px;
+        left: 0px;
+        margin: 0 auto;
+        width: 385px;
+        text-align: center;
+
+        @media #{$agl-layout-mobile} {
+            width: 320px;
+        }
+
+        .label {
+            display: inline-block;
+            width: 70px;
+            text-align: center;
+            font-family: $secondary-font-stack;
+            font-size: 11px;
+            color: $brand-white;
+
+            @media #{$agl-layout-tablet-and-smaller} {
+                width: 18%;
+            }
+        }
+    }
+
+}
+
+.graphWidgetContainer {
+
+    left: 0px;
+    background-color: $brand-sky;
+    transition: all 0.5s;
+    margin: -15px -25px -25px -25px;
+
+    @media #{$agl-layout-mobile} {
+        margin: -59px -16px -24px -16px;
+    }
+
+}
+
+.insight {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 20px;
+    margin: auto;
+    width: 320px;
+    color: $brand-white;
+    text-align: center;
+    line-height: 28px;
+}
+
+.value-separator {
+
+    box-sizing: border-box;
+    width: 2px;
+    height: 14px;
+    opacity: 0.39;
+    border: 0.5px solid $brand-white;
+
+}
+
+.graph-selected-insight__msg {
+
+    background-color: $brand-sky;
+    width: 100%;
+    min-height: 105px;
+    transition: all 0.25s;
+    color: $brand-white;
+    text-align: center;
+
+    &.masked {
+        opacity: 0.2;
+    }
+
+    &__text {
+
+        font-family: $secondary-font-stack;
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 30px;
+        text-align: center;
+        padding-top: 15px;
+        display: inline-block;
+        width: 80%;
+        padding-left: 18%;
+        padding-right: 16%;
+
+        @media #{$agl-layout-mobile} {
+
+            width: 100%;
+            font-size: 18px;
+            text-align: center;
+            line-height: 30px;
+            padding: 19px 13px 22px 14px;
+
+        }
+
+        @media #{$agl-layout-tablet} {
+            width: 100%;
+            font-size: 18px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        @media (max-height: 640px) {
+            width: 100%;
+            font-size: 18px;
+            text-align: center;
+            line-height: 30px;
+            padding: 19px 13px 22px 14px;
+        }
+    }
+}
+
+.graph-selected-insight__tip {
+
+    width: 110px;
+    display: inline-block;
+    text-align: center;
+    font-family: $primary-font-stack;
+    font-size: 14px;
+    margin-top: 25px;
+    margin-left: -90px;
+    position: absolute;
+    padding-bottom: 18px;
+    background-image: url('svg/icon_down_arrow.svg');
+    background-repeat: no-repeat;
+    background-position: bottom 0px center;
+
+    &:hover {
+        cursor: pointer;
+        cursor: hand;
+    }
+    @media #{$agl-layout-tablet} {
+        display: none;
+    }
+
+    @media #{$agl-layout-mobile} {
+        display: none;
+    }
+}
+
+.firstName {
+    text-transform: capitalize;
+}

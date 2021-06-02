@@ -1,0 +1,28 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": {
+            "screenCode": "SSMR_MRR",
+            "meters": [
+                {
+                    "meterSerial": "1234567",
+                    "registers": [
+                        {
+                            "registerId": "001",
+                            "dialFormat": "5",
+                            "currentMeterRead": "1790824",
+                            "lastMeterRead": "02180",
+                            "lastReadQuality": "Actual Read by MDP",
+                            "lastReadDate": "28.11.2016"
+                        }
+                    ]
+                }
+            ],
+            "error": {
+                "internalError": {
+                    "errorNumber": "068"
+                }
+            }
+    }
+}
+

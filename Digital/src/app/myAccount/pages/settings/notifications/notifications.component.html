@@ -1,0 +1,79 @@
+<div class="settings-container communication-preferences-container">
+    <div class="row">
+        <div class="col-md-12">
+            <mat-card>
+                <div class="main-card-header">Notifications</div>
+
+                <div *ngIf="isPageLoading" class="main-card-loader">
+                    <agl-loader></agl-loader>
+                </div>
+
+                <div class="main-card-body" *ngIf="!isPageLoading">
+
+                    <!-- eBilling -->
+                    <div class="main-card-options" *ngIf="isEbillEnabled">
+                        <agl-settings-ebilling
+                            (onUserSelectionChanged)="eBillingSelectionChanged()"
+                            [eBillingModels]="eBillingComponentModels"
+                            [isEbillDataError]="isEbillApiError">
+                        </agl-settings-ebilling>
+                    </div>
+
+                    <!-- Old Ebill Functionality -->
+                    <div class="main-card-options" *ngIf="!isEbillEnabled">
+                        <div class="main-card-options__header">
+                            <h4>eBilling</h4>
+                        </div>
+                        <div class="main-card-options__edit">
+                            <h4>A convenient, hassle-free way of receiving your bill.</h4>
+                            <a href="{{paperlessBillingUrl}}" target="_blank">Manage</a>
+                        </div>
+                    </div>
+
+                    <!-- Communication Preferences linking back to AEO-->
+                    <div class="main-card-options">
+                        <div class="main-card-options__header">
+                            <h4>Communications</h4>
+                            <h5>Bill reminders, important information and marketing offers.</h5>
+                        </div>
+                        <div *ngIf="accountList.length > 1" class="accounts">
+                            <div *ngFor="let account of accountList" class="account">
+                                <div class="account__number">
+                                    Account no: {{account.accountNumber | aglAddSpaces}}
+                                    <div class="account__icons">
+                                        <span *ngFor="let contract of account.contracts">
+                                            <mat-icon *ngIf="contract.isElectricity" class="account__icon--elec account__icon" svgIcon="icon-elec-enabled" alt="electricity icon"></mat-icon>
+                                            <mat-icon *ngIf="contract.isGas" class="account__icon--gas account__icon" svgIcon="icon-gas-enabled"  alt="gas icon"></mat-icon>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="account__address">
+                                    <div *ngFor="let address of getAccountAddresses(account)">
+                                        {{address}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-card-options__edit">
+                            <h4>Manage your communication preferences.</h4>
+                            <a id="contact-details-link" href="{{preferencesUrl}}" target="_blank">Manage</a>
+                        </div>
+                    </div>
+
+                    <!-- Energy Insights -->
+                    <div *ngIf="isEnergyInsightsRefreshing" class="main-card-loader">
+                        <agl-loader></agl-loader>
+                    </div>
+                    <div class="main-card-options" *ngIf="showEnergyInsights()">
+                        <agl-settings-manage-energy-insights
+                            [energyInsightsSubscriptionModels]="energyInsightsEligibility"
+                            [isEnergyInsightsDataError]="isEnergyInsightsApiError"
+                            [hasInflightAccount]="hasInflightAccount"
+                        >
+                        </agl-settings-manage-energy-insights>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

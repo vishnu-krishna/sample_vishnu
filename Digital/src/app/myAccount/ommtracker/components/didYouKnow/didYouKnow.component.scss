@@ -1,0 +1,101 @@
+@import '../../../../shared/style/variables';
+@import '../../../../shared/style/omm/_omm_variables';
+@import '../../../../shared/style/agltheme';
+
+.row {
+    margin-bottom: 0px;
+}
+
+.didyouknow {
+    &__header {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-family: $headerStack;
+        font-size: 36px;
+        line-height: 1.2;
+        color: $omm-vdark-grey;
+        @media #{$medium-and-down} {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__container {
+        padding: 15px;
+
+        @media #{$medium-and-up} {
+            width: 50%;
+            padding: 30px 0px;
+        }
+
+        &__row {
+            &__icon {
+                display: inline-block;
+                @media #{$small-and-down} {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                img {
+                    width: 110%;
+                    height: 100%;
+                    @media #{$small-and-down} {
+                        width: 50%;
+                        height: 100%;
+                    }
+                }
+            }
+
+            &__content {
+                display: inline-block;
+                padding-left: 30px;
+                vertical-align: top;
+                @media #{$medium-and-down} {
+                    padding-right: 15px;
+                    width: 100%;
+                }
+
+                &__heading {
+                    font-family: $headerStack;
+                    font-size: 22px;
+                    font-weight: 600;
+                    color: $omm-vdark-grey;
+                    line-height: 1.1;
+                    @media #{$small-and-down} {
+                        font-size: 20px;
+                        margin-top: 26px;
+                    }
+
+                }
+
+                &__description {
+                    font-size: 14px;
+                    line-height: 1.5;
+                    text-align: left;
+                    color: $omm-grey-text;
+                    margin-top: 8px;
+                    @media #{$medium-and-down} {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+        &__divider {
+            @media #{$agl-layout-mobile} {
+                border-bottom: solid 1px $omm-vvlight-grey;
+                padding-top: 30px;
+
+                &.no-border {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}

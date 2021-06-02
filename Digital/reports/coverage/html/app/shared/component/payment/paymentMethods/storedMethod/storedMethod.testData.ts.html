@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\shared\component\payment\paymentMethods\storedMethod\storedMethod.testData.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/shared/component/payment/paymentMethods/storedMethod/</a> storedMethod.testData.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">72.09% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>31/43</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">36.36% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">13.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">76.92% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>30/39</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as apiModel from '../../../../../myAccount/services/settings/model';
+import * as serviceModel from '../../../../../myAccount/services/settings/model';
+import { ContactDetailModel } from '../../../../../shared/service/api.service';
+&nbsp;
+const basicTestData: any[] = [
+    {
+        id: 'ABCDEF',
+        creditCard: {
+            cardType: 'Visa',
+            creditCardReference: '123456',
+            expiryDate: '2020-10',
+            cardHolderName: 'John Doe'
+        },
+        directDebitContractAccounts: [],
+        oneTouchPayContractAccounts: []
+    }, {
+        id: 'GHIJKL',
+        creditCard: {
+            cardType: 'Master',
+            creditCardReference: '789012',
+            expiryDate: '2022-10',
+            cardHolderName: 'John Doe'
+        },
+        directDebitContractAccounts: [],
+        oneTouchPayContractAccounts: []
+    }, {
+        id: 'HHASYJ',
+        creditCard: {
+            cardType: 'Master',
+            creditCardReference: '345435435',
+            expiryDate: '2015-10',
+            cardHolderName: 'John Doe'
+        },
+        directDebitContractAccounts: [],
+        oneTouchPayContractAccounts: []
+    }, {
+        id: 'MNOPQR',
+        bank: {
+            bsb: '20-10-12',
+            accountNumber: '***456',
+            accountHolderName: 'James Dunmore',
+        },
+        directDebitContractAccounts: [],
+        oneTouchPayContractAccounts: []
+    }, {
+        id: 'STUVWX',
+        payPal: {
+            email: 'james.dunmore@test.com'
+        },
+        directDebitContractAccounts: [],
+        oneTouchPayContractAccounts: []
+    }
+];
+&nbsp;
+// We can't return just plain data as PaymentMethod has a helper method on it called PaymentMethodType
+// which the component needs, so we must return an array of PaymentMethod objects.
+&nbsp;
+const mappedTestData: serviceModel.PaymentMethod[] = basicTestData.map((inputItem) =&gt; {
+    let outputItem = new serviceModel.PaymentMethod();
+    outputItem.id = inputItem.id;
+    outputItem.bank = inputItem.bank;
+    if (inputItem.creditCard) {
+        outputItem.creditCard = inputItem.creditCard;
+        let w: string = &lt;string&gt; inputItem.creditCard.cardType;
+        let x: apiModel.CardType = apiModel.CardType[w];
+        let y: string = apiModel.CardType[x];
+        let z: serviceModel.CardType = serviceModel.CardType[y];
+        outputItem.creditCard.cardType = z;
+    }
+    if (inputItem.payPal) {
+        outputItem.payPal = inputItem.payPal;
+    }
+    outputItem.directDebitContractAccounts = inputItem.directDebitContractAccounts;
+    outputItem.oneTouchPayContractAccounts = inputItem.oneTouchPayContractAccounts;
+    return outputItem;
+});
+&nbsp;
+<span class="fstat-no" title="function not covered" >export class TestData {</span>
+<span class="fstat-no" title="function not covered" >    public static get noReturnedMethods(): serviceModel.PaymentMethod[] {</span>
+<span class="cstat-no" title="statement not covered" >        return [];</span>
+    }
+<span class="fstat-no" title="function not covered" >    public static get singleVisaCreditCard(): serviceModel.PaymentMethod[] {</span>
+<span class="cstat-no" title="statement not covered" >        return [mappedTestData.find((pm<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >pm.PaymentMethodType === serviceModel.PaymentMethodType.CreditCard &amp;&amp; pm.creditCard.cardType === serviceModel.CardType.Visa)</span></span>];</span>
+    }
+<span class="fstat-no" title="function not covered" >    public static get singleMastercardCreditCard(): serviceModel.PaymentMethod[] {</span>
+<span class="cstat-no" title="statement not covered" >        return [mappedTestData.find((pm<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >pm.PaymentMethodType === serviceModel.PaymentMethodType.CreditCard &amp;&amp; pm.creditCard.cardType === serviceModel.CardType.Master)</span></span>];</span>
+    }
+<span class="fstat-no" title="function not covered" >    public static get singleExpiredMastercardCreditCard(): serviceModel.PaymentMethod[] {</span>
+<span class="cstat-no" title="statement not covered" >        return [mappedTestData.find((pm<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >pm.PaymentMethodType === serviceModel.PaymentMethodType.CreditCard &amp;&amp; pm.creditCard.cardType === serviceModel.CardType.Master &amp;&amp; pm.creditCard.creditCardReference === '345435435')</span></span>];</span>
+    }
+<span class="fstat-no" title="function not covered" >    public static get all(): serviceModel.PaymentMethod[] {</span>
+<span class="cstat-no" title="statement not covered" >        return mappedTestData;</span>
+    }
+<span class="fstat-no" title="function not covered" >    public static get singleValidVisaCreditCard() {</span>
+<span class="cstat-no" title="statement not covered" >        return [{</span>
+            title: 'Visa',
+            shortReference: '3456'
+        }];
+    }
+<span class="fstat-no" title="function not covered" >    public static get singleValidMastercardCreditCard() {</span>
+<span class="cstat-no" title="statement not covered" >        return [{</span>
+            title: 'Mastercard',
+            shortReference: '9012'
+        }];
+    }
+<span class="fstat-no" title="function not covered" >    public static get contactDetailForCustomerWithSingleBusinessPartner(): ContactDetailModel {</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            hasMultipleBusinessPartners: false,
+            businessPartners: []
+        };
+    }
+<span class="fstat-no" title="function not covered" >    public static get contactDetailForCustomerWithMultipleBusinessPartners(): ContactDetailModel {</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            hasMultipleBusinessPartners: true,
+            businessPartners: []
+        };
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

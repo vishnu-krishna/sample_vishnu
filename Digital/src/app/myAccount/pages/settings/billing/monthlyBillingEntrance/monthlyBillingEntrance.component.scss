@@ -1,0 +1,23 @@
+@import '../../../../../shared/style/variables';
+@import '../../../../../shared/style/mixins';
+@import '../../../../style/settings';
+
+.main-card-options {
+
+    &__error {
+        margin-top: 4px;
+    }
+}
+
+.monthly-billing-link__loader {
+    img {
+        @include spinner();
+        position: absolute;
+        right: 0px;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.bill-smoothing {
+    padding-top: 20px;
+}

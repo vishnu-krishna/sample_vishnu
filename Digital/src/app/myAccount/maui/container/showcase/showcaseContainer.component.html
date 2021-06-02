@@ -1,0 +1,43 @@
+<agl-maui-showcase-template heading='Container'>
+    <div description>
+        1. adds optional shadow
+        2. centralised and 600px wide in desktop view, full page width in mobile view
+        3. doesn't add inner padding
+        4. block display
+    </div>
+    <div exampleCodeUsage>  
+        {{codeUsage}}
+    </div>
+    <div exampleImplementation>
+        <agl-maui-showcase-example label='Container with single component'>
+            <agl-maui-container>
+                <button style="width: 200px;">Ok</button>
+            </agl-maui-container>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label='Container with multiple components'>
+            <agl-maui-container>
+                <button style="width: 200px;">Ok</button>
+                <button style="width: 200px;">Cancel</button>
+            </agl-maui-container>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label='Container with multiple full width component'>
+            <agl-maui-container>
+                <button style="width: 100%;">Ok</button>
+                <button style="width: 100%;">Cancel</button>
+            </agl-maui-container>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label='Multiple containers with full width component'>
+            <agl-maui-container>
+                <button style="width: 100%;">Ok</button>
+            </agl-maui-container>
+            <agl-maui-container style="margin-top:25px;">
+                <button style="width: 100%;">Cancel</button>
+            </agl-maui-container>
+        </agl-maui-showcase-example>
+        <agl-maui-showcase-example label='Container without shadow'>
+            <agl-maui-container [hasShadow]='false'>
+                <button style="width: 200px;">Ok</button>
+            </agl-maui-container>
+        </agl-maui-showcase-example>
+    </div>
+</agl-maui-showcase-template>

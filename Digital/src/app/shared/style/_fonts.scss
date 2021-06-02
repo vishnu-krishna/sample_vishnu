@@ -1,0 +1,149 @@
+@import 'variables';
+
+@font-face {
+    font-family: 'agl-custom-icons';
+    src: url('fonts/agl-custom-icons.eot?y1y2da');
+    src: url('fonts/agl-custom-icons.eot?y1y2da#iefix') format('embedded-opentype'), url('fonts/agl-custom-icons.ttf?y1y2da') format('truetype'), url('fonts/agl-custom-icons.woff?y1y2da') format('woff'), url('fonts/agl-custom-icons.svg?y1y2da#agl-custom-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^='icon_'],
+[class*=' icon_'] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'agl-custom-icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon_bills_white {
+    &::before {
+        content: '\e900';
+    }
+}
+
+.icon_close_blue {
+    &::before {
+        content: '\e901';
+    }
+}
+
+.icon_header_profile_white:before {
+    content: '\e902';
+}
+
+.icon_overview_white {
+    .path1 {
+        &::before {
+            content: '\e903';
+            color: $brand-white;
+        }
+    }
+
+    .path2:before {
+        content: '\e904';
+        color: $residential-blue;
+        margin-left: -1.158203125em;
+    }
+}
+
+.icon_settings_white:before {
+    content: '\e905';
+}
+
+.icon_usage_white:before {
+    content: '\e906';
+}
+
+.icon_rewards_white:before {
+    content: '\e90e';
+}
+
+.icon_menu:before {
+    content: '\e90c';
+}
+
+.icon_elec .path1:before {
+    content: '\e911';
+    color: rgb(170, 218, 246);
+}
+
+.icon_elec .path2:before {
+    content: '\e912';
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon_elec .path3:before {
+    content: '\e913';
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon_elec .path4:before {
+    content: '\e914';
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon_elec .path5:before {
+    content: '\e915';
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon_elec .path6:before {
+    content: '\e916';
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon_gas .path1:before {
+    content: '\e917';
+    color: rgb(255, 206, 69);
+}
+
+.icon_gas .path2:before {
+    content: '\e918';
+    margin-left: -1.033203125em;
+    color: rgb(255, 255, 255);
+}
+
+.icon_gas .path3:before {
+    content: '\e919';
+    margin-left: -1.033203125em;
+    color: rgb(255, 255, 255);
+}
+
+.icon_settngs_personal:before {
+    content: '\e90d';
+}
+
+.icon_settngs_rewards:before {
+    content: '\e90e';
+}
+
+.icon_settngs_directDebit .path1:before {
+    content: '\e90f';
+    color: rgb(255, 255, 255);
+    opacity: 0.0100;
+}
+
+.icon_settngs_directDebit .path2:before {
+    content: '\e910';
+    margin-left: -1.0498046875em;
+    color: rgb(255, 255, 255);
+}
+
+.icon_settings_solarCheck:before {
+    content: '\e91a';
+    color: #FFFFFF;
+}

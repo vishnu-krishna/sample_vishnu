@@ -1,0 +1,125 @@
+@import '../../../maui';
+@import 'verticalProgressItemBase';
+
+.verticalItem {
+    $red: $secondary-warning-dark;
+    $blue: $primary-dark;
+    $green: $secondary-success-dark;
+
+    // color
+    &__item--color-blue {
+        border-left-color: $blue;
+
+        &:before {
+            border-color: $blue;
+            color: $blue;
+            box-shadow: 0 0 6px 6px rgba(0, 28, 176, 0.1);
+        }
+    }
+
+    &__item--color-red {
+        border-left-color: $red;
+
+        &:before {
+            border-color: $red;
+            color: $red;
+            box-shadow: 0 0 6px 6px $red;
+        }
+    }
+
+    &__item--color-green {
+        border-left-color: $green;
+
+        &:before {
+            border-color: $green;
+            color: $green;
+            box-shadow: 0 0 6px 6px $green;
+        }
+    }
+
+    // shadow
+    &__item--hide-shadow {
+        &:before {
+            //  "box-shadow" style is defined with a color, e.g. "box-shadow: 0 0 6px 6px $green;" So, it's defined with other color styles in color class, for example "&__item-color-green". When a shadow class is defined, it can only turn off existing shadow definition, so !important is used to overwrite
+            box-shadow: none !important;
+        }
+    }
+
+    // bullet line style
+    &__item--line-style-solid {
+        border-left-style: solid;
+    }
+
+    &__item--line-style-dashed {
+        border-left-style: dashed;
+    }
+
+    // bullet shape
+    &__item--bullet-shape-circle-empty {
+        &:before {
+            background-color: initial;
+            border-radius: 50%;
+        }
+    }
+
+    &__item--bullet-shape-circle-solid {
+        &:before {
+            background-color: currentColor;
+            border-radius: 50%;
+        }
+    }
+
+    &__item--bullet-shape-square-empty {
+        &:before {
+            background-color: initial;
+            border-radius: 1px;
+        }
+    }
+
+    &__item--bullet-shape-square-solid {
+        &:before {
+            background-color: currentColor;
+            border-radius: 1px;
+        }
+    }
+
+    // bullet icon
+    &__item--bullet-icon-tick {
+        &:before {
+            background-image: url('./svg/maui/progressTracker/tick.svg');
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    }
+
+    &__item--bullet-icon-cross {
+        &:before {
+            background-image: url('./svg/maui/progressTracker/cross.svg');
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    }
+
+    &__item--bullet-icon-empty {
+        &:before {
+            background-image: none;
+        }
+    }
+
+    // left and right pane content alignment
+    &__left-pane--align-left {
+        text-align: left;
+    }
+
+    &__left-pane--align-right {
+        text-align: right;
+    }
+
+    &__right-pane--align-left {
+        text-align: left;
+    }
+
+    &__right-pane--align-right {
+        text-align: right;
+    }
+}

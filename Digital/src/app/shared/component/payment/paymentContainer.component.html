@@ -1,0 +1,20 @@
+<div id="payment-container" class="payment-container">
+    <div id="payment-customer-details" *ngIf="currentView !== PaymentViewEnum.PaymentSuccess" class="row">
+        <div id="payment-address-container" class="col-xs-12 col-sm-6 payment-container--left">
+            <div id="payment-address-label" class="payment-container__label">You are paying for {{fuelType | lowercase}} at</div>
+            <div id="payment-address-text" class="payment-container__text">{{address | aglAddressFormatter}}</div>
+        </div>
+        <div id="payment-reference-container" class="col-xs-12 col-sm-6 payment-container--right">
+            <div id="payment-reference-label" class="payment-container__label">Reference number</div>
+            <div id="payment-reference-text" class="payment-container__text">{{reference}}</div>
+        </div>
+    </div>
+    <div id="payment-container-main" class="payment-container__main">
+        <agl-payment-select #paymentSelect
+        [isSmsPay]="data?.isSmsPay"
+        [isDirectDebit]="data?.isDirectDebit"
+        [paymentDetails]="paymentDetails" [bonusBands]="bonusBands" *ngIf="currentView === PaymentViewEnum.MakePayment"></agl-payment-select>
+        <agl-payg-bonus [paymentDetails]="paymentDetails" [bonusBands]="bonusBands" (onSelectAmount)="onPAYGSelectAmount($event)" *ngIf="currentView === PaymentViewEnum.PAYGBonusSelect"></agl-payg-bonus>
+    </div>
+    <agl-payment-success id="agl-payment-success" #paymentSuccess [paymentDetails]="paymentDetails" *ngIf="currentView == PaymentViewEnum.PaymentSuccess"></agl-payment-success>
+</div>

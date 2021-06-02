@@ -1,0 +1,33 @@
+{
+  "featureFlags": {
+    "bankAccountPaymentEnabled": false,
+    "billSmoothingEnabled": true,
+    "billSmoothingReviewEnabled": false,
+    "applyForConcessionEnabled": false,
+    "contactDetailsEnabled": true,
+    "decisioningEnabled": false,
+    "directDebitEnabled": true,
+    "ebillEnabled": true,
+    "homeProfileEnabled": true,
+    "loginDetailsEnabled": true,
+    "manageAccountEnabled": true,
+    "monthlyBillingEnabled": true,
+    "myWalletEnabled": true,
+    "newCreditCardPaymentEnabled": true,
+    "oneMinuteMoveMvp": false,
+    "paymentAssistanceEnabled": true,
+    "paymentExtensionEnabled": true,
+    "payOnTimeDiscountFixEnabled": false,
+    "payPalDirectDebitEnabled": false,
+    "productSwapPrepaidEnabled": true,
+    "rewardsEnabled": true,
+    "rewardsBenefitsMembershipEnabled": false,
+    "smsPayEnabled": true,
+    "solarCheckEnabled": true,
+    "ssmrEnabled": true,
+    "waGasTurnedOn": true,
+    "manageNotificationsEnabled": true,
+    "energyInsightsEnabled": true,
+    "energyInsightsDisaggregationEnabled": true
+  }
+}

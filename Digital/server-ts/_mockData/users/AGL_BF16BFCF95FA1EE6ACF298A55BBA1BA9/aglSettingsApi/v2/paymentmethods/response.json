@@ -1,0 +1,20 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "id": "B0001",
+            "creditCard": null,
+            "bank": {
+                "bsb": "063-010",
+                "accountNumber": "4641",
+                "accountHolderName": "Sunil Bhandary"
+            },
+            "payPal": null,
+            "directDebitContractAccounts": [
+                7032112521
+            ],
+            "oneTouchPayContractAccounts": []
+        }
+    ]
+}

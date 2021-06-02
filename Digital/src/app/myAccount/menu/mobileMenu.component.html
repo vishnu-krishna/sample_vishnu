@@ -1,0 +1,47 @@
+<div class="menu-mobile__expanded mobile" [class.menu-mobile-expanded__open]="isOpen" [class.menu-mobile-expanded__open-push]="isSubMenuOpen">
+    <div *ngFor="let item of mainMenu" class="menu-mobile__item" id="mobile-menu-{{item?.route | aglConvertCase}}">
+        <a [routerLink]="[item?.route]" [queryParams]="{}" [routerLinkActive]="['router-link-active']" *ngIf="item.route !== '/settings'">
+            <span class="menu-mobile-item__icon {{item?.icon}}">
+                <span ng-if="item?.icon == 'icon_overview_white'" class="path1"></span><span ng-if="item?.icon == 'icon_overview_white'" class="path2"></span>
+            </span>
+            <div class="menu-mobile-item__text">
+                <agl-menu-item [menuItem]="item" class="menu-item--mobile"></agl-menu-item>
+            </div>
+        </a>
+
+        <a (click)="isSubMenuOpen = !isSubMenuOpen" *ngIf="item.route === '/settings'">
+            <span class="menu-mobile-item__icon {{item?.icon}}">
+                <span ng-if="item?.icon == 'icon_overview_white'" class="path1"></span><span ng-if="item?.icon == 'icon_overview_white'" class="path2"></span>
+            </span>
+            <div class="menu-mobile-item__text">{{item?.label}}</div>
+            <span class="menu-mobile__item--end-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="16">
+                    <path fill="#FFFFFF" fill-rule="evenodd" d="M.3 14.3c-.4.4-.4 1.02 0 1.4.38.4 1 .4 1.4 0l7-7c.4-.4.4-1.02 0-1.4l-7-7C1.3-.1.68-.1.3.3c-.4.38-.4 1 0 1.4L6.6 8 .3 14.3z"/>
+                </svg>
+            </span>
+        </a>
+    </div>
+</div>
+
+<div class="menu-mobile__expanded menu-mobile__expanded--sub-menu mobile" [class.menu-mobile-expanded__open--sub-menu]="isSubMenuOpen">
+    <div class="menu-mobile__item sub-menu--first-element">
+        <a (click)="isSubMenuOpen = !isSubMenuOpen">
+            <span class="menu-mobile-item__icon menu-mobile__item--caret">
+                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="16">
+                    <path fill="#FFFFFF" fill-rule="evenodd" d="M8.7 14.3c.4.4.4 1 0 1.4-.4.4-1 .4-1.4 0l-7-7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4L2.4 8l6.3 6.3z"/>
+                </svg>
+            </span>
+            <div class="menu-mobile-item__text">Manage Account</div>
+        </a>
+    </div>
+    <div *ngFor="let item of mobileSettingsView" class="menu-mobile__item" id="mobile-menu-{{item?.route | aglConvertCase}}">
+        <a [routerLink]="[item?.route]" [queryParams]="{}" [routerLinkActive]="['router-link-active']" class="settings-left-menu-{{item?.route | aglConvertCase}}">
+            <span class="menu-mobile-item__icon {{item?.icon}}">
+                <span ng-if="item?.icon == 'icon_settngs_directDebit'" class="path1"></span><span ng-if="item?.icon == 'icon_settngs_directDebit'" class="path2"></span>
+            </span>
+            <div class="menu-mobile-item__text">
+                {{item.label}}
+            </div>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+<div class="bs-fuel-setup">
+    <div *ngIf="fuelInformation.hasBillSmoothing">
+        <div class="bs-fuel-first-row">
+            <span>{{fuelInformation.fuel}}:</span> {{fuelInformation.heading}}
+            <mat-icon class="alert-success" svgIcon="icon-alert-success"></mat-icon>
+        </div>
+        <div class="bs-fuel-second-row">
+            <ng-container *ngIf="nextPaymentAmount">
+                {{fuelInformation.paymentScheme.frequency}} payments of ${{nextPaymentAmount}}
+            </ng-container>
+            <ng-container *ngIf="previousPaymentAmount">
+                {{fuelInformation.paymentScheme.frequency}} payments of ${{previousPaymentAmount}}
+            </ng-container>
+        </div>
+        <div class="bs-fuel-next-payment">
+            <div class="bs-fuel-next-payment--first-row">
+                <ng-container *ngIf="nextPaymentDate">
+                    Your next payment: {{nextPaymentDate}}
+                </ng-container>
+                <ng-container *ngIf="previousPaymentDate">
+                    Your last paid payment: {{previousPaymentDate}}
+                </ng-container>
+            </div>
+            <div class="bs-fuel-next-payment--second-row">
+                <div *ngIf="fuelInformation.hasDirectDebit">
+                    <div *ngIf="isWeeklyPayment">
+                        Weekly payments are debited from your nominated account.
+                    </div>
+                    <div *ngIf="isFortnightlyPayment">
+                        Fortnightly payments are debited from your nominated account.
+                    </div>
+                    <div *ngIf="isMonthlyPayment">
+                        Monthly payments are debited from your nominated account.
+                    </div>
+                </div>
+                <div *ngIf="!fuelInformation.hasDirectDebit">
+                    <div *ngIf="isWeeklyPayment">
+                        Payments are due weekly.
+                    </div>
+                    <div *ngIf="isFortnightlyPayment">
+                        Payments are due fortnightly.
+                    </div>
+                    <div *ngIf="isMonthlyPayment">
+                        Payments are due monthly.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!fuelInformation.hasBillSmoothing">
+        <div class="bs-fuel-first-row" [class.bs-fuel-first-row--disabled]="fuelInformation.hasAlerts">
+            <span>{{fuelInformation.fuel}}:</span> {{fuelInformation.heading}}
+        </div>
+        <div *ngIf="!hasDuplicateFuels">
+            <div *ngIf="fuelInformation.paymentOptions">
+                <div class="bs-fuel-second-row">
+                    Switch to Bill Smoothing and make fortnightly payments of ${{fortnightlyPayment}}
+                </div>
+                <div class="bs-fuel-third-row">
+                    You can also choose weekly or monthly payments during setup.
+                </div>
+            </div>
+        </div>
+        <agl-alert *ngFor="let alert of fuelInformation.alerts" [alertType]="alert.typeAsString" [heading]="alert.heading" [body]="alert.body">
+            <div *ngIf="alert.IsOverdueAlert" class="bs-fuel-custom-text">
+                <div>Sorry, we can't switch you to Bill Smoothing unless your account balance is $0 or in credit. You can make a payment <span (click)="openPaymentPopup()" class="bs-fuel-payment-modal-link">here</span>, or chat with us now.</div>
+                <div>Any online payments you make can take up to 2 business days to process.</div>
+            </div>
+        </agl-alert>
+    </div>
+</div>

@@ -1,0 +1,135 @@
+@import '../homeProfile';
+
+.settings-container {
+    font-family: $body-font-stack;
+    text-align: left;
+    margin-left: 180px;
+
+    @media #{$agl-layout-mobile} {
+        margin-left: 0;
+    }
+}
+
+.homeprofile-landing {
+    background-color: $neutral-08;
+    padding: 50px;
+    font-family: $body-font-stack;
+    font-size: $body-font-size-normal;
+    @media #{$agl-layout-mobile} {
+        padding: $space-03;
+    }
+
+    &__error {
+        margin-top: $space-04;
+        margin-bottom: $space-05;
+    }
+
+    &__loader {
+        margin-top: $space-04;
+        margin-bottom: $space-05;
+    }
+
+    &__header {
+        display: block;
+        font-weight: bold;
+        font-size: $display-font-size-delta;
+        font-family: $display-font-stack;
+        margin-bottom: 19px;
+    }
+
+    &__description {
+        display: block;
+        margin-top: $space-03;
+
+        a {
+            @include link-styling;
+            font-size: $body-font-size-normal;
+        }
+
+        &-row {
+            display: block;
+
+            &:not(:first-child) {
+                margin-top: $space-03;
+                margin-bottom: $space-03;
+            }
+
+            &:last-child {
+                margin-bottom: $space-03;
+            }
+        }
+    }
+
+    &__address-and-button {
+        @media #{$agl-layout-tablet-and-greater} {
+            display: flex;
+            flex-flow: row;
+        }
+    }
+
+    &__address {
+        @media #{$agl-layout-tablet-and-greater} {
+            flex-basis: 0;
+            flex-grow: 1;
+            width: 280px;
+            padding-right: $space-04;
+            padding-top: $space-01;
+            vertical-align: top;
+        }
+
+        @media #{$agl-layout-mobile} {
+            margin-top: $space-04;
+            margin-bottom: $space-04;
+
+            &-body {
+                margin-top: $space-03;
+            }
+        };
+
+        &-header {
+            font-size: $body-font-size-small;
+            display: block;
+            font-weight: bold;
+        }
+
+        &-body {
+            display: block;
+        }
+    }
+
+    &__setup-button {
+        text-align: center;
+
+        @media #{$agl-layout-tablet-and-greater} {
+            flex-basis: auto;
+            flex-grow: 0;
+            width: 220px;
+            padding-left: $space-03;
+        }
+
+        @media #{$agl-layout-mobile} {
+            @include horizontally-center-in-parent();
+            margin-top: $space-04;
+        };
+
+        &-multi {
+            text-align: left;
+
+            @media #{$agl-layout-mobile} {
+                text-align: center;
+            };
+        }
+    }
+
+    &__policy {
+        margin-top: $space-02;
+        @media #{$agl-layout-mobile} {
+            margin-top: $space-03;
+        };
+
+        a {
+            @include link-styling;
+            font-size: $body-font-size-smallest;
+        }
+    }
+}

@@ -1,0 +1,100 @@
+@import '../../../../../shared/style/variables';
+
+.upcoming {
+
+    &__header {
+        font-weight: bold;
+        line-height: 18px;
+    }
+
+    &__text {
+        color: $brand-grey-g1;
+        font-family: $secondary-font-stack;
+        margin-top: 15px;
+        font-size: 14px;
+        line-height: 20px;
+        display: flex;
+
+        &__icon {
+            vertical-align: top;
+            width: 12px;
+            height: 17px;
+            margin-right: 6px;
+            margin-top: 2px;
+
+            .ddfuelicon {
+                display: inline-block;
+                width: 12px;
+                height: 17px;
+            }
+        }
+
+        &__header {
+            vertical-align: top;
+            font-weight: bold;
+            min-width: 100px;
+
+            @media #{$agl-layout-mobile} {
+                min-width: 80px;
+            }
+        }
+
+        &__balance {
+            line-height: 20px;
+
+            .bill-smoothing {
+                font-weight: bold;
+                display: inline-block;
+
+                @media #{$agl-layout-mobile} {
+                    display: block;
+                }
+            }
+
+            &__amount {
+                font-weight: bold;
+                display: inline-block;
+
+                &-red {
+                    font-weight: bold;
+                    color: $brand-fire;
+                }
+            }
+
+            &__date {
+                display: inline-block;
+
+                &__label {
+                    font-weight: bold;
+                }
+
+                @media #{$agl-layout-mobile} {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.space {
+    margin-bottom: 15px;
+}
+
+.grey {
+    color: $brand-grey-g3;
+}
+
+.pending {
+    display: block;
+}
+
+.dd-divider {
+    width: 100%;
+    margin: auto;
+    border-width: 2px;
+    border-color: $brand-grey-g4;
+}
+
+.block {
+    display: block;
+}

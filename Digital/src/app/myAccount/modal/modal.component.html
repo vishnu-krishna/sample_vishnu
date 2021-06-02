@@ -1,0 +1,36 @@
+<div id="dialog-container" class="dialog-container {{class}}" #confirmationModal>
+    <div id="agl-modal-body-id" class="agl-modal-body" [class.full-screen]="fullScreen" [class.no-padding]="modalTypeRemovePaddingElement" #aglModalExpand>
+        <div id="agl-modal-wrapper-id" class="agl-modal-wrapper" [class.no-padding]="slantedBackground">
+            <aglModalLoaderDirective *ngIf="slantedBackground" [data]="data" ></aglModalLoaderDirective>
+
+            <div [class.agl-modal-body__content]="fullScreen">
+                <span id="modal-close-button" class="agl-modal-body__close-button" [class.hidden]="modalTypeRemoveElement" #cancelButtonTopRight>
+                    <span>&#x2715;</span>
+                </span>
+                <div class="agl-modal-header">
+                    <span id="agl-modal-header-text" class="agl-modal-body__header" [class.hidden]="noButtons" *ngIf="title">{{title}}</span>
+                </div>
+
+                <div class="agl-modal-body__innerhtml" [class.has-message]="message" [innerHTML]="message" *ngIf="message && !showCheckboxConfirmation"></div>
+
+                <div *ngIf="showCheckboxConfirmation">
+                    <mat-checkbox (change)="confirmationIsChecked()" disableRipple="true" color="primary" class="save-and-pay-checkbox" #modalCheckBox>
+                        <div class="agl-modal-body__innerhtml" [class.has-message]="message" [innerHTML]="message"></div>
+                    </mat-checkbox>
+                </div>
+
+                <div [class.agl-modal-body__component]="fullScreen" [class.hidden]="message">
+                    <aglModalLoaderDirective *ngIf="!slantedBackground" [data]="data"></aglModalLoaderDirective>
+                </div>
+                <div class="agl-modal-body__action-bar row" [class.hidden]="modalTypeRemovePaddingElement">
+                    <div class="col-sm-6">
+                        <button [class.hidden]="!cancelText" [disabled]="!isConfirmationChecked" class="mat-accent mat-raised-button" #okButton>{{okText}}</button>
+                    </div>
+                    <div class="col-sm-6">
+                        <button [class.hidden]="!okText" class="mat-raised-button white-button" #cancelButton>{{cancelText}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

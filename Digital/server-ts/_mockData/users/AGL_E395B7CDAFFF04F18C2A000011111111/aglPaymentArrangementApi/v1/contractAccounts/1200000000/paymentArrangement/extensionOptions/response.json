@@ -1,0 +1,63 @@
+{
+    "status": 200,
+    "headers": {},
+    "body":
+        {
+            "contractAccountNumber": 1200000000,
+            "extensionOptions": [
+                {
+                    "contractNumber": 1211111111,
+                    "isEligible": true,
+                    "dueDate": "2017-10-10T14:00:00Z",
+                    "totalDueAmount": 70.28,
+                    "dueDateExtensions": [
+                        {
+                            "numberOfDays": 7,
+                            "date": "2017-10-15T14:00:00Z"
+                        },
+                        {
+                            "numberOfDays": 14,
+                            "date": "2017-10-22T14:00:00Z"
+                        },
+                        {
+                            "numberOfDays": 21,
+                            "date": "2017-10-29T14:00:00Z"
+                        }
+                    ]
+                },
+                {
+                    "contractNumber": 1222222222,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Ineligible for extension",
+                        "internalError": {
+                            "errorNumber": "027",
+                            "description": "some reason as to why the contract is not eligible"
+                        }
+                    }
+                },
+                {
+                    "contractNumber": 1233333333,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Ineligible for extension",
+                        "internalError": {
+                            "errorNumber": "015",
+                            "description": "some reason as to why the contract is not eligible"
+                        }
+                    }
+                },
+                {
+                    "contractNumber": 1244444444,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Ineligible for extension",
+                        "internalError": {
+                            "errorNumber": "015",
+                            "description": "some reason as to why the contract is not eligible"
+                        }
+                    }
+                }
+            ]
+        }
+}

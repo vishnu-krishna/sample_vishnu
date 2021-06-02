@@ -1,0 +1,73 @@
+@import '../../../../../shared/style/variables';
+@import '../../../../../shared/style/mixins';
+@import '../../../../style/settings';
+
+.center {
+    text-align: center;
+}
+
+.sub-header {
+    font-family: $primary-font-stack;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 38px;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.row-info {
+    display: flex;
+    margin-bottom: 15px;
+
+    .info-icon {
+        margin-right: 10px;
+
+        .email {
+            height: 13px;
+        }
+
+        .calendar {
+            height: 17px;
+        }
+
+        .reminder {
+            height: 16px;
+        }
+    }
+
+    .info-text {
+        font-size: 14px;
+        font-family: $primary-font-stack;
+    }
+}
+
+.close-button {
+    text-align: center;
+    padding-top: 25px;
+
+    button {
+        @media #{$agl-layout-mobile} {
+            width: 100%;
+        }
+        width: 300px;
+        height: 50px;
+
+        transition: background .4s cubic-bezier(.25, .8, .25, 1), box-shadow 280ms cubic-bezier(.4, 0, .2, 1), color 0.3s ease;
+
+        &:hover {
+            background-color: $brand-white;
+            color: $brand-sky;
+        }
+    }
+}
+
+.tick-image {
+    margin-top: 20px;
+    text-align: center;
+
+    .large-icon {
+        height: 100px;
+        width: 100px;
+    }
+}
+

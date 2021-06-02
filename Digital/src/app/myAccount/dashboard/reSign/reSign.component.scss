@@ -1,0 +1,78 @@
+@import '../../../shared/style/variables';
+@import '../../../shared/style/mixins';
+
+.re-sign {
+    background-color: $restricted-background;
+    border: 1px solid #AADAF6;
+    padding: 32px 15px;
+    text-align: center;
+    font-family: $secondary-font-stack;
+    color: $label-colour;
+
+    &__header-wrap {
+        display: inline-block;
+        padding-bottom: 18px;
+    }
+
+    &__trolley {
+        position: relative;
+        width: 32%;
+        display: inline-block;
+
+        &-box {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation: jiggleBox 3.5s ease-in-out infinite;
+        }
+
+        &-body {
+            width: 100%;
+        }
+    }
+
+    &__header-message {
+        color: $brand-blue;
+        font-family: $primary-font-stack;
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 35px;
+        display: inline-block;
+        padding-left: 20px;
+        vertical-align: middle;
+        text-align: left;
+
+        @media (min-width: $device-min-med) and (max-width: $device-min-lge) {
+            font-size: 30px;
+            padding-left: 15px;
+        }
+
+        @media (max-width: 350px) {
+            font-size: 30px;
+            padding-left: 12px;
+        }
+    }
+
+    &__button {
+        display: inline-block;
+        color: $brand-white;
+        font-family: $primary-font-stack;
+        font-size: 18px;
+        text-decoration: none;
+        padding: 10px 60px;
+        background-color: $brand-orange;
+        border: 1px solid $brand-grey-darker;
+        border-radius: 3px;
+        margin: 18px 0;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: $brand-orange-dark;
+        }
+    }
+
+    &__feedback {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>AGL | Electricity Providers | Gas Suppliers | Solar Energy</title>
+    <base href="/apps/">
+    <style>
+        html, body {
+          height: 100%;
+        }
+
+        agl-apps {
+          opacity: 0;
+          height: auto;
+          width: 100%;
+          position: absolute;
+        }
+
+        agl-apps.loaded {
+          opacity: 1;
+          transition: opacity 1s linear;
+        }
+
+        agl-apps.loaded + .spinner-container {
+          opacity: 0;
+          transition: opacity 1s linear, visibility 1s linear;
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          visibility: hidden;
+        }
+
+        .loading {
+            font-size: 18px;
+            font-family: BrauerNeue, Arial, Helvetica, sans-serif;
+            font-weight: normal;
+            color: #959aa4;
+            text-align: center;
+            padding-top: 15px;
+        }
+
+        .spinner-container {
+            display: table;
+            width: 100%;
+            height: 100%;
+            visibility: visible;
+            opacity: 1
+        }
+
+        .spinner {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .spinner svg {
+            animation: spin 1s cubic-bezier(.25,.25,.25,.25) infinite;
+        }
+
+        @keyframes spin {
+          100% {
+              transform: rotate(360deg);
+          }
+        }
+    </style>
+  </head>
+  <body>
+        <div class="spinner-container">
+             <div class="spinner">
+                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="64" height="64" fill="#0057BF">
+                     <path opacity=".25" d="M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28 A12 12 0 0 1 16 4"/>
+                     <path d="M16 0 A16 16 0 0 1 32 16 L28 16 A12 12 0 0 0 16 4z"></path>
+                 </svg>
+                 <div class="loading">
+                     Loading your bill
+                 </div>
+             </div>
+        </div>
+  </body>
+</html>

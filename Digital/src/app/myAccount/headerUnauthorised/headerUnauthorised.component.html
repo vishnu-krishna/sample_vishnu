@@ -1,0 +1,17 @@
+<div class="header-unauthorised">
+    <div class="header-unauthorised__container">
+        <div class="header-unauthorised__main">
+            <a href="https://www.agl.com.au" target="_blank">
+                <img class="header-unauthorised__logo__mobile" src="svg/icon-header-mobile.svg">
+            </a>
+            <a href="https://www.agl.com.au" target="_blank">
+                <img class="header-unauthorised__logo__desktop" src="svg/icon-header-desktop.svg">
+            </a>
+        </div>
+    </div>
+    <agl-maui-secondary-navigation
+        [display]="secondaryNavigationService.display"
+        [text]="secondaryNavigationService.desktopText"
+        [textMobile]="secondaryNavigationService.mobileText">
+    </agl-maui-secondary-navigation>
+</div>

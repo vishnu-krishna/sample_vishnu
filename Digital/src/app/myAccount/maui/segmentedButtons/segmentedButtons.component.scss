@@ -1,0 +1,15 @@
+@import '../_maui';
+
+@include maui-component-reset();
+
+:host {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: $border-radius-01;
+    border: 1px solid $neutral-03;
+    align-items: stretch;
+    font-size: $body-font-size-normal;
+    font-family: $body-font-stack;
+    overflow: hidden;
+}

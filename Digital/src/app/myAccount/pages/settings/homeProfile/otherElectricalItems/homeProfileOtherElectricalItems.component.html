@@ -1,0 +1,87 @@
+<div class="homeprofile-other">
+    <agl-home-profile-header [accountNumber]="accountNumber" [contractNumber]="contractNumber" pageHeading="Other electrical items"></agl-home-profile-header>
+
+    <div *ngIf="isLoading" class="homeprofile-landing__loader">
+        <agl-loader></agl-loader>
+    </div>
+
+    <div *ngIf="!isLoading" class="homeprofile-other-body">
+        <div class="homeprofile-other-questionnaire">
+            <div class="homeprofile-other-questionnaire__heading">Which of the following electrical items do you have?</div>
+            <div class="homeprofile-other-questionnaire-item" data-test="television">
+                <div class="homeprofile-other-questionnaire-item__question">How many televisions do you have?</div>
+                <agl-maui-segmented-buttons class="homeprofile-other__segmented-button" (change)="setNumberOfTelevisions($event)">
+                    <agl-maui-segmented-button
+                        *ngFor="let televisionSelection of televisionSelections"
+                        value="{{televisionSelection.value}}"
+                        text="{{televisionSelection.text}}"
+                        [attr.data-test]="televisionSelection.text"
+                        [selected]="homeProfile.numberOfTelevisions === televisionSelection.value">
+                    </agl-maui-segmented-button>
+                </agl-maui-segmented-buttons>
+            </div>
+            <div class="homeprofile-other-questionnaire-item" data-test="washing-machine">
+                <div class="homeprofile-other-questionnaire-item__question">Do you have a washing machine?</div>
+                <agl-maui-segmented-buttons class="homeprofile-other__segmented-button" (change)="setHasWashingMachine($event)">
+                    <agl-maui-segmented-button
+                        *ngFor="let electricalItemSelection of electricalItemSelections"
+                        value="{{electricalItemSelection.value}}"
+                        text="{{electricalItemSelection.text}}"
+                        [attr.data-test]="electricalItemSelection.text"
+                        [selected]="homeProfile.hasWashingMachine === electricalItemSelection.value">
+                    </agl-maui-segmented-button>
+                </agl-maui-segmented-buttons>
+            </div>
+            <div class="homeprofile-other-questionnaire-item" data-test="clothes-dryer">
+                <div class="homeprofile-other-questionnaire-item__question">Do you have a clothes dryer?</div>
+                <agl-maui-segmented-buttons class="homeprofile-other__segmented-button" (change)="setHasClothesDryer($event)">
+                    <agl-maui-segmented-button
+                        *ngFor="let electricalItemSelection of electricalItemSelections"
+                        value="{{electricalItemSelection.value}}"
+                        text="{{electricalItemSelection.text}}"
+                        [attr.data-test]="electricalItemSelection.text"
+                        [selected]="homeProfile.hasClothesDryer === electricalItemSelection.value">
+                    </agl-maui-segmented-button>
+                </agl-maui-segmented-buttons>
+            </div>
+            <div class="homeprofile-other-questionnaire-item" data-test="dishwasher">
+                <div class="homeprofile-other-questionnaire-item__question">Do you have a dishwasher?</div>
+                <agl-maui-segmented-buttons class="homeprofile-other__segmented-button" (change)="setHasDishwasher($event)">
+                    <agl-maui-segmented-button
+                        *ngFor="let electricalItemSelection of electricalItemSelections"
+                        value="{{electricalItemSelection.value}}"
+                        text="{{electricalItemSelection.text}}"
+                        [attr.data-test]="electricalItemSelection.text"
+                        [selected]="homeProfile.hasDishwasher === electricalItemSelection.value">
+                    </agl-maui-segmented-button>
+                </agl-maui-segmented-buttons>
+            </div>
+            <div class="homeprofile-other-questionnaire-item" data-test="microwave">
+                <div class="homeprofile-other-questionnaire-item__question">Do you have a microwave?</div>
+                <agl-maui-segmented-buttons class="homeprofile-other__segmented-button" (change)="setHasMicrowave($event)">
+                    <agl-maui-segmented-button
+                        *ngFor="let electricalItemSelection of electricalItemSelections"
+                        value="{{electricalItemSelection.value}}"
+                        text="{{electricalItemSelection.text}}"
+                        [attr.data-test]="electricalItemSelection.text"
+                        [selected]="homeProfile.hasMicrowave === electricalItemSelection.value">
+                    </agl-maui-segmented-button>
+                </agl-maui-segmented-buttons>
+            </div>
+            <div class="homeprofile-other-questionnaire-item" data-test="electric-vehicle">
+                <div class="homeprofile-other-questionnaire-item__question">Do you have an electric vehicle?</div>
+                <agl-maui-segmented-buttons class="homeprofile-other__segmented-button" (change)="setHasElectricVehicle($event)">
+                    <agl-maui-segmented-button
+                        *ngFor="let electricalItemSelection of electricalItemSelections"
+                        value="{{electricalItemSelection.value}}"
+                        text="{{electricalItemSelection.text}}"
+                        [attr.data-test]="electricalItemSelection.text"
+                        [selected]="homeProfile.hasElectricalVehicle === electricalItemSelection.value">
+                    </agl-maui-segmented-button>
+                </agl-maui-segmented-buttons>
+            </div>
+        </div>
+    </div>
+
+    <agl-home-profile-footer [accountNumber]="accountNumber" [contractNumber]="contractNumber"></agl-home-profile-footer>
+</div>

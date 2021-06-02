@@ -1,0 +1,179 @@
+@import '../../../../maui/maui';
+@import '../../../../../shared/style/mixins';
+
+agl-maui-secondary-navigation {
+    position: relative;
+    z-index: 2; /* to prevent the nav appearing under maui flash messages. TODO: fix this in the maui library */
+}
+
+.energy-insights {
+    max-width: $content-width;
+    margin: auto;
+    padding-top: $space-08;
+
+    &__header {
+        color:  $neutral-01;
+        font-family: $display-font-stack;
+        font-size: $display-font-size-alpha;
+        text-align: center;
+        margin-bottom: $space-05;
+
+        @media #{$agl-layout-mobile} {
+            font-size: $display-font-size-gamma;
+            margin-bottom: $space-04;
+        }
+    }
+
+    &__body {
+        text-align: center;
+        padding-left: $space-02;
+        padding-right: $space-02;
+    }
+
+    &__controls {
+        margin: $space-04;
+        padding-top: $space-04;
+        padding-bottom: $space-04;
+
+        &.compact {
+            padding-top: $space-01;
+        }
+
+        @media #{$agl-layout-mobile} {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        &__details {
+            padding-bottom: $space-04;
+            color: $neutral-01;
+            font-family: $body-font-stack;
+            font-size: $body-font-size-big;
+            text-align: center;
+
+            @media #{$agl-layout-mobile} {
+                font-size: $body-font-size-normal;
+            }
+
+            .contract {
+                &__address {
+                    padding-top: 10px;
+                    font-weight: bold;
+                }
+
+                &__email {
+                    padding-top: $space-03;
+                    font-size: $body-font-size-small;
+                }
+            }
+        }
+
+        &--link {
+            color: $primary-dark;
+        }
+
+        &__container {
+            margin-top: $space-04;
+            margin-bottom: $space-04;
+            display: inline-block;
+            position: relative;
+            vertical-align: middle;
+            width: 100%;
+
+            .subscription {
+                width: 66%;
+                float: left;
+
+                &__heading {
+                    color: $primary-dark;
+                    font-family: $display-font-stack;
+                    font-size: $body-font-size-normal;
+                    font-weight: bold;
+                }
+
+                &__subheading {
+                    display: inline-flex;
+                    font-size: $body-font-size-smallest;
+                }
+
+                &__toggle {
+                    position: absolute;
+                    right: 0;
+                }
+            }
+        }
+
+        .separator {
+            border-bottom: 1px solid $neutral-04;
+            width: 100%;
+            margin: auto;
+        }
+
+        &__message {
+            margin-top: 25px;
+            text-align: center;
+            font-size: $body-font-size-small;
+        }
+
+        &__text--bold {
+            font-weight: bold;
+        }
+    }
+
+    &__error {
+        margin-top: $space-06;
+
+        @media #{$agl-layout-mobile} {
+            margin-top: $space-07;
+        }
+
+        &--get {
+            margin-top: 0px;
+        }
+    }
+
+    &__text--bold {
+        font-weight: bold;
+    }
+
+    .link-button {
+
+        color: $primary-dark;
+        font-family: $display-font-stack;
+        font-size: $body-font-size-small;
+        font-weight: bold;
+        letter-spacing: 1px;
+        line-height: $space-03;
+        text-align: center;
+        cursor: pointer;
+
+        &__container {
+            padding-top: $space-03;
+        }
+
+        &:hover {
+            color: $neutral-01;
+            text-decoration: underline;
+        }
+    }
+
+    &-home-profile {
+        margin-top: $space-05;
+        text-align: center;
+
+        &__text {
+            padding: 15px;
+        }
+
+        &__button--primary {
+            margin-top: $space-03;
+            padding-left: $space-03;
+            padding-right: $space-03;
+        }
+
+        &__button--secondary {
+            margin-top: $space-03;
+        }
+    }
+
+}

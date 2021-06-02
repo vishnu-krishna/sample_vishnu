@@ -1,0 +1,40 @@
+@import '../../../../../shared/style/variables';
+@import '../../../../../shared/style/mixins';
+@import '../../../../../shared/style/tempdls';
+
+.heading {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    font-family: $primary-font-stack;
+
+    @media #{$agl-layout-tablet-and-smaller} {
+        font-size: 25px;
+    }
+}
+
+.content {
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+    margin: 20px auto 0px;
+    width: 300px;
+    font-family: $secondary-font-stack;
+}
+
+.loader {
+    width: 100px;
+    height: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    position: absolute;
+    z-index: 999;
+    left: 0;
+    right: 0;
+    margin-top: 100px;
+}
+
+.upload-progress {
+    margin-top: 20px;
+    text-align: center;
+}

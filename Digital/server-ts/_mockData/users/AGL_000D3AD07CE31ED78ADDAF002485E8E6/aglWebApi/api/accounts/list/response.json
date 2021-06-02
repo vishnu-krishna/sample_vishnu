@@ -1,0 +1,41 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "number": "47660220",
+            "firstName": "BRID",
+            "lastName": "MARCH",
+            "contracts": [
+                {
+                    "address": "83 Bridge Street|CONISTON NSW 2500",
+                    "accountNumber": "47660220",
+                    "fuelType": "Gas",
+                    "nameId": "AGL_000D3AD07CE31ED78ADDAF002485E8E6",
+                    "number": "9035971456",
+                    "planName": "",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "140079RG24",
+                    "regionId": "NSW"
+                },
+                {
+                    "address": "83 Bridge Street|CONISTON NSW 2500",
+                    "accountNumber": "47660220",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_000D3AD07CE31ED78ADDAF002485E8E6",
+                    "number": "9072524796",
+                    "planName": "",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false,
+                    "productId": "140109RE24",
+                    "regionId": "NSW"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,126 @@
+<div *ngIf="ebillEnabled" class="main-card-options__edit">
+    <h4>eBilling</h4>
+    <div *ngIf="model.canChangeBillingPreference && !model.isMandatoryEBilling" class="paperless-bill-controls">
+        <div class="paperless-bill-toggle">
+            <div (click)="togglePaperlessBillingOff()" class="paperless-bill-toggle__off"
+                    [ngClass]="{'active': !model.isEmailBill,
+                                'disabled': !model.isEmailBill && shouldNotTurnOnEmailBilling,
+                                'not-clickable': model.inFlight}">
+                <span>Off</span>
+                <span *ngIf="!model.isEmailBill">
+                    <span *ngIf="!model.inFlight">
+                        <img src="svg/icon_tick.svg" alt="busy icon">
+                    </span>
+                <span *ngIf="model.inFlight">
+                        <img src="svg/icon_spin.svg" width="18" alt="busy icon">
+                    </span>
+                </span>
+            </div>
+            <div (click)="togglePaperlessBillingOn()" class="paperless-bill-toggle__on"
+                    [ngClass]="{'active': model.isEmailBill,
+                                'not-clickable': model.inFlight || shouldNotTurnOnEmailBilling}">
+                <span>On</span>
+                <span *ngIf="model.isEmailBill">
+                    <span *ngIf="!model.inFlight">
+                        <img src="svg/icon_tick.svg" alt="tick icon">
+                    </span>
+                <span *ngIf="model.inFlight">
+                        <img src="svg/icon_spin.svg" width="18" alt="busy icon">
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="controls">
+            <mat-slide-toggle class="paperless-bill-slider" [checked]="model.isEmailBill" (change)="slidePaperlessBilling()"
+                    [class.not-clickable]="model.inFlight || (!model.isEmailBill && shouldNotTurnOnEmailBilling)">
+            </mat-slide-toggle>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="ebillEnabled" class="main-card-options__content">
+
+    <!-- SAP can sometimes return an empty array even though the response code returns 200 -->
+    <div *ngIf="model.loadError">
+        <agl-alert [alertType]="model.loadError.alertType" [heading]="model.loadError.heading" [body]="model.loadError.body">
+        </agl-alert>
+    </div>
+
+    <div *ngIf="model.canChangeBillingPreference">
+        <div *ngIf="model.isEmailBill">
+            <div class="paperless-bill-email-address">
+                <span *ngIf="!editContactDetailsEnabled">Energy bills are delivered by email to {{model.emailAddress}}.</span>
+
+                <span *ngIf="editContactDetailsEnabled">
+                    <span *ngIf="!!model.emailAddress"><span class="paperless-bill-email-address-energy-bills-text">Energy bills are delivered by email to:</span><br>{{model.emailAddress}}.</span>
+                    <a *ngIf="!model.hasMultipleBusinessPartners" class="paperless-bill-on__edit-email-address"
+                                    [routerLink]="['/settings/contactdetails', 'ebilling', model.contractAccountNumber]">
+                        {{ model.isEmptyOrInvalidEmailAddress ? 'Please provide an email address' : 'Update' }}
+                    </a>
+
+                    <agl-ebilling-multi-business-partner-web-chat *ngIf="model.hasMultipleBusinessPartners"
+                                    class="paperless-bill-on__multi-bp-web-chat"
+                                    [sequenceId]="model.modelSequenceId"
+                                    [isEmptyOrInvalidEmailAddress]="model.isEmptyOrInvalidEmailAddress">
+                    </agl-ebilling-multi-business-partner-web-chat>
+                </span>
+            </div>
+            <div *ngIf="editContactDetailsEnabled">
+                <agl-maui-flash-message *ngIf="model.isEmptyOrInvalidEmailAddress && !model.hasMultipleBusinessPartners"
+                                        class="paperless-bill-on--invalid-email" type="Warning" [dismissable]="false">
+                    <div heading>It looks like we're missing a valid email address.</div>
+                    <div subheading>Please provide an email address to finish setting up eBilling.</div>
+                </agl-maui-flash-message>
+
+                <agl-contact-details-update-confirmation contextId="{{model.contractAccountNumber}}"
+                                                         confirmationType="Email"
+                                                         class="paperless-bill-on__email-updated-confirmation">
+                </agl-contact-details-update-confirmation>
+
+            </div>
+            <div *ngIf="model.updateError">
+                <agl-alert [alertType]="model.updateError.alertType" [heading]="model.updateError.heading" [body]="model.updateError.body">
+                </agl-alert>
+            </div>
+            <div *ngIf="justActivatedEmailBilling" class="paperless-bill-activate">
+                <div>AGL will also send offers and other important messages about your account to the email address you have provided.</div>
+            </div>
+        </div>
+        <div *ngIf="!model.isEmailBill">
+            <div *ngIf="editContactDetailsEnabled">
+                <div class="paperless-bill-off--invalid-email" *ngIf="model.isEmptyOrInvalidEmailAddress && !model.hasMultipleBusinessPartners">
+                    <a class="paperless-bill-off__edit-email-address" [routerLink]="['/settings/contactdetails', 'ebilling', model.contractAccountNumber]">
+                        Please provide a valid email address to setup eBilling.
+                    </a>
+                </div>
+                <agl-contact-details-update-confirmation contextId="{{model.contractAccountNumber}}" confirmationType="Email" class="paperless-bill-off__email-updated-confirmation">
+                </agl-contact-details-update-confirmation>
+            </div>
+            <div>Energy bills will be delivered by post to your mailing address.</div>
+            <div class="alert-container" *ngIf="model.updateError">
+                <agl-alert [alertType]="model.updateError.alertType" [heading]="model.updateError.heading" [body]="model.updateError.body">
+                </agl-alert>
+            </div>
+            <div class="paperless-bill-off">
+                <div class="paperless-bill-off__icon">
+                    <img src="svg/alert_inform.svg" alt="inform-icon">
+                </div>
+                <div class="paperless-bill-off__note">
+                    <div class="line-1">A $1.75 fee (inc GST) may be charged for each paper bill we mail you.</div>
+                    <div class="line-2">Switch to free paperless bills.</div>
+                </div>
+            </div>
+            <agl-ebilling-multi-business-partner-web-chat *ngIf="editContactDetailsEnabled && model.hasMultipleBusinessPartners"
+                            class="paperless-bill-off__multi-bp-web-chat"
+                            [sequenceId]="model.modelSequenceId"
+                            [isEmptyOrInvalidEmailAddress]="model.isEmptyOrInvalidEmailAddress">
+            </agl-ebilling-multi-business-partner-web-chat>
+        </div>
+    </div>
+
+    <div *ngIf="!model.loadError && !model.canChangeBillingPreference">
+        <agl-alert [alertType]="model.cantChangeReason.alertType" [heading]="model.cantChangeReason.heading" [body]="model.cantChangeReason.body">
+        </agl-alert>
+    </div>
+</div>

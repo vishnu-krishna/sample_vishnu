@@ -1,0 +1,85 @@
+<div class="setup-fuel setup-fuel-{{frequency}}" [class.setup-fuel--selected]="isSelected">
+    <div class="select-hit-area" (click)="toggleOpen()">
+        <div class="setup-frequency">
+            <div class="setup-radio-button"></div>
+            <div class="setup-title">{{frequency}} Payments</div>
+        </div>
+        <div class="setup-amounts" [class.one-fuel]="generateAmountPerFuel().length === 1">
+            <div *ngFor="let costMessage of generateAmountPerFuel()" class="fuel-type">
+                <span><strong>${{costMessage.amount}}</strong> for {{costMessage.fuel}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="setup-fuel-content__wrapper" [style.height.px]="height" [class.overflow-visible]="displayContent">
+        <div #content class="setup-fuel-content">
+            <div class="setup-selector">
+                <div class="setup-selector-dropdown">
+                    <div>
+                        <div *ngIf="frequency==='Weekly'" class="setup-title-in-modal">Payments {{isDirectDebit ? 'debited' : 'due'}} every</div>
+                        <div *ngIf="frequency==='Fortnightly'" class="setup-title-in-modal">Payments {{isDirectDebit ? 'debited' : 'due'}} every second</div>
+                        <div *ngIf="frequency==='Monthly'" class="setup-title-in-modal">Payments {{isDirectDebit ? 'debited' : 'due'}} monthly on the</div>
+                    </div>
+                    <div class="setup-selector-dropdown-control setup-selector-dropdown-payment-due-{{frequency}}">
+                        <select *ngIf="frequency==='Monthly'" class="form-select-dropdowns monthly-date-picker"
+                            [class.monthly-selector-selected]="isMonthlyOpen"
+                            [class.monthly-selector-unselected]="!isMonthlyOpen"
+                            (mousedown)="onMonthlySelectorOpen($event)"
+                            (keydown)="onMonthlySelectorOpen($event)">
+                            <option [value]="selectedDateOrdinal">{{selectedDateOrdinal}}</option>
+                        </select>
+                        <agl-monthly-datepicker *ngIf="frequency==='Monthly'" class="monthly-date-picker"
+                            (onClose)="onMonthlySelectorClose()"
+                            (onSelect)="onMonthlySelectorSelect($event)"
+                            [monthlyDatePickerViewModel]="monthlyDatePickerViewModel"
+                            [class.monthly-calendar-selected]="isMonthlyOpen"
+                            [class.monthly-calendar-unselected]="!isMonthlyOpen">
+                        </agl-monthly-datepicker>
+                        <select *ngIf="frequency!=='Monthly'" class="form-select-dropdowns" [(ngModel)]="selectedDay" (change)="populateWeeklyAndFortnightlyDates()">
+                            <option *ngFor="let day of days" [value]="day">{{day}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="setup-selector-dropdown" >
+                    <div class="setup-title-in-modal">Starting</div>
+                    <div class="setup-selector-dropdown-start-date-{{frequency}}">
+                        <input *ngIf="frequency==='Monthly'" type="text" class="form-select-dropdowns-read-only" [value]="selectedDate" readonly="readonly" />
+                        <select *ngIf="frequency!=='Monthly'" class="form-select-dropdowns" [(ngModel)]="selectedDate">
+                            <option *ngFor="let date of dates" [value]="date">{{date}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="setup-tip"><strong>Tip:</strong> Pick a day that works for you, such as the day after payday.</div>
+            <div class="setup-payment-start-information">
+                <div class="start-information-text--bold">
+                    <strong>Your first payment: {{selectedDay}} {{selectedDate}}</strong>
+                </div>
+                <div class="start-information-subtext">
+                    {{startInformationSubtext}}
+                </div>
+            </div>
+            <div class="bill-cycle-info" *ngIf="billCycleChangeMessage">
+                <agl-alert alertType="inform" heading="Your bill cycle may change with Bill Smoothing.">
+                    <div>
+                        {{billCycleChangeMessage}}
+                    </div>
+                </agl-alert>
+            </div>
+            <div class="setup-save-button setup-save-button-{{frequency}}">
+                <button mat-raised-button color="accent" (click)="savePaymentScheme()" [class.is-loading]="isLoading">
+                    SAVE
+                </button>
+            </div>
+            <div class="setup-save-terms">
+                By selecting "Save", you are agreeing to the <a href="https://www.agl.com.au/residential/help-and-support/billing-and-payments/bill-payment-options/direct-debit-terms-and-conditions#bill-smoothing-terms" target="_blank">Bill Smoothing Terms and Conditions</a>.
+            </div>
+            <div class="setup-error" *ngIf="isSavePaymentSchemeError">
+                <agl-alert alertType="error" [heading]="savePaymentSchemeErrorHeading">
+                    <div>
+                        Please try again, or contact us <a href="https://www.agl.com.au/residential/contact-us" target="_blank"><span class="link">here</span></a> if the issue persists.
+                    </div>
+                </agl-alert>
+            </div>
+        </div>
+    </div>
+</div>

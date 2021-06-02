@@ -1,0 +1,94 @@
+@import '../../../../../maui/maui';
+@import '../../../../../../shared/style/mixins';
+@import '../../../../../../shared/component/webChat/webChat-common';
+
+$secondary-nav-height: 50px;
+$footer-padding: 35px;
+$primary-dark-lighten-15: lighten($primary-dark, 15%);
+$click-pad: 10px;
+$error-color: $secondary-warning-dark;
+$disabled-background-color: $neutral-07;
+$disabled-border-color: $neutral-04;
+
+$amount-font-size: $body-font-size-normal;
+$amount-height: $input-text-height;
+$amount-min-width: 100px;
+$amount-line-height: 24px;
+$amount-dollar-sign-width: 25px;
+
+@mixin mobile-padding {
+    @media #{$agl-layout-mobile} {
+        padding: 0 $space-03;
+    }
+}
+
+.payment-assistance-plan-custom {
+    max-width: $content-width;
+    margin: 0 auto;
+    padding-top: $secondary-nav-height + $space-06;
+    color: $neutral-01;
+
+    @media #{$agl-layout-mobile} {
+        padding-top: $secondary-nav-height + $space-04;
+    }
+
+    agl-maui-heading {
+        @include mobile-padding();
+    }
+
+    &-wrapper {
+        margin-top: $space-04;
+        margin-bottom: $space-03;
+        background-color: $neutral-08;
+        padding: $space-04;
+    }
+
+    &__loader {
+        position: relative;
+        height: calc(100vh - 70px);
+
+        @media #{$agl-layout-mobile} {
+            height: calc(100vh - 50px);
+        }
+
+        agl-loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__options {
+        padding-top: $space-04;
+
+        &--custom-amount {
+            padding-top: $space-02;
+            padding-bottom: $space-04;
+            border-bottom: 1px solid $neutral-04;
+        }
+    }
+
+    &__instalments-error {
+        margin-bottom:  $space-06;
+    }
+
+    &__cta {
+        @include mobile-padding();
+        text-align: center;
+        margin-top: $space-06;
+
+        &-continue {
+            margin-bottom: $space-03;
+        }
+
+        &-cancel {
+            margin-top: $space-02;
+        }
+    }
+
+    &__chat-container {
+        padding: $space-04 0 0 0;
+    }
+
+}

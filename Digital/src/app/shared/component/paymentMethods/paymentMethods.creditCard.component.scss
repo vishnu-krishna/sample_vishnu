@@ -1,0 +1,252 @@
+@import '../../style/variables';
+// Lets do some custom styles
+// TODO: Pull these out
+fieldset {
+    label,
+    input,
+    iframe {
+        display: block;
+    }
+
+    input,
+    iframe {
+        width: 100%;
+        height: 45px;
+        border: 1px solid $brand-grey-g3;
+        border-radius: 4px;
+        background-color: $brand-white;
+        margin-bottom: 30px;
+        @media #{$agl-layout-mobile} {
+            width: 100%;
+        }
+
+        &:disabled {
+            background-color: $brand-background;
+        }
+
+        &.invalid {
+            border: 1px solid $brand-fire;
+        }
+    }
+
+    iframe {
+        padding-left: 8px;
+    }
+
+    label {
+        padding-bottom: 5px;
+        font-size: 16px;
+        font-family: $primary-font-stack;
+        font-weight: bold;
+        color: $brand-grey-g1;
+    }
+
+    .warning {
+        color: $brand-fire;
+        position: absolute;
+        margin-top: -25px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .sm-input {
+        width: 85px;
+        @media #{$agl-layout-mobile} {
+            width: 70%;
+        }
+    }
+}
+
+// Specific Styling
+.terms-checkbox {
+    height: 30px;
+
+    label,
+    input {
+        display: inline-block;
+    }
+
+    label {
+        font-weight: normal;
+        font-size: 14px;
+        font-family: $secondary-font-stack;
+        position: absolute;
+        margin-left: 10px;
+        margin-top: 4px;
+
+        a {
+            color: $brand-sky;
+        }
+    }
+
+    input {
+        width: 20px;
+        height: 20px;
+        background-color: $brand-white;
+        border: 1px solid $brand-grey-g3;
+        border-radius: 2px;
+        appearance: none;
+        cursor: pointer;
+
+        &.invalid {
+            border: 1px solid $brand-fire;
+        }
+
+        &:checked {
+            border: 1px solid $brand-aqua;
+
+            &:after {
+                content: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><svg width="26px" height="24px" viewBox="0 0 36 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>tick_in_box</title><desc>Created with Sketch.</desc><defs></defs><g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="wd/bill---payg" transform="translate(-424.000000, -247.000000)"><g id="Group-6" transform="translate(30.000000, 145.000000)"><g id="Page-1-Copy-3" transform="translate(394.000000, 102.000000)"><g id="tick_in_box"><path d="M32.4891409,0.179956959 C32.380227,0.0694814514 32.2244387,0.00416888709 32.0514171,0 C31.8880462,0.00138962903 31.7288113,0.070176266 31.6178294,0.188294733 L16.751076,15.6937754 L12.475859,11.3845358 C12.3566051,11.2650277 12.2001275,11.2052737 12.0443392,11.2052737 C11.8878615,11.2052737 11.7313839,11.2650277 11.6128194,11.3852306 L8.27922548,14.7446588 C8.16341825,14.8606928 8.1,15.0156365 8.1,15.1796127 C8.1,15.3435889 8.16341825,15.4978377 8.27922548,15.6152614 L16.2044382,23.6007646 L16.3726345,23.745286 C16.4836164,23.8397808 16.6242395,23.8918919 16.7683092,23.8918919 C16.9316801,23.8918919 17.0840217,23.827969 17.197761,23.7133246 L17.8829538,23.0303219 L35.8289388,4.40303958 C36.0598639,4.16263376 36.0564173,3.77562207 35.8220455,3.53938514 L32.4891409,0.179956959 Z" id="Fill-4" fill="#001CB0"></path></g></g></g></g></g></svg>');
+                position: relative;
+                top: -3px;
+                left: -3px;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+#direct-debit-creditcard {
+    .warning {
+        color: $brand-fire;
+        position: absolute;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .dd-credit-card__panel__save-button {
+        margin-top: 25px;
+        width: 100%;
+        height: 45px;
+        @media #{$agl-layout-mobile} {
+            width: 100%;
+        }
+    }
+
+    .payment-method-grouped-form {
+        margin-bottom: 30px;
+
+        &:last-child {
+            margin-bottom: 25px;
+        }
+
+        .styled-form__input {
+            width: 85px;
+            height: 45px;
+            font-size: 14px;
+            font-weight: normal;
+            border: 1px solid $brand-grey-g3;
+            border-radius: 4px;
+            background-color: $brand-white;
+            margin-right: 10px;
+            @media #{$agl-layout-mobile} {
+                width: 49%;
+                margin-right: 0px;
+            }
+
+            &.invalid {
+                border: 1px solid $brand-fire;
+            }
+        }
+
+        .mobile-number-field {
+            border: 1px solid $brand-grey-g4;
+            border-radius: 4px;
+            background-color: $brand-grey-g6;
+            padding-top: 12px;
+            padding-left: 10px;
+            min-height: 45px;
+        }
+
+        .mobile-number-chat {
+            color: $brand-sky;
+            font-family: $secondary-font-stack;
+            font-size: 14px;
+            font-weight: bold;
+            float: right;
+            padding-right: 10px;
+        }
+    }
+
+    .dd-credit-card {
+        &__disclaimer {
+            padding-top: 25px;
+            font-size: 12px;
+            font-weight: normal;
+
+            a {
+                color: $brand-blue;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: $brand-sky-darker;
+                }
+            }
+
+            &-row {
+                padding-top: 15px;
+            }
+        }
+
+        &__message {
+            position: relative;
+        }
+
+        &__dd {
+            position: relative;
+            margin-top: 20px;
+
+            &-icon {
+                display: inline-block;
+                position: absolute;
+                top: 25%;
+                transform: translateY(-50%);
+                width: 35px;
+                height: 30px;
+            }
+
+            &-text {
+                display: inline-block;
+                font-size: 12px;
+                line-height: 17px;
+                margin-left: 50px;
+                padding-bottom: 25px;
+            }
+        }
+
+        &--stored-payment-method {
+            padding-left: 36px;
+            background-image: url('svg/icon_exp_bill.svg');
+            background-repeat: no-repeat;
+            background-position: 5px center;
+            background-size: 25px 30px;
+        }
+    }
+}
+
+.save-and-pay-checkbox {
+    display: block;
+    font-size: 12px;
+
+    .toc-message {
+        white-space: normal;
+    }
+
+    a {
+        color: $brand-sky;
+    }
+}
+
+.disclaimer {
+    font-size: 13px;
+    line-height: 17px;
+    padding-bottom: 25px;
+
+    a {
+        color: $brand-sky;
+        text-decoration: none;
+    }
+}

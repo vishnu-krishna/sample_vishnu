@@ -1,0 +1,29 @@
+<!--<div *ngIf="tile" class="promo-wrap center-block img-responsive">
+    <a [href]="tile.link" target="_blank">
+        <h2 *ngIf="tile.heading">{{tile.heading}}</h2>
+        <span *ngIf="tile.details" class="details">{{tile.details}}</span>
+        <img [src]="tile.tileImage" class="img-responsive">
+    </a>
+</div>
+
+<mat-card class="promo-card">
+    <img mat-card-image [src]="tile.tileImage">
+    <mat-card-content>
+        <p *ngIf="tile.details">
+            <h2 *ngIf="tile.heading">{{tile.heading}}</h2>
+            {{tile.details}}
+        </p>
+    </mat-card-content>
+</mat-card>-->
+
+
+<mat-card *ngIf="tile" class="promo-card">
+    <img mat-card-image [src]="tile.tileImage">
+    <mat-card-content>
+        <h2 *ngIf="tile.heading">{{tile.heading}}</h2>
+        <p *ngIf="tile.details">
+            {{tile.details}}
+        </p>
+        <a [href]="tile.link" target="_blank" class="button-more">{{tile.linkLabel ? tile.linkLabel : 'CHECK IT OUT'}}</a>
+    </mat-card-content>
+</mat-card>

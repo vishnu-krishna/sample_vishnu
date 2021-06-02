@@ -1,0 +1,43 @@
+{
+    "status": 200,
+    "headers": {},
+    "body":
+        {
+            "contractAccountNumber": 1300000000,
+            "extensionOptions": [
+                {
+                    "contractNumber": 1311111111,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Ineligible for extension",
+                        "internalError": {
+                            "errorNumber": "027",
+                            "description": "some reason as to why the contract is not eligible"
+                        }
+                    }
+                },
+                {
+                    "contractNumber": 1322222222,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Ineligible for extension",
+                        "internalError": {
+                            "errorNumber": "009",
+                            "description": "some reason as to why the contract is not eligible"
+                        }
+                    }
+                },
+                {
+                    "contractNumber": 1333333333,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Ineligible for extension",
+                        "internalError": {
+                            "errorNumber": "016",
+                            "description": "some reason as to why the contract is not eligible"
+                        }
+                    }
+                }
+            ]
+        }
+}

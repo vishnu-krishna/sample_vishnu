@@ -1,0 +1,229 @@
+/*
+Smart meter chart
+*/
+
+import { ProtractorExtensions } from '../../shared/e2e/protractor.extensions';
+import { DashboardPageObject } from '../myAccount.e2e-pages';
+import * as fs from 'fs';
+
+let e2e = new ProtractorExtensions();
+let page = new DashboardPageObject();
+
+if (!e2e.isRunningInCi) {
+
+    //TODO: TESTCLEANUP
+    xdescribe('Dashboard', () => {
+
+        const path = '/overview';
+
+        let mockDefaults = {
+            'sitecore:file': 'e2e-content',
+            'syncdata/start:file': 'e2e-mocked',
+            'syncdata/status:file': 'e2e-complete_success',
+            'accounts/list:file': 'e2e-1xAccount-1xContract',
+            'pendingpayments:file': 'e2e-noPendingPayments',
+            'payments:file': 'e2e-payments_BalancePaid',
+            'bills:file': 'e2e-billHistory',
+            'dashboard:file': 'e2e-contractDetails'
+        };
+
+        let apiDashboardDefaults = {
+            'account': '123456789',
+            'contract': '111111111',
+            'currentBillStartDate': '2016-01-01T00:00:00',
+            'currentBillEndDate': '2016-03-01T00:00:00',
+            'costToDate': 100.00,
+            'projectedBill': 200.00,
+            'usageCostThisWeek': 30.000000,
+            'usageCostLastWeek': 40.000000,
+            'usageThisWeek': '100.000',
+            'usageLastWeek': '120.000',
+            'balance': 0,
+            'dueDate': '0001-01-01T00:00:00',
+            'isSmartMeter': true,
+            'hasElectricVehicle': false
+        };
+
+        describe('Smart Meter', () => {
+            let scenario = (dashboardData, isoDateToday = '2016-01-01') =>
+                Object.assign({}, mockDefaults, {
+                    'now': isoDateToday,
+                    'dashboard:data': JSON.stringify([Object.assign({}, apiDashboardDefaults, dashboardData)])
+                });
+
+            for (let screenSize of e2e.allScreenSizes) {
+                it(`should format billing period 'D MMM - D MMM YY' when starts and ends in same year [${screenSize}]`, () => {
+                    e2e.openPage(path, screenSize, scenario({
+                        'currentBillStartDate': '2016-02-01T00:00:00',
+                        'currentBillEndDate': '2016-05-01T00:00:00'
+                    }));
+                    let billingPeriodRange = page.accounts.get(0).$('.billing-period').$('.date-range').getText();
+                    expect(billingPeriodRange).toBe('1 Feb - 1 May 16');
+                });
+            }
+
+            for (let screenSize of e2e.allScreenSizes) {
+                it(`should format billing period 'D MMM YY - D MMM YY' when starts and ends in different years [${screenSize}]`, () => {
+                    e2e.openPage(path, screenSize, scenario({
+                        'currentBillStartDate': '2015-11-10T00:00:00',
+                        'currentBillEndDate': '2016-02-09T00:00:00'
+                    }));
+                    let billingPeriodRange = page.accounts.get(0).$('.billing-period').$('.date-range').getText();
+                    expect(billingPeriodRange).toBe('10 Nov 15 - 9 Feb 16');
+                });
+            }
+
+            for (let screenSize of e2e.allScreenSizes) {
+                it(`should show the tooltip [${screenSize}]`, () => {
+                    e2e.openPage(path, screenSize, scenario({
+                        'currentBillStartDate': '2015-11-10T00:00:00',
+                        'currentBillEndDate': '2016-02-09T00:00:00'
+                    }));
+                    let projectionArea = '.projection-amount';
+                    let toolTip = '.chart-tooltip';
+                    e2e.scrollToElement($(projectionArea));
+                    $(projectionArea).click();
+                    expect($(toolTip).isPresent()).toBeTruthy();
+                });
+            }
+
+            let daysToGoTest = (todaysDate: string, endDate: string, expectedDaysToGo?: string) => {
+                for (let screenSize of e2e.allScreenSizes) {
+                    it(`should display '${expectedDaysToGo || 'blank'}' when current date is ${e2e.formatDate(todaysDate)} and billing period ends on ${e2e.formatDate(endDate)} [${screenSize}]`, () => {
+                        e2e.openPage(path, screenSize, scenario({ 'currentBillEndDate': endDate }, todaysDate));
+                        let daysToGo = page.accounts.get(0).$('.days-to-go');
+                        if (expectedDaysToGo) {
+                            expect(daysToGo.getText()).toBe(expectedDaysToGo);
+                        } else {
+                            expect(daysToGo.isPresent()).toBeFalsy();
+                        }
+                    });
+                }
+            };
+            daysToGoTest('2016-06-01T00:00:00', '2016-05-31T00:00:00', null);
+            daysToGoTest('2016-06-01T00:00:00', '2016-06-01T00:00:00', null);
+            daysToGoTest('2016-06-01T00:00:00', '2016-06-02T00:00:00', '1 day to go');
+            daysToGoTest('2016-06-01T00:00:00', '2016-06-10T00:00:00', '9 days to go');
+            daysToGoTest('2015-01-26T00:00:00', '2016-01-25T00:00:00', '364 days to go');
+            daysToGoTest('2016-02-01T00:00:00', '2016-02-29T00:00:00', '28 days to go');
+
+            let costToDateTest = (apiCostToDate: number, expectedCostToDate: string) => {
+                for (let screenSize of e2e.allScreenSizes) {
+                    it(`should display cost to date '${apiCostToDate}' as '${expectedCostToDate}' [${screenSize}]`, () => {
+                        e2e.openPage(path, screenSize, scenario({ 'costToDate': apiCostToDate }));
+                        expect(page.firstContract.$('.cost-heading').getText()).toBe('Cost to date');
+                        expect(page.firstContract.$('.cost').getText()).toBe(expectedCostToDate);
+                    });
+                }
+            };
+            costToDateTest(0, '$0.00');
+            costToDateTest(1, '$1.00');
+            costToDateTest(1.2, '$1.20');
+            costToDateTest(1.23, '$1.23');
+            costToDateTest(123.45, '$123.45');
+            costToDateTest(1234.56, '$1,234.56');
+            costToDateTest(1234.564, '$1,234.56');
+            costToDateTest(1234.565, '$1,234.57');
+            costToDateTest(1234.566, '$1,234.57');
+
+            let projectionTest = (apiProjectedBill: number, expectedProjection: string) => {
+                for (let screenSize of e2e.allScreenSizes) {
+                    it(`should display projection '${apiProjectedBill}' as '${expectedProjection}' [${screenSize}]`, () => {
+                        e2e.openPage(path, screenSize, scenario({ 'projectedBill': apiProjectedBill }));
+                        expect(page.firstContract.$('.projection-heading').getText()).toBe('Projection');
+                        expect(page.firstContract.$('.projected-bill').getText()).toBe(expectedProjection);
+                    });
+                }
+            };
+            projectionTest(0, '$0.00');
+            projectionTest(1, '$1.00');
+            projectionTest(1.2, '$1.20');
+            projectionTest(1.23, '$1.23');
+            projectionTest(123.45, '$123.45');
+            projectionTest(1234.56, '$1,234.56');
+            projectionTest(1234.564, '$1,234.56');
+            projectionTest(1234.565, '$1,234.57');
+            projectionTest(1234.566, '$1,234.57');
+
+            let weeklyCostTest = (
+                lastWeek: number, expectedLastWeek: string,
+                thisWeek: number, expectedThisWeek: string,
+                expectedChange: string, expectedIcon: string) => {
+                for (let screenSize of e2e.allScreenSizes) {
+                    it(`should display weekly costs: last ${expectedLastWeek} - this ${expectedThisWeek} - change:${expectedChange} ${expectedIcon || 'same'} [${screenSize}]`, () => {
+                        e2e.openPage(path, screenSize, scenario({
+                            'usageCostLastWeek': lastWeek,
+                            'usageCostThisWeek': thisWeek
+                        }));
+                        let change = page.firstContract.$('.change');
+                        expect(page.firstContract.$('.last-week').$('.amount').getText()).toBe(expectedLastWeek);
+                        expect(page.firstContract.$('.this-week').$('.amount').getText()).toBe(expectedThisWeek);
+                        expect(change.$('.amount').getText()).toBe(expectedChange);
+                        if (expectedIcon) {
+                            expect(change.$(`img[src='svg/icon_elec_widget_change_${expectedIcon}.svg']`).isDisplayed()).toBeTruthy();
+                        } else {
+                            expect(change.$('img').isPresent()).toBeFalsy();
+                        }
+                    });
+                }
+            };
+            weeklyCostTest(0, '$0.00', 0, '$0.00', '$0.00', null);
+            weeklyCostTest(100, '$100.00', 200, '$200.00', '$100.00', 'up');
+            weeklyCostTest(200, '$200.00', 150, '$150.00', '$50.00', 'down');
+            weeklyCostTest(123.45, '$123.45', 123.45, '$123.45', '$0.00', null);
+
+            let arcTest = (startDate: string, endDate: string, currentDate: string, expectedPercentage: number, description = '') => {
+                for (let screenSize of e2e.allScreenSizes) {
+
+                    it(`should display smart meter chart arc at ${expectedPercentage}% ${description} [${screenSize}]`, () => {
+                        e2e.openPage(path, screenSize, scenario({ 'currentBillStartDate': startDate, 'currentBillEndDate': endDate, }, currentDate));
+
+                        browser.wait(browser.isElementPresent({ className: 'smart-meter-chart' }), 10000);
+
+                        browser.executeScript('return document.getElementsByClassName("smart-meter-chart")[0].toDataURL();')
+                            .then((dataUrl: string) => {
+                                let actualImage = dataUrl.slice('data:image/png;base64,'.length);
+                                let referenceImagePath = `${__dirname}/e2e-reference-images/smartMeter-${expectedPercentage}-percent.png`;
+                                let expectedImage = fs.readFileSync(referenceImagePath, 'base64');
+                                let expectedDataPercent = $('.smart-meter-chart').getAttribute('data-percent').then(n => parseInt(n, 10));
+                                expect(actualImage).toBe(expectedImage);
+                                expect(expectedDataPercent).toBe(expectedPercentage);
+                            });
+                    });
+                }
+            };
+            arcTest('2016-01-01T00:00:00', '2016-02-29T00:00:00', '2016-01-01', 0);
+            arcTest('2016-01-01T00:00:00', '2016-06-30T00:00:00', '2016-04-01', 50);
+            arcTest('2016-01-01T00:00:00', '2016-02-29T00:00:00', '2016-02-29', 100);
+            arcTest('2016-01-01T00:00:00', '2016-02-29T00:00:00', '2016-04-01', 100, 'when billing period has ended');
+            arcTest('2016-02-01T00:00:00', '2016-05-29T00:00:00', '2016-01-01', 0, 'when billing period has not started');
+
+            for (let screenSize of e2e.allScreenSizes) {
+                it(`should show Smart Meter panel if EV is false [${screenSize}]`, () => {
+                    e2e.openPage(path, screenSize, scenario({
+                        'hasElectricVehicle': false
+                    }));
+                    expect($('.dashboard-electric-vehicle').isDisplayed()).toBeFalsy();
+                    expect($('.dashboard-smart-meter').isDisplayed()).toBeTruthy();
+                });
+            }
+
+        });
+
+        describe('Electric Vehicle', () => {
+            let scenarioData = {
+                'accounts/list:file': 'e2e-1xAccount-1xContract-EV',
+                'lightMode:file': 'e2e-lightModeFalse'
+            };
+            let mockData = Object.assign({}, mockDefaults, scenarioData);
+            for (let screenSize of e2e.allScreenSizes) {
+                it(`should show EV panel if EV is true [${screenSize}]`, () => {
+                    e2e.openPage(path, screenSize, mockData);
+                    expect($('.dashboard-electric-vehicle').isDisplayed()).toBeTruthy();
+                    expect($('.dashboard-smart-meter').isDisplayed()).toBeFalsy();
+                });
+            }
+        });
+    });
+
+}

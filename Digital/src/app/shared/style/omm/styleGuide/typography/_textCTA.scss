@@ -1,0 +1,17 @@
+.text-link {
+    @include fluid-prop(font-size, 320px, 960px, 12px, 14px);
+
+    font-family: $headerStack;
+    font-weight: 700;
+    line-height: 2.6;
+    color: $col-g1;
+    display: inline-block;
+
+    &:hover {
+        color: $col-ocean;
+    }
+}
+
+.text-link--cta {
+    color: $col-ocean;
+}

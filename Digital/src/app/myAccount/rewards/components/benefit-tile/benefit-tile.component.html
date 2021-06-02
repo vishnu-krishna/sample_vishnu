@@ -1,0 +1,21 @@
+<div class="benefit-tile__highlight" *ngIf="highlight" >
+    {{ highlight }}
+</div>
+<div class="benefit-tile__content">
+    <ng-content></ng-content>
+</div>
+<div class="benefit-tile__summary">
+    <div class="benefit-tile__title">
+       {{ title }}
+    </div>
+    <div class="benefit-tile__benefit">
+        {{ summary }}
+    </div>
+    <div class="benefit-tile__description">
+        <span>{{description | aglRemoveHtmlTags | slice:0:68 }}</span><!-- comment to ensure no whitespace between spans
+        --><span *ngIf="description && (description | aglRemoveHtmlTags).length > 68">…</span>
+    </div>
+    <a class="benefit-tile__cta" (click)="openBenefitInAglRewards()">
+        {{ cta }}
+    </a>
+</div>

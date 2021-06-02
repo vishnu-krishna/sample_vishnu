@@ -1,0 +1,55 @@
+[
+    {
+      "offerId": "OFFER001",
+      "contractAccount": 7010009664,
+      "contractNumber": 9300575245,
+      "validFrom": "2017-10-01",
+      "validTo": "2017-10-31",
+      "offerValue": "50.00",
+      "offerValueType": "Dollar",
+      "content": {
+        "heading": "Happy Birthday!",
+        "description": "Celebrate your birthday with $50 credit to your account. We'll apply the points within a month if you redeem the offer. Offer Expires on 19-Dec-2017",
+        "iconUri": "svg/birthday_icon.svg",
+        "callToAction": "Redeem Offer",
+        "termsAndConditions": {
+          "description": "This flybuys offer must be redeemed before the expiry date.\n\nOnce redeemed, the flybuys points will be credited to the flybuys membership account linked to your AGL energy account within 2 weeks."
+        }
+      }
+    },
+    {
+      "offerId": "OFFER002",
+      "contractAccount": 7010009664,
+      "contractNumber": 9300575245,
+      "validFrom": "2017-10-01",
+      "validTo": "2017-10-31",
+      "offerValue": "60.00",
+      "offerValueType": "Dollar",
+      "content": {
+        "heading": "Happy Anniversary!",
+        "description": "Celebrate your anniversary with $60 credit to your account. We'll apply the points within a month if you redeem the offer.\n\nOffer Expires on 19-Dec-2017",
+        "iconUri": "svg/birthday_icon.svg",
+        "callToAction": "Redeem Offer",
+        "termsAndConditions": {
+          "description": "This is a Condition A"
+        }
+      }
+    },{
+        "offerId": "OFFER003",
+        "contractAccount": 7010009664,
+        "contractNumber": 9300575245,
+        "validFrom": "2017-10-01",
+        "validTo": "2017-10-31",
+        "offerValue": "50",
+        "offerValueType": "Points",
+        "content": {
+          "heading": "Happy Anniversary!",
+          "description": "Celebrate your anniversary with 50 fly buys points to your account. We'll apply the points within a month if you redeem the offer. Offer Expires on 19-Dec-2017",
+          "iconUri": "svg/birthday_icon.svg",
+          "callToAction": "Redeem Offer",
+          "termsAndConditions": {
+            "description": "This is a Condition A"
+          }
+        }
+      }
+  ]

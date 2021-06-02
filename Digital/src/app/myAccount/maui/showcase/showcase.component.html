@@ -1,0 +1,74 @@
+<div class="showcase__secondary-navigation">
+    <agl-maui-secondary-navigation
+        [display]="display" [displayBackButton]="displayBackButton"
+        text="Desktop header" textMobile="Mobile header"
+        [pageNumber]="pageInfo.pageNumber" [pageTotal]="pageInfo.pageTotal" [displayPageNumber]="displayPageNumber">
+    </agl-maui-secondary-navigation>
+</div>
+
+<div class="showcase" [class.showcase--pd-fix]="display">
+    <div class="showcase__sidenav" [class.showcase__sidenav--open]="displayMobileMenu">
+        <div class="showcase__sidenav-header">
+            <img src="svg/agl-logo-primary-white.svg">
+            <span>MAUI</span>
+        </div>
+        <div class="showcase__sidenav-links">
+            <a *ngFor="let showcaseItem of showcaseList"
+               [routerLink]="['.']" [fragment]="showcaseItem"
+               (click)="scrollToComponent(showcaseItem)">
+               {{ showcaseItem | aglConvertDashToSpace }}
+            </a>
+        </div>
+    </div>
+
+    <div class="showcase__mobile-header">
+        <div class="showcase__mobile-header-logo">
+            <img src="svg/agl-logo-primary-white.svg">
+            <span>MAUI</span>
+        </div>
+        <div class="showcase__mobile-header-hamburger-menu"
+             [class.showcase__mobile-header-hamburger-menu--open]="displayMobileMenu"
+             (click)="toggleMobileMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="showcase__secondary-navigation--mobile">
+        <agl-maui-secondary-navigation
+            [display]="display" [displayBackButton]="displayBackButton"
+            text="Desktop header" textMobile="Mobile header"
+            [pageNumber]="pageInfo.pageNumber" [pageTotal]="pageInfo.pageTotal" [displayPageNumber]="displayPageNumber">
+        </agl-maui-secondary-navigation>
+    </div>
+
+    <div class="showcase__components" [class.showcase__components--pd-fix]="display">
+        <agl-maui-showcase-button></agl-maui-showcase-button>
+        <agl-maui-showcase-calendar-reminder></agl-maui-showcase-calendar-reminder>
+        <agl-maui-showcase-checkbox></agl-maui-showcase-checkbox>
+        <agl-maui-showcase-checkbox-group></agl-maui-showcase-checkbox-group>
+        <agl-maui-showcase-confirmation-banner></agl-maui-showcase-confirmation-banner>
+        <agl-maui-showcase-container></agl-maui-showcase-container>
+        <agl-maui-showcase-day-of-month-picker></agl-maui-showcase-day-of-month-picker>
+        <agl-maui-showcase-dropdown></agl-maui-showcase-dropdown>
+        <agl-maui-showcase-flash-message></agl-maui-showcase-flash-message>
+        <agl-maui-showcase-fuel-chip></agl-maui-showcase-fuel-chip>
+        <agl-maui-showcase-heading></agl-maui-showcase-heading>
+        <agl-maui-showcase-icon-list></agl-maui-showcase-icon-list>
+        <agl-maui-showcase-lightbox></agl-maui-showcase-lightbox>
+        <agl-maui-showcase-page-progress-bar></agl-maui-showcase-page-progress-bar>
+        <agl-maui-showcase-progress-tracker></agl-maui-showcase-progress-tracker>
+        <agl-maui-showcase-expandable-container></agl-maui-showcase-expandable-container>
+        <agl-maui-showcase-chevron-menu></agl-maui-showcase-chevron-menu>
+        <agl-maui-showcase-radio-button-group></agl-maui-showcase-radio-button-group>
+        <agl-maui-showcase-secondary-navigation (displayUpdated)="updateDisplay($event)" (displayBackButtonUpdated)="updateDisplayBackButton($event)"
+            (pageNumberVisibilityUpdated)="updatePageNumberVisibility($event)" (pageNumberUpdated)="updatePageNumber($event)">
+        </agl-maui-showcase-secondary-navigation>
+        <agl-maui-showcase-segmented-buttons></agl-maui-showcase-segmented-buttons>
+        <agl-maui-showcase-terms-and-conditions></agl-maui-showcase-terms-and-conditions>
+        <agl-maui-showcase-toggle></agl-maui-showcase-toggle>
+        <agl-maui-showcase-tooltip></agl-maui-showcase-tooltip>
+    </div>
+</div>

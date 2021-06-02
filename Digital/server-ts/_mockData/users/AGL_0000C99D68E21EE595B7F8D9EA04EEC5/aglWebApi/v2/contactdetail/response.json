@@ -1,0 +1,23 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": {
+        "hasMultipleBusinessPartners": true,
+        "businessPartners": [
+            {
+                "businessPartnerNumber": "BP0001",
+                "phone": "03 1111 1111",
+                "mobile": "0411 111 111",
+                "hasDateOfBirth": false,
+                "email": "bp1-email@agl.com.au"
+            },
+            {
+                "businessPartnerNumber": "BP0002",
+                "phone": "03 2222 2222",
+                "mobile": "0422 222 222",
+                "hasDateOfBirth": false,
+                "email": "bp2-email@agl.com.au"
+            }
+        ]
+    }
+}

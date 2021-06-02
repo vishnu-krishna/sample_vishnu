@@ -1,0 +1,5 @@
+<div class="progress-tracker">
+    <ul>
+        <ng-template [ngTemplateOutlet]="templateRef" [ngTemplateOutletContext]="{$implicit: progressItem}" *ngFor="let progressItem of progressItems"></ng-template>
+    </ul>
+</div>

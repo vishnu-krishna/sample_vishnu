@@ -1,0 +1,99 @@
+@import '../../../../../shared/style/variables';
+@import '../../../../../shared/style/mixins';
+@import '../../../../../shared/style/tempdls';
+
+.photo-intro {
+    text-align: center;
+
+    .heading {
+        font-size: 36px;
+        line-height: 42px;
+        font-weight: bold;
+
+        @media #{$agl-layout-tablet-and-smaller} {
+            font-size: 22px;
+        }
+    }
+
+    .photo-icon {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 37px;
+        background-color: $brand-white;
+        background-image: url('svg/photo_icon.svg');
+        background-size: 74px 74px;
+        background-repeat: no-repeat;
+        height: 74px;
+        width: 74px;
+    }
+
+    .content {
+        margin-top: 25px;
+        max-width: 342px;
+        margin: auto;
+    }
+
+    .button-container {
+        margin-top: 40px;
+
+        .email {
+            :hover {
+                background-color: $brand-white;
+            }
+        }
+
+        .attach-button {
+            height: 50px;
+            width: 280px;
+            margin-bottom: 16px;
+            padding-top: 8px;
+        }
+
+        .email-button {
+            height: 50px;
+            width: 280px;
+            margin-bottom: 16px;
+
+            .mailing-address {
+                height: 0px;
+                color: $brand-grey-g3;
+                font-family: $primary-font-stack;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                margin: auto;
+                margin-top: -20px;
+                text-transform: none;
+            }
+        }
+    }
+}
+
+.footer {
+
+    @media #{$agl-layout-tablet-and-smaller} {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .footer__content {
+        margin: 70px auto;
+        color: $brand-sky;
+        background-color: $brand-grey-g6;
+        font-size: 16px;
+        font-weight: bold;
+        font-family: $primary-font-stack;
+        cursor: pointer;
+        text-align: center;
+
+        a {
+            color: $brand-sky;
+        }
+
+        img {
+            margin-right: 8px;
+        }
+    }
+}

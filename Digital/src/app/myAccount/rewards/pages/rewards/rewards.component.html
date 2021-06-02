@@ -1,0 +1,31 @@
+<div *ngIf="!isBenefitsActivateError && !isNavigationToAglRewardsError">
+        <agl-rewards-dm-banner (offerClosed)="onOfferClosed()" (offerRedemmed)="onOfferRedeemed()" [offer]="currentOffer" [errorMessage]="offersErrorMessage" *ngIf="!allOffersClosed"></agl-rewards-dm-banner>
+        <div class="tiles-wrapper" [ngClass]="{'data-loaded': !isDataLoading}">
+             <section class="benefits-container container" *ngIf="showBenefitsSection()" [class.benefits-activated]="isBenefitsActive">
+                <agl-benefits-activation *ngIf="!isBenefitsActive" (activateBenefitsStatus)="activateBenefits()"></agl-benefits-activation>
+                <agl-benefits-dashboard *ngIf="showBenefitsDashboard()" [benefits]="benefits" (aglRewardsClick)="navigateToAglRewards($event)"></agl-benefits-dashboard>
+            </section>
+    
+            <section class="rewards__tiles container">
+                <div class="rewards__tile-wrapper" *ngIf="showDiscounts()" [ngClass]="{'rewards__tile-wrapper--full-width': !showFlybuys()}">
+                    <agl-rewards-discount-tile [discountArgs]="discountSummary" [isSingleTile]="!showFlybuys()"></agl-rewards-discount-tile>
+                </div>
+                <div class="rewards__tile-wrapper" *ngIf="showFlybuys()" [ngClass]="{'rewards__tile-wrapper--full-width': !showDiscounts()}">
+                    <agl-rewards-flybuys-tile [flybuysArgs]="flybuysSummary" [isSingleTile]="!showDiscounts()"></agl-rewards-flybuys-tile>
+                </div>
+                <div class="rewards__tile-wrapper rewards__tile-wrapper--full-width">
+                    <agl-rewards-banner *ngIf="showRewardsBanner()"></agl-rewards-banner>
+        
+                    <agl-rewards-active-banner *ngIf="showActiveStaticBanner()" (aglRewardsClick)="navigateToAglRewards()"></agl-rewards-active-banner>
+                </div>
+            </section>
+        </div>
+    </div>
+    <agl-rewards-generic-error *ngIf="isBenefitsActivateError" (backClick)="navigateBackToRewards($event)">
+        We're sorry for the inconvenience, but we can't seem to activate AGL Rewards right now. Please check back soon.
+    </agl-rewards-generic-error>
+    
+    <agl-rewards-generic-error *ngIf="isNavigationToAglRewardsError" (backClick)="navigateBackToRewards($event)" class="agl-rewards-error">
+        We're sorry for the inconvenience, but we're experiencing some difficulties when trying to take you to AGL Rewards right
+        now. Please check back soon.
+    </agl-rewards-generic-error>

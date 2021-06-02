@@ -1,0 +1,58 @@
+@import '../../style/variables';
+
+.button-dropdown {
+    position: relative;
+    width: 100%;
+    @media #{$agl-layout-mobile} {
+        width: 100%;
+    }
+
+    &__button {
+        width: 100%;
+        margin-bottom: 5px;
+        margin-top: 12px;
+        transition: background .4s cubic-bezier(.25, .8, .25, 1), box-shadow 280ms cubic-bezier(.4, 0, .2, 1), color 0.3s ease;
+
+        &:hover {
+            color: $brand-sky;
+        }
+    }
+
+    &__change {
+        color: $brand-sky;
+        font-family: $primary-font-stack;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: -32px;
+        float: right;
+        position: relative;
+        margin-right: 10px;
+
+        &:hover {
+            cursor: pointer;
+            color: darken($brand-grey-g1, 25%);
+        }
+    }
+
+    &__selection {
+        margin-top: 12px;
+        width: 100%;
+        padding: 10px;
+        @media #{$agl-layout-mobile} {
+            width: 100%;
+        }
+    }
+}
+
+// remove this and change for dls
+.long-button {
+    width: 100%;
+    font-weight: bold;
+    height: 50px;
+    letter-spacing: 1px;
+    background-color: $brand-white;
+    -webkit-box-shadow: 0px 2px 6px 1px rgba(184, 182, 184, 0.63);
+    -moz-box-shadow: 0px 2px 6px 1px rgba(184, 182, 184, 0.63);
+    box-shadow: 0px 2px 6px 1px rgba(184, 182, 184, 0.63);
+    border-radius: 4px;
+}

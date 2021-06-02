@@ -1,0 +1,24 @@
+{
+    "status": 200,
+    "headers": { },
+    "body": {
+        "contractAccountNumber": 7035252860,
+        "paymentSchemes": [
+            {
+                "contractNumber": 9402766057,
+                "paymentSchemeNumber": 91238821302108380,
+                "startDate": "2017-06-01T14:00:00Z",
+                "endDate": "2018-05-31T14:00:00Z",
+                "frequency": "Monthly",
+                "nextPayment": {
+                    "date": "2017-06-01T14:00:00Z",
+                    "amount": 47
+                },
+                "previousPayment": {
+                    "date": "2018-04-01T14:00:00Z",
+                    "amount": 47
+                }
+            }
+        ]
+    }
+}

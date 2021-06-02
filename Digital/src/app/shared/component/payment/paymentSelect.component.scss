@@ -1,0 +1,62 @@
+@import '../../style/variables';
+@import '../../style/agltheme';
+
+.payment-select {
+
+    &__amount {
+        display: inline-block;
+        width: 50%;
+        box-sizing: border-box;
+        min-height: 260px;
+        padding-right: 50px;
+        @media #{$agl-layout-mobile} {
+            padding-right: 0px;
+            border-right: none;
+            min-height: inherit;
+            width: 100%;
+        }
+
+        &--small {
+            width: 240px;
+            @media #{$agl-layout-mobile} {
+                width: 100%;
+            }
+        }
+    }
+
+    &__method {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+        margin-left: -4px;
+        border-left: 1px solid $brand-grey-g4;
+        padding-left: 50px;
+
+        @media #{$agl-layout-mobile} {
+            width: 100%;
+            padding-left: 0;
+            border: 0;
+        }
+
+        &__content {
+            width: 290px;
+            font-weight: bold;
+
+            #payment-methods-label {
+                font-size: 16px;
+            }
+
+            @media #{$agl-layout-mobile} {
+                right: inherit;
+                width: 100%;
+                position: relative;
+            }
+        }
+    }
+}
+
+.payment-method {
+    &__container {
+        margin-top: 30px;
+    }
+}

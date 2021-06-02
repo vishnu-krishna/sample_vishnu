@@ -1,0 +1,84 @@
+// sass-lint:disable-all
+@import '../maui';
+
+@include maui-component-reset();
+
+$svgDropdownWidth: "11px";
+$svgDropdownHeight: "6px";
+$disabled-background-color: $neutral-07;
+$disabled-color: $neutral-03;
+$has-error-border-color: $secondary-warning-dark;
+$disabled-border-color: $neutral-04;
+
+.maui-dropdown {
+    &--has-error {
+        border-color: $has-error-border-color;
+    }
+}
+
+select {
+
+    &:disabled {
+        background-color: $neutral-05;
+        color: $neutral-03;
+        cursor: default;
+    }
+
+    /* styling */
+    font: $body-font-size-normal $body-font-stack;
+    background-color: $neutral-08;
+    border: 1px solid $neutral-03;
+    border-radius: $border-radius-01;
+    display: inline-block;
+    padding-left: 15px;
+    height: 50px;
+    width: 100%;
+    color: $neutral-01;
+
+    /* reset */
+
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    /* arrows */
+
+    background-image: url('svg/maui/dropdown/dropdownarrow.svg');
+    background-position-x: right;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    cursor:pointer;
+
+    &:disabled {
+        background-color: $disabled-background-color;
+        border-color: $disabled-border-color;
+        cursor: default;
+        background-image: url('svg/maui/dropdown/dropdownarrow-disabled.svg');
+
+        option{
+            color: $disabled-color;
+        }
+    }
+
+    // removes the native arrow from IE
+    &::-ms-expand {
+        display: none;
+    }
+
+    // Removes the highlight after selection in IE 11
+    &::-ms-value {
+        background: transparent;
+        color: $neutral-01;
+    }
+}
+
+select:focus {
+    outline: none;
+}
+
+option:disabled {
+    color: $disabled-color;
+}

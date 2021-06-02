@@ -1,0 +1,57 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": {
+            "screenCode": "SSMR_MRR",
+            "meters": [
+                {
+                    "meterSerial": "12345678901234567a",
+                    "registers": [
+                        {
+                            "registerId": "001",
+                            "dialFormat": "5",
+                            "currentMeterRead": "1790824",
+                            "lastMeterRead": "12345",
+                            "lastReadQuality": "Actual Read by MDP",
+                            "lastReadDate": "28.11.2016",
+                            "isValid": true
+                        }
+                    ]
+                },
+                {
+                    "meterSerial": "12345678901234567b",
+                    "registers": [
+                        {
+                            "registerId": "002",
+                            "dialFormat": "6",
+                            "currentMeterRead": "1790824",
+                            "lastMeterRead": "123456",
+                            "lastReadQuality": "Actual Read by MDP",
+                            "lastReadDate": "28.11.2016",
+                            "isValid": true
+                        }
+                    ]
+                },
+                {
+                    "meterSerial": "12345678901234567c",
+                    "registers": [
+                        {
+                            "registerId": "003",
+                            "dialFormat": "7",
+                            "currentMeterRead": "1790824",
+                            "lastMeterRead": "1234567",
+                            "lastReadQuality": "Actual Read by MDP",
+                            "lastReadDate": "28.11.2016",
+                            "isValid": false
+                        }
+                    ]
+                }
+            ],
+            "error": {
+                "internalError": {
+                    "errorNumber": "068"
+                }
+            }
+    }
+}
+

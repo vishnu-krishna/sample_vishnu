@@ -1,0 +1,129 @@
+@import '../../../../shared/style/variables';
+@import '../../../../shared/style/mixins';
+@import '../payment';
+
+.payg-bonus {
+    font-family: $secondary-font-stack;
+
+    &__header {
+
+        &__text {
+            font-weight: bold;
+        }
+
+        &__message {
+            padding-top: 5px;
+        }
+    }
+
+    &__bands {
+        position: relative;
+        height: 200px;
+        @media #{$agl-layout-mobile} {
+            width: 100vw;
+            margin-left: -20px;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        @media #{$agl-layout-mobile} {
+            margin-left: 20px;
+        }
+    }
+}
+
+.flex-container {
+    margin-top: 10px;
+    list-style: none;
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    @media #{$agl-layout-mobile} {
+        .bonus-box {
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+
+            &.show-box {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.shorthand {
+    overflow: auto;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    @media #{$agl-layout-mobile} {
+        overflow-x: scroll;
+    }
+}
+
+.image-arrow {
+    position: absolute;
+    margin-top: 37px;
+    top: 0;
+    cursor: pointer;
+    z-index: 11;
+    width: 36px;
+    height: 72px;
+    background-position: center;
+
+    &__right {
+        background-image: url('svg/arrow_right_active.svg');
+        right: 0;
+
+        &--active {
+            opacity: 1;
+        }
+
+        &--inactive {
+            opacity: 0.2;
+            right: 0;
+            cursor: default;
+        }
+        @media #{$agl-layout-mobile} {
+            display: none;
+        }
+
+        &--preactive {
+            opacity: 0.2;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__left {
+        background-image: url('svg/arrow_left_active.svg');
+
+        &--active {
+            opacity: 1;
+        }
+
+        &--inactive {
+            opacity: 0.2;
+            cursor: default;
+        }
+        @media #{$agl-layout-mobile} {
+            display: none;
+        }
+
+        &--preactive {
+            opacity: 0.2;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    @media #{$agl-layout-mobile} {
+        display: none;
+    }
+}

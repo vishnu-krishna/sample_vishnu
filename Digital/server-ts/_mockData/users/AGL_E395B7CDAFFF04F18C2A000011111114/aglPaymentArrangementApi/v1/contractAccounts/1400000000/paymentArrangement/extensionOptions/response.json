@@ -1,0 +1,57 @@
+{
+    "status": 200,
+    "headers": {},
+    "body":
+        {
+            "contractAccountNumber": 1400000000,
+            "extensionOptions": [
+                {
+                    "contractNumber": 1411111111,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Not eligible for extension: control group",
+                        "internalError": {
+                            "errorNumber": "030",
+                            "description": "Control group created for A/B testing - customers who have a CA ending in"
+                        }
+                    }
+                },
+                {
+                    "contractNumber": 1422222222,
+                    "isEligible": true,
+                    "dueDate": "2018-02-10T14:00:00Z",
+                    "totalDueAmount": 70.28,
+                    "dueDateExtensions": [
+                        {
+                            "numberOfDays": 7,
+                            "date": "2018-03-16T14:00:00Z"
+                        },
+                        {
+                            "numberOfDays": 14
+                        },
+                        {
+                            "numberOfDays": 21
+                        }
+                    ]
+                },
+                {
+                    "contractNumber": 1433333333,
+                    "isEligible": true,
+                    "dueDate": "2018-02-10T14:00:00Z",
+                    "totalDueAmount": 70.28,
+                    "dueDateExtensions": [
+                        {
+                            "numberOfDays": 7,
+                            "date": "2018-03-16T14:00:00Z"
+                        },
+                        {
+                            "numberOfDays": 14
+                        },
+                        {
+                            "numberOfDays": 21
+                        }
+                    ]
+                }
+            ]
+        }
+}

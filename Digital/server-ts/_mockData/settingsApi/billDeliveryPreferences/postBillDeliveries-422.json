@@ -1,0 +1,18 @@
+{
+    "scenarios": [{
+        "context": {
+            "contractAccountNumber": 7034382924,
+            "deliveryMethod": "Postal"
+        },
+        "outcome": {
+            "status": 422,
+            "body": {
+                "errors": [{
+                    "code": "Required",
+                    "field": "contractAccountNumber",
+                    "message": "Contract account number is required"
+                }]
+            }
+        }
+    }]
+}

@@ -1,0 +1,59 @@
+<div class="homeprofile-fridge">
+    <agl-home-profile-header [accountNumber]="accountNumber" [contractNumber]="contractNumber" pageHeading="Fridge and freezer"></agl-home-profile-header>
+
+    <div *ngIf="isLoading" class="homeprofile-landing__loader">
+        <agl-loader></agl-loader>
+    </div>
+
+    <div *ngIf="!isLoading" class="homeprofile-fridge-body">
+        <div class="homeprofile-fridge-questionnaire">
+            <div class="homeprofile-fridge-questionnaire__subsection">
+                <div class="homeprofile-fridge-questionnaire__heading-no-margin">What kind of fridge/ freezer do you have?</div>
+                <agl-maui-radio-button-group name="mainFridgeRadioGroup" data-test="mainFridgeRadioGroup" [selectedValue]="homeProfile.mainFridgeType" (selectedValueChange)="setMainFridgeType($event)">
+                    <agl-maui-radio-button *ngFor="let fridgeTypeSelection of fridgeTypeSelections" value="{{fridgeTypeSelection.value}}" [attr.data-test]="fridgeTypeSelection.value">
+                        <div label>{{fridgeTypeSelection.text}}</div>
+                        <div content class="content">
+                            <div class="homeprofile-fridge-questionnaire__item-header">How old is your fridge/freezer?</div>
+                            <agl-maui-segmented-buttons class="homeprofile-fridge__segmented-button" (change)="setMainFridgeAge($event)">
+                                <agl-maui-segmented-button *ngFor="let fridgeAgeSelection of fridgeAgeSelections" value="{{fridgeAgeSelection.value}}"
+                                    text="{{fridgeAgeSelection.text}}" [attr.data-test]="fridgeAgeSelection.text" [selected]="homeProfile.mainFridgeAge === fridgeAgeSelection.value">
+                                </agl-maui-segmented-button>
+                            </agl-maui-segmented-buttons>
+                        </div>
+                    </agl-maui-radio-button>
+                    <agl-maui-radio-button value="{{fridgeType.None}}" [attr.data-test]="fridgeType.None">
+                        <div label>No fridge</div>
+                    </agl-maui-radio-button>
+                </agl-maui-radio-button-group>
+            </div>
+            <div class="homeprofile-fridge-questionnaire__subsection">
+                <div *ngIf="!homeProfile.hasSecondaryFridge" class="homeprofile-fridge__add-secondary-fridge"
+                    [class.homeprofile-fridge__add-secondary-fridge--disabled]="isAddFridgeDisabled()" (click)="showSecondaryFridgeDisplay()">
+                    <div class="homeprofile-fridge__add-secondary-fridge-icon">&#43;</div>
+                    <span class="homeprofile-fridge__add-secondary-fridge-text">ADD ANOTHER FRIDGE/FREEZER</span>
+                </div>
+                <div *ngIf="homeProfile.hasSecondaryFridge" class="homeprofile-fridge__secondary-fridge">
+                    <div class="homeprofile-fridge__secondary-fridge-header">
+                        <span class="homeprofile-fridge-questionnaire__heading-no-margin">Second fridge/freezer</span>
+                        <div class="homeprofile-fridge__secondary-fridge-header-icon" (click)="hideSecondaryFridgeDisplay()">&#x00D7;</div>
+                    </div>
+                    <agl-maui-radio-button-group name="secondaryFridgeRadioGroup" data-test="secondaryFridgeRadioGroup" [selectedValue]="homeProfile.secondaryFridgeType" (selectedValueChange)="setSecondaryFridgeType($event)">
+                        <agl-maui-radio-button *ngFor="let fridgeTypeSelection of fridgeTypeSelections" value="{{fridgeTypeSelection.value}}" [attr.data-test]="fridgeTypeSelection.value">
+                            <div label>{{fridgeTypeSelection.text}}</div>
+                            <div content class="content">
+                                <div class="homeprofile-fridge-questionnaire__item-header">How old is your fridge/freezer?</div>
+                                <agl-maui-segmented-buttons class="homeprofile-fridge__segmented-button" (change)="setSecondaryFridgeAge($event)">
+                                    <agl-maui-segmented-button *ngFor="let fridgeAgeSelection of fridgeAgeSelections" value="{{fridgeAgeSelection.value}}"
+                                        text="{{fridgeAgeSelection.text}}" [attr.data-test]="fridgeAgeSelection.text" [selected]="homeProfile.secondaryFridgeAge === fridgeAgeSelection.value">
+                                    </agl-maui-segmented-button>
+                                </agl-maui-segmented-buttons>
+                            </div>
+                        </agl-maui-radio-button>
+                    </agl-maui-radio-button-group>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <agl-home-profile-footer [accountNumber]="accountNumber" [contractNumber]="contractNumber"></agl-home-profile-footer>
+</div>

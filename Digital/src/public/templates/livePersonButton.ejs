@@ -1,0 +1,25 @@
+(function () { 
+    var x = 0;
+    var timer = setInterval(function () { 
+        var browserTitle = document.getElementsByTagName('title')[0].innerHTML;
+        if (browserTitle.localeCompare("Bill Payment Options | AGL") == 0) { 
+            if(document.getElementById("lpButtonDiv") !=null) {
+                document.getElementById("lpButtonDiv").style.display = "block"; 
+                if(document.getElementById("lpButtonDiv").innerHTML!=null && document.getElementById("lpButtonDiv").innerHTML!= "") {
+                    document.getElementById("lpButtonDiv-mobile-disabled").style.display = "none"; 
+                }
+            }
+        } else if (browserTitle.localeCompare("Register | AGL") == 0) { 
+            if (document.getElementById("lpButtonDiv2") !=null) {
+                document.getElementById("lpButtonDiv2").style.display = "block"; 
+                if(document.getElementById("lpButtonDiv2").innerHTML!=null && document.getElementById("lpButtonDiv2").innerHTML!= "") {
+                    document.getElementById("lpButtonDiv-mobile-disabled").style.display = "none"; 
+                }
+            }
+        }
+        if (x === 15) {
+            clearInterval(timer); 
+        } 
+        x++; 
+    }, 2000); 
+})(); 

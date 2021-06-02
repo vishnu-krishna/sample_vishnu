@@ -1,0 +1,55 @@
+﻿<div *ngIf="model && model.statusImage" class="col-md-12 solar-check-status">
+    <div class="upper-panel">
+        <div [class.status-checkSystem]="model.isCheckSystem">
+            <div class="col icon hidden-xs" [class.icon-check-response]="model.isCheckSystem">
+                <div class="main-image">
+                    <img src="{{model.solarImage.src}}" alt="{{model.solarImage.altText}}">
+                </div>
+            </div>
+            <div class="col status hidden-xs">
+                <div class="main-image" *ngIf="model.statusImage">
+                    <img status-icon src="{{model.statusImage.src}}" alt="{{model.statusImage.altText}}">
+                </div>
+            </div>
+            <div class="col message" [class.good]="model.isGoodStatus">
+                <div class="message-pos">
+                    <div class="message-header message-block " *ngIf="model.heading">{{model.heading}}</div>
+                    <div class="message-details message-block" *ngIf="model.details">
+                        {{model.details}}
+                    </div>
+                    <div class="message-details" *ngIf="model.latestDataDate">
+                        Updated {{model.latestDataDate}}
+                        <span *ngIf="model.daysOfData"> using your last {{model.daysOfData}} days of data.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col more-link hidden-xs" [class.more-button]="!model.isShowLearnMoreLink">
+                <div class="vertical-center" *ngIf="model.isShowLearnMoreLink">
+                    <a class="link-text" [href]="model.link" (click)="promptSurvey()" target="_blank">{{model.linkName}}</a>
+                </div>
+                <a *ngIf="!model.isShowLearnMoreLink" (click)="promptSurvey()" class="dls-button-override" mat-raised-button color="primary" [href]="model.link" target="_blank">
+                    {{model.linkName}}
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="visible-xs solar-command-check-row lower-panel" [class.status-checkSystem]="model.isCheckSystem">
+        <div class="left-side col-xs-3">
+            <div class="mobile-status vertical-center">
+                <img status-icon src="{{model.statusImage.src}}" alt="{{model.statusImage.altText}}">
+            </div>
+        </div>
+        <div class="col-xs-9 mobile-link">
+            <div class="mobile-more-detail-link">
+                <div class="vertical-center" [class.more-button]="!model.isShowLearnMoreLink">
+                    <div *ngIf="model.isShowLearnMoreLink">
+                        <a class="mob-link-text" [href]="model.link" (click)="promptSurvey()" target="_blank">{{model.linkName}}</a>
+                    </div>
+                    <a *ngIf="!model.isShowLearnMoreLink" class="dls-button-override" (click)="promptSurvey()" mat-raised-button color="primary" [href]="model.link" target="_blank">
+                        {{model.linkName}}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

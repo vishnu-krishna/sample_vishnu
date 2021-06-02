@@ -1,0 +1,113 @@
+<div class="monthly-billing-confirmation">
+
+    <agl-maui-confirmation-banner text='Your {{fuelTypeLowerCase}} account is now on monthly billing'>
+    </agl-maui-confirmation-banner>
+
+
+    <agl-maui-container class="monthly-billing-confirmation__container--top" [hasShadow]="true">
+        <div class= "monthly-billing-confirmation__wrapper">
+
+            <div class="monthly-billing-confirmation__heading">
+
+                <agl-maui-fuel-chip
+                    [contractAccountDetails]="fuelChipCurrentAccountDetails"
+                    [contractNumber]="this.selectedMonthlyBillingContract.contract.contractNumber"
+                    [fuelContext]="MauiFuelChipFuelContext.None"
+                    [fuelChipState]="MauiFuelChipState.Display"
+                    [fuelType]="this.selectedMonthlyBillingContract.contract.fuelType"
+                >
+                </agl-maui-fuel-chip>
+
+            </div>
+
+            <div class="monthly-billing-confirmation__summary">
+                <div class="monthly-billing-confirmation__heading-text">
+                    Monthly billing summary
+                </div>
+                <div class="monthly-billing-confirmation__summary-body">
+                    You've selected the <strong>{{billDate}}</strong> of every month as your bill issue date.
+                </div>
+            </div>
+
+            <div class="monthly-billing-confirmation__heading-text">
+                Upcoming monthly bills
+            </div>
+            <div class="monthly-billing-confirmation__upcoming">
+                <agl-monthly-billing-upcoming-bills
+                    [selectedBillDate]="selectedMonthlyBillingContract?.selectedBillDate"
+                >
+                </agl-monthly-billing-upcoming-bills>
+            </div>
+
+            <div class="monthly-billing-confirmation__disclaimer-message">
+                Weekends and public holidays can affect your requested bill issue date (see our
+                <span class='monthly-billing-confirmation__disclaimer-message__disclaimer-terms-text'
+                    (click)="onClickTermsAndConditions()">terms and conditions</span> for further information). Your payment due date will be 14 business days from and including
+                your bill issue date. If you've selected the 29th, 30th or 31st of the month, in months without these days your
+                bill will be issued on the first business day of the following month.
+            </div>
+
+            <div class="monthly-billing-confirmation__whats-next">
+                <div class="monthly-billing-confirmation__whats-next-body">
+                    <agl-maui-icon-list heading="What happens now">
+                        <agl-maui-icon-list-item iconPath="/svg/maui/iconList/showcase/icon-clock.svg">
+                            Please allow up to 24 hours for your new issue date to update in My Account and the app.
+                        </agl-maui-icon-list-item>
+                        <agl-maui-icon-list-item iconPath="/svg/maui/iconList/showcase/icon-ssmr.svg" *ngIf="!isSmartMeter">
+                            <div *ngIf="selectedMonthlyBillingAccount?.hasValidMobileNumber">You’ll receive an SMS 2 days before your bill is issued to remind you to take your own meter read.
+                            </div>
+                            <div *ngIf="!selectedMonthlyBillingAccount?.hasValidMobileNumber">
+                                <span>Update your mobile number
+                                    <a *ngIf="isContactDetailsEnabled" class="monthly-billing-confirmation__whats-next-link" [routerLink]="['/settings/contactdetails', 'monthlybilling']">here</a>
+                                    <a *ngIf="!isContactDetailsEnabled" class="monthly-billing-confirmation__whats-next-link" [href]="aeoContactDetailsUrl" target="_blank">here</a>
+                                    to receive an SMS 2 days before your bill is issued to remind you to take your own meter read.
+                                </span>
+                            </div>
+                        </agl-maui-icon-list-item>
+                    </agl-maui-icon-list>
+                </div>
+                <agl-contact-details-update-confirmation confirmationType="Mobile"
+                    class="sms-pay__email-updated-confirmation">
+                </agl-contact-details-update-confirmation>
+            </div>
+
+        </div>
+    </agl-maui-container>
+
+    <div class="monthly-billing-confirmation__more-contracts" *ngIf="contractsNotOnFlexiMonthly?.length">
+
+        <div class="monthly-billing-confirmation__more-contracts__question">
+            {{contractsNotOnFlexiMonthlyMessage}}
+        </div>
+
+        <agl-maui-container class="monthly-billing-confirmation__container--bottom" [hasShadow]="true" *ngFor="let contractMBM of contractsNotOnFlexiMonthly">
+
+            <div class="monthly-billing-confirmation__contract" >
+                <agl-maui-fuel-chip
+                    [contractAccountDetails]="fuelChipCurrentAccountDetails"
+                    [contractNumber]="contractMBM.contract.contractNumber"
+                    [fuelContext]="MauiFuelChipFuelContext.None"
+                    [fuelChipState]="MauiFuelChipState.PreSetup"
+                    [fuelType]="contractMBM.contract.fuelType"
+                    (selectorClick)='contractClicked(contractMBM)'
+                >
+                    <agl-maui-fuel-chip-message
+                        [primaryMessage]="getFuelChipMessage(contractMBM)">
+                    </agl-maui-fuel-chip-message>
+
+                </agl-maui-fuel-chip>
+            </div>
+        </agl-maui-container>
+
+    </div>
+
+    <div class="monthly-billing-confirmation__button-container">
+
+        <agl-maui-button [type]="buttonType" (clicked)="onClickClose()">{{buttonText}}</agl-maui-button>
+
+    </div>
+
+    <!-- Terms and Condition Light box -->
+    <agl-monthly-billing-terms-conditions #termsAndConditons></agl-monthly-billing-terms-conditions>
+
+</div>

@@ -1,0 +1,18 @@
+{
+  "status": 200,
+  "headers": { },
+  "body": {
+    "hasMultipleBusinessPartners": false,
+    "businessPartners": [
+      {
+        "firstName": "Philip",
+        "lastName": "MacLaren",
+        "businessPartnerNumber": "0900011122",
+        "phone": "",
+        "mobile": "0455666999",
+        "email": "phil.mcclaren@me.com",
+        "hasDateOfBirth": true
+      }
+    ]
+  }
+}

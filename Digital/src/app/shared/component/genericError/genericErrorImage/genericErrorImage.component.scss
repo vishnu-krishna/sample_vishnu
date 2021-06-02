@@ -1,0 +1,35 @@
+@import '../../../../shared/style/variables';
+@import '../../../../myAccount/maui/_maui.scss';
+
+.image-with-border {
+    .main-image {
+        float: left;
+
+        &.mat-icon {
+            width: 320px;
+            height: 160px;
+        }
+    }
+
+    .image-border-left {
+        margin-top: 136px;
+        height: 4px;
+        float: left;
+        width: calc((100% - 320px) / 2);
+        background-color: $primary-dark;
+    }
+
+    .image-border-right {
+        margin-top: 136px;
+        height: 4px;
+        float: right;
+        width: calc((100% - 320px) / 2);
+        background-color: $primary-dark;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}

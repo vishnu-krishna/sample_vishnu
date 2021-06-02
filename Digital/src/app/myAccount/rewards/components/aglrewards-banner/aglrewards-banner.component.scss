@@ -1,0 +1,98 @@
+@import '../../../maui/maui';
+
+.banner__container {
+    display: flex;
+    flex-direction: column;
+
+    @media #{$agl-layout-tablet-and-greater} {
+        flex-direction: row;
+    }
+}
+
+.banner__image {
+    overflow: hidden;
+
+    @media #{$agl-layout-tablet} {
+        max-height: 295px;
+    }
+
+    img {
+
+        @media #{$agl-layout-desktop-medium-and-greater} {
+            max-width: 395px;
+            width: auto;
+        }
+
+        @media #{$agl-layout-tablet} {
+            width: auto;
+            height: 350px;
+            position: relative;
+            left: -50px;
+        }
+
+        @media #{$agl-layout-mobile} {
+            width: 100%;
+            height: auto;
+            position: static;
+        }
+    }
+}
+
+.banner__content {
+    padding: 0 20px 32px 20px;
+    flex-grow: 1;
+
+    @media #{$agl-layout-tablet-and-greater} {
+        text-align: center;
+    }
+
+    p {
+        font-size: 20px;
+        line-height: 30px;
+        margin: 0;
+
+        @media #{$agl-layout-tablet-and-greater} {
+            max-width: 580px;
+            margin: 0 auto;
+        }
+
+        @media #{$agl-layout-tablet} {
+            font-size: 18px;
+            line-height: 28px;
+        }
+
+        @media #{$agl-layout-desktop-medium} {
+            max-width: 400px;
+            font-size: 18px;
+        }
+    }
+}
+
+.banner__heading {
+    display: inline-block;
+    color: $primary-dark;
+    font-family: $display-font-stack;
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 500;
+    margin: 40px 0 28px 0;
+
+    @media #{$agl-layout-desktop-large} {
+        font-size: 42px;
+        line-height: 48px;
+        max-width: 400px;
+    }
+
+    @media #{$agl-layout-desktop-medium-and-smaller} {
+        font-size: 35px;
+        line-height: 40px;
+        max-width: 400px;
+    }
+
+    @media #{$agl-layout-mobile} {
+        font-size: 30px;
+        line-height: 40px;
+    }
+}
+
+

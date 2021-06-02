@@ -1,0 +1,66 @@
+[
+    {
+        "number": "123456789",
+        "firstName": "Rene",
+        "lastName": "Descartes",
+        "contracts": [
+            {
+                "address": "32 Brewery Ln, North Willoughby, Sydney, NSW 2023",
+                "fuelType": "Electricity",
+                "accountNumber": "123456789",
+                "nameId": "AGL_E395B892419209F1A8DCE150C6AD1CFB",
+                "number": "111111111",
+                "planName": "Select 6%",
+                "inFlight": false,
+                "isRestricted": false
+            },
+            {
+                "address": "32/102 Cook St, Parramatta, Sydney, NSW 2150",
+                "fuelType": "Electricity",
+                "accountNumber": "123456789",
+                "nameId": "AGL_E395B892419209F1A8DCE150C6AD1CFB",
+                "number": "222222222",
+                "planName": "Select 6%",
+                "inFlight": false,
+                "isRestricted": false
+            },
+            {
+                "address": "32/102 Cook St, Parramatta, Sydney, NSW 2150",
+                "fuelType": "Electricity",
+                "accountNumber": "123456789",
+                "nameId": "AGL_E395B892419209F1A8DCE150C6AD1CFB",
+                "number": "222222222",
+                "planName": "Select 6%",
+                "inFlight": false,
+                "isRestricted": false
+            }
+        ]
+    },
+    {
+        "number": "987654321",
+        "firstName": "Rene",
+        "lastName": "Descartes",
+        "contracts": [
+            {
+                "address": "8 Townson St, Hurstville Grove, NSW 2220",
+                "fuelType": "Electricity",
+                "accountNumber": "987654321",
+                "nameId": "AGL_E395B892419209F1A8DCE150C6AD1CFB",
+                "number": "333333333",
+                "planName": "Select 6%",
+                "inFlight": false,
+                "isRestricted": false
+            },
+            {
+                "address": "8 Townson St, Hurstville Grove, NSW 2220",
+                "fuelType": "Electricity",
+                "accountNumber": "987654321",
+                "nameId": "AGL_E395B892419209F1A8DCE150C6AD1CFB",
+                "number": "444444444",
+                "planName": "Select 6%",
+                "inFlight": false,
+                "isRestricted": false
+            }
+        ]
+    }
+]

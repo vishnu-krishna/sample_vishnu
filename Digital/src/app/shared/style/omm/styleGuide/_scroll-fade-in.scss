@@ -1,0 +1,15 @@
+.js-scroll-fade {
+    opacity: 0;
+    transition: opacity 750ms, transform 300ms;
+    transition-delay: 100ms;
+    transform: translateY(20px);
+
+    &.scroll-fade-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    &.scroll-fade-instant {
+        transition: none;
+    }
+}

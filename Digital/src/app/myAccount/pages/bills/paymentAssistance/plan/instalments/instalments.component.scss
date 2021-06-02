@@ -1,0 +1,80 @@
+@import '../../../../../maui/maui';
+@import '../../../../../maui/progressTracker/progressItems/verticalProgressItem/verticalProgressItemBase';
+
+.payment-assistance-plan-instalments {
+    &__body {
+        padding: $space-04;
+
+        &-header {
+            font-family: $display-font-stack;
+            font-size: $display-font-size-delta;
+            line-height: $line-height-short;
+            color: $primary-dark;
+        }
+
+        &-table-progress-tracker-row {
+
+            display: flex;
+            justify-content: space-between;
+
+            div {
+                line-height: $line-height-short;
+            }
+
+            @media #{$agl-layout-mobile} {
+                margin-top: -$space-03;
+            }
+        }
+    }
+}
+
+.progress-tracker {
+    &__overview {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+$instalmentDesktopConfig: (
+    lineHeight: 67px,
+    lineThickness: 3px,
+    bulletHeight: 16px,
+    bulletWidth: 16px,
+    bulletBorderWidth: 2px,
+    // leftPaneHeight is usually sum of lineHeight and bulletHeight
+    leftPaneHeight: 83px,
+    // leftPaneLeftPadding needs to be equal or greater than lineThickness, because the way it's styled
+    leftPaneLeftPadding: 3px,
+    leftPaneRightPadding: 30px,
+    // leftPaneHeight is usually sum of lineHeight and bulletHeight
+    rightPaneHeight: 83px,
+    rightPaneLeftPadding: 30px,
+    rightPaneRightPadding: 0px
+);
+
+$instalmentMobileConfig: (
+    lineHeight: 88px,
+    lineThickness: 3px,
+    bulletHeight: 16px,
+    bulletWidth: 16px,
+    bulletBorderWidth: 2px,
+    // leftPaneHeight is usually sum of lineHeight and bulletHeight
+    leftPaneHeight: 104px,
+    leftPaneLeftPadding: 3px,
+    leftPaneRightPadding: 15px,
+    // leftPaneHeight is usually sum of lineHeight and bulletHeight
+    rightPaneHeight: 104px,
+    rightPaneLeftPadding: 15px,
+    rightPaneRightPadding: 0px
+);
+
+@include all-styling($instalmentDesktopConfig, $instalmentMobileConfig);
+
+// helper class
+.no-wrap {
+    white-space: nowrap;
+}
+
+.text-right {
+    text-align: right;
+}

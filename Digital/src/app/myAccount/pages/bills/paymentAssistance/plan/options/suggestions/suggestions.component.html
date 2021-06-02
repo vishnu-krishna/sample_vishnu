@@ -1,0 +1,34 @@
+<div *ngIf="suggestionsModel" class="payment-assistance-plan-options-suggestions">
+    <div class="payment-assistance-plan-options-suggestions__heading">Choose your instalment plan</div>
+    <agl-maui-radio-button-group
+        [(selectedValue)]="suggestionsModel.selectedNumberOfInstalments"
+        name="suggestionsRadioButtonGroup"
+        (selectedValueChange)="onSelectedNumberOfInstalmentsChanged($event)">
+
+        <agl-maui-radio-button [value]="customInstalmentPlanValue.toString()" [checked]="customInstalmentPlanValue === suggestionsModel.selectedNumberOfInstalments">
+            <div label class="payment-assistance-plan-options-suggestions__label">I want to create my own custom instalment plan</div>
+        </agl-maui-radio-button>
+            <agl-maui-radio-button [ngClass]="{'payment-assistance-plan-options-suggestions__options-hidden': !(showAll || (i < suggestionsModel.maxSuggestionsToShow))}"
+            *ngFor="let instalmentSuggestion of suggestionsModel.instalmentSuggestions;let i=index"
+                [value]="instalmentSuggestion.numberOfInstalments.toString()">
+
+            <div label class="payment-assistance-plan-options-suggestions__label">
+                <div class="payment-assistance-plan-options-suggestions__label-left">{{ formatRadioButtonLabelLeft(instalmentSuggestion, suggestionsModel.frequencyOption) }}</div>
+                <div class="payment-assistance-plan-options-suggestions__label-right">
+                    <span class="payment-assistance-plan-options-suggestions__label-right-amount">{{ instalmentSuggestion.instalmentAmount | aglCurrency }}</span><span class="payment-assistance-plan-options-suggestions__label-right-frequency">{{ formatRadioButtonLabelRight(instalmentSuggestion, suggestionsModel.frequencyOption) }}</span>
+                </div>
+            </div>
+        </agl-maui-radio-button>
+    </agl-maui-radio-button-group>
+    <agl-maui-chevron-menu
+        class="payment-assistance-plan-options-suggestions__menu"
+        [ngClass]="{
+            'payment-assistance-plan-options-suggestions__menu--divider': showAll
+        }"
+        *ngIf="suggestionsModel.instalmentSuggestions.length > suggestionsModel.maxSuggestionsToShow"
+        [isUp]="showAll"
+        [upMessage]="'See less options'"
+        [downMessage]="'See more options'"
+        (toggled)="expandClicked()">
+    </agl-maui-chevron-menu>
+</div>

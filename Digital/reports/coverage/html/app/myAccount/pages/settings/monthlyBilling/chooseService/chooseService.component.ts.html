@@ -1,0 +1,935 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\settings\monthlyBilling\chooseService\chooseService.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/settings/monthlyBilling/chooseService/</a> chooseService.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20.36% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>34/167</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">15% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>12/80</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.86% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/35</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20.13% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>32/159</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+&nbsp;
+import * as _ from 'lodash';
+import * as moment from 'moment';
+import { Observable } from 'rxjs/Observable';
+&nbsp;
+import { MonthlyBillingRoutes, MonthlyBillingEntryPointRoutes } from '../monthlyBillingRoutes.const';
+import { CancelMonthlyBillingResponse } from '../../../../services/settings/model/cancelMonthlyBillingResponse';
+import { ApiService, BillHistoryApiModel, ContactDetailModel } from '../../../../../shared/service/api.service';
+import { BillDateOption } from '../../../../services/settings/model/billDateOption';
+import { AglValidators } from '../../../../../shared/validators/aglValidators';
+import { FlashMessageType } from '../../../../maui/flashMessage/index';
+import { MauiFuelChipFuelContext, MauiFuelChipFuelType, MauiFuelChipState } from '../../../../maui/fuelChip/fuelChip.component.enum';
+import { FuelChipContract, FuelChipContractAccountDetails, PrimaryMessageLink } from '../../../../maui/fuelChip/index';
+import { ContractViewModel } from '../../../../services/account.service';
+import { MonthlyBillingSapCode, MonthlyBillingService } from '../../../../services/monthlyBilling.service';
+import { BillingFrequencyType } from '../../../../services/settings/model/billingFrequencyType';
+import { ContractMonthlyBillingModel } from '../../../../services/settings/model/contractMonthlyBillingModel';
+import { BillApiModel } from './../../../../../shared/service/api.service';
+import { DataLayerService } from '../../../../../shared/service/dataLayer.service';
+&nbsp;
+/* tslint:disable:no-access-missing-member */
+declare let leanengage: any;
+declare let lpTag;
+&nbsp;
+@Component({
+    selector: 'agl-monthly-billing-choose-service',
+    template: require('./chooseService.component.html'),
+    styles: [ require('./chooseService.component.scss') ]
+})
+export class MonthlyBillingChooseServiceComponent implements OnInit, OnDestroy {
+    public <span class="cstat-no" title="statement not covered" >MauiFuelChipState = MauiFuelChipState;</span>
+    public <span class="cstat-no" title="statement not covered" >MauiFuelChipFuelType = MauiFuelChipFuelType;</span>
+    public <span class="cstat-no" title="statement not covered" >MauiFuelChipFuelContext = MauiFuelChipFuelContext;</span>
+    public <span class="cstat-no" title="statement not covered" >isLoading: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >loadingFailed: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >nonMonthlyBillingContractList: ContractMonthlyBillingModel[] = [];</span>
+    public <span class="cstat-no" title="statement not covered" >monthlyBillingContractList: ContractMonthlyBillingModel[] = [];</span>
+    public <span class="cstat-no" title="statement not covered" >contractListSetupIneligible: ContractMonthlyBillingModel[] = [];</span>
+    public <span class="cstat-no" title="statement not covered" >isInMonthlyBilling: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >changeButton: PrimaryMessageLink = new PrimaryMessageLink('key', 'Change');</span>
+    public <span class="cstat-no" title="statement not covered" >monthlyBillingDatePicker: string = '/settings/monthlybilling/date';</span>
+    /** @description Has a contract which is setup for monthly billing.
+     */
+    public <span class="cstat-no" title="statement not covered" >hasMonthlyBillingContract: boolean = false;</span>
+    /** @description Has a contract which is eligible to bet setup for monthly billing, but has not yet been setup for monthly billing.
+     */
+    public <span class="cstat-no" title="statement not covered" >hasNonMonthlyBillingContract: boolean = false;</span>
+    /** @description Has a contract which is ineligible to be setup for monthly billing.
+     */
+    public <span class="cstat-no" title="statement not covered" >hasSetupIneligibleContract: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >FlashMessageType: typeof FlashMessageType = FlashMessageType; </span>// This is to make enum visible in the html
+    public cancelFlashMessage: string;
+    public <span class="cstat-no" title="statement not covered" >billsResult: BillHistoryApiModel[] = [];</span>
+    public <span class="cstat-no" title="statement not covered" >billsApiBeingCalled: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >tertiaryMessage: string = '';</span>
+    public <span class="cstat-no" title="statement not covered" >apiError: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >contractNumberClicked: string = '';</span>
+    public hasCalledBillsApi: boolean;
+&nbsp;
+    constructor(
+        private <span class="cstat-no" title="statement not covered" >apiService: ApiService,</span>
+        public <span class="cstat-no" title="statement not covered" >router: Router<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >monthlyBillingService: MonthlyBillingService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >dataLayerService: DataLayerService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >,</span></span></span>
+    ) {
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public ngOnInit() {</span>
+<span class="cstat-no" title="statement not covered" >        this.splitContractList(this.monthlyBillingService.selectedMonthlyBillingAccount.contractMonthlyBillingModels);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public ngOnDestroy() {</span>
+         // Clearing the values which are relevant for this screen only when navigating away
+<span class="cstat-no" title="statement not covered" >        this.monthlyBillingService.dateModifiedContractNumber = '';</span>
+<span class="cstat-no" title="statement not covered" >        this.monthlyBillingService.cancelledContractNumber = '';</span>
+    }
+&nbsp;
+    public getMauiFuelChipFuelType(contract: ContractViewModel<span class="fstat-no" title="function not covered" >): MauiFuelChipFuelType  {</span>
+<span class="cstat-no" title="statement not covered" >        if (contract.isElectricity)   {</span>
+<span class="cstat-no" title="statement not covered" >            return MauiFuelChipFuelType.Electricity;</span>
+        } else <span class="cstat-no" title="statement not covered" >if (contract.isGas) {</span>
+<span class="cstat-no" title="statement not covered" >            return MauiFuelChipFuelType.Gas;</span>
+        }
+    }
+&nbsp;
+    public getMauiFuelChipFuelChipState(monthlyBillingContractDetails: ContractMonthlyBillingModel<span class="fstat-no" title="function not covered" >): MauiFuelChipState  {</span>
+<span class="cstat-no" title="statement not covered" >        if (monthlyBillingContractDetails.setup &amp;&amp; monthlyBillingContractDetails.setup.isEligible === true)   {</span>
+<span class="cstat-no" title="statement not covered" >            return MauiFuelChipState.PreSetup;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return MauiFuelChipState.Ineligible;</span>
+        }
+    }
+&nbsp;
+    public getFuelChipMessage(monthlyBillingContractDetails: ContractMonthlyBillingModel<span class="fstat-no" title="function not covered" > ): string {</span>
+        let message: string = <span class="cstat-no" title="statement not covered" >`Your account is billed `;</span>
+<span class="cstat-no" title="statement not covered" >        if (monthlyBillingContractDetails.frequency === BillingFrequencyType.FlexibleMonthly) {</span>
+<span class="cstat-no" title="statement not covered" >            if (!monthlyBillingContractDetails.preferredDayOfMonth) {</span>
+<span class="cstat-no" title="statement not covered" >                return '';</span>
+            }
+<span class="cstat-no" title="statement not covered" >            if (isNaN(Number(monthlyBillingContractDetails.preferredDayOfMonth))) {</span>
+<span class="cstat-no" title="statement not covered" >                return '';</span>
+            }
+            let dayString = <span class="cstat-no" title="statement not covered" >this.monthlyBillingService.getOrdinal(monthlyBillingContractDetails.preferredDayOfMonth);</span>
+<span class="cstat-no" title="statement not covered" >            message = `Your bill is issued on the ${dayString} of every month`;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            message = message + this.getNonMonthlyBillingText(monthlyBillingContractDetails.frequency);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return message;</span>
+    }
+&nbsp;
+    public getNonMonthlyBillingText(billingFrequency: BillingFrequencyType<span class="fstat-no" title="function not covered" > ) {</span>
+<span class="cstat-no" title="statement not covered" >        if (billingFrequency === BillingFrequencyType.Monthly) {</span>
+<span class="cstat-no" title="statement not covered" >            return 'monthly';</span>
+        } else <span class="cstat-no" title="statement not covered" >if (billingFrequency === BillingFrequencyType.BiMonthly) {</span>
+<span class="cstat-no" title="statement not covered" >            return  'every two months';</span>
+        } else <span class="cstat-no" title="statement not covered" >if (billingFrequency === BillingFrequencyType.Quarterly) {</span>
+<span class="cstat-no" title="statement not covered" >            return  'quarterly';</span>
+        }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    public contractClicked(contractDetails: ContractMonthlyBillingModel<span class="fstat-no" title="function not covered" >) {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.showShadow(true);</span>
+<span class="cstat-no" title="statement not covered" >        this.apiError = false;</span>
+<span class="cstat-no" title="statement not covered" >        this.contractNumberClicked = null;</span>
+<span class="cstat-no" title="statement not covered" >        this.monthlyBillingService.selectedMonthlyBillingContract = contractDetails;</span>
+<span class="cstat-no" title="statement not covered" >        Observable.forkJoin(</span>
+            this.monthlyBillingService.getBillDateOptions(contractDetails.contract.contractNumber),
+            this.apiService.getContactDetail()
+        ).finally(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            this.showShadow(false);</span>
+        }).subscribe(([<span class="cstat-no" title="statement not covered" >billDateOptionList,</span> <span class="cstat-no" title="statement not covered" >contactDetails]<span class="fstat-no" title="function not covered" ></span>) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            this.monthlyBillingService.billDateOptionList = billDateOptionList;</span>
+<span class="cstat-no" title="statement not covered" >            this.monthlyBillingService.hasValidMobileNumber(contactDetails);</span>
+<span class="cstat-no" title="statement not covered" >            this.router.navigate([MonthlyBillingRoutes.DatePicker]);</span>
+        },
+        (err<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            console.error('ERROR: monthlyBillingService.getBillDateOptions()', err);</span>
+<span class="cstat-no" title="statement not covered" >            this.apiError = true;</span>
+<span class="cstat-no" title="statement not covered" >            this.contractNumberClicked = contractDetails.contract.contractNumber;</span>
+        });
+&nbsp;
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    public cancelMonthlyBilling(contractDetails: ContractMonthlyBillingModel<span class="fstat-no" title="function not covered" > ) {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.dataLayerService.pushSingleEvents({</span>
+            monthly_billing_cancel: 'true',
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (!!contractDetails &amp;&amp; !!contractDetails.contract &amp;&amp; !!contractDetails.contract.contractNumber) {</span>
+<span class="cstat-no" title="statement not covered" >            this.showShadow(true);</span>
+<span class="cstat-no" title="statement not covered" >            this.monthlyBillingService.cancelledContractNumber = contractDetails.contract.contractNumber;</span>
+<span class="cstat-no" title="statement not covered" >            this.monthlyBillingService.cancelMonthlyBilling(contractDetails.contract.contractNumber)</span>
+            .finally(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.showShadow(false);</span>
+            })
+            .subscribe((cancelResult: CancelMonthlyBillingResponse<span class="fstat-no" title="function not covered" > ) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.apiError = false;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                this.monthlyBillingService.selectedMonthlyBillingAccount.contractMonthlyBillingModels.map((contractItem<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                    if (contractItem.contract.contractNumber === this.monthlyBillingService.cancelledContractNumber) {</span>
+<span class="cstat-no" title="statement not covered" >                        contractItem.frequency = cancelResult.frequency;</span>
+                    }
+                });
+<span class="cstat-no" title="statement not covered" >                this.splitContractList(this.monthlyBillingService.selectedMonthlyBillingAccount.contractMonthlyBillingModels);</span>
+<span class="cstat-no" title="statement not covered" >                this.cancelFlashMessage = `You might receive one more monthly bill before you’re switched to ${this.getNonMonthlyBillingText(cancelResult.frequency)} billing. It can also take up to 24 hours for this to reflect in My Account and the App.`;</span>
+            },
+            (err<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.apiError = true;</span>
+<span class="cstat-no" title="statement not covered" >                this.contractNumberClicked = contractDetails.contract.contractNumber;</span>
+<span class="cstat-no" title="statement not covered" >                this.dataLayerService.pushSingleEvents({</span>
+                    monthly_billing_cancel: 'false',
+                });
+            });
+        }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public CreateFuelChipContractAccountDetails(): FuelChipContractAccountDetails[] {</span></span>
+        let fuelChipContract: FuelChipContract;
+        let fuelChipContractList: FuelChipContract[] = <span class="cstat-no" title="statement not covered" >[];</span>
+        let fuelChipContractAccountDetails: FuelChipContractAccountDetails[] = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >        this.monthlyBillingService.selectedMonthlyBillingAccount.contractMonthlyBillingModels.map((monthlyBillingContractDetails<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            fuelChipContract = new FuelChipContract(monthlyBillingContractDetails.contract.contractNumber, monthlyBillingContractDetails.contract.address, this.getMauiFuelChipFuelType(monthlyBillingContractDetails.contract),  '');</span>
+<span class="cstat-no" title="statement not covered" >            fuelChipContractList.push(fuelChipContract);</span>
+        });
+<span class="cstat-no" title="statement not covered" >        fuelChipContractAccountDetails = [new FuelChipContractAccountDetails( this.monthlyBillingService.selectedMonthlyBillingAccount.accountNumber, fuelChipContractList)];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return fuelChipContractAccountDetails;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    public getIneligibleMessages(contractMBM: ContractMonthlyBillingModel<span class="fstat-no" title="function not covered" >) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (contractMBM &amp;&amp; contractMBM.setup &amp;&amp; contractMBM.setup.reason &amp;&amp; contractMBM.setup.reason.internal &amp;&amp; contractMBM.setup.reason.internal.number &amp;&amp; contractMBM.setup.reason.internal.number === String(MonthlyBillingSapCode.prepaidNotBeforeStartDate)) {</span>
+<span class="cstat-no" title="statement not covered" >            if (contractMBM &amp;&amp; contractMBM.contract &amp;&amp; contractMBM.contract.contractNumber) {</span>
+<span class="cstat-no" title="statement not covered" >                if (this.hasCalledBillsApi) { // Cached result to prevent calling Bills API more than once.</span>
+<span class="cstat-no" title="statement not covered" >                    return this.createPrepaidSwapFuelchipMessages(contractMBM);</span>
+                } else { // Bills API has not been called yet.
+<span class="cstat-no" title="statement not covered" >                    if (!this.billsApiBeingCalled) {</span>
+<span class="cstat-no" title="statement not covered" >                        this.billsApiBeingCalled = true;</span>
+<span class="cstat-no" title="statement not covered" >                        this.apiService.getBills()</span>
+                        .finally(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                            this.billsApiBeingCalled = false;</span>
+<span class="cstat-no" title="statement not covered" >                            this.hasCalledBillsApi = true;</span>
+                        })
+                        .subscribe((bills<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                            this.billsResult = bills;</span>
+<span class="cstat-no" title="statement not covered" >                            return this.createPrepaidSwapFuelchipMessages(contractMBM);</span>
+                        });
+                    }
+                }
+            }
+        } else {
+            let messageObj = <span class="cstat-no" title="statement not covered" >{</span>
+                primary: this.getFuelChipMessage(contractMBM),
+                tertiary: contractMBM.setup.reason.friendlyMessage
+            };
+<span class="cstat-no" title="statement not covered" >            return messageObj;</span>
+        }
+    }
+&nbsp;
+    public createPrepaidSwapFuelchipMessages(contractMBM: ContractMonthlyBillingModel<span class="fstat-no" title="function not covered" >): any {</span>
+        let messageObj = <span class="cstat-no" title="statement not covered" >{};</span>
+        let latestBill: BillApiModel;
+        let tertiary: string;
+        let bills = <span class="cstat-no" title="statement not covered" >this.billsResult.find((billResult<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >billResult.contract === contractMBM.contract.contractNumber)</span></span>;</span>
+<span class="cstat-no" title="statement not covered" >        if (bills &amp;&amp; bills.bills &amp;&amp; bills.bills[0]) {</span>
+<span class="cstat-no" title="statement not covered" >            latestBill = bills.bills[0];</span>
+            let billIssued: Date = <span class="cstat-no" title="statement not covered" >latestBill.billIssued;</span>
+            let date = <span class="cstat-no" title="statement not covered" >moment(billIssued);</span>
+<span class="cstat-no" title="statement not covered" >            tertiary = `You’ve recently changed this energy plan. You’ll only be able to change your monthly billing date for this plan once you’ve received your final bill for your previous plan on ${date.format('D MMM YYYY')}.`;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            tertiary = `You’ve recently changed this energy plan. You’ll only be able to change your monthly billing date for this plan once you’ve received your final bill for your previous plan.`;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        messageObj = {</span>
+            primary: `Your account is billed monthly`,
+            tertiary: tertiary
+        };
+<span class="cstat-no" title="statement not covered" >        return messageObj;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public onDismissApiError(): void {</span>
+<span class="cstat-no" title="statement not covered" >        this.apiError = false;</span>
+    }
+&nbsp;
+    public showShadow(value<span class="fstat-no" title="function not covered" >): void {</span>
+<span class="cstat-no" title="statement not covered" >        this.isLoading = value;</span>
+<span class="cstat-no" title="statement not covered" >        if (this.isLoading === true) {</span>
+<span class="cstat-no" title="statement not covered" >            document.body.style.overflow = 'hidden';</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            document.body.style.overflow = 'scroll';</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public get ineligibleSectionHeading() {</span>
+<span class="cstat-no" title="statement not covered" >        return `Monthly billing is not available for ${( this.contractListSetupIneligible.length &gt; 1 ? 'these accounts' : 'this account' )}`;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public get notSetupSectionHeader() {</span>
+<span class="cstat-no" title="statement not covered" >        return `Would you like to switch your below account${(this.nonMonthlyBillingContractList.length &gt; 1 ? 's' : '')} to monthly billing?`;</span>
+    }
+&nbsp;
+    private splitContractList(contractMonthlyBillingModels: ContractMonthlyBillingModel[]<span class="fstat-no" title="function not covered" >): void {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.monthlyBillingContractList = this.sortContractList(contractMonthlyBillingModels.filter((contractMBM<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            return contractMBM.frequency === BillingFrequencyType.FlexibleMonthly &amp;&amp; contractMBM.setup.isEligible;</span>
+        }));
+<span class="cstat-no" title="statement not covered" >        this.nonMonthlyBillingContractList = this.sortContractList(contractMonthlyBillingModels.filter((contractMBM<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            return contractMBM.frequency !== BillingFrequencyType.FlexibleMonthly &amp;&amp; contractMBM.setup.isEligible;</span>
+        }));
+<span class="cstat-no" title="statement not covered" >        this.contractListSetupIneligible = this.sortContractList(contractMonthlyBillingModels.filter((contractMBM<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            return !contractMBM.setup.isEligible;</span>
+        }));
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.hasMonthlyBillingContract = this.monthlyBillingContractList &amp;&amp; this.monthlyBillingContractList.length &gt; 0;</span>
+<span class="cstat-no" title="statement not covered" >        this.hasNonMonthlyBillingContract = this.nonMonthlyBillingContractList &amp;&amp; this.nonMonthlyBillingContractList.length &gt; 0;</span>
+<span class="cstat-no" title="statement not covered" >        this.hasSetupIneligibleContract = this.contractListSetupIneligible &amp;&amp; this.contractListSetupIneligible.length &gt; 0;</span>
+    }
+&nbsp;
+    private sortContractList(contractMonthlyBillingModels: ContractMonthlyBillingModel[]<span class="fstat-no" title="function not covered" >): ContractMonthlyBillingModel[]  {</span>
+        // Sorting the contract list based on the fuel type and for the contracts with same fuel type it is sorted by contract number
+<span class="cstat-no" title="statement not covered" >        return _(contractMonthlyBillingModels).chain().sortBy((contractMonthlyBillingModel<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            return contractMonthlyBillingModel.contract.contractNumber;</span>
+            }).sortBy((contractMonthlyBillingModel<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                return contractMonthlyBillingModel.contract.fuelType;</span>
+            }).value();
+    }
+&nbsp;
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

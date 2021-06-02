@@ -1,0 +1,25 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "number": "57439192",
+            "firstName": "HUNT",
+            "lastName": "BN",
+            "contracts": [
+                {
+                    "address": "8 Sturt Street|ROBE SA 5276",
+                    "accountNumber": "57439192",
+                    "fuelType": "Electricity",
+                    "nameId": "AGL_000D3AD07CE31ED789B0D3EFCC0628E6",
+                    "number": "9035268318",
+                    "planName": "Freedom 0",
+                    "inFlight": false,
+                    "contractStatus": "",
+                    "isRestricted": false,
+                    "hasElectricVehicle": false
+                }
+            ]
+        }
+    ]
+}

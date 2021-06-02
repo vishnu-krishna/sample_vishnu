@@ -1,0 +1,19 @@
+<div *ngIf="contract.instalmentPlan" class="bill-panel-instalment-plan-bill-period">
+    <div class="bill-panel-instalment-plan-bill-period__title">Bill period</div>
+    <div *ngIf="contract.paymentTotal <= instalmentPlan.totalInstalmentPlanOwingBalance" class="bill-panel-instalment-plan-bill-period__no-open-bill">
+        <div class="bill-panel-instalment-plan-bill-period__no-open-bill--period">
+            <div class="bill-panel-instalment-plan-bill-period__no-open-bill--period-range">{{ contract.currentBillStartDate | aglFormatDateDayAbbreviatedMonth }} to {{ contract.currentBillEndDate | aglFormatDateDayMonthYear }}</div>
+            <div *ngIf="contract.currentBillDaysUntilDue > 0" class="bill-panel-instalment-plan-bill-period__no-open-bill--period--days-to-go">{{ contract.currentBillDaysUntilDue }} days to go</div>
+        </div>
+        <div *ngIf="contract.isSmartMeter" class="bill-panel-instalment-plan-bill-period__no-open-bill--bill-projection">Bill projection {{ contract.projectedBill | aglCurrency }}</div>
+    </div>
+    <div *ngIf="contract.paymentTotal > instalmentPlan.totalInstalmentPlanOwingBalance" class="bill-panel-instalment-plan-bill-period__open-bill">
+        <div class="bill-panel-instalment-plan-bill-period__open-bill--period">
+            <div class="bill-panel-instalment-plan-bill-period__open-bill--period-range">{{ newestBill.startDate | aglFormatDateDayAbbreviatedMonth }} to {{ newestBill.endDate | aglFormatDateDayMonthYear }}</div>
+            <div class="bill-panel-instalment-plan-bill-period__open-bill--period--days-to-go">Due in {{ newestBillDueInDays }} days</div>
+        </div>
+        <div class="bill-panel-instalment-plan-bill-period__open-bill--new-bill-issued">
+            You've had a new bill issued. You just need to pay each instalment as planned, and be aware that the new bill of <span class="bill-panel-instalment-plan-bill-period__bold">{{ paidAmount | aglCurrency }}</span> will be due by <span class="bill-panel-instalment-plan-bill-period__bold">{{ newestBill.dueDate | aglFormatDate }}</span>, after your final instalment.
+        </div>
+    </div>
+</div>

@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\dashboard\solarCheck\solarCheckStatus\solarCheckStatusViewModelFactory.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/dashboard/solarCheck/solarCheckStatus/</a> solarCheckStatusViewModelFactory.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">19.1% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>17/89</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">8.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">18.18% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>16/88</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as moment from 'moment';
+import { SolarCheckStatusLinks } from '../../../../shared/globals/solarCheckConstants';
+import { SolarCheckStatusType } from '../../../../shared/model/solar/solarCheckStatus.model';
+import { SolarCheckStatusResponse } from '../../../../shared/model/solar/solarCheckStatusResponse.model';
+import { SolarCheckStatusViewModel } from './solarCheckStatusView.model';
+&nbsp;
+/**
+ * Solar Check Status Details class: use this class to set the state/ properties of the SolarCheckStatusViewModel based on the SolarCheckStatusResponse.
+ *
+ * @export
+ * @class SolarCheckStatus
+ */
+export class SolarCheckStatusViewModelFactory {
+&nbsp;
+    public model: SolarCheckStatusViewModel;
+&nbsp;
+<span class="fstat-no" title="function not covered" >    constructor() {</span>
+<span class="cstat-no" title="statement not covered" >        this.model = new SolarCheckStatusViewModel();</span>
+<span class="cstat-no" title="statement not covered" >        this.model.isGoodStatus = false;</span>
+<span class="cstat-no" title="statement not covered" >        this.model.statusImage.src = 'svg/scs_status_notAvailable.svg';</span>
+<span class="cstat-no" title="statement not covered" >        this.model.statusImage.altText = 'solar check status is not available';</span>
+    }
+&nbsp;
+    /**
+     * Create Model By Check Type.
+     * This method will create the View Model that will be used to hold the UI presentation data.
+     * The content of the model will be determined based on the status value of the Solar Check Status response model.
+     * @param  {SolarCheckStatusResponse} solarCheckResponse Solar Check Response model
+     */
+    public createSolarCheckStatusViewModel(solarCheckResponse: SolarCheckStatusResponse<span class="fstat-no" title="function not covered" >) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.model = new SolarCheckStatusViewModel();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        switch (Number(SolarCheckStatusType[solarCheckResponse.solarStatus])) {</span>
+            case SolarCheckStatusType.Good: {
+<span class="cstat-no" title="statement not covered" >                return this.setGoodStatusProperties(solarCheckResponse);</span>
+            }
+            case SolarCheckStatusType.Fault: {
+<span class="cstat-no" title="statement not covered" >                return this.setCheckSystemStatusProperties(solarCheckResponse);</span>
+            }
+            case SolarCheckStatusType.NotAvailable: {
+<span class="cstat-no" title="statement not covered" >                return this.setRegisteredStatusProperties();</span>
+            }
+            case SolarCheckStatusType.UpdatePending: {
+<span class="cstat-no" title="statement not covered" >                if (solarCheckResponse.statusExpectedDate) {</span>
+<span class="cstat-no" title="statement not covered" >                    return this.setSystemUpgradeProperties(solarCheckResponse);</span>
+                }
+<span class="cstat-no" title="statement not covered" >                return this.setSystemCorrectionProperties();</span>
+            }
+            default: {
+<span class="cstat-no" title="statement not covered" >                return this.setIndeterminateStatusProperties(this.model);</span>
+            }
+        }
+    }
+&nbsp;
+    /**
+     * Create Not Available Status Response.
+     * This method will create the View Model that will be used to hold the UI presentation data.
+     * The content of the model will be set with the details for the status of 'Not Available;.
+     */
+<span class="fstat-no" title="function not covered" >    public createNotAvailableStatusViewModel() {</span>
+        let notAvailableStatusResponse = <span class="cstat-no" title="statement not covered" >new SolarCheckStatusViewModel();</span>
+<span class="cstat-no" title="statement not covered" >        return this.setIndeterminateStatusProperties(notAvailableStatusResponse);</span>
+    }
+&nbsp;
+    // /**
+    //  * Create Registered Status Response.
+    //  * This method will create the View Model that will be used to hold the UI presentation data.
+    //  * The content of the model will be set with the details for the status of 'Not Available;.
+    //  */
+<span class="fstat-no" title="function not covered" >    public createRegisteredStatusViewModel() {</span>
+<span class="cstat-no" title="statement not covered" >        this.setCommonPendingStatusProperties();</span>
+<span class="cstat-no" title="statement not covered" >        return this.model;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private setRegisteredStatusProperties() {</span>
+<span class="cstat-no" title="statement not covered" >        this.setCommonPendingStatusProperties();</span>
+<span class="cstat-no" title="statement not covered" >        return this.model;</span>
+    }
+&nbsp;
+    private setGoodStatusProperties(solarHealthResponse: SolarCheckStatusResponse<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.model.heading = 'Your system is producing solar energy.';</span>
+<span class="cstat-no" title="statement not covered" >        this.model.details = null;</span>
+<span class="cstat-no" title="statement not covered" >        this.model.latestDataDate = moment(solarHealthResponse.processedDateTime).format('D MMM YYYY');</span>
+<span class="cstat-no" title="statement not covered" >        this.model.isShowLearnMoreLink = true;</span>
+<span class="cstat-no" title="statement not covered" >        this.model.isCheckSystem = false;</span>
+<span class="cstat-no" title="statement not covered" >        this.model.link = SolarCheckStatusLinks.LearnMoreGreenLink;</span>
+<span class="cstat-no" title="statement not covered" >        this.model.linkName = 'COULD IT BE BETTER?';</span>
+<span class="cstat-no" title="statement not covered" >        this.model.isGoodStatus = true;</span>
+<span class="cstat-no" title="statement not covered" >        this.model.statusImage.src = 'svg/scs_status_good.svg';</span>
+<span class="cstat-no" title="statement not covered" >        this.model.statusImage.altText = 'solar check status is good';</span>
+<span class="cstat-no" title="statement not covered" >        return this.model;</span>
+    }
+&nbsp;
+    private setCheckSystemStatusProperties(solarHealthResponse: SolarCheckStatusResponse<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.model.heading = 'Your system may have an issue.';</span>
+<span class="cstat-no" title="statement not covered" >        this.model.iconBackgroundColour = 'orange';</span>
+<span class="cstat-no" title="statement not covered" >        this.model.link = SolarCheckStatusLinks.LearnMoreAmberLink;</span>
+<span class="cstat-no" title="statement not covered" >        this.model.linkName = 'WHAT DOES THIS MEAN?';</span>
+<span class="cstat-no" title="statement not covered" >        this.model.details = null;</span>
+<span class="cstat-no" title="statement not covered" >        this.model.latestDataDate = moment(solarHealthResponse.processedDateTime).format('D MMM YYYY');</span>
+<span class="cstat-no" title="statement not covered" >        this.model.solarImage.src = 'svg/scs_icon_issue.svg';</span>
+<span class="cstat-no" title="statement not covered" >        this.model.isShowLearnMoreLink = false;</span>
+<span class="cstat-no" title="statement not covered" >        this.model.isGoodStatus = false;</span>
+<span class="cstat-no" title="statement not covered" >        this.model.statusImage.src = 'svg/scs_status_checkSystem.svg';</span>
+<span class="cstat-no" title="statement not covered" >        this.model.statusImage.altText = 'solar check status is check system';</span>
+<span class="cstat-no" title="statement not covered" >        this.model.isCheckSystem = true;</span>
+<span class="cstat-no" title="statement not covered" >        return this.model;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private setSystemCorrectionProperties() {</span>
+<span class="cstat-no" title="statement not covered" >        this.setCommonPendingStatusProperties();</span>
+<span class="cstat-no" title="statement not covered" >        this.model.heading = 'Solar Command Check status is being calculated.';</span>
+<span class="cstat-no" title="statement not covered" >        this.model.details = 'Check back tomorrow.';</span>
+<span class="cstat-no" title="statement not covered" >        return this.model;</span>
+    }
+&nbsp;
+    private setSystemUpgradeProperties(solarHealthResponse: SolarCheckStatusResponse<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.setCommonPendingStatusProperties();</span>
+<span class="cstat-no" title="statement not covered" >        this.model.statusExpectedDate = moment(solarHealthResponse.statusExpectedDate).format('D MMM');</span>
+<span class="cstat-no" title="statement not covered" >        this.model.heading = 'Your system status will be ready soon. Estimated date ' + this.model.statusExpectedDate +  '.';</span>
+<span class="cstat-no" title="statement not covered" >        this.model.details = '30 days of data are required to calculate your status - we\'ll email you when it is ready.';</span>
+<span class="cstat-no" title="statement not covered" >        return this.model;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private setCommonPendingStatusProperties() {</span>
+<span class="cstat-no" title="statement not covered" >        this.model.heading = 'Your Solar Command Check will be available in about an hour; we\'ll email you when it\'s ready.';</span>
+<span class="cstat-no" title="statement not covered" >        this.model.details = '';</span>
+<span class="cstat-no" title="statement not covered" >        this.model.latestDataDate = null;</span>
+<span class="cstat-no" title="statement not covered" >        this.model.isShowLearnMoreLink = true;</span>
+<span class="cstat-no" title="statement not covered" >        this.model.link = SolarCheckStatusLinks.DefaultLearnMoreLink;</span>
+<span class="cstat-no" title="statement not covered" >        this.model.linkName = 'LEARN MORE';</span>
+<span class="cstat-no" title="statement not covered" >        this.model.isCheckSystem = false;</span>
+<span class="cstat-no" title="statement not covered" >        this.model.isGoodStatus = false;</span>
+<span class="cstat-no" title="statement not covered" >        this.model.statusImage.src = 'svg/scs_status_registered.svg';</span>
+<span class="cstat-no" title="statement not covered" >        this.model.statusImage.altText = 'solar check status is registered';</span>
+    }
+&nbsp;
+    private setIndeterminateStatusProperties(viewModel: SolarCheckStatusViewModel<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        viewModel.heading = 'Sorry, your solar status isn\'t currently available.';</span>
+<span class="cstat-no" title="statement not covered" >        viewModel.details = 'Check back soon.';</span>
+<span class="cstat-no" title="statement not covered" >        viewModel.latestDataDate = null;</span>
+<span class="cstat-no" title="statement not covered" >        viewModel.isShowLearnMoreLink = true;</span>
+<span class="cstat-no" title="statement not covered" >        viewModel.link = SolarCheckStatusLinks.LearnMoreUnavailableLink;</span>
+<span class="cstat-no" title="statement not covered" >        viewModel.isCheckSystem = false;</span>
+<span class="cstat-no" title="statement not covered" >        viewModel.isGoodStatus = false;</span>
+<span class="cstat-no" title="statement not covered" >        viewModel.statusImage.src = 'svg/scs_status_notAvailable.svg';</span>
+<span class="cstat-no" title="statement not covered" >        viewModel.statusImage.altText = 'solar check status is not available';</span>
+<span class="cstat-no" title="statement not covered" >        return viewModel;</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

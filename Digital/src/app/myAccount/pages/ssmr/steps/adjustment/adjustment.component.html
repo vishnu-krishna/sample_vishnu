@@ -1,0 +1,401 @@
+<div class="icon">
+    <div>
+        <img class="icon_size" src="svg/tick_icon.svg">
+    </div>          
+</div>
+<div class="heading">
+     {{adjustmentHeading}}
+</div>
+<div class="adjustment-screens" *ngIf="ssmrService.submissionType === 'MeterRead'">
+    <div *ngIf="selectedContract?.isBillSmoothing">
+        <div class="content bill-smoothing">
+            <div class="description">
+                Your meter read is what we expected.<br> This ensures that your current charges are accurate. 
+            </div>
+        </div>
+        <div class="separator"></div>
+        <div class="icon">
+            <div>
+                <img class="icon_size" src="svg/bill_smoothing_icon.svg">
+            </div>          
+        </div>
+        <div class="content bill-smoothing">
+            <div class="smooth-bills">
+                Smooth Bills!        
+            </div>
+            <div class="description">
+                You will be notified by email if there are any changes to your Bill Smoothing arrangement.          
+            </div>
+        </div>
+    </div>
+    <div *ngIf="showScreenCode('SSMR_ADJ1') || showScreenCode('SSMR_ADJ3')">
+        <div class="content">
+            <div class="description">
+                {{adjustmentMessage}}
+            </div>
+        </div>
+        <div class="bill">
+            <div class="heading"> {{billingHeadingOriginal}} </div>
+            <div class="amount original">             
+                $<span class="amount__number">{{amountOriginal?.number}}</span>.{{amountOriginal?.decimal}} 
+                <svg height="100" width="280">
+                    <line x1="40" x2="240" y1="60" y2="30" style="stroke:rgb(252,51,76);stroke-width:4"/>
+                </svg>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="heading"> {{billingHeading}} </div>
+            <div class="amount" [class.overdue]="isOverDue" [class.credit]="isInCredit"> 
+                <span *ngIf="isInCredit" >+</span>
+                $<span class="amount__number">{{amountNumber}}</span>.{{amountDecimal}} 
+            </div>
+            <div class="duration"> Bill period {{currentBillDateString}} </div>
+            <div class="separator"></div>
+
+            <div class="due" *ngIf="isDirectDebit && !postAdjustmentIsCredit">
+                Debited - {{invoiceDueDate}}
+                <div class="number-of-days" *ngIf="!isOverDue">
+                    Debited in {{daysUntilDue | aglDayPlural}}
+                </div>
+            </div>
+            <div class="due" *ngIf="!postAdjustmentIsCredit && !isDirectDebit">
+                Due - {{invoiceDueDate}}
+                <div class="overdue number-of-days" *ngIf="isOverDue">
+                    Overdue by {{daysUntilDue | aglDayPlural}}
+                </div>
+                <div class="number-of-days" *ngIf="!isOverDue">
+                    Due in {{daysUntilDue | aglDayPlural}}
+                </div>
+            </div>
+            <div class="post-adjustment-credit" *ngIf="postAdjustmentIsCredit">
+                Account balance is now
+                <div class="account-balance">
+                    + ${{postAdjustmentCredit}}
+                </div>
+            </div>
+            
+            <div  class="adjustment-button pay">
+                <a mat-raised-button color="accent" class="tempdls-button" (click)="onClickPayNow()">{{payButtonMessage}}</a>
+            </div>  
+        </div>
+    </div>
+
+    <div *ngIf="showScreenCode('SSMR_ADJ2')"> 
+        <div class="content">
+            <div class="description">
+                {{adjustmentMessage}}           
+            </div>
+        </div>
+        <div class="bill credit_bill_details" >
+            <div class="heading"> {{creditHeading}} </div>
+            <div class="amount" [class.credit]="postAdjustmentIsCredit"> 
+                <span *ngIf="postAdjustmentIsCredit" >+</span>
+                $<span class="amount__number">{{amountCredit?.number}}</span>.{{amountCredit?.decimal}} 
+            </div> 
+        </div>
+        <div class="bill">
+            <div class="heading"> {{billingHeading}} </div>
+            <div class="duration">{{currentBillDateString}} 
+                <div class="days_pill" >{{numberOfDaysTillNextBill | aglDayPlural}} to go</div>
+            </div>
+
+            <div class="cost-to-date">Cost to date </div>
+            <div class="amount amount-proj1">
+                $<span class="amount__number">{{amountNumber}}</span>.{{amountDecimal}} 
+            </div>
+            <div class="separator"></div>
+            <div class="projected_bill">
+                <div class="projected_bill__heading" >*PROJECTED BILL</div>
+                <div class="projected_bill__amount">${{projectedBillAmount}}</div>
+            </div>
+            <div class="separator"></div>
+            <div class="average-usage" >AVERAGE USAGE</div>
+            <div class="row average_values">
+                <div class="col-xs-3"></div>
+                <div class="col-xs-3" > 
+                    <div class="average-usage__amount"> ${{dailyUsage}}</div>
+                    <div class="average-usage__text">Per day</div>
+                </div>
+                <div class="divider"></div>
+                <div class="col-xs-3">
+                    <div class="average-usage__amount"> ${{weeklyUsage}}</div>
+                    <div class="average-usage__text">Per week</div>
+                </div>
+                <div class="col-xs-3"></div>
+            </div>
+        </div>
+        <div class="disclaimer">  
+            *Calculation based on historical usage for the remainder of the bill period.
+        </div>
+    </div>
+
+    <div *ngIf="showScreenCode('SSMR_NSBD1')">
+        <div class="content">
+            <div class="description">
+                {{adjustmentMessage}}
+                <div class="description__details">
+                    Your bill will be issued in {{numberOfDaysTillNextBill| aglDayPlural}}.
+                </div>
+            </div>
+        </div>
+        <div class="bill">
+            <div class="heading"> {{billingHeading}} </div>
+            <div class="amount" [class.overdue]="isOverDue">
+                $<span class="amount__number">{{amountNumber}}</span>.{{amountDecimal}} 
+            </div>
+            <div class="duration"> Bill period {{currentBillDateString}} </div>
+            <div  class="adjustment-button pay">
+                <a mat-raised-button color="accent" class="tempdls-button" (click)="onClickPayNow()">{{payButtonMessage}}</a>
+            </div>
+        </div>
+        <div class="disclaimer"> 
+            *Calculation based on historical usage for the remainder of the bill period.
+        </div>
+        
+    </div>
+
+    <div *ngIf="showScreenCode('SSMR_NSBD2')">
+        <div class="content">
+            <div class="description">
+                {{adjustmentMessage}}
+                <div class="description__details">
+                    Your bill will be issued in {{numberOfDaysTillNextBill| aglDayPlural}}.
+                </div>
+            </div>
+        </div>
+        <div class="bill">
+            <div class="heading"> {{billingHeading}} </div>
+            <div class="amount" [class.overdue]="isOverDue" [class.credit]="isInCredit"> 
+                <span *ngIf="isInCredit" >+</span>
+                $<span class="amount__number">{{amountNumber}}</span>.{{amountDecimal}} 
+            </div>
+            <div class="duration"> Bill period {{currentBillDateString}} </div>
+            
+            <div class="overduecharges">
+                <div class="separator"></div>
+                <div class="overduecharges__heading">{{overDueHeading}}</div>
+                
+                <div class="overduecharges__amount" [class.credit]="isInCredit"> 
+                    <span *ngIf="isInCredit" >+</span> ${{accountBalance}}
+                </div>
+            </div>
+            <div  class="adjustment-button pay">
+                <a mat-raised-button color="accent" class="tempdls-button" (click)="onClickPayNow()">{{payButtonMessage}}</a>
+            </div>  
+        </div>
+        <div class="disclaimer"> 
+            *Calculation based on historical usage for the remainder of the bill period.
+        </div>
+    </div>
+
+    <div *ngIf="showScreenCode('SSMR_PROJ1')">
+        <div class="content">
+            <div class="description">
+                {{adjustmentMessage}}           
+            </div>
+        </div>    
+        <div class="bill">
+            <div class="heading"> {{billingHeading}} </div>
+            <div class="duration">{{currentBillDateString}} 
+                <div class="days_pill" >{{numberOfDaysTillNextBill| aglDayPlural}} to go</div>
+            </div>
+
+            <div class="cost-to-date">Cost to date </div>
+            <div class="amount amount-proj1">
+                $<span class="amount__number">{{amountNumber}}</span>.{{amountDecimal}} 
+            </div>
+            <div class="separator"></div>
+            <div class="projected_bill">
+                <div class="projected_bill__heading" >*PROJECTED BILL</div>
+                <div class="projected_bill__amount">${{projectedBillAmount}}</div>
+            </div>
+            <div class="separator"></div>
+            <div class="average-usage" >AVERAGE USAGE</div>
+            <div class="row average_values">
+                <div class="col-xs-3"></div>
+                <div class="col-xs-3" > 
+                    <div class="average-usage__amount"> ${{dailyUsage}}</div>
+                    <div class="average-usage__text">Per day</div>
+                </div>
+                <div class="divider"></div>
+                <div class="col-xs-3">
+                    <div class="average-usage__amount"> ${{weeklyUsage}}</div>
+                    <div class="average-usage__text">Per week</div>
+                </div>
+                <div class="col-xs-3"></div>
+            </div>
+        </div>
+        <div class="disclaimer"> 
+            *Calculation based on historical usage for the remainder of the bill period.
+        </div>
+    </div>
+
+    <div *ngIf="showScreenCode('SSMR_PROJ2')">
+        <div class="content">
+            <div class="description" >
+                <div [innerHTML]="adjustmentMessage"></div>  
+            </div>
+        </div>
+        <div class="bill">
+            <div class="heading"> {{billingHeading}} </div>
+            <div class="amount" [class.overdue]="isOverDue" [class.credit]="isInCredit"> 
+                <span *ngIf="isInCredit" >+</span>
+                $<span class="amount__number">{{amountNumber}}</span>.{{amountDecimal}} 
+            </div>
+            <div class="duration"> Bill period {{currentBillDateString}} </div>
+            <div class="separator"></div>
+
+            <div class="due" *ngIf="isDirectDebit">
+                Debited - {{invoiceDueDate}}
+                <div class="overdue number-of-days" *ngIf="isOverDue">
+                    Overdue by {{daysUntilDue | aglDayPlural}}
+                </div>
+                <div class="number-of-days" *ngIf="!isOverDue">
+                    Debited in {{daysUntilDue | aglDayPlural}}
+                </div>
+            </div>
+            <div class="due" *ngIf="!postAdjustmentIsCredit && !isDirectDebit">
+                Due - {{invoiceDueDate}}
+                <div class="overdue number-of-days" *ngIf="isOverDue">
+                    Overdue by {{daysUntilDue | aglDayPlural}}
+                </div>
+                <div class="number-of-days" *ngIf="!isOverDue">
+                    Due in {{daysUntilDue | aglDayPlural}}
+                </div>
+            </div>
+            <div class="post-adjustment-credit" *ngIf="postAdjustmentIsCredit && !isDirectDebit">
+                Account balance is now
+                <div class="account-balance">
+                    + ${{postAdjustmentCredit}}
+                </div>
+            </div>
+            
+            <div  class="adjustment-button pay">
+                <a mat-raised-button color="accent" class="tempdls-button" (click)="onClickPayNow()">{{payButtonMessage}}</a>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="showScreenCode('SSMR_PROJ3')">
+        
+        <div *ngIf="isAccountBalancePositive">
+            <div class="content">
+            <div class="description" >
+                <div [innerHTML]="adjustmentMessage"></div>
+            </div>
+            </div>
+            <div class="bill">
+                <div class="heading"> {{billingHeading}} </div>
+                <div class="amount" [class.overdue]="isOverDue" [class.credit]="isInCredit"> 
+                    <span *ngIf="isInCredit" >+</span>
+                    $<span class="amount__number">{{amountNumber}}</span>.{{amountDecimal}} 
+                </div>
+                <div class="duration"> Bill period {{currentBillDateString}} </div>
+                <div class="separator"></div>
+
+                <div class="due" *ngIf="isDirectDebit">
+                    Debited - {{invoiceDueDate}}
+                    <div class="overdue number-of-days" *ngIf="isOverDue">
+                        Overdue by {{daysUntilDue | aglDayPlural}}
+                    </div>
+                    <div class="number-of-days" *ngIf="!isOverDue">
+                        Debited in {{daysUntilDue | aglDayPlural}}
+                    </div>
+                </div>
+                <div class="due" *ngIf="!postAdjustmentIsCredit && !isDirectDebit">
+                    Due - {{invoiceDueDate}}
+                    <div class="overdue number-of-days" *ngIf="isOverDue">
+                        Overdue by {{daysUntilDue | aglDayPlural}}
+                    </div>
+                    <div class="number-of-days" *ngIf="!isOverDue">
+                        Due in {{daysUntilDue | aglDayPlural}}
+                    </div>
+                </div>
+                <div class="post-adjustment-credit" *ngIf="postAdjustmentIsCredit && !isDirectDebit">
+                    Account balance is now
+                    <div class="account-balance">
+                        + ${{postAdjustmentCredit}}
+                    </div>
+                </div>
+                
+                <div  class="adjustment-button pay">
+                    <a mat-raised-button color="accent" class="tempdls-button" (click)="onClickPayNow()">{{payButtonMessage}}</a>
+                </div>
+            </div>
+            <div class="next-bill">
+                <div class="side-banner">
+                </div>
+                <div class="next-bill__content">
+                    <div class="title">
+                        Your next bill
+                    </div>
+                    <div class="description">
+                        Your projected charges for the period of the {{projectedBillDateString}} will be ${{projectedBillAmount}}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <div *ngIf="!isAccountBalancePositive">
+            <div class="content">
+                <div class="description">
+                    {{adjustmentMessage}}           
+                </div>
+            </div>    
+            <div class="bill">
+                <div class="heading"> {{billingHeading}} </div>
+                <div class="duration">{{currentBillDateString}} 
+                    <div class="days_pill" >{{numberOfDaysTillNextBill | aglDayPlural}} to go</div>
+                </div>
+
+                <div class="cost-to-date">Cost to date </div>
+                <div class="amount amount-proj1">
+                    $<span class="amount__number">{{amountNumber}}</span>.{{amountDecimal}} 
+                </div>
+                <div class="separator"></div>
+                <div class="projected_bill">
+                    <div class="projected_bill__heading" >*PROJECTED BILL</div>
+                    <div class="projected_bill__amount">${{projectedBillAmount}}</div>
+                </div>
+                <div class="separator"></div>
+                <div class="average-usage" >AVERAGE USAGE</div>
+                <div class="row average_values">
+                    <div class="col-xs-3"></div>
+                    <div class="col-xs-3" > 
+                        <div class="average-usage__amount"> ${{dailyUsage}}</div>
+                        <div class="average-usage__text">Per day</div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="col-xs-3">
+                        <div class="average-usage__amount"> ${{weeklyUsage}}</div>
+                        <div class="average-usage__text">Per week</div>
+                    </div>
+                    <div class="col-xs-3"></div>
+                </div>
+            </div>
+            <div class="disclaimer"> 
+                *Calculation based on historical usage for the remainder of the bill period.
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer" *ngIf="!selectedContract?.isBillSmoothing">
+        Adjusted charges may take up to 24hrs to appear on overview and billing screens.
+        <br>
+        Please allow up to 2 business days for recent payments to update your balance.
+        <br>
+        <span *ngIf="isEntrySkipped"> By skipping a read we have used historical data to estimate your usage.</span>
+    </div>
+</div>
+<div *ngIf="ssmrService.submissionType === 'Photo'">
+    <div class="content">
+        <div class="description">
+            {{adjustmentMessage}}
+        </div>
+    </div>
+</div>
+<div class="adjustment-button close-button">
+    <a mat-raised-button class="tempdls-button" (click)="onClickCloseButton()">CLOSE</a>
+</div>

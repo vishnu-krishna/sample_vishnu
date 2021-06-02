@@ -1,0 +1,46 @@
+[{
+    "id": "B0001",
+    "creditCard": null,
+    "bank": {
+        "bsb": "014-316",
+        "accountNumber": "0872",
+        "accountHolderName": "test"
+    },
+    "payPal": null,
+    "directDebitContractAccounts": [],
+    "oneTouchPayContractAccounts": []
+}, {
+    "id": "B0002",
+    "creditCard": null,
+    "bank": {
+        "bsb": "733-066",
+        "accountNumber": "2650",
+        "accountHolderName": "testing"
+    },
+    "payPal": null,
+    "directDebitContractAccounts": [
+        
+    ],
+    "oneTouchPayContractAccounts": []
+}, {
+    "id": "C000001",
+    "creditCard": {
+        "cardType": "Visa",
+        "creditCardReference": "4012889909811881",
+        "expiryDate": "2018-02",
+        "cardHolderName": "test"
+    },
+    "bank": null,
+    "payPal": null,
+    "directDebitContractAccounts": [],
+    "oneTouchPayContractAccounts": []
+}, {
+    "id": "P000002",
+    "creditCard":null,
+    "bank": null,
+    "payPal": {
+        "email":"test@gmail.com"
+    },
+    "directDebitContractAccounts": [123456789],
+    "oneTouchPayContractAccounts": []
+}]

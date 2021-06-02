@@ -1,0 +1,24 @@
+[{
+	"contractNumber": 9401005103,
+	"isEligible": false,
+	"ineligibleReason": {
+		"message": "Non-elec site. not eligible for energy insight registration",
+		"internal": {
+			"id": "ZIDM_ENERGY_INSIGHT",
+			"number": "024",
+			"description": "Non-elec site. not eligible for energy insight registration"
+		}
+	},
+	"subscribedToMidBillEnergyBreakdown": false,
+	"subscribedToEndBillEnergyBreakdown": false
+}, {
+	"contractNumber": 9401005102,
+	"isEligible": true,
+	"subscribedToMidBillEnergyBreakdown": true,
+	"subscribedToEndBillEnergyBreakdown": true
+}, {
+	"contractNumber": 9401005112,
+	"isEligible": false,
+	"subscribedToMidBillEnergyBreakdown": false,
+	"subscribedToEndBillEnergyBreakdown": false
+}]

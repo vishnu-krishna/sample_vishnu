@@ -1,0 +1,17 @@
+<label class="maui-checkbox__label"
+       [ngClass]="{
+        'maui-checkbox__label--selected': isChecked,
+        'maui-checkbox__label--full-width': isFullWidth
+    }">
+    <span *ngIf="label">{{label}}</span>
+    <ng-content select="[label]"></ng-content>
+    <input class="maui-checkbox__input" type="checkbox" value="{{value}}" [checked]="isChecked"
+           (click)="checkboxChange()">
+    <div class="maui-checkbox__custom"></div>
+</label>
+
+<div #contentWrapper class="maui-checkbox__content"
+     [class.maui-checkbox__content--display]="isChecked && hasContent()">
+    <ng-content select="[content]"></ng-content>
+</div>
+

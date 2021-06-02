@@ -1,0 +1,5 @@
+<div *ngIf="fuelChipHeaderModel" class="payment-assistance-plan-success-fuel-chip-header">
+    <agl-maui-fuel-chip *ngIf="fuelChipHeaderModel.fuelChip" [fuelChipState]="mauiFuelChipState.Display" [fuelType]="fuelChipHeaderModel.fuelChip.fuelType" [fuelContext]="fuelChipHeaderModel.fuelChip.fuelContext"
+        [contractAccountDetails]="fuelChipHeaderModel.fuelChip.accountDetails" [contractNumber]="fuelChipHeaderModel.fuelChip.contractNumber">
+    </agl-maui-fuel-chip>
+</div>

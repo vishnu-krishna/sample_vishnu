@@ -1,0 +1,44 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": {
+        "contractAccountNumber": 7021129736,
+        "estimates": [
+            {
+                "contractNumber": 566654,
+                "paymentOptions": [
+                    {
+                        "frequency": "Weekly",
+                        "amount": 15,
+                        "minDate": "2017-05-01T14:00:00Z",
+                        "maxDate": "2017-06-15T14:00:00Z",
+                        "excludedDates": [
+                            "2017-05-12T14:00:00Z",
+                            "2017-05-27T14:00:00Z"
+                        ]
+                    },
+                    {
+                        "frequency": "Fortnightly",
+                        "amount": 35,
+                        "minDate": "2017-05-01T14:00:00Z",
+                        "maxDate": "2017-06-15T14:00:00Z",
+                        "excludedDates": [
+                            "2017-05-12T14:00:00Z",
+                            "2017-05-27T14:00:00Z"
+                        ]
+                    },
+                    {
+                        "frequency": "Monthly",
+                        "amount": 80,
+                        "minDate": "2017-05-01T14:00:00Z",
+                        "maxDate": "2017-06-15T14:00:00Z",
+                        "excludedDates": [
+                            "2017-05-12T14:00:00Z",
+                            "2017-05-27T14:00:00Z"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

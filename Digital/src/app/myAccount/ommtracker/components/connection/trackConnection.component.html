@@ -1,0 +1,34 @@
+<div class="agl-track-connection">
+    <div class="agl-track-connection__title agl-track-connection__title--single">{{ scContent.title }}</div>
+    <div class="agl-track-connection__address">{{ connectionAddress }}</div>
+
+    <div class="row agl-track-connection__container">
+
+        <div *ngFor="let contract of connectionData.contracts;" class="agl-track-connection__status" [ngClass]="containerClass(contract)">
+
+            <div class="agl-track-connection__tile"
+            [ngClass]="tileClass(contract)">
+                <mat-icon *ngIf="contract.fuelType === FuelType.Electricity" class="agl-track-connection__tile__icon" svgIcon="icon-elec-enabled"></mat-icon>
+                <mat-icon *ngIf="contract.fuelType === FuelType.Gas" class="agl-track-connection__tile__icon" svgIcon="icon-gas-enabled"></mat-icon>
+                {{ scStatuses[contract.status] }}
+                                
+            </div>
+
+            <div class="agl-track-connection__date">
+                <div class="agl-track-connection__month" 
+                    [ngClass]="{
+                                'agl-track-connection__month--elec' : contract.fuelType === FuelType.Electricity,
+                                'agl-track-connection__month--gas' : contract.fuelType === FuelType.Gas}">
+                    {{ ((contract.actualDate !== undefined && contract.actualDate !== '') ? contract.actualDate.split('-')[1] : connectionData.requestedDate.split('-')[1] ) | aglMonthNumberToName }}
+                </div>
+                <div class="agl-track-connection__day">
+                    {{ (contract.actualDate !== undefined && contract.actualDate !== '') ? contract.actualDate.split('-')[2] : connectionData.requestedDate.split('-')[2] }}</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="agl-track-connection__note" *ngIf="scContent.subtext && scContent.subtext !== ''">{{ scContent.subtext }}</div>
+    <div class="agl-track-connection__note" *ngIf="scContent.gasMismatchMsg !== undefined || ''" [innerHtml]="scContent?.gasMismatchMsg | aglSafeHtml"></div>
+</div>

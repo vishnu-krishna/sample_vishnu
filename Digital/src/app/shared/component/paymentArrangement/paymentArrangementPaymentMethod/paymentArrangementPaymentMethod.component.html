@@ -1,0 +1,21 @@
+<div id="direct-debit-payment" *ngIf="paymentMethod">
+    <div class="dd-payment">
+        <div class="left-panel">
+            <div class="dd-payment__title">Payment Method</div>
+            <div class="dd-payment__setup">
+                <div id="direct-debit-existing-image" class="dd-payment__setup__image {{paymentMethod.paymentType}}">
+                    <mat-icon [svgIcon]="paymentMethod.icon"></mat-icon>
+                </div>
+                <div class="dd-payment__setup__description">
+                    {{getPaymentmethodText()}} {{paymentMethod.reference | lowercase}}
+                </div>
+                <div id="dd-payment__setup__description__1" class="dd-payment__setup__expiry" [class.expired]="paymentMethod.expired || paymentMethod.expiresSoon"
+                    *ngIf="paymentMethod.expiryDate">{{getCreditCardExpiryText()}} {{paymentMethod.expiryDate}}</div>
+            </div>
+        </div>
+    </div>
+    <div id="dd-payment-expired-warning" *ngIf="paymentMethod.expiryDate">
+        <agl-alert alertType="error" *ngIf="paymentMethod.expired" heading="Your credit card has expired" body="Please update your details in My Wallet or change your payment method."></agl-alert>
+        <agl-alert alertType="error" *ngIf="paymentMethod.expiresSoon" heading="Your credit card is expiring soon" body="Please update your details in My Wallet or change your payment method."></agl-alert>
+    </div>
+</div>

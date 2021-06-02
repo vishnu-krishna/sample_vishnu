@@ -1,0 +1,12 @@
+<a
+    [href]="href"
+    [ngClass]="{
+        'link--large': isLarge,
+        'link--normal': isNormal,
+        'link--small': isSmall,
+        'link--smallest': isSmallest
+    }"
+    [target]="target"
+    rel="noopener noreferrer">
+    <ng-content></ng-content>
+</a>

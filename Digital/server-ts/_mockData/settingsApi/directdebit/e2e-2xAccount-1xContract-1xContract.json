@@ -1,0 +1,35 @@
+[
+    {
+        "paymentMethodReference": "XX777",
+        "directDebitContractAccounts": [
+            "123456789"
+        ],
+        "creditCard": {
+            "cardType": "Master",
+            "creditCardReference": "1212-2323-4545-12212",
+            "expiryDate": "2014-10-31",
+            "cardHolderName": "James Dunmore"
+        }
+    },
+    {
+        "paymentMethodReference": "XX888",
+        "directDebitContractAccounts": [
+            "987654321"
+        ],
+        "bank": {
+            "bsb": "20-10-12",
+            "accountNumber": "***456",
+            "accountHolderName": "James Dunmore"
+        }
+    },
+    {
+        "paymentMethodReference": "XX999",
+        "directDebitContractAccounts": [
+            3333,
+            4444
+        ],
+        "paypal": {
+            "email": "james.dunmore@test.com"
+        }
+    }
+]

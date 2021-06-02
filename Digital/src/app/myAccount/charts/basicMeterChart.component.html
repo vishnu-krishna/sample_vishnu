@@ -1,0 +1,14 @@
+<div *ngIf="contract.hasBillHistory">
+    <div class="dashboard-billing__title">Bill history</div>
+    <div class="dashboard-billing__sub-title">{{chartHeading}}</div>
+    <div *ngIf="contractIsInactive" class="dashboard-billing__inactive">Inactive</div>
+    <div class="chart">
+        <div *ngFor="let bar of chartBars" class="chart-bar-container col-xs-4">
+            <div class="bar">
+                <div class="bar--fill" [style.height]="bar?.percentage + '%'"></div>
+            </div>
+            <div class="bar-price">{{bar?.value}}</div>
+            <div class="bar-date">{{bar?.date}}</div>
+        </div>
+    </div>
+</div>

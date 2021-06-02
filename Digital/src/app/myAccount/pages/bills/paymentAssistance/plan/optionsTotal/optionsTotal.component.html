@@ -1,0 +1,9 @@
+<div *ngIf="optionsTotalModel" class="payment-assistance-plan-options-total">
+    <div class="payment-assistance-plan-options-total__row">
+        <div>Total to pay:</div>
+        <div class="payment-assistance-plan-options-total__row-total-amount-due">{{ optionsTotalModel.totalAmountDue | aglCurrency}}</div>
+    </div>
+    <div *ngIf="shouldShowTip" class="payment-assistance-plan-options-total__tip">
+        <span>Tip:</span> We recommend you pay off this bill at least two weeks prior to your next bill is due to help stay on track. Your next {{optionsTotalModel.fuelType}} bill will be issued {{ currentBillEndDateFormatted }}.
+    </div>
+</div>

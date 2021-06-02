@@ -1,0 +1,137 @@
+[
+    {
+        "account": "7018263504",
+        "contract": "9400921596",
+        "overdue": 0,
+        "currentBalance": -130.99,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false,
+        "payOnTimeDiscount": 0,
+        "currentBalanceExcludingPayOnTimeDiscount": 0
+    },
+    {
+        "account": "7018263504",
+        "contract": "9400921597",
+        "overdue": 0,
+        "currentBalance": 0,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false,
+        "payOnTimeDiscount": 0,
+        "currentBalanceExcludingPayOnTimeDiscount": 0
+    },
+    {
+        "account": "7018263504",
+        "contract": "9400921501",
+        "overdue": 0,
+        "currentBalance": 0,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false,
+        "payOnTimeDiscount": 0,
+        "currentBalanceExcludingPayOnTimeDiscount": 0
+    },
+    {
+        "account": "7018263504",
+        "contract": "9400902583",
+        "overdue": 456.23,
+        "currentBalance": 0,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false,
+        "payOnTimeDiscount": 0,
+        "currentBalanceExcludingPayOnTimeDiscount": 0,
+        "dueDate": "06/04/2018"
+    },
+    {
+        "account": "7018263504",
+        "contract": "9400902584",
+        "overdue": 501.32,
+        "currentBalance": 0,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false,
+        "payOnTimeDiscount": 0,
+        "currentBalanceExcludingPayOnTimeDiscount": 0,
+        "dueDate": "10/04/2018"
+    },
+    {
+        "account": "7018263504",
+        "contract": "9400902585",
+        "overdue": 501.32,
+        "currentBalance": 0,
+        "totalPayment": 501.32,
+        "billSmoothing": false,
+        "directDebit": false,
+        "payOnTimeDiscount": 0,
+        "currentBalanceExcludingPayOnTimeDiscount": 0,
+        "dueDate": "10/04/2018"
+    },
+    {
+        "account": "7014235472",
+        "contract": "9401005102",
+        "overdue": 200.00,
+        "currentBalance": 17.46,
+        "totalPayment": 217.46,
+        "billSmoothing": false,
+        "directDebit": false,
+        "payOnTimeDiscount": 1.75,
+        "currentBalanceExcludingPayOnTimeDiscount": 19.21,
+        "dueDate": "10/04/2018"
+    },
+    {
+        "account": "7035252860",
+        "contract": "9402766055",
+        "overdue": 0,
+        "currentBalance": 70.82,
+        "totalPayment": 70.82,
+        "billSmoothing": true,
+        "directDebit": false,
+        "payOnTimeDiscount": 10,
+        "currentBalanceExcludingPayOnTimeDiscount": 80.82
+    },
+    {
+        "account": "7035252860",
+        "contract": "9402766060",
+        "overdue": 0,
+        "currentBalance": 70.82,
+        "totalPayment": 70.82,
+        "billSmoothing": true,
+        "directDebit": false,
+        "payOnTimeDiscount": 10,
+        "currentBalanceExcludingPayOnTimeDiscount": 80.82
+    },
+    {
+        "account": "7035252860",
+        "contract": "9402766056",
+        "overdue": 0,
+        "currentBalance": 114.75,
+        "totalPayment": 114.75,
+        "billSmoothing": false,
+        "directDebit": false,
+        "extendedDueDate": "21/06/2018",
+        "payOnTimeDiscount": 50,
+        "currentBalanceExcludingPayOnTimeDiscount": 164.75
+    },
+    {
+        "account": "7035252860",
+        "contract": "9402766058",
+        "overdue": 20,
+        "currentBalance": 58.80,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false
+    },
+    {
+        "account": "7035252860",
+        "contract": "9400921500",
+        "overdue": 0,
+        "currentBalance": 0,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false,
+        "payOnTimeDiscount": 0,
+        "currentBalanceExcludingPayOnTimeDiscount": 0
+    }
+]

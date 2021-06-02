@@ -1,0 +1,17 @@
+{
+    "status": 200,
+    "headers": {},
+    "body":
+    {
+        "instalments": [
+            {
+                "instalmentDate": "2017-01-15",
+                "instalmentAmount": 100
+            },
+            {
+                "instalmentDate": "2017-01-22",
+                "instalmentAmount": 100
+            }
+        ]
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "status": 200,
+  "headers": { },
+  "body": {
+    "hasMultipleBusinessPartners": false,
+    "businessPartners": [
+      {
+        "firstName": "Iain",
+        "lastName": "Sanders",
+        "businessPartnerNumber": "901594023",
+        "phone": "",
+        "mobile": "0415602485",
+        "email": null,
+        "hasDateOfBirth": true
+      }
+    ]
+  }
+}

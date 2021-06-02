@@ -1,0 +1,16 @@
+[{
+    "contract": "333333333",
+    "payg": false,
+    "prepaidBalance": 0,
+    "prepaidBand": ""
+}, {
+    "contract": "111111111",
+    "payg": true,
+    "prepaidBalance": 123.12,
+    "prepaidBand": "H"
+}, {
+    "contract": "444444444",
+    "payg": true,
+    "prepaidBalance": -20,
+    "prepaidBand": "DR"
+}]

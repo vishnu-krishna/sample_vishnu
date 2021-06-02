@@ -1,0 +1,32 @@
+<div class="bs-modal" *ngIf="!setupSuccessful">
+    <div class="bs-modal-header">
+        Set up Bill Smoothing
+    </div>
+    <div class="bs-modal-content">
+        <div *ngIf="hasMultiAccount" class="setup-details">
+            <div class="account-details">
+                <div class="account-no"><strong>Account No: {{acctInfo.contractAccountNumber | aglAddSpaces}}</strong></div>
+                <mat-icon *ngIf="!!acctInfo.numberOfElectricityIcons" class="icon" svgIcon="icon-elec-enabled"></mat-icon>
+                <mat-icon *ngIf="!!acctInfo.numberOfGasIcons" class="icon" svgIcon="icon-gas-enabled"></mat-icon>
+            </div>
+            <div class="address">{{address | aglAddressFormatter}}</div>
+        </div>
+        <div class="setup-fuel-picker" *ngIf="displayRadioButtons">
+            <div class="select-fuel" (click)="generateEstimates(fuelType.value)" *ngFor="let fuelType of fuelTypes">
+                <div class="setup-radio-button fuel-radio" [class.setup-radio-button-selected]="isSelected(fuelType.value)"></div>
+                <span class="fuel-text" [class.fuel-text-selected]="isSelected(fuelType.value)">For {{fuelType.viewValue}}</span>
+            </div>
+        </div>
+        <div class="setup payment-schedule">
+            <agl-billsmoothing-setup-fuel [fuelInfo]="selectedValue"></agl-billsmoothing-setup-fuel>
+        </div>
+        <div class="setup footer-content">
+            These figures are estimates based on your historical usage over 12 months. If you haven't been with us for 12 months, they
+            are based on the historical usage of other, similar customers.
+        </div>
+    </div>
+</div>
+
+<agl-billsmoothing-setup-successful *ngIf="setupSuccessful" [setUpBillSmoothingResultMessage]="setUpBillSmoothingResultMessage"
+    [billDeliveryMethodType]="billDeliveryMethodType" [isDirectDebit]="acctInfo.isDirectDebit"
+    [accountNumber]="acctInfo.contractAccountNumber"></agl-billsmoothing-setup-successful>

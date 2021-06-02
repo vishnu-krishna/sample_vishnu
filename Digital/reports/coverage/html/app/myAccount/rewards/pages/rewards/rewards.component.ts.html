@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\rewards\pages\rewards\rewards.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/rewards/pages/rewards/</a> rewards.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">26.13% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>29/111</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">26.09% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>12/46</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">6.9% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">27.55% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>27/98</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit, Input } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
+&nbsp;
+import { MenuIndicatorMessage } from '../../../../shared/messages/menuIndicator.message';
+import { IMessageBusService } from '../../../../shared/service/contract/imessageBus.service';
+import { IRewardsService } from '../../services/contract/iRewards.service';
+import { IRewardsEligibilityService } from '../../services/contract/iRewardsEligibility.service';
+import { RewardsFlybuysSummary } from '../../shared/rewards-flybuys-summary';
+import { RewardsDiscountSummary } from '../../shared/rewards-discount-summary';
+import { RewardsOffer } from '../../shared/rewards-offer';
+import { Benefit, BenefitsStatus } from '../../shared/benefit';
+import { RewardsEligibility } from '../../shared/rewards-eligibility';
+import { PageScroller } from '../../shared/page-scroller';
+&nbsp;
+@Component({
+    selector: 'agl-rewards-main',
+    template: require('./rewards.component.html'),
+    styles: [require('./rewards.component.scss')]
+})
+export class RewardsComponent implements OnInit {
+    public <span class="cstat-no" title="statement not covered" >isDataLoading: boolean = true;</span>
+    public <span class="cstat-no" title="statement not covered" >flybuysSummary: RewardsFlybuysSummary = new RewardsFlybuysSummary();</span>
+    public <span class="cstat-no" title="statement not covered" >discountSummary: RewardsDiscountSummary = new RewardsDiscountSummary();</span>
+    public <span class="cstat-no" title="statement not covered" >offers: RewardsOffer[] = [];</span>
+    public <span class="cstat-no" title="statement not covered" >offersErrorMessage: string = '';</span>
+    public currentOffer: RewardsOffer;
+    public <span class="cstat-no" title="statement not covered" >allOffersRedeemed: boolean = false; </span>// used to immediately hide offers banner instead of animating it out with nothing showing
+    public <span class="cstat-no" title="statement not covered" >allOffersClosed: boolean = false; </span>// used to immediately hide offers banner instead of animating it out with nothing showing
+    public <span class="cstat-no" title="statement not covered" >benefits: Benefit[] = [];</span>
+&nbsp;
+    // for rewards phase 2 status check when the customer is not eligible or api fails, the status is false - do not show the rewards section
+    public <span class="cstat-no" title="statement not covered" >isEligibleForBenefits: boolean = true;</span>
+    public <span class="cstat-no" title="statement not covered" >isBenefitsActive: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >benefitsLoadError: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >isBenefitsActivateError: boolean = false;</span>
+&nbsp;
+    constructor(private <span class="cstat-no" title="statement not covered" >rewardsService: IRewardsService,</span> public <span class="cstat-no" title="statement not covered" >messageBus: IMessageBusService<span class="branch-2 cbranch-no" title="branch not covered" >,</span> private <span class="cstat-no" title="statement not covered" >eligibilityService: </span>IRewardsEligibilityService<span class="branch-2 cbranch-no" title="branch not covered" >,</span> private <span class="cstat-no" title="statement not covered" >router: </span>Router<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >)</span> {   }</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public ngOnInit() {</span></span>
+<span class="cstat-no" title="statement not covered" >        Observable.forkJoin(</span>
+            this.rewardsService.getFlybuysSummary(),
+            this.rewardsService.getDiscountSummary(),
+            this.loadBenefitsAndStatus()
+        ).subscribe(([<span class="cstat-no" title="statement not covered" >flybuysSummary,</span> <span class="cstat-no" title="statement not covered" >discountSummary,</span> <span class="cstat-no" title="statement not covered" >benefitsModel]<span class="fstat-no" title="function not covered" ></span>) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            this.flybuysSummary = flybuysSummary;</span>
+<span class="cstat-no" title="statement not covered" >            this.discountSummary = discountSummary;</span>
+<span class="cstat-no" title="statement not covered" >            this.isBenefitsActive = benefitsModel.benefitsStatus;</span>
+<span class="cstat-no" title="statement not covered" >            this.benefits = benefitsModel.benefitsTiles;</span>
+<span class="cstat-no" title="statement not covered" >            this.isEligibleForBenefits = benefitsModel.benefitsEligibility;</span>
+<span class="cstat-no" title="statement not covered" >            this.isDataLoading = false;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            this.loadOffers();</span>
+        });
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public showFlybuys(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.flybuysSummary.isActive();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public showDiscounts(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.discountSummary.isActive();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public onOfferClosed() {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.currentOffer.offerRedemmed) {</span>
+            let offers = <span class="cstat-no" title="statement not covered" >this.offers.filter((o<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >!o.offerRedemmed  || !o.offerClosed)</span></span>;</span>
+<span class="cstat-no" title="statement not covered" >            if (offers.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                this.currentOffer =  offers[0];</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                this.currentOffer = null;</span>
+<span class="cstat-no" title="statement not covered" >                this.allOffersClosed = true;</span>
+            }
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public onOfferRedeemed() {</span>
+        let redemmedOffers = <span class="cstat-no" title="statement not covered" >this.offers.filter((o<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >o.offerRedemmed)</span></span>;</span>
+<span class="cstat-no" title="statement not covered" >        if (redemmedOffers &amp;&amp; (redemmedOffers.length === this.offers.length)) {</span>
+<span class="cstat-no" title="statement not covered" >            this.messageBus.broadcast(new MenuIndicatorMessage('Rewards', false));</span>
+<span class="cstat-no" title="statement not covered" >            this.allOffersRedeemed = true;</span>
+        }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public activateBenefits() {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.rewardsService.activateBenefits().subscribe(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            PageScroller.scrollIntoViewFromTop('.benefits-container', 60, 1, 100);</span>
+<span class="cstat-no" title="statement not covered" >            this.rewardsService.getBenefits().subscribe((benefits<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                if (benefits &amp;&amp; benefits.length !== 0 ) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.benefits = benefits;</span>
+<span class="cstat-no" title="statement not covered" >                    this.isBenefitsActive = true;</span>
+<span class="cstat-no" title="statement not covered" >                    this.isBenefitsActivateError = false;</span>
+                }
+            });
+        }, (error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            this.isBenefitsActive = false;</span>
+<span class="cstat-no" title="statement not covered" >            this.isBenefitsActivateError = true;</span>
+        });
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public showBenefitsSection(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.isEligibleForBenefits &amp;&amp; !this.benefitsLoadError;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public showActiveStaticBanner(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return (this.isEligibleForBenefits &amp;&amp; this.isBenefitsActive &amp;&amp; !this.benefitsLoadError);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public showBenefitsDashboard(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return (this.isBenefitsActive &amp;&amp; this.benefits.length !== 0);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public showRewardsBanner(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return (!this.isEligibleForBenefits &amp;&amp; !this.benefitsLoadError);</span>
+    }
+&nbsp;
+    public navigateBackToRewards($event<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.isBenefitsActivateError = false;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    private loadOffers() {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.rewardsService.getOffers().subscribe((results<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            this.offers = results;</span>
+<span class="cstat-no" title="statement not covered" >            if (this.offers &amp;&amp; this.offers.length) {</span>
+<span class="cstat-no" title="statement not covered" >                this.currentOffer = this.offers[0];</span>
+            }
+        }, (error<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >this.offers = [])</span></span>;
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    private loadBenefitsAndStatus(): Observable&lt;BenefitsModel&gt; {</span></span>
+        const result: BenefitsModel = <span class="cstat-no" title="statement not covered" >new BenefitsModel();</span>
+<span class="cstat-no" title="statement not covered" >        this.benefitsLoadError = false;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return this.eligibilityService.isEligibleForBenefits().flatMap((isEligibleForBenefits<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (isEligibleForBenefits) {</span>
+<span class="cstat-no" title="statement not covered" >                result.benefitsEligibility = isEligibleForBenefits;</span>
+<span class="cstat-no" title="statement not covered" >                return this.rewardsService.getBenefitsStatus().flatMap((benefitsStatus<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                    if (benefitsStatus.isBenefitsStatusActive) {</span>
+<span class="cstat-no" title="statement not covered" >                        return this.rewardsService.getBenefits().flatMap((benefits<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                            result.benefitsStatus = true;</span>
+<span class="cstat-no" title="statement not covered" >                            result.benefitsTiles = benefits;</span>
+<span class="cstat-no" title="statement not covered" >                            return Observable.of(result);</span>
+                        });
+                    } else {
+<span class="cstat-no" title="statement not covered" >                        return Observable.of(result);</span>
+                    }
+                }).catch( (error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    this.benefitsLoadError = true;</span>
+<span class="cstat-no" title="statement not covered" >                    return Observable.of(result);</span>
+                });
+            } else {
+<span class="cstat-no" title="statement not covered" >                return Observable.of(result);</span>
+            }
+        });
+    }
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >class BenefitsModel {</span>
+    public <span class="cstat-no" title="statement not covered" >benefitsEligibility: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >benefitsStatus: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >benefitsTiles: Benefit[] = [];</span>
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

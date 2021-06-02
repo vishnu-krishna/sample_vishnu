@@ -1,0 +1,917 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\billhistory\billhistory.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/myAccount/billhistory/</a> billhistory.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">24.79% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>29/117</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.33% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>20/60</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.56% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">23.48% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>27/115</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, Input, OnInit } from '@angular/core';
+import * as moment from 'moment';
+import { BillSmoothingLearnMoreComponent } from '../../shared/component/billSmoothingLearnMore/billSmoothingLearnMore.component';
+import { Now } from '../../shared/service/now.service';
+import { RedLineApiService } from '../../shared/service/redLineApi.service';
+import { ModalService } from '../modal/modal.service';
+import { DayPluralPipe } from '../pipes/dayPlural.pipe';
+import { BillViewModel, ContractViewModel } from '../services/account.service';
+import { EventService } from '../services/event.service';
+import { PaymentService } from '../services/payment.service';
+&nbsp;
+declare let leanengage: any;
+&nbsp;
+@Component({
+    selector: 'agl-bill-history',
+    template: require('./billhistory.component.html'),
+    styles: [require('./billhistory.component.scss')]
+})
+export class BillhistoryComponent implements OnInit {
+    @Input() public contract: ContractViewModel;
+   @Input() public address;
+    public paymentAddress: string;
+    public height: number;
+    public <span class="cstat-no" title="statement not covered" >billWidgetHeight: number = 60;</span>
+&nbsp;
+    // Bill row fields below
+    public isPaid: boolean;
+    public isOverdue: boolean;
+    public payNowText: string;
+    public paidText: string;
+    public overdueText: string;
+    public isCredit: boolean;
+    public actionText: string;
+    public billList: Object;
+    public <span class="cstat-no" title="statement not covered" >filteredBills: any[] = [];</span>
+    public <span class="cstat-no" title="statement not covered" >clickCount: number = 1;</span>
+    public <span class="cstat-no" title="statement not covered" >loadAllBills: boolean = false;</span>
+    public firstBillMessage: string;
+    public <span class="cstat-no" title="statement not covered" >billsPerPage: number = 12;</span>
+    public nextBillIssued;
+&nbsp;
+    private <span class="cstat-no" title="statement not covered" >billCountLimit: number = 3;</span>
+&nbsp;
+    constructor(
+        private <span class="cstat-no" title="statement not covered" >_confirmService: ModalService,</span>
+        private <span class="cstat-no" title="statement not covered" >_eventService: EventService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >_now: Now<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >_redLine: RedLineApiService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >_paymentService: PaymentService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >modalService: ModalService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >)</span> {</span></span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public ngOnInit() {</span>
+<span class="cstat-no" title="statement not covered" >        this.setBills(this.contract.bills, this.billCountLimit);</span>
+&nbsp;
+        let nextBillDate = <span class="cstat-no" title="statement not covered" >moment(this.contract.currentBillEndDate).startOf('day');</span>
+<span class="cstat-no" title="statement not covered" >        this.nextBillIssued = `Your next bill will be issued in ${this.daysAwayPlural(nextBillDate)}.`;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (nextBillDate.diff(this._now.date(), 'days') &lt; -2) {</span>
+<span class="cstat-no" title="statement not covered" >            this.nextBillIssued = 'Your next bill is on the way, check back soon.';</span>
+        }
+    }
+&nbsp;
+    /**
+     * Open a bill PDF in a new window/tab
+     * @param  {any} bill
+     */
+    public openBillPdfInNewWindow(bill: any<span class="fstat-no" title="function not covered" >): void {</span>
+<span class="cstat-no" title="statement not covered" >        if (bill.fxPrintDoc &amp;&amp; !bill.billPdfLoading &amp;&amp; !bill.billPdfLoadFailed) {</span>
+<span class="cstat-no" title="statement not covered" >            bill.billPdfLoading = true;</span>
+            // Create a new window before the ajax call to stop the popup blocker
+            let hWindow = <span class="cstat-no" title="statement not covered" >window.open('', '_blank');</span>
+<span class="cstat-no" title="statement not covered" >            hWindow.document.write(require('../static/pdf.html'));</span>
+<span class="cstat-no" title="statement not covered" >            this._redLine.getBillPdfUrl(this.contract.contractNumber, bill.fxPrintDoc)</span>
+                .subscribe(
+                (url<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    hWindow.document.location.href = url;</span>
+<span class="cstat-no" title="statement not covered" >                    bill.billPdfLoading = false;</span>
+<span class="cstat-no" title="statement not covered" >                    bill.billPdfLoadFailed = false;</span>
+                },
+                (err<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    hWindow.close();</span>
+<span class="cstat-no" title="statement not covered" >                    bill.billPdfLoading = false;</span>
+<span class="cstat-no" title="statement not covered" >                    bill.billPdfLoadFailed = true;</span>
+                },
+<span class="fstat-no" title="function not covered" >                () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    bill.billPdfLoading = false;</span>
+<span class="cstat-no" title="statement not covered" >                    bill.billPdfLoadFailed = false;</span>
+                }
+                );
+        }
+    }
+&nbsp;
+    /**
+     * Displays bill period dates.
+     * @param  {string} startDate Bill Issue Date
+     * @param  {string} endDate   Bill Due Date
+     * @return {string}           Bill Issue Date to Bill Due Date
+     */
+    public longDateRange(startDate, endDate<span class="fstat-no" title="function not covered" >): string {</span>
+        // 4 May to 3 Jun 2016
+        let currentBillStartDate = <span class="cstat-no" title="statement not covered" >moment(startDate).startOf('day');</span>
+        let currentBillEndDate = <span class="cstat-no" title="statement not covered" >moment(endDate).startOf('day');</span>
+        // let startDateFormat = currentBillStartDate.year() === currentBillEndDate.year() ? 'D MMM' : 'D MMM YYYY';
+<span class="cstat-no" title="statement not covered" >        return currentBillStartDate.format('D MMM') + ' to ' + currentBillEndDate.format('D MMM YYYY');</span>
+    }
+&nbsp;
+    /**
+     * If more than 3 bills, show more bills button is visible.
+     * @return {Boolean}
+     */
+<span class="fstat-no" title="function not covered" >    public showMoreBillsButton(): Boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.contract.bills.length &gt; this.billCountLimit;</span>
+    }
+&nbsp;
+    /**
+     * If there are no bills, show next bill issue message.
+     * @return {Boolean}
+     */
+<span class="fstat-no" title="function not covered" >    public thereAreNoBills(): Boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.contract.bills.length === 0;</span>
+    }
+&nbsp;
+    /**
+     * Set number of bills to display.
+     * @param  {Array&lt;BillViewModel&gt;}   billArray      The bills
+     * @param  {number}                 billsDisplayed Max number of bills to display
+     * @return {[billObject[]]}                 tidy bills
+     */
+    public setBills(bills, billsDisplayed: number<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        for (let i = 0; i &lt; bills.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.filteredBills.length &lt; this.clickCount * billsDisplayed) {</span>
+                let bill = <span class="cstat-no" title="statement not covered" >bills[i];</span>
+                let billObject = <span class="cstat-no" title="statement not covered" >{</span>
+                    totalDue: '',
+                    dateRange: '',
+                    days: '',
+                    isInCredit: false,
+                    isOverdue: false,
+                    billId: '',
+                    billStatus: '',
+                    fxPrintDoc: null,
+                    billPdfLoading: false,
+                    billPdfLoadFailed: false
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if (bill.newCharges &lt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                    billObject.totalDue = (-(bill).newCharges).toFixed(2).toString() + ' CR';</span>
+<span class="cstat-no" title="statement not covered" >                    billObject.isInCredit = true;</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    billObject.totalDue = bill.newCharges.toFixed(2).toString();</span>
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                billObject.dateRange = this.longDateRange(bill.startDate, bill.endDate);</span>
+<span class="cstat-no" title="statement not covered" >                billObject.days = this.days(bill.startDate, bill.endDate);</span>
+<span class="cstat-no" title="statement not covered" >                billObject.billId = String(this.contract.contractNumber) + moment(bill.startDate).format('YYYYMMDD');</span>
+<span class="cstat-no" title="statement not covered" >                billObject.fxPrintDoc = bill.fxPrintDoc;</span>
+&nbsp;
+                let totalToPay = <span class="cstat-no" title="statement not covered" >this.contract.currentBalance + this.contract.paymentOverdue;</span>
+                // Check latest bill total to determine conditions
+<span class="cstat-no" title="statement not covered" >                if (totalToPay &lt;= bills[0].newCharges) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.setBillStatus(this.contract, bill, i, billObject);</span>
+                } else <span class="cstat-no" title="statement not covered" >if (totalToPay &gt; bills[0].newCharges) {</span>
+<span class="cstat-no" title="statement not covered" >                    billObject.billStatus = '';</span>
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                this.filteredBills.push(billObject);</span>
+            }
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.billList = this.filteredBills;</span>
+<span class="cstat-no" title="statement not covered" >        this.actionText = 'See more';</span>
+&nbsp;
+        // If &gt;3 bills, set initial height for transition to work.
+<span class="cstat-no" title="statement not covered" >        if (this.filteredBills.length &gt;= 3) {</span>
+<span class="cstat-no" title="statement not covered" >            this.height = 180;</span>
+        }
+        let pluralise = <span class="cstat-no" title="statement not covered" >new DayPluralPipe();</span>
+<span class="cstat-no" title="statement not covered" >        this.firstBillMessage = this.contract.currentBillDaysUntilDue &gt; 0 ? `in ${pluralise.transform(this.contract.currentBillDaysUntilDue.toString())}` : 'shortly';</span>
+    }
+&nbsp;
+    /**
+     * On click, should show more bills.
+     * @return {filteredBills[]} Array tidied with more bills loaded
+     */
+<span class="fstat-no" title="function not covered" >    public showMoreBills() {</span>
+<span class="cstat-no" title="statement not covered" >        this.filteredBills.length = 0;</span>
+<span class="cstat-no" title="statement not covered" >        this.setBills(this.contract.bills, this.billsPerPage);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.height = this.filteredBills.length * this.billWidgetHeight;</span>
+<span class="cstat-no" title="statement not covered" >        this.clickCount++;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.filteredBills.length === this.contract.bills.length) {</span>
+<span class="cstat-no" title="statement not covered" >            this.actionText = 'There are no more bills to display';</span>
+<span class="cstat-no" title="statement not covered" >            this.loadAllBills = true;</span>
+        }
+    }
+&nbsp;
+    /**
+     * Show the modal for payment within dashboard
+     * @param  object data Any object passed from the page
+     * @return promise  The confirmation of closure.
+     */
+<span class="fstat-no" title="function not covered" >    public openPaymentPopup() {</span>
+<span class="cstat-no" title="statement not covered" >        this._paymentService.openPaymentModal(this.contract, this.contract.currentBalance + this.contract.paymentOverdue, this.address).subscribe();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public openLearnMoreModal() {</span>
+<span class="cstat-no" title="statement not covered" >        this.modalService.activate({</span>
+            title: '',
+            message: '',
+            cancelText: '',
+            okText: '',
+            modalType: 'component',
+            component: BillSmoothingLearnMoreComponent,
+            fullScreen: true
+        });
+    }
+&nbsp;
+    /**
+     * Set the bill's pay status
+     * @param  {ContractViewModel} contract   The contract
+     * @param  {BillViewModel}     bill       The billObject
+     * @param  {number}            index      Which bill
+     * @param  {[billObject[]]}    billObject The tidied set of bills
+     * @return {string}                       The bill status
+     */
+    private setBillStatus(contract: ContractViewModel, bill: BillViewModel, index: number, billObject<span class="fstat-no" title="function not covered" >) {</span>
+        let totalToPay = <span class="cstat-no" title="statement not covered" >this.contract.currentBalance + this.contract.paymentOverdue;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (contract.isBillSmoothingV2) {</span>
+<span class="cstat-no" title="statement not covered" >            billObject.billStatus = '';</span>
+        } else <span class="cstat-no" title="statement not covered" >if (this.contract.isPayg === true) {</span>
+<span class="cstat-no" title="statement not covered" >            billObject.billStatus = '';</span>
+        } else <span class="cstat-no" title="statement not covered" >if (totalToPay &lt;= 0) {</span>
+<span class="cstat-no" title="statement not covered" >            billObject.billStatus = 'Paid';</span>
+        } else <span class="cstat-no" title="statement not covered" >if (totalToPay &lt;= bill.newCharges &amp;&amp; index === 0) {</span>
+<span class="cstat-no" title="statement not covered" >            billObject.billStatus = 'Pay now';</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            billObject.billStatus = 'Paid';</span>
+        }
+    }
+&nbsp;
+    /**
+     * Displays bill period in days.
+     * @param  {string} startDate Bill Issue Date
+     * @param  {string} endDate   Bill Due Date
+     * @return {string}           Number of days
+     */
+    private days(startDate, endDate<span class="fstat-no" title="function not covered" >): string {</span>
+        let start = <span class="cstat-no" title="statement not covered" >moment(startDate);</span>
+        let end = <span class="cstat-no" title="statement not covered" >moment(endDate);</span>
+        let numberOfDays = <span class="cstat-no" title="statement not covered" >-start.diff(end, 'days') + 1;</span>
+        let plural = <span class="cstat-no" title="statement not covered" >(numberOfDays === 1) ? '' : 's';</span>
+<span class="cstat-no" title="statement not covered" >        return `${numberOfDays} day${plural}`;</span>
+    }
+&nbsp;
+    /**
+     * Displays days till next bill.
+     * @param  {number} untilDate Next bill date
+     * @return {number}           Number of days
+     */
+    private daysAway(untilDate: moment.Moment<span class="fstat-no" title="function not covered" >): number {</span>
+        let days: number = <span class="cstat-no" title="statement not covered" >Math.abs(untilDate.diff(this._now.date(), 'days'));</span>
+<span class="cstat-no" title="statement not covered" >        return days;</span>
+    }
+&nbsp;
+    /**
+     * Days Away, generates as plural
+     *
+     * @private
+     * @param {moment.Moment} untilDate
+     * @returns {string}
+     *
+     * @memberOf BillhistoryComponent
+     */
+    private daysAwayPlural(untilDate: moment.Moment<span class="fstat-no" title="function not covered" >): string {</span>
+        let days: number = <span class="cstat-no" title="statement not covered" >Math.abs(untilDate.diff(this._now.date(), 'days'));</span>
+        let plural = <span class="cstat-no" title="statement not covered" >(days === 1) ? '' : 's';</span>
+<span class="cstat-no" title="statement not covered" >        return `${days} day${plural}`;</span>
+    }
+&nbsp;
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

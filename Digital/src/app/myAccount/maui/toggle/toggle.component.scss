@@ -1,0 +1,101 @@
+@import '../maui';
+
+@include maui-component-reset();
+
+$tablet_width: 55px;
+$tablet_width_mobile: 45px;
+$tablet_height: 21px;
+$tablet_height_mobile: 17px;
+
+$circle_size: 30px;
+$circle_size_mobile: 25px;
+
+.maui-toggle {
+
+    display: inline-block;
+    position: relative;
+    width: calc(#{$tablet_width} + #{$space-01});
+    height: calc(#{$circle_size} + #{$space-01});
+    text-align: center;
+
+    @media #{$agl-layout-mobile} {
+        width: calc(#{$tablet_width_mobile} + #{$space-01});
+        min-height: calc(#{$circle_size_mobile} + #{$space-01});
+    }
+
+    &--disabled {
+        cursor: not-allowed;
+    }
+
+    &--active {
+
+        cursor: pointer;
+
+        &__input {
+            display: none;
+            position: absolute;
+        }
+
+        &__tablet {
+            display: block;
+            position: absolute;
+            width: $tablet_width;
+            height: $tablet_height;
+            background: $neutral-05;
+            border-radius: 16px;
+            top: 0px;
+            left: 0px;
+
+            @media #{$agl-layout-mobile} {
+                width: $tablet_width_mobile;
+                height: $tablet_height_mobile;
+            }
+
+            &--checked {
+                background: rgba($primary-dark, 0.5);
+            }
+        }
+
+        &__circle {
+            height: $circle_size;
+            width: $circle_size;
+            border-radius: 50%;
+            background: $neutral-03;
+            position: absolute;
+            top: -4px;
+            left: 0px;
+            transition: all 0.3s ease;
+            box-shadow: $shadow-01;
+
+            @media #{$agl-layout-mobile} {
+                width: $circle_size_mobile;
+                height: $circle_size_mobile;
+            }
+
+            &--checked {
+                background: $primary-dark;
+                transform: translate(85%);
+                transition: all 0.3s ease;
+            }
+        }
+    }
+
+    &__loader {
+        img {
+            position: absolute;
+            left: 25%;
+            margin: 0;
+            animation: toggleSpinner 0.8s linear infinite;
+        }
+    }
+
+    @keyframes toggleSpinner {
+        from {
+            transform: rotateZ(0deg);
+        }
+
+        to {
+            transform: rotateZ(359deg);
+        }
+    }
+}

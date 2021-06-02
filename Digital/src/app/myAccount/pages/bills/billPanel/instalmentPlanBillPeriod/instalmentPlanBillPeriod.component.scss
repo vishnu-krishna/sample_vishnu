@@ -1,0 +1,75 @@
+
+@import '../../../../../shared/style/variables';
+@import '../../../../../shared/style/mixins';
+@import '../../../../maui/maui';
+
+@mixin days-to-go-bill-pill {
+    position: relative;
+    top: -$space-01;
+    margin: 15px 0 $space-03 auto;
+    line-height: 19px;
+}
+
+@mixin range {
+    font-size: $body-font-size-small;
+}
+
+.bill-panel-instalment-plan-bill-period {
+    padding-top: $space-04;
+    font-weight: normal;
+    font-size: $body-font-size-normal;
+
+    &__title {
+        font-weight: bold;
+        color: $brand-black;
+    }
+
+    &__no-open-bill {
+
+        &--period {
+            padding-top: $space-02;
+
+            &-range {
+                @include range();
+            }
+
+            &--days-to-go {
+                @include bill-pill-small($primary-dark, 85px);
+                @include days-to-go-bill-pill();
+            }
+
+        }
+
+        &--bill-projection {
+            padding-top: $space-03;
+            font-size: $body-font-size-small;
+        }
+    }
+
+    &__open-bill {
+
+        &--period {
+            padding-top: $space-02;
+
+            &-range {
+                @include range();
+            }
+
+            &--days-to-go {
+                @include bill-pill-small($primary-dark, 99px);
+                @include days-to-go-bill-pill();
+            }
+
+        }
+
+        &--new-bill-issued {
+            padding-top: $space-03;
+            font-size: $body-font-size-small;
+        }
+
+    }
+
+    &__bold {
+        font-weight: bold;
+    }
+}

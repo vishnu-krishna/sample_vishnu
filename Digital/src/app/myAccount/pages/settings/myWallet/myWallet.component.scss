@@ -1,0 +1,344 @@
+@import '../../../../shared/style/variables';
+@import '../../../../shared/style/mixins';
+@import '../../../style/settings';
+
+.my-wallet {
+    float: left;
+    height: 100%;
+    width: 100%;
+    color: $brand-grey-g1;
+
+    p {
+        margin-bottom: 30px;
+    }
+
+    a {
+        color: $brand-sky;
+        transition: color 0.3s ease;
+    }
+
+    &__card {
+        height: 200px;
+        width: 100%;
+        background-color: $brand-grey-g6;
+        box-shadow: $agl-button-shadow;
+        border-radius: 12px;
+        display: inline-block;
+        position: relative;
+        bottom: 0;
+
+        @media #{$agl-layout-tablet-and-smaller} {
+            height: 160px;
+        }
+
+        @media #{$agl-layout-xs} {
+            height: 150px;
+        }
+
+        &.expired {
+            background-color: $my-wallet-expired;
+        }
+    }
+
+    &__icons-wrapper {
+        &.expired {
+            opacity: 0.59;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 20px;
+        left: 25px;
+
+        @media #{$agl-layout-tablet-and-smaller} {
+            top: 8px;
+            left: 16px;
+        }
+
+        @media #{$agl-layout-mobile} {
+            top: 14px;
+            left: 16px;
+        }
+
+        .mat-icon {
+            width: 50px;
+            height: 40px;
+
+            @media #{$agl-layout-tablet} {
+                width: 40px;
+                height: 50px;
+            }
+        }
+    }
+
+    &__ribbon {
+        position: absolute;
+
+        &--direct-debit {
+            position: absolute;
+            right: -10px;
+            top: 26px;
+            width: 142px;
+            height: 34px;
+
+            @media #{$agl-layout-tablet-and-smaller} {
+                width: 130px;
+                height: 30px;
+                top: 20px;
+            }
+        }
+
+        &--sms-pay {
+            position: absolute;
+            right: -20px;
+            top: 66px;
+            width: 134px;
+            height: 34px;
+
+            @media #{$agl-layout-tablet-and-smaller} {
+                width: 123px;
+                height: 30px;
+                top: 55px;
+            }
+        }
+    }
+
+    &__details {
+        float: left;
+
+        &.expired {
+            opacity: 0.59;
+        }
+
+        &-wrapper {
+            position: absolute;
+            bottom: 0;
+            padding: 25px;
+            padding-top: 0;
+            width: 100%;
+
+            @media #{$agl-layout-tablet-and-smaller} {
+                padding: 20px 16px;
+                padding-top: 0;
+            }
+
+            @media (max-width: 868px) {
+                font-size: 14px;
+            }
+
+            @media #{$agl-layout-mobile} {
+                font-size: 15px;
+            }
+        }
+
+        &-title {
+            font-family: $primary-font-stack;
+            font-weight: bold;
+            line-height: 24px;
+            text-transform: capitalize;
+        }
+
+        &-label {
+            font-family: $secondary-font-stack;
+            line-height: 22px;
+        }
+    }
+
+    &__expiry {
+        float: right;
+        text-align: right;
+
+        &.expired,
+        &.expires-soon {
+            color: $brand-fire;
+        }
+    }
+
+    &__delete-button {
+        text-align: center;
+
+        a {
+            font-family: $primary-font-stack;
+            font-size: 12px;
+            font-weight: bold;
+            line-height: 19px;
+            letter-spacing: 1px;
+            color: $brand-sky;
+            padding: 7px 15px 8px 15px;
+            margin: 3px 0 7px 0;
+            text-transform: uppercase;
+            display: inline-block;
+            text-align: center;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $lighten-sky-20;
+            }
+
+            .mat-icon {
+                width: 9px;
+                margin-top: -9px;
+                position: relative;
+                top: 8px;
+                display: inline-block;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    &__alert-messages {
+        margin-bottom: 35px;
+    }
+
+    &.mat-card {
+        font-family: $secondary-font-stack;
+    }
+}
+
+.my-wallet-container {
+    .my-wallet {
+        &--add-card {
+            padding-top: 0px;
+
+            p {
+                margin-top: 0px;
+                margin-bottom: 25px;
+            }
+
+            &__warning {
+                margin-bottom: 35px;
+                display: block;
+            }
+        }
+
+        &-card-container {
+            margin: 0 -15px;
+        }
+
+        &--add-method {
+            cursor: pointer;
+            transition: 0.3s ease;
+
+            @media #{$agl-layout-tablet} {
+                margin-bottom: 40px;
+            }
+
+            @media #{$agl-layout-mobile} {
+                display: none;
+            }
+
+            &-button {
+                @media #{$agl-layout-tablet-and-greater} {
+                    display: none;
+                }
+
+                @media #{$agl-layout-mobile} {
+                    width: 100%;
+                    margin-bottom: 25px;
+                    height: 50px;
+                }
+            }
+
+            &:hover {
+                box-shadow: 1px 4px 12px 0 rgba(0, 0, 0, 0.22);
+            }
+
+            .my-wallet {
+                &--add-new-card {
+                    text-align: center;
+                    color: $brand-grey-g1;
+                    font-family: $primary-font-stack;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    font-size: 15px;
+                    text-transform: uppercase;
+                    padding-bottom: 5px;
+                    margin: 0;
+
+                    @media #{$agl-layout-tablet} {
+                        font-size: 13px;
+                    }
+                }
+
+                &--add-text {
+                    text-align: center;
+                    color: $brand-grey-g1;
+                    font-family: $secondary-font-stack;
+                    font-size: 13px;
+                    padding-bottom: 0px;
+                    margin: 0;
+                    line-height: 20px;
+
+                    @media #{$agl-layout-tablet} {
+                        font-size: 11px;
+                        line-height: 15px;
+                    }
+                }
+            }
+        }
+
+        &--delete-exp {
+            position: absolute;
+            top: 134px;
+            right: 40px;
+            text-align: right;
+            font-size: 16px;
+
+            @media #{$agl-layout-tablet} {
+                top: 85px;
+                right: 30px;
+            }
+
+            @media #{$agl-layout-mobile} {
+                top: 94px;
+            }
+
+            &--title {
+                font-family: $primary-font-stack;
+                font-weight: bold;
+                line-height: 16px;
+                letter-spacing: 1px;
+                color: $brand-grey-g1;
+            }
+
+            &--value {
+                font-family: $secondary-font-stack;
+                line-height: 22px;
+                color: $brand-grey-g2;
+                padding-top: 3px;
+
+                @media #{$agl-layout-tablet} {
+                    line-height: 30px;
+                    font-size: 13px;
+                }
+
+                @media #{$agl-layout-xs} {
+                    font-size: 13px;
+                    line-height: 23px;
+                }
+            }
+        }
+
+        &--circle {
+            text-align: center;
+            padding-bottom: 20px;
+            padding-top: 55px;
+
+            @media #{$agl-layout-tablet} {
+                padding-top: 45px;
+                padding-bottom: 10px;
+            }
+
+            .mat-icon {
+                width: 52px;
+                height: 52px;
+
+                @media #{$agl-layout-tablet} {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+}

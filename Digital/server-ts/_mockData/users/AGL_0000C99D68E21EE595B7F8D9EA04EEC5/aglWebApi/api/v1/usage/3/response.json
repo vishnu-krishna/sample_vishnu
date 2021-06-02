@@ -1,0 +1,90 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "account": "7004437310",
+            "contract": "9117813087",
+            "costs": [
+                {
+                    "value": 160.21,
+                    "startDateTime": "2016-08-06T00:00:00",
+                    "endDateTime": "2016-10-04T00:00:00",
+                    "estimatedRead": false
+                }
+            ],
+            "consumption": [
+                {
+                    "value": 13719.9997857065,
+                    "startDateTime": "2016-08-06T00:00:00",
+                    "endDateTime": "2016-10-04T00:00:00",
+                    "estimatedRead": false
+                }
+            ],
+            "hasNoBill": false
+        },
+        {
+            "account": "7020624784",
+            "contract": "9400619503",
+            "costs": [
+                {
+                    "value": 61.32,
+                    "startDateTime": "2016-07-29T00:00:00",
+                    "endDateTime": "2016-09-23T00:00:00",
+                    "estimatedRead": false
+                }
+            ],
+            "consumption": [
+                {
+                    "value": 3052.5434433538,
+                    "startDateTime": "2016-07-29T00:00:00",
+                    "endDateTime": "2016-09-23T00:00:00",
+                    "estimatedRead": false
+                }
+            ],
+            "hasNoBill": false
+        },
+        {
+            "account": "7004437310",
+            "contract": "9400671979",
+            "costs": [
+                {
+                    "value": 174.31,
+                    "startDateTime": "2016-08-06T00:00:00",
+                    "endDateTime": "2016-10-04T00:00:00",
+                    "estimatedRead": false
+                }
+            ],
+            "consumption": [
+                {
+                    "value": 12367.323750496,
+                    "startDateTime": "2016-08-06T00:00:00",
+                    "endDateTime": "2016-10-04T00:00:00",
+                    "estimatedRead": false
+                }
+            ],
+            "hasNoBill": false
+        },
+        {
+            "account": "7004437310",
+            "contract": "9400686273",
+            "costs": [],
+            "consumption": [],
+            "hasNoBill": false
+        },
+        {
+            "account": "7020624784",
+            "contract": "9400732978",
+            "costs": [],
+            "consumption": [],
+            "hasNoBill": false
+        },
+        {
+            "account": "7004437310",
+            "contract": "9400733459",
+            "costs": [],
+            "consumption": [],
+            "hasNoBill": false
+        }
+    ]
+}

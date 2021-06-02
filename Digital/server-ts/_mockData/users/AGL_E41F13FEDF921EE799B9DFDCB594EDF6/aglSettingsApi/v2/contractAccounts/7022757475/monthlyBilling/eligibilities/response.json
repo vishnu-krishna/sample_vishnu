@@ -1,0 +1,16 @@
+{
+  "status": 200,
+  "headers": {},
+  "body": [
+    {
+      "contractNumber": 9402893992,
+      "setup": { "isEligible": true },
+      "cancellation": { "isEligible": true }
+    },
+    {
+      "contractNumber": 9403010402,
+      "setup": { "isEligible": true },
+      "cancellation": { "isEligible": true }
+    }
+  ]
+}

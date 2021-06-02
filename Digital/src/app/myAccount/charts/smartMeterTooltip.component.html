@@ -1,0 +1,12 @@
+<div class="projection-amount">
+    <div class="tool-tip-holder">
+        <span class="projection-heading">Bill projection</span>
+        <span class="projected-bill">${{projection | number:'.2-2'}}</span>
+        <img (mouseover)="loadToolTip()" class="agltooltip-icon" src="svg/icon_info_tooltip.svg"/>
+        <div class="chart-tooltip" *ngIf="showToolTip">
+            Calculation based on historical usage for the remainder of the bill period. <a
+            href="https://community.agl.com.au/t5/Knowledge-Base/How-is-my-projected-bill-calculated/ta-p/1242"
+            target="_blank">For more information please see FAQs.</a>
+        </div>
+    </div>
+</div>

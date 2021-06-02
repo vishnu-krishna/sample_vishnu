@@ -1,0 +1,49 @@
+[{
+  "account": "123456789",
+  "contract": "111111111",
+  "overdue": 10,
+  "currentBalance": 11.45,
+  "totalPayment": 0,
+  "billSmoothing": false,
+  "directDebit": false
+}, {
+  "account": "123456789",
+  "contract": "222222222",
+  "overdue": 0,
+  "currentBalance": 0,
+  "totalPayment": 0,
+  "billSmoothing": false,
+  "directDebit": false
+}, {
+  "account": "123456789",
+  "contract": "333333333",
+  "overdue": 0,
+  "currentBalance": 30,
+  "totalPayment": 0,
+  "billSmoothing": false,
+  "directDebit": false
+}, {
+  "account": "123456789",
+  "contract": "444444444",
+  "overdue": 20,
+  "currentBalance": 58.80,
+  "totalPayment": 0,
+  "billSmoothing": false,
+  "directDebit": false
+}, {
+  "account": "123456789",
+  "contract": "555555555",
+  "overdue": 0,
+  "currentBalance": 0,
+  "totalPayment": 0,
+  "billSmoothing": false,
+  "directDebit": false
+}, {
+  "account": "123456789",
+  "contract": "666666666",
+  "overdue": 0,
+  "currentBalance": 0,
+  "totalPayment": 0,
+  "billSmoothing": false,
+  "directDebit": true
+}]

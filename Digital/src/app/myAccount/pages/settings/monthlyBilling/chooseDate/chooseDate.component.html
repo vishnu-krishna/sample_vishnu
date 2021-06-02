@@ -1,0 +1,69 @@
+<div class="monthly-billing-choose-date">
+    <div *ngIf="isLoading">
+        <agl-loader></agl-loader>
+    </div>
+
+    <div *ngIf="!isLoading">
+        <agl-maui-heading
+            [heading]="heading">
+        </agl-maui-heading>
+         <!-- Subheading for contract atleast one Monthly billing  -->
+        <agl-maui-heading
+        [subheading]="subHeading">
+        </agl-maui-heading>
+
+        <agl-maui-container [hasShadow]="true" class="date-picker-container">
+            <div class="date-picker-container-wrapper">
+                <agl-maui-day-of-month-picker
+                    [dayOfMonth]="selectedDate"
+                    (select)="onSelectDay($event)"
+                >
+                </agl-maui-day-of-month-picker>
+            </div>
+            <div class="content-separator"></div>
+            <div class="upcoming-billings">
+                <div class="upcoming-billings--title"> Upcoming bills </div>
+                <agl-monthly-billing-upcoming-bills [selectedBillDate]="selectedBillDate" ></agl-monthly-billing-upcoming-bills>
+            </div>
+
+
+            <div class="disclaimer-message">
+                Weekends and public holidays can affect your requested bill issue date (see our
+                <span class="disclaimer-terms-text"
+                    (click)="onClickTermsAndConditions()">terms and conditions</span> for further information). Your payment due date will be 14 business days from and including
+                your bill issue date. If you've selected the 29th, 30th or 31st of the month, in months without these days your
+                bill will be issued on the first business day of the following month.
+            </div>
+        </agl-maui-container>
+        <agl-maui-container *ngIf="showMonthlyBillingFlashMessage()" class="flash-message-container">
+            <agl-maui-flash-message [type]="FlashMessageType.Inform">
+                <div subheading>It can take up to one bill to update your billing preference, so your next bill might not be issued on your selected issue date.</div>
+            </agl-maui-flash-message>
+        </agl-maui-container>
+        <agl-maui-container *ngIf="warningMessageForBasicMeter" class="flash-message-container">
+            <agl-maui-flash-message [type]="FlashMessageType.Inform">
+                <div subheading>{{warningMessageForBasicMeter}}</div>
+            </agl-maui-flash-message>
+        </agl-maui-container>
+        <agl-maui-container *ngIf="apiError" class="flash-message-container">
+            <!-- Flash message when api call fails-->
+            <agl-maui-flash-message [type]="FlashMessageType.Error" [dismissable]="true" (dismiss)="onDismissApiError()">
+                <div heading>Sorry, we're unable to process your request right now. Please try again.</div>
+                <div subheading>If the issue persists, you can get in touch with us <a href="https://www.agl.com.au/residential/contact-us" target="_blank">here</a> and we'll sort it out.</div>
+            </agl-maui-flash-message>
+        </agl-maui-container>
+        <div  class="terms-and-conditions-container" *ngIf="!isOnMonthlyBilling">
+            <agl-maui-terms-and-conditions (checked)="termsAndConditionChecked($event)">
+                I understand that I'm entering into a monthly billing arrangement and I have read and agree to the <a (click)="onClickTermsAndConditions()">terms and conditions.</a>
+            </agl-maui-terms-and-conditions>
+        </div>
+
+        <div class="button-container">
+            <agl-maui-button [disabled]="!isSubmitButtonEnabled" (clicked)="submitMonthlyBilling()" [loading]="showSubmitButtonLoader">{{submitButtonText}}</agl-maui-button>
+            <div class="cancel-button" (click)="CancelMonthlyBilling()">CANCEL</div>
+        </div>
+
+        <!-- Terms and Condition Light box -->
+        <agl-monthly-billing-terms-conditions #termsAndConditons></agl-monthly-billing-terms-conditions>
+    </div>
+</div>

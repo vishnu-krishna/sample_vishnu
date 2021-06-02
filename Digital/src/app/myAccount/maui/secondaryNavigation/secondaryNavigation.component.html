@@ -1,0 +1,16 @@
+<div *ngIf="display" class="maui-navigation" [class.maui-navigation--hidden]="hideNavigation">
+    <div class="maui-navigation__wrapper">
+        <div *ngIf="displayBackButton" class="maui-navigation__back-option text-small" (click)="goBack()">
+            <span class="maui-navigation__back-option-chevron-desktop"></span>
+            <span class="maui-navigation__back-option-chevron-mobile"></span>
+            <span class="maui-navigation__back-option-text">Back</span>
+        </div>
+        <div *ngIf="!!pageNumber && !!pageTotal" class="maui-navigation__page"
+            [class.visible-xs]="displayPageNumberOnMobile()"
+            [class.hidden-xs]="displayPageNumberOnDesktop()">
+            <span class="maui-navigation__page-number">{{pageNumber}}</span> / <span class="maui-navigation__page-total">{{pageTotal}}</span>
+        </div>
+        <div class="maui-navigation__header-text">{{text}}</div>
+        <div class="maui-navigation__header-text-mobile">{{textMobile || text}}</div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="billing container">
+    <div id="billing-accounts" class="container col-md-9 col-sm-12 billing-left-panel">
+        <div *ngFor="let account of accounts" class="account">
+            <div class="address-header" *ngIf="account.groupedAddress">
+                <div class="number">Account no: {{account.accountNumber | aglAddSpaces}}
+                    <span *ngIf="account.allContractsAreRestricted" class="contract-state-pill__inactive">Inactive account</span>
+                    <span *ngFor="let contract of account.contracts">
+                        <mat-icon *ngIf="contract.isElectricity" class="elec" svgIcon="icon-elec-enabled"></mat-icon>
+                        <mat-icon *ngIf="contract.isGas" class="gas" svgIcon="icon-gas-enabled"></mat-icon>
+                    </span>
+                </div>
+                <div class="address">{{account.groupedAddress}}</div>
+            </div>
+
+            <div *ngFor="let contract of account.contracts" class="contract-container">
+                <div class="address-header" *ngIf="!account.groupedAddress">
+                    <div class="number">
+                        Account no: {{account.accountNumber | aglAddSpaces}}
+                        <mat-icon *ngIf="contract.isElectricity" class="elec" svgIcon="icon-elec-enabled"></mat-icon>
+                        <mat-icon *ngIf="contract.isGas" class="gas" svgIcon="icon-gas-enabled"></mat-icon>
+                        <span *ngIf="account.allContractsAreRestricted" class="contract-state-pill__inactive">Inactive account</span>
+                    </div>
+                    <div class="address">{{contract.address}}</div>
+                </div>
+                <div id="billing-container-{{contract.contractNumber}}" class="billing-container contract col-xs-12">
+                    <div class="col-md-12 col-xs-12 no-pad">
+                        <agl-fuel-title class="grouped-contract contract-fuel" [contract]="contract"></agl-fuel-title>
+                        <div *ngIf="contract.isRestricted && !account.allContractsAreRestricted" class="contract-fuel__inactive">Inactive</div>
+                        <agl-bill-panel [contract]="contract" [address]="account.groupedAddress"></agl-bill-panel>
+                    </div>
+                    <agl-bill-history [contract]="contract" [address]="account.groupedAddress"></agl-bill-history>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container col-md-3 col-sm-12 billing-right-panel">
+        <div class="col-md-12 col-xs-12 col-sm-6" *ngIf="!allContractsAreRestricted">
+            <agl-bills-button-stack [isReadOnly]="isButtonStackReadOnly()"></agl-bills-button-stack>
+        </div>
+        <div class="col-md-12 col-xs-12 col-sm-6 promo-area">
+            <agl-offer-tile *ngIf="decisioningEnabled" context="MyAccount_Billing_Page"></agl-offer-tile>
+            <agl-marketing-tile *ngIf="marketingTileEnabled"></agl-marketing-tile>
+        </div>
+    </div>
+
+    <agl-back-to-top></agl-back-to-top>
+
+</div>

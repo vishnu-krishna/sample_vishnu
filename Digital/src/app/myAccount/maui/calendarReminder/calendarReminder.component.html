@@ -1,0 +1,9 @@
+<agl-maui-dropdown (notify)="addEventToCalendar($event)">
+    <agl-maui-dropdown-option text="Add to your calendar" selected="true" disabled="true"></agl-maui-dropdown-option>
+    <agl-maui-dropdown-option [value]="CalendarType.Apple" text="Apple Calendar"></agl-maui-dropdown-option>
+    <agl-maui-dropdown-option [value]="CalendarType.Google" text="Google (online)"></agl-maui-dropdown-option>
+    <agl-maui-dropdown-option [value]="CalendarType.Outlook" text="Outlook"></agl-maui-dropdown-option>
+    <agl-maui-dropdown-option [value]="CalendarType.OutlookCom" text="Outlook.com (online)"></agl-maui-dropdown-option>
+</agl-maui-dropdown>
+<agl-maui-button *ngIf="isIOS && selectedCalendarType" class="maui-calendar-reminder__add" (click)="openCalendarEvent()"
+    type="secondary">ADD REMINDER</agl-maui-button>

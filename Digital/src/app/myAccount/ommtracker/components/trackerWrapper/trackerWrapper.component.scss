@@ -1,0 +1,36 @@
+@import '../../../../shared/style/omm/_omm_variables';
+@import '../../../../shared/style/variables';
+
+.tracker-wrapper {
+    background-color: $omm-vlight-grey;
+    position: relative;
+
+    &__bg {
+        position: absolute;
+        top: 85px;
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+        background-color: $omm-vlight-grey;
+
+        &:before {
+            background-color: $omm-blue;
+        }
+    }
+
+    &__bgblock {
+        background-color: $omm-blue;
+        height: 85px;
+        width: 100%;
+        position: absolute;
+        top: 0;
+    }
+
+    &__container {
+        max-width: 980px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+        width: 90%;
+    }
+}

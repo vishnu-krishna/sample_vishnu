@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\featureIntro\featureIntros.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/myAccount/featureIntro/</a> featureIntros.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">32.56% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>14/43</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">48% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>12/25</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">14.29% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">34.29% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>12/35</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
+&nbsp;
+import { ModalService } from '../modal/modal.service';
+import { IRewardsEligibilityService } from '../rewards';
+import { FeatureIntroService } from './services/featureIntro.service';
+import { FeatureIntroAnalytics } from './services/featureIntro-analytics';
+&nbsp;
+import { FeatureIntroModalComponent } from './featureIntroModal/featureIntroModal.component';
+import { FeatureIntro } from './shared/featureIntro';
+&nbsp;
+@Component({
+    selector: 'agl-feature-intros',
+    template: ''
+})
+export class FeatureIntrosComponent implements OnInit {
+    private readonly <span class="cstat-no" title="statement not covered" >rewardsFeatureId = 'Rewards';</span>
+    private <span class="cstat-no" title="statement not covered" >featureIntros: FeatureIntro[] = [];</span>
+&nbsp;
+    constructor(private <span class="cstat-no" title="statement not covered" >featureIntroService: FeatureIntroService,</span> private <span class="cstat-no" title="statement not covered" >modalService: ModalService<span class="branch-2 cbranch-no" title="branch not covered" >,</span> private <span class="cstat-no" title="statement not covered" >rewardsEligibilityService: </span>IRewardsEligibilityService<span class="branch-2 cbranch-no" title="branch not covered" >,</span> private <span class="cstat-no" title="statement not covered" >analytics: </span>FeatureIntroAnalytics<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >)</span> { }</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public ngOnInit() {</span></span>
+        // TODO: need to check eligibility. Where to store the featureId constant for rewards?
+<span class="cstat-no" title="statement not covered" >        Observable.forkJoin(</span>
+            this.featureIntroService.getFeatureIntros(),
+            this.rewardsEligibilityService.checkEligibility()
+        ).subscribe(([
+<span class="cstat-no" title="statement not covered" >            featureIntros,</span>
+<span class="cstat-no" title="statement not covered" >            rewardsEligibility</span>
+        ]<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+            let results: FeatureIntro[] = <span class="cstat-no" title="statement not covered" >[];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            for (let featureIntro<span class="cstat-no" title="statement not covered" ></span> of featureIntros) {</span>
+<span class="cstat-no" title="statement not covered" >                if (!this.featureIdStartsWith(featureIntro.featureId, this.rewardsFeatureId) || rewardsEligibility.isEligible) {</span>
+<span class="cstat-no" title="statement not covered" >                    results.unshift(featureIntro); </span>// need to reverse the order as we're stacking the feature intros (first on top)
+                }
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (results.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                this.featureIntros = results;</span>
+<span class="cstat-no" title="statement not covered" >                this.showFeatureIntros(results);</span>
+            }
+        });
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    private showFeatureIntros(featureIntros: FeatureIntro[]<span class="fstat-no" title="function not covered" >) {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.analytics.showFeatureIntro(this.featureIntros[this.featureIntros.length - 1].featureId);</span>
+<span class="cstat-no" title="statement not covered" >        this.modalService.activate({</span>
+            title: '',
+            cancelText: '',
+            okText: '',
+            modalType: 'emptyComponent',
+            component: FeatureIntroModalComponent,
+            fullScreen: false,
+            dialogContainerClosable: true,
+            componentData: { featureIntros: featureIntros }
+        }).then((closedByBtn: boolean<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            if (!closedByBtn) { // closed modal by clicking on background or escape so need to mark it as viewed still</span>
+<span class="cstat-no" title="statement not covered" >                if (this.featureIntros.length &gt; 0) {</span>
+                    let topFeatureIntro = <span class="cstat-no" title="statement not covered" >this.featureIntros[this.featureIntros.length - 1];</span>
+<span class="cstat-no" title="statement not covered" >                    this.featureIntroService.markFeatureIntroAsViewed(topFeatureIntro.featureId).subscribe();</span>
+<span class="cstat-no" title="statement not covered" >                    this.analytics.dismissFeatureIntro(topFeatureIntro.featureId);</span>
+                }
+            }
+        });
+    }
+&nbsp;
+    private featureIdStartsWith(featureId: string, match: string<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        featureId = (featureId + '').toUpperCase();</span>
+<span class="cstat-no" title="statement not covered" >        match = (match + '').toUpperCase();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return featureId.indexOf(match) === 0;</span>
+    }
+&nbsp;
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

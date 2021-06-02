@@ -1,0 +1,92 @@
+<div class="homeprofile-cooling">
+    <agl-home-profile-header [accountNumber]="accountNumber" [contractNumber]="contractNumber" pageHeading="Cooling"></agl-home-profile-header>
+
+    <div *ngIf="isLoading" class="homeprofile-landing__loader">
+        <agl-loader></agl-loader>
+    </div>
+
+    <div *ngIf="!isLoading" class="homeprofile-cooling-body">
+        <div class="homeprofile-cooling-questionnaire">
+            <div class="homeprofile-cooling-questionnaire__heading">How do you cool your home?</div>
+            <div class="homeprofile-cooling-questionnaire__item" data-test="split-system">
+                <div class="homeprofile-cooling-questionnaire__item-header">Number of split systems air conditioners?</div>
+                <agl-maui-segmented-buttons class="homeprofile-cooling__segmented-button" (change)="setNumberOfSplitSystemAirconCooling($event)">
+                    <agl-maui-segmented-button
+                        *ngFor="let option of numberOfSplitAirconOptions"
+                        value="{{option.value}}"
+                        text="{{option.text}}"
+                        [attr.data-test]="option.text"
+                        textMobile="{{option.textMobile}}"
+                        [selected]="option.value === homeProfile.numberOfSplitSystemAirconCooling">
+                    </agl-maui-segmented-button>
+                </agl-maui-segmented-buttons>
+            </div>
+            <div class="homeprofile-cooling-questionnaire__item" data-test="wall-unit">
+                <div class="homeprofile-cooling-questionnaire__item-header">Number of fixed air conditioning systems?</div>
+                <agl-maui-segmented-buttons class="homeprofile-cooling__segmented-button" (change)="setNumberOfWallUnitAirconCooling($event)">
+                    <agl-maui-segmented-button
+                        *ngFor="let option of numberOfFixedAirconOptions"
+                        value="{{option.value}}"
+                        text="{{option.text}}"
+                        [attr.data-test]="option.text"
+                        textMobile="{{option.textMobile}}"
+                        [selected]="option.value === homeProfile.numberOfWallUnitAirconCooling">
+                    </agl-maui-segmented-button>
+                </agl-maui-segmented-buttons>
+            </div>
+            <div class="homeprofile-cooling-questionnaire__item" data-test="ducted">
+                <div class="homeprofile-cooling-questionnaire__item-header">Do you have ducted air conditioning?</div>
+                <agl-maui-segmented-buttons class="homeprofile-cooling__segmented-button" (change)="setHasDuctedAirconCooling($event)">
+                    <agl-maui-segmented-button
+                        *ngFor="let option of yesOrNo"
+                        value="{{option.value}}"
+                        text="{{option.text}}"
+                        [attr.data-test]="option.text"
+                        textMobile="{{option.textMobile}}"
+                        [selected]="option.value === homeProfile.hasDuctedAirconCooling">
+                    </agl-maui-segmented-button>
+                </agl-maui-segmented-buttons>
+            </div>
+            <div class="homeprofile-cooling-questionnaire__item" data-test="evaporative">
+                <div class="homeprofile-cooling-questionnaire__item-header">Do you have ducted evaporative cooling?</div>
+                <agl-maui-segmented-buttons class="homeprofile-cooling__segmented-button" (change)="setHasDuctedEvaporativeCooling($event)">
+                    <agl-maui-segmented-button
+                        *ngFor="let option of yesOrNo"
+                        value="{{option.value}}"
+                        text="{{option.text}}"
+                        [attr.data-test]="option.text"
+                        textMobile="{{option.textMobile}}"
+                        [selected]="option.value === homeProfile.hasDuctedEvaporativeCooling">
+                    </agl-maui-segmented-button>
+                </agl-maui-segmented-buttons>
+            </div>
+            <div class="homeprofile-cooling-questionnaire__item" data-test="portable-evaporative">
+                <div class="homeprofile-cooling-questionnaire__item-header">Number of portable evaporative cooling units?</div>
+                <agl-maui-segmented-buttons class="homeprofile-cooling__segmented-button" (change)="setNumberOfPortableEvaporativeCooling($event)">
+                    <agl-maui-segmented-button
+                        *ngFor="let option of numberOfEvaporativesOptions"
+                        value="{{option.value}}"
+                        text="{{option.text}}"
+                        [attr.data-test]="option.text"
+                        textMobile="{{option.textMobile}}"
+                        [selected]="option.value === homeProfile.numberOfPortableEvaporativeCooling">
+                    </agl-maui-segmented-button>
+                </agl-maui-segmented-buttons>
+            </div>
+            <div class="homeprofile-cooling-questionnaire__item" data-test="fans">
+                <div class="homeprofile-cooling-questionnaire__item-header">Number of fans?</div>
+                <agl-maui-segmented-buttons class="homeprofile-cooling__segmented-button" (change)="setNumberOfCoolingFans($event)">
+                    <agl-maui-segmented-button
+                        *ngFor="let option of numberOfFansOptions"
+                        value="{{option.value}}"
+                        text="{{option.text}}"
+                        [attr.data-test]="option.text"
+                        textMobile="{{option.textMobile}}"
+                        [selected]="option.value === homeProfile.numberOfCoolingFans">
+                    </agl-maui-segmented-button>
+                </agl-maui-segmented-buttons>
+            </div>
+        </div>
+    </div>
+    <agl-home-profile-footer [accountNumber]="accountNumber" [contractNumber]="contractNumber"></agl-home-profile-footer>
+</div>

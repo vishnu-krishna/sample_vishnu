@@ -1,0 +1,24 @@
+<div class="homeprofile-hotwater">
+    <agl-home-profile-header [accountNumber]="accountNumber" [contractNumber]="contractNumber" pageHeading="Hot water"></agl-home-profile-header>
+
+    <div *ngIf="isLoading" class="homeprofile-landing__loader">
+        <agl-loader></agl-loader>
+    </div>
+
+    <div *ngIf="!isLoading" class="homeprofile-hotwater-body">
+        <div class="homeprofile-hotwater-questionnaire">
+            <span class="homeprofile-hotwater-questionnaire__heading">What type of hot water system do you have?</span>
+            <div data-test="hot-water">
+                <agl-maui-radio-button-group name="hotWaterTypeRadioGroup" [selectedValue]="homeProfile.hotWaterType" (selectedValueChange)="setHotWaterType($event)">
+                    <agl-maui-radio-button *ngFor="let option of hotWaterTypes" [value]="option.value">
+                        <div label>
+                            {{option.text}}
+                        </div>
+                    </agl-maui-radio-button>
+                </agl-maui-radio-button-group>
+            </div>
+        </div>
+    </div>
+
+    <agl-home-profile-footer [accountNumber]="accountNumber" [contractNumber]="contractNumber"></agl-home-profile-footer>
+</div>

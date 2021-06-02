@@ -1,0 +1,122 @@
+<agl-maui-secondary-navigation display="true" text="Payment assistance" textMobile="Payment assistance"></agl-maui-secondary-navigation>
+<div class="payment-assistance-select">
+
+    <div class="payment-assistance-select__loader" *ngIf="showLoader">
+        <agl-loader loadingSubMessage="We're looking into your options, please stand by."></agl-loader>
+    </div>
+
+    <div *ngIf="!showLoader">
+
+        <div *ngIf="showError">
+            <agl-payment-assistance-select-error></agl-payment-assistance-select-error>
+        </div>
+        <div *ngIf="!showError" class="payment-assistance-select__content">
+            <agl-maui-heading *ngIf="showHeading1ChooseYourBill" [heading]="heading1ChooseYourBill"></agl-maui-heading>
+            <agl-maui-heading *ngIf="showHeading2CannotOfferOPA" [heading]="heading2CannotOfferOPA"></agl-maui-heading>
+            <agl-maui-heading *ngIf="showSubheading1SelectBillChooseYourBill" [subheading]="subheading1SelectBillChooseYourBill"></agl-maui-heading>
+            <div *ngFor="let fuelChip of classifiedFuelChips.eligibleFuelChips; let first = first; let last = last">
+                <agl-maui-container [hasShadow]="false" class="payment-assistance-select__fuel-chip"
+                    [class.payment-assistance-select__fuel-chip--first]="first"
+                    [class.payment-assistance-select__fuel-chip--last]="last">
+                    <agl-maui-fuel-chip
+                        [fuelChipState]="fuelChip.state"
+                        [fuelType]="fuelChip.fuelType"
+                        [fuelContext]="MauiFuelChipFuelContext.None"
+                        [contractNumber]="fuelChip.contractNumber"
+                        [contractAccountDetails]="fuelChip.accountDetails"
+                        (selectorClick)="onFuelChipSelected(fuelChip.contractNumber)">
+                        <agl-maui-fuel-chip-message *ngIf="fuelChip.statusMessage[0].primaryMessage"
+                            [primaryMessage]="fuelChip.statusMessage[0].primaryMessage"
+                            [secondaryMessage]="fuelChip.statusMessage[0].secondaryMessage"
+                            [secondaryMessageStatus]="fuelChip.statusMessage[0].secondaryMessageStatus">
+                        </agl-maui-fuel-chip-message>
+                    </agl-maui-fuel-chip>
+                </agl-maui-container>
+            </div>
+            <div *ngIf="showPayOnTimeDiscountMessage" class="payment-assistance-select__potd-message">
+                <div>Your account balance shown here excludes any applicable Pay on Time discounts.</div>
+                <div>By setting up online payment assistance, you'll no longer be eligible for this discount.</div>
+            </div>
+            <agl-maui-heading *ngIf="showSubheading2AlreadySetupOPA" [subheading]="subheading2AlreadySetupOPA"></agl-maui-heading>
+            <div *ngFor="let fuelChip of classifiedFuelChips.alreadyExtendedFuelChips; let first = first; let last = last">
+                <agl-maui-container [hasShadow]="false" class="payment-assistance-select__fuel-chip"
+                    [class.payment-assistance-select__fuel-chip--first]="first"
+                    [class.payment-assistance-select__fuel-chip--last]="last">
+                    <agl-maui-fuel-chip
+                        [fuelChipState]="fuelChip.state"
+                        [fuelType]="fuelChip.fuelType"
+                        [fuelContext]="MauiFuelChipFuelContext.None"
+                        [contractNumber]="fuelChip.contractNumber"
+                        [contractAccountDetails]="fuelChip.accountDetails">
+                        <agl-maui-fuel-chip-message *ngIf="fuelChip.statusMessage[0].primaryMessage"
+                            [primaryMessage]="fuelChip.statusMessage[0].primaryMessage"
+                            [secondaryMessage]="fuelChip.statusMessage[0].secondaryMessage"
+                            [secondaryMessageStatus]="fuelChip.statusMessage[0].secondaryMessageStatus">
+                        </agl-maui-fuel-chip-message>
+                    </agl-maui-fuel-chip>
+                </agl-maui-container>
+            </div>
+            <agl-maui-heading *ngIf="showSubheading3aNoOPAOptionsAvailable && !showSubheading3bDontWorryOtherOptionsAvailable" [subheading]="subheading3aNoOPAOptionsAvailable"></agl-maui-heading>
+            <agl-maui-heading *ngIf="!showSubheading3aNoOPAOptionsAvailable && showSubheading3bDontWorryOtherOptionsAvailable" [subheading]="subheading3bDontWorryOtherOptionsAvailable"></agl-maui-heading>
+            <agl-maui-heading *ngIf="showSubheading3aNoOPAOptionsAvailable && showSubheading3bDontWorryOtherOptionsAvailable" [subheading]="subheading3aNoOPAOptionsAvailable + ' ' + subheading3bDontWorryOtherOptionsAvailable"></agl-maui-heading>
+            <div *ngFor="let fuelChip of classifiedFuelChips.ineligibleFuelChips; let first = first; let last = last">
+                <agl-maui-container [hasShadow]="false" class="payment-assistance-select__fuel-chip"
+                    [class.payment-assistance-select__fuel-chip--first]="first"
+                    [class.payment-assistance-select__fuel-chip--last]="last">
+                    <agl-maui-fuel-chip
+                        [fuelChipState]="fuelChip.state"
+                        [fuelType]="fuelChip.fuelType"
+                        [fuelContext]="MauiFuelChipFuelContext.None"
+                        [contractNumber]="fuelChip.contractNumber"
+                        [contractAccountDetails]="fuelChip.accountDetails">
+                        <agl-maui-fuel-chip-message *ngIf="fuelChip.statusMessage[0].primaryMessage"
+                            [primaryMessage]="fuelChip.statusMessage[0].primaryMessage"
+                            [secondaryMessage]="fuelChip.statusMessage[0].secondaryMessage"
+                            [secondaryMessageStatus]="fuelChip.statusMessage[0].secondaryMessageStatus">
+                        </agl-maui-fuel-chip-message>
+                        <agl-maui-fuel-chip-footer *ngIf="fuelChip.tertiaryMessage"
+                            [tertiaryMessage]="fuelChip.tertiaryMessage">
+                        </agl-maui-fuel-chip-footer>
+                    </agl-maui-fuel-chip>
+                </agl-maui-container>
+            </div>
+            <div *ngIf="ineligible" class="payment-assistance-select__chat-container">
+                <agl-maui-container class="web-chat">
+                    <div class="web-chat-padding-for-container">
+                        <span class="web-chat-icon"></span>
+                        <agl-webchat #paymentAssistanceChat chatButtonId="LPPaymentAssistanceSelect" [contentIsHostedInLivePerson]="false">
+                            <div agent-status-unresolved>
+                                <div class="web-chat-title--unresolved-agent-status">
+                                    &nbsp;
+                                </div>
+                                <div class="web-chat-button--unresolved-agent-status">
+                                    &nbsp;
+                                </div>
+                            </div>
+                            <div agent-offline>
+                                <div class="web-chat-agent-offline-message">
+                                    To learn about other payment assistance options we have available to you, call 
+                                    <a href="tel:131 245">131 245</a>.
+                                </div>
+                                <div class="web-chat-agent-offline-message-bottom">
+                                    Calling from overseas? You can call us on 
+                                    <a href="tel:+61386336000">+61 3 8633 6000</a>.
+                                </div>
+                            </div>
+                            <div agent-online>
+                                <div class="web-chat-button">
+                                    To learn about other payment assistance options we have available to you, 
+                                    <a (click)="paymentAssistanceChat.requestChat()">chat with us now</a> or call 
+                                    <a href="tel:131 245">131 245</a>.
+                                </div>
+                            </div>
+                        </agl-webchat>
+                    </div>
+                </agl-maui-container>
+            </div>
+            <div *ngIf="showGoToOverviewButton" class="payment-assistance-select__button-overview">
+                <agl-maui-button (clicked)="goToOverview()">Go To Overview</agl-maui-button>
+            </div>
+        </div>
+    </div>
+</div>

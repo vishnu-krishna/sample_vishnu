@@ -1,0 +1,20 @@
+.giga,
+.mega,
+.kilo {
+    font-family: $displayStack;
+    font-weight: $fw-semi-bold;
+    color: $col-g1;
+    line-height: 1;
+}
+
+.giga {
+    @include fluid-prop(font-size, 320px, 960px, 46px, 70px);
+}
+
+.mega {
+    @include fluid-prop(font-size, 320px, 960px, 33px, 50px);
+}
+
+.kilo {
+    @include fluid-prop(font-size, 320px, 960px, 29px, 45px);
+}

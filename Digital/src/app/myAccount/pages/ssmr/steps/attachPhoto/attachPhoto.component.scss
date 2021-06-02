@@ -1,0 +1,257 @@
+@import '../../../../../shared/style/variables';
+@import '../../../../../shared/style/mixins';
+@import '../../../../../shared/style/tempdls';
+
+.attach-photo {
+    padding: 0 20px;
+
+    agl-file-upload {
+        input {
+            display: none;
+        }
+    }
+
+    .header {
+        color: $brand-grey-g1;
+        font-family: $primary-font-stack;
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        @media #{$agl-layout-mobile} {
+            font-size: 25px;
+        }
+    }
+
+    .loader {
+        width: 100px;
+        height: 100px;
+        margin-right: auto;
+        margin-left: auto;
+        position: absolute;
+        z-index: 999;
+        left: 0;
+        right: 0;
+        margin-top: 100px;
+    }
+
+    .description {
+        color: $ssmr-read-date-color;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+        font-family: $secondary-font-stack;
+        margin: 3px auto 24px auto;
+    }
+
+    .meter-box {
+
+        background-color: $brand-white;
+        border-radius: 4px;
+        box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+        min-height: 220px;
+        max-width: 280px;
+        margin: auto;
+        margin-bottom: 17px;
+
+        .file-input {
+            display: none;
+        }
+
+        &__top {
+
+            &__icon {
+
+                display: inline-block;
+                width: 54px;
+                text-align: center;
+                padding-top: 18px;
+
+                img {
+                    height: 30px;
+                    width: 22px;
+                }
+
+            }
+
+            .meter-index {
+                display: inline-block;
+                height: 36px;
+                width: 14px;
+                color: $ssmr-read-date-color;
+                font-family: $primary-font-stack;
+                font-size: 24px;
+                font-weight: bold;
+                line-height: 36px;
+                padding-top: 15px;
+            }
+
+            .meter-serial__container {
+                display: inline-block;
+                padding-left: 15px;
+
+                .meter-prefix {
+                    max-height: 19px;
+                    max-width: 64px;
+                    color: $ssmr-read-date-color;
+                    font-family: $secondary-font-stack;
+                    font-size: 14px;
+                    line-height: 19px;
+                }
+
+                .meter-serial {
+                    max-height: 19px;
+                    max-width: 144px;
+                    color: $ssmr-read-date-color;
+                    font-family: $secondary-font-stack;
+                    font-size: 14px;
+                    font-weight: bold;
+                    line-height: 19px;
+                }
+
+                .registers-count {
+                    max-height: 15px;
+                    max-width: 56px;
+                    color: $control-border-colour;
+                    font-family: $secondary-font-stack;
+                    font-size: 11px;
+                    line-height: 15px;
+                }
+            }
+        }
+
+        .thumbnail-image {
+            position: relative;
+            max-height: 130px;
+            max-width: 240px;
+            border: 1px solid $brand-sky;
+            margin: 20px auto;
+            text-align: center;
+            white-space: nowrap;
+
+            .vertical-alignment-helper {
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+            }
+
+            img {
+                vertical-align: middle;
+                max-height: 126px;
+                max-width: 236px;
+            }
+
+            .close-button {
+                position: absolute;
+                background-color: $brand-white;
+                cursor: pointer;
+                top: 2px;
+                font-size: 29px;
+                max-height: 20px;
+                max-width: 17px;
+                color: $brand-blue;
+                font-weight: bold;
+                line-height: 19px;
+                right: 3px;
+                border-radius: 2px;
+            }
+        }
+
+        .thumbnail-placeholder {
+            border: 2px dashed $brand-grey-c5;
+            min-height: 130px;
+            max-width: 240px;
+            text-align: center;
+            margin: 20px auto;
+            cursor: pointer;
+
+            &__icon {
+                background-image: url('svg/photo_icon.svg');
+                background-size: 74px 74px;
+                background-repeat: no-repeat;
+                width: 74px;
+                height: 54px;
+                margin: auto;
+            }
+
+            &__heading {
+                max-height: 20px;
+                max-width: 152px;
+                margin: 5px auto 4px auto;
+                color: $brand-sky;
+                font-family: $secondary-font-stack;
+                font-size: 14px;
+                font-weight: bold;
+                line-height: 20px;
+                text-align: center;
+            }
+
+            &__message {
+                max-height: 30px;
+                max-width: 177.57px;
+                margin: auto;
+                color: $brand-grey-g2;
+                font-family: $secondary-font-stack;
+                font-size: 12px;
+                line-height: 15px;
+                text-align: center;
+
+                &--error {
+                    color: $brand-error-red;
+                }
+            }
+        }
+
+    }
+
+    .button__continue {
+        text-align: center;
+        margin-top: 25px;
+
+        a {
+            max-height: 50px;
+            max-width: 290px;
+            padding: 7px 50px;
+            border-radius: $agl-border-radius;
+
+            [disabled] {
+                color: $brand-grey-g3;
+
+            }
+        }
+
+        &.close-button {
+            :hover {
+                background-color: initial;
+            }
+        }
+    }
+
+    .disclaimer {
+        padding-top: 50px;
+        color: $brand-grey-g3;
+        font-family: $secondary-font-stack;
+        font-size: 12px;
+    }
+
+    .footer__content {
+        width: 200px;
+        margin: 70px auto;
+        color: $brand-sky;
+        background-color: $brand-grey-g6;
+        font-size: 16px;
+        font-weight: bold;
+        font-family: $primary-font-stack;
+        cursor: pointer;
+        text-align: center;
+
+        a {
+            color: $brand-sky;
+        }
+
+        img {
+            margin-right: 8px;
+        }
+    }
+}
+
+	

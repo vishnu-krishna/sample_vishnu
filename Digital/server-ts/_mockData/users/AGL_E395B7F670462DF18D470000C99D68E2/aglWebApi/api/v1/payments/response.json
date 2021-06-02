@@ -1,0 +1,26 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "account": "95455382",
+            "contract": "9082935531",
+            "overdue": 81.74,
+            "dueDate": "15/05/2017",
+            "currentBalance": 48.03,
+            "totalPayment": 129.77,
+            "billSmoothing": false,
+            "directDebit": false
+        },
+        {
+            "account": "95455382",
+            "contract": "9082935532",
+            "overdue": 81.74,
+            "dueDate": "15/05/2017",
+            "currentBalance": 48.03,
+            "totalPayment": 129.77,
+            "billSmoothing": false,
+            "directDebit": false
+        }
+    ]
+}

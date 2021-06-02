@@ -1,0 +1,55 @@
+<agl-maui-showcase-template heading='Page Progress Bar'>
+    <div description>
+        <p>Page progress bar takes two input parameters</p>
+        <div class="showcase-attributes">
+            <div class="header">Attributes for &lt;agl-maui-page-progress-bar&gt;</div>
+            <table>
+                <tr><td>currentPage</td> <td>string</td> <td class="required">required</td> <td>must be an integer value between 1 and totalPages</td> </tr>
+                <tr><td>totalPages</td> <td>string</td> <td class="required">required</td> <td>must be an integer value greater than 0</td></tr>
+            </table>
+        </div>
+        <p>The page progress bar will render no visible elements if either currentPage or totalPages is invalid.</p>
+    </div>
+    <div exampleCodeUsage>
+        {{codeUsage}}
+    </div>
+    <div exampleImplementation>
+        <div class="example-wrapper">
+            <agl-maui-showcase-example>
+                <agl-maui-page-progress-bar
+                    currentPage="{{currentPage}}" totalPages="{{totalPages}}">
+                </agl-maui-page-progress-bar>
+                <div class="progress-bar-showcase__customise">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-6 col-xs-12">
+                            <div class="progress-bar-showcase__customise-heading">Change properties:</div>
+                            <div class="row form-group">
+                                <div class="col-sm-8 col-xs-12">
+                                    <label for="progress-bar-showcase__total-page">Current page</label>
+                                </div>
+                                <div class="col-sm-4 col-xs-12">
+                                    <input class="form-control" id="progress-bar-showcase__current-page" type="text" #currentPageInput [value]="currentPage" (change)="changePageProgressBar(currentPageInput.value, totalPagesInput.value)">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-sm-8 col-xs-12">
+                                    <label for="progress-bar-showcase__total-page">Total pages</label>
+                                </div>
+                                <div class="col-sm-4 col-xs-12">
+                                    <input class="form-control" id="progress-bar-showcase__total-pages" type="text" #totalPagesInput [value]="totalPages" (change)="changePageProgressBar(currentPageInput.value, totalPagesInput.value)">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-xs-12">
+                            <div class="progress-bar-showcase__customise-heading">Or move current page marker:</div>
+                            <div class="row progress-bar-showcase__customise-buttons">
+                                <agl-maui-button class="progress-bar-showcase__customise-button col-sm-6 col-xs-12" type="secondary" [disabled]="noPrevious" (clicked)="previousPage()">Back</agl-maui-button>
+                                <agl-maui-button class="progress-bar-showcase__customise-button col-sm-6 col-xs-12" type="secondary" [disabled]="noNext" (clicked)="nextPage()">Next</agl-maui-button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </agl-maui-showcase-example>
+        </div>
+    </div>
+</agl-maui-showcase-template>

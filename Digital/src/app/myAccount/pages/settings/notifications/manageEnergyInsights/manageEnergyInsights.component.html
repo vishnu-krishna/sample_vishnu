@@ -1,0 +1,99 @@
+<div class="main-card-options__header">
+    <h4>Energy Insights</h4>
+    <agl-maui-tooltip [tooltipBody]="'The Mid Bill update gives you time to adjust your usage before your next bill. The Energy Insights report estimates where your energy went for the bill period.'">
+    <agl-maui-tooltip-icon>i</agl-maui-tooltip-icon>
+    </agl-maui-tooltip>
+    <div *ngIf="(energyInsightsSubscriptionModels.length > 1 || hasEligibleEnergyInsightsContracts) && !isEnergyInsightsDataError">
+        <h5>
+            Energy Insights estimates how your electricity is used in your home and breaks it down into categories like heating, cooling, lighting and more. <span *ngIf="emailAddress !== ''">Reports are delivered to {{emailAddress}}.</span>
+        </h5>
+        <h5>
+            You’ll receive your first Energy Insights email once we have 6 months worth of data for your home.
+        </h5>
+    </div>
+</div>
+
+<div *ngFor="let model of energyInsightsSubscriptionModels; let isFirstRow=first" class="main-card-options__container"
+    [ngClass]="{
+        'main-card-options__container--first' : isFirstRow
+     }">
+    <div *ngIf="showEnergyInsightsSubscriptionToggles(model)" >
+        <div class="account" *ngIf="shouldShowAccountOrContractHeader()">
+            <div class="account__number">
+                <span class="energy-insights__contract-number" *ngIf="!showAccountNumber">
+                    Contract no: {{model.contractNumber | aglAddSpaces}}
+                </span>
+                <span class="energy-insights__account-number"*ngIf="showAccountNumber">
+                    Account no: {{model.accountNumber | aglAddSpaces}}
+                </span>
+                <div class="account__icons">
+                    <mat-icon class="account__icon--elec account__icon" svgIcon="icon-elec-enabled" alt="electricity icon"></mat-icon>
+                </div>
+            </div>
+            <div class="account__address">
+                {{model.address}}
+            </div>
+        </div>
+
+        <span *ngIf="model.isEnergyInsightsEligible">
+            <div class="main-card-options__toggle mid-bill-control">
+                <p class="main-card-options__toggle__label">Mid Bill Update.</p>
+                <agl-maui-toggle
+                    [(toggleValue)]="model.energyInsightsSubscription.subscribedToMidBillEnergyBreakdown"
+                    [isLoading]="model.midBillRequestLoading"
+                    (toggleValueChange)="setUpMidBillReport($event, model)"></agl-maui-toggle>
+            </div>
+            <div class="main-card-options__error" *ngIf="model.postEnergyInsightsMidFailed">
+                <agl-maui-flash-message
+                    [type]="FlashMessageType.Error"
+                    [dismissable]="true"
+                    (dismiss)="onClickDismissFlashMessage(true, model)">
+                        <div heading>
+                            Sorry, we’re unable to process your request right now. Please try again.
+                        </div>
+                        <div subheading>If the issue persists, you can get in touch with us <a href="https://www.agl.com.au/residential/contact-us" target="_blank">here</a> and we'll sort it out.
+                        </div>
+                </agl-maui-flash-message>
+            </div>
+
+            <div class="main-card-options__toggle end-bill-control">
+                <p class="main-card-options__toggle__label">Energy Insights Report.</p>
+                <agl-maui-toggle
+                    [(toggleValue)]="model.energyInsightsSubscription.subscribedToEndBillEnergyBreakdown"
+                    [isLoading]="model.endBillRequestLoading"
+                    (toggleValueChange)="setUpEndBillReport($event, model)"></agl-maui-toggle>
+            </div>
+            <div class="main-card-options__error" *ngIf="model.postEnergyInsightsEndFailed">
+                <agl-maui-flash-message
+                    [type]="FlashMessageType.Error"
+                    [dismissable] = "true"
+                    (dismiss)="onClickDismissFlashMessage(false, model)">
+                        <div heading>
+                            Sorry, we’re unable to process your request right now. Please try again.
+                        </div>
+                        <div subheading>If the issue persists, you can get in touch with us <a href="https://www.agl.com.au/residential/contact-us" target="_blank">here</a> and we'll sort it out.
+                        </div>
+                </agl-maui-flash-message>
+            </div>
+        </span>
+        <span *ngIf="!model.isEnergyInsightsEligible">
+            <agl-maui-flash-message
+                type="Inform"
+                [dismissable]="false"
+                *ngIf="!isEnergyInsightsDataError">
+                <div subheading>
+                    {{model.ineligibleReasonMessage}}
+                </div>
+            </agl-maui-flash-message>
+        </span>
+    </div>
+</div>
+
+<!-- API Get Error -->
+<agl-maui-flash-message type="Error" [dismissable]="false" *ngIf="isEnergyInsightsDataError">
+    <div heading>
+        Sorry, we’re unable to process your request right now. Please try again.
+    </div>
+    <div subheading>If the issue persists, you can get in touch with us <a href="https://www.agl.com.au/residential/contact-us" target="_blank">here</a> and we'll sort it out.
+    </div>
+</agl-maui-flash-message>

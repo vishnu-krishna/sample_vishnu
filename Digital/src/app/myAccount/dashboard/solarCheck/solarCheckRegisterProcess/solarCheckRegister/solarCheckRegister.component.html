@@ -1,0 +1,39 @@
+<div class="solar-check-register agl-modal-body">
+    <div *ngIf="!awaitingRegisterResponse" class="row modal-navi no-horizontal-padding">
+        <span id="modal-back-button" class="back-button" (click)="previous()" #backButtonTopLeft>
+            <img src="svg/scc_modal_back_arrow.svg" alt="Navigate to previous step">
+        </span>
+        <span id="modal-close-button" class="close-button" (click)="closeModal()" #cancelButtonTopRight>
+            <img src="svg/scc_modal_close.svg" alt="Exit Solar Check registration">
+        </span>
+    </div>
+    <div class="visible-xs background">
+        <div class="center-image-horizontally-cropped-outer">
+            <div class="center-image-horizontally-cropped-inner">
+                <img src="svg/scc-houseonhill-importantinfo-mb-768px.svg" />
+            </div>
+        </div>
+    </div>
+    <div class="body-text">
+        <div *ngIf="!awaitingRegisterResponse">
+            <div class="main-heading heading move-up-for-mobile">
+                One last thing...
+            </div>
+            <div class="register-message">
+                We know you're keen to get up and running, just check the terms of service and we’ll get the wheels in motion.
+            </div>
+            <div class="terms-of-service">
+                <mat-checkbox color="primary" [checked]="termsAccepted" (change)="toggleTermsAccepted()"></mat-checkbox>
+                Got it. I've read the <a href="https://solarstatus.agl.com.au/terms" target="_blank">terms of service</a>
+            </div>
+            <div class="next-button">
+                <button mat-raised-button [disabled]="!termsAccepted" class="dls-button" color="accent" (click)="submit()">SET IT UP</button>
+            </div>
+            <agl-alert *ngIf="isError" alertType="error" heading="Sorry, we seem to be experiencing a problem." body="We couldn't complete your registration. Please give it another try."></agl-alert>
+        </div>
+        <agl-loader *ngIf="awaitingRegisterResponse" [isLargeText]="true" loadingMessage="Almost done..." loadingSubMessage="We’re just checking your details, won’t be long now." [fullScreen]="false"></agl-loader>
+    </div>
+    <div class="hidden-xs background">
+        <img src="svg/scc-houseonhill-importantinfo-wd-tb.svg" />
+    </div>
+</div>

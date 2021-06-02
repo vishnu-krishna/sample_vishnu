@@ -1,0 +1,287 @@
+@import '../../../../shared/style/variables';
+@import '../../../../shared/style/mixins';
+@import '../../../../shared/style/tempdls';
+
+.usage-modal {
+    opacity: 1;
+    width: 100%;
+    margin: auto;
+    transform: translateY(75%);
+    overflow-y: auto;
+}
+
+.usage-modal-content {
+    width: 100%;
+    height: 100%;
+
+    .header {
+        height: 89px;
+        background-color: $brand-sky;
+        border: none;
+
+        &__details {
+            text-align: left;
+            margin-top: 22px;
+            font-size: 14px;
+            color: $brand-white;
+
+            @media #{$agl-layout-desktop-medium-and-greater } {
+                -webkit-animation: fadein 2000ms;
+                /* Safari, Chrome and Opera > 12.1 */
+                -moz-animation: fadein 2000ms;
+                /* Firefox < 16 */
+                -ms-animation: fadein 2000ms;
+                /* Internet Explorer */
+                animation: fadein 2000ms;
+            }
+            @media #{$agl-layout-mobile } {
+                display: none;
+            }
+
+            .value {
+                font-weight: bold;
+                font-size: 16px;
+            }
+        }
+
+        &__month {
+            margin-top: 15px;
+            @media #{$agl-layout-desktop-medium-and-greater } {
+                animation-name: headerMonth;
+                animation-iteration-count: 1;
+                animation-duration: 1300ms;
+            }
+            @media #{$agl-layout-mobile } {
+                margin-top: 20px;
+            }
+
+            &__text {
+                margin-left: auto;
+                margin-right: auto;
+                font-family: $primary-font-stack;
+                font-size: 24px;
+                font-weight: bold;
+                text-align: center;
+                color: $brand-white;
+                @media #{$agl-layout-mobile } {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        &__closebutton {
+            top: 15px;
+            float: right;
+            position: absolute;
+            right: 10px;
+
+            @media #{$agl-layout-desktop-medium-and-greater } {
+                -webkit-animation: fadein 2000ms;
+                /* Safari, Chrome and Opera > 12.1 */
+                -moz-animation: fadein 2000ms;
+                /* Firefox < 16 */
+                -ms-animation: fadein 2000ms;
+                /* Internet Explorer */
+                animation: fadein 2000ms;
+            }
+
+            &--image {
+                height: 30px;
+                width: 30px;
+                @media #{$agl-layout-mobile } {
+                    height: 25px;
+                    width: 25px;
+                }
+            }
+
+            &:hover {
+                cursor: pointer;
+                cursor: hand;
+            }
+        }
+    }
+
+    .dailygraphwidget {
+        height: 350px; // Brian
+        background-color: $brand-white;
+    }
+
+    .middle-panel {
+        height: 67px;
+        padding-top: 9px;
+        background-color: $brand-sky;
+        position: absolute;
+        top: 493px;
+        left: 0px;
+        right: 0px;
+        color: $brand-white;
+        font-family: $secondary-font-stack;
+        font-size: 14px;
+
+        @media #{$agl-layout-tablet-and-smaller } {
+            top: 451px;
+        }
+
+        &__item {
+            width: 250px;
+            margin: 0px auto;
+            position: absolute;
+            left: 0px;
+            right: 0px;
+
+            .cost {
+                display: inline-block;
+                font-family: $primary-font-stack;
+                font-weight: bold;
+                font-size: 30px;
+                padding-right: 14px;
+            }
+
+            .consumption {
+                display: inline-block;
+                padding-left: 12px;
+                font-family: $primary-font-stack;
+                font-weight: normal;
+                font-size: 30px;
+            }
+
+            .separator {
+                display: inline-block;
+                font-weight: normal;
+                opacity: .39;
+                border: 1px solid $brand-white;
+                height: 21px;
+            }
+        }
+    }
+
+    .hourly-graph-widget {
+        height: 500px;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 560px;
+        background-color: $cbd-blue;
+        /* this section calls the above */
+        animation-name: moveHourlyWidget;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+        animation-duration: 600ms;
+        @media #{$agl-layout-tablet-and-smaller } {
+            top: 518px;
+        }
+    }
+
+    @keyframes moveHourlyWidget {
+        0% {
+            transform: translateY(100%);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+    @keyframes headerMonth {
+        0% {
+            transform: translateX(-50%);
+        }
+
+        50% {
+            transform: translateX(-50%);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
+    @keyframes fadein {
+        0% {
+            opacity: 0;
+        }
+
+        40% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+.estimated-reads {
+    position: absolute;
+    top: 380px;
+    right: 0px;
+    left: 0px;
+    margin: 0 auto;
+    width: 380px;
+    font-family: $secondary-font-stack;
+    font-size: 12px;
+    color: $brand-white;
+    text-align: center;
+
+    &__heading {
+
+        margin-left: auto;
+        margin-right: auto;
+        height: 25px;
+        width: 160px;
+
+        .legend--daily {
+            margin: 3px;
+            float: left;
+            width: 16px;
+            height: 14px;
+            background-image: url('svg/usage-graph-estimatedpin.svg');
+        }
+
+        .legend--low {
+            margin: 3px;
+            float: left;
+            width: 12px;
+            height: 12px;
+            border: 1px solid $brand-white;
+            background-image: url('svg/usage-graph-hatchpattern.svg');
+        }
+
+        .legend--high {
+            margin: 3px;
+            float: left;
+            width: 12px;
+            height: 12px;
+            border: 1px solid $brand-bright;
+            background-image: url('svg/usage-graph-hatchpattern.svg');
+        }
+    }
+
+    &__message {
+        font-size: 10px;
+
+        .read-more-less {
+            font-family:  $secondary-font-stack;
+            font-size: 10px;
+            font-weight: bold;
+            color: $brand-water;
+
+            &:hover {
+                cursor: pointer;
+                cursor: hand;
+            }
+        }
+    }
+
+}
+
+.disclaimer {
+    position: absolute;
+    top: 310px;
+    right: 0px;
+    left: 0px;
+    margin: 0 auto;
+    width: 360px;
+    font-family: $secondary-font-stack;
+    font-size: 10px;
+    color: $brand-white;
+    text-align: center;
+}

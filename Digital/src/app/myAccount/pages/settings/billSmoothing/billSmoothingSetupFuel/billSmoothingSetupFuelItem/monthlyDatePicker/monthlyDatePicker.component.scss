@@ -1,0 +1,79 @@
+@import '../../../../../../../shared/style/variables';
+
+.month-date-picker {
+    width: 100%;
+    font-family: $secondary-font-stack;
+    text-align: center;
+
+    .header {
+        width: 90%;
+        display: -webkit-flex;
+        display: flex;
+        margin: 22px auto 10px auto;
+
+        .title {
+            width: 85%;
+            color: $brand-grey-g1;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 20px;
+        }
+
+        .close-button {
+            width: 15%;
+            font-size: 20px;
+            line-height: 20px;
+            color: $brand-grey-g3;
+            cursor: pointer;
+        }
+    }
+
+    .calendar {
+        list-style: none;
+        display: block;
+        width: 90%;
+        overflow: hidden;
+        padding: 0px 0px 20px 0px;
+        margin: 0px auto;
+
+        .calendar-item {
+            height: 21px;
+            width: 21px;
+            font-size: 14px;
+            display: block;
+            float: left;
+            margin: 8px;
+            cursor: pointer;
+        }
+
+        .calendar-item-standard {
+            @extend .calendar-item;
+            color: $brand-grey-g1;
+        }
+
+        .calendar-item-excluded {
+            @extend .calendar-item;
+            color: $brand-grey-g3;
+            cursor: default;
+
+            &:hover {
+                @extend .calendar-item;
+                color: $brand-grey-g3;
+                cursor: default;
+            }
+        }
+
+        .calendar-item-highlight {
+            @extend .calendar-item;
+            border: 1px solid $brand-sky;
+            border-radius: 50%;
+            background-color: $brand-sky;
+            color: $brand-white;
+            font-weight: bold;
+            margin: 0px 0px;
+            height: 37px;
+            line-height: 37px;
+            width: 14%;
+        }
+    }
+}

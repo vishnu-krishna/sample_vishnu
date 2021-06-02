@@ -1,0 +1,22 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "account": "7042397252",
+            "contract": "9403881265",
+            "currentBillStartDate": "0001-01-01T00:00:00",
+            "currentBillEndDate": "2017-12-11T00:00:00",
+            "costToDate": 0,
+            "projectedBill": 0,
+            "usageCostThisWeek": 0,
+            "usageCostLastWeek": 0,
+            "usageThisWeek": null,
+            "usageLastWeek": null,
+            "balance": 0,
+            "dueDate": "0001-01-01T00:00:00",
+            "isSmartMeter": false,
+            "estimatedReads": false
+        }
+    ]
+}

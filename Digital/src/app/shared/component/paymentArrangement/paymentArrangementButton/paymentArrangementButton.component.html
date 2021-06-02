@@ -1,0 +1,60 @@
+<div class="dd-button">
+
+    <!-- Single account with no saved payment methods in wallet -->
+    <button mat-raised-button color="accent" class="dd-button__button-single"
+        *ngIf="isSingleView && !hasDirectDebit && !hasValidPaymentMethods"
+        (click)="addPaymentMethod(contractAccountNum)">{{setUpButtonText}}</button>
+
+    <!-- Single account with no saved payment methods in wallet with paypal DD setup -->
+    <button mat-raised-button color="primary" class="dd-button__button-multi"
+        *ngIf="isSingleView && !hasValidPaymentMethods && hasPaypalSetUp"
+        (click)="addPaymentMethod(contractAccountNum)">change payment method</button>
+
+    <!--Multi account with no saved payment methods in wallet -->
+    <button mat-raised-button color="primary" class="dd-button__button-multi"
+        *ngIf="!isSingleView && !hasValidPaymentMethods"
+        (click)="addPaymentMethod(contractAccountNum)">{{setUpButtonText}}</button>
+
+    <!-- Single/ multi with saved payment methods in wallet -->
+    <div class="dd-button__dropdown-wallet" *ngIf="!hasAnyPaymentArrangements() && hasValidPaymentMethods">
+        <button mat-raised-button color="primary" class="dd-button__button-with-wallet"
+            (click)="toggleOption()" (document:click)="hideOption($event)">
+            <div class="button-container">
+                <span class="dd-button__button-text">{{setUpButtonText}}</span>
+                <mat-icon class="dd-button__button-icon--white">arrow_drop_down</mat-icon>
+            </div>
+        </button>
+        <ul [class.show]="isShowOption">
+            <li class="disabled">Select from Wallet</li>
+            <li [class.chosen]="storedPaymentMethod.id === paymentMethodId" *ngFor='let storedPaymentMethod of validPaymentMethods'
+                (click)="switchPaymentMethod(storedPaymentMethod)">
+                <mat-icon class="dd-button__check-icon" *ngIf="storedPaymentMethod.id === paymentMethodId">check</mat-icon>
+                <a>{{storedPaymentMethod.title}} xxxx {{storedPaymentMethod.shortReference}}</a>
+            </li>
+            <li class="disabled">- - - - -</li>
+            <li (click)="addPaymentMethod(contractAccountNum)"><a>Add new method</a></li>
+        </ul>
+    </div>
+
+    <!-- Single/ multi with saved payment methods in wallet and DD or SMS pay is set -->
+    <div class="dd-button__dropdown-wallet" *ngIf="hasAnyPaymentArrangements() && hasValidPaymentMethods">
+        <button mat-raised-button class="dd-button__button-with-wallet--existing"
+            (click)="toggleOption()" (document:click)="hideOption($event)">
+            <div class="button-container">
+                <span class="dd-button__button-text dd-button__button-text__existing">Change payment method</span>
+                <mat-icon class="dd-button__button-icon">arrow_drop_down</mat-icon>
+            </div>
+        </button>
+        <ul [class.show]="isShowOption">
+            <li class="disabled">Select from Wallet</li>
+            <li *ngFor="let storedPaymentMethod of validPaymentMethods"
+                [class.chosen]="storedPaymentMethod.id === paymentMethodId"
+                (click)="switchPaymentMethod(storedPaymentMethod)">
+                <mat-icon class="dd-button__check-icon" *ngIf="storedPaymentMethod.id === paymentMethodId">check</mat-icon>
+                <a>{{storedPaymentMethod.title}} xxxx {{storedPaymentMethod.shortReference}}</a>
+            </li>
+            <li class="disabled">- - - - -</li>
+            <li (click)="addPaymentMethod(contractAccountNum, true)"><a>Add new method</a></li>
+        </ul>
+    </div>
+</div>

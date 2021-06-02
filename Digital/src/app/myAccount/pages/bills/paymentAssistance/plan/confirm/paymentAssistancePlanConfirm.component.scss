@@ -1,0 +1,160 @@
+@import '../../../../../maui/maui';
+@import '../../../../../maui/progressTracker/progressItems/verticalProgressItem/verticalProgressItemBase';
+@import '../../../../../../shared/component/webChat/webChat-common';
+
+$click-pad: 10px;
+$primary-dark-lighten-15: lighten($primary-dark, 15%);
+$fuel-chip-pad-20: 20px;
+
+
+@mixin blockStyles {
+    text-align: center;
+    font-size: $body-font-size-small;
+    color: $neutral-01;
+}
+
+@mixin rowStyles {
+    display: flex;
+    justify-content: space-between;
+
+    div {
+        line-height: $line-height-short;
+    }
+}
+
+@mixin headerStyles {
+    font-family: $display-font-stack;
+    font-size: $display-font-size-delta;
+    line-height: $line-height-short;
+    color: $primary-dark;
+}
+
+.payment-assistance-confirm {
+    margin: 0 auto;
+    max-width: $content-width;
+    padding-top: $space-08;
+
+    @media #{$agl-layout-mobile} {
+        padding-top: $space-07;
+        padding-left: $space-03;
+        padding-right: $space-03;
+    }
+
+    &__heading {
+        padding-bottom: $space-04;
+    }
+
+    &__summary {
+        margin-bottom: $space-03;
+
+        &-body {
+            padding: $space-04;
+
+            @media #{$agl-layout-mobile} {
+                padding-top: $space-07;
+                padding-left: $space-03;
+                padding-right: $space-03;
+            }
+
+            &-header1 {
+                @include headerStyles;
+            }
+
+            &-header2 {
+                @include headerStyles;
+                padding-top: $space-04;
+            }
+
+            &-table {
+                &-row {
+                    @include rowStyles;
+
+                    div {
+                        margin-top: $space-04;
+                    }
+                }
+
+                &-instalments {
+                    padding-top: $space-04;
+                }
+            }
+        }
+    }
+
+    &__options {
+
+        &-body {
+            padding: $space-04;
+
+            &-header {
+                font-family: $display-font-stack;
+                font-size: $display-font-size-delta;
+                line-height: $line-height-short;
+                color: $primary-dark;
+            }
+
+            &-fuelchip {
+                &-row {
+                    width: 100%;
+                }
+            }
+
+            &-table {
+                &-row {
+                    &:first-child {
+                        padding-bottom: $space-04;
+                        border-bottom: 1px solid $neutral-04;
+                    }
+
+                    @include rowStyles;
+
+                    div {
+                        margin-top: $space-04;
+                    }
+                }
+
+                &-progress-tracker-row {
+                    @include rowStyles;
+                }
+            }
+
+            &-chat-container {
+                padding: $space-04 0 0 0;
+            }
+        }
+    }
+
+    &__cta {
+        @include blockStyles;
+
+        &-instalments-error {
+            margin-top: $space-03;
+        }
+
+        &-tc {
+            margin-top: $space-06;
+            margin-bottom: $space-04;
+            text-align: left;
+        }
+
+        &-button {
+            margin-bottom: $space-04;
+        }
+    }
+
+    &__loader {
+        position: relative;
+        height: calc(100vh - 70px);
+
+        @media #{$agl-layout-mobile} {
+            height: calc(100vh - 50px);
+        }
+
+        agl-loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}

@@ -1,0 +1,63 @@
+@import '../../../../maui/maui';
+
+.upcoming-billings--issue-dates {
+    text-align: left;
+    color: $neutral-01;
+    font-family: $body-font-stack;
+
+    &__title {
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 20px;
+        margin-bottom: $space-02;
+    }
+
+    &__dates {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 15px;
+
+        &--left {
+            display: inline-block;
+            min-width: 127px;
+            @media #{$agl-layout-mobile} {
+                min-width: 93px;
+                padding-right: 0px;
+                margin-left: 5px;
+            }
+        }
+
+        &--middle {
+            display: inline-block;
+
+            min-width: 144px;
+            @media #{$agl-layout-mobile} {
+                min-width: 52px;
+                padding-left: 13px;
+            }
+        }
+
+        &--right {
+            display: inline-block;
+            padding-left: $space-03;
+            min-width: 142px;
+            @media #{$agl-layout-mobile} {
+                min-width: 110px;
+                padding-left: 20px;
+            }
+        }
+
+        @media #{$agl-layout-mobile} {
+            font-size: 14px;
+        }
+    }
+
+    .bill-date-indicator {
+        height: 1px;
+        width: 100%;
+        border-bottom: 1px solid $neutral-04;
+        display: inline-block;
+        vertical-align: super;
+    }
+
+}

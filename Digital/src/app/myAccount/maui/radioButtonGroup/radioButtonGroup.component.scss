@@ -1,0 +1,24 @@
+@import '../_maui';
+
+@include maui-component-reset();
+
+.maui-radio-button-group-container {
+    width: 100%;
+}
+
+// ng-deep was required to allow styling on all radio button bottom borders except for the last one in the group
+::ng-deep {
+
+    agl-maui-radio-button {
+
+        & .maui-radio-button-container {
+            border-bottom: 1px solid $neutral-04;
+        }
+
+        &:last-child {
+            & .maui-radio-button-container {
+                border-bottom: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+<div class="heading">
+    {{heading}}
+</div>
+
+<div class="content">
+
+    <div class="icon">
+        <div>
+            <img class="icon_size" src="svg/error_icon.svg">
+        </div>          
+    </div>
+
+    <div class="description" *ngIf="ssmrService.submissionType === 'MeterRead'">
+        <div [innerHTML]="meterReadErrorMessage"></div> 
+    </div>
+    <div class="description"  *ngIf="ssmrService.submissionType === 'Photo'"> 
+        We had a problem processing your photo and apologise for the inconvinience. 
+        <br>
+        <br>
+        Please try again at a later time.
+    </div>
+
+</div>
+<div *ngIf="ssmrService.submissionType === 'MeterRead'">
+    <div class="button__continue close-button" *ngIf="screenCode==='SSMR_MRR' &&  errorNumber !== '064'">
+        <a mat-raised-button class="tempdls-button" (click)="onClickSubmit()">GO BACK AND EDIT READ</a>
+    </div>
+    <div class="button__continue close-button" *ngIf="screenCode==='SSMR_MRR' &&  errorNumber === '064'">
+        <a mat-raised-button class="tempdls-button">CHAT NOW</a>
+    </div>
+    <div class="button__continue close-button" *ngIf="screenCode !=='SSMR_MRR'">
+        <a mat-raised-button class="tempdls-button" (click)="onClickCloseButton()">CLOSE</a>
+    </div>
+</div>
+<div *ngIf="ssmrService.submissionType === 'Photo'">
+    <div class="button__continue close-button">
+        <a mat-raised-button class="tempdls-button" (click)="onClickCloseButton()">RETURN TO MY ACCOUNT</a>
+    </div>
+    <div class="footer">
+        <div class="footer__content">
+            <a href="https://www.agl.com.au/residential/help-and-support/how-to-read-your-meter" target="_blank"> 
+                <img class="icon_size" src="svg/help_icon.svg">
+                How to read your meter
+            </a>
+        </div>
+    </div>
+</div>

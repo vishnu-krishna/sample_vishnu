@@ -1,0 +1,28 @@
+<div *ngIf="optionsFrequencyModel" class="payment-assistance-plan-options-frequency">
+    <div *ngIf="optionsFrequencyModel.showFrequencyOptions" class="payment-assistance-plan-options-frequency__row">
+        <div class="payment-assistance-plan-options-frequency__row-copy">How often would you like to pay?</div>
+        <agl-maui-segmented-buttons [(value)]="optionsFrequencyModel.selectedFrequencyOption" (change)="onFrequencyOptionChanged($event)">
+            <agl-maui-segmented-button
+                *ngFor="let frequencyOption of optionsFrequencyModel.frequencyOptions"
+                value="{{ frequencyOption.value }}"
+                text="{{ frequencyOption.text }}"
+                [selected]="frequencyOption.selected">
+            </agl-maui-segmented-button>
+        </agl-maui-segmented-buttons>
+    </div>
+    <div class="payment-assistance-plan-options-frequency__row">
+        <div class="payment-assistance-plan-options-frequency__row-copy">{{ formatFirstInstalmentCopy(optionsFrequencyModel.frequencyOptions) }}</div>
+        <agl-maui-dropdown (notify)="onDateOptionChanged($event)" [disabled]="optionsFrequencyModel.dateOptionsDisabled" [hasError]="optionsFrequencyModel.dateOptionsHasError">
+            <agl-maui-dropdown-option
+                *ngFor="let dateOption of optionsFrequencyModel.dateOptions"
+                value="{{ dateOption.value }}"
+                text="{{ dateOption.text }}"
+                [disabled]="dateOption.disabled"
+                [selected]="dateOption.selected">
+            </agl-maui-dropdown-option>
+        </agl-maui-dropdown>
+        <div *ngIf="optionsFrequencyModel.dateOptionsHasError" class="payment-assistance-plan-options-frequency__row--start-date-error">
+            How embarrassing, we timed out. Please select the due date of your first instalment again, or <agl-link [href]="'https://www.agl.com.au/residential/contact-us'" size="smallest">contact us</agl-link> if this error persists.
+        </div>
+    </div>
+</div>

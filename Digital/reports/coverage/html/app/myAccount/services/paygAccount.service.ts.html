@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\services\paygAccount.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/myAccount/services/</a> paygAccount.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">22.12% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>25/113</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.16% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>16/99</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.14% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">21.15% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>22/104</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import * as _ from 'lodash';
+import * as moment from 'moment';
+import { Observable } from 'rxjs/Observable';
+import { PaygProductAttribue } from '../../shared/globals/paygConstants';
+import { PrePaymentBalanceTopUpUrgency } from '../../shared/globals/prePaymentBalanceTopUpUrgency';
+import { PrePaymentBalanceType } from '../../shared/globals/prePaymentBalanceType';
+import { PrePaymentBalance } from '../../shared/model/product/prePaymentBalance.model';
+import { Product } from '../../shared/model/product/product.model';
+import * as api from '../../shared/service/api.service';
+import { ContentService } from '../../shared/service/content.service';
+import { IProductApiService } from '../../shared/service/contract/iproductApi.service';
+import { Now } from '../../shared/service/now.service';
+import { AccountViewModel, ContractViewModel } from './account.service';
+import { FeatureFlagTypes } from './featureFlag.constants';
+import { FeatureFlagService } from './featureFlag.service';
+&nbsp;
+@Injectable()
+export class PaygAccountService {
+    private productSwapPrepaidEnabled: boolean;
+&nbsp;
+    constructor(
+        private <span class="cstat-no" title="statement not covered" >_productApiService: IProductApiService,</span>
+        private <span class="cstat-no" title="statement not covered" >_contentService: ContentService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >_api: api.ApiService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >_now: Now<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        private <span class="cstat-no" title="statement not covered" >_featureFlagService: FeatureFlagService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" ></span></span></span>
+    ) {
+    }
+&nbsp;
+    /**
+     * gets whether the account is payg or not
+     * @param {AccountViewModel[]} accounts
+     */
+<span class="cstat-no" title="statement not covered" >    public getPaygDetails(accounts: AccountViewModel[]<span class="fstat-no" title="function not covered" >): Observable&lt;boolean&gt; {</span></span>
+        let contractList: ContractViewModel[] = <span class="cstat-no" title="statement not covered" >[];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return Observable.create((observer<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            Observable</span>
+            .forkJoin(this._contentService.getContent(),
+            this._featureFlagService.featureFlagged(FeatureFlagTypes.productSwapPrepaidEnabled)).subscribe(([<span class="cstat-no" title="statement not covered" >content,</span> <span class="cstat-no" title="statement not covered" >productSwapPrepaidEnabled]<span class="fstat-no" title="function not covered" ></span>) =&gt; {</span>
+                // first check if the payg flag is active
+<span class="cstat-no" title="statement not covered" >                if (content.selfService &amp;&amp;</span>
+                    content.selfService.payg &amp;&amp;
+                    content.selfService.payg.isActive) {
+                    // loop through each contract of every account and find all the contracts that are not
+                    // restricted or inflight
+<span class="cstat-no" title="statement not covered" >                    accounts.forEach((account<span class="fstat-no" title="function not covered" >) =&gt;</span></span>
+<span class="cstat-no" title="statement not covered" >                        account.contracts.forEach((contract<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+                            // Restricting product call for restrict and Inflight Contract
+<span class="cstat-no" title="statement not covered" >                            if (!contract.isRestricted &amp;&amp; !contract.isInFlight) {</span>
+<span class="cstat-no" title="statement not covered" >                                contractList.push(contract);</span>
+                            }
+                        }));
+<span class="cstat-no" title="statement not covered" >                    this.getPaygProducts(contractList).subscribe((productPaygList<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                        this.getPrepaidBalance(accounts).subscribe((result<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                            observer.next(true);</span>
+<span class="cstat-no" title="statement not covered" >                            observer.complete();</span>
+                        });
+                    });
+<span class="cstat-no" title="statement not covered" >                    this.productSwapPrepaidEnabled = productSwapPrepaidEnabled;</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    observer.next(true);</span>
+<span class="cstat-no" title="statement not covered" >                    observer.complete();</span>
+                }
+            });
+        });
+    }
+    /**
+     * checks whether the contract can be checked for payg
+     * @param {ContractViewModel} contract
+     */
+    private contractIsPaygValid(contract: ContractViewModel<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        if (contract.productId === undefined || contract.productId === null || contract.productId === '') {</span>
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (contract.regionId === undefined || contract.regionId === null || contract.regionId === '') {</span>
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (contract.isRestricted || contract.isInFlight) {</span>
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+    }
+    /**
+     * gets a list of all the products and sets the contract to whether it is payg or not
+     * @param {ContractViewModel[]} contractList
+     */
+<span class="cstat-no" title="statement not covered" >    private getPaygProducts(contractList: ContractViewModel[]<span class="fstat-no" title="function not covered" >): Observable&lt;ProductPaygModel[]&gt; {</span></span>
+        let products: ProductPaygModel[] = <span class="cstat-no" title="statement not covered" >[];</span>
+&nbsp;
+        // get a unique list of the products
+        let productList = <span class="cstat-no" title="statement not covered" >_.union(contractList.filter(</span>
+            (result<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                return this.contractIsPaygValid(result);</span>
+            })
+            .map((result<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                return result.productId;</span>
+            }));
+&nbsp;
+        let productRequests: Array&lt;Observable&lt;Product&gt;&gt; = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >        if (productList.length &gt; 0) {</span>
+            // loop through each product and create a list of subscriptions
+<span class="cstat-no" title="statement not covered" >            productList.forEach((product<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                productRequests.push(this._productApiService.GetProductAttribute(product));</span>
+            });
+<span class="cstat-no" title="statement not covered" >            return Observable</span>
+                .forkJoin(productRequests)
+                .map((productResults<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+                    // loop through the contract products
+<span class="cstat-no" title="statement not covered" >                    for (let contract<span class="cstat-no" title="statement not covered" ></span> of contractList) {</span>
+<span class="cstat-no" title="statement not covered" >                        if (this.contractIsPaygValid(contract)) {</span>
+                            // loop through the results from the forkjoin
+<span class="cstat-no" title="statement not covered" >                            for (let productResult<span class="cstat-no" title="statement not covered" ></span> of productResults) {</span>
+<span class="cstat-no" title="statement not covered" >                                contract.isPayg = this.setPayg(productResult, contract);</span>
+<span class="cstat-no" title="statement not covered" >                                if (contract.isPayg) {</span>
+<span class="cstat-no" title="statement not covered" >                                    break;</span>
+                                }
+                            }
+                        }
+                    }
+<span class="cstat-no" title="statement not covered" >                    return products;</span>
+                });
+&nbsp;
+        } else {
+<span class="cstat-no" title="statement not covered" >            return Observable.of(products);</span>
+        }
+    }
+&nbsp;
+    /**
+     * checks to see if the contract should be set to payg or not
+     * @param {Product} productResult - the product retrieved from the http call
+     * @param {ContractViewModel} contract
+     */
+    private setPayg(productResult: Product, contract: ContractViewModel<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        if (productResult !== null &amp;&amp; !productResult.invalid) {</span>
+<span class="cstat-no" title="statement not covered" >            if (productResult.id === contract.productId) {</span>
+                let productFound = <span class="cstat-no" title="statement not covered" >productResult.attributes.find((attribute<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return attribute.id === PaygProductAttribue.PaygProductAttributeId &amp;&amp;</span>
+                        attribute.value === PaygProductAttribue.PaygProductAttributeValue &amp;&amp;
+                        (attribute.regionId === contract.regionId || attribute.regionId === undefined);
+                });
+<span class="cstat-no" title="statement not covered" >                if (productFound !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >                    return true;</span>
+                }
+            }
+        }
+<span class="cstat-no" title="statement not covered" >        return false;</span>
+    }
+&nbsp;
+    /**
+     * gets the prepaid balance
+     * @param {AccountViewModel[]} accounts
+     */
+<span class="cstat-no" title="statement not covered" >    private getPrepaidBalance(accounts: AccountViewModel[]<span class="fstat-no" title="function not covered" >): Observable&lt;boolean&gt; {</span></span>
+&nbsp;
+        let prePaymentModels: Array&lt;Observable&lt;PrePaymentBalance&gt;&gt; = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >        accounts.forEach((account<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            account.contracts.forEach((contract<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                if (contract.isPayg) {</span>
+<span class="cstat-no" title="statement not covered" >                    prePaymentModels.push(this._api.getPrePaymentBalance(contract.contractNumber));</span>
+                }
+            });
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (prePaymentModels.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            return Observable</span>
+                .forkJoin(prePaymentModels)
+                .map((prePayments<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    if (prePayments !== null) {</span>
+<span class="cstat-no" title="statement not covered" >                        prePayments.forEach((prePaymentModel<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                            if (prePaymentModel !== null &amp;&amp; prePaymentModel.hasOwnProperty('contractNumber')) {</span>
+<span class="cstat-no" title="statement not covered" >                                accounts.forEach((account<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                                    account.contracts.forEach((contract<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                                        if (contract.contractNumber === prePaymentModel.contractNumber.toString()) {</span>
+<span class="cstat-no" title="statement not covered" >                                            contract.paygBalance = PrePaymentBalanceType[prePaymentModel.balanceType] === PrePaymentBalanceType.Credit ? prePaymentModel.balance : (-(prePaymentModel.balance));</span>
+<span class="cstat-no" title="statement not covered" >                                            contract.paygBand = PrePaymentBalanceTopUpUrgency[prePaymentModel.balanceTopUpUrgency];</span>
+<span class="cstat-no" title="statement not covered" >                                            if (prePaymentModel.hasOutstandingBalanceWithinFPDD &amp;&amp; prePaymentModel.isProductSwapUser &amp;&amp; this.productSwapPrepaidEnabled) {</span>
+<span class="cstat-no" title="statement not covered" >                                                contract.showOutstandingBillPayg = prePaymentModel.hasOutstandingBalanceWithinFPDD;</span>
+<span class="cstat-no" title="statement not covered" >                                                contract.outstandingBill = prePaymentModel.previousPlanFinalBalance.balance ? prePaymentModel.previousPlanFinalBalance.balance : 0;</span>
+<span class="cstat-no" title="statement not covered" >                                                contract.prepaidCharges = prePaymentModel.prepaidPlanBalance.balance ? prePaymentModel.prepaidPlanBalance.balance : 0;</span>
+<span class="cstat-no" title="statement not covered" >                                                contract.prepaidCredit = prePaymentModel.prepaidPlanBalance.balanceType === 'Credit' ? true : false ;</span>
+<span class="cstat-no" title="statement not covered" >                                                contract.paygPrepaymentEligibile = moment(new Date(prePaymentModel.firstPrepaymentDueDate)).isAfter(this._now.date()) ? moment(new Date(prePaymentModel.firstPrepaymentDueDate)).toString() : null;</span>
+                                            } else <span class="cstat-no" title="statement not covered" >if (prePaymentModel.firstPrepaymentDueDate !== null &amp;&amp; prePaymentModel.firstPrepaymentDueDate !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >                                                contract.paygPrepaymentEligibile = moment(new Date(prePaymentModel.firstPrepaymentDueDate)).isAfter(this._now.date()) ? moment(new Date(prePaymentModel.firstPrepaymentDueDate)).toString() : null;</span>
+                                            }
+                                        }
+                                    });
+                                });
+                            }
+&nbsp;
+                        });
+                    }
+<span class="cstat-no" title="statement not covered" >                    accounts.forEach((account<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                        account.contracts.forEach((contract<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                            if (contract.isPayg &amp;&amp; contract.paygBand === undefined &amp;&amp; contract.paygBalance === undefined) {</span>
+<span class="cstat-no" title="statement not covered" >                                contract.paygBalance = null;</span>
+<span class="cstat-no" title="statement not covered" >                                contract.paygBand = PrePaymentBalanceTopUpUrgency.Unavailable;</span>
+                            }
+                        });
+                    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    return true;</span>
+                });
+        } else {
+<span class="cstat-no" title="statement not covered" >            return Observable.of(true);</span>
+        }
+    }
+&nbsp;
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >export class ProductPaygModel {</span>
+    public productId: string;
+    public regionId: string;
+    public payg: boolean;
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

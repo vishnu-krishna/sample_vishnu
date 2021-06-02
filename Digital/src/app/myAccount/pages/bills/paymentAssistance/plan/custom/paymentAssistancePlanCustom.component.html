@@ -1,0 +1,80 @@
+<div class="payment-assistance-plan-custom__loader" *ngIf="showLoader">
+    <agl-loader loadingSubMessage="We're looking into your options, please stand by."></agl-loader>
+</div>
+<agl-maui-secondary-navigation display="true" displayBackButton="true" text="Payment assistance" textMobile="Payment assistance"
+    (click)="backClicked()"></agl-maui-secondary-navigation>
+<div *ngIf="!showLoader" class="payment-assistance-plan-custom">
+    <agl-maui-heading
+        heading="Set up your instalment plan"
+        [subheading]="subheading">
+    </agl-maui-heading>
+    <agl-maui-container [hasShadow]="true">
+        <div class="payment-assistance-plan-custom-wrapper">
+            <agl-maui-fuel-chip
+                [fuelChipState]="mauiFuelChipState.Display"
+                [fuelType]="fuelChip.fuelType"
+                [fuelContext]="mauiFuelChipFuelContext.None"
+                [contractAccountDetails]="fuelChip.accountDetails"
+                [contractNumber]="fuelChip.contractNumber">
+            </agl-maui-fuel-chip>
+            <agl-payment-assistance-plan-options-total [optionsTotalModel]="optionsTotalModel"></agl-payment-assistance-plan-options-total>
+
+            <div class="payment-assistance-plan-custom__options">
+                <agl-payment-assistance-plan-options-frequency [optionsFrequencyModel]="optionsFrequencyModel"
+                (frequencyOptionChanged)="onFrequencyOptionChanged($event, fuelChip.contractNumber)"
+                (dateOptionChanged)="onDateOptionChanged($event, fuelChip.contractNumber)"></agl-payment-assistance-plan-options-frequency>
+                <div class="payment-assistance-plan-custom__options--custom-amount">
+                    <agl-payment-assistance-plan-custom-amount [customAmountModel]="customAmountModel" (formValid)="onCustomAmountFormValid($event)"
+                        (keyUpEnter)="onCustomAmountKeyUpEnter()"></agl-payment-assistance-plan-custom-amount>
+                </div>
+            </div>
+            <div class="payment-assistance-plan-custom__chat-container">
+                <div class="web-chat">
+                    <span class="web-chat-icon"></span>
+                    <agl-webchat #paymentAssistanceChat chatButtonId="LPPaymentAssistanceCustom" [contentIsHostedInLivePerson]="false">
+                        <div agent-status-unresolved>
+                            <div class="web-chat-title--unresolved-agent-status">
+                                &nbsp;
+                            </div>
+                            <div class="web-chat-button--unresolved-agent-status">
+                                &nbsp;
+                            </div>
+                        </div>
+                        <div agent-offline>
+                            <div class="web-chat-agent-offline-message">
+                                To learn about other payment assistance options we have available to you, call
+                                <a href="tel:131 245">131 245</a>.
+                            </div>
+                            <div class="web-chat-agent-offline-message-bottom">
+                                Calling from overseas? You can call us on
+                                <a href="tel:+61386336000">+61 3 8633 6000</a>.
+                            </div>
+                        </div>
+                        <div agent-online>
+                            <div class="web-chat-button">
+                                If you are having difficulty paying the minimum instalment amount,
+                                <a (click)="paymentAssistanceChat.requestChat()">chat with us now</a> or call
+                                <a href="tel:131 245">131 245</a>.
+                            </div>
+                        </div>
+                    </agl-webchat>
+                </div>
+            </div>
+        </div>
+    </agl-maui-container>
+
+    <div class="payment-assistance-plan-custom__instalments-error" *ngIf="showInstalmentsError">
+        <agl-maui-flash-message [type]="flashMessageType.Error" [dismissable]="true">
+            <div heading>That wasn't supposed to happen.</div>
+            <div subheading>Please press continue to try again, or <agl-link [href]="'https://www.agl.com.au/residential/contact-us'" size="linkSize.large">contact us</agl-link> if this error persists.</div>
+        </agl-maui-flash-message>
+    </div>
+    <div class="payment-assistance-plan-custom__cta">
+        <agl-maui-button class="payment-assistance-plan-custom__cta-continue" [disabled]="!continueButtonEnabled" (clicked)="onContinueButtonClicked()" [loading]="continueButtonLoading">
+            Continue
+        </agl-maui-button>
+        <agl-maui-button class="payment-assistance-plan-custom__cta-cancel" type="link" (clicked)="onCancelClicked()">
+            cancel
+        </agl-maui-button>
+    </div>
+</div>

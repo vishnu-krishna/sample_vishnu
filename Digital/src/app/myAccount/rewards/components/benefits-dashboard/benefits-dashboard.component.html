@@ -1,0 +1,28 @@
+<div class="benefits-dashboard__message">
+    <div class="benefits-dashboard__message-title">{{ messageTitle }}</div>
+    <div class="benefits-dashboard__message-text">{{ messageText }}</div>
+</div>
+
+<agl-horizontal-scroller [indicatorCount]="benefits.length + 1" (indicatorChanged)="activeBenefitTileChange($event)">
+    <div class="benefits-dashboard__tiles">
+        <div class="agl-benefit-tile-wrapper" *ngFor="let benefit of benefits; let benefitIndex = index">
+            <agl-benefit-tile [title]="benefit.title" [description]="benefit.description" [summary]="benefit.summary" (benefitTileClick)="navigateToAglRewards(benefit)" [class.active]="isActive(benefitIndex)">
+                <a (click)="navigateToAglRewards(benefit)">
+                    <div class="benefit-tile__bg-image" [style.background-image]="benefitImageUrlStyle(benefit)"></div>
+                </a>
+            </agl-benefit-tile>
+        </div>
+
+        <div class="agl-benefit-tile-wrapper">
+            <agl-benefit-tile cta="view all" [useDarkTheme]="true" [class.active]="isActive(benefits.length)" (benefitTileClick)="navigateToAglRewards()">
+                <div class="view-all-benefits"  (click)="navigateToAglRewards()">
+                    <div class="view-all-benefits__heading">
+                        Keep exploring
+                    </div>
+                    <p>Click to discover everything AGL Rewards has to offer.</p>
+                    
+                </div>
+            </agl-benefit-tile>
+        </div>
+    </div>
+</agl-horizontal-scroller>

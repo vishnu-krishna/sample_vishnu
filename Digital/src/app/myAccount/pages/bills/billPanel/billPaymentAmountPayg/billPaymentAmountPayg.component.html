@@ -1,0 +1,19 @@
+<div id="bill-panel-payg" class="bill-panel-amount" [class.payment-pending]="type.pendingPayment">
+    <div id="bill-panel-amount-container" class="bill-panel-amount__balance">
+        <agl-prepaid-balance [contract]="contract" *ngIf="contract.isPayg" [page]='page'></agl-prepaid-balance>
+    </div>
+    <div id="bill-panel-debit-message" *ngIf="isPaygDebit" class="bill-panel-amount__paygdebit" [innerHtml]="paygContent?.highUrgencyTopupMessage | aglSafeHtml">
+    </div>
+    <div id="bill-panel-debit-dd-message" *ngIf="showOverdueDDMessage" class="bill-panel-amount__paygdebit">
+        Your account needs your attention. Check your Direct Debit details and make a payment to get back in credit.
+    </div>
+    <!--Payment pending only for mobile view in billing page !-->
+    <div class="bill-panel-amount__payment-pending--mobile" *ngIf="type.pendingPayment">
+        <agl-alert alertType="pending" [heading]="_alertMessages.paymentPendingHeading" [body]="_alertMessages.paymentPendingBody">
+        </agl-alert>
+    </div>
+    <div id="bill-panel-button-container" class="bill-panel-amount__button-container">
+        <agl-bill-payment-button [type]="type" [contract]="contract" [address]="address"></agl-bill-payment-button>
+    </div>
+
+</div>

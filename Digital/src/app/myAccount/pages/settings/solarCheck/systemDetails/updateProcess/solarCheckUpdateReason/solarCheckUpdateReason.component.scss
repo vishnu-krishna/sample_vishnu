@@ -1,0 +1,118 @@
+@import '../../../../../../dashboard/solarCheck/solarCheckRegisterProcess/solarCheckRegisterProcess';
+
+.solar-check-update-reason {
+
+    /* Title Section */
+    .update-title {
+        margin-top: 20px;
+        margin-bottom: 24px;
+
+        &-text {
+            height: 36px;
+            color: $brand-grey-g1;
+            font-family: $primary-font-stack;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 26px;
+            text-align: center;
+        }
+    }
+
+    /*Upgrade Reason Buttons Section */
+    .option-button {
+
+        &-outer-padding {
+            padding-top: 20px;
+            padding-bottom: 6px;
+            text-align: center;
+        }
+
+        &-layout {
+            display: inline-block;
+        }
+
+        &-size {
+            vertical-align: top;
+            width: 150px;
+            height: 150px;
+
+            @media #{$agl-layout-mobile} {
+                width: 140px;
+                height: 141px;
+            }
+        }
+
+        &-left-button-padding {
+            margin-right: 20px;
+
+            @media #{$agl-layout-mobile} {
+                margin-right: 8px;
+            }
+        }
+
+        &-selected {
+            background-color: $brand-sky;
+            color: $brand-white;
+        }
+
+        &-deselected {
+            background-color: $brand-white;
+            color: $brand-sky;
+        }
+
+        &-img-size-common {
+            padding-top: 8px;
+        }
+
+        // Note : option button sizes are not centered because they're different sizes - hence fized size
+        &-system-changed-img-size {
+            width: 101px;
+            height: 71px;
+            text-align: center;
+        }
+
+        &-system-correction-img-size {
+            width: 80px;
+            height: 73px;
+            text-align: center;
+        }
+
+        &-text-pos {
+            height: initial;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        &-text {
+            text-transform: none;
+            font-family: $secondary-font-stack;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 18px;
+            text-align: center;
+            white-space: normal;
+        }
+    }
+
+    /* Information Message Section */
+    .info-message {
+        &-padding {
+            padding-top: 20px;
+        }
+
+        &-font-details {
+            font-size: 14px;
+            letter-spacing: normal;
+            font-weight: normal;
+            color: $brand-grey-g1;
+            font-family: $secondary-font-stack;
+            line-height: 20px;
+            text-align: center;
+        }
+    }
+
+    /*Banner Paddding Section*/
+    .banner-padding {
+        margin-top: 10px;
+    }
+}

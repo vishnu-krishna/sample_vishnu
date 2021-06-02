@@ -1,0 +1,186 @@
+@import '../../../shared/style/variables';
+@import '../../../shared/style/mixins';
+
+.failed-loading-container {
+    margin: 0px auto;
+    text-align: center;
+    font-family: $primary-font-stack;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        padding: 10px 0;
+        margin: 0;
+    }
+
+    &__top {
+        padding: 10px 0;
+
+        h1 {
+            font-size: 22px;
+            color: $heading-colour;
+            font-family: $secondary-font-stack;
+            padding-top: 20px;
+            @media (max-width: $device-min-sm) {
+                font-size: 16px;
+            }
+        }
+
+        &-slides {
+            position: relative;
+            width: 500%;
+            overflow: hidden;
+            -moz-animation: carousel 50s infinite;
+            -webkit-animation: carousel 50s infinite;
+            animation: carousel 50s infinite;
+
+            &--slide {
+                position: relative;
+                float: left;
+                width: 20%;
+                left: 40px;
+                @media (max-width: $device-min-sm) {
+                    left: 20px;
+                }
+
+                h2 {
+                    font-size: 26px;
+                    color: $brand-blue;
+                    font-weight: bold;
+                    @media (max-width: $device-min-sm) {
+                        font-size: 18px;
+                    }
+                }
+
+                img {
+                    padding: 25px 0;
+                    @media (max-width: $device-min-sm) {
+                        max-width: 280px;
+                        max-height: 170px;
+                    }
+                }
+            }
+        }
+
+        @keyframes carousel {
+            0%    {
+                left: -5%;
+            }
+
+            11%   {
+                left: -5%;
+            }
+
+            12.5% {
+                left: -105%;
+            }
+
+            23.5% {
+                left: -105%;
+            }
+
+            25%   {
+                left: -205%;
+            }
+
+            36%   {
+                left: -205%;
+            }
+
+            37.5% {
+                left: -305%;
+            }
+
+            48.5% {
+                left: -305%;
+            }
+
+            50%   {
+                left: -405%;
+            }
+
+            61%   {
+                left: -405%;
+            }
+
+            62.5% {
+                left: -305%;
+            }
+
+            73.5% {
+                left: -305%;
+            }
+
+            75%   {
+                left: -205%;
+            }
+
+            86%   {
+                left: -205%;
+            }
+
+            87.5% {
+                left: -105%;
+            }
+
+            98.5% {
+                left: -105%;
+            }
+
+            100%  {
+                left: -5%;
+            }
+        }
+    }
+
+    &__bottom {
+        background-color: $second-bg-colour;
+        float: left;
+        padding: 20px 0;
+        @media (max-width: $device-min-sm) {
+            padding: 10px;
+        }
+
+        &--image-spin {
+            padding: 10px 0;
+            animation: spin 1s cubic-bezier(.25, .50, .80, .25) infinite;
+        }
+        @keyframes spin {
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+
+        &--border {
+            border-bottom: solid 5px $brand-blue;
+            margin-top: -5px;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: bold;
+            color: $bottom-heading-colour;
+            padding: 20px 180px 5px 180px;
+            @media (max-width: $device-min-sm) {
+                padding: 10px 30px;
+                font-size: 18px;
+            }
+        }
+
+        h4 {
+            font-size: 14px;
+            font-family: $secondary-font-stack;
+            padding: 20px 180px 5px 180px;
+            @media (max-width: $device-min-sm) {
+                padding: 10px 30px;
+            }
+        }
+
+        p {
+            font-family: $secondary-font-stack;
+        }
+    }
+}

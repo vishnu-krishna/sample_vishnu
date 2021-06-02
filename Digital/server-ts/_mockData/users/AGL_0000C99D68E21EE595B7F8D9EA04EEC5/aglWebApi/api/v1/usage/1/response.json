@@ -1,0 +1,3309 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": [
+        {
+            "account": "7004437310",
+            "contract": "9400686273",
+            "costs": [
+                {
+                    "value": 2.262258,
+                    "startDateTime": "2017-06-18T00:00:00Z",
+                    "endDateTime": "2017-06-18T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.882512,
+                    "startDateTime": "2017-06-19T00:00:00Z",
+                    "endDateTime": "2017-06-19T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.979442,
+                    "startDateTime": "2017-06-20T00:00:00Z",
+                    "endDateTime": "2017-06-20T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.367218,
+                    "startDateTime": "2017-06-21T00:00:00Z",
+                    "endDateTime": "2017-06-21T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.111454,
+                    "startDateTime": "2017-06-22T00:00:00Z",
+                    "endDateTime": "2017-06-22T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.99799,
+                    "startDateTime": "2017-06-23T00:00:00Z",
+                    "endDateTime": "2017-06-23T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.449376,
+                    "startDateTime": "2017-06-24T00:00:00Z",
+                    "endDateTime": "2017-06-24T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.037302,
+                    "startDateTime": "2017-06-25T00:00:00Z",
+                    "endDateTime": "2017-06-25T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.735968,
+                    "startDateTime": "2017-06-26T00:00:00Z",
+                    "endDateTime": "2017-06-26T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.88827,
+                    "startDateTime": "2017-06-27T00:00:00Z",
+                    "endDateTime": "2017-06-27T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.509008,
+                    "startDateTime": "2017-06-28T00:00:00Z",
+                    "endDateTime": "2017-06-28T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.901048,
+                    "startDateTime": "2017-06-29T00:00:00Z",
+                    "endDateTime": "2017-06-29T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.291068,
+                    "startDateTime": "2017-06-30T00:00:00Z",
+                    "endDateTime": "2017-06-30T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.544814,
+                    "startDateTime": "2017-07-01T00:00:00Z",
+                    "endDateTime": "2017-07-01T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.712918,
+                    "startDateTime": "2017-07-02T00:00:00Z",
+                    "endDateTime": "2017-07-02T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.722192,
+                    "startDateTime": "2017-07-03T00:00:00Z",
+                    "endDateTime": "2017-07-03T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.8294,
+                    "startDateTime": "2017-07-04T00:00:00Z",
+                    "endDateTime": "2017-07-04T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.204894,
+                    "startDateTime": "2017-07-05T00:00:00Z",
+                    "endDateTime": "2017-07-05T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.15179,
+                    "startDateTime": "2017-07-06T00:00:00Z",
+                    "endDateTime": "2017-07-06T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.97393,
+                    "startDateTime": "2017-07-07T00:00:00Z",
+                    "endDateTime": "2017-07-07T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.522012,
+                    "startDateTime": "2017-07-08T00:00:00Z",
+                    "endDateTime": "2017-07-08T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.362464,
+                    "startDateTime": "2017-07-09T00:00:00Z",
+                    "endDateTime": "2017-07-09T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.076638,
+                    "startDateTime": "2017-07-10T00:00:00Z",
+                    "endDateTime": "2017-07-10T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.996984,
+                    "startDateTime": "2017-07-11T00:00:00Z",
+                    "endDateTime": "2017-07-11T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.684106,
+                    "startDateTime": "2017-07-12T00:00:00Z",
+                    "endDateTime": "2017-07-12T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.348432,
+                    "startDateTime": "2017-07-13T00:00:00Z",
+                    "endDateTime": "2017-07-13T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.891002,
+                    "startDateTime": "2017-07-14T00:00:00Z",
+                    "endDateTime": "2017-07-14T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.42334,
+                    "startDateTime": "2017-07-15T00:00:00Z",
+                    "endDateTime": "2017-07-15T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.418322,
+                    "startDateTime": "2017-07-16T00:00:00Z",
+                    "endDateTime": "2017-07-16T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.946134,
+                    "startDateTime": "2017-07-17T00:00:00Z",
+                    "endDateTime": "2017-07-17T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.293312,
+                    "startDateTime": "2017-07-18T00:00:00Z",
+                    "endDateTime": "2017-07-18T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.198882,
+                    "startDateTime": "2017-07-19T00:00:00Z",
+                    "endDateTime": "2017-07-19T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.860466,
+                    "startDateTime": "2017-07-20T00:00:00Z",
+                    "endDateTime": "2017-07-20T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.635268,
+                    "startDateTime": "2017-07-21T00:00:00Z",
+                    "endDateTime": "2017-07-21T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.159304,
+                    "startDateTime": "2017-07-22T00:00:00Z",
+                    "endDateTime": "2017-07-22T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.135504,
+                    "startDateTime": "2017-07-23T00:00:00Z",
+                    "endDateTime": "2017-07-23T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.422076,
+                    "startDateTime": "2017-07-24T00:00:00Z",
+                    "endDateTime": "2017-07-24T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.822382,
+                    "startDateTime": "2017-07-25T00:00:00Z",
+                    "endDateTime": "2017-07-25T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.148532,
+                    "startDateTime": "2017-07-26T00:00:00Z",
+                    "endDateTime": "2017-07-26T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.88276,
+                    "startDateTime": "2017-07-27T00:00:00Z",
+                    "endDateTime": "2017-07-27T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.364462,
+                    "startDateTime": "2017-07-28T00:00:00Z",
+                    "endDateTime": "2017-07-28T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.834654,
+                    "startDateTime": "2017-07-29T00:00:00Z",
+                    "endDateTime": "2017-07-29T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.36021,
+                    "startDateTime": "2017-07-30T00:00:00Z",
+                    "endDateTime": "2017-07-30T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.798094,
+                    "startDateTime": "2017-07-31T00:00:00Z",
+                    "endDateTime": "2017-07-31T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.13626,
+                    "startDateTime": "2017-08-01T00:00:00Z",
+                    "endDateTime": "2017-08-01T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.37148,
+                    "startDateTime": "2017-08-02T00:00:00Z",
+                    "endDateTime": "2017-08-02T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.406028,
+                    "startDateTime": "2017-08-03T00:00:00Z",
+                    "endDateTime": "2017-08-03T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.351688,
+                    "startDateTime": "2017-08-04T00:00:00Z",
+                    "endDateTime": "2017-08-04T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.298832,
+                    "startDateTime": "2017-08-05T00:00:00Z",
+                    "endDateTime": "2017-08-05T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.629744,
+                    "startDateTime": "2017-08-06T00:00:00Z",
+                    "endDateTime": "2017-08-06T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.65506,
+                    "startDateTime": "2017-08-07T00:00:00Z",
+                    "endDateTime": "2017-08-07T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.4083,
+                    "startDateTime": "2017-08-08T00:00:00Z",
+                    "endDateTime": "2017-08-08T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.147536,
+                    "startDateTime": "2017-08-09T00:00:00Z",
+                    "endDateTime": "2017-08-09T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.039292,
+                    "startDateTime": "2017-08-10T00:00:00Z",
+                    "endDateTime": "2017-08-10T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.751476,
+                    "startDateTime": "2017-08-11T00:00:00Z",
+                    "endDateTime": "2017-08-11T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.75298,
+                    "startDateTime": "2017-08-12T00:00:00Z",
+                    "endDateTime": "2017-08-12T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.64727,
+                    "startDateTime": "2017-08-13T00:00:00Z",
+                    "endDateTime": "2017-08-13T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.462402,
+                    "startDateTime": "2017-08-14T00:00:00Z",
+                    "endDateTime": "2017-08-14T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.311848,
+                    "startDateTime": "2017-08-15T00:00:00Z",
+                    "endDateTime": "2017-08-15T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.394006,
+                    "startDateTime": "2017-08-16T00:00:00Z",
+                    "endDateTime": "2017-08-16T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.746462,
+                    "startDateTime": "2017-08-17T00:00:00Z",
+                    "endDateTime": "2017-08-17T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.478436,
+                    "startDateTime": "2017-08-18T00:00:00Z",
+                    "endDateTime": "2017-08-18T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.66731,
+                    "startDateTime": "2017-08-19T00:00:00Z",
+                    "endDateTime": "2017-08-19T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.021268,
+                    "startDateTime": "2017-08-20T00:00:00Z",
+                    "endDateTime": "2017-08-20T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.137748,
+                    "startDateTime": "2017-08-21T00:00:00Z",
+                    "endDateTime": "2017-08-21T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.412306,
+                    "startDateTime": "2017-08-22T00:00:00Z",
+                    "endDateTime": "2017-08-22T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.51276,
+                    "startDateTime": "2017-08-23T00:00:00Z",
+                    "endDateTime": "2017-08-23T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.859688,
+                    "startDateTime": "2017-08-24T00:00:00Z",
+                    "endDateTime": "2017-08-24T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.571866,
+                    "startDateTime": "2017-08-25T00:00:00Z",
+                    "endDateTime": "2017-08-25T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.12572,
+                    "startDateTime": "2017-08-26T00:00:00Z",
+                    "endDateTime": "2017-08-26T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.553322,
+                    "startDateTime": "2017-08-27T00:00:00Z",
+                    "endDateTime": "2017-08-27T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.714652,
+                    "startDateTime": "2017-08-28T00:00:00Z",
+                    "endDateTime": "2017-08-28T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.508994,
+                    "startDateTime": "2017-08-29T00:00:00Z",
+                    "endDateTime": "2017-08-29T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.232942,
+                    "startDateTime": "2017-08-30T00:00:00Z",
+                    "endDateTime": "2017-08-30T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.50825,
+                    "startDateTime": "2017-08-31T00:00:00Z",
+                    "endDateTime": "2017-08-31T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.04082,
+                    "startDateTime": "2017-09-01T00:00:00Z",
+                    "endDateTime": "2017-09-01T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 0.7768,
+                    "startDateTime": "2017-09-02T00:00:00Z",
+                    "endDateTime": "2017-09-02T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 0.797086,
+                    "startDateTime": "2017-09-03T00:00:00Z",
+                    "endDateTime": "2017-09-03T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 0.75601,
+                    "startDateTime": "2017-09-04T00:00:00Z",
+                    "endDateTime": "2017-09-04T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 0.82013,
+                    "startDateTime": "2017-09-05T00:00:00Z",
+                    "endDateTime": "2017-09-05T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 0.771798,
+                    "startDateTime": "2017-09-06T00:00:00Z",
+                    "endDateTime": "2017-09-06T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.694378,
+                    "startDateTime": "2017-09-07T00:00:00Z",
+                    "endDateTime": "2017-09-07T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.393522,
+                    "startDateTime": "2017-09-08T00:00:00Z",
+                    "endDateTime": "2017-09-08T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.900278,
+                    "startDateTime": "2017-09-09T00:00:00Z",
+                    "endDateTime": "2017-09-09T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.668818,
+                    "startDateTime": "2017-09-10T00:00:00Z",
+                    "endDateTime": "2017-09-10T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.35117,
+                    "startDateTime": "2017-09-11T00:00:00Z",
+                    "endDateTime": "2017-09-11T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.522018,
+                    "startDateTime": "2017-09-12T00:00:00Z",
+                    "endDateTime": "2017-09-12T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.365706,
+                    "startDateTime": "2017-09-13T00:00:00Z",
+                    "endDateTime": "2017-09-13T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.13175,
+                    "startDateTime": "2017-09-14T00:00:00Z",
+                    "endDateTime": "2017-09-14T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.078882,
+                    "startDateTime": "2017-09-15T00:00:00Z",
+                    "endDateTime": "2017-09-15T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.775276,
+                    "startDateTime": "2017-09-16T00:00:00Z",
+                    "endDateTime": "2017-09-16T23:59:00Z",
+                    "estimatedRead": true
+                }
+            ],
+            "consumption": [
+                {
+                    "value": 9.031,
+                    "startDateTime": "2017-06-18T00:00:00Z",
+                    "endDateTime": "2017-06-18T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 7.515,
+                    "startDateTime": "2017-06-19T00:00:00Z",
+                    "endDateTime": "2017-06-19T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 7.902,
+                    "startDateTime": "2017-06-20T00:00:00Z",
+                    "endDateTime": "2017-06-20T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.45,
+                    "startDateTime": "2017-06-21T00:00:00Z",
+                    "endDateTime": "2017-06-21T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.429,
+                    "startDateTime": "2017-06-22T00:00:00Z",
+                    "endDateTime": "2017-06-22T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 7.976,
+                    "startDateTime": "2017-06-23T00:00:00Z",
+                    "endDateTime": "2017-06-23T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.778,
+                    "startDateTime": "2017-06-24T00:00:00Z",
+                    "endDateTime": "2017-06-24T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.125,
+                    "startDateTime": "2017-06-25T00:00:00Z",
+                    "endDateTime": "2017-06-25T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 6.93,
+                    "startDateTime": "2017-06-26T00:00:00Z",
+                    "endDateTime": "2017-06-26T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 7.538,
+                    "startDateTime": "2017-06-27T00:00:00Z",
+                    "endDateTime": "2017-06-27T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.016,
+                    "startDateTime": "2017-06-28T00:00:00Z",
+                    "endDateTime": "2017-06-28T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 7.589,
+                    "startDateTime": "2017-06-29T00:00:00Z",
+                    "endDateTime": "2017-06-29T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.146,
+                    "startDateTime": "2017-06-30T00:00:00Z",
+                    "endDateTime": "2017-06-30T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.159,
+                    "startDateTime": "2017-07-01T00:00:00Z",
+                    "endDateTime": "2017-07-01T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 6.838,
+                    "startDateTime": "2017-07-02T00:00:00Z",
+                    "endDateTime": "2017-07-02T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 6.875,
+                    "startDateTime": "2017-07-03T00:00:00Z",
+                    "endDateTime": "2017-07-03T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 7.303,
+                    "startDateTime": "2017-07-04T00:00:00Z",
+                    "endDateTime": "2017-07-04T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.802,
+                    "startDateTime": "2017-07-05T00:00:00Z",
+                    "endDateTime": "2017-07-05T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.59,
+                    "startDateTime": "2017-07-06T00:00:00Z",
+                    "endDateTime": "2017-07-06T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 7.88,
+                    "startDateTime": "2017-07-07T00:00:00Z",
+                    "endDateTime": "2017-07-07T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.068,
+                    "startDateTime": "2017-07-08T00:00:00Z",
+                    "endDateTime": "2017-07-08T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 5.439,
+                    "startDateTime": "2017-07-09T00:00:00Z",
+                    "endDateTime": "2017-07-09T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.29,
+                    "startDateTime": "2017-07-10T00:00:00Z",
+                    "endDateTime": "2017-07-10T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 7.972,
+                    "startDateTime": "2017-07-11T00:00:00Z",
+                    "endDateTime": "2017-07-11T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 6.723,
+                    "startDateTime": "2017-07-12T00:00:00Z",
+                    "endDateTime": "2017-07-12T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.375,
+                    "startDateTime": "2017-07-13T00:00:00Z",
+                    "endDateTime": "2017-07-13T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.541,
+                    "startDateTime": "2017-07-14T00:00:00Z",
+                    "endDateTime": "2017-07-14T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.674,
+                    "startDateTime": "2017-07-15T00:00:00Z",
+                    "endDateTime": "2017-07-15T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.654,
+                    "startDateTime": "2017-07-16T00:00:00Z",
+                    "endDateTime": "2017-07-16T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 7.769,
+                    "startDateTime": "2017-07-17T00:00:00Z",
+                    "endDateTime": "2017-07-17T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.155,
+                    "startDateTime": "2017-07-18T00:00:00Z",
+                    "endDateTime": "2017-07-18T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.778,
+                    "startDateTime": "2017-07-19T00:00:00Z",
+                    "endDateTime": "2017-07-19T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 7.427,
+                    "startDateTime": "2017-07-20T00:00:00Z",
+                    "endDateTime": "2017-07-20T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 6.528,
+                    "startDateTime": "2017-07-21T00:00:00Z",
+                    "endDateTime": "2017-07-21T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.62,
+                    "startDateTime": "2017-07-22T00:00:00Z",
+                    "endDateTime": "2017-07-22T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.525,
+                    "startDateTime": "2017-07-23T00:00:00Z",
+                    "endDateTime": "2017-07-23T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.669,
+                    "startDateTime": "2017-07-24T00:00:00Z",
+                    "endDateTime": "2017-07-24T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 7.275,
+                    "startDateTime": "2017-07-25T00:00:00Z",
+                    "endDateTime": "2017-07-25T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.577,
+                    "startDateTime": "2017-07-26T00:00:00Z",
+                    "endDateTime": "2017-07-26T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 7.516,
+                    "startDateTime": "2017-07-27T00:00:00Z",
+                    "endDateTime": "2017-07-27T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.439,
+                    "startDateTime": "2017-07-28T00:00:00Z",
+                    "endDateTime": "2017-07-28T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 7.324,
+                    "startDateTime": "2017-07-29T00:00:00Z",
+                    "endDateTime": "2017-07-29T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.422,
+                    "startDateTime": "2017-07-30T00:00:00Z",
+                    "endDateTime": "2017-07-30T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 7.178,
+                    "startDateTime": "2017-07-31T00:00:00Z",
+                    "endDateTime": "2017-07-31T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.528,
+                    "startDateTime": "2017-08-01T00:00:00Z",
+                    "endDateTime": "2017-08-01T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.467,
+                    "startDateTime": "2017-08-02T00:00:00Z",
+                    "endDateTime": "2017-08-02T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.605,
+                    "startDateTime": "2017-08-03T00:00:00Z",
+                    "endDateTime": "2017-08-03T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.388,
+                    "startDateTime": "2017-08-04T00:00:00Z",
+                    "endDateTime": "2017-08-04T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.177,
+                    "startDateTime": "2017-08-05T00:00:00Z",
+                    "endDateTime": "2017-08-05T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.498,
+                    "startDateTime": "2017-08-06T00:00:00Z",
+                    "endDateTime": "2017-08-06T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 6.607,
+                    "startDateTime": "2017-08-07T00:00:00Z",
+                    "endDateTime": "2017-08-07T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 5.622,
+                    "startDateTime": "2017-08-08T00:00:00Z",
+                    "endDateTime": "2017-08-08T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.573,
+                    "startDateTime": "2017-08-09T00:00:00Z",
+                    "endDateTime": "2017-08-09T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.133,
+                    "startDateTime": "2017-08-10T00:00:00Z",
+                    "endDateTime": "2017-08-10T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.984,
+                    "startDateTime": "2017-08-11T00:00:00Z",
+                    "endDateTime": "2017-08-11T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.99,
+                    "startDateTime": "2017-08-12T00:00:00Z",
+                    "endDateTime": "2017-08-12T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.568,
+                    "startDateTime": "2017-08-13T00:00:00Z",
+                    "endDateTime": "2017-08-13T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.83,
+                    "startDateTime": "2017-08-14T00:00:00Z",
+                    "endDateTime": "2017-08-14T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.229,
+                    "startDateTime": "2017-08-15T00:00:00Z",
+                    "endDateTime": "2017-08-15T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.557,
+                    "startDateTime": "2017-08-16T00:00:00Z",
+                    "endDateTime": "2017-08-16T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.964,
+                    "startDateTime": "2017-08-17T00:00:00Z",
+                    "endDateTime": "2017-08-17T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.894,
+                    "startDateTime": "2017-08-18T00:00:00Z",
+                    "endDateTime": "2017-08-18T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.648,
+                    "startDateTime": "2017-08-19T00:00:00Z",
+                    "endDateTime": "2017-08-19T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.069,
+                    "startDateTime": "2017-08-20T00:00:00Z",
+                    "endDateTime": "2017-08-20T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.526,
+                    "startDateTime": "2017-08-21T00:00:00Z",
+                    "endDateTime": "2017-08-21T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.63,
+                    "startDateTime": "2017-08-22T00:00:00Z",
+                    "endDateTime": "2017-08-22T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.031,
+                    "startDateTime": "2017-08-23T00:00:00Z",
+                    "endDateTime": "2017-08-23T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.416,
+                    "startDateTime": "2017-08-24T00:00:00Z",
+                    "endDateTime": "2017-08-24T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.267,
+                    "startDateTime": "2017-08-25T00:00:00Z",
+                    "endDateTime": "2017-08-25T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.478,
+                    "startDateTime": "2017-08-26T00:00:00Z",
+                    "endDateTime": "2017-08-26T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.193,
+                    "startDateTime": "2017-08-27T00:00:00Z",
+                    "endDateTime": "2017-08-27T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.837,
+                    "startDateTime": "2017-08-28T00:00:00Z",
+                    "endDateTime": "2017-08-28T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.016,
+                    "startDateTime": "2017-08-29T00:00:00Z",
+                    "endDateTime": "2017-08-29T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.914,
+                    "startDateTime": "2017-08-30T00:00:00Z",
+                    "endDateTime": "2017-08-30T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.013,
+                    "startDateTime": "2017-08-31T00:00:00Z",
+                    "endDateTime": "2017-08-31T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 4.155,
+                    "startDateTime": "2017-09-01T00:00:00Z",
+                    "endDateTime": "2017-09-01T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.101,
+                    "startDateTime": "2017-09-02T00:00:00Z",
+                    "endDateTime": "2017-09-02T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.182,
+                    "startDateTime": "2017-09-03T00:00:00Z",
+                    "endDateTime": "2017-09-03T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.018,
+                    "startDateTime": "2017-09-04T00:00:00Z",
+                    "endDateTime": "2017-09-04T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.274,
+                    "startDateTime": "2017-09-05T00:00:00Z",
+                    "endDateTime": "2017-09-05T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.081,
+                    "startDateTime": "2017-09-06T00:00:00Z",
+                    "endDateTime": "2017-09-06T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 6.764,
+                    "startDateTime": "2017-09-07T00:00:00Z",
+                    "endDateTime": "2017-09-07T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.555,
+                    "startDateTime": "2017-09-08T00:00:00Z",
+                    "endDateTime": "2017-09-08T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.578,
+                    "startDateTime": "2017-09-09T00:00:00Z",
+                    "endDateTime": "2017-09-09T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.654,
+                    "startDateTime": "2017-09-10T00:00:00Z",
+                    "endDateTime": "2017-09-10T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.386,
+                    "startDateTime": "2017-09-11T00:00:00Z",
+                    "endDateTime": "2017-09-11T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.068,
+                    "startDateTime": "2017-09-12T00:00:00Z",
+                    "endDateTime": "2017-09-12T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.444,
+                    "startDateTime": "2017-09-13T00:00:00Z",
+                    "endDateTime": "2017-09-13T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.502,
+                    "startDateTime": "2017-09-14T00:00:00Z",
+                    "endDateTime": "2017-09-14T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.291,
+                    "startDateTime": "2017-09-15T00:00:00Z",
+                    "endDateTime": "2017-09-15T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.079,
+                    "startDateTime": "2017-09-16T00:00:00Z",
+                    "endDateTime": "2017-09-16T23:59:00Z",
+                    "estimatedRead": true
+                }
+            ],
+            "hasNoBill": false
+        },
+        {
+            "account": "7020624784",
+            "contract": "9400732978",
+            "costs": [
+                {
+                    "value": 11.919494,
+                    "startDateTime": "2017-06-18T00:00:00Z",
+                    "endDateTime": "2017-06-18T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.016954,
+                    "startDateTime": "2017-06-19T00:00:00Z",
+                    "endDateTime": "2017-06-19T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.681272,
+                    "startDateTime": "2017-06-20T00:00:00Z",
+                    "endDateTime": "2017-06-20T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.254428,
+                    "startDateTime": "2017-06-21T00:00:00Z",
+                    "endDateTime": "2017-06-21T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.082592,
+                    "startDateTime": "2017-06-22T00:00:00Z",
+                    "endDateTime": "2017-06-22T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.299036,
+                    "startDateTime": "2017-06-23T00:00:00Z",
+                    "endDateTime": "2017-06-23T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.007416,
+                    "startDateTime": "2017-06-24T00:00:00Z",
+                    "endDateTime": "2017-06-24T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 22.788142,
+                    "startDateTime": "2017-06-25T00:00:00Z",
+                    "endDateTime": "2017-06-25T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 20.732554,
+                    "startDateTime": "2017-06-26T00:00:00Z",
+                    "endDateTime": "2017-06-26T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 19.245578,
+                    "startDateTime": "2017-06-27T00:00:00Z",
+                    "endDateTime": "2017-06-27T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 18.830764,
+                    "startDateTime": "2017-06-28T00:00:00Z",
+                    "endDateTime": "2017-06-28T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.244654,
+                    "startDateTime": "2017-06-29T00:00:00Z",
+                    "endDateTime": "2017-06-29T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.367128,
+                    "startDateTime": "2017-06-30T00:00:00Z",
+                    "endDateTime": "2017-06-30T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.917754,
+                    "startDateTime": "2017-07-01T00:00:00Z",
+                    "endDateTime": "2017-07-01T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 15.477834,
+                    "startDateTime": "2017-07-02T00:00:00Z",
+                    "endDateTime": "2017-07-02T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 5.366682,
+                    "startDateTime": "2017-07-03T00:00:00Z",
+                    "endDateTime": "2017-07-03T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.503398,
+                    "startDateTime": "2017-07-04T00:00:00Z",
+                    "endDateTime": "2017-07-04T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.753164,
+                    "startDateTime": "2017-07-05T00:00:00Z",
+                    "endDateTime": "2017-07-05T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.016442,
+                    "startDateTime": "2017-07-06T00:00:00Z",
+                    "endDateTime": "2017-07-06T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.94628,
+                    "startDateTime": "2017-07-07T00:00:00Z",
+                    "endDateTime": "2017-07-07T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.440286,
+                    "startDateTime": "2017-07-08T00:00:00Z",
+                    "endDateTime": "2017-07-08T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.072802,
+                    "startDateTime": "2017-07-09T00:00:00Z",
+                    "endDateTime": "2017-07-09T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.13845,
+                    "startDateTime": "2017-07-10T00:00:00Z",
+                    "endDateTime": "2017-07-10T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 17.004886,
+                    "startDateTime": "2017-07-11T00:00:00Z",
+                    "endDateTime": "2017-07-11T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.681278,
+                    "startDateTime": "2017-07-12T00:00:00Z",
+                    "endDateTime": "2017-07-12T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 15.429728,
+                    "startDateTime": "2017-07-13T00:00:00Z",
+                    "endDateTime": "2017-07-13T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.72236,
+                    "startDateTime": "2017-07-14T00:00:00Z",
+                    "endDateTime": "2017-07-14T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.570042,
+                    "startDateTime": "2017-07-15T00:00:00Z",
+                    "endDateTime": "2017-07-15T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 14.768164,
+                    "startDateTime": "2017-07-16T00:00:00Z",
+                    "endDateTime": "2017-07-16T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.89645,
+                    "startDateTime": "2017-07-17T00:00:00Z",
+                    "endDateTime": "2017-07-17T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.980118,
+                    "startDateTime": "2017-07-18T00:00:00Z",
+                    "endDateTime": "2017-07-18T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 5.766234,
+                    "startDateTime": "2017-07-19T00:00:00Z",
+                    "endDateTime": "2017-07-19T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 6.520988,
+                    "startDateTime": "2017-07-20T00:00:00Z",
+                    "endDateTime": "2017-07-20T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 7.276984,
+                    "startDateTime": "2017-07-21T00:00:00Z",
+                    "endDateTime": "2017-07-21T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.639194,
+                    "startDateTime": "2017-07-22T00:00:00Z",
+                    "endDateTime": "2017-07-22T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 7.656504,
+                    "startDateTime": "2017-07-23T00:00:00Z",
+                    "endDateTime": "2017-07-23T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 5.296796,
+                    "startDateTime": "2017-07-24T00:00:00Z",
+                    "endDateTime": "2017-07-24T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 15.995862,
+                    "startDateTime": "2017-07-25T00:00:00Z",
+                    "endDateTime": "2017-07-25T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.084594,
+                    "startDateTime": "2017-07-26T00:00:00Z",
+                    "endDateTime": "2017-07-26T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 21.367558,
+                    "startDateTime": "2017-07-27T00:00:00Z",
+                    "endDateTime": "2017-07-27T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 5.958874,
+                    "startDateTime": "2017-07-28T00:00:00Z",
+                    "endDateTime": "2017-07-28T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.985134,
+                    "startDateTime": "2017-07-29T00:00:00Z",
+                    "endDateTime": "2017-07-29T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.470084,
+                    "startDateTime": "2017-07-30T00:00:00Z",
+                    "endDateTime": "2017-07-30T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 14.1304,
+                    "startDateTime": "2017-07-31T00:00:00Z",
+                    "endDateTime": "2017-07-31T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.037252,
+                    "startDateTime": "2017-08-01T00:00:00Z",
+                    "endDateTime": "2017-08-01T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.410798,
+                    "startDateTime": "2017-08-02T00:00:00Z",
+                    "endDateTime": "2017-08-02T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 0.997236,
+                    "startDateTime": "2017-08-03T00:00:00Z",
+                    "endDateTime": "2017-08-03T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 0.933868,
+                    "startDateTime": "2017-08-04T00:00:00Z",
+                    "endDateTime": "2017-08-04T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 0.977446,
+                    "startDateTime": "2017-08-05T00:00:00Z",
+                    "endDateTime": "2017-08-05T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 0.925092,
+                    "startDateTime": "2017-08-06T00:00:00Z",
+                    "endDateTime": "2017-08-06T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 0.911572,
+                    "startDateTime": "2017-08-07T00:00:00Z",
+                    "endDateTime": "2017-08-07T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 0.884262,
+                    "startDateTime": "2017-08-08T00:00:00Z",
+                    "endDateTime": "2017-08-08T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.282978,
+                    "startDateTime": "2017-08-09T00:00:00Z",
+                    "endDateTime": "2017-08-09T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.31505,
+                    "startDateTime": "2017-08-10T00:00:00Z",
+                    "endDateTime": "2017-08-10T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 14.035212,
+                    "startDateTime": "2017-08-11T00:00:00Z",
+                    "endDateTime": "2017-08-11T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 15.301236,
+                    "startDateTime": "2017-08-12T00:00:00Z",
+                    "endDateTime": "2017-08-12T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 13.65895,
+                    "startDateTime": "2017-08-13T00:00:00Z",
+                    "endDateTime": "2017-08-13T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 14.158198,
+                    "startDateTime": "2017-08-14T00:00:00Z",
+                    "endDateTime": "2017-08-14T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.041996,
+                    "startDateTime": "2017-08-15T00:00:00Z",
+                    "endDateTime": "2017-08-15T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 4.16454,
+                    "startDateTime": "2017-08-16T00:00:00Z",
+                    "endDateTime": "2017-08-16T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.00243,
+                    "startDateTime": "2017-08-17T00:00:00Z",
+                    "endDateTime": "2017-08-17T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.6254,
+                    "startDateTime": "2017-08-18T00:00:00Z",
+                    "endDateTime": "2017-08-18T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 6.35716,
+                    "startDateTime": "2017-08-19T00:00:00Z",
+                    "endDateTime": "2017-08-19T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.016194,
+                    "startDateTime": "2017-08-20T00:00:00Z",
+                    "endDateTime": "2017-08-20T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 17.281432,
+                    "startDateTime": "2017-08-21T00:00:00Z",
+                    "endDateTime": "2017-08-21T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.91298,
+                    "startDateTime": "2017-08-22T00:00:00Z",
+                    "endDateTime": "2017-08-22T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.162496,
+                    "startDateTime": "2017-08-23T00:00:00Z",
+                    "endDateTime": "2017-08-23T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.67527,
+                    "startDateTime": "2017-08-24T00:00:00Z",
+                    "endDateTime": "2017-08-24T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.11889,
+                    "startDateTime": "2017-08-25T00:00:00Z",
+                    "endDateTime": "2017-08-25T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.449062,
+                    "startDateTime": "2017-08-26T00:00:00Z",
+                    "endDateTime": "2017-08-26T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 14.299734,
+                    "startDateTime": "2017-08-27T00:00:00Z",
+                    "endDateTime": "2017-08-27T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.353096,
+                    "startDateTime": "2017-08-28T00:00:00Z",
+                    "endDateTime": "2017-08-28T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 6.34639,
+                    "startDateTime": "2017-08-29T00:00:00Z",
+                    "endDateTime": "2017-08-29T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 6.147242,
+                    "startDateTime": "2017-08-30T00:00:00Z",
+                    "endDateTime": "2017-08-30T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.749662,
+                    "startDateTime": "2017-08-31T00:00:00Z",
+                    "endDateTime": "2017-08-31T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 7.84388,
+                    "startDateTime": "2017-09-01T00:00:00Z",
+                    "endDateTime": "2017-09-01T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.091116,
+                    "startDateTime": "2017-09-02T00:00:00Z",
+                    "endDateTime": "2017-09-02T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.350826,
+                    "startDateTime": "2017-09-03T00:00:00Z",
+                    "endDateTime": "2017-09-03T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.63059,
+                    "startDateTime": "2017-09-04T00:00:00Z",
+                    "endDateTime": "2017-09-04T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.199826,
+                    "startDateTime": "2017-09-05T00:00:00Z",
+                    "endDateTime": "2017-09-05T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 5.739746,
+                    "startDateTime": "2017-09-06T00:00:00Z",
+                    "endDateTime": "2017-09-06T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 7.69859,
+                    "startDateTime": "2017-09-07T00:00:00Z",
+                    "endDateTime": "2017-09-07T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 6.224208,
+                    "startDateTime": "2017-09-08T00:00:00Z",
+                    "endDateTime": "2017-09-08T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 4.096786,
+                    "startDateTime": "2017-09-09T00:00:00Z",
+                    "endDateTime": "2017-09-09T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 6.494484,
+                    "startDateTime": "2017-09-10T00:00:00Z",
+                    "endDateTime": "2017-09-10T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 4.862782,
+                    "startDateTime": "2017-09-11T00:00:00Z",
+                    "endDateTime": "2017-09-11T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.85561,
+                    "startDateTime": "2017-09-12T00:00:00Z",
+                    "endDateTime": "2017-09-12T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.644196,
+                    "startDateTime": "2017-09-13T00:00:00Z",
+                    "endDateTime": "2017-09-13T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.005934,
+                    "startDateTime": "2017-09-14T00:00:00Z",
+                    "endDateTime": "2017-09-14T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 5.66234,
+                    "startDateTime": "2017-09-15T00:00:00Z",
+                    "endDateTime": "2017-09-15T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.27396,
+                    "startDateTime": "2017-09-16T00:00:00Z",
+                    "endDateTime": "2017-09-16T23:59:00Z",
+                    "estimatedRead": true
+                }
+            ],
+            "consumption": [
+                {
+                    "value": 47.583,
+                    "startDateTime": "2017-06-18T00:00:00Z",
+                    "endDateTime": "2017-06-18T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 39.988,
+                    "startDateTime": "2017-06-19T00:00:00Z",
+                    "endDateTime": "2017-06-19T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 46.632,
+                    "startDateTime": "2017-06-20T00:00:00Z",
+                    "endDateTime": "2017-06-20T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 36.944,
+                    "startDateTime": "2017-06-21T00:00:00Z",
+                    "endDateTime": "2017-06-21T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 36.258,
+                    "startDateTime": "2017-06-22T00:00:00Z",
+                    "endDateTime": "2017-06-22T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 33.13,
+                    "startDateTime": "2017-06-23T00:00:00Z",
+                    "endDateTime": "2017-06-23T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 47.934,
+                    "startDateTime": "2017-06-24T00:00:00Z",
+                    "endDateTime": "2017-06-24T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 90.971,
+                    "startDateTime": "2017-06-25T00:00:00Z",
+                    "endDateTime": "2017-06-25T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 82.765,
+                    "startDateTime": "2017-06-26T00:00:00Z",
+                    "endDateTime": "2017-06-26T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 76.829,
+                    "startDateTime": "2017-06-27T00:00:00Z",
+                    "endDateTime": "2017-06-27T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 75.173,
+                    "startDateTime": "2017-06-28T00:00:00Z",
+                    "endDateTime": "2017-06-28T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 40.897,
+                    "startDateTime": "2017-06-29T00:00:00Z",
+                    "endDateTime": "2017-06-29T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 49.37,
+                    "startDateTime": "2017-06-30T00:00:00Z",
+                    "endDateTime": "2017-06-30T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 39.592,
+                    "startDateTime": "2017-07-01T00:00:00Z",
+                    "endDateTime": "2017-07-01T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 61.788,
+                    "startDateTime": "2017-07-02T00:00:00Z",
+                    "endDateTime": "2017-07-02T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 21.424,
+                    "startDateTime": "2017-07-03T00:00:00Z",
+                    "endDateTime": "2017-07-03T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 49.914,
+                    "startDateTime": "2017-07-04T00:00:00Z",
+                    "endDateTime": "2017-07-04T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 42.927,
+                    "startDateTime": "2017-07-05T00:00:00Z",
+                    "endDateTime": "2017-07-05T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 43.978,
+                    "startDateTime": "2017-07-06T00:00:00Z",
+                    "endDateTime": "2017-07-06T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 51.682,
+                    "startDateTime": "2017-07-07T00:00:00Z",
+                    "endDateTime": "2017-07-07T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 45.67,
+                    "startDateTime": "2017-07-08T00:00:00Z",
+                    "endDateTime": "2017-07-08T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 44.203,
+                    "startDateTime": "2017-07-09T00:00:00Z",
+                    "endDateTime": "2017-07-09T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 32.489,
+                    "startDateTime": "2017-07-10T00:00:00Z",
+                    "endDateTime": "2017-07-10T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 67.884,
+                    "startDateTime": "2017-07-11T00:00:00Z",
+                    "endDateTime": "2017-07-11T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 34.656,
+                    "startDateTime": "2017-07-12T00:00:00Z",
+                    "endDateTime": "2017-07-12T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 61.596,
+                    "startDateTime": "2017-07-13T00:00:00Z",
+                    "endDateTime": "2017-07-13T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 38.812,
+                    "startDateTime": "2017-07-14T00:00:00Z",
+                    "endDateTime": "2017-07-14T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 50.18,
+                    "startDateTime": "2017-07-15T00:00:00Z",
+                    "endDateTime": "2017-07-15T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 58.955,
+                    "startDateTime": "2017-07-16T00:00:00Z",
+                    "endDateTime": "2017-07-16T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 43.499,
+                    "startDateTime": "2017-07-17T00:00:00Z",
+                    "endDateTime": "2017-07-17T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 43.833,
+                    "startDateTime": "2017-07-18T00:00:00Z",
+                    "endDateTime": "2017-07-18T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 23.019,
+                    "startDateTime": "2017-07-19T00:00:00Z",
+                    "endDateTime": "2017-07-19T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 26.032,
+                    "startDateTime": "2017-07-20T00:00:00Z",
+                    "endDateTime": "2017-07-20T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 29.05,
+                    "startDateTime": "2017-07-21T00:00:00Z",
+                    "endDateTime": "2017-07-21T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 38.48,
+                    "startDateTime": "2017-07-22T00:00:00Z",
+                    "endDateTime": "2017-07-22T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 30.565,
+                    "startDateTime": "2017-07-23T00:00:00Z",
+                    "endDateTime": "2017-07-23T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 21.145,
+                    "startDateTime": "2017-07-24T00:00:00Z",
+                    "endDateTime": "2017-07-24T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 63.856,
+                    "startDateTime": "2017-07-25T00:00:00Z",
+                    "endDateTime": "2017-07-25T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 36.266,
+                    "startDateTime": "2017-07-26T00:00:00Z",
+                    "endDateTime": "2017-07-26T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 85.3,
+                    "startDateTime": "2017-07-27T00:00:00Z",
+                    "endDateTime": "2017-07-27T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 23.788,
+                    "startDateTime": "2017-07-28T00:00:00Z",
+                    "endDateTime": "2017-07-28T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 43.853,
+                    "startDateTime": "2017-07-29T00:00:00Z",
+                    "endDateTime": "2017-07-29T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 49.781,
+                    "startDateTime": "2017-07-30T00:00:00Z",
+                    "endDateTime": "2017-07-30T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 56.409,
+                    "startDateTime": "2017-07-31T00:00:00Z",
+                    "endDateTime": "2017-07-31T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 32.085,
+                    "startDateTime": "2017-08-01T00:00:00Z",
+                    "endDateTime": "2017-08-01T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.624,
+                    "startDateTime": "2017-08-02T00:00:00Z",
+                    "endDateTime": "2017-08-02T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.981,
+                    "startDateTime": "2017-08-03T00:00:00Z",
+                    "endDateTime": "2017-08-03T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.728,
+                    "startDateTime": "2017-08-04T00:00:00Z",
+                    "endDateTime": "2017-08-04T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.902,
+                    "startDateTime": "2017-08-05T00:00:00Z",
+                    "endDateTime": "2017-08-05T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.693,
+                    "startDateTime": "2017-08-06T00:00:00Z",
+                    "endDateTime": "2017-08-06T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.639,
+                    "startDateTime": "2017-08-07T00:00:00Z",
+                    "endDateTime": "2017-08-07T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.53,
+                    "startDateTime": "2017-08-08T00:00:00Z",
+                    "endDateTime": "2017-08-08T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 41.05,
+                    "startDateTime": "2017-08-09T00:00:00Z",
+                    "endDateTime": "2017-08-09T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 41.178,
+                    "startDateTime": "2017-08-10T00:00:00Z",
+                    "endDateTime": "2017-08-10T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 56.029,
+                    "startDateTime": "2017-08-11T00:00:00Z",
+                    "endDateTime": "2017-08-11T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 61.083,
+                    "startDateTime": "2017-08-12T00:00:00Z",
+                    "endDateTime": "2017-08-12T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 54.527,
+                    "startDateTime": "2017-08-13T00:00:00Z",
+                    "endDateTime": "2017-08-13T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 56.52,
+                    "startDateTime": "2017-08-14T00:00:00Z",
+                    "endDateTime": "2017-08-14T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 40.088,
+                    "startDateTime": "2017-08-15T00:00:00Z",
+                    "endDateTime": "2017-08-15T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 16.625,
+                    "startDateTime": "2017-08-16T00:00:00Z",
+                    "endDateTime": "2017-08-16T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 39.93,
+                    "startDateTime": "2017-08-17T00:00:00Z",
+                    "endDateTime": "2017-08-17T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 50.401,
+                    "startDateTime": "2017-08-18T00:00:00Z",
+                    "endDateTime": "2017-08-18T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 25.378,
+                    "startDateTime": "2017-08-19T00:00:00Z",
+                    "endDateTime": "2017-08-19T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 39.985,
+                    "startDateTime": "2017-08-20T00:00:00Z",
+                    "endDateTime": "2017-08-20T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 68.988,
+                    "startDateTime": "2017-08-21T00:00:00Z",
+                    "endDateTime": "2017-08-21T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 47.557,
+                    "startDateTime": "2017-08-22T00:00:00Z",
+                    "endDateTime": "2017-08-22T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 36.577,
+                    "startDateTime": "2017-08-23T00:00:00Z",
+                    "endDateTime": "2017-08-23T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 38.624,
+                    "startDateTime": "2017-08-24T00:00:00Z",
+                    "endDateTime": "2017-08-24T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 48.379,
+                    "startDateTime": "2017-08-25T00:00:00Z",
+                    "endDateTime": "2017-08-25T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 37.721,
+                    "startDateTime": "2017-08-26T00:00:00Z",
+                    "endDateTime": "2017-08-26T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 57.085,
+                    "startDateTime": "2017-08-27T00:00:00Z",
+                    "endDateTime": "2017-08-27T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 49.314,
+                    "startDateTime": "2017-08-28T00:00:00Z",
+                    "endDateTime": "2017-08-28T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 25.335,
+                    "startDateTime": "2017-08-29T00:00:00Z",
+                    "endDateTime": "2017-08-29T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 24.54,
+                    "startDateTime": "2017-08-30T00:00:00Z",
+                    "endDateTime": "2017-08-30T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 42.913,
+                    "startDateTime": "2017-08-31T00:00:00Z",
+                    "endDateTime": "2017-08-31T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 31.314,
+                    "startDateTime": "2017-09-01T00:00:00Z",
+                    "endDateTime": "2017-09-01T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 32.301,
+                    "startDateTime": "2017-09-02T00:00:00Z",
+                    "endDateTime": "2017-09-02T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 37.33,
+                    "startDateTime": "2017-09-03T00:00:00Z",
+                    "endDateTime": "2017-09-03T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 42.439,
+                    "startDateTime": "2017-09-04T00:00:00Z",
+                    "endDateTime": "2017-09-04T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 32.735,
+                    "startDateTime": "2017-09-05T00:00:00Z",
+                    "endDateTime": "2017-09-05T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 22.914,
+                    "startDateTime": "2017-09-06T00:00:00Z",
+                    "endDateTime": "2017-09-06T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 30.734,
+                    "startDateTime": "2017-09-07T00:00:00Z",
+                    "endDateTime": "2017-09-07T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 24.848,
+                    "startDateTime": "2017-09-08T00:00:00Z",
+                    "endDateTime": "2017-09-08T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 16.355,
+                    "startDateTime": "2017-09-09T00:00:00Z",
+                    "endDateTime": "2017-09-09T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 25.927,
+                    "startDateTime": "2017-09-10T00:00:00Z",
+                    "endDateTime": "2017-09-10T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 19.413,
+                    "startDateTime": "2017-09-11T00:00:00Z",
+                    "endDateTime": "2017-09-11T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 35.353,
+                    "startDateTime": "2017-09-12T00:00:00Z",
+                    "endDateTime": "2017-09-12T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 34.509,
+                    "startDateTime": "2017-09-13T00:00:00Z",
+                    "endDateTime": "2017-09-13T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 31.961,
+                    "startDateTime": "2017-09-14T00:00:00Z",
+                    "endDateTime": "2017-09-14T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 22.605,
+                    "startDateTime": "2017-09-15T00:00:00Z",
+                    "endDateTime": "2017-09-15T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 33.031,
+                    "startDateTime": "2017-09-16T00:00:00Z",
+                    "endDateTime": "2017-09-16T23:59:00Z",
+                    "estimatedRead": true
+                }
+            ],
+            "hasNoBill": false
+        },
+        {
+            "account": "7004437310",
+            "contract": "9400733459",
+            "costs": [
+                {
+                    "value": 2.162574,
+                    "startDateTime": "2017-06-18T00:00:00Z",
+                    "endDateTime": "2017-06-18T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.360976,
+                    "startDateTime": "2017-06-19T00:00:00Z",
+                    "endDateTime": "2017-06-19T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.318134,
+                    "startDateTime": "2017-06-20T00:00:00Z",
+                    "endDateTime": "2017-06-20T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.37099,
+                    "startDateTime": "2017-06-21T00:00:00Z",
+                    "endDateTime": "2017-06-21T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.415588,
+                    "startDateTime": "2017-06-22T00:00:00Z",
+                    "endDateTime": "2017-06-22T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.895292,
+                    "startDateTime": "2017-06-23T00:00:00Z",
+                    "endDateTime": "2017-06-23T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.216686,
+                    "startDateTime": "2017-06-24T00:00:00Z",
+                    "endDateTime": "2017-06-24T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.186878,
+                    "startDateTime": "2017-06-25T00:00:00Z",
+                    "endDateTime": "2017-06-25T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.502498,
+                    "startDateTime": "2017-06-26T00:00:00Z",
+                    "endDateTime": "2017-06-26T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.102954,
+                    "startDateTime": "2017-06-27T00:00:00Z",
+                    "endDateTime": "2017-06-27T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.364472,
+                    "startDateTime": "2017-06-28T00:00:00Z",
+                    "endDateTime": "2017-06-28T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.512014,
+                    "startDateTime": "2017-06-29T00:00:00Z",
+                    "endDateTime": "2017-06-29T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 4.173342,
+                    "startDateTime": "2017-06-30T00:00:00Z",
+                    "endDateTime": "2017-06-30T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.165068,
+                    "startDateTime": "2017-07-01T00:00:00Z",
+                    "endDateTime": "2017-07-01T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.38452,
+                    "startDateTime": "2017-07-02T00:00:00Z",
+                    "endDateTime": "2017-07-02T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.81989,
+                    "startDateTime": "2017-07-03T00:00:00Z",
+                    "endDateTime": "2017-07-03T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.918588,
+                    "startDateTime": "2017-07-04T00:00:00Z",
+                    "endDateTime": "2017-07-04T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.41808,
+                    "startDateTime": "2017-07-05T00:00:00Z",
+                    "endDateTime": "2017-07-05T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.041584,
+                    "startDateTime": "2017-07-06T00:00:00Z",
+                    "endDateTime": "2017-07-06T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.201646,
+                    "startDateTime": "2017-07-07T00:00:00Z",
+                    "endDateTime": "2017-07-07T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.82639,
+                    "startDateTime": "2017-07-08T00:00:00Z",
+                    "endDateTime": "2017-07-08T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.494238,
+                    "startDateTime": "2017-07-09T00:00:00Z",
+                    "endDateTime": "2017-07-09T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.299598,
+                    "startDateTime": "2017-07-10T00:00:00Z",
+                    "endDateTime": "2017-07-10T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.38101,
+                    "startDateTime": "2017-07-11T00:00:00Z",
+                    "endDateTime": "2017-07-11T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.274296,
+                    "startDateTime": "2017-07-12T00:00:00Z",
+                    "endDateTime": "2017-07-12T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.7525,
+                    "startDateTime": "2017-07-13T00:00:00Z",
+                    "endDateTime": "2017-07-13T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.862716,
+                    "startDateTime": "2017-07-14T00:00:00Z",
+                    "endDateTime": "2017-07-14T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.005504,
+                    "startDateTime": "2017-07-15T00:00:00Z",
+                    "endDateTime": "2017-07-15T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.868736,
+                    "startDateTime": "2017-07-16T00:00:00Z",
+                    "endDateTime": "2017-07-16T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.227708,
+                    "startDateTime": "2017-07-17T00:00:00Z",
+                    "endDateTime": "2017-07-17T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.03708,
+                    "startDateTime": "2017-07-18T00:00:00Z",
+                    "endDateTime": "2017-07-18T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.287822,
+                    "startDateTime": "2017-07-19T00:00:00Z",
+                    "endDateTime": "2017-07-19T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.597446,
+                    "startDateTime": "2017-07-20T00:00:00Z",
+                    "endDateTime": "2017-07-20T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.678356,
+                    "startDateTime": "2017-07-21T00:00:00Z",
+                    "endDateTime": "2017-07-21T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.872748,
+                    "startDateTime": "2017-07-22T00:00:00Z",
+                    "endDateTime": "2017-07-22T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.538078,
+                    "startDateTime": "2017-07-23T00:00:00Z",
+                    "endDateTime": "2017-07-23T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.56288,
+                    "startDateTime": "2017-07-24T00:00:00Z",
+                    "endDateTime": "2017-07-24T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.925088,
+                    "startDateTime": "2017-07-25T00:00:00Z",
+                    "endDateTime": "2017-07-25T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.395534,
+                    "startDateTime": "2017-07-26T00:00:00Z",
+                    "endDateTime": "2017-07-26T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.56212,
+                    "startDateTime": "2017-07-27T00:00:00Z",
+                    "endDateTime": "2017-07-27T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.622242,
+                    "startDateTime": "2017-07-28T00:00:00Z",
+                    "endDateTime": "2017-07-28T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.265032,
+                    "startDateTime": "2017-07-29T00:00:00Z",
+                    "endDateTime": "2017-07-29T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.178356,
+                    "startDateTime": "2017-07-30T00:00:00Z",
+                    "endDateTime": "2017-07-30T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.234728,
+                    "startDateTime": "2017-07-31T00:00:00Z",
+                    "endDateTime": "2017-07-31T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.176348,
+                    "startDateTime": "2017-08-01T00:00:00Z",
+                    "endDateTime": "2017-08-01T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.777802,
+                    "startDateTime": "2017-08-02T00:00:00Z",
+                    "endDateTime": "2017-08-02T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.236978,
+                    "startDateTime": "2017-08-03T00:00:00Z",
+                    "endDateTime": "2017-08-03T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.359718,
+                    "startDateTime": "2017-08-04T00:00:00Z",
+                    "endDateTime": "2017-08-04T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.380512,
+                    "startDateTime": "2017-08-05T00:00:00Z",
+                    "endDateTime": "2017-08-05T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.329906,
+                    "startDateTime": "2017-08-06T00:00:00Z",
+                    "endDateTime": "2017-08-06T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.24725,
+                    "startDateTime": "2017-08-07T00:00:00Z",
+                    "endDateTime": "2017-08-07T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.012024,
+                    "startDateTime": "2017-08-08T00:00:00Z",
+                    "endDateTime": "2017-08-08T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.978458,
+                    "startDateTime": "2017-08-09T00:00:00Z",
+                    "endDateTime": "2017-08-09T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.446896,
+                    "startDateTime": "2017-08-10T00:00:00Z",
+                    "endDateTime": "2017-08-10T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.11273,
+                    "startDateTime": "2017-08-11T00:00:00Z",
+                    "endDateTime": "2017-08-11T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.910822,
+                    "startDateTime": "2017-08-12T00:00:00Z",
+                    "endDateTime": "2017-08-12T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.509526,
+                    "startDateTime": "2017-08-13T00:00:00Z",
+                    "endDateTime": "2017-08-13T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.249006,
+                    "startDateTime": "2017-08-14T00:00:00Z",
+                    "endDateTime": "2017-08-14T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.772052,
+                    "startDateTime": "2017-08-15T00:00:00Z",
+                    "endDateTime": "2017-08-15T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.503266,
+                    "startDateTime": "2017-08-16T00:00:00Z",
+                    "endDateTime": "2017-08-16T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.949398,
+                    "startDateTime": "2017-08-17T00:00:00Z",
+                    "endDateTime": "2017-08-17T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.38477,
+                    "startDateTime": "2017-08-18T00:00:00Z",
+                    "endDateTime": "2017-08-18T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.993234,
+                    "startDateTime": "2017-08-19T00:00:00Z",
+                    "endDateTime": "2017-08-19T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.56112,
+                    "startDateTime": "2017-08-20T00:00:00Z",
+                    "endDateTime": "2017-08-20T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 4.703398,
+                    "startDateTime": "2017-08-21T00:00:00Z",
+                    "endDateTime": "2017-08-21T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.47295,
+                    "startDateTime": "2017-08-22T00:00:00Z",
+                    "endDateTime": "2017-08-22T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.465432,
+                    "startDateTime": "2017-08-23T00:00:00Z",
+                    "endDateTime": "2017-08-23T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.55887,
+                    "startDateTime": "2017-08-24T00:00:00Z",
+                    "endDateTime": "2017-08-24T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.787582,
+                    "startDateTime": "2017-08-25T00:00:00Z",
+                    "endDateTime": "2017-08-25T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.012272,
+                    "startDateTime": "2017-08-26T00:00:00Z",
+                    "endDateTime": "2017-08-26T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.096946,
+                    "startDateTime": "2017-08-27T00:00:00Z",
+                    "endDateTime": "2017-08-27T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.497256,
+                    "startDateTime": "2017-08-28T00:00:00Z",
+                    "endDateTime": "2017-08-28T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.825912,
+                    "startDateTime": "2017-08-29T00:00:00Z",
+                    "endDateTime": "2017-08-29T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.709418,
+                    "startDateTime": "2017-08-30T00:00:00Z",
+                    "endDateTime": "2017-08-30T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.235478,
+                    "startDateTime": "2017-08-31T00:00:00Z",
+                    "endDateTime": "2017-08-31T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.172614,
+                    "startDateTime": "2017-09-01T00:00:00Z",
+                    "endDateTime": "2017-09-01T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.890804,
+                    "startDateTime": "2017-09-02T00:00:00Z",
+                    "endDateTime": "2017-09-02T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.827674,
+                    "startDateTime": "2017-09-03T00:00:00Z",
+                    "endDateTime": "2017-09-03T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.822664,
+                    "startDateTime": "2017-09-04T00:00:00Z",
+                    "endDateTime": "2017-09-04T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.809152,
+                    "startDateTime": "2017-09-05T00:00:00Z",
+                    "endDateTime": "2017-09-05T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 1.949414,
+                    "startDateTime": "2017-09-06T00:00:00Z",
+                    "endDateTime": "2017-09-06T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.09145,
+                    "startDateTime": "2017-09-07T00:00:00Z",
+                    "endDateTime": "2017-09-07T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.343948,
+                    "startDateTime": "2017-09-08T00:00:00Z",
+                    "endDateTime": "2017-09-08T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 4.111974,
+                    "startDateTime": "2017-09-09T00:00:00Z",
+                    "endDateTime": "2017-09-09T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.103704,
+                    "startDateTime": "2017-09-10T00:00:00Z",
+                    "endDateTime": "2017-09-10T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.994244,
+                    "startDateTime": "2017-09-11T00:00:00Z",
+                    "endDateTime": "2017-09-11T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.706412,
+                    "startDateTime": "2017-09-12T00:00:00Z",
+                    "endDateTime": "2017-09-12T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.596948,
+                    "startDateTime": "2017-09-13T00:00:00Z",
+                    "endDateTime": "2017-09-13T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.32916,
+                    "startDateTime": "2017-09-14T00:00:00Z",
+                    "endDateTime": "2017-09-14T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 2.84469,
+                    "startDateTime": "2017-09-15T00:00:00Z",
+                    "endDateTime": "2017-09-15T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 3.029054,
+                    "startDateTime": "2017-09-16T00:00:00Z",
+                    "endDateTime": "2017-09-16T23:59:00Z",
+                    "estimatedRead": true
+                }
+            ],
+            "consumption": [
+                {
+                    "value": 8.633,
+                    "startDateTime": "2017-06-18T00:00:00Z",
+                    "endDateTime": "2017-06-18T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.425,
+                    "startDateTime": "2017-06-19T00:00:00Z",
+                    "endDateTime": "2017-06-19T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.254,
+                    "startDateTime": "2017-06-20T00:00:00Z",
+                    "endDateTime": "2017-06-20T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.465,
+                    "startDateTime": "2017-06-21T00:00:00Z",
+                    "endDateTime": "2017-06-21T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.643,
+                    "startDateTime": "2017-06-22T00:00:00Z",
+                    "endDateTime": "2017-06-22T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.558,
+                    "startDateTime": "2017-06-23T00:00:00Z",
+                    "endDateTime": "2017-06-23T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.841,
+                    "startDateTime": "2017-06-24T00:00:00Z",
+                    "endDateTime": "2017-06-24T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.73,
+                    "startDateTime": "2017-06-25T00:00:00Z",
+                    "endDateTime": "2017-06-25T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.99,
+                    "startDateTime": "2017-06-26T00:00:00Z",
+                    "endDateTime": "2017-06-26T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.395,
+                    "startDateTime": "2017-06-27T00:00:00Z",
+                    "endDateTime": "2017-06-27T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.439,
+                    "startDateTime": "2017-06-28T00:00:00Z",
+                    "endDateTime": "2017-06-28T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.028,
+                    "startDateTime": "2017-06-29T00:00:00Z",
+                    "endDateTime": "2017-06-29T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 16.66,
+                    "startDateTime": "2017-06-30T00:00:00Z",
+                    "endDateTime": "2017-06-30T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.643,
+                    "startDateTime": "2017-07-01T00:00:00Z",
+                    "endDateTime": "2017-07-01T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.519,
+                    "startDateTime": "2017-07-02T00:00:00Z",
+                    "endDateTime": "2017-07-02T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.257,
+                    "startDateTime": "2017-07-03T00:00:00Z",
+                    "endDateTime": "2017-07-03T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.651,
+                    "startDateTime": "2017-07-04T00:00:00Z",
+                    "endDateTime": "2017-07-04T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.653,
+                    "startDateTime": "2017-07-05T00:00:00Z",
+                    "endDateTime": "2017-07-05T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.142,
+                    "startDateTime": "2017-07-06T00:00:00Z",
+                    "endDateTime": "2017-07-06T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.781,
+                    "startDateTime": "2017-07-07T00:00:00Z",
+                    "endDateTime": "2017-07-07T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 15.275,
+                    "startDateTime": "2017-07-08T00:00:00Z",
+                    "endDateTime": "2017-07-08T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.957,
+                    "startDateTime": "2017-07-09T00:00:00Z",
+                    "endDateTime": "2017-07-09T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.18,
+                    "startDateTime": "2017-07-10T00:00:00Z",
+                    "endDateTime": "2017-07-10T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.505,
+                    "startDateTime": "2017-07-11T00:00:00Z",
+                    "endDateTime": "2017-07-11T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.079,
+                    "startDateTime": "2017-07-12T00:00:00Z",
+                    "endDateTime": "2017-07-12T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.988,
+                    "startDateTime": "2017-07-13T00:00:00Z",
+                    "endDateTime": "2017-07-13T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.428,
+                    "startDateTime": "2017-07-14T00:00:00Z",
+                    "endDateTime": "2017-07-14T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.998,
+                    "startDateTime": "2017-07-15T00:00:00Z",
+                    "endDateTime": "2017-07-15T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.452,
+                    "startDateTime": "2017-07-16T00:00:00Z",
+                    "endDateTime": "2017-07-16T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.893,
+                    "startDateTime": "2017-07-17T00:00:00Z",
+                    "endDateTime": "2017-07-17T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.132,
+                    "startDateTime": "2017-07-18T00:00:00Z",
+                    "endDateTime": "2017-07-18T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.133,
+                    "startDateTime": "2017-07-19T00:00:00Z",
+                    "endDateTime": "2017-07-19T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.369,
+                    "startDateTime": "2017-07-20T00:00:00Z",
+                    "endDateTime": "2017-07-20T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.692,
+                    "startDateTime": "2017-07-21T00:00:00Z",
+                    "endDateTime": "2017-07-21T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.468,
+                    "startDateTime": "2017-07-22T00:00:00Z",
+                    "endDateTime": "2017-07-22T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 14.124,
+                    "startDateTime": "2017-07-23T00:00:00Z",
+                    "endDateTime": "2017-07-23T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.231,
+                    "startDateTime": "2017-07-24T00:00:00Z",
+                    "endDateTime": "2017-07-24T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 15.669,
+                    "startDateTime": "2017-07-25T00:00:00Z",
+                    "endDateTime": "2017-07-25T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.563,
+                    "startDateTime": "2017-07-26T00:00:00Z",
+                    "endDateTime": "2017-07-26T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.228,
+                    "startDateTime": "2017-07-27T00:00:00Z",
+                    "endDateTime": "2017-07-27T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.468,
+                    "startDateTime": "2017-07-28T00:00:00Z",
+                    "endDateTime": "2017-07-28T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.042,
+                    "startDateTime": "2017-07-29T00:00:00Z",
+                    "endDateTime": "2017-07-29T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.688,
+                    "startDateTime": "2017-07-30T00:00:00Z",
+                    "endDateTime": "2017-07-30T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.921,
+                    "startDateTime": "2017-07-31T00:00:00Z",
+                    "endDateTime": "2017-07-31T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.68,
+                    "startDateTime": "2017-08-01T00:00:00Z",
+                    "endDateTime": "2017-08-01T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.089,
+                    "startDateTime": "2017-08-02T00:00:00Z",
+                    "endDateTime": "2017-08-02T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.93,
+                    "startDateTime": "2017-08-03T00:00:00Z",
+                    "endDateTime": "2017-08-03T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 13.412,
+                    "startDateTime": "2017-08-04T00:00:00Z",
+                    "endDateTime": "2017-08-04T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.503,
+                    "startDateTime": "2017-08-05T00:00:00Z",
+                    "endDateTime": "2017-08-05T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.301,
+                    "startDateTime": "2017-08-06T00:00:00Z",
+                    "endDateTime": "2017-08-06T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.971,
+                    "startDateTime": "2017-08-07T00:00:00Z",
+                    "endDateTime": "2017-08-07T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.032,
+                    "startDateTime": "2017-08-08T00:00:00Z",
+                    "endDateTime": "2017-08-08T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.89,
+                    "startDateTime": "2017-08-09T00:00:00Z",
+                    "endDateTime": "2017-08-09T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.768,
+                    "startDateTime": "2017-08-10T00:00:00Z",
+                    "endDateTime": "2017-08-10T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.434,
+                    "startDateTime": "2017-08-11T00:00:00Z",
+                    "endDateTime": "2017-08-11T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.62,
+                    "startDateTime": "2017-08-12T00:00:00Z",
+                    "endDateTime": "2017-08-12T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.018,
+                    "startDateTime": "2017-08-13T00:00:00Z",
+                    "endDateTime": "2017-08-13T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.978,
+                    "startDateTime": "2017-08-14T00:00:00Z",
+                    "endDateTime": "2017-08-14T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.066,
+                    "startDateTime": "2017-08-15T00:00:00Z",
+                    "endDateTime": "2017-08-15T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.993,
+                    "startDateTime": "2017-08-16T00:00:00Z",
+                    "endDateTime": "2017-08-16T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.774,
+                    "startDateTime": "2017-08-17T00:00:00Z",
+                    "endDateTime": "2017-08-17T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.52,
+                    "startDateTime": "2017-08-18T00:00:00Z",
+                    "endDateTime": "2017-08-18T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.949,
+                    "startDateTime": "2017-08-19T00:00:00Z",
+                    "endDateTime": "2017-08-19T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 14.216,
+                    "startDateTime": "2017-08-20T00:00:00Z",
+                    "endDateTime": "2017-08-20T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 18.776,
+                    "startDateTime": "2017-08-21T00:00:00Z",
+                    "endDateTime": "2017-08-21T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.872,
+                    "startDateTime": "2017-08-22T00:00:00Z",
+                    "endDateTime": "2017-08-22T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.842,
+                    "startDateTime": "2017-08-23T00:00:00Z",
+                    "endDateTime": "2017-08-23T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.215,
+                    "startDateTime": "2017-08-24T00:00:00Z",
+                    "endDateTime": "2017-08-24T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.128,
+                    "startDateTime": "2017-08-25T00:00:00Z",
+                    "endDateTime": "2017-08-25T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.025,
+                    "startDateTime": "2017-08-26T00:00:00Z",
+                    "endDateTime": "2017-08-26T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.363,
+                    "startDateTime": "2017-08-27T00:00:00Z",
+                    "endDateTime": "2017-08-27T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.969,
+                    "startDateTime": "2017-08-28T00:00:00Z",
+                    "endDateTime": "2017-08-28T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.281,
+                    "startDateTime": "2017-08-29T00:00:00Z",
+                    "endDateTime": "2017-08-29T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.816,
+                    "startDateTime": "2017-08-30T00:00:00Z",
+                    "endDateTime": "2017-08-30T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.916,
+                    "startDateTime": "2017-08-31T00:00:00Z",
+                    "endDateTime": "2017-08-31T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.673,
+                    "startDateTime": "2017-09-01T00:00:00Z",
+                    "endDateTime": "2017-09-01T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 7.548,
+                    "startDateTime": "2017-09-02T00:00:00Z",
+                    "endDateTime": "2017-09-02T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 7.296,
+                    "startDateTime": "2017-09-03T00:00:00Z",
+                    "endDateTime": "2017-09-03T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 7.276,
+                    "startDateTime": "2017-09-04T00:00:00Z",
+                    "endDateTime": "2017-09-04T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 7.222,
+                    "startDateTime": "2017-09-05T00:00:00Z",
+                    "endDateTime": "2017-09-05T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 7.782,
+                    "startDateTime": "2017-09-06T00:00:00Z",
+                    "endDateTime": "2017-09-06T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 8.349,
+                    "startDateTime": "2017-09-07T00:00:00Z",
+                    "endDateTime": "2017-09-07T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 9.357,
+                    "startDateTime": "2017-09-08T00:00:00Z",
+                    "endDateTime": "2017-09-08T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 16.415,
+                    "startDateTime": "2017-09-09T00:00:00Z",
+                    "endDateTime": "2017-09-09T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.39,
+                    "startDateTime": "2017-09-10T00:00:00Z",
+                    "endDateTime": "2017-09-10T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.953,
+                    "startDateTime": "2017-09-11T00:00:00Z",
+                    "endDateTime": "2017-09-11T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.804,
+                    "startDateTime": "2017-09-12T00:00:00Z",
+                    "endDateTime": "2017-09-12T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 10.367,
+                    "startDateTime": "2017-09-13T00:00:00Z",
+                    "endDateTime": "2017-09-13T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 13.29,
+                    "startDateTime": "2017-09-14T00:00:00Z",
+                    "endDateTime": "2017-09-14T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 11.356,
+                    "startDateTime": "2017-09-15T00:00:00Z",
+                    "endDateTime": "2017-09-15T23:59:00Z",
+                    "estimatedRead": true
+                },
+                {
+                    "value": 12.092,
+                    "startDateTime": "2017-09-16T00:00:00Z",
+                    "endDateTime": "2017-09-16T23:59:00Z",
+                    "estimatedRead": true
+                }
+            ],
+            "hasNoBill": false
+        }
+    ]
+}

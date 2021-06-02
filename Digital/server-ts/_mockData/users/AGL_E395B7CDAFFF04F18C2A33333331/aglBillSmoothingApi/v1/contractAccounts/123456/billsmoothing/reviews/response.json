@@ -1,0 +1,33 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": {
+        "contractAccountNumber": 123456,
+        "reviews": [
+          {
+            "contractNumber": 123456111,
+            "reviewPeriodStartDate": "2018-08-10",
+            "reviewPeriodEndDate": "2018-10-10",
+            "reviewScenario": "Over"
+          },
+          {
+            "contractNumber": 123456222,
+            "reviewPeriodStartDate": "2018-08-10",
+            "reviewPeriodEndDate": "2018-10-10",
+            "reviewScenario": "Under"
+          },
+          {
+            "contractNumber": 123456333,
+            "reviewPeriodStartDate": "2018-08-10",
+            "reviewPeriodEndDate": "2018-10-10",
+            "reviewScenario": "OnTrack"
+          },
+          {
+            "contractNumber": 123456444,
+            "reviewPeriodStartDate": "2018-02-01",
+            "reviewPeriodEndDate": "2018-05-01",
+            "reviewScenario": "Attention"
+          }
+        ] 
+    }
+}

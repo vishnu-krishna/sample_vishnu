@@ -1,0 +1,15 @@
+<div class="cta-tile-module cta-tile-module--dark-text cta-tile-module--image">
+    <div class="cta-tile-module__image-container">
+        <img src="{{args.defaultImage.path}}" class="cta-tile-module__image--vertical" *ngIf="args.defaultImage"  [ngStyle]="getImageStyle(args.defaultImage)" />
+        <img src="{{args.horizontalImage.path}}" class="cta-tile-module__image--horizontal" *ngIf="args.horizontalImage"  [ngStyle]="getImageStyle(args.horizontalImage)" />
+    </div>
+    <div class="cta-tile-module__inner">
+            <ng-content></ng-content>
+    </div>
+    <div class="cta-tile-module__buttons">
+        <agl-maui-button [type]="args.button1.buttonType" *ngIf="args.button1" (clicked)="onButton1Click()" >{{args.button1.buttonText}}</agl-maui-button>
+        <agl-maui-button class="cta-btn-second" [type]="args.button2.buttonType" *ngIf="args.button2" (clicked)="onButton2Click()">{{args.button2.buttonText}}</agl-maui-button>
+    </div>
+</div>
+
+

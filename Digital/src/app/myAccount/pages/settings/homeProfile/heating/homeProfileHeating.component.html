@@ -1,0 +1,65 @@
+<div class="homeprofile-heating">
+    <agl-home-profile-header [accountNumber]="accountNumber" [contractNumber]="contractNumber" pageHeading="Heating"></agl-home-profile-header>
+
+    <div *ngIf="isLoading" class="homeprofile-landing__loader">
+        <agl-loader></agl-loader>
+    </div>
+
+    <div *ngIf="!isLoading" class="homeprofile-heating-body">
+        <div class="homeprofile-heating-questionnaire">
+            <div class="homeprofile-heating-questionnaire__heading">How do you heat your home?</div>
+            <div class="homeprofile-heating-questionnaire__item" data-test="ducted">
+                <div class="homeprofile-heating-questionnaire__item-header">Do you have ducted gas or electricity?</div>
+                <agl-maui-segmented-buttons class="homeprofile-heating__segmented-button" name="ductedHeating"
+                    (change)="setTypeOfDuctedHeating($event)">
+                    <agl-maui-segmented-button
+                        *ngFor="let option of ductedPowerSourceOptions"
+                        value="{{option.value}}"
+                        text="{{option.text}}"
+                        [attr.data-test]="option.text"
+                        textMobile="{{option.textMobile}}"
+                        [selected]="option.value === homeProfile.typeOfDuctedHeating">
+                    </agl-maui-segmented-button>
+                </agl-maui-segmented-buttons>
+            </div>
+            <div class="homeprofile-heating-questionnaire__item" data-test="split-system">
+                <div class="homeprofile-heating-questionnaire__item-header">Number of split systems air conditioners?</div>
+                <agl-maui-segmented-buttons class="homeprofile-heating__segmented-button" (change)="setNumberOfHeatingSplitSystems($event)">
+                    <agl-maui-segmented-button
+                        *ngFor="let option of numberOfAirconsOptions"
+                        value="{{option.value}}"
+                        text="{{option.text}}"
+                        [attr.data-test]="option.text"
+                        textMobile="{{option.textMobile}}"
+                        [selected]="option.value === homeProfile.numberOfHeatingSplitSystems">
+                    </agl-maui-segmented-button>
+                </agl-maui-segmented-buttons>
+            </div>
+            <div class="homeprofile-heating-questionnaire__item" data-test="portable-electric">
+                <div class="homeprofile-heating-questionnaire__item-header">Number of portable electric units?</div>
+                <agl-maui-segmented-buttons class="homeprofile-heating__segmented-button" (change)="setNumberOfPortableElecHeaters($event)">
+                    <agl-maui-segmented-button
+                        *ngFor="let option of numberOfPortableElecHeaters"
+                        value="{{option.value}}"
+                        text="{{option.text}}"
+                        [attr.data-test]="option.text"
+                        textMobile="{{option.textMobile}}"
+                        [selected]="option.value === homeProfile.numberOfPortableElecHeaters">
+                    </agl-maui-segmented-button>
+                </agl-maui-segmented-buttons>
+            </div>
+            <div class="homeprofile-heating-questionnaire__item" data-test="other-heating">
+                <div class="homeprofile-heating-questionnaire__item-header-no-margin">Do you have any other heating?</div>
+                <agl-maui-radio-button-group [selectedValue]="homeProfile.typeOfOtherHeating" name="otherheating"
+                    (selectedValueChange)="setTypeOfOtherHeating($event)">
+                    <agl-maui-radio-button *ngFor="let radio of otherPowerSourceOptions" [value]="radio.value">
+                        <div label>
+                            {{radio.text}}
+                        </div>
+                    </agl-maui-radio-button>
+                </agl-maui-radio-button-group>
+            </div>
+        </div>
+    </div>
+    <agl-home-profile-footer [accountNumber]="accountNumber" [contractNumber]="contractNumber"></agl-home-profile-footer>
+</div>

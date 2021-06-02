@@ -1,0 +1,18 @@
+{
+  "status": 200,
+  "headers": { },
+  "body": {
+    "hasMultipleBusinessPartners": false,
+    "businessPartners": [
+      {
+        "firstName": "LEIGH",
+        "lastName": "RING",
+        "businessPartnerNumber": "BP0002",
+        "phone": "03 1111 2222",
+        "mobile": "0411 222 333",
+        "email": "some.email@agl.com.au",
+        "hasDateOfBirth": false
+      }
+    ]
+  }
+}

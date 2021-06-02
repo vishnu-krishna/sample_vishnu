@@ -1,0 +1,19 @@
+[{
+     "oneMinuteMove": {
+         "isEligible": true,
+         "isDateOfBirthOnRecord": false,
+         "contractAccounts": [{
+                 "contractAccountNumber": 123456789,
+                 "isEligible": false
+             },
+             {
+                 "contractAccountNumber": 987654321,
+                 "isEligible": true
+             },
+             {
+                 "contractAccountNumber": 7019858895,
+                 "isEligible": false
+             }
+         ]
+     }
+ }]

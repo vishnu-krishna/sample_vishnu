@@ -1,0 +1,19 @@
+{
+    "screenCode": "SSMR_MRE",
+    "meters": [
+        {
+            "meterSerial": "EA057579",
+            "registers": [
+                {
+                    "registerId": "001",
+                    "dialFormat": "04",
+                    "currentMeterRead": "",
+                    "lastMeterRead": "1260.0",
+                    "lastReadQuality": "Meter reading by customer - SAP",
+                    "lastReadDate": "2017-05-01"
+                }
+            ]
+        }
+    ],
+    "error": null
+}

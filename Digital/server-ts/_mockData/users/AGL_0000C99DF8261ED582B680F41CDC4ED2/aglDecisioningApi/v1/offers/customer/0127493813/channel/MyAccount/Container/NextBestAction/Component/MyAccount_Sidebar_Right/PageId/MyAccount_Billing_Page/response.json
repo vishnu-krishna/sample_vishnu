@@ -1,0 +1,23 @@
+{
+    "status": 200,
+    "body":
+        {
+            "bpId": "901594023",
+            "interactionId": "Unknown",
+            "channel": "MyAccount",
+            "direction": "Inbound",
+            "offers": [{
+                "businessGroup": "Proactive",
+                "businessIssue": "Retention",
+                "businessName": "AGL Community",
+                "offerId": "agl_myaccount_1",
+                "assetUrl": "https://www.agl.com.au/-/media/DLS/Featured-cards/featuredcard_movewithconfidence.jpg",
+                "ctaUrl": "https://agl.com.au",
+                "ctaText": "Move Online Now",
+                "displayHeading": "Move with confidence",
+                "displayText": "Your personalised move tracker is available when you arrange your move online - stay informed on how your energy connection is progressing on AGL My Account or via the App.",
+                "rank": 1
+            }]
+        }
+    
+}

@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\settings\contactDetails\contactDetailsUpdateConfirmation\contactDetailsUpdateConfirmation.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/settings/contactDetails/contactDetailsUpdateConfirmation/</a> contactDetailsUpdateConfirmation.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">41.67% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>15/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">38.71% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>12/31</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">40.63% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>13/32</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, HostBinding, Input, OnInit } from '@angular/core';
+&nbsp;
+import { ConfigService } from '../../../../../shared/service/config.service';
+import { DataLayerService, ModalName, PageChannel, PageType, SiteSubSection } from '../../../../../shared/service/dataLayer.service';
+import { FeatureFlagTypes } from '../../../../services/featureFlag.constants';
+import { FeatureFlagService } from '../../../../services/featureFlag.service';
+import { IContactDetailsStateService } from '../contactDetailsState.service';
+import { ContactDetailsConfirmationType } from './contactDetailsConfirmationType.enum';
+&nbsp;
+@Component({
+    selector: 'agl-contact-details-update-confirmation',
+    template: require('./contactDetailsUpdateConfirmation.component.html'),
+    styles: [require('./contactDetailsUpdateConfirmation.component.scss')]
+})
+export class ContactDetailsUpdateConfirmationComponent implements OnInit {
+    /**
+     * The contract or contract account id that a change to contact details was initiated for (if applicable)
+     */
+    @Input() public <span class="cstat-no" title="statement not covered" >contextId: string = '';</span>
+&nbsp;
+    @Input() public set confirmationType(value: ContactDetailsConfirmationType<span class="fstat-no" title="function not covered" >) {</span>
+        let map = {
+            [ContactDetailsConfirmationType.Email]: 'email address',
+            [ContactDetailsConfirmationType.Mobile]: 'mobile number'
+        };
+        let description = <span class="cstat-no" title="statement not covered" >map[value] || 'contact details';</span>
+<span class="cstat-no" title="statement not covered" >        this.heading = `You\'ve successfully updated your ${description}.`;</span>
+    }
+&nbsp;
+    @HostBinding('class.isVisible')
+<span class="fstat-no" title="function not covered" >    public get isVisible(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.contactDetailsRecentlyUpdated &amp;&amp; !this.contactDetailsConfirmationDismissed;</span>
+    }
+&nbsp;
+    public <span class="cstat-no" title="statement not covered" >contactDetailsRecentlyUpdated: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >contactDetailsConfirmationDismissed: boolean = false;</span>
+    public loginDetailsUrl: string;
+    public heading: string;
+&nbsp;
+    constructor(private <span class="cstat-no" title="statement not covered" >featureFlagService: FeatureFlagService,</span>
+                private <span class="cstat-no" title="statement not covered" >config: ConfigService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+                private <span class="cstat-no" title="statement not covered" >contactDetailsStateService: IContactDetailsStateService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+                private <span class="cstat-no" title="statement not covered" >dataLayerService: DataLayerService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >)</span> {</span></span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public ngOnInit() {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (!this.heading) {</span>
+<span class="cstat-no" title="statement not covered" >            this.confirmationType = ContactDetailsConfirmationType.AnyContactDetails; </span>// set default
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.contactDetailsStateService.canNotifyOfSuccessfulUpdate() &amp;&amp;</span>
+                (this.contactDetailsStateService.contextId() || '') === (this.contextId || '')) {
+<span class="cstat-no" title="statement not covered" >            this.contactDetailsRecentlyUpdated = true;</span>
+<span class="cstat-no" title="statement not covered" >            this.contactDetailsStateService.hasNotifiedOfSuccessfulUpdate();</span>
+<span class="cstat-no" title="statement not covered" >            this.dataLayerService.pushFormSuccess(ModalName.UpdateContactDetails, PageChannel.UpdateContactDetails, PageType.Account, SiteSubSection.UpdateContactDetails, this.contactDetailsStateService.getControlsUpdated());</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.featureFlagService.featureFlagged(FeatureFlagTypes.loginDetailsEnabled).subscribe(</span>
+            (featureIsEnabled: boolean<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                if (featureIsEnabled) {</span>
+                    const currentUrl = <span class="cstat-no" title="statement not covered" >encodeURIComponent(document.location.href);</span>
+<span class="cstat-no" title="statement not covered" >                    this.loginDetailsUrl = `${this.config.current.loginDetailsBaseUrl}/profile?returnTo=${currentUrl}`;</span>
+                }
+            }
+        );
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

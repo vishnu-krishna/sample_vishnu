@@ -1,0 +1,101 @@
+{
+  "id": "my-account-pages",
+  "viewports": [
+    {
+      "label": "phone",
+      "width": 320,
+      "height": 3072
+    },
+    {
+      "label": "tablet",
+      "width": 768,
+      "height": 3072
+    },
+    {
+      "label": "desktop",
+      "width": 992,
+      "height": 3072
+    }
+  ],
+  "onBeforeScript": "chromy/onBefore.js",
+  "onReadyScript": "chromy/onReady.js",
+  "scenarios": [
+    {
+      "label": "page-overview",
+      "guid": "AGL_0000C99DF8261EE6BCB63B0C1F2DB418",
+      "url": "https://localhost:8080/overview",
+      "delay": 5000,
+      "selectors": ["agl-apps"],
+      "hideSelectors": [".LPMcontainer", ".LPMoverlay"],
+      "readySelector": "agl-apps",
+      "selectorExpansion": true,
+      "misMatchThreshold" : 0.25,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "page-bills",
+      "guid": "AGL_0000C99DF8261EE6BCB63B0C1F2DB418",
+      "url": "https://localhost:8080/bills",
+      "delay": 5000,
+      "selectors": ["agl-apps"],
+      "hideSelectors": [".LPMcontainer", ".LPMoverlay"],
+      "readySelector": "agl-apps",
+      "selectorExpansion": true,
+      "misMatchThreshold" : 0.25,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "page-usage",
+      "guid": "AGL_0000C99DF8261EE6BCB63B0C1F2DB418",
+      "url": "https://localhost:8080/usage",
+      "delay": 5000,
+      "selectors": ["agl-apps"],
+      "hideSelectors": [".LPMcontainer", ".LPMoverlay"],
+      "readySelector": "agl-apps",
+      "selectorExpansion": true,
+      "misMatchThreshold" : 0.25,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "page-rewards",
+      "guid": "AGL_0000C99DF8261EE6BCB63B0C1F2DB418",
+      "url": "https://localhost:8080/rewards",
+      "delay": 5000,
+      "selectors": ["agl-apps"],
+      "hideSelectors": [".LPMcontainer", ".LPMoverlay"],
+      "readySelector": "agl-apps",
+      "selectorExpansion": true,
+      "misMatchThreshold" : 0.25,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "page-manage-account",
+      "guid": "AGL_0000C99DF8261EE6BCB63B0C1F2DB418",
+      "url": "https://localhost:8080/settings",
+      "delay": 5000,
+      "selectors": ["agl-apps"],
+      "hideSelectors": [".LPMcontainer", ".LPMoverlay"],
+      "readySelector": "agl-apps",
+      "selectorExpansion": true,
+      "misMatchThreshold" : 0.25,
+      "requireSameDimensions": true
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "report": ["CI"],
+  "resembleOutputOptions": {
+    "ignoreAntialiasing": true
+  },
+  "engine": "chrome",
+  "engineFlags": ["--no-sandbox", "--disable-web-security"],
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": true
+}

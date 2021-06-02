@@ -1,0 +1,12 @@
+<div class="agltooltip" #tooltipTrigger (mouseover)="loadToolTip(tooltipDiv, tooltipTrigger)">
+    <ng-content></ng-content>
+    <div #tooltipDiv id="tooltip-popup display" class="tooltip--container tt-{{positionClass}}" [class.right-align]="rightAlign" [class.left-align]="leftAlign" [ngClass]="tooltipClasses" [class.display]="showToolTip"
+        >
+        <div id="tooltip-text" class="tooltip--text">
+            <div class="header" *ngIf="tooltipHeader !== ''">{{tooltipHeader}}</div>
+            <!-- Render html tags in content -->
+            <div class="content" [innerHTML]="tooltipHtml"></div>
+        </div>
+        <div class="tooltip--tip" [class.right-align]="rightAlign" [class.left-align]="leftAlign"></div>
+    </div>
+</div>

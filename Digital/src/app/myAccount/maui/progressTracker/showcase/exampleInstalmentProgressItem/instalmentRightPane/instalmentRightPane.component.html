@@ -1,0 +1,14 @@
+<div>
+    <div class="instalment-right-pane__primary-message" [ngClass]="{'instalment-right-pane__message--grey': isPrimaryMessageGrey}">
+        {{primaryMessageStatus}}&nbsp;
+    </div>
+    <div class="instalment-right-pane__primary-message" [ngClass]="{'instalment-right-pane__message--grey': isPrimaryMessageGrey}">
+        {{primaryMessageDueDate}}
+    </div>
+</div>
+<div class="instalment-right-pane__secondary-message">
+    {{secondaryMessage}}
+</div>
+<div class="instalment-right-pane__tertiary-message" [ngClass]="{'instalment-right-pane__message--red': isTertiaryMessageRed, 'instalment-right-pane__message--green': isTertiaryMessageGreen}">
+    {{tertiaryMessage}}
+</div>

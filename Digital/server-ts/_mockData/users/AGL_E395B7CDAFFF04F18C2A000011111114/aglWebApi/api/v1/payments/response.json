@@ -1,0 +1,208 @@
+[
+    {
+        "account": "1200000000",
+        "contract": "1211111111",
+        "overdue": 0,
+        "currentBalance": 70.28,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false,
+        "extendedDueDate": "01/4/2018"
+    },
+    {
+        "account": "1200000000",
+        "contract": "1222222222",
+        "overdue": 0,
+        "currentBalance": 150.00,
+        "totalPayment": 170.00,
+        "billSmoothing": false,
+        "directDebit": false
+    },
+    {
+        "account": "1200000000",
+        "contract": "1233333333",
+        "overdue": 0,
+        "currentBalance": 150.00,
+        "totalPayment": 170.00,
+        "billSmoothing": false,
+        "directDebit": false,
+        "extendedDueDate": "01/11/2027"
+    },
+    {
+        "account": "1200000000",
+        "contract": "1244444444",
+        "overdue": 0,
+        "currentBalance": 150.00,
+        "totalPayment": 170.00,
+        "billSmoothing": false,
+        "directDebit": false,
+        "extendedDueDate": "01/11/2027"
+    },
+    {
+        "account": "1200000000",
+        "contract": "1255555555",
+        "overdue": 0,
+        "currentBalance": 150.00,
+        "totalPayment": 170.00,
+        "billSmoothing": false,
+        "directDebit": false,
+        "extendedDueDate": "01/11/2027"
+    },
+    {
+        "account": "1200000000",
+        "contract": "1266666666",
+        "overdue": 0,
+        "currentBalance": 150.00,
+        "totalPayment": 170.00,
+        "billSmoothing": false,
+        "directDebit": false,
+        "extendedDueDate": "01/11/2027"
+    },
+    {
+        "account": "1200000000",
+        "contract": "1277777777",
+        "overdue": 0,
+        "currentBalance": 150.00,
+        "totalPayment": 170.00,
+        "billSmoothing": false,
+        "directDebit": false,
+        "extendedDueDate": "01/11/2027"
+    },
+    {
+        "account": "1200000000",
+        "contract": "1288888888",
+        "overdue": 0,
+        "currentBalance": 150.00,
+        "totalPayment": 170.00,
+        "billSmoothing": false,
+        "directDebit": false,
+        "extendedDueDate": "01/11/2027"
+    },
+    {
+        "account": "1200000000",
+        "contract": "1299999999",
+        "overdue": 0,
+        "currentBalance": 150.00,
+        "totalPayment": 170.00,
+        "billSmoothing": false,
+        "directDebit": false,
+        "extendedDueDate": "01/11/2027"
+    },
+    {
+        "account": "1300000000",
+        "contract": "1311111111",
+        "overdue": 0,
+        "currentBalance": 10,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false,
+        "extendedDueDate": "30/11/2027"
+    },
+    {
+        "account": "1300000000",
+        "contract": "1322222222",
+        "overdue": 0,
+        "currentBalance": 9,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": true,
+        "extendedDueDate": "30/11/2027"
+    },
+    {
+        "account": "1300000000",
+        "contract": "1333333333",
+        "overdue": 0,
+        "currentBalance": 0,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false,
+        "extendedDueDate": "30/11/2027"
+    },
+    {
+        "account": "1300000000",
+        "contract": "1344444444",
+        "overdue": 0,
+        "currentBalance": -10,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false,
+        "extendedDueDate": "30/11/2027"
+    },
+    {
+        "account": "1300000000",
+        "contract": "1355555555",
+        "overdue": 0,
+        "currentBalance": 5001,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false,
+        "extendedDueDate": "30/11/2027"
+    },
+    {
+        "account": "1300000000",
+        "contract": "1366666666",
+        "overdue": 0,
+        "currentBalance": 21,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false,
+        "extendedDueDate": "30/11/2027"
+    },
+    {
+        "account": "1300000000",
+        "contract": "1377777777",
+        "overdue": 0,
+        "currentBalance": 21,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false,
+        "extendedDueDate": "30/11/2027"
+    },
+    {
+        "account": "1300000000",
+        "contract": "1388888888",
+        "overdue": 0,
+        "currentBalance": 21,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false,
+        "extendedDueDate": null
+    },
+    {
+        "account": "1300000000",
+        "contract": "1399999999",
+        "overdue": 0,
+        "currentBalance": 21,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false,
+        "extendedDueDate": null
+    },
+    {
+        "account": "1400000000",
+        "contract": "1411111111",
+        "overdue": 0,
+        "currentBalance": 100,
+        "totalPayment": 0,
+        "billSmoothing": false,
+        "directDebit": false
+    },
+    {
+        "account": "1400000000",
+        "contract": "1422222222",
+        "overdue": 20,
+        "currentBalance": 0,
+        "totalPayment": 200,
+        "billSmoothing": false,
+        "directDebit": false
+    },
+    {
+        "account": "1400000000",
+        "contract": "1433333333",
+        "overdue": 20,
+        "currentBalance": 0,
+        "totalPayment": 200,
+        "billSmoothing": false,
+        "directDebit": false
+    }
+]

@@ -1,0 +1,284 @@
+// New Design Language below as of 26-dec-2016
+// Imports
+@import '~@angular/material/theming';
+
+// Helpers
+$black-87-opacity: rgba(black, 0.87);
+$white-87-opacity: rgba(white, 0.87);
+
+// Primary Colours
+$brand-sky: #001CB0;
+$brand-sky-darker: darken($brand-sky, 15%);
+$brand-sky-lighten-60: lighten($brand-sky, 62%);
+$brand-bright: #FFE344;
+$brand-sky-light: #2942B8;
+
+// Secondary Colours
+$brand-aqua: #50E3C2;
+$brand-water: #00DFED;
+$brand-water-50-opacity: #7FEFF6;
+$brand-ocean: $brand-sky;
+$brand-graph-light-blue: #26DEEA;
+
+// Functional Colours
+$brand-sun: #F6A623;
+$brand-fire: #FD334C;
+$brand-fire-light: lighten($brand-fire, 38%);
+$brand-leaf: #2CAA18;
+
+// Graph Gradents
+// -- Electricity
+$brand-elec-category-1: #005FF7;
+$brand-elec-category-1-2: #006CE5;
+$brand-elec-category-2: #08A1FC;
+$brand-elec-category-2-1: #15BDFF;
+
+$brand-elec-category-3: #00D4F4;
+$brand-elec-category-3-1: #00E3FF;
+$brand-elec-category-4: #A9C4E9;
+$brand-elec-category-4-1: #10D4F2;
+
+$mobile-menu-bg: #003F93;
+$mobile-menu-bg-light: #0057BF;
+
+// Brand Greys
+$brand-grey-g1: #333333;
+$brand-grey-g2: #666666;
+$brand-grey-g3: #999999;
+$brand-grey-g4: #CCCCCC;
+$brand-grey-g5: #E8E8E8;
+$brand-grey-g6: #F5F5F5;
+$brand-grey-c1: #F9F9F9;
+$brand-grey-c2: #F3F3F3;
+$brand-grey-c3: #CDCDCD;
+$brand-grey-c4: #4A4C3D;
+$brand-grey-c5: #979797;
+$brand-grey-c6: #D9D9D9;
+
+// Custom Greys
+$custom-grey-1: #B5B5B5;
+$custom-grey-2: #B1B1B1;
+
+// white
+$brand-white: #FFFFFF;
+$brand-black: #000000;
+
+// Design elements
+$agl-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+$agl-box-shadow-c1: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+$agl-border-radius: 4px;
+$agl-button-shadow: 0 2px 4px 0 rgba(74, 74, 74, 0.3);
+$agl-button-hover-shadow: 0 2px 10px 0 rgba(51, 51, 51, 0.42);
+$agl-tooltip-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+
+// Material design requirements below
+// Use the following themes if you use the google material sass.
+$agl-theme-blue: (
+    50: #E0E4F6,
+    100: #B3BBE7,
+    200: #808ED8,
+    300: #4D60C8,
+    400: #263EBC,
+    500: #001CB0,
+    600: #0019A9,
+    700: #0014A0,
+    800: #001197,
+    900: #000987,
+    A100: #B3B5FF,
+    A200: #8083FF,
+    A400: #4D52FF,
+    A700: #3439FF,
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: $black-87-opacity,
+        400: $black-87-opacity,
+        500: white,
+        600: white,
+        700: white,
+        800: $white-87-opacity,
+        900: $white-87-opacity,
+        A100: $black-87-opacity,
+        A200: white,
+        A400: white,
+        A700: white,
+    )
+);
+
+$agl-theme-yellow: (
+    50: #FFFFFF,
+    100: #FFFFFF,
+    200: #FFF7C9,
+    300: #FFEC81,
+    400: #FFE863,
+    500: #FFE344,
+    600: #FFDE25,
+    700: #FFDA07,
+    800: #E7C500,
+    900: #C9AB00,
+    A100: #FFFFFF,
+    A200: #FFFFFF,
+    A400: #FFE863,
+    A700: #FFDA07,
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: $black-87-opacity,
+        400: $black-87-opacity,
+        500: $black-87-opacity,
+        600: white,
+        700: white,
+        800: $white-87-opacity,
+        900: $white-87-opacity,
+        A100: $black-87-opacity,
+        A200: white,
+        A400: white,
+        A700: white,
+    )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+$agl-app-primary: mat-palette($agl-theme-blue);
+$agl-app-accent: mat-palette($agl-theme-yellow);
+
+// The warn palette is optional (defaults to red).
+$agl-app-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$agl-app-theme: mat-light-theme($agl-app-primary, $agl-app-accent, $agl-app-warn);
+
+// END Material
+
+// Svg Colours
+.mat-svg-black {
+    svg {
+        path {
+            fill: #000000;
+        }
+    }
+}
+
+.mat-svg-dark {
+    svg {
+        path {
+            fill: #48515F;
+        }
+    }
+}
+
+// Fonts
+
+$primary-font-stack: 'Titillium Web', sans-serif;
+$secondary-font-stack: 'Open Sans', sans-serif;
+
+// Old stylings below ---
+// Gradually phase these out
+
+$bg-banner: #ED8B00;
+
+$brand-primary: $brand-sky;
+$brand-primary-dark: $brand-sky-darker;
+$brand-grey: #EAECEF;
+$brand-grey-darker: #B0B8C3;
+$brand-grey-border: #CDD2D9;
+$brand-error-red: #FC334C;
+$font-colour-black: #554A46;
+$residential-blue: #AADAF6;
+
+$brand-disabled-ui: #8590A2;
+
+$label-colour: #48515F;
+$control-border-colour: #999999;
+$control-disabled-back: #F9F9F9;
+
+$brand-disabled-opacity: 0.4;
+$brand-disabled-grey: #9F9F9F;
+
+$brand-blue: $brand-sky;
+$brand-blue-light: lighten($brand-blue, 15%);
+$brand-blue-opaque: lighten($brand-blue, 45%);
+$brand-blue-lighter: lighten($brand-blue, 55%);
+$brand-blue-lightest: lighten($brand-blue, 60%);
+$brand-blue-dark: darken($brand-blue, 10%);
+$brand-blue-c1: #2CB3EE;
+
+$brand-green: #83CE40;
+$brand-green-light: lighten($brand-green, 30%);
+$brand-green-lighter: lighten($brand-green, 43%);
+$brand-green-dark: darken($brand-green, 20%);
+
+$brand-orange: #ED8B00;
+$brand-orange-light: lighten($brand-orange, 40%);
+$brand-orange-lighter: lighten($brand-orange, 48%);
+$brand-orange-dark: darken($brand-orange, 10%);
+
+$brand-red: #F5320A;
+$brand-red-light: lighten($brand-red, 40%);
+$brand-red-lighter: lighten($brand-red, 46%);
+$brand-red-dark: darken($brand-red, 20%);
+
+$brand-background: #F8F8F8;
+
+$brand-white: #FFFFFF;
+$brand-dropsheet: #FFFFFF;
+$brand-white-w1: #F6F6F6;
+
+$brand-base: #EAECEF;
+$brand-base-dark-1: darken($brand-base, 10%);
+$brand-base-dark-2: darken($brand-base, 20%);
+$brand-base-dark-3: darken($brand-base, 40%);
+$brand-base-dark-4: darken($brand-base, 60%);
+$brand-base-dark-5: darken($brand-base, 70%);
+
+$line-height-tight: 1.1;
+$line-height-normal: 1.25;
+$line-height-loose: 1.4;
+
+$brand-tooltip-grey: #48515F;
+$brand-tooltip-grey-dark: darken($brand-tooltip-grey, 10%);
+$brand-tooltip-grey-darker: darken($brand-tooltip-grey, 20%);
+$brand-tooltip-grey-darkest: darken($brand-tooltip-grey, 40%);
+
+$brand-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.5);
+
+$brand-heading-text-shadow: 1px 1px 4px #000000;
+
+$my-wallet-expired: rgba($brand-grey-g6, 0.59);
+// Moved out of components, needs to find a better mapping
+$lighten-sky-20: lighten($brand-sky, 20%);
+$lighten-sky-10: lighten($brand-sky, 10%);
+$lighten-sky-6: lighten($brand-sky, 6%);
+$james-bond-sky: rgba($brand-sky, 0.07);
+
+$dashboard-fake-header: #CECECE;
+$light-mode-background: #FFE9AB;
+$restricted-background: #D9EEFB;
+$heading-colour: #495260;
+$second-bg-colour: #EFF8FD;
+$bottom-heading-colour: #8590A2;
+$hover-grey: #8E8E8E;
+$orange: #FFA500;
+
+// Not-normal colours
+$brand-success: #61A425;
+$brand-grey-light-borders: #F1F1F1;
+//////media sizes///////
+$device-min-xs: 320px;
+$device-min-sm: 768px;
+$device-min-med: 992px;
+$device-min-lge: 1200px;
+
+// Responsive Layouts
+$agl-layout-desktop-large: (min-width: $device-min-lge);
+$agl-layout-desktop-medium: (min-width: $device-min-med) and (max-width: $device-min-lge - 1);
+$agl-layout-tablet: (min-width: $device-min-sm) and (max-width: $device-min-med - 1);
+$agl-layout-mobile: (max-width: $device-min-sm - 1);
+$agl-layout-xs: (max-width: $device-min-xs);
+
+$agl-layout-desktop-medium-and-greater: (min-width: $device-min-med);
+$agl-layout-tablet-and-greater: (min-width: $device-min-sm);
+
+$agl-layout-desktop-medium-and-smaller: (max-width: $device-min-lge - 1);
+$agl-layout-tablet-and-smaller: (max-width: $device-min-med - 1);

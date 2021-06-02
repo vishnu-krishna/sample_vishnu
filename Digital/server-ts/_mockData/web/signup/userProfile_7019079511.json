@@ -1,0 +1,66 @@
+{
+    "displayName": "Pete Jones",
+    "defaultContractAccountId": "7019079511",
+    "contractAccounts": [
+        {
+            "id": "7019079511",
+            "customerType": "R",
+            "isGasAddable": false,
+            "isElecAddable": false,
+            "address": "21 BAIRD STREET MULGRAVE VIC 3170",
+            "contracts": [
+                {
+                    "id": "9125566328",
+                    "currentAndEligiblePlans": null,
+                    "fuelType": "ELEC",
+                    "address": null,
+                    "solarSite": null,
+                    "fuelTypeElec": true
+                },
+                {
+                    "id": "9119731495",
+                    "currentAndEligiblePlans": null,
+                    "fuelType": "GAS",
+                    "address": null,
+                    "solarSite": null,
+                    "fuelTypeElec": false
+                }
+            ],
+            "addresses": [
+                {
+                    "fullAddress": "21 BAIRD STREET MULGRAVE VIC 3170",
+                    "contracts": [
+                        {
+                            "id": "9125566328",
+                            "currentAndEligiblePlans": null,
+                            "fuelType": "ELEC",
+                            "address": null,
+                            "solarSite": null,
+                            "fuelTypeElec": true
+                        },
+                        {
+                            "id": "9119731495",
+                            "currentAndEligiblePlans": null,
+                            "fuelType": "GAS",
+                            "address": null,
+                            "solarSite": null,
+                            "fuelTypeElec": false
+                        }
+                    ]
+                }
+            ],
+            "state": "VIC",
+            "addablePlans": null,
+            "siteSearchModel": null,
+            "contractSolarSite": null
+        }
+    ],
+    "numberOfContractAccounts": 0,
+    "hasAeoProfile": true,
+    "isVerifyAuthentication": true,
+    "isLoginAuthentication": false,
+    "isError": false,
+    "providerWhichErrored": null,
+    "errorMessage": null,
+    "hasRestrictedAccess": false
+}

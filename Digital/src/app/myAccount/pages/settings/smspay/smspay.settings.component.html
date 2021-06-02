@@ -1,0 +1,210 @@
+<div class="settings-container pa-settings">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- New Settings -->
+            <mat-card class="sms-pay" *ngIf="isSMSPayEnabled">
+                <div class="pa-settings__header">
+                    <div class="main-card-header">SMS Pay</div>
+                    <div id="cancel-sms-pay" class="pa-settings__header-cta" *ngIf="isSingleView && hasSmsPaySetup" (click)="cancelPaymentArrangement(viewModel[0])">Cancel SMS Pay</div>
+                </div>
+                <div class="pa-settings__loading" *ngIf="isLoading">
+                    <div class="pa-settings__sign-up-message" *ngIf="!hasSmsPaySetup">Pay on time, every time. Just select a credit card, bank or PayPal account to get SMS Pay up and
+                        running.
+                    </div>
+                    <agl-loader></agl-loader>
+                </div>
+                <div class="pa-settings__error" *ngIf="!isLoading && showContactUs">
+                    <div class="pa-settings__sign-up-message" *ngIf="!hasSmsPaySetup">Pay on time, every time. Just select a credit card, bank or PayPal account to get SMS Pay up and
+                        running.
+                    </div>
+                    <agl-alert alertType="error" heading="Sorry, SMS Pay isn't currently available online for your account.">
+                        <div>Please get in touch with us <a href="https://www.agl.com.au/residential/contact-us" target="_blank">here</a> and
+                            we’ll sort it out.</div>
+                    </agl-alert>
+                </div>
+
+                <div class="pa-settings__body" *ngIf="!isLoading && !showContactUs">
+                    <div class="pa-settings__sign-up-message" *ngIf="!hasSmsPaySetup">
+                        <div class="smspay-subheading">Paying your bills has never been easier</div>
+                        <div class="smspay-text">
+                            Select your preferred payment method and we'll text you<span *ngIf="mobileNumber"> on <strong>{{mobileNumber}}</strong></span> a few days
+                            before your payment is due. Just reply <strong>'Pay'</strong> and we'll deduct your payment on the due date.
+                        </div>
+                        <agl-webchat *ngIf="!isContactDetailsEnabled && mobileNumberValid" chatButtonId="smspayhome"></agl-webchat>
+                        <div class="smspay-instructions">
+                            <div class="instruction-text"><img src="svg/icon_fuels.svg" class="instruction-icon"><span>SMS Pay will be setup for all your services on this account.</span></div>
+                            <div class="instruction-text"><mat-icon svgIcon="icon-payment" alt="email icon"  class="instruction-icon"></mat-icon>Payment will only be processed when you reply "Pay”.</div>
+                            <div class="instruction-text"><mat-icon svgIcon="icon-email" alt="email icon"  class="instruction-icon"></mat-icon>Your bills will still be delivered as per your current arrangement.</div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="hasSmsPaySetup && mobileNumberValid">
+                        <div class="smspay-text"
+                             [ngClass]="{'smspay-text--contact-details-enabled': isContactDetailsEnabled }">
+                            We'll text you a few days before your payment is due. Just reply <strong>'Pay'</strong> and we'll deduct your payment on the due date.
+                        </div>
+                        <div *ngIf="mobileNumber && !isContactDetailsEnabled" class="sms-pay__mobile-number--container">
+                            <agl-mobile-number [value]="mobileNumber" webChatElementId="smspayhomeexisting"></agl-mobile-number>
+                        </div>
+                    </div>
+                    <div class="sms-pay__mobile-container-web-chat" *ngIf="!mobileNumberValid && !isContactDetailsEnabled">
+                        <agl-alert alertType="inform" [heading]="mobileNumberInvalidHeading"
+                                   [body]="mobileNumberInvalidBody" [allowAllHtml]=true
+                                   isDismissible="false"></agl-alert>
+                        <agl-webchat><!-- use this component to trigger a scan for web chat --></agl-webchat>
+                    </div>
+                    <div *ngIf="isContactDetailsEnabled">
+                        <div class="sms-pay__mobile-container--invalid" *ngIf="!mobileNumberValid">
+                            <p class="sms-pay__mobile-container-heading">
+                                We don't have a contact number for you
+                            </p>
+                            <p class="sms-pay__mobile-container-sub-heading">
+                                Please enter a valid Australian mobile number below before setting up SMS Pay.
+                            </p>
+                            <a class="sms-pay__mobile-container-add-mobile-link"
+                               (click)="updateContactDetails()">Add mobile number</a>
+                        </div>
+                        <div class="sms-pay__mobile-container--valid" *ngIf="mobileNumberValid"
+                             [ngClass]="{'sms-pay__mobile-container--has-smspay-setup': hasSmsPaySetup }">
+                            <p class="sms-pay__mobile-container-heading">Mobile number</p>
+                            <div class="row sms-pay__mobile-container-mobile-number">
+                                <div class="col-xs-6">
+                                    <img src="svg/icon_phone.svg" class="sms-pay__mobile-container-mobile-icon">
+                                    <span>{{mobileNumber}}</span>
+                                </div>
+                                <div class="col-xs-6 sms-pay__mobile-container-update-link">
+                                    <span class="pull-right">
+                                        <a (click)="updateContactDetails()"
+                                           class="sms-pay__mobile-container-update-mobile-link">Update</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <agl-contact-details-update-confirmation confirmationType="Mobile"
+                                                             class="sms-pay__email-updated-confirmation">
+                    </agl-contact-details-update-confirmation>
+
+                    <div *ngIf="mobileNumberValid">
+                        <div *ngIf="isSingleView && !hasSmsPaySetup">
+                            <div class="pa-settings__set-up-button">
+                                <agl-smspay-button
+                                    [isSingleView]="isSingleView"
+                                    [contractAccountNum]="viewModel[0].accountDetailModel.contractAccountNumber"
+                                    [hasSmsPay]="viewModel[0].hasSmsPayPaymentArrangement"
+                                    [storedPaymentMethods]="storedPaymentMethods"></agl-smspay-button>
+                            </div>
+                            <div class="pa-account__delete-alert">
+                                <agl-alert *ngIf="showDeleteDDAlertMessage" [alertType]="alertMessageType" [heading]="alertMessageHeader" [body]="alertMessageBody"
+                                    isDismissible="true"></agl-alert>
+                                <agl-alert *ngIf="viewModel[0].hasPaygContract" alertType="inform" [heading]="paygNoDDSetHeaderMessage" [body]="paygNoDDSetBodyMessage"></agl-alert>
+                            </div>
+                        </div>
+
+                        <div class="pa-account" *ngFor="let vm of viewModel">
+                            <div
+                                [class.hidden]="!isUpdatingAccount(vm.accountDetailModel.contractAccountNumber)"
+                                class="updating-account">
+                                <agl-loader loadingSubMessage="Please wait while this account is updated.">
+                                </agl-loader>
+                            </div>
+                            <div class="pa-account__header" *ngIf="!isSingleView && hasNonRestrictedContracts(vm.accountDetailModel)">
+                                <div class="pa-account__header__panel" [class.block-fix]="!vm.hasSmsPayPaymentArrangement">
+                                    <div class="pa-account__header-left-panel">
+                                        <agl-settings-account-detail [model]="vm.accountDetailModel"></agl-settings-account-detail>
+                                    </div>
+                                    <div class="pa-account__header-right-panel">
+                                        <div class="pa-account__cta--link" *ngIf="vm.hasSmsPayPaymentArrangement" (click)="cancelPaymentArrangement(vm)">Cancel SMS Pay</div>
+                                        <div class="pa-account__cta--button" *ngIf="!vm.hasSmsPayPaymentArrangement">
+                                            <agl-smspay-button
+                                                [isSingleView]="isSingleView"
+                                                [contractAccountNum]="vm.accountDetailModel.contractAccountNumber"
+                                                [hasSmsPay]="vm.hasSmsPayPaymentArrangement"
+                                                [storedPaymentMethods]="storedPaymentMethods">
+                                            </agl-smspay-button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pa-account__delete-alert">
+                                    <agl-alert *ngIf="showDeleteDDAlertMessage && updatedContractAccountNumber==vm.accountDetailModel.contractAccountNumber"
+                                        [alertType]="alertMessageType" [body]="alertMessageBody" isDismissible="true"></agl-alert>
+                                    <agl-alert *ngIf="vm.hasPaygContract && !vm.hasSmsPayPaymentArrangement" alertType="inform" [heading]="paygNoDDSetHeaderMessage"
+                                        [body]="paygNoDDSetBodyMessage"></agl-alert>
+                                </div>
+                            </div>
+
+                            <div class="pa-account__body" *ngIf="vm.hasSmsPayPaymentArrangement">
+
+                                <div class="pa-account__payment-method bdr-btm">
+                                    <agl-payment-arrangement-payment-method [paymentMethod]="vm.paymentArrangementPaymentMethodModel"></agl-payment-arrangement-payment-method>
+                                    <div class="pa-account__payment-method-button">
+                                        <agl-smspay-button
+                                            [isSingleView]="isSingleView"
+                                            [contractAccountNum]="vm.accountDetailModel.contractAccountNumber"
+                                            [paymentMethodId]="vm.paymentArrangementPaymentMethodModel.id"
+                                            [hasSmsPay]="vm.hasSmsPayPaymentArrangement"
+                                            [storedPaymentMethods]="storedPaymentMethods"
+                                            [paymentMethodType]="vm"
+                                            [isMultiAccount]="isMultiAccount">
+                                        </agl-smspay-button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pa-account__body">
+                                <div class="pa-account__add-alert">
+                                    <agl-alert *ngIf="vm.hasPaygContract && vm.hasSmsPayPaymentArrangement" alertType="inform" [heading]="paygWithDDSetHeaderMessage"
+                                        [body]="paygWithDDSetBodyMessage"></agl-alert>
+                                    <agl-alert *ngIf="showAddPAAlertMessage && updatedContractAccountNumber==vm.accountDetailModel.contractAccountNumber" [alertType]="alertMessageType"
+                                        [heading]="alertMessageHeader" [body]="alertMessageBody" isDismissible="true"></agl-alert>
+                                    <agl-alert *ngIf="showAddPAErrorMessage && updatedContractAccountNumber==vm.accountDetailModel.contractAccountNumber" [alertType]="alertMessageType"
+                                        [heading]="alertMessageHeader" isDismissible="true">
+                                        <div>If this issue persists, you can get in touch with us <a target="_blank" href="https://www.agl.com.au/residential/contact-us">here</a>                                        and we’ll help sort it out.</div>
+                                    </agl-alert>
+                                </div>
+                            </div>
+                            <div class="pa-account__body">
+                                <div *ngIf="vm.hasSmsPayPaymentArrangement && vm.hasUpcomingPayment" class="sms-pay__upcoming-bills--container">
+                                    <agl-upcoming-bills-smspay [account]="vm"></agl-upcoming-bills-smspay>
+                                </div>
+                            </div>
+                            <mat-card class="warning-panel" *ngIf="vm.hasDirectDebitPaymentArrangement">
+                                <div class="icon-container col-xs-2">
+                                </div>
+                                <div class="content-container col-xs-10">
+                                    <div class="header">
+                                        You're currently on Direct Debit
+                                    </div>
+                                    <div class="content-text">
+                                        Setting up SMS Pay will replace your current Direct Debit arrangement.
+                                    </div>
+                                </div>
+                            </mat-card>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-card-footer">
+                    <img class="main-card-footer__wallet" src="svg/icon_wallet.svg" />
+                    <div class="main-card-footer__text">Setting up SMS Pay with your bank account or credit card will save your payment method in My Wallet.
+                        Easy to manage, fast to find.</div>
+                </div>
+            </mat-card>
+            <!-- Old Settings: To delete when new settings is ready for prod -->
+            <mat-card *ngIf="!isSMSPayEnabled">
+                <div class="main-card-header">SMS Pay</div>
+                <div class="main-card-message">
+                    We are busy working hard on the new My Account and this page isn't quite finished. <br/> The below sections
+                    will open in a new window on the existing site.
+                </div>
+                <div class="main-card-options">
+                    <div class="main-card-options__edit">
+                        <h4>SMS Pay</h4>
+                        <a href="{{directDebitUrl}}" target="_blank">Manage</a>
+                    </div>
+                    <div class="main-card-options__content">
+                        Pay energy bills on time, every time.
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

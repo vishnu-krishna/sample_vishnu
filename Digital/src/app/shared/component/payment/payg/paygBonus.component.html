@@ -1,0 +1,28 @@
+<div id="payg-bonus" class="payg-bonus">
+    <div class="payg-bonus__header">
+        <span id="payg-bonus-header-text" class="payg-bonus__header__text"> Payment amount</span>
+        <!--<div id="payg-bonus-header-message" class="payg-bonus__header__message"> Bonus amounts may not include any pending payments</div>-->
+    </div>
+    <div id="payg-bonus-bands" class="payg-bonus__bands">
+        <div #bonusBand id="payg-bonus-band-container" class="flex-container shorthand">
+            <div class="bonus-box" [class.show-box]="bonusBandDisplay[index]" *ngFor="let bonusBand of bonusBands let index = index">
+                <div id="payg-bonus-topup" class="bonus-box__topupamount">
+                    <span id="payg-bonus-topup-dollar" class="bonus-box__topupamount__dollar">$</span>
+                    <span id="payg-bonus-topup-lowerband" class="bonus-box__topupamount__value">{{bonusBand.lowerBand}}</span>
+                </div>
+                <div id="payg-bonus-bonusamount" class="bonus-box__bonusamount">get ${{bonusBand.bonus}}.00 bonus </div>
+                <div class="">
+                    <button id="bill-strip-button-overview" (click)="selectAmount(bonusBand.lowerBand)" class="bonus-box__button" mat-raised-button
+                        color="primary">select</button>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="isScrollOverflowing">
+            <div class="image-arrow image-arrow__left image-arrow__left--{{displayLeftScroll}}" (click)="scrollToLeft()"></div>
+            <div class="image-arrow image-arrow__right image-arrow__right--{{displayRightScroll}}" (click)="scrollToRight()"></div>
+        </div>
+         <div id="payg-bonus-enter-amount-link" class="payg-bonus__link bluelink" (click)="selectAmount(-1)">
+            {{content.bonusEnterCustomAmountText}}
+        </div>
+    </div>
+</div>

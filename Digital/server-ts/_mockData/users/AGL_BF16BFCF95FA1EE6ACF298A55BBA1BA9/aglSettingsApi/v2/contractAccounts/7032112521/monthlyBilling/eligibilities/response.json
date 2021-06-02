@@ -1,0 +1,61 @@
+[
+    {
+        "contractNumber": 9402239719,
+        "setup": {
+            "isEligible": true
+        },
+        "cancellation": {
+            "isEligible": true
+        }
+    },
+    {
+        "contractNumber": 9402273534,
+        "setup": {
+            "isEligible": false,
+            "reason": {
+                "message": "Region  Not Eligible for Monthly Billing",
+                "internal": {
+                    "id": "ZIBI105",
+                    "number": "125",
+                    "description": "Region  Not Eligible for Monthly Billing"
+                }
+            }
+        },
+        "cancellation": {
+            "isEligible": false,
+            "reason": {
+                "message": "Region  Not Eligible for Monthly Billing",
+                "internal": {
+                    "id": "ZIBI105",
+                    "number": "125",
+                    "description": "Region  Not Eligible for Monthly Billing"
+                }
+            }
+        }
+    },
+    {
+        "contractNumber": 9404760834,
+        "setup": {
+            "isEligible": false,
+            "reason": {
+                "message": "Region  Not Eligible for Monthly Billing",
+                "internal": {
+                    "id": "ZIBI105",
+                    "number": "125",
+                    "description": "Region  Not Eligible for Monthly Billing"
+                }
+            }
+        },
+        "cancellation": {
+            "isEligible": false,
+            "reason": {
+                "message": "Region  Not Eligible for Monthly Billing",
+                "internal": {
+                    "id": "ZIBI105",
+                    "number": "125",
+                    "description": "Region  Not Eligible for Monthly Billing"
+                }
+            }
+        }
+    }
+]

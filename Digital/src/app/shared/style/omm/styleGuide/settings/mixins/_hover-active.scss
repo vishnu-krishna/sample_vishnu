@@ -1,0 +1,61 @@
+$touch-class: '.touch-device';
+$no-touch-class: '.no-touch-device';
+// Creates active state for touch support and hover state for no touch support
+// $child-selector can be used to put the :hover/:active on a parent
+// $touchTransition set to true will not turn off transitions on touch devices
+@mixin hover-active($selectors, $child-selector: '', $touchTransition: false) {
+    $selectorList: get-selector-list($selectors, true);
+    @include hover-active-touch($selectorList, $child-selector, $touchTransition) {
+        @content;
+    }
+    $selectorList: get-selector-list($selectors, false);
+    @include hover-active-no-touch($selectorList, $child-selector, $touchTransition) {
+        @content;
+    }
+}
+
+@function get-selector-list($selectors, $touch) {
+    $touchClass: $no-touch-class;
+    @if $touch {
+        $touchClass: $touch-class;
+    }
+    $selectorList: ();
+    @each $s in $selectors {
+        $selectorList: append($selectorList, #{$touchClass} unquote('#{$s}'), comma);
+    }
+    @return $selectorList;
+}
+
+@mixin hover-active-touch($selectorList, $child-selector, $touchTransition) {
+    @at-root #{$selectorList} {
+        &:active {
+            @if $child-selector == '' {
+                @content;
+                @if $touchTransition == false {
+                    transition: none;
+                }
+            } @else {
+                #{$child-selector} {
+                    @content;
+                    @if $touchTransition == false {
+                        transition: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin hover-active-no-touch($selectorList, $child-selector, $touchTransition) {
+    @at-root #{$selectorList} {
+        &:hover {
+            @if $child-selector == '' {
+                @content;
+            } @else {
+                #{$child-selector} {
+                    @content;
+                }
+            }
+        }
+    }
+}

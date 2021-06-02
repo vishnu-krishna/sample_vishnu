@@ -1,0 +1,82 @@
+<div *ngIf="!isDashboard" class="bill-panel-information">
+    <div class="bill-panel-information__left-panel" *ngIf="!contract.isPayg">
+        <agl-bill-date *ngIf="!currentInstalmentPlan" class="bill-panel-information__left-panel-bill-date" [type]="billType" [contract]="contract"></agl-bill-date>
+        <agl-bill-title [type]="billType" [contract]="currentContract"></agl-bill-title>
+        <agl-bill-payment-amount [type]="billType" [contract]="currentContract" [address]="address" [isDashboard]="false"></agl-bill-payment-amount>
+    </div>
+    <div class="bill-panel-information__left-panel prepaid" *ngIf="contract.isPayg">
+        <agl-bill-payment-amount-payg [type]="billType" [contract]="currentContract" [address]="address"></agl-bill-payment-amount-payg>
+    </div>
+    <div class="bill-panel-information__right-panel">
+        <agl-bill-message-panel-payg *ngIf="contract.isPayg" [type]="billType" [contract]="currentContract"></agl-bill-message-panel-payg>
+        <agl-bill-message-panel *ngIf="!contract.isPayg" [type]="billType" [contract]="currentContract"></agl-bill-message-panel>
+        <agl-bill-subtext [type]="billType" [contract]="currentContract" [address]="address" [isDashboard]="false"></agl-bill-subtext>
+        <div class="link-padding">
+            <a *ngIf="showPaymentAssistance" (click)="createNewPaymentExtensionSession()" class="opa-link"
+               [class.opa-link--display]="contract.isEligibleForPaymentExtension"
+               [routerLink]="['/bills/paymentassistance/choose', contract.accountNumber, contract.contractNumber]">See payment assistance options</a>
+            <a *ngIf="showPaymentExtension" (click)="createNewPaymentExtensionSession()" class="opa-link"
+               [class.opa-link--display]="contract.isEligibleForPaymentExtension"
+               [routerLink]="['/bills/paymentassistance/extend/confirm', contract.accountNumber, contract.contractNumber]">Set up a payment extension</a>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!isDashboard" class="bill-panel-information__bottom">
+    <agl-bill-bottom-notice [type]="billType"></agl-bill-bottom-notice>
+</div>
+
+<div *ngIf="isDashboard" id="overview-bill-panel-{{contract.contractNumber}}" class="bill-panel-dashboard--panel">
+    <div *ngIf="!contract.isPayg">
+        <agl-bill-date *ngIf="!currentInstalmentPlan" class="bill-panel-dashboard--panel-bill-date" [type]="billType" [contract]="contract" [showPill]="true"></agl-bill-date>
+        <div *ngIf="currentInstalmentPlan" class="bill-panel-dashboard--panel-instalment-plan-title">You're on an instalment&nbsp;plan</div>
+        <agl-bill-title [type]="billType" [contract]="currentContract"></agl-bill-title>
+        <div *ngIf="!hasPaymentExtension && !currentInstalmentPlan" class="dashboard__not-payg">
+            <agl-bill-payment-amount [type]="billType" [contract]="currentContract" [address]="address" [isAmountOnly]="false" [isDashboard]="true"></agl-bill-payment-amount>
+            <agl-bill-subtext [type]="billType" [contract]="currentContract" [address]="address" [isTextRowTwoOnly]="true" [isDashboard]="true"></agl-bill-subtext>
+        </div>
+        <div *ngIf="hasPaymentExtension" class="dashboard__not-payg--payment-extension">
+            <agl-bill-payment-amount [type]="billType" [contract]="currentContract" [address]="address" [isAmountOnly]="true" [isDashboard]="true"></agl-bill-payment-amount>
+            <agl-bill-subtext [type]="billType" [contract]="currentContract" [address]="address" [isExtendedDueDate]="true" [isDashboard]="true"></agl-bill-subtext>
+        </div>
+        <div *ngIf="currentInstalmentPlan" class="dashboard__not-payg--instalment-plan">
+            <agl-bill-payment-amount [type]="billType" [contract]="currentContract" [address]="address" [isAmountOnly]="true" [isDashboard]="true"></agl-bill-payment-amount>
+            <agl-bill-instalment-plan-description [instalmentPlan]="currentInstalmentPlan"></agl-bill-instalment-plan-description>
+        </div>
+        <agl-alert *ngIf="billType.pendingPayment" alertType="pending" [heading]="alertMessages.paymentPendingHeading" [body]="alertMessages.paymentPendingBody" [showIcon]="!isDashboard">
+        </agl-alert>
+        <div class="pay-divider"></div>
+        <agl-bill-payment-button [type]="billType" [contract]="currentContract" [address]="address"></agl-bill-payment-button>
+        <div *ngIf="currentInstalmentPlan" class="bill-panel-dashboard--panel__instalment-plan-bill-period">
+            <agl-bill-panel-instalment-plan-bill-period [contract]="currentContract"></agl-bill-panel-instalment-plan-bill-period>
+        </div>
+        <div class="link-padding">
+            <a [routerLink]="['/bills']" *ngIf="!billType.billSmoothingV2" [queryParams]="{}" class="sm-text">View bill detail and history</a>
+        </div>
+        <agl-bill-subtext [type]="billType" [contract]="currentContract" [address]="address" isBsDDLinks="true" [isDashboard]="true"></agl-bill-subtext>
+        <div class="link-padding link-padding-opa">
+            <a *ngIf="showPaymentAssistance" (click)="createNewPaymentExtensionSession()" class="opa-link" [class.opa-link--display]="contract.isEligibleForPaymentExtension"
+               [routerLink]="['/bills/paymentassistance/choose', contract.accountNumber, contract.contractNumber]" [queryParams]="{ cancelDestinationUrl: 'overview' }"
+               queryParamsHandling="merge">See payment assistance options</a>
+            <a *ngIf="showPaymentExtension" (click)="createNewPaymentExtensionSession()" class="opa-link" [class.opa-link--display]="contract.isEligibleForPaymentExtension"
+               [routerLink]="['/bills/paymentassistance/extend/confirm', contract.accountNumber, contract.contractNumber]">Set up a payment extension</a>
+        </div>
+    </div>
+    <div *ngIf="contract.isPayg" class="bill-panel-dashboard__payg">
+        <agl-bill-title [type]="billType" [contract]="currentContract"></agl-bill-title>
+        <agl-bill-message-panel-payg *ngIf="contract.isPayg" [type]="billType" [contract]="currentContract" [hideContextMessage]="true"></agl-bill-message-panel-payg>
+        <agl-bill-subtext [type]="billType" [contract]="currentContract" [address]="address" [isHeaderMessageOnly]="true" [isDashboard]="true"></agl-bill-subtext>
+        <div class="bill-panel-dashboard--panel__pending-payment">
+            <agl-alert *ngIf="billType.pendingPayment" alertType="pending" [heading]="alertMessages.paymentPendingHeading" [body]="alertMessages.paymentPendingBody">
+            </agl-alert>
+        </div>
+        <div class="pay-divider"></div>
+        <agl-bill-payment-button [type]="billType" [contract]="currentContract" [address]="address"></agl-bill-payment-button>
+    </div>
+</div>
+
+<div class="bill-panel-pending-payment">
+    <agl-alert *ngIf="!isDashboard && billType.pendingPayment" alertType="pending" [heading]="alertMessages.paymentPendingHeading"
+               [body]="alertMessages.paymentPendingBody">
+    </agl-alert>
+</div>

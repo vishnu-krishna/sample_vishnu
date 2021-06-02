@@ -1,0 +1,32 @@
+[{
+	"contractNumber": 9002237180,
+	"isEligible": true,
+	"ineligibleReason": {},
+	"subscribedToMidBillEnergyBreakdown": true,
+	"subscribedToEndBillEnergyBreakdown": true,
+	"availableUsageBreakdownBillPeriods": [
+		{
+			"billStartDate": "2018-01-01",
+			"billEndDate": "2018-01-31"
+		},
+		{
+			"billStartDate": "2018-02-01",
+			"billEndDate": "2018-02-28"
+		}
+	]
+},
+{
+	"contractNumber": 9002237175,
+	"isEligible": false,
+	"ineligibleReason": {
+		"message": "Non-elec site. not eligible for energy insight registration",
+		"internal": {
+			"id": "ZIDM_ENERGY_INSIGHT",
+			"number": "024",
+			"description": "Non-elec site. not eligible for energy insight registration"
+		}
+	},
+	"subscribedToMidBillEnergyBreakdown": false,
+	"subscribedToEndBillEnergyBreakdown": false,
+	"availableUsageBreakdownBillPeriods": []
+}]

@@ -1,0 +1,73 @@
+{
+                "id": "AGLMKTREPP3",
+                "description": "Prepay Product Scheduled",
+                "fuelType": "Electricity",
+                "invalid": false,
+                "attributes": [
+                  {
+                    "id": "ZPRICE_DISCOUNT_PER",
+                    "description": "Price Discount Percent",
+                    "regionId": "VIC",
+                    "dataType": "Numeric",
+                    "value": "2",
+                    "valueDescription": "Value Description",
+                    "unitOfMeasure": "Percentage"
+                  },
+                  {
+                    "id": "ZBONUS_MONTH",
+                    "description": "Customer Bonus Month",
+                    "dataType": "Numeric",
+                    "value": "FM",
+                    "valueDescription": "Value Description"                    
+                  },
+                  {
+                    "id": "ZTERM_FEE_YEAR_1",
+                    "description": "Termination Fee Year 1",
+                    "regionId": "VIC",
+                    "dataType": "Numeric",
+                    "value": "30",
+                    "valueDescription": "Value Description",
+                    "unitOfMeasure": "Dollar"
+                  },
+                  {
+                    "id": "ZTERM_FEE_YEAR_2",
+                    "description": "Termination Fee Year 2",
+                    "regionId": "VIC",
+                    "dataType": "Numeric",
+                    "value": "20",
+                    "valueDescription": "Value Description",
+                    "unitOfMeasure": "Dollar"
+                  },
+                  {
+                    "id": "ZTERM_FEE_YEAR_3",
+                    "description": "Termination Fee Year 3",
+                    "regionId": "VIC",
+                    "dataType": "Numeric",
+                    "value": "10",
+                    "valueDescription": "Value Description",
+                    "unitOfMeasure": "Dollar"
+                  },
+                  {
+                    "id": "ZACC_CREDIT_ONEOFF",
+                    "description": "Once Off Account Credit",
+                    "dataType": "Numeric",
+                    "value": "15",
+                    "valueDescription": "Value Description",
+                    "unitOfMeasure": "Dollar"
+                  },
+                  {
+                    "id": "ZPREPAY",
+                    "description": "Prepay Attribute",
+                    "dataType": "Numeric",
+                    "value": "2",
+                    "valueDescription": "Value Description"
+                  },
+                  {
+                    "id": "ZSOLOR",
+                    "description": "Solor",
+                    "dataType": "Boolean",
+                    "value": "false",
+                    "valueDescription": "Value Description"
+                  }
+                ]
+              }

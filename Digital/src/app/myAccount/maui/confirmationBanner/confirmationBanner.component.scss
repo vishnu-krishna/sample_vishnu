@@ -1,0 +1,66 @@
+@import '../maui';
+
+@include maui-component-reset();
+
+:host {
+    display: block;
+    background: linear-gradient(334.32deg, $primary-light 0%, $primary-dark 100%);
+    margin: 0 (-$container-side-space);
+    padding: 75px 0;
+    @media #{$agl-layout-mobile} {
+        padding: 33px 0 67px 0;
+    }
+}
+
+:host(.with-overlap-container) {
+    padding: $space-06 0 $space-07 0;
+    @media #{$agl-layout-mobile} {
+        padding: 35px 0 65px 0;
+    }
+}
+
+.maui-confirmation-banner-content {
+    margin: 0 auto;
+    max-width: $content-width;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    @media #{$agl-layout-mobile} {
+        display: block;
+        padding: 0 $container-side-space;
+    }
+
+    &-item {
+        display: block;
+
+        @media #{$agl-layout-mobile} {
+            margin: 0 auto;
+        }
+
+        &-icon {
+            width: 72px;
+            height: 72px;
+
+            @media #{$agl-layout-mobile} {
+                width: 50px;
+                height: 50px;
+                margin-bottom: 10px;
+            }
+        }
+
+        &-text {
+            max-width: 438px;
+            font-family: $display-font-stack;
+            font-size: $display-font-size-beta;
+            color: $neutral-08;
+            line-height: $line-height-heading;
+            text-align: left;
+
+            @media #{$agl-layout-mobile} {
+                font-size: $display-font-size-gamma;
+                text-align: center;
+            }
+        }
+    }
+}

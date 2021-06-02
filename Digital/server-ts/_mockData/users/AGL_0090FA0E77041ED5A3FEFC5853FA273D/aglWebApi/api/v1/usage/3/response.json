@@ -1,0 +1,54 @@
+[
+    {
+        "account": "22389365",
+        "contract": "9002125115",
+        "costs": [
+            {
+                "value": 30.978912,
+                "startDateTime": "2015-10-24T00:00:00",
+                "endDateTime": "2015-12-23T00:00:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 30.588912,
+                "startDateTime": "2015-12-24T00:00:00",
+                "endDateTime": "2016-02-25T00:00:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 41.740224,
+                "startDateTime": "2016-02-26T00:00:00",
+                "endDateTime": "2016-05-02T00:00:00",
+                "estimatedRead": false
+            }
+        ],
+        "consumption": [
+            {
+                "value": 2672.4316681359,
+                "startDateTime": "2015-10-24T00:00:00",
+                "endDateTime": "2015-12-23T00:00:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 1782.4059162184,
+                "startDateTime": "2015-12-24T00:00:00",
+                "endDateTime": "2016-02-25T00:00:00",
+                "estimatedRead": false
+            },
+            {
+                "value": 2440.987658802,
+                "startDateTime": "2016-02-26T00:00:00",
+                "endDateTime": "2016-05-02T00:00:00",
+                "estimatedRead": false
+            }
+        ],
+        "hasNoBill": false
+    },
+    {
+        "account": "22389365",
+        "contract": "9401787494",
+        "costs": [],
+        "consumption": [],
+        "hasNoBill": false
+    }
+]

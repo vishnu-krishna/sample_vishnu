@@ -1,0 +1,26 @@
+@import '../maui';
+
+@include maui-component-reset();
+
+:host {
+    ::ng-deep {
+        agl-maui-checkbox {
+            border-bottom: 1px solid $neutral-04;
+
+            &:last-child {
+                border-bottom: 0;
+            }
+
+            .maui-checkbox {
+                &__label {
+                    padding-top: $space-04;
+                    padding-bottom: $space-04;
+                }
+
+                &__custom {
+                    top: 30px;
+                }
+            }
+        }
+    }
+}

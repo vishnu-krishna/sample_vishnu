@@ -1,0 +1,92 @@
+@import '../../../../maui/maui';
+
+@mixin wrapper-padding {
+    padding: $space-04;
+    @media #{$agl-layout-mobile} {
+        padding: $space-03;
+    }
+}
+
+.select-card {
+    padding-top: 50px;
+    max-width: $content-width;
+    margin: 0 auto;
+
+    @media #{$agl-layout-mobile} {
+        padding-left: $space-03;
+        padding-right: $space-03;
+    }
+
+    &__loader {
+        margin-top: 175px;
+    }
+
+    &__heading {
+        margin-top: $space-06;
+        margin-bottom: $space-04;
+
+        @media #{$agl-layout-mobile} {
+            margin-top: $space-04;
+        }
+    }
+
+    &__details {
+        &-wrapper {
+            @include wrapper-padding;
+        }
+
+        &-heading {
+            font-family: $display-font-stack;
+            font-size: $display-font-size-delta;
+            color: $primary-dark;
+            padding-bottom: $space-03;
+
+            @media #{$agl-layout-mobile} {
+                padding-bottom: 0;
+            }
+        }
+
+        &-group {
+            &:not(:last-child) {
+                margin-bottom: $space-05;
+                border-bottom: 1px solid $neutral-04;
+            }
+        }
+
+        &-row {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+
+            &-label {
+                font-size: $body-font-size-normal;
+                padding-right: $space-03;
+            }
+
+            &-icon {
+                width: 85px;
+                height: 55px;
+                text-align: right;
+                top: -17px; /* vertically align the icons */
+                margin-bottom: -35px;
+                position: relative;
+
+                @media #{$agl-layout-mobile} {
+                    top: -3px;
+                    width: 45px;
+                    height: 30px;
+                    min-width: 45px; /* to prevent the icon shrinking if the text next to it wraps */
+                    min-height: 30px;
+                }
+            }
+
+            &-fuel-warning {
+                padding-bottom: $space-03;
+            }
+        }
+    }
+
+    &__other-card-message {
+        padding-top: $space-03;
+    }
+}

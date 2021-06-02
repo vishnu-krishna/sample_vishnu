@@ -1,0 +1,155 @@
+@import '../../../../shared/style/tempdls';
+@import '../../../../shared/component/paymentArrangement/paymentArrangement.component';
+
+.sms-pay {
+    @mixin link-styling() {
+        font-weight: bold;
+        font-size: 14px;
+        color: $brand-sky;
+        display: block;
+        cursor: pointer;
+    }
+
+    @mixin mobile-container-styling() {
+        border-top: 1px solid $brand-grey-g4;
+        border-bottom: 1px solid $brand-grey-g4;
+        margin-bottom: 35px;
+        @media #{$agl-layout-tablet} {
+            margin-bottom: 25px;
+        }
+        @media #{$agl-layout-mobile} {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__mobile-number--container {
+        margin-top: 23px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid $brand-grey-g4;
+    }
+
+    &__email-updated-confirmation {
+        margin-bottom: 30px;
+    }
+
+    &__mobile-container {
+        &--invalid {
+            @include mobile-container-styling();
+
+            .sms-pay__mobile-container {
+
+                &-heading {
+                    font-weight: bold;
+                    margin-bottom: 3px;
+                }
+
+                &-sub-heading {
+                    margin-bottom: 10px;
+                    margin-top: 0;
+                }
+
+                &-add-mobile-link {
+                    @include link-styling();
+                    margin-bottom: 25px;
+                }
+            }
+        }
+
+        &--has-smspay-setup {
+            margin-bottom: 0 !important;
+            border-top: none !important;
+        }
+
+        &--valid {
+            @include mobile-container-styling();
+
+            .sms-pay__mobile-container {
+
+                &-heading {
+                    margin-top: 10px;
+                    font-weight: bold;
+                }
+
+                &-mobile-icon {
+                    margin-right: 5px;
+                    padding-bottom: 10px;
+                    margin-top: -2px;
+                }
+
+                &-update-mobile-link {
+                    @include link-styling();
+                }
+
+                &-mobile-number {
+                    margin-bottom: 10px;
+                }
+
+                &-update-link {
+                    margin-top: 6px;
+                }
+            }
+        }
+
+        &-web-chat {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__upcoming-bills--container {
+        margin-top: 24px;
+        margin-bottom: 21px;
+    }
+
+    .smspay-subheading {
+        color: $brand-grey-g1;
+        font-family: $primary-font-stack;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        margin-top: 18px;
+    }
+
+    .smspay-text {
+        color: $brand-grey-g1;
+        font-family: $secondary-font-stack;
+        font-size: 16px;
+
+        &--contact-details-enabled {
+            margin-bottom: 35px;
+        }
+    }
+
+    .smspay-instructions {
+        margin-top: 25px;
+        padding: 10px 20px;
+        background-color: $brand-grey-g6;
+
+        .instruction-text {
+            color: $brand-grey-g1;
+            font-family: $secondary-font-stack;
+            font-size: 14px;
+            margin-bottom: 6px;
+
+            .instruction-icon {
+                width: 24px;
+                height: 24px;
+                margin-right: 10px;
+                padding-top: 7px;
+            }
+        }
+    }
+
+    .border-bottom {
+        border-bottom: 1px solid $brand-grey-g4;
+    }
+
+    .main-card-footer {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        background-color: $st-kilda-blue;
+
+        &__wallet {
+            max-width: 46px;
+        }
+    }
+}

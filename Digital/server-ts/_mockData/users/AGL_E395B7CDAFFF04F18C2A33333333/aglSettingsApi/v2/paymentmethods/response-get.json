@@ -1,0 +1,15 @@
+{
+    "status": 200,
+    "body": [ {
+            "id": "P000002",
+            "creditCard": null,
+            "bank": null,
+            "payPal": {
+                "email": "test@gmail.com"
+            },
+            "directDebitContractAccounts": [123456],
+            "oneTouchPayContractAccounts": []
+        }
+
+    ]
+}

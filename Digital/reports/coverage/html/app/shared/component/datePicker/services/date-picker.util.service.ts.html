@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\shared\component\datePicker\services\date-picker.util.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">all files</a> / <a href="index.html">app/shared/component/datePicker/services/</a> date-picker.util.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20.59% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>21/102</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/85</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.56% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">19.39% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>19/98</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { IDateRange } from '../interfaces/date-range.interface';
+import { IDate } from '../interfaces/date.interface';
+import { IMonthLabels } from '../interfaces/month-labels.interface';
+import { IMonth } from '../interfaces/month.interface';
+&nbsp;
+@Injectable()
+<span class="fstat-no" title="function not covered" >export class UtilService {</span>
+    public isDateValid(dateStr: string, dateFormat: string, minYear: number, maxYear: number, disableUntil: IDate, disableSince: IDate, disableWeekends: boolean, disableDays: IDate[], disableDateRange: IDateRange, monthLabels: IMonthLabels, enableDays: IDate[]<span class="fstat-no" title="function not covered" >): IDate {</span>
+        let returnDate: IDate = <span class="cstat-no" title="statement not covered" >{day: 0, month: 0, year: 0};</span>
+        let daysInMonth: number[] = <span class="cstat-no" title="statement not covered" >[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];</span>
+        let isMonthStr: boolean = <span class="cstat-no" title="statement not covered" >this.getDatePartIndex(dateFormat, 'mmm') !== -1;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (dateStr.length !== dateFormat.length) {</span>
+<span class="cstat-no" title="statement not covered" >            return returnDate;</span>
+        }
+&nbsp;
+        let separator: string = <span class="cstat-no" title="statement not covered" >this.getDateFormatSeparator(dateFormat);</span>
+&nbsp;
+        let parts: string[] = <span class="cstat-no" title="statement not covered" >dateStr.split(separator);</span>
+<span class="cstat-no" title="statement not covered" >        if (parts.length !== 3) {</span>
+<span class="cstat-no" title="statement not covered" >            return returnDate;</span>
+        }
+&nbsp;
+        let day: number = <span class="cstat-no" title="statement not covered" >this.parseDatePartNumber(dateFormat, dateStr, 'dd');</span>
+        let month: number = <span class="cstat-no" title="statement not covered" >isMonthStr ? this.parseDatePartMonthName(dateFormat, dateStr, 'mmm', monthLabels) : this.parseDatePartNumber(dateFormat, dateStr, 'mm');</span>
+        let year: number = <span class="cstat-no" title="statement not covered" >this.parseDatePartNumber(dateFormat, dateStr, 'yyyy');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (day !== -1 &amp;&amp; month !== -1 &amp;&amp; year !== -1) {</span>
+<span class="cstat-no" title="statement not covered" >            if (year &lt; minYear || year &gt; maxYear || month &lt; 1 || month &gt; 12) {</span>
+<span class="cstat-no" title="statement not covered" >                return returnDate;</span>
+            }
+&nbsp;
+            let date: IDate = <span class="cstat-no" title="statement not covered" >{year: year, month: month, day: day};</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (this.isDisabledDay(date, disableUntil, disableSince, disableWeekends, disableDays, disableDateRange, enableDays)) {</span>
+<span class="cstat-no" title="statement not covered" >                return returnDate;</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (year % 400 === 0 || (year % 100 !== 0 &amp;&amp; year % 4 === 0)) {</span>
+<span class="cstat-no" title="statement not covered" >                daysInMonth[1] = 29;</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (day &lt; 1 || day &gt; daysInMonth[month - 1]) {</span>
+<span class="cstat-no" title="statement not covered" >                return returnDate;</span>
+            }
+&nbsp;
+            // Valid date
+<span class="cstat-no" title="statement not covered" >            return date;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return returnDate;</span>
+    }
+&nbsp;
+    public getDateFormatSeparator(dateFormat: string<span class="fstat-no" title="function not covered" >): string {</span>
+<span class="cstat-no" title="statement not covered" >        return dateFormat.replace(/[dmy]/g, '')[0];</span>
+    }
+&nbsp;
+    public isMonthLabelValid(monthLabel: string, monthLabels: IMonthLabels<span class="fstat-no" title="function not covered" >): number {</span>
+<span class="cstat-no" title="statement not covered" >        for (let key = 1; key &lt;= 12; key++) {</span>
+<span class="cstat-no" title="statement not covered" >            if (monthLabel.toLowerCase() === monthLabels[key].toLowerCase()) {</span>
+<span class="cstat-no" title="statement not covered" >                return key;</span>
+            }
+        }
+<span class="cstat-no" title="statement not covered" >        return -1;</span>
+    }
+&nbsp;
+    public isYearLabelValid(yearLabel: number, minYear: number, maxYear: number<span class="fstat-no" title="function not covered" >): number {</span>
+<span class="cstat-no" title="statement not covered" >        if (yearLabel &gt;= minYear &amp;&amp; yearLabel &lt;= maxYear) {</span>
+<span class="cstat-no" title="statement not covered" >            return yearLabel;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return -1;</span>
+    }
+&nbsp;
+    public parseDatePartNumber(dateFormat: string, dateString: string, datePart: string<span class="fstat-no" title="function not covered" >): number {</span>
+        let pos: number = <span class="cstat-no" title="statement not covered" >this.getDatePartIndex(dateFormat, datePart);</span>
+<span class="cstat-no" title="statement not covered" >        if (pos !== -1) {</span>
+            let value: string = <span class="cstat-no" title="statement not covered" >dateString.substring(pos, pos + datePart.length);</span>
+<span class="cstat-no" title="statement not covered" >            if (!/^\d+$/.test(value)) {</span>
+<span class="cstat-no" title="statement not covered" >                return -1;</span>
+            }
+<span class="cstat-no" title="statement not covered" >            return parseInt(value, 10);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return -1;</span>
+    }
+&nbsp;
+    public parseDatePartMonthName(dateFormat: string, dateString: string, datePart: string, monthLabels: IMonthLabels<span class="fstat-no" title="function not covered" >): number {</span>
+        let pos: number = <span class="cstat-no" title="statement not covered" >this.getDatePartIndex(dateFormat, datePart);</span>
+<span class="cstat-no" title="statement not covered" >        if (pos !== -1) {</span>
+<span class="cstat-no" title="statement not covered" >            return this.isMonthLabelValid(dateString.substring(pos, pos + datePart.length), monthLabels);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return -1;</span>
+    }
+&nbsp;
+    public getDatePartIndex(dateFormat: string, datePart: string<span class="fstat-no" title="function not covered" >): number {</span>
+<span class="cstat-no" title="statement not covered" >        return dateFormat.indexOf(datePart);</span>
+    }
+&nbsp;
+    public parseDefaultMonth(monthString: string<span class="fstat-no" title="function not covered" >): IMonth {</span>
+        let month: IMonth = <span class="cstat-no" title="statement not covered" >{monthTxt: '', monthNbr: 0, year: 0};</span>
+<span class="cstat-no" title="statement not covered" >        if (monthString !== '') {</span>
+            let split = <span class="cstat-no" title="statement not covered" >monthString.split(monthString.match(/[^0-9]/)[0]);</span>
+<span class="cstat-no" title="statement not covered" >            month.monthNbr = split[0].length === 2 ? parseInt(split[0], 10) : parseInt(split[1], 10);</span>
+<span class="cstat-no" title="statement not covered" >            month.year = split[0].length === 2 ? parseInt(split[1], 10) : parseInt(split[0], 10);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return month;</span>
+    }
+&nbsp;
+    public isDisabledDay(date: IDate, disableUntil: IDate, disableSince: IDate, disableWeekends: boolean, disableDays: IDate[], disableDateRange: IDateRange, enableDays: IDate[]<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        for (let obj<span class="cstat-no" title="statement not covered" ></span> of enableDays) {</span>
+<span class="cstat-no" title="statement not covered" >            if (obj.year === date.year &amp;&amp; obj.month === date.month &amp;&amp; obj.day === date.day) {</span>
+<span class="cstat-no" title="statement not covered" >                return false;</span>
+            }
+        }
+&nbsp;
+        let dateMs: number = <span class="cstat-no" title="statement not covered" >this.getTimeInMilliseconds(date);</span>
+<span class="cstat-no" title="statement not covered" >        if (this.isInitializedDate(disableUntil) &amp;&amp; dateMs &lt;= this.getTimeInMilliseconds(disableUntil)) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.isInitializedDate(disableSince) &amp;&amp; dateMs &gt;= this.getTimeInMilliseconds(disableSince)) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (disableWeekends) {</span>
+            let dayNbr = <span class="cstat-no" title="statement not covered" >this.getDayNumber(date);</span>
+<span class="cstat-no" title="statement not covered" >            if (dayNbr === 0 || dayNbr === 6) {</span>
+<span class="cstat-no" title="statement not covered" >                return true;</span>
+            }
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        for (let obj<span class="cstat-no" title="statement not covered" ></span> of disableDays) {</span>
+<span class="cstat-no" title="statement not covered" >            if (obj.year === date.year &amp;&amp; obj.month === date.month &amp;&amp; obj.day === date.day) {</span>
+<span class="cstat-no" title="statement not covered" >                return true;</span>
+            }
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.isInitializedDate(disableDateRange.begin) &amp;&amp; this.isInitializedDate(disableDateRange.end) &amp;&amp; dateMs &gt;= this.getTimeInMilliseconds(disableDateRange.begin) &amp;&amp; dateMs &lt;= this.getTimeInMilliseconds(disableDateRange.end)) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return false;</span>
+    }
+&nbsp;
+    public getWeekNumber(date: IDate<span class="fstat-no" title="function not covered" >): number {</span>
+        let d: Date = <span class="cstat-no" title="statement not covered" >new Date(date.year, date.month - 1, date.day, 0, 0, 0, 0);</span>
+<span class="cstat-no" title="statement not covered" >        d.setDate(d.getDate() + (d.getDay() === 0 ? -3 : 4 - d.getDay()));</span>
+<span class="cstat-no" title="statement not covered" >        return Math.round(((d.getTime() - new Date(d.getFullYear(), 0, 4).getTime()) / 86400000) / 7) + 1;</span>
+    }
+&nbsp;
+    public isMonthDisabledByDisableUntil(date: IDate, disableUntil: IDate<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.isInitializedDate(disableUntil) &amp;&amp; this.getTimeInMilliseconds(date) &lt;= this.getTimeInMilliseconds(disableUntil);</span>
+    }
+&nbsp;
+    public isMonthDisabledByDisableSince(date: IDate, disableSince: IDate<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.isInitializedDate(disableSince) &amp;&amp; this.getTimeInMilliseconds(date) &gt;= this.getTimeInMilliseconds(disableSince);</span>
+    }
+&nbsp;
+    public isInitializedDate(date: IDate<span class="fstat-no" title="function not covered" >): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return date.year !== 0 &amp;&amp; date.month !== 0 &amp;&amp; date.day !== 0;</span>
+    }
+&nbsp;
+    public getTimeInMilliseconds(date: IDate<span class="fstat-no" title="function not covered" >): number {</span>
+<span class="cstat-no" title="statement not covered" >        return new Date(date.year, date.month - 1, date.day, 0, 0, 0, 0).getTime();</span>
+    }
+&nbsp;
+    public getDayNumber(date: IDate<span class="fstat-no" title="function not covered" >): number {</span>
+        let d: Date = <span class="cstat-no" title="statement not covered" >new Date(date.year, date.month - 1, date.day, 0, 0, 0, 0);</span>
+<span class="cstat-no" title="statement not covered" >        return d.getDay();</span>
+    }
+&nbsp;
+    public getDateString(date: IDate<span class="fstat-no" title="function not covered" >): string {</span>
+      let d: Date = <span class="cstat-no" title="statement not covered" >new Date(date.year, date.month - 1, date.day, 0, 0, 0, 0);</span>
+<span class="cstat-no" title="statement not covered" >      return d.toDateString();</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

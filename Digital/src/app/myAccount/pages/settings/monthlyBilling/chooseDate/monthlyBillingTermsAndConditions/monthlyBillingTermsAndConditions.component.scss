@@ -1,0 +1,12 @@
+@import '../../../../../../shared/style/variables';
+
+.terms-and-conditions {
+    font-size: 12px;
+    color: $brand-grey-g1;
+    font-family: $secondary-font-stack;
+    margin-top: 20px;
+
+    .point-message {
+        padding-bottom: 15px;
+    }
+}

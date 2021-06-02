@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myaccount-routing.module.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">app/</a> myaccount-routing.module.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">55.56% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>30/54</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">48% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>12/25</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">14.29% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">59.57% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>28/47</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { NgModule } from '@angular/core';
+import { Event as NavigationEvent, NavigationEnd, NavigationError, Router, RouterModule, Routes } from '@angular/router';
+import { DeepLinkRoutingGuard } from './deepLinkRouting.guard';
+import { DashboardComponent } from './myAccount/dashboard/dashboard.component';
+import { MockIdentityComponent } from './myAccount/mockManager/mockIdentity.component';
+import { MyAccountComponent } from './myAccount/myAccount.component';
+import { MyAccountUnauthorisedComponent } from './myAccount/myAccountUnauthorised.component';
+import { OmmTrackerComponent } from './myAccount/ommtracker/ommTracker.component';
+import { OmmTrackerGuard } from './myAccount/ommtracker/ommTracker.guard';
+import { BillsComponent } from './myAccount/pages/bills/bills.component';
+import { PaymentExtensionWelcomeComponent } from './myAccount/pages/bills/paymentAssistance/extend/welcome/paymentExtensionWelcome.component';
+import { PaymentAssistanceRoutingGuard } from './myAccount/pages/bills/paymentAssistance/paymentAssistanceRouting.guard';
+import { PaymentAssistanceWelcomeComponent } from './myAccount/pages/bills/paymentAssistance/paymentAssistanceWelcome.component';
+import { ContactUsComponent } from './myAccount/pages/contact-us/contact-us.component';
+import { MonthlyBillingWelcomeRoutingGuard } from './myAccount/pages/settings/monthlyBilling/welcome/monthlyBillingWelcome.guard';
+import { OffersRoutingGuard } from './myAccount/pages/settings/offers/offers-routing.guard';
+import { SettingsComponent } from './myAccount/pages/settings/settings.component';
+import { SolarCheckComponent } from './myAccount/pages/settings/solarCheck/solarCheck.component';
+import { RewardsRoutingGuard } from './myAccount/rewards';
+import { HomeProfileRoutingGuard } from './myAccount/pages/settings/homeProfile/homeProfileRouting.guard';
+import { ApiService } from './shared/service/api.service';
+import { DataLayerService, ModalName, PageType, SiteSubSection } from './shared/service/dataLayer.service';
+import { AglAuthTokenProvider } from './shared/repository/aglAuthTokenProvider';
+// Remember to add Lazy Loaded modules to the tsconfig-aot.js file.
+&nbsp;
+export const MyAccountRoutes: Routes = [
+    {
+        path: 'bills/paymentassistance/welcome',
+        component: MyAccountUnauthorisedComponent,
+        children: [
+            { path: '', component: PaymentExtensionWelcomeComponent },
+        ],
+    },
+    {
+        path: 'bills/paymentassistance',
+        component: MyAccountUnauthorisedComponent,
+        children: [
+            { path: '', component: PaymentAssistanceWelcomeComponent, canActivate: [PaymentAssistanceRoutingGuard] }
+        ]
+    },
+    {
+        path: '',
+        component: MyAccountComponent,
+        children: [
+            { path: 'overview', component: DashboardComponent },
+            { path: 'usage', loadChildren: './myAccount/pages/usage/usage.module#UsageModule?chunkName=Usage' },
+            { path: 'bills/paymentassistance', loadChildren: './myAccount/pages/bills/paymentAssistance/paymentAssistance.module#PaymentAssistanceModule?chunkName=PaymentAssistance' },
+            { path: 'bills', component: BillsComponent },
+            { path: 'rewards', loadChildren: './myAccount/rewards/rewards.module#RewardsModule?chunkName=Rewards', canActivate: [RewardsRoutingGuard] },
+            {
+                path: 'settings',
+                component: SettingsComponent,
+                children: [
+                    { path: 'personal', loadChildren: './myAccount/pages/settings/personal/personal.module#PersonalModule?chunkName=Personal' },
+                    { path: 'contactdetails', loadChildren: './myAccount/pages/settings/contactDetails/contactDetails.module#ContactDetailsModule?chunkName=ContactDetails' },
+                    { path: 'concession', loadChildren: './myAccount/pages/settings/concession/applyForConcession.module#ApplyForConcessionModule?chunkName=Concession' },
+                    { path: 'offers', loadChildren: './myAccount/pages/settings/offers/offers.module#OffersModule?chunkName=Offers', canActivate: [OffersRoutingGuard] },
+                    { path: 'billing', loadChildren: './myAccount/pages/settings/billing/billing.module#BillingModule?chunkName=Billing' },
+                    { path: 'billsmoothing', loadChildren: './billSmoothing.module#BillSmoothingModule?chunkName=BillSmoothing' },
+                    { path: 'notifications', loadChildren: './myAccount/pages/settings/notifications/notifications.module#NotificationsModule?chunkName=Notifications' },
+                    { path: 'directdebit', loadChildren: './myAccount/pages/settings/directDebit/directDebit.module#DirectDebitModule?chunkName=DirectDebit' },
+                    { path: 'homeprofile', loadChildren: './myAccount/pages/settings/homeProfile/homeProfile.module#HomeProfileModule?chunkName=HomeProfile', canActivate: [ HomeProfileRoutingGuard ] },
+                    { path: 'smspay', loadChildren: './myAccount/pages/settings/smspay/smspay.module#SMSPayModule?chunkName=SMSPay' },
+                    { path: 'mywallet', loadChildren: './myAccount/pages/settings/myWallet/myWallet.module#MyWalletModule?chunkName=MyWallet' },
+                    { path: 'solar', component: SolarCheckComponent },
+                    { path: 'monthlybilling', loadChildren: './myAccount/pages/settings/monthlyBilling/monthlyBilling.module#MonthlyBillingModule?chunkName=MonthlyBilling' },
+                    {
+                        path: 'monthlybilling/welcome', loadChildren: './myAccount/pages/settings/monthlyBilling/welcome/monthlyBillingWelcome.module#MonthlyBillingWelcomeModule?chunkName=MonthlyBillingWelcome', canActivate: [MonthlyBillingWelcomeRoutingGuard]
+                    },
+                    { path: 'energyinsights', loadChildren: './myAccount/pages/settings/energyInsights/energyInsights.module#EnergyInsightsModule?chunkName=EnergyInsights'},
+                    { path: '', redirectTo: 'personal', pathMatch: 'prefix' }
+                ]
+            },
+            { path: 'help', loadChildren: './myAccount/pages/help/help.module#HelpModule?chunkName=Help' },
+            { path: 'contact-us', component: ContactUsComponent },
+            { path: '', component: DashboardComponent, canActivate: [DeepLinkRoutingGuard] }
+        ]
+    },
+    { path: 'mockmanager', redirectTo: 'mockidentity' },
+    { path: 'mockidentity', component: MockIdentityComponent },
+    { path: 'ommtracker', component: OmmTrackerComponent, canActivate: [OmmTrackerGuard] },
+    { path: 'maui', loadChildren: './myAccount/maui/showcase/showcase.module#ShowcaseModule?chunkName=Showcase' }
+];
+&nbsp;
+@NgModule({
+    imports: [RouterModule.forRoot(MyAccountRoutes)],
+    exports: [RouterModule]
+})
+export class MyAccountRoutingModule {
+<span class="cstat-no" title="statement not covered" >    constructor(private <span class="cstat-no" title="statement not covered" >router: Router,</span></span>
+                private <span class="cstat-no" title="statement not covered" >dataLayer: DataLayerService<span class="branch-2 cbranch-no" title="branch not covered" >,</span> private <span class="cstat-no" title="statement not covered" >apiService: </span>ApiService<span class="branch-2 cbranch-no" title="branch not covered" >,</span> private <span class="cstat-no" title="statement not covered" >tokenProvider: </span>AglAuthTokenProvider<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >)</span> {</span></span>
+<span class="cstat-no" title="statement not covered" >        router.events.subscribe((event: NavigationEvent<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+            /**
+             * Available events:
+             * NavigationEnd
+             * NavigationCancel
+             * NavigationError
+             * RoutesRecognized
+             */
+<span class="cstat-no" title="statement not covered" >            if (event instanceof NavigationEnd) {</span>
+<span class="cstat-no" title="statement not covered" >                this.scheduleApplyPageViewMetrics(event);</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (event instanceof NavigationError) {</span>
+<span class="cstat-no" title="statement not covered" >                console.error('NavigationError', event);</span>
+<span class="cstat-no" title="statement not covered" >                this.dataLayer.pushInlineErrorEvent(ModalName.None, 'Failure to navigate to the next page');</span>
+            }
+        });
+    }
+&nbsp;
+    // Wait for the tag to be available then push page change events.
+<span class="cstat-no" title="statement not covered" >    public scheduleApplyPageViewMetrics(event: any<span class="fstat-no" title="function not covered" >) {</span></span>
+<span class="cstat-no" title="statement not covered" >        setTimeout(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            this.applyPageViewMetrics(event);</span>
+        }, 100);
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    public applyPageViewMetrics(event<span class="fstat-no" title="function not covered" >) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if ((&lt;any&gt; window).utag !== undefined) {</span>
+            // sometime we need to track a page that redirects to another page,
+            // when user is authenticated, we call Tealium tracking function after account is loaded, that can take some time, when it's get called, the page location may have changed to that of the redirected page.
+            // that's why we resolve the page href and pathname here, and pass them down
+            const href = <span class="cstat-no" title="statement not covered" >location.href;</span>
+            const pathname = <span class="cstat-no" title="statement not covered" >location.pathname;</span>
+<span class="cstat-no" title="statement not covered" >            if (this.tokenProvider.hasToken()) {</span>
+<span class="cstat-no" title="statement not covered" >                this.apiService.accountLoadedStatus.subscribe(</span>
+                    (result<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        if (result === 'Loaded') {</span>
+<span class="cstat-no" title="statement not covered" >                            this.dataLayer.pushPageChangeEvent(ModalName.None, PageType.Account, SiteSubSection.None, event.url, href, pathname, true);</span>
+                        }
+                    }
+                );
+            } else {
+<span class="cstat-no" title="statement not covered" >                this.dataLayer.pushPageChangeEvent(ModalName.None, PageType.Account, SiteSubSection.None, event.url, href, pathname, false);</span>
+            }
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.scheduleApplyPageViewMetrics(event);</span>
+        }
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

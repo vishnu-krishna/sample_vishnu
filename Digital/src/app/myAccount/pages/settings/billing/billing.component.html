@@ -1,0 +1,53 @@
+<div class="settings-container billing-container">
+    <div class="row">
+        <div class="col-md-12">
+            <mat-card>
+                <div class="main-card-header">Billing</div>
+                <div class="main-card-message">
+                    We are busy working hard on the new My Account and this page isn't quite finished. <br/>
+                    The below sections will open in a new window on the existing site.
+                </div>
+
+                <div *ngIf="isLoading" class="main-card-loader">
+                    <agl-loader></agl-loader>
+                </div>
+
+                <div class="main-card-body account_{{model.accountDetailModel.contractAccountNumber}}" *ngFor="let model of viewModel.items" [class.pad-fix]="viewModel.isSingleContractAccountWithSingleContract">
+
+                    <agl-settings-account-detail
+                        *ngIf="model.showAccountDetailComponent"
+                        [model]="model.accountDetailModel"
+                        class="main-card-options-header">
+                    </agl-settings-account-detail>
+
+                    <!-- New Ebill Functionality -->
+                    <agl-settings-email-billing
+                        *ngIf="isEbillTurnedOn && !isManageNotificationsEnabled"
+                        (BillDeliveryModeChanged)="onBillDeliveryModeChanged($event)"
+                        [model]="model.emailBillingModel"
+                        class="main-card-options">
+                    </agl-settings-email-billing>
+
+                    <!-- Old Ebill Functionality -->
+                    <div class="main-card-options" *ngIf="!isEbillTurnedOn && !isManageNotificationsEnabled">
+                        <div class="main-card-options__edit">
+                            <h4>eBilling</h4>
+                            <a href="{{paperlessBillingUrl}}" target="_blank">Manage</a>
+                        </div>
+                        <div class="main-card-options__content">
+                            A convenient, hassle-free way of receiving your bill.
+                        </div>
+                    </div>
+
+                    <agl-settings-monthly-billing-entrance [billingSettingsAccountViewModel]="model" *ngIf="showMyAccountManagedMonthlyBilling(model)" class="main-card-options"></agl-settings-monthly-billing-entrance>
+                    <agl-settings-bill-frequency *ngIf="showClassicAeoMonthlyBillingLink(model)" class="main-card-options"></agl-settings-bill-frequency>
+
+                    <agl-settings-bill-smoothing-v1 *ngIf="!viewModel?.containsPaygContract && !billSmoothingV2Enabled" class="main-card-options"></agl-settings-bill-smoothing-v1>
+                    <agl-settings-meter-reading *ngIf="ssmrFeatureEnabled" class="main-card-options"></agl-settings-meter-reading>
+                    <agl-settings-energy-plans class="main-card-options"></agl-settings-energy-plans>
+                </div>
+
+            </mat-card>
+        </div>
+    </div>
+</div>

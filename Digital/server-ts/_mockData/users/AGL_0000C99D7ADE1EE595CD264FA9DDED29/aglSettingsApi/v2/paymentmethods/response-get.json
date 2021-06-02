@@ -1,0 +1,58 @@
+{
+    "status": 200,
+    "body": [
+        {
+            "id": "MNOPQR",
+            "bank": {
+                "bsb": "123-456",
+                "accountNumber": "13371337",
+                "accountHolderName": "Philip MacLaren"
+            },
+            "directDebitContractAccounts": [
+                7021129726
+            ],
+            "oneTouchPayContractAccounts": [
+                987654321
+            ]
+        },
+        {
+            "id": "ZZZ6666",
+            "creditCard": {
+                "cardType": "Visa",
+                "creditCardReference": "4111113775971111",
+                "expiryDate": "2020-10",
+                "cardHolderName": "John Doe"
+            },
+            "directDebitContractAccounts": [
+                123456789, 12233355
+            ],
+            "oneTouchPayContractAccounts": [
+                987654321
+            ]
+        },
+        {
+            "id": "ZZZ7777",
+            "creditCard": {
+                "cardType": "Master",
+                "creditCardReference": "5249021816111609",
+                "expiryDate": "2014-10",
+                "cardHolderName": "John Doe"
+            },
+            "directDebitContractAccounts": [],
+            "oneTouchPayContractAccounts": []
+        },
+        {
+            "id": "ZZZ8888",
+            "creditCard": {
+                "cardType": "Master",
+                "creditCardReference": "5249021816159753",
+                "expiryDate": "2018-10",
+                "cardHolderName": "John Doe"
+            },
+            "directDebitContractAccounts": [
+                123456789
+            ],
+            "oneTouchPayContractAccounts": []
+        }
+     ]
+}

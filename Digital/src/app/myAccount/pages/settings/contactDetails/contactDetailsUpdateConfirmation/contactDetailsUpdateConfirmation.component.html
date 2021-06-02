@@ -1,0 +1,9 @@
+<agl-maui-flash-message class="update-confirmation__flash-message" *ngIf="isVisible" type="Success"
+                        [dismissable]="true" (dismiss)="contactDetailsConfirmationDismissed = true">
+    <div heading>{{ heading }}</div>
+    <div subheading>
+        This hasn't changed your existing login method.
+
+        <a class="update-confirmation__login-details" *ngIf="!!loginDetailsUrl" [href]="loginDetailsUrl">View login details</a>
+    </div>
+</agl-maui-flash-message>

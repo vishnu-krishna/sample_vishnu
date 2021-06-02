@@ -1,0 +1,12 @@
+<div class="day-of-month-picker">
+    <ul class="day-of-month-picker__calendar">
+        <li *ngFor="let day of days">
+            <a (click)="onClickDay(day)"
+                class="day-of-month-picker__calendar-item--standard"
+                [class.day-of-month-picker__calendar-item--highlight]="day==selectedDay"
+                [class.day-of-month-picker__calendar-item--excluded]="isExcluded(day)">
+                    {{day}}
+            </a>
+        </li>
+    </ul>
+</div>

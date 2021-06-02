@@ -1,0 +1,133 @@
+<div class="monthly-billing-choose-service">
+    <div class="monthly-billing-choose-service__shadow" *ngIf="isLoading">
+        <img src="svg/button-spinner-white.svg" alt="loading">
+    </div>
+<!-- Heading -->
+    <div >
+        <agl-maui-heading
+            heading="Choose your service">
+        </agl-maui-heading>
+        <!-- Subheading for contract atleast one Monthly billing  -->
+        <agl-maui-heading *ngIf="!hasMonthlyBillingContract && hasNonMonthlyBillingContract"
+        subheading="Which fuel do you want to set up monthly billing for?">
+        </agl-maui-heading>
+        <!-- Subheading for contract atleast one Monthly billing  -->
+        <agl-maui-heading *ngIf="hasMonthlyBillingContract"
+        subheading="Manage your monthly billing services">
+        </agl-maui-heading>
+
+        <!-- Contracts which are already setup to monthly billing-->
+        <div class="choose-service">
+            <div *ngFor="let contractDetails of monthlyBillingContractList" >
+                <agl-maui-container [hasShadow]="true" class="fuelchip">
+                    <agl-maui-fuel-chip
+                        [fuelChipState]="MauiFuelChipState.PostSetupManage"
+                        [fuelType]="getMauiFuelChipFuelType(contractDetails.contract)"
+                        [fuelContext]="MauiFuelChipFuelContext.None"
+                        [contractAccountDetails]="CreateFuelChipContractAccountDetails()"
+                        [contractNumber]="contractDetails.contract.contractNumber">
+                            <agl-maui-fuel-chip-message *ngIf="contractDetails.cancellation.isEligible"
+                                [primaryMessage]="getFuelChipMessage(contractDetails)"
+                                [primaryMessageLink] = "changeButton"
+                                [secondaryMessage]
+                                (linkClick) = "contractClicked(contractDetails)">
+                            </agl-maui-fuel-chip-message>
+                            <agl-maui-fuel-chip-message *ngIf="!contractDetails.cancellation.isEligible"
+                                [primaryMessage]="getFuelChipMessage(contractDetails)"
+                                [primaryMessageLink] = "changeButton"
+                                [secondaryMessage] = "contractDetails.cancellation.reason?.friendlyMessage"
+                                (linkClick) = "contractClicked(contractDetails)">
+                            </agl-maui-fuel-chip-message>
+                            <agl-maui-fuel-chip-footer *ngIf="contractDetails.cancellation.isEligible"
+                                cancelText="Cancel Monthly Billing"
+                                (cancelClick)="cancelMonthlyBilling(contractDetails)" >
+                            </agl-maui-fuel-chip-footer>
+                    </agl-maui-fuel-chip>
+                </agl-maui-container>
+                <agl-maui-container *ngIf="monthlyBillingService?.dateModifiedContractNumber === contractDetails?.contract?.contractNumber" class="flash-message-container change-date">
+                    <!-- Flash message when date of the monthly billing is modified -->
+                    <agl-maui-flash-message [type]="FlashMessageType.Success" [dismissable]="true">
+                        <div subheading>You’ve successfully updated your monthly billing preferences. It can take up to 24 hours for your new billing preference to reflect in My Account and the App.</div>
+                    </agl-maui-flash-message>
+                </agl-maui-container>
+
+                <agl-maui-container *ngIf="apiError && contractNumberClicked === contractDetails?.contract?.contractNumber" class="flash-message-container">
+                    <!-- Flash message when api call to cancel fails-->
+                    <agl-maui-flash-message [type]="FlashMessageType.Error" [dismissable]="true" (dismiss)="onDismissApiError()">
+                        <div heading>Sorry, we're unable to process your request right now. Please try again.</div>
+                        <div subheading>If the issue persists, you can get in touch with us <a href="https://www.agl.com.au/residential/contact-us" target="_blank">here</a> and we'll sort it out.</div>
+                    </agl-maui-flash-message>
+                </agl-maui-container>
+
+            </div>
+
+            <!-- Contracts which are not setup to monthly billing but Setup is Eligible-->
+            <agl-maui-heading
+                *ngIf="hasNonMonthlyBillingContract && hasMonthlyBillingContract"
+                class="non-setup-subheading"
+                subheading="{{notSetupSectionHeader}}">
+            </agl-maui-heading>
+
+            <div *ngFor="let contractDetails of nonMonthlyBillingContractList" >
+                <agl-maui-container [hasShadow]="true" class="fuelchip">
+                    <agl-maui-fuel-chip
+                        [fuelChipState]="getMauiFuelChipFuelChipState(contractDetails)"
+                        [fuelType]="getMauiFuelChipFuelType(contractDetails.contract)"
+                        [fuelContext]="MauiFuelChipFuelContext.None"
+                        [contractAccountDetails]="CreateFuelChipContractAccountDetails()"
+                        [contractNumber]="contractDetails.contract?.contractNumber"
+                        (selectorClick)="contractClicked(contractDetails)">
+                            <agl-maui-fuel-chip-message
+                                [primaryMessage]="getFuelChipMessage(contractDetails)">
+                            </agl-maui-fuel-chip-message>
+                            <agl-maui-fuel-chip-message *ngIf="!contractDetails.setup.isEligible"
+                                [secondaryMessage]="contractDetails.setup.reason?.friendlyMessage">
+                            </agl-maui-fuel-chip-message>
+                    </agl-maui-fuel-chip>
+                </agl-maui-container>
+                <agl-maui-container *ngIf="monthlyBillingService?.cancelledContractNumber === contractDetails?.contract?.contractNumber" class="flash-message-container cancel-monthly-billing">
+                        <!-- Flash message monthly billing is cancelled -->
+                    <agl-maui-flash-message [type]="FlashMessageType.Success" [dismissable]="true">
+                        <div heading>Monthly billing has been cancelled.</div>
+                        <div subheading>{{cancelFlashMessage}}</div>
+                    </agl-maui-flash-message>
+                </agl-maui-container>
+
+                <agl-maui-container *ngIf="apiError && contractNumberClicked === contractDetails?.contract?.contractNumber" class="flash-message-container">
+                    <!-- Flash message when api call to cancel fails-->
+                    <agl-maui-flash-message [type]="FlashMessageType.Error" [dismissable]="true" (dismiss)="onDismissApiError()">
+                        <div heading>Sorry, we're unable to process your request right now. Please try again.</div>
+                        <div subheading>If the issue persists, you can get in touch with us <a href="https://www.agl.com.au/residential/contact-us" target="_blank">here</a> and we'll sort it out.</div>
+                    </agl-maui-flash-message>
+                </agl-maui-container>
+            </div>
+
+            <!-- Contracts which have Setup Ineligible -->
+            <agl-maui-heading
+                *ngIf="hasSetupIneligibleContract"
+                class="non-setup-subheading"
+                subheading="{{ineligibleSectionHeading}}">
+            </agl-maui-heading>
+
+            <div *ngFor="let contractDetails of contractListSetupIneligible" >
+                <agl-maui-container [hasShadow]="false" class="fuelchip">
+                    <agl-maui-fuel-chip
+                        [fuelChipState]="getMauiFuelChipFuelChipState(contractDetails)"
+                        [fuelType]="getMauiFuelChipFuelType(contractDetails.contract)"
+                        [fuelContext]="MauiFuelChipFuelContext.None"
+                        [contractAccountDetails]="CreateFuelChipContractAccountDetails()"
+                        [contractNumber]="contractDetails.contract.contractNumber">
+                        <agl-maui-fuel-chip-message
+                            [primaryMessage]="getIneligibleMessages(contractDetails)?.primary">
+                        </agl-maui-fuel-chip-message>
+                        <agl-maui-fuel-chip-footer
+                            [tertiaryMessage]="getIneligibleMessages(contractDetails)?.tertiary">
+                        </agl-maui-fuel-chip-footer>
+                </agl-maui-fuel-chip>
+            </agl-maui-container>
+        </div>
+
+        </div>
+    </div>
+</div>
+

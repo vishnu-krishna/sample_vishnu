@@ -1,0 +1,86 @@
+@import '../../../../maui/maui';
+
+@mixin wrapper-padding {
+    padding: $space-04;
+    @media #{$agl-layout-mobile} {
+        padding: $space-03;
+    }
+}
+
+.card-detail {
+    padding-top: 50px;
+    max-width: $content-width;
+    margin: 0 auto;
+
+    @media #{$agl-layout-mobile} {
+        padding-left: $space-03;
+        padding-right: $space-03;
+    }
+
+    &__heading {
+        margin-top: $space-06;
+        margin-bottom: $space-04;
+
+        @media #{$agl-layout-mobile} {
+            margin-top: $space-04;
+        }
+    }
+
+    &__form {
+        position: relative;
+
+        &-wrapper {
+            @include wrapper-padding;
+        }
+
+        &-card-icon {
+            width: 85px;
+            height: 55px;
+            float: left;
+            margin-top: -2px;
+        }
+
+        &-card-number {
+            max-width: 315px;
+            margin-left: 115px;
+            @media #{$agl-layout-mobile} {
+                margin-left: 100px;
+            }
+
+            &-textbox {
+                @include form-textbox-styling;
+            }
+
+            &--error {
+                @include form-textbox-error-text-styling;
+            }
+        }
+    }
+
+    &__consent {
+        padding-top: $space-04;
+
+        &-heading {
+            @extend .text-normal;
+            font-family: $display-font-stack;
+            font-size: $display-font-size-delta;
+        }
+
+        &-body {
+            @extend .text-small;
+            padding-top: $space-03;
+        }
+
+        &-checkbox {
+            padding-top: $space-03;
+        }
+    }
+
+    &__submission-error {
+        padding-top: $space-04;
+
+        a {
+            white-space: nowrap;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+<div class="col-xs-12 no-pad payg-section" [class.prepayment]="page === 'billing' && contract.showOutstandingBillPayg">
+    <div *ngIf="!contract.showOutstandingBillPayg">
+        <div id="payg-heading-{{contract.contractNumber}}" class="payg-section__heading">{{content.prepaidBalanceLabelText}}</div>
+        <div id="payg-amount-{{contract.contractNumber}}" class="payg-section__amount" [class.indent]="isDashboard">
+
+            <div id="payg-prepaid-section-content" class="payg-section__amount__value" [class.large]="isDashboard" [class.low]="paygView === PaygView.LowBalance"
+                [class.debit]="paygView === PaygView.DebitBalance">
+                <div *ngIf="paygView !== PaygView.Unavailable">
+                    <span id="payg-prepaid-negative" *ngIf="paygView === PaygView.DebitBalance">-</span>$
+                    <span id="prepaid-debit-dollars" class="figure" [class.large]="isDashboard">{{contract.paygBalance | number:'.2-2' | aglExtractBeforeDecimal: false}}</span>
+                    <span #cents id="prepaid-debit-cents" class="decimal" [class.large]="isDashboard">{{contract.paygBalance | number:'.2-2' | aglExtractDecimal}}</span>
+                    <span #debitSymbol id="prepaid-debit-symbol" class="decimal debit" *ngIf="paygView === PaygView.DebitBalance">DR</span>
+                    <div id="estimated-tooltip" class="estimated-tool-tip" [class.lowered]="tooltipPositionLowered" *ngIf="showTooltip">
+                        <agl-usage-tooltip id="tooltip-section" [tooltipHtml]="content.estimatedReadTooltip">
+                 acc       </agl-usage-tooltip>
+                    </div>
+                </div>
+                <div id="payg-prepaid-unavailable" *ngIf="paygView === PaygView.Unavailable" class="payg-section__amount__unavailable">
+                    $ - - . - -
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <div *ngIf="contract.showOutstandingBillPayg" class="payg-section__heading">
+        <div id="payg-heading-productswap-{{contract.contractNumber}}" class="payg-section__heading__prepayment" [class.billing]="page === 'billing'">
+            <div class="payg-section__heading__prepayment__left-panel " [class.billing]="page === 'billing'">Previous bill charges</div>
+            <div class="payg-section__heading__prepayment__right-panel dollar">$</div>
+            <div class="payg-section__heading__prepayment__value balance">{{contract.outstandingBill | number:'1.2-2'}}</div>
+        </div>
+        <div class="clear"></div>
+        <div id="payg-heading-productswap-{{contract.contractNumber}}" class="payg-section__heading__prepayment indent-space " [class.billing]="page === 'billing'">
+            <div class="payg-section__heading__prepayment__left-panel" [class.billing]="page === 'billing'">Prepaid charges
+                <agl-usage-tooltip id="tooltip-section-product-swap"  *ngIf="!contract.prepaidCredit" [tooltipHtml]="toolTipBody"></agl-usage-tooltip>
+            </div>
+            <div class="payg-section__heading__prepayment__right-panel dollar">$</div>
+            <div class="payg-section__heading__prepayment__value" [class.credit]="contract.prepaidCredit">{{contract.prepaidCharges | number:'1.2-2'}} {{prepaidCredit}}</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+</div>

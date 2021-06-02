@@ -1,0 +1,263 @@
+@import '../../style/variables';
+@import '../../../myAccount/style/settings';
+
+.cta-link {
+    font-family: $secondary-font-stack;
+    color: $brand-sky;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: right;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    padding: 12px 0;
+    margin-left: 25px;
+    white-space: nowrap;
+
+    &:hover {
+        color: $brand-sky-darker;
+    }
+}
+
+.pa-settings {
+    .mat-card {
+        padding-bottom: 0;
+        font-family: $secondary-font-stack;
+    }
+
+    .pd-fix {
+        padding-bottom: 35px;
+        @media #{$agl-layout-tablet} {
+            padding-bottom: 25px;
+        }
+        @media #{$agl-layout-mobile} {
+            padding-bottom: 10px;
+        }
+    }
+
+    .bdr-btm {
+        border-bottom: 1px solid $brand-grey-g4;
+        @media #{$agl-layout-tablet-and-smaller} {
+            padding-bottom: 10px;
+        }
+    }
+
+    .block-fix {
+        @media #{$agl-layout-tablet} {
+            display: block;
+        }
+    }
+
+    &__loading {
+        padding-bottom: 20px;
+        @media #{$agl-layout-tablet-and-smaller} {
+            padding-bottom: 10px;
+        }
+    }
+
+    &__error {
+        padding-bottom: 30px;
+
+        .pa-settings__sign-up-message {
+            padding-bottom: 15px;
+        }
+
+        a {
+            color: $brand-sky;
+            transition: color .3s ease;
+
+            &:hover {
+                color: $brand-sky-darker;
+            }
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+
+        &-cta {
+            @extend .cta-link;
+            padding: 4px 0;
+            margin-bottom: 14px;
+            margin-left: 10px;
+        }
+    }
+
+    &__sign-up-message {
+        line-height: 21px;
+        padding-bottom: 35px;
+        @media #{$agl-layout-tablet} {
+            padding-bottom: 25px;
+        }
+        @media #{$agl-layout-mobile} {
+            padding-bottom: 20px;
+        }
+    }
+
+    &__set-up-button {
+        margin-top: -5px;
+        width: 230px;
+        @media #{$agl-layout-mobile} {
+            width: 100%;
+        }
+    }
+}
+
+.pa-account {
+    margin: 0 -50px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+
+    @media #{$agl-layout-tablet} {
+        margin: 0 -25px;
+        margin-bottom: 10px;
+    }
+    @media #{$agl-layout-mobile} {
+        margin: 0 -20px;
+        margin-bottom: 10px;
+    }
+
+    a {
+        color: $brand-sky;
+        transition: color 0.3s ease;
+    }
+
+    .updating-account {
+        background-color: $white-87-opacity;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        display: inline;
+        z-index: 999;
+
+        .hidden {
+            display: none;
+        }
+    }
+
+    &__header {
+        padding: 20px 50px;
+        background-color: $brand-grey-c1;
+        font-family: $secondary-font-stack;
+        padding-bottom: 0px;
+        @media #{$agl-layout-tablet-and-smaller} {
+            padding: 20px 25px;
+        }
+
+        &__panel {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @media #{$agl-layout-mobile} {
+                display: block;
+            }
+        }
+    }
+
+    &__cta {
+        &--link {
+            @extend .cta-link;
+            @media #{$agl-layout-mobile} {
+                display: inline-block;
+                margin-left: 0;
+                margin-bottom: -12px;
+            }
+        }
+
+        &--button {
+            width: 230px;
+            margin-left: 25px;
+            @media #{$agl-layout-tablet-and-smaller} {
+                display: block;
+                margin-left: 0;
+                margin-top: 12px;
+            }
+            @media #{$agl-layout-mobile} {
+                width: 100%;
+            }
+        }
+    }
+
+    &__body {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding: 0 50px;
+        @media #{$agl-layout-tablet-and-smaller} {
+            padding: 0 25px;
+        }
+    }
+
+    &__add-alert {
+        margin-bottom: 30px;
+    }
+
+    &__delete-alert {
+        margin-top: 25px;
+        margin-bottom: 0;
+    }
+
+    &__payment-method {
+        position: relative;
+        padding: 35px 0 35px 0;
+        @media #{$agl-layout-tablet-and-smaller} {
+            padding: 20px 0 20px 0;
+        }
+
+        &-button {
+            position: absolute;
+            top: 35px;
+            right: 0;
+            width: 230px;
+            @media #{$agl-layout-tablet-and-smaller} {
+                position: static;
+                display: block;
+            }
+            @media #{$agl-layout-mobile} {
+                width: 100%;
+            }
+        }
+    }
+
+    &__upcoming-dd {
+        padding: 35px 0px;
+        border-top: 1px solid $brand-grey-g4;
+        @media #{$agl-layout-tablet-and-smaller} {
+            padding: 20px 0px;
+        }
+    }
+
+    .warning-panel {
+
+        border-left: 7px solid $brand-grey-g3;
+        display: inline-block;
+        padding-bottom: 14px;
+        padding-top: 22px;
+        padding-left: 15px;
+        min-height: 98px;
+        width: 100%;
+
+        .icon-container {
+            background-image: url('svg/ico_info.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-top: 10px;
+            height: 31px;
+            width: 31px;
+        }
+
+        .content-container {
+            .header {
+                font-weight: bold;
+            }
+
+            .content-text {
+                margin-top: 10px;
+                font-weight: normal;
+            }
+        }
+    }
+}

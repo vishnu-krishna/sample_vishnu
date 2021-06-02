@@ -1,0 +1,49 @@
+  {
+      "status": 200,
+      "body": [{
+          "oneMinuteMove": {
+              "referenceCode": "AZ878WEX",
+              "requestType": "MoveInAndOut",
+              "status": "ReadyToConnect",
+              "expiryDate": "2018-06-10",
+              "lastUpdated": "2017-06-01T04:23:44",
+              "moveOut": {
+                  "requestedDate": "2017-05-26",
+                  "contracts": [{
+                      "contractNumber": 9000000002,
+                      "isCancelled": false,
+                      "actualDate": "2017-05-27"
+                  }]
+              },
+              "moveIn": {
+                  "requestedDate": "2017-05-30",
+                  "requestedAddress": {
+                      "floorNumber": "9",
+                      "unitNumber": "1",
+                      "streetNumber": "378",
+                      "streetName": "High Street",
+                      "suburb": "Templestowe Lower",
+                      "postcode": "3107",
+                      "state": "WA"
+                  },
+                  "contracts": [{
+                      "fuelType": "Gas",
+                      "status": "Requested",
+                      "expiryDate": "2017-06-10",
+                      "contractNumber": 1200575245,
+                      "actualDate": "2017-06-01",
+                      "actualAddress": {
+                          "floorNumber": "9",
+                          "unitNumber": "1",
+                          "streetNumber": "378",
+                          "streetName": "High Street",
+                          "suburb": "Templestowe Lower",
+                          "postcode": "3107",
+                          "state": "WA"
+                      }
+                  }]
+
+              }
+          }
+      }]
+  }

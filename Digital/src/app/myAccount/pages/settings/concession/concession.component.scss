@@ -1,0 +1,101 @@
+@import '../../../../shared/style/variables';
+@import '../../../../shared/style/mixins';
+
+@mixin anchor-styling() {
+    float: right;
+    text-align: right;
+    line-height: 18px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+@keyframes spinner {
+    from {
+        transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotateZ(359deg);
+    }
+}
+
+.concession {
+    &__add {
+        font-family: $secondary-font-stack;
+        display: block;
+        padding-bottom: 6px;
+
+        &-heading {
+            display: inline-block;
+            line-height: 18px;
+            font-size: 16px;
+            font-weight: bold;
+            font-family: $secondary-font-stack;
+            color: $brand-grey-g1;
+            margin: 0;
+        }
+
+        &-link {
+            @include anchor-styling();
+            color: $brand-sky;
+            cursor: pointer;
+
+            &:hover {
+                color: $lighten-sky-10;
+            }
+
+            &--loading {
+                img {
+                    position: absolute;
+                    right: -10px;
+                    transform: translate(-50%, -50%);
+                    animation: spinner 0.8s linear infinite;
+                }
+            }
+
+            &--disabled {
+                @include anchor-styling();
+                color: $brand-grey-g4;
+                cursor: default;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    &__content {
+        font-family: $secondary-font-stack;
+        line-height: 20px;
+        color: $brand-grey-g1;
+        margin-right: 70px;
+
+        &-applied-card-number {
+            white-space: nowrap;
+        }
+    }
+
+    &__web-chat {
+        &--info {
+            margin-top: 20px;
+            margin-bottom: 10px;
+
+            a {
+                white-space: nowrap;
+            }
+        }
+    }
+
+    &__content--error,
+    &__south-australia--info,
+    &__western-australia--info,
+    &__rejected-application--warn {
+        padding-top: 15px;
+        margin-bottom: 5px;
+
+        a {
+            white-space: nowrap;
+        }
+    }
+}

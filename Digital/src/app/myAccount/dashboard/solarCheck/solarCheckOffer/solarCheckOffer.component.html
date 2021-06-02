@@ -1,0 +1,37 @@
+<div class="solar-check-offer" *ngIf="isEligible">
+    <div class="container">
+        <div class="hidden-xs">
+            <div class="col-sm-3 col-md-2 home-icon">
+                <img src="svg/scc-solarhousequestion.svg" />
+            </div>
+            <div class="col-sm-8 col-md-9">
+                <agl-solar-check-offer-text></agl-solar-check-offer-text>
+                <div class="learn-more">
+                    <button mat-raised-button id="shc-learn-more" class="dls-button" color="accent" (click)="learnMore()">LEARN MORE</button>
+                </div>
+            </div>
+            <div class="col-sm-1">
+                <span class="close-icon">
+                    <mat-icon (click)="closeOffer()"> close </mat-icon>
+                </span>
+            </div>
+        </div>
+
+        <div class="visible-xs">
+            <div class="row">
+                <div class="col-xs-11">
+                    <agl-solar-check-offer-text></agl-solar-check-offer-text>
+                </div>
+                <div class="col-xs-1 close-icon">
+                    <mat-icon (click)="closeOffer()"> close </mat-icon>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 learn-more">
+                    <button mat-raised-button id="shc-learn-more-mob" class="dls-button" color="accent" (click)="learnMore()">LEARN MORE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

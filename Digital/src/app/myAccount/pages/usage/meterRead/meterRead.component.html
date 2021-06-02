@@ -1,0 +1,52 @@
+<div class="meter-information">  
+    <div class="tempdls-card-header meter-information__title">
+        Meter information
+    </div> 
+    <div class="col-sm-7">
+        <div class="meter-information__icons">
+            <div *ngIf="selected === 'electricity'">
+                <img class="icon_size" src="svg/icon_blue_elec_meter.svg">
+            </div>
+            <div *ngIf="selected === 'gas'">
+                <img class="icon_size" src="svg/icon_blue_gas_meter.svg">
+            </div>
+        </div>
+        <div class="estimate-fuel">
+            <div *ngIf="selected === 'electricity'" class="meter-information__icons--mobile">
+                <img class="icon_size" src="svg/icon_blue_elec_meter.svg">
+            </div>
+            <div *ngIf="selected === 'gas'" class="meter-information__icons--mobile">
+                <img class="icon_size" src="svg/icon_blue_gas_meter.svg">
+            </div>            
+            <div class="title--mobile" >Want a more accurate {{selected}} bill?</div>            
+            <div class="estimate-fuel__content">
+                You can make it happen by taking your own meter read.
+            </div>
+        </div>
+    </div>        
+    <div class="col-sm-5 meter-read-information">
+         <!--<div class="meter-read-subHeading no-mobile-display">
+            Meter no.
+                <span class="meter-number-date">
+                    02385204498274
+                </span>
+        </div>-->
+        <div class="meter-read-subHeading">
+            Next scheduled meter read
+        </div>
+        <div class="meter-number-date">
+            {{dateOfRead}}
+        </div>
+        <div class="col-sm-12 col-xs-12 no-pad">
+            <div class="meter-read-button__container">            
+                    <a mat-raised-button color="accent" (click)="onClickSubmitMeterRead()">
+                        ENTER YOUR METER READ
+                    </a>
+                    <div class="how-to-read-your-meter">
+                        <a color="primary" class="more-info" href="https://www.agl.com.au/residential/help-and-support/how-to-read-your-meter" 
+                        target="_blank">How to read your meter <img class="cta-arrow" src="svg/dropdownuparrow.svg"></a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+@import '../../maui/maui';
+@import '../../../shared/style/mixins';
+
+agl-maui-secondary-navigation {
+    position: relative;
+    z-index: 2; /* to prevent the nav appearing under maui flash messages. TODO: fix this in the maui library */
+}
+
+.energy-insights-info {
+    max-width: $content-width;
+    margin: 0 auto;
+    padding-top: $space-07;
+    text-align: center;
+
+    &__heading {
+        margin-bottom: $space-06 + $space-03;
+    }
+
+    &__close-button {
+        margin-top: $space-05;
+    }
+}

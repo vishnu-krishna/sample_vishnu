@@ -1,0 +1,22 @@
+<div *ngIf="!type.billSmoothingV2" class="bill-panel-message-panel">
+    <div *ngIf="noBalance">
+        <mat-icon svgIcon="icon-tick-in-box" class="bill-panel-message-panel__tick-icon"></mat-icon>
+        <div id="bill-panel-message-panel-title" class="bill-panel-message-panel__title">
+            Your account is looking&nbsp;good
+        </div>
+        <div id="bill-panel-message-panel-subtext" class="bill-panel-message-panel__subtext">
+            Thanks for being so organised. If you would like to make further payments, your account will be in credit
+            for your next bill.
+        </div>
+    </div>
+
+    <div *ngIf="accountInCredit">
+        <mat-icon svgIcon="icon-tick-in-box" class="bill-panel-message-panel__tick-icon"></mat-icon>
+        <div id="bill-panel-message-panel-title" class="bill-panel-message-panel__title">
+            You're all up to&nbsp;date
+        </div>
+        <div id="bill-panel-message-panel-subtext" class="bill-panel-message-panel__subtext">
+            Thanks for keeping your account balance in credit. You don't owe anything right now, but making further payments will mean you'll have less left to pay off your next bill.
+        </div>
+    </div>
+</div>

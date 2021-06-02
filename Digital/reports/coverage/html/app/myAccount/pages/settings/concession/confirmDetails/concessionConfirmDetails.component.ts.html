@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\settings\concession\confirmDetails\concessionConfirmDetails.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/settings/concession/confirmDetails/</a> concessionConfirmDetails.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">31.11% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>14/45</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">44.44% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>8/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">8.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">29.27% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>12/41</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+&nbsp;
+import { IConcessionStateService } from '../services/concessionState.service';
+import { IssuerCards } from '../issuerCards';
+import { IConcessionCardService } from '../services/concessionCard.service';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
+&nbsp;
+@Component({
+    selector: 'agl-concession-confirm-details',
+    template: require('./concessionConfirmDetails.component.html'),
+    styles: [require('./concessionConfirmDetails.component.scss')],
+})
+export class ConcessionConfirmDetailsComponent implements OnInit {
+<span class="fstat-no" title="function not covered" >    public get addressLabel(): string {</span>
+<span class="cstat-no" title="statement not covered" >        return 'Address' + (this.uniqueAddresses.length &gt; 1 ? 'es' : '');</span>
+    }
+&nbsp;
+    public accountHolderName: string;
+    public <span class="cstat-no" title="statement not covered" >failedToLoadCards: boolean = false;</span>
+    public <span class="cstat-no" title="statement not covered" >issuerCards: IssuerCards[] = [];</span>
+    public <span class="cstat-no" title="statement not covered" >uniqueAddresses: string[] = [];</span>
+    private <span class="cstat-no" title="statement not covered" >continueButtonClicked: boolean = false;</span>
+    private <span class="cstat-no" title="statement not covered" >isLoading: boolean = false;</span>
+    private <span class="cstat-no" title="statement not covered" >cardLoadComplete = new ReplaySubject&lt;boolean&gt;(1);</span>
+&nbsp;
+    constructor(private <span class="cstat-no" title="statement not covered" >router: Router,</span>
+                private <span class="cstat-no" title="statement not covered" >concessionStateService: IConcessionStateService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+                private <span class="cstat-no" title="statement not covered" >concessionCardService: IConcessionCardService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >)</span> {</span></span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public ngOnInit(): void {</span></span>
+        let concession = <span class="cstat-no" title="statement not covered" >this.concessionStateService.getCurrentConcession();</span>
+<span class="cstat-no" title="statement not covered" >        this.uniqueAddresses = concession.uniqueAddresses;</span>
+<span class="cstat-no" title="statement not covered" >        this.accountHolderName = concession.accountHolderName;</span>
+<span class="cstat-no" title="statement not covered" >        this.isLoading = true;</span>
+<span class="cstat-no" title="statement not covered" >        this.concessionCardService.fetchEligibleCards(concession.regionId, concession.fuelTypes)</span>
+            .map((cards<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                if (cards.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >                    throw new Error('Failed to load eligible cards');</span>
+                }
+<span class="cstat-no" title="statement not covered" >                return cards;</span>
+            })
+            .finally(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.isLoading = false;</span>
+            })
+            .subscribe((cards: IssuerCards[]<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                concession.setEligibleCards(cards);</span>
+<span class="cstat-no" title="statement not covered" >                this.cardLoadComplete.next(true);</span>
+            }, (error<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.failedToLoadCards = true;</span>
+<span class="cstat-no" title="statement not covered" >                console.error(error);</span>
+            });
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public showSpinner(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.continueButtonClicked &amp;&amp; !this.failedToLoadCards;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public continue(): void {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.continueButtonClicked = true;</span>
+<span class="cstat-no" title="statement not covered" >        if (!this.isLoading) {</span>
+<span class="cstat-no" title="statement not covered" >            this.cardLoadComplete.subscribe(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                this.router.navigate(['/settings/concession/selectcard']);</span>
+            });
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public get continueButtonEnabled(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return !this.failedToLoadCards;</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

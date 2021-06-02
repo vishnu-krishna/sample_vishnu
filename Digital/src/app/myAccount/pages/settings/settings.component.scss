@@ -1,0 +1,134 @@
+@import '../../../shared/style/variables';
+@import '../../../shared/style/mixins';
+
+.placeholder-section {
+    min-height: calc(100vh - (60px + 50px));
+    margin-bottom: -180px;
+    @media #{$agl-layout-mobile} {
+        padding: 0 15px;
+        min-height: calc(100vh - (50px + 50px));
+    }
+}
+
+.lite-mode {
+    background-color: $light-mode-background;
+    font-family: $secondary-font-stack;
+    text-align: center;
+    color: $brand-tooltip-grey;
+    padding-bottom: 30px;
+
+    &-heading {
+        font-family: $primary-font-stack;
+        color: $brand-blue;
+        font-size: 26px;
+        font-weight: bold;
+        padding-top: 45px;
+    }
+
+    &-message {
+        font-size: 18px;
+        padding-top: 15px;
+    }
+
+    &-image-wrap {
+        max-width: 475px;
+        margin: 0 auto;
+        margin-top: 28px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &-assistance {
+        font-size: 16px;
+        padding-top: 22px;
+        padding-bottom: 20px;
+    }
+}
+
+.restricted {
+    background-color: $restricted-background;
+
+    .error-page-image-wrap {
+        max-width: 227px;
+        margin: 0 auto;
+        margin-top: 28px;
+        @media (max-width: 376px) {
+            max-width: 177px;
+        }
+
+        img {
+            width: 100%;
+            transform-origin: center bottom;
+            animation: rollIn 1.2s linear alternate forwards;
+        }
+    }
+}
+
+.error-page {
+    font-family: $secondary-font-stack;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    color: $brand-tooltip-grey;
+    padding-bottom: 30px;
+
+    &-heading {
+        font-family: $primary-font-stack;
+        color: $brand-blue;
+        font-size: 26px;
+        font-weight: bold;
+        padding-top: 45px;
+    }
+
+    &-message {
+        font-size: 18px;
+        padding-top: 15px;
+    }
+
+    &-image-wrap {
+        max-width: 475px;
+        margin: 0 auto;
+        margin-top: 28px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &-assistance {
+        font-size: 16px;
+        padding-top: 22px;
+        padding-bottom: 20px;
+    }
+}
+
+.settings {
+    padding-top: 60px;
+    display: block;
+    width: 898px;
+    margin: 0 auto;
+
+    @media #{$agl-layout-tablet-and-smaller} {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 0;
+    }
+
+    @media #{$agl-layout-mobile} {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 20px;
+    }
+
+    &-sub-menu {
+        position: relative;
+    }
+}
+
+.loader {
+    margin-top: 170px;
+    display: block;
+}

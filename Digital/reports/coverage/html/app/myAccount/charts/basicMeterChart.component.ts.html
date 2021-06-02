@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\charts\basicMeterChart.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/myAccount/charts/</a> basicMeterChart.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">18.99% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>15/79</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">18.06% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>13/72</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, Input, OnInit } from '@angular/core';
+import * as moment from 'moment';
+import { BillViewModel, ContractViewModel }  from '../services/account.service';
+&nbsp;
+/**
+ * Bar chart component, use this componenet where a bar chart is required.
+ *
+ * @export
+ * @class BarComponent
+ * @implements {OnInit}
+ */
+<span class="fstat-no" title="function not covered" >@Component({</span>
+    selector: 'agl-basic-meter-chart',
+    template: require('./basicMeterChart.component.html'),
+    styles: [require('./basicMeterChart.component.scss')],
+})
+&nbsp;
+export class BasicMeterChartComponent implements OnInit {
+&nbsp;
+    @Input() public contract: ContractViewModel;
+&nbsp;
+    /**
+     * True if the contract has a billing history
+     */
+    public hasBillHistory: boolean;
+&nbsp;
+    /**
+     * The switch for the no data message
+     */
+    public <span class="cstat-no" title="statement not covered" >noData: boolean = false;</span>
+&nbsp;
+    /**
+     * Is it electricity or gas switch
+     * @type {Boolean}
+     */
+    public fuelTypeSwitch: boolean;
+&nbsp;
+    /**
+     * The number of bills returned as a string
+     * @type {string}
+     */
+    public chartHeading: string;
+&nbsp;
+    /**
+     * new chart bar
+     * @memberof BasicMeterChartComponent
+     */
+&nbsp;
+    public chartBars: ChartBar[];
+    public bills: BillViewModel[];
+&nbsp;
+    /**
+     * On intilisation of component tidy the inputs from the front.
+     */
+<span class="fstat-no" title="function not covered" >    public ngOnInit() {</span>
+<span class="cstat-no" title="statement not covered" >        this.bills = this.contract.bills;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.contract.hasBillHistory) {</span>
+<span class="cstat-no" title="statement not covered" >            this.bills = this.getLatestBillsAsc(this.bills, 3);</span>
+<span class="cstat-no" title="statement not covered" >            this.zeroNegativeBillCharges(this.bills);</span>
+<span class="cstat-no" title="statement not covered" >            this.noData = !this.bills || this.bills.length === 0;</span>
+<span class="cstat-no" title="statement not covered" >            this.chartHeading = this.buildHeading(this.bills);</span>
+<span class="cstat-no" title="statement not covered" >            this.chartBars = this.buildBars(this.bills);</span>
+        }
+    }
+&nbsp;
+    /**
+     * Gets the latest bills and sorts.
+     * @param  {BillViewModel[]} bills   The bills
+     * @param  {number}          howMany How many bills
+     * @return {BillViewModel[]}         The array we use to build the graph.
+     */
+    private getLatestBillsAsc(bills: BillViewModel[], howMany: number<span class="fstat-no" title="function not covered" >): BillViewModel[] {</span>
+<span class="cstat-no" title="statement not covered" >        bills.sort((d1, d2<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            return new Date(d2.issuedDate.toString()).valueOf() - new Date(d1.issuedDate.toString()).valueOf();</span>
+        });
+<span class="cstat-no" title="statement not covered" >        bills = bills.slice(0, howMany);</span>
+<span class="cstat-no" title="statement not covered" >        bills.reverse();</span>
+&nbsp;
+        let padCount = <span class="cstat-no" title="statement not covered" >howMany - bills.length;</span>
+<span class="cstat-no" title="statement not covered" >        for (let pad = 1; pad &lt;= padCount; pad++) {</span>
+<span class="cstat-no" title="statement not covered" >            bills.unshift(null);</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return bills;</span>
+    }
+&nbsp;
+    /**
+     * Negative bills
+     * @param  {BillViewModel[]} bills The bills
+     * @return {Number}               The bill to be 0 value
+     */
+    private zeroNegativeBillCharges(bills: BillViewModel[]<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        for (let bill<span class="cstat-no" title="statement not covered" ></span> of bills) {</span>
+<span class="cstat-no" title="statement not covered" >            if (bill &amp;&amp; bill.newCharges &lt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                bill.newCharges = 0;</span>
+            }
+        }
+    }
+&nbsp;
+    /**
+     * Build the bars for the charts.
+     * @param  {BillViewModel[]} bills The bills
+     * @return {ChartBar[]}            tidyArray
+     */
+    private buildBars(bills: BillViewModel[]<span class="fstat-no" title="function not covered" >): ChartBar[] {</span>
+        let chartBars: ChartBar[] = <span class="cstat-no" title="statement not covered" >[];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (typeof bills === 'undefined') { <span class="cstat-no" title="statement not covered" >return; </span>}</span>
+&nbsp;
+        let highestCharge = <span class="cstat-no" title="statement not covered" >0;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        for (let bill<span class="cstat-no" title="statement not covered" ></span> of bills) {</span>
+<span class="cstat-no" title="statement not covered" >            if (bill &amp;&amp; (bill.newCharges &gt; highestCharge)) {</span>
+<span class="cstat-no" title="statement not covered" >                highestCharge = bill.newCharges;</span>
+            }
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        for (let bill<span class="cstat-no" title="statement not covered" ></span> of bills) {</span>
+<span class="cstat-no" title="statement not covered" >            if (!bill) {</span>
+<span class="cstat-no" title="statement not covered" >                chartBars.push(null);</span>
+            } else {
+                let percentage = <span class="cstat-no" title="statement not covered" >0;</span>
+&nbsp;
+                // Handle negative charges, set amount to zero
+<span class="cstat-no" title="statement not covered" >                if (bill.newCharges &lt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                    bill.newCharges = 0;</span>
+                }
+&nbsp;
+                let ratio = <span class="cstat-no" title="statement not covered" >bill.newCharges / highestCharge;</span>
+&nbsp;
+                // Ok so if the new charges and the highest value = the same (when all last bills are negative)
+                // then set the ratio to 0.
+<span class="cstat-no" title="statement not covered" >                if (bill.newCharges === 0 &amp;&amp; highestCharge === 0) {</span>
+<span class="cstat-no" title="statement not covered" >                    ratio = 0;</span>
+                }
+&nbsp;
+                // Handle the negative values.
+<span class="cstat-no" title="statement not covered" >                if (bill.newCharges &lt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                    ratio = 0;</span>
+                }
+&nbsp;
+                let valuePercentage = <span class="cstat-no" title="statement not covered" >ratio * 100;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                percentage = Math.round(valuePercentage);</span>
+&nbsp;
+                let date = <span class="cstat-no" title="statement not covered" >moment(bill.issuedDate).format('DD MMM');</span>
+                let value = <span class="cstat-no" title="statement not covered" >`$${bill.newCharges.toFixed(2)}`;</span>
+                let chartBar: ChartBar = <span class="cstat-no" title="statement not covered" >new ChartBar(date, value, percentage);</span>
+<span class="cstat-no" title="statement not covered" >                chartBars.push(chartBar);</span>
+            }
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return chartBars;</span>
+    }
+&nbsp;
+    /**
+     * Show the bill titles based on the amount of objects
+     * This is a special case as we append 2 blank objects
+     * so we add in + 2 to get the correct titles.
+     *
+     * @param  {BillViewModel[]} bills the bills
+     * @return {string}                the bill heading string
+     */
+    private buildHeading(bills: BillViewModel[]<span class="fstat-no" title="function not covered" >): string {</span>
+        let heading = <span class="cstat-no" title="statement not covered" >'';</span>
+<span class="cstat-no" title="statement not covered" >        if (bills !== null &amp;&amp; typeof bills !== 'undefined') {</span>
+            let billList = <span class="cstat-no" title="statement not covered" >[];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            for (let key<span class="cstat-no" title="statement not covered" ></span> of bills) {</span>
+<span class="cstat-no" title="statement not covered" >              if (key !== null) {</span>
+<span class="cstat-no" title="statement not covered" >                  billList.push(key);</span>
+              }
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (billList.length &gt;= 3) {</span>
+<span class="cstat-no" title="statement not covered" >                heading = 'Last 3 bills';</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (billList.length === 2) {</span>
+<span class="cstat-no" title="statement not covered" >                heading = 'Last 2 bills';</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (billList.length === 1) {</span>
+<span class="cstat-no" title="statement not covered" >                heading = 'Previous bill';</span>
+            }
+        }
+<span class="cstat-no" title="statement not covered" >        return heading;</span>
+    }
+}
+&nbsp;
+class ChartBar {
+    public date: string;
+    public value: any;
+    public percentage: number;
+    constructor(date: string, value: any, percentage: number<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.date = date;</span>
+<span class="cstat-no" title="statement not covered" >        this.value = value;</span>
+<span class="cstat-no" title="statement not covered" >        this.percentage = percentage;</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+    "isSuccess": true,
+    "screenCode": "SSMR_ADJ1",
+    "dailyUsage": 0.82,
+    "accountBalance": 129.77,
+    "invoiceDueDate": "2017-05-15",
+    "nextScheduledBillDate": "2017-05-11",
+    "numberOfDaysTillNextBill": 0,
+    "currentBill": {
+        "amount": 130.26,
+        "startDate": "2016-12-03",
+        "endDate": "2017-05-11"
+    },
+    "projectedBill": {
+        "amount": 130.26,
+        "startDate": "2016-12-03",
+        "endDate": "2017-05-11"
+    },
+    "lastInvoice": {
+        "amount": 160.94,
+        "startDate": "2016-11-03",
+        "endDate": "2016-12-02",
+        "quality": "Customer Read"
+    },
+    "adjustment": {
+        "preAdjustmentBalance": 158.02,
+        "postAdjustmentBalance": 129.77,
+        "startDate": "2016-11-03",
+        "endDate": "2016-12-02"
+    },
+    "meters": [],
+    "error": null
+}

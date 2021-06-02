@@ -1,0 +1,16 @@
+<div class="heading">
+    {{submittingHeading}}
+</div>
+
+<div class="content">
+
+<div>
+    {{submittingMessage}}
+</div>
+
+<agl-loader [customClass]="'greyBackground'" *ngIf="isSubmitting" class="loader"></agl-loader>
+
+<div class="upload-progress" *ngIf="ssmrService.submissionType === 'Photo'">
+    Uploading {{uploadProgress}}%
+</div>
+</div>

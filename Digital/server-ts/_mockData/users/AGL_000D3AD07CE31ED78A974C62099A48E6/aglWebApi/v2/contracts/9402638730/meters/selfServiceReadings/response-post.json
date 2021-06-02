@@ -1,0 +1,23 @@
+{
+    "isSuccess": true,
+    "screenCode": "SSMR_PROJ1",
+    "dailyUsage": 1.03,
+    "accountBalance": 0.00,
+    "invoiceDueDate": null,
+    "nextScheduledBillDate": "2017-08-11",
+    "numberOfDaysTillNextBill": 93,
+    "currentBill": {
+        "amount": 48.43,
+        "startDate": "2017-03-24",
+        "endDate": "2017-05-10"
+    },
+    "projectedBill": {
+        "amount": 163.24,
+        "startDate": "2017-03-24",
+        "endDate": "2017-08-11"
+    },
+    "lastInvoice": null,
+    "adjustment": null,
+    "meters": [],
+    "error": null
+}

@@ -1,0 +1,16 @@
+@import '../../../../../shared/style/variables';
+@import '../../../../../shared/style/mixins';
+@import '../../../../style/settings';
+
+.main-card-options__lptag {
+    float: right;
+    text-align: right;
+    color: $brand-sky;
+    font-size: 15px;
+    font-weight: bold !important; // For LP Tag.
+    cursor: pointer;
+
+    &:hover {
+        color: $lighten-sky-10;
+    }
+}

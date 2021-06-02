@@ -1,0 +1,91 @@
+{
+    "id": "AGLMKTRE1216302",
+    "description": "New Prepay Once Off 1 D",
+    "fuelType": "Electricity",
+    "invalid": false,
+    "attributes": [{
+            "id": "ZBRAND_TYP",
+            "description": "Brand",
+            "value": "AGL",
+            "valueDescription": "AGL"
+        },
+        {
+            "id": "ZCNTRCTTYPE",
+            "description": "Contract Type",
+            "value": "RGCN",
+            "valueDescription": "Fixed Benefit Period Contract"
+        },
+        {
+            "id": "ZCONTRACTLEN",
+            "description": "Contract Term",
+            "dataType": "Numeric",
+            "value": "12",
+            "valueDescription": "12 months",
+            "unitOfMeasure": "Month"
+        },
+        {
+            "id": "ZCUST_TYP",
+            "description": "Customer Type",
+            "value": "RESI",
+            "valueDescription": "Residential"
+        },
+        {
+            "id": "ZPIES",
+            "description": "PIES",
+            "dataType": "Numeric",
+            "value": "4",
+            "valueDescription": "Prior Notice"
+        },
+        {
+            "id": "ZPREPAY",
+            "description": "Prepay Attribute",
+            "value": "2",
+            "valueDescription": "Once-Off"
+        },
+        {
+            "id": "ZPRICING_OPTION",
+            "description": "Rate Type",
+            "value": "VR",
+            "valueDescription": "Variable rate"
+        },
+        {
+            "id": "ZPROD_TYPE",
+            "description": "Product Type",
+            "dataType": "Numeric",
+            "value": "MKT",
+            "valueDescription": "Market Product"
+        },
+        {
+            "id": "ZSOLAR",
+            "description": "Solar",
+            "value": "A",
+            "valueDescription": "All"
+        },
+        {
+            "id": "Z_BILL_SMOOTH",
+            "description": "Bill Smoothing VAS",
+            "value": "2",
+            "valueDescription": "Not Allowed"
+        },
+        {
+            "id": "Z_EBILLING",
+            "description": "Monthly Billing VAS",
+            "value": "1",
+            "valueDescription": "Mandatory"
+        },
+        {
+			"id": "Z_DIRECTDEBIT",
+			"description": "Direct Debit",
+			"dataType": "String",
+			"value": "1",
+			"valueDescription": "Mandatory"
+        },
+        {
+			"id": "Z_MONTHLY_BILLING",
+			"description": "Monthly Billing VAS",
+			"dataType": "String",
+			"value": "1",
+			"valueDescription": "Mandatory"
+		}
+    ]
+}

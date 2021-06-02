@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\maui\progressTracker\showcase\exampleInstalmentProgressItem\instalmentProgressItem.model.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/maui/progressTracker/showcase/exampleInstalmentProgressItem/</a> instalmentProgressItem.model.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">27.27% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>21/77</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.5% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">27.4% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>20/73</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as moment from 'moment';
+import { VerticalProgressItemModel, Color, LineStyle, BulletShape, BulletContent, PaneAlignment } from '../../progressItems/verticalProgressItem/verticalProgressItem.model';
+import { ProgressItem } from '../../progressTracker.model';
+&nbsp;
+export class InstalmentProgressItem implements ProgressItem {
+    private model: VerticalProgressItemModel;
+    private pane1: any;
+    private pane2: any;
+    private index: number;
+    private isLast: boolean;
+&nbsp;
+    public constructor(private <span class="cstat-no" title="statement not covered" >amountDue: number,</span> private <span class="cstat-no" title="statement not covered" >dueDate: Date,</span> private <span class="cstat-no" title="statement not covered" >status: InstalmentStatus<span class="fstat-no" title="function not covered" >)</span> {</span>
+    }
+&nbsp;
+    public initialise(index: number, isLast: boolean<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.index = index;</span>
+<span class="cstat-no" title="statement not covered" >        this.isLast = isLast;</span>
+<span class="cstat-no" title="statement not covered" >        this.model = this.loadVerticalProgressItemModel();</span>
+<span class="cstat-no" title="statement not covered" >        this.pane1 = this.loadLeftPane();</span>
+<span class="cstat-no" title="statement not covered" >        this.pane2 = this.loadRightPane();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public getModel() {</span>
+<span class="cstat-no" title="statement not covered" >        return this.model;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public getPane1() {</span>
+<span class="cstat-no" title="statement not covered" >        return this.pane1;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public getPane2() {</span>
+<span class="cstat-no" title="statement not covered" >        return this.pane2;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private loadLeftPane(): LeftPane {</span>
+&nbsp;
+        const isPrimaryMessageGrey = <span class="cstat-no" title="statement not covered" >this.status === InstalmentStatus.Paid;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            primaryMessage: `$${this.amountDue.toFixed(2)}`,
+            secondaryMessage: `Instalment ${this.index + 1}${this.isLast ? ' (Final)' : ''}`,
+            isPrimaryMessageGrey: isPrimaryMessageGrey
+        };
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    private loadRightPane(): RightPane {</span></span>
+&nbsp;
+        const primaryMessageStatus = <span class="cstat-no" title="statement not covered" >'Due ';</span>
+        const primaryMessageDueDate = <span class="cstat-no" title="statement not covered" >`${this.isDueDateToday() ? 'Today' : this.getDueDateAsDate()}`;</span>
+        const secondaryMessage = <span class="cstat-no" title="statement not covered" >this.getDueDateAsDay();</span>
+        let tertiaryMessage = <span class="cstat-no" title="statement not covered" >'';</span>
+&nbsp;
+        const instalmentStatusMap = {
+            [InstalmentStatus.Paid] : <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                tertiaryMessage = `Paid`;</span>
+            },
+            [InstalmentStatus.Overdue] : <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+                const daysOverdue = <span class="cstat-no" title="statement not covered" >this.getDaysBeforeToday(this.dueDate);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if (daysOverdue !== 0) {</span>
+<span class="cstat-no" title="statement not covered" >                    tertiaryMessage = `Overdue by ${daysOverdue} ${(daysOverdue === 1) ? 'day' : 'days' }`;</span>
+                }
+            }
+        };
+&nbsp;
+        const instalmentStatusFunc = <span class="cstat-no" title="statement not covered" >instalmentStatusMap[this.status];</span>
+<span class="cstat-no" title="statement not covered" >        if (instalmentStatusFunc) {</span>
+<span class="cstat-no" title="statement not covered" >            instalmentStatusFunc();</span>
+        }
+&nbsp;
+        const isPrimaryMessageGrey = <span class="cstat-no" title="statement not covered" >this.status === InstalmentStatus.Paid;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            primaryMessageStatus: primaryMessageStatus,
+            primaryMessageDueDate: primaryMessageDueDate,
+            secondaryMessage: secondaryMessage,
+            tertiaryMessage: tertiaryMessage,
+            isPrimaryMessageGrey: isPrimaryMessageGrey
+        };
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private loadVerticalProgressItemModel(): VerticalProgressItemModel {</span>
+        const leftPaneAlignment = <span class="cstat-no" title="statement not covered" >PaneAlignment.Right;</span>
+        const rightPaneAlignment = <span class="cstat-no" title="statement not covered" >PaneAlignment.Left;</span>
+        const isLast = <span class="cstat-no" title="statement not covered" >this.isLast;</span>
+        let lineStyle: LineStyle;
+        let color: Color;
+        let bulletShape: BulletShape;
+        let bulletContent: BulletContent;
+        let hasShadow: boolean = <span class="cstat-no" title="statement not covered" >false;</span>
+&nbsp;
+        const instalmentStatusMap = {
+            [InstalmentStatus.Due]: <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                lineStyle = LineStyle.Dashed;</span>
+<span class="cstat-no" title="statement not covered" >                color = Color.Blue;</span>
+<span class="cstat-no" title="statement not covered" >                bulletShape = BulletShape.CircleSolid;</span>
+<span class="cstat-no" title="statement not covered" >                hasShadow = true;</span>
+            },
+            [InstalmentStatus.Upcoming]: <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                lineStyle = LineStyle.Dashed;</span>
+<span class="cstat-no" title="statement not covered" >                color = Color.Blue;</span>
+<span class="cstat-no" title="statement not covered" >                bulletShape = BulletShape.CircleEmpty;</span>
+            },
+            [InstalmentStatus.Paid]: <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                lineStyle = LineStyle.Solid;</span>
+<span class="cstat-no" title="statement not covered" >                color = Color.Green;</span>
+<span class="cstat-no" title="statement not covered" >                bulletShape = BulletShape.CircleSolid;</span>
+<span class="cstat-no" title="statement not covered" >                bulletContent = BulletContent.Tick;</span>
+            },
+            [InstalmentStatus.Overdue]: <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                lineStyle = LineStyle.Solid;</span>
+<span class="cstat-no" title="statement not covered" >                color = Color.Red;</span>
+<span class="cstat-no" title="statement not covered" >                bulletShape = BulletShape.CircleSolid;</span>
+<span class="cstat-no" title="statement not covered" >                bulletContent = BulletContent.Cross;</span>
+            }
+        };
+&nbsp;
+        const instalmentStatusFunc = <span class="cstat-no" title="statement not covered" >instalmentStatusMap[this.status];</span>
+<span class="cstat-no" title="statement not covered" >        if (instalmentStatusFunc) {</span>
+<span class="cstat-no" title="statement not covered" >            instalmentStatusFunc();</span>
+        }
+&nbsp;
+        const model = <span class="cstat-no" title="statement not covered" >new VerticalProgressItemModel(color, lineStyle, bulletShape, bulletContent, leftPaneAlignment, rightPaneAlignment, hasShadow, isLast);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return model;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private getDueDateAsDate(): string {</span>
+<span class="cstat-no" title="statement not covered" >        return moment(this.dueDate).format('DD MMM YYYY');</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private getDueDateAsDay(): string {</span>
+<span class="cstat-no" title="statement not covered" >        return moment(this.dueDate).format('dddd');</span>
+    }
+&nbsp;
+    private getDaysBeforeToday(date: Date<span class="fstat-no" title="function not covered" >): number {</span>
+        const days = <span class="cstat-no" title="statement not covered" >moment().diff(moment(date), 'days');</span>
+<span class="cstat-no" title="statement not covered" >        return (days &gt; 0) ? days : 0;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private isDueDateToday(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return moment().diff(moment(this.dueDate), 'days') === 0;</span>
+    }
+}
+&nbsp;
+export enum InstalmentStatus {
+    Due,
+    Upcoming,
+    Paid,
+    Overdue
+}
+&nbsp;
+export interface LeftPane {
+    primaryMessage: string;
+    secondaryMessage: string;
+    isPrimaryMessageGrey: boolean;
+}
+&nbsp;
+export interface RightPane {
+    primaryMessageStatus: string;
+    primaryMessageDueDate: string;
+    secondaryMessage: string;
+    tertiaryMessage: string;
+    isPrimaryMessageGrey: boolean;
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

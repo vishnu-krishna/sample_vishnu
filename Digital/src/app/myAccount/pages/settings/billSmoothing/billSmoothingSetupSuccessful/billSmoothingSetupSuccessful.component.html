@@ -1,0 +1,35 @@
+<div class="bs-modal">
+    <div class="bs-modal-header center">
+        Congratulations, you've set up Bill Smoothing
+    </div>
+    <div class="tick-image">
+        <mat-icon class="large-icon" svgIcon="icon-tick-in-box-large"></mat-icon>
+    </div>
+    <div class="sub-header">
+        What happens now?
+    </div>
+    <div class="row-info">
+        <div class="info-icon"><mat-icon class="email" svgIcon="icon-email"></mat-icon></div>
+        <div class="info-text" [innerHtml]="firstRow"></div>
+    </div>
+    <div class="row-info">
+        <div class="info-icon"><mat-icon class="calendar" svgIcon="icon-calendar"></mat-icon></div>
+        <div class="info-text" [innerHtml]="secondRow"></div>
+    </div>
+    <div class="row-info">
+        <div class="info-icon"><mat-icon class="reminder" svgIcon="icon-reminder"></mat-icon></div>
+        <div class="info-text">We'll regularly review your payments and usage to ensure you're paying the right amount.</div>
+    </div>
+    <div *ngFor="let fuelAndError of fuelAndErrors">
+        <agl-alert alertType="error" heading="Sorry, we couldn't set up Bill Smoothing for {{fuelAndError}}.">
+            <div>
+                Please press close and try again, or contact us <a href="https://www.agl.com.au/residential/contact-us" target="_blank"><span class="link">here</span></a> if this issue persists.
+            </div>
+        </agl-alert>
+    </div>
+    <div class="close-button" (click)="close()">
+        <button mat-raised-button>
+            CLOSE
+        </button>
+    </div>
+</div>

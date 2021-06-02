@@ -1,0 +1,114 @@
+@import '../../../../maui/maui';
+
+@mixin wrapper-padding {
+    padding: $space-04;
+    @media #{$agl-layout-mobile} {
+        padding: $space-03;
+    }
+}
+
+.confirm-detail {
+    padding-top: 50px;
+    max-width: $content-width;
+    margin: 0 auto;
+
+    @media #{$agl-layout-mobile} {
+        padding-left: $space-03;
+        padding-right: $space-03;
+    }
+
+    &__heading {
+        margin-top: $space-06;
+        margin-bottom: $space-04;
+
+        @media #{$agl-layout-mobile} {
+            margin-top: $space-04;
+        }
+    }
+
+    &__details {
+        &-wrapper {
+            @include wrapper-padding;
+        }
+
+        &-heading {
+            font-family: $display-font-stack;
+            font-size: $display-font-size-delta;
+            color: $primary-dark;
+        }
+
+        &-row {
+            padding-top: $space-04;
+            display: flex;
+
+            &-label {
+                min-width: 100px;
+                padding-right: $space-03;
+                font-family: $body-font-stack;
+                font-size: $body-font-size-normal;
+            }
+
+        }
+    }
+
+    &__flash-message {
+        margin-top: $space-03;
+    }
+
+    &__chat {
+        padding-top: $space-04;
+        border-top: 1px solid $neutral-04;
+        margin-top: 30px;
+
+        &-wrapper {
+            position: relative;
+        }
+
+        &-icon {
+            @include maui-icon('svg/webchat/web-chat.svg', 40px, 35px, 0, true);
+        }
+
+        &--agent-unresolved,
+        &--agent-online,
+        &--agent-offline {
+            @extend .text-small-long;
+            @include anchor-styling;
+
+            display: inline-block;
+            margin-left: 70px; /* to make the gap between this and the icon appear even */
+
+            a {
+                white-space: nowrap;
+            }
+
+            @media #{$agl-layout-mobile} {
+                margin-left: 55px;
+            }
+        }
+
+        &--agent-unresolved {
+            display: block;
+            min-height: 42px; /* reserve some space to reduce the popping effect of the text appearing */
+            font-size: $body-font-size-smallest; /* slightly smaller that the actual font */
+            $gap-between-grey-boxes: 2px;
+
+            &-line-1,
+            &-line-2 {
+                background: $neutral-05;
+            }
+
+            &-line-1 {
+                max-width: 95%;
+            }
+
+            &-line-2 {
+                margin-top: $gap-between-grey-boxes;
+                max-width: 300px;
+
+                @media #{$agl-layout-mobile} {
+                    display: none;
+                }
+            }
+        }
+    }
+}

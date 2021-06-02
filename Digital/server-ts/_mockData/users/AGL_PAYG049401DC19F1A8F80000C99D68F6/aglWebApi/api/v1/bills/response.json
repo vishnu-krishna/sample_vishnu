@@ -1,0 +1,236 @@
+[
+    {
+        "account": "20845020",
+        "contract": "9002002507",
+        "bills": [
+            {
+                "billIssued": "2016-02-22T00:00:00",
+                "newCharges": 206.27,
+                "totalDue": 0,
+                "dueDate": "2016-03-11T00:00:00",
+                "printDoc": "3182478529",
+                "startDate": "2015-11-20T00:00:00",
+                "endDate": "2016-02-19T00:00:00",
+                "consumptionNetAmount": 205.21,
+                "consumptionUsage": 613.907,
+                "generatedNetAmount": null,
+                "generatedUsage": null
+            },
+            {
+                "billIssued": "2015-11-20T00:00:00",
+                "newCharges": 212.96,
+                "totalDue": 176.08,
+                "dueDate": "2015-12-10T00:00:00",
+                "printDoc": "3339552296",
+                "startDate": "2015-08-22T00:00:00",
+                "endDate": "2015-11-19T00:00:00",
+                "consumptionNetAmount": 211.82,
+                "consumptionUsage": 670.494,
+                "generatedNetAmount": null,
+                "generatedUsage": null
+            },
+            {
+                "billIssued": "2015-08-24T00:00:00",
+                "newCharges": 226.83,
+                "totalDue": 152.34,
+                "dueDate": "2015-09-11T00:00:00",
+                "printDoc": "3140195679",
+                "startDate": "2015-05-26T00:00:00",
+                "endDate": "2015-08-21T00:00:00",
+                "consumptionNetAmount": 225.69,
+                "consumptionUsage": 770.031,
+                "generatedNetAmount": null,
+                "generatedUsage": null
+            },
+            {
+                "billIssued": "2015-05-26T00:00:00",
+                "newCharges": 199.71,
+                "totalDue": 114.7,
+                "dueDate": "2015-06-16T00:00:00",
+                "printDoc": "3379443916",
+                "startDate": "2015-02-20T00:00:00",
+                "endDate": "2015-05-25T00:00:00",
+                "consumptionNetAmount": 200.48,
+                "consumptionUsage": 718.102,
+                "generatedNetAmount": null,
+                "generatedUsage": null
+            },
+            {
+                "billIssued": "2015-02-20T00:00:00",
+                "newCharges": 183.25,
+                "totalDue": 96.38,
+                "dueDate": "2015-03-13T00:00:00",
+                "printDoc": "3368820513",
+                "startDate": "2014-11-20T00:00:00",
+                "endDate": "2015-02-19T00:00:00",
+                "consumptionNetAmount": 182.29,
+                "consumptionUsage": 623.033,
+                "generatedNetAmount": null,
+                "generatedUsage": null
+            },
+            {
+                "billIssued": "2014-11-20T00:00:00",
+                "newCharges": 170.49,
+                "totalDue": 72.73,
+                "dueDate": "2014-12-10T00:00:00",
+                "printDoc": "3307764117",
+                "startDate": "2014-08-22T00:00:00",
+                "endDate": "2014-11-19T00:00:00",
+                "consumptionNetAmount": 181.03,
+                "consumptionUsage": 661.888,
+                "generatedNetAmount": null,
+                "generatedUsage": null
+            },
+            {
+                "billIssued": "2014-08-22T00:00:00",
+                "newCharges": 209.15,
+                "totalDue": 111.39,
+                "dueDate": "2014-09-11T00:00:00",
+                "printDoc": "3013638349",
+                "startDate": "2014-05-24T00:00:00",
+                "endDate": "2014-08-21T00:00:00",
+                "consumptionNetAmount": 207.96,
+                "consumptionUsage": 720.631,
+                "generatedNetAmount": null,
+                "generatedUsage": null
+            },
+            {
+                "billIssued": "2014-05-26T00:00:00",
+                "newCharges": 198.75,
+                "totalDue": 100.99,
+                "dueDate": "2014-06-16T00:00:00",
+                "printDoc": "3297067744",
+                "startDate": "2014-02-20T00:00:00",
+                "endDate": "2014-05-23T00:00:00",
+                "consumptionNetAmount": 196.59,
+                "consumptionUsage": 641.137,
+                "generatedNetAmount": null,
+                "generatedUsage": null
+            },
+            {
+                "billIssued": "2014-02-20T00:00:00",
+                "newCharges": 177.86,
+                "totalDue": 261.82,
+                "dueDate": "2014-03-13T00:00:00",
+                "printDoc": "3275955725",
+                "startDate": "2013-11-19T00:00:00",
+                "endDate": "2014-02-19T00:00:00",
+                "consumptionNetAmount": 177.86,
+                "consumptionUsage": 610,
+                "generatedNetAmount": null,
+                "generatedUsage": null
+            },
+            {
+                "billIssued": "2013-11-19T00:00:00",
+                "newCharges": 181.72,
+                "totalDue": 83.96,
+                "dueDate": "2013-12-09T00:00:00",
+                "printDoc": "3128830130",
+                "startDate": "2013-08-20T00:00:00",
+                "endDate": "2013-11-18T00:00:00",
+                "consumptionNetAmount": 180.59,
+                "consumptionUsage": 710,
+                "generatedNetAmount": null,
+                "generatedUsage": null
+            },
+            {
+                "billIssued": "2013-08-21T00:00:00",
+                "newCharges": 188.58,
+                "totalDue": 90.82,
+                "dueDate": "2013-09-10T00:00:00",
+                "printDoc": "3244221910",
+                "startDate": "2013-05-23T00:00:00",
+                "endDate": "2013-08-19T00:00:00",
+                "consumptionNetAmount": 187.52,
+                "consumptionUsage": 730,
+                "generatedNetAmount": null,
+                "generatedUsage": null
+            },
+            {
+                "billIssued": "2013-05-23T00:00:00",
+                "newCharges": -148.35,
+                "totalDue": 79.62,
+                "dueDate": "2013-06-13T00:00:00",
+                "printDoc": "3097078091",
+                "startDate": "2013-02-20T00:00:00",
+                "endDate": "2013-05-22T00:00:00",
+                "consumptionNetAmount": 177.38,
+                "consumptionUsage": 650,
+                "generatedNetAmount": null,
+                "generatedUsage": null
+            },
+            {
+                "billIssued": "2013-02-20T00:00:00",
+                "newCharges": 157.91,
+                "totalDue": 227.97,
+                "dueDate": "2013-03-13T00:00:00",
+                "printDoc": "3212461400",
+                "startDate": "2012-11-21T00:00:00",
+                "endDate": "2013-02-19T00:00:00",
+                "consumptionNetAmount": 157.91,
+                "consumptionUsage": 610,
+                "generatedNetAmount": null,
+                "generatedUsage": null
+            }
+        ]
+    },
+	{
+        "account": "20845020",
+        "contract": "9401786528",
+        "bills": [
+            {
+                "billIssued": "2016-02-22T00:00:00",
+                "newCharges": 206.27,
+                "totalDue": 16.12,
+                "dueDate": "2016-03-11T00:00:00",
+                "printDoc": "3182478529",
+                "startDate": "2015-11-20T00:00:00",
+                "endDate": "2016-02-19T00:00:00",
+                "consumptionNetAmount": 205.21,
+                "consumptionUsage": 613.907,
+                "generatedNetAmount": null,
+                "generatedUsage": null
+            },
+            {
+                "billIssued": "2015-11-20T00:00:00",
+                "newCharges": 212.96,
+                "totalDue": 176.08,
+                "dueDate": "2015-12-10T00:00:00",
+                "printDoc": "3339552296",
+                "startDate": "2015-08-22T00:00:00",
+                "endDate": "2015-11-19T00:00:00",
+                "consumptionNetAmount": 211.82,
+                "consumptionUsage": 670.494,
+                "generatedNetAmount": null,
+                "generatedUsage": null
+            },
+            {
+                "billIssued": "2015-08-24T00:00:00",
+                "newCharges": 226.83,
+                "totalDue": 152.34,
+                "dueDate": "2015-09-11T00:00:00",
+                "printDoc": "3140195679",
+                "startDate": "2015-05-26T00:00:00",
+                "endDate": "2015-08-21T00:00:00",
+                "consumptionNetAmount": 225.69,
+                "consumptionUsage": 770.031,
+                "generatedNetAmount": null,
+                "generatedUsage": null
+            },
+            {
+                "billIssued": "2015-05-26T00:00:00",
+                "newCharges": 199.71,
+                "totalDue": 114.7,
+                "dueDate": "2015-06-16T00:00:00",
+                "printDoc": "3379443916",
+                "startDate": "2015-02-20T00:00:00",
+                "endDate": "2015-05-25T00:00:00",
+                "consumptionNetAmount": 200.48,
+                "consumptionUsage": 718.102,
+                "generatedNetAmount": null,
+                "generatedUsage": null
+            }
+        ]
+    }
+]
+

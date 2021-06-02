@@ -1,0 +1,125 @@
+@import '../maui';
+
+@include maui-component-reset();
+
+$svgIconDesktopHeight: 12px;
+$svgIconDesktopWidth: 9px;
+
+$svgIconMobileHeight: 18px;
+$svgIconMobileWidth: 12px;
+
+$iconDesktopMargin: 0 0 0 5px;
+$iconMobileMargin: 24px 0 0 5px;
+
+@mixin icon($width, $height, $iconMargin, $iconSvgUrl) {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: $width $height;
+    background-image: url($iconSvgUrl);
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: $width;
+    height: $height;
+    margin: $iconMargin;
+}
+
+.maui-navigation {
+    width: 100%;
+    position: fixed;
+    line-height: 50px;
+    max-height: 50px;
+    background-color: $neutral-05;
+    transition: max-height 0.3s ease-out;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    z-index: $secondary-navigation-z-index;
+
+    &--hidden {
+        max-height: 0px;
+    }
+
+    &__wrapper {
+        max-width: $max-navigation-width;
+        padding: 0 $space-03;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    &__back-option {
+        cursor: pointer;
+        line-height: 50px;
+        float: left;
+        position: absolute;
+
+        &-text {
+            display: inline-block;
+            margin-left: 20px;
+            font-weight: bold;
+            color: $primary-dark;
+            font-family: $body-font-stack;
+            @media #{$agl-layout-mobile} {
+                display: none;
+            }
+        }
+
+        &-chevron-desktop {
+            @include icon($svgIconDesktopWidth, $svgIconDesktopHeight, $iconDesktopMargin, 'svg/maui/secondaryNavigation/chevron-desktop.svg');
+            display: inline-block;
+            @media #{$agl-layout-mobile} {
+                display: none;
+            }
+        }
+
+        &-chevron-mobile {
+            @include icon($svgIconMobileWidth, $svgIconMobileHeight, $iconMobileMargin, 'svg/maui/secondaryNavigation/chevron-mobile.svg');
+            display: none;
+            @media #{$agl-layout-mobile} {
+                display: block;
+            }
+        }
+    }
+
+    &__header {
+        &-text {
+            font-family: $display-font-stack;
+            font-size: $display-font-size-epsilon;
+            color: $neutral-01;
+            display: block;
+            text-align: center;
+            @media #{$agl-layout-mobile} {
+                display: none;
+            }
+        }
+
+        &-text-mobile {
+            font-family: $display-font-stack;
+            font-size: $display-font-size-epsilon;
+            color: $neutral-01;
+            display: none;
+            @media #{$agl-layout-mobile} {
+                display: block;
+                text-align: center;
+            }
+        }
+    }
+
+    &__page {
+        cursor: pointer;
+        line-height: 50px;
+        position: relative;
+        float: right;
+
+        &-number,
+        &-total {
+            font-size: $body-font-size-small;
+            font-family: $body-font-stack;
+            font-weight: bold;
+            color: $neutral-01;
+        }
+    }
+}

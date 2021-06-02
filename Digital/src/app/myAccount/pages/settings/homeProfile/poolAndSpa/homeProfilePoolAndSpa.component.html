@@ -1,0 +1,70 @@
+<div class="homeprofile-poolandspa">
+    <agl-home-profile-header [accountNumber]="accountNumber" [contractNumber]="contractNumber" pageHeading="Pool and spa"></agl-home-profile-header>
+
+    <div *ngIf="isLoading" class="homeprofile-landing__loader">
+        <agl-loader></agl-loader>
+    </div>
+
+    <div *ngIf="!isLoading" class="homeprofile-poolandspa-body">
+        <div class="homeprofile-poolandspa-questionnaire">
+            <div class="homeprofile-poolandspa-questionnaire__heading">Do you have a pool and/or spa?</div>
+            <div class="homeprofile-poolandspa-questionnaire-item" data-test="pool">
+                <div class="homeprofile-poolandspa-questionnaire-item__question">Do you have a pool?</div>
+                <agl-maui-segmented-buttons class="homeprofile-poolandspa__segmented-buttons" (change)="setHasPool($event)">
+                    <agl-maui-segmented-button
+                        *ngFor="let option of hasPoolOptions"
+                        value="{{option.value}}"
+                        text="{{option.text}}"
+                        [attr.data-test]="option.text"
+                        [selected]="homeProfile.hasPool === option.value">
+                    </agl-maui-segmented-button>
+                </agl-maui-segmented-buttons>
+                <div *ngIf="homeProfile.hasPool">
+                    <div class="homeprofile-poolandspa-questionnaire-item__sub-question">What size is your pool?</div>
+                    <agl-maui-radio-button-group class="homeprofile-poolandspa__radio-group" name="homeprofile-poolandspa-pool-size" selectedValue="{{homeProfile.poolSize}}" (selectedValueChange)="setPoolSize($event)">
+                        <agl-maui-radio-button *ngFor="let option of poolSizeOptions" [value]="option.value" [attr.data-test]="option.text">
+                            <div label>
+                                {{option.text}}
+                            </div>
+                        </agl-maui-radio-button>
+                    </agl-maui-radio-button-group>
+
+                    <div class="homeprofile-poolandspa-questionnaire-item__sub-question">How is your pool heated?</div>
+                    <agl-maui-radio-button-group class="homeprofile-poolandspa__radio-group" name="homeprofile-poolandspa-pool-heatertype" [selectedValue]="homeProfile.poolHeaterType" (selectedValueChange)="setPoolHeaterFuelType($event)">
+                        <agl-maui-radio-button *ngFor="let option of poolHeaterTypeOptions" [value]="option.value" [attr.data-test]="option.text">
+                            <div label>
+                                {{option.text}}
+                            </div>
+                        </agl-maui-radio-button>
+                    </agl-maui-radio-button-group>
+
+                    <div class="homeprofile-poolandspa-questionnaire-item__sub-question">How old is your pool pump?</div>
+                    <agl-maui-radio-button-group class="homeprofile-poolandspa__radio-group" name="homeprofile-poolandspa-pool-age" [selectedValue]="homeProfile.poolPumpAge" (selectedValueChange)="setPoolPumpAge($event)">
+                        <agl-maui-radio-button *ngFor="let option of poolPumpAgeOptions" [value]="option.value" [attr.data-test]="option.text">
+                            <div label>
+                                {{option.text}}
+                            </div>
+                        </agl-maui-radio-button>
+                    </agl-maui-radio-button-group>
+
+                </div>
+            </div>
+            <div class="homeprofile-poolandspa-questionnaire-item" data-test="spa">
+                <div class="homeprofile-poolandspa-questionnaire-item__question">Do you have a spa?</div>
+                <agl-maui-segmented-buttons class="homeprofile-poolandspa__segmented-buttons" (change)="setHasSpa($event)">
+                    <agl-maui-segmented-button
+                        *ngFor="let option of hasSpaOptions"
+                        value="{{option.value}}"
+                        text="{{option.text}}"
+                        [attr.data-test]="option.text"
+                        [selected]="homeProfile.hasSpa === option.value">
+                    </agl-maui-segmented-button>
+                </agl-maui-segmented-buttons>
+            </div>
+        </div>
+    </div>
+
+    <div class="homeprofile-poolandspa-footer">
+        <agl-home-profile-footer [accountNumber]="accountNumber" [contractNumber]="contractNumber"></agl-home-profile-footer>
+    </div>
+</div>

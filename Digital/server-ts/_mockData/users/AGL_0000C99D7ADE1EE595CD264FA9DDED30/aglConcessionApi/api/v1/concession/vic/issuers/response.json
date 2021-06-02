@@ -1,0 +1,37 @@
+{
+  "status": 200,
+  "body":
+    [
+        {
+            "issuer": "Department of Veterans' Affairs",
+            "issuerCode": "DVA",
+            "cards": [{
+                    "cardCode": "GOLD_TPI",
+                    "name": "Totally Permanently Incapacitated",
+                    "eligibleFuelTypes": ["Electricity", "Gas"]
+                },
+                {
+                    "cardCode": "WAW",
+                    "name": "War Widow (gas only)",
+                    "eligibleFuelTypes": ["Gas"]
+                }
+            ]
+        },
+        {
+            "issuer": "Centrelink",
+            "issuerCode": "CTLK",
+            "cards": [
+                {
+                    "cardCode": "HEALTHCARE",
+                    "name": "Health Care Card",
+                    "eligibleFuelTypes": ["Electricity", "Gas"]
+                },
+                {
+                    "cardCode": "PENSIONER",
+                    "name": "Pensioner Concession Card (elec only)",
+                    "eligibleFuelTypes": ["Electricity"]
+                }
+            ]
+        }
+    ]
+}

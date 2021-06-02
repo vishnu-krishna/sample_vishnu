@@ -1,0 +1,45 @@
+@import '../../../../../shared/style/variables';
+@import '../../../../../shared/style/mixins';
+@import '../../../../../shared/style/tempdls';
+@import '../../../../../myAccount/maui/maui';
+
+.ssmr-safety-screen {
+    text-align: center;
+    padding: 0 20px;
+
+    @media #{$agl-layout-desktop-medium-and-greater} {
+        width: 580px;
+    }
+
+    .heading {
+        font-size: 25px;
+        line-height: 42px;
+        font-weight: bold;
+        font-family: $primary-font-stack;
+
+        @media #{$agl-layout-desktop-medium-and-greater} {
+            font-size: $display-font-size-alpha;
+            padding: 0 50px;
+        }
+    }
+
+    .icon {
+        margin-top: 20px;
+        margin-bottom: $space-04;
+    }
+
+    .content {
+        margin-bottom: $space-03;
+        line-height: 22px;
+    }
+
+    .button__continue {
+        margin-top: 50px;
+
+        a {
+            height: 50px;
+            padding: 7px 80px;
+            border-radius: 4px;
+        }
+    }
+}

@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\bills\paymentAssistance\select\services\fuelChip.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/bills/paymentAssistance/select/services/</a> fuelChip.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.85% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>22/65</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">30.77% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>8/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.14% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">35.19% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>19/54</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+&nbsp;
+import { FuelChipDataModel } from '../models';
+import { MauiFuelChipFuelType, FuelChipContractAccountDetails, FuelChipContract, MauiFuelChipFuelContext } from '../../../../../maui/fuelChip';
+import { IAccountServiceMA, AccountViewModel, ContractViewModel } from '../../../../../services/account.service';
+import { IPaymentExtensionEligibility, PaymentExtensionContractEligibility } from '../../../../../services/paymentScheme/paymentExtensionEligibility.service';
+import { IFuelChipClassificationService, ClassifiedFuelChips } from './fuelChipClassification.service';
+import { Observer } from 'rxjs';
+&nbsp;
+<span class="fstat-no" title="function not covered" >export abstract class IFuelChipService {</span>
+    public abstract get classifiedFuelChips(): ClassifiedFuelChips;
+    public abstract init(accountNumber?: string, contractNumber?: string): Observable&lt;ClassifiedFuelChips&gt;;
+}
+&nbsp;
+@Injectable()
+export class FuelChipService implements IFuelChipService {
+    private <span class="cstat-no" title="statement not covered" >fuelChipDetails: FuelChipDataModel[] = [];</span>
+    private classificationResults: ClassifiedFuelChips;
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public get classifiedFuelChips(): ClassifiedFuelChips {</span>
+<span class="cstat-no" title="statement not covered" >        return this.classificationResults;</span>
+    }
+&nbsp;
+    constructor(private <span class="cstat-no" title="statement not covered" >accountService: IAccountServiceMA,</span>
+                private <span class="cstat-no" title="statement not covered" >paymentExtensionEligibilityService: IPaymentExtensionEligibility<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+                private <span class="cstat-no" title="statement not covered" >fuelChipClassificationService: IFuelChipClassificationService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >)</span> {</span></span>
+    }
+&nbsp;
+    // Note accountNumber/contractNumber is not currently in use. This is for potential future support
+<span class="cstat-no" title="statement not covered" >    public init(accountNumber?: string, contractNumber?: string<span class="fstat-no" title="function not covered" >): Observable&lt;ClassifiedFuelChips&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        this.fuelChipDetails = [];</span>
+<span class="cstat-no" title="statement not covered" >        return Observable.create((observer<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            this.accountService.getAccounts()</span>
+                .subscribe((contractAccounts: AccountViewModel[]<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+                    let fuelChipAccountDetails = <span class="cstat-no" title="statement not covered" >this.buildFuelChipAccountDetails(contractAccounts);</span>
+&nbsp;
+                    let filteredAccounts: AccountViewModel[] = <span class="cstat-no" title="statement not covered" >this.getFilteredAccounts(accountNumber, contractAccounts);</span>
+&nbsp;
+                    let eligibilityRequestsObservable = <span class="cstat-no" title="statement not covered" >this.getEligibilityRequests(filteredAccounts);</span>
+<span class="cstat-no" title="statement not covered" >                    this.processEligiblityRequests(eligibilityRequestsObservable, observer, contractNumber, filteredAccounts, fuelChipAccountDetails);</span>
+&nbsp;
+                });
+        });
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    private processEligiblityRequests(eligibilityRequestsObservable, observer: Observer&lt;ClassifiedFuelChips&gt;, contractNumber: string, filteredAccounts: AccountViewModel[], fuelChipAccountDetails: FuelChipContractAccountDetails[]<span class="fstat-no" title="function not covered" >) {</span></span>
+&nbsp;
+        // subscribe to the eligibility per contract account and classify all of them together in the finally method.
+<span class="cstat-no" title="statement not covered" >        Observable.merge(...eligibilityRequestsObservable)</span>
+            .finally(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.fuelChipClassificationService.classify(this.fuelChipDetails)</span>
+                    .subscribe((result<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        this.classificationResults = result;</span>
+<span class="cstat-no" title="statement not covered" >                        observer.next(this.classificationResults);</span>
+<span class="cstat-no" title="statement not covered" >                        observer.complete();</span>
+                    });
+            })
+            .subscribe((eligibilityResult: PaymentExtensionContractEligibility<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.processEligibilityResults(contractNumber, eligibilityResult, filteredAccounts, fuelChipAccountDetails);</span>
+            });
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    private getEligibilityRequests(filteredAccounts: AccountViewModel[]<span class="fstat-no" title="function not covered" >): Array&lt;Observable&lt;{} | PaymentExtensionContractEligibility&gt;&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        return filteredAccounts.map((contractAccount: AccountViewModel<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            return this.paymentExtensionEligibilityService.getContractAccountEligibility(contractAccount.accountNumber);</span>
+        })
+        .map((obs<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >obs.catch(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >Observable.empty())</span></span>)</span></span>;
+    }
+&nbsp;
+    private getFilteredAccounts(accountNumber: string, contractAccounts: AccountViewModel[]<span class="fstat-no" title="function not covered" >): AccountViewModel[] {</span>
+<span class="cstat-no" title="statement not covered" >        return accountNumber ?</span>
+            contractAccounts.filter((account<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >account.accountNumber === accountNumber)</span></span> :
+            contractAccounts;
+    }
+&nbsp;
+    private processEligibilityResults(contractNumber: string, eligibilityResult: PaymentExtensionContractEligibility, filteredAccounts: AccountViewModel[], fuelChipAccountDetails: FuelChipContractAccountDetails[]<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        if (!contractNumber || (contractNumber === eligibilityResult.contractNumber)) {</span>
+            const contract = <span class="cstat-no" title="statement not covered" >this.getContract(eligibilityResult.contractNumber, filteredAccounts);</span>
+            // ignore the contract that is restricted or doesnt exist in accountList api
+<span class="cstat-no" title="statement not covered" >            if (contract) {</span>
+                const eligibilityResultAccountNumber = <span class="cstat-no" title="statement not covered" >fuelChipAccountDetails.filter((account<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >account.contracts.find((c<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >c.contractNumber === eligibilityResult.contractNumber)</span></span>)</span></span>[0].accountNumber;</span>
+                let fuelChipData = <span class="cstat-no" title="statement not covered" >new FuelChipDataModel(eligibilityResultAccountNumber, eligibilityResult.contractNumber, MauiFuelChipFuelType[contract.fuelType], fuelChipAccountDetails, eligibilityResult, MauiFuelChipFuelContext.Bill);</span>
+<span class="cstat-no" title="statement not covered" >                this.fuelChipDetails.push(fuelChipData);</span>
+            }
+        }
+    }
+&nbsp;
+    private buildFuelChipAccountDetails(contractAccounts: AccountViewModel[]<span class="fstat-no" title="function not covered" >): FuelChipContractAccountDetails[] {</span>
+<span class="cstat-no" title="statement not covered" >        return contractAccounts.map((contractAccount: AccountViewModel<span class="fstat-no" title="function not covered" >) =&gt;</span></span>
+<span class="cstat-no" title="statement not covered" >            new FuelChipContractAccountDetails(contractAccount.accountNumber,</span>
+                contractAccount.contracts.map((contract: ContractViewModel<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >new FuelChipContract(contract.contractNumber,</span></span>
+                    contractAccount.groupedAddress || contract.address,
+                    MauiFuelChipFuelType[contract.fuelType],
+                    contract.regionId))));
+    }
+&nbsp;
+    private getContract(contractNumber: string, contractAccounts: AccountViewModel[]<span class="fstat-no" title="function not covered" >): ContractViewModel {</span>
+        const contractAccount = <span class="cstat-no" title="statement not covered" >contractAccounts.find((ca<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >!ca.allContractsAreRestricted</span></span></span>
+            &amp;&amp; ca.contracts.some((contract<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >!contract.isRestricted &amp;&amp; contract.contractNumber === contractNumber)</span></span>);
+<span class="cstat-no" title="statement not covered" >        return contractAccount ? contractAccount.contracts.find((contract<span class="fstat-no" title="function not covered" >) =&gt; <span class="cstat-no" title="statement not covered" >contract.contractNumber === contractNumber)</span></span> : null;</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Apr 01 2018 20:01:19 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../../sorter.js"></script>
+</body>
+</html>

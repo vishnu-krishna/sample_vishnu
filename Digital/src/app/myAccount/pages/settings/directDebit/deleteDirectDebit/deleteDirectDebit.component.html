@@ -1,0 +1,30 @@
+<div class="delete-dd">
+    <div>
+        <div class="delete-dd__header">
+            <span>{{title}}</span>
+        </div>        
+        <div class="delete-dd__address" *ngIf="isMultiAccount">
+            <div [class.delete-dd__address__single-address]="!isAccountWithMultiAddresses()" [class.delete-dd__address__multi-addresses]="isAccountWithMultiAddresses()">
+                <div class="delete-dd__address__acc-icon">
+                    <div class="delete-dd__address--account-no">Account no: {{accountDetailModel.contractAccountNumber | aglAddSpaces}}</div>
+                    <div class="delete-dd__address--fuel-icons">
+                        <mat-icon *ngFor="let icon of elecIcons" svgIcon="icon-elec-enabled" alt="electricity icon"></mat-icon>
+                        <mat-icon *ngFor="let icon of gasIcons" svgIcon="icon-gas-enabled" alt="gas icon"></mat-icon>
+                    </div>
+                </div>
+                <div *ngIf="!isAccountWithMultiAddresses()" class="delete-dd__address--address">
+                        {{accountDetailModel.supplyAddresses[0]}}
+                </div>
+                <div *ngIf="isAccountWithMultiAddresses()" class="delete-dd__address--multiaddress">
+                        and associated addresses                    
+                </div>
+            </div>
+        </div>        
+        <div class="delete-dd__body" [innerHTML]="description"></div>
+        <div class="delete-dd__body" *ngIf="showMessage">If you have an amount due you'll need to use another payment method.</div>
+    </div>
+    <div class="delete-dd__button">
+        <button mat-raised-button color="accent" (click)="removeOrSwitchPaymentArrangement()" [class.is-loading]="isLoading">{{deleteButtonText}}</button>
+        <button mat-raised-button class="delete-dd__button--white" (click)="closeModal()">{{keepButtonText}}</button>
+    </div>
+</div>

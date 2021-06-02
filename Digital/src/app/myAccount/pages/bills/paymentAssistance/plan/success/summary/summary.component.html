@@ -1,0 +1,15 @@
+<div *ngIf="summaryModel" class="payment-assistance-plan-success-summary">
+    <div class="payment-assistance-plan-success-summary__body-header">Instalment plan summary</div>
+    <div class="payment-assistance-plan-success-summary__body-table-row">
+        <div>Total to pay:</div>
+        <div class="payment-assistance-plan-success-summary__total-due">${{ summaryModel.totalDue | number:'.2-2' }}</div>
+    </div>
+    <div class="payment-assistance-plan-success-summary__body-table-row">
+        <div>Instalments due:</div>
+        <div class="payment-assistance-plan-success-summary__instalments-due">{{ formatInstalmentsDue(summaryModel.frequency, summaryModel.startDate) }}</div>
+    </div>
+    <div class="payment-assistance-plan-success-summary__body-table-row">
+        <div>First instalment due:</div>
+        <div class="payment-assistance-plan-success-summary__first-instalment-due">{{ formatFirstInstalmentDue(summaryModel.firstInstalmentDue) }}</div>
+    </div>
+</div>

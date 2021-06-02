@@ -1,0 +1,24 @@
+<div class="main-card-options__edit">
+    <h4>Monthly billing</h4>
+    <agl-loader *ngIf="isLoadingBillingFrequency"></agl-loader>
+    <a (click)="onClickLink(billingSettingsAccountViewModel?.account)" *ngIf="showLink()">{{linkText}}</a>
+    <div *ngIf="isLoadingEligibility" class="monthly-billing-link__loader">
+        <img src="svg/button-spinner.svg" alt="loading">
+    </div>
+</div>
+<div class="main-card-options__content" *ngIf="!isLoadingBillingFrequency && !billingFrequencyFailed">
+    <div class="main-card-options__message" *ngIf="!monthlyBillingInfo?.areAllContractsInflight">
+        {{message}}
+    </div>
+    <agl-maui-flash-message [type]="FlashMessageType.Inform" *ngIf="monthlyBillingInfo?.areAllContractsInflight">
+        <div heading>Your account setup is in progress</div>
+        <div subheading>Monthly billing will be available once set up is complete. Please check back soon.</div>
+    </agl-maui-flash-message>
+</div>
+
+<div class="main-card-options__error" *ngIf="(eligibilityFailed || billingFrequencyFailed) && !isLoadingEligibility">
+    <agl-maui-flash-message [type]="FlashMessageType.Error">
+        <div heading>Sorry we can't retrieve your data right now</div>
+        <div subheading>Please reload the page and try again. If the issue persists, you can get in touch with us <a href="https://www.agl.com.au/residential/contact-us" target="_blank">here</a> and we'll sort it out.</div>
+    </agl-maui-flash-message>
+</div>

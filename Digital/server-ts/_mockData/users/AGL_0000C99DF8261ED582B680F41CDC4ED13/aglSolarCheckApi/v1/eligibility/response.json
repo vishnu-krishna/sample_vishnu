@@ -1,0 +1,15 @@
+{
+	"eligible": true,
+	"contracts": [{
+			"contractNumber": "12345",			
+			"registered": false,
+			"registrationStatus": "Deregistered",
+			"eligible": true
+		}, {
+			"contractNumber": "67890",			
+			"registered": false,
+			"registrationStatus": "NotRegistered",
+			"eligible": false
+		}
+	]
+}

@@ -1,0 +1,18 @@
+{
+  "status": 200,
+  "headers": { },
+  "body": {
+    "hasMultipleBusinessPartners": false,
+    "businessPartners": [
+      {
+        "firstName": "Kitty",
+        "lastName": "Pryde",
+        "businessPartnerNumber": "0901952832",
+        "phone": "",
+        "mobile": "0426296614",
+        "email": null,
+        "hasDateOfBirth": true
+      }
+    ]
+  }
+}

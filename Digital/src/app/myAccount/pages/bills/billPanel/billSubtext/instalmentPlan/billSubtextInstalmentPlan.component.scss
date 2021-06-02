@@ -1,0 +1,40 @@
+@import '../../../../../../shared/style/variables';
+@import '../../../../../maui/maui_space';
+@import '../../../../../maui/maui_colour';
+
+.bill-panel-instalment-plan-message-panel {
+    &__tick-icon {
+        height: 34px;
+        width: 36px;
+        margin-bottom: $space-04;
+    }
+
+    &__title {
+        color: $brand-grey-g1;
+        font-size: 30px;
+        font-family: $primary-font-stack;
+        font-weight: bold;
+        line-height: 33px;
+        @media #{$agl-layout-mobile} {
+            max-width: 100%;
+        }
+    }
+
+    &__subtext {
+        color: $brand-grey-g1;
+        line-height: 22px;
+        font-size: 16px;
+        font-weight: normal;
+        max-width: 350px;
+        padding-top: $space-03;
+        @media #{$agl-layout-mobile} {
+            max-width: 100%;
+        }
+    }
+
+    &__instalment-plan-bill-period {
+        margin-top: $space-04;
+        border-top: 1px solid $neutral-04;
+        padding-bottom: $space-04;
+    }
+}

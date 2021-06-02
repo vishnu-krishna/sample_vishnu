@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<testsuite name="HeadlessChrome 66.0.3359 (Windows 10.0.0)" package="" timestamp="2018-06-04T10:27:37" id="0" hostname="ADMINRG-TSLI675" tests="2628" errors="1" failures="0" time="13.071">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/66.0.3359.181 Safari/537.36"/>
+  </properties>
+  <testcase name="BillHistory When number of bills is 0 should show when the next bill is issued (in days)" time="1.085" classname="BillHistory"/>
+  <testcase name="BillHistory When number of bills is 3 or less should not show &quot;See More&quot; button or &quot;No more bills&quot; message" time="0.413" classname="BillHistory"/>
+  <testcase name="BillHistory When number of bills is 4 or more should replace &quot;See More&quot; button with &quot;No more bills&quot; message when all 4 bills are displayed" time="0.575" classname="BillHistory"/>
+  <testcase name="BillHistory When number of bills is 4 or more should replace &quot;See More&quot; button with &quot;No more bills&quot; message when all 15 bills are displayed" time="1.196" classname="BillHistory"/>
+  <testcase name="BillHistory When number of bills is 4 or more should replace &quot;See More&quot; button with &quot;No more bills&quot; message when all 26 bills are displayed" time="1.104" classname="BillHistory"/>
+  <testcase name="BillHistory When &quot;Show More&quot; button is clicked should show a full page of bills" time="0.692" classname="BillHistory"/>
+  <testcase name="BillHistory When &quot;Show More&quot; button is clicked should show all bills when &quot;See More&quot; button is clicked at least twice" time="0.291" classname="BillHistory"/>
+  <testcase name="BillHistory When bill is in credit should show amount in credit" time="0.33" classname="BillHistory"/>
+  <testcase name="BillHistory When bill smoothing is turned on should not show bill status" time="0.325" classname="BillHistory"/>
+  <testcase name="BillHistory When bill smoothing is turned on should show bill smoothing statement" time="0.595" classname="BillHistory"/>
+  <testcase name="BillHistory When &quot;Total to pay&quot; &lt;= 0 should show all bill status as &quot;Paid&quot;" time="0.369" classname="BillHistory"/>
+  <testcase name="BillHistory When &quot;Total to pay&quot; &lt;= the latest bill should show &quot;Pay now&quot; for the latest bill and &quot;Paid&quot; for the rest" time="0.587" classname="BillHistory"/>
+  <testcase name="BillHistory When &quot;Total to pay&quot; > the latest bill should show not show any bill status" time="0.375" classname="BillHistory"/>
+  <testcase name="BasicMeterChartComponent should use the function getLatestBillsAsc to compare bills and sort them in order" time="0.172" classname="BasicMeterChartComponent"/>
+  <testcase name="BasicMeterChartComponent should use the function zeroNegativeBillCharges to make any negative charges zero for graphing" time="0.054" classname="BasicMeterChartComponent"/>
+  <testcase name="BasicMeterChartComponent should use the function buildHeading to create the heading Previous bill" time="0.101" classname="BasicMeterChartComponent"/>
+  <testcase name="BasicMeterChartComponent should use the function buildHeading to create the heading Last 2 bills" time="0.059" classname="BasicMeterChartComponent"/>
+  <testcase name="BasicMeterChartComponent should use the function buildHeading to create the heading Last 3 bills" time="0.053" classname="BasicMeterChartComponent"/>
+  <testcase name="BasicMeterChartComponent should use the function buildBars to set the 10 Jun chart bar to 50%" time="0.038" classname="BasicMeterChartComponent"/>
+  <testcase name="NoDataChartComponent should have first bill issued shortly for elec contract" time="0.087" classname="NoDataChartComponent"/>
+  <testcase name="NoDataChartComponent should have first bill issued shortly for gas contract" time="0.103" classname="NoDataChartComponent"/>
+  <testcase name="NoDataChartComponent should show inFlight tile for elec contract" time="0.314" classname="NoDataChartComponent"/>
+  <testcase name="NoDataChartComponent should show inFlight tile for gas contract" time="0.185" classname="NoDataChartComponent"/>
+  <testcase name="Smart Meter Should have a arc of 0% should show an arc of 0%" time="0.849" classname="Smart Meter"/>
+  <testcase name="Smart Meter Should have a arc of 49% should show an arc of 49%" time="1.102" classname="Smart Meter"/>
+  <testcase name="Smart Meter Should have a arc of 100% should show an arc of 100%" time="1.399" classname="Smart Meter"/>
+  <testcase name="Smart Meter Should display different based on scenarios should show electric vehicle" time="0.618" classname="Smart Meter"/>
+  <testcase name="Button Stack Should show feature jump link with hero image and button if featured" time="0" classname="Button Stack">
+    <skipped/>
+  </testcase>
+  <testcase name="Button Stack Should show simple link if not featured" time="0" classname="Button Stack">
+    <skipped/>
+  </testcase>
+  <testcase name="Button Stack Should show OMM-track home link - Request Received status" time="0" classname="Button Stack">
+    <skipped/>
+  </testcase>
+  <testcase name="Button Stack Should show OMM-track home link - processing status" time="0" classname="Button Stack">
+    <skipped/>
+  </testcase>
+  <testcase name="Button Stack Should show OMM-track home link - Ready to connect status" time="0" classname="Button Stack">
+    <skipped/>
+  </testcase>
+  <system-out>
+    <![CDATA[HeadlessChrome 66.0.3359 (Windows 10.0.0) ERROR
+  Disconnected, because no message in 10000 ms.
+
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>

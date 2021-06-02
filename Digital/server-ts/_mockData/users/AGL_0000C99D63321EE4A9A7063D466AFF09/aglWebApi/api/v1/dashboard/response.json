@@ -1,0 +1,34 @@
+[
+    {
+        "account": "7016475233",
+        "contract": "9141449436",
+        "currentBillStartDate": "2016-12-26T00:00:00",
+        "currentBillEndDate": "2017-03-28T00:00:00",
+        "costToDate": 163.53,
+        "projectedBill": 394.79,
+        "usageCostThisWeek": 12.354000,
+        "usageCostLastWeek": 16.688210,
+        "usageThisWeek": "45.403",
+        "usageLastWeek": "61.331",
+        "balance": 0.0,
+        "dueDate": "0001-01-01T00:00:00",
+        "isSmartMeter": true,
+        "estimatedReads": false
+    },
+    {
+        "account": "7016475233",
+        "contract": "9141934597",
+        "currentBillStartDate": "0001-01-01T00:00:00",
+        "currentBillEndDate": "2017-02-20T00:00:00",
+        "costToDate": 0.0,
+        "projectedBill": 0.0,
+        "usageCostThisWeek": 0.469152,
+        "usageCostLastWeek": 0.0,
+        "usageThisWeek": "27.43128684839568",
+        "usageLastWeek": "0",
+        "balance": 0.0,
+        "dueDate": "0001-01-01T00:00:00",
+        "isSmartMeter": false,
+        "estimatedReads": false
+    }
+]

@@ -1,0 +1,14 @@
+{
+  "status": 200,
+  "headers": {},
+  "body":
+  {
+    "cardAvailable": true,
+    "concessionCard": {
+      "cardNumber": "111-111 222B",
+      "cardCode": "GOLD_TPI",
+      "cardName": "Gold Card Totally and Permanently Incapacitated (TPI)",
+      "issuerCode": "DVA"
+    }
+  }
+}

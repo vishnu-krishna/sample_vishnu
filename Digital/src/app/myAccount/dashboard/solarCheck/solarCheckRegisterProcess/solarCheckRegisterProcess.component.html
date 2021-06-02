@@ -1,0 +1,5 @@
+<agl-solar-check-welcome [class.hide]='hideWelcome' (next)='handleNext($event)'></agl-solar-check-welcome>
+<agl-solar-check-prequisite [class.hide]='hidePrerequiste' (back)='handlePrevious($event)' (next)='handleNext($event)' [contract]='contract'></agl-solar-check-prequisite>
+<agl-solar-check-unsuitable [class.hide]='hideUnsuitable' (back)='handlePrevious($event)' (next)='handleNext($event)' [contract]='contract'></agl-solar-check-unsuitable>
+<agl-solar-check-solar-details [class.hide]='hideSolarDetails' (back)='handlePrevious($event)' (next)='handleNext($event)' [scDetailsModel]='scDetailsModel' [isUpdate]="isUpdate"></agl-solar-check-solar-details>
+<agl-solar-check-register [class.hide]='hideRegister' (back)='handlePrevious($event)' (next)='handleNext($event)' [scDetailsModel]='scDetailsModel' [contract]='contract'></agl-solar-check-register>

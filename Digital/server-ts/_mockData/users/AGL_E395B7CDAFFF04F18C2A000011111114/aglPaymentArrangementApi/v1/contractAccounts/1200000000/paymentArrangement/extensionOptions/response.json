@@ -1,0 +1,116 @@
+{
+    "status": 200,
+    "headers": {},
+    "body":
+        {
+            "contractAccountNumber": 1200000000,
+            "extensionOptions": [
+                {
+                    "contractNumber": 1211111111,
+                    "isEligible": true,
+                    "dueDate": "2018-03-10T14:00:00Z",
+                    "totalDueAmount": 70.28,
+                    "dueDateExtensions": [
+                        {
+                            "numberOfDays": 7,
+                            "date": "2018-03-16T14:00:00Z"
+                        },
+                        {
+                            "numberOfDays": 14
+                        },
+                        {
+                            "numberOfDays": 21
+                        }
+                    ]
+                },
+                {
+                    "contractNumber": 1222222222,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Please ensure we have at least one open item for P2P creation",
+                        "internalError": {
+                            "errorNumber": "005",
+                            "description": "Open balance but with restrictions (e.g. fees not applied until next bill)"
+                        }
+                    }
+                },
+                {
+                    "contractNumber": 1233333333,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Invalid for OPA: Contract & 1 has an active Payment Scheme",
+                        "internalError": {
+                            "errorNumber": "008",
+                            "description": "Could be Bill Smoothing 2.0, or APA"
+                        }
+                    }
+                },
+                {
+                    "contractNumber": 1244444444,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Invalid for OPA: Contract & 1 has an active Bill Smoothing",
+                        "internalError": {
+                            "errorNumber": "009",
+                            "description": "BS 1.0 If this is only response route to webchat, or generic ineligible"
+                        }
+                    }
+                },
+                {
+                    "contractNumber": 1255555555,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Invalid for OPA: Contract & 1 is on a PAYG Product",
+                        "internalError": {
+                            "errorNumber": "010",
+                            "description": "Cannot set up because you are on AGL Prepaid"
+                        }
+                    }
+                },
+                {
+                    "contractNumber": 1266666666,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Invalid for OPA: Contract Account is flagged for Ombusman",
+                        "internalError": {
+                            "errorNumber": "011",
+                            "description": "If this is only response route to webchat, or generic ineligible"
+                        }
+                    }
+                },
+                {
+                    "contractNumber": 1277777777,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Invalid for OPA: Contract Account is flagged for Hardship",
+                        "internalError": {
+                            "errorNumber": "012",
+                            "description": "If this is only response route to webchat, or generic ineligible"
+                        }
+                    }
+                },
+                {
+                    "contractNumber": 1288888888,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Invalid for OPA: Contract Account is a Collective Account",
+                        "internalError": {
+                            "errorNumber": "013",
+                            "description": "If this is only response route to webchat, or generic ineligible"
+                        }
+                    }
+                },
+                {
+                    "contractNumber": 1299999999,
+                    "isEligible": false,
+                    "error": {
+                        "message": "Invalid for OPA: Contract Account has an Open Dispute",
+                        "internalError": {
+                            "errorNumber": "014",
+                            "description": "If this is only response route to webchat, or generic ineligible"
+                        }
+                    }
+                }
+            ]
+        }
+}

@@ -1,0 +1,378 @@
+[
+    {
+        "account": "1200000000",
+        "contract": "1211111111",
+        "bills": [
+            {
+                "billIssued": "2018-07-13T00:00:00",
+                "newCharges": 52.16,
+                "totalDue": -70.28,
+                "dueDate": "2018-08-03T00:00:00",
+                "printDoc": "1211",
+                "startDate": "2018-03-05T00:00:00",
+                "endDate": "2018-06-06T00:00:00",
+                "consumptionNetAmount": 312.14,
+                "consumptionUsage": 1329,
+                "generatedNetAmount": -364.3,
+                "generatedUsage": 714
+            },
+            {
+                "billIssued": "2018-03-07T00:00:00",
+                "newCharges": 28.37,
+                "totalDue": -439.96,
+                "dueDate": "2018-03-29T00:00:00",
+                "printDoc": "1212",
+                "startDate": "2018-04-04T00:00:00",
+                "endDate": "2018-05-04T00:00:00",
+                "consumptionNetAmount": 390.67,
+                "consumptionUsage": 1633,
+                "generatedNetAmount": -419.04,
+                "generatedUsage": 819
+            }
+        ]
+    },
+    {
+        "account": "1200000000",
+        "contract": "1222222222",
+        "bills": [
+            {
+                "billIssued": "2018-07-13T00:00:00",
+                "newCharges": 23.16,
+                "totalDue": -70.28,
+                "dueDate": "2018-08-03T00:00:00",
+                "printDoc": "1221",
+                "startDate": "2018-03-05T00:00:00",
+                "endDate": "2018-06-06T00:00:00",
+                "consumptionNetAmount": 312.14,
+                "consumptionUsage": 1329,
+                "generatedNetAmount": -364.3,
+                "generatedUsage": 714
+            },
+            {
+                "billIssued": "2018-03-07T00:00:00",
+                "newCharges": 55.37,
+                "totalDue": -439.96,
+                "dueDate": "2018-03-30T00:00:00",
+                "printDoc": "1222",
+                "startDate": "2018-02-04T00:00:00",
+                "endDate": "2018-03-04T00:00:00",
+                "consumptionNetAmount": 390.67,
+                "consumptionUsage": 1633,
+                "generatedNetAmount": -419.04,
+                "generatedUsage": 819
+            }
+        ]
+    },
+    {
+        "account": "1200000000",
+        "contract": "1233333333",
+        "bills": [
+            {
+                "billIssued": "2018-07-13T00:00:00",
+                "newCharges": 23.16,
+                "totalDue": -70.28,
+                "dueDate": "2018-08-03T00:00:00",
+                "printDoc": "1221",
+                "startDate": "2018-03-05T00:00:00",
+                "endDate": "2018-06-06T00:00:00",
+                "consumptionNetAmount": 312.14,
+                "consumptionUsage": 1329,
+                "generatedNetAmount": -364.3,
+                "generatedUsage": 714
+            },
+            {
+                "billIssued": "2018-03-07T00:00:00",
+                "newCharges": 55.37,
+                "totalDue": -439.96,
+                "dueDate": "2018-03-30T00:00:00",
+                "printDoc": "1222",
+                "startDate": "2018-02-04T00:00:00",
+                "endDate": "2018-03-04T00:00:00",
+                "consumptionNetAmount": 390.67,
+                "consumptionUsage": 1633,
+                "generatedNetAmount": -419.04,
+                "generatedUsage": 819
+            }
+        ]
+    },
+    {
+        "account": "1200000000",
+        "contract": "1244444444",
+        "bills": [
+            {
+                "billIssued": "2018-07-13T00:00:00",
+                "newCharges": 23.16,
+                "totalDue": -70.28,
+                "dueDate": "2018-08-03T00:00:00",
+                "printDoc": "1221",
+                "startDate": "2018-03-05T00:00:00",
+                "endDate": "2018-06-06T00:00:00",
+                "consumptionNetAmount": 312.14,
+                "consumptionUsage": 1329,
+                "generatedNetAmount": -364.3,
+                "generatedUsage": 714
+            }
+        ]
+    },
+    {
+        "account": "1200000000",
+        "contract": "1266666666",
+        "bills": [
+            {
+                "billIssued": "2018-07-13T00:00:00",
+                "newCharges": 52.16,
+                "totalDue": -70.28,
+                "dueDate": "2018-08-03T00:00:00",
+                "printDoc": "1211",
+                "startDate": "2018-03-05T00:00:00",
+                "endDate": "2018-06-06T00:00:00",
+                "consumptionNetAmount": 312.14,
+                "consumptionUsage": 1329,
+                "generatedNetAmount": -364.3,
+                "generatedUsage": 714
+            },
+            {
+                "billIssued": "2018-03-07T00:00:00",
+                "newCharges": 28.37,
+                "totalDue": -439.96,
+                "dueDate": "2018-03-29T00:00:00",
+                "printDoc": "1212",
+                "startDate": "2018-04-04T00:00:00",
+                "endDate": "2018-05-04T00:00:00",
+                "consumptionNetAmount": 390.67,
+                "consumptionUsage": 1633,
+                "generatedNetAmount": -419.04,
+                "generatedUsage": 819
+            }
+        ]
+    },
+    {
+        "account": "1200000000",
+        "contract": "1288888888",
+        "bills": [
+            {
+                "billIssued": "2018-07-13T00:00:00",
+                "newCharges": 52.16,
+                "totalDue": -70.28,
+                "dueDate": "2018-02-03T00:00:00",
+                "printDoc": "1211",
+                "startDate": "2018-03-05T00:00:00",
+                "endDate": "2018-06-06T00:00:00",
+                "consumptionNetAmount": 312.14,
+                "consumptionUsage": 1329,
+                "generatedNetAmount": -364.3,
+                "generatedUsage": 714
+            },
+            {
+                "billIssued": "2018-03-07T00:00:00",
+                "newCharges": 28.37,
+                "totalDue": -439.96,
+                "dueDate": "2018-02-29T00:00:00",
+                "printDoc": "1212",
+                "startDate": "2018-04-04T00:00:00",
+                "endDate": "2018-05-04T00:00:00",
+                "consumptionNetAmount": 390.67,
+                "consumptionUsage": 1633,
+                "generatedNetAmount": -419.04,
+                "generatedUsage": 819
+            }
+        ]
+    },
+    {
+        "account": "1300000000",
+        "contract": "1311111111",
+        "bills": [
+            {
+                "billIssued": "2018-07-13T00:00:00",
+                "newCharges": 57,
+                "totalDue": -70.28,
+                "dueDate": "2018-08-03T00:00:00",
+                "printDoc": "1311",
+                "startDate": "2018-03-05T00:00:00",
+                "endDate": "2018-06-06T00:00:00",
+                "consumptionNetAmount": 312.14,
+                "consumptionUsage": 1329,
+                "generatedNetAmount": -364.3,
+                "generatedUsage": 714
+            },
+            {
+                "billIssued": "2018-03-07T00:00:00",
+                "newCharges": 88,
+                "totalDue": -439.96,
+                "dueDate": "2018-03-30T00:00:00",
+                "printDoc": "1312",
+                "startDate": "2018-02-04T00:00:00",
+                "endDate": "2018-03-04T00:00:00",
+                "consumptionNetAmount": 390.67,
+                "consumptionUsage": 1633,
+                "generatedNetAmount": -419.04,
+                "generatedUsage": 819
+            }
+        ]
+    },
+    {
+        "account": "1300000000",
+        "contract": "1322222222",
+        "bills": [
+            {
+                "billIssued": "2018-07-13T00:00:00",
+                "newCharges": 87,
+                "totalDue": -70.28,
+                "dueDate": "2018-08-03T00:00:00",
+                "printDoc": "1321",
+                "startDate": "2018-03-05T00:00:00",
+                "endDate": "2018-06-06T00:00:00",
+                "consumptionNetAmount": 312.14,
+                "consumptionUsage": 1329,
+                "generatedNetAmount": -364.3,
+                "generatedUsage": 714
+            },
+            {
+                "billIssued": "2018-03-07T00:00:00",
+                "newCharges": 53,
+                "totalDue": -439.96,
+                "dueDate": "2018-03-30T00:00:00",
+                "printDoc": "1322",
+                "startDate": "2018-02-04T00:00:00",
+                "endDate": "2018-03-04T00:00:00",
+                "consumptionNetAmount": 390.67,
+                "consumptionUsage": 1633,
+                "generatedNetAmount": -419.04,
+                "generatedUsage": 819
+            }
+        ]
+    },
+    {
+        "account": "1400000000",
+        "contract": "1411111111",
+        "bills": [
+            {
+                "billIssued": "2018-07-13T00:00:00",
+                "newCharges": 45.45,
+                "totalDue": -125.22,
+                "dueDate": "2018-03-09T00:00:00",
+                "printDoc": "112144453",
+                "startDate": "2017-05-13T00:00:00",
+                "endDate": "2018-02-13T00:00:00",
+                "consumptionNetAmount": 312.14,
+                "consumptionUsage": 1329,
+                "generatedNetAmount": -364.3,
+                "generatedUsage": 714
+            }
+        ]
+    },
+    {
+        "account": "1400000000",
+        "contract": "1422222222",
+        "bills": [
+            {
+                "billIssued": "2018-07-13T00:00:00",
+                "newCharges": 58,
+                "totalDue": -125.22,
+                "dueDate": "2018-08-03T00:00:00",
+                "printDoc": "112144453",
+                "startDate": "2018-03-05T00:00:00",
+                "endDate": "2018-06-06T00:00:00",
+                "consumptionNetAmount": 312.14,
+                "consumptionUsage": 1329,
+                "generatedNetAmount": -364.3,
+                "generatedUsage": 714
+            }
+        ]
+    },
+    {
+        "account": "1400000000",
+        "contract": "1433333333",
+        "bills": [
+            {
+                "billIssued": "2018-07-13T00:00:00",
+                "newCharges": 58,
+                "totalDue": -125.22,
+                "dueDate": "2018-08-03T00:00:00",
+                "printDoc": "112144453",
+                "startDate": "2018-03-05T00:00:00",
+                "endDate": "2018-06-06T00:00:00",
+                "consumptionNetAmount": 312.14,
+                "consumptionUsage": 1329,
+                "generatedNetAmount": -364.3,
+                "generatedUsage": 714
+            }
+        ]
+    },
+    {
+        "account": "1500000000",
+        "contract": "1511111111",
+        "bills": [
+            {
+                "billIssued": "2018-07-13T00:00:00",
+                "newCharges": 65,
+                "totalDue": -125.22,
+                "dueDate": "2018-08-03T00:00:00",
+                "printDoc": "112144453",
+                "startDate": "2018-03-05T00:00:00",
+                "endDate": "2018-06-06T00:00:00",
+                "consumptionNetAmount": 312.14,
+                "consumptionUsage": 1329,
+                "generatedNetAmount": -364.3,
+                "generatedUsage": 714
+            }
+        ]
+    },
+    {
+        "account": "1500000000",
+        "contract": "1522222222",
+        "bills": [
+            {
+                "billIssued": "2018-07-13T00:00:00",
+                "newCharges": 79,
+                "totalDue": -125.22,
+                "dueDate": "2018-08-03T00:00:00",
+                "printDoc": "112144453",
+                "startDate": "2018-03-05T00:00:00",
+                "endDate": "2018-06-06T00:00:00",
+                "consumptionNetAmount": 312.14,
+                "consumptionUsage": 1329,
+                "generatedNetAmount": -364.3,
+                "generatedUsage": 714
+            }
+        ]
+    },
+    {
+        "account": "1500000000",
+        "contract": "1533333333",
+        "bills": [
+            {
+                "billIssued": "2018-07-13T00:00:00",
+                "newCharges": 87,
+                "totalDue": -125.22,
+                "dueDate": "2018-08-03T00:00:00",
+                "printDoc": "112144453",
+                "startDate": "2018-03-05T00:00:00",
+                "endDate": "2018-06-06T00:00:00",
+                "consumptionNetAmount": 312.14,
+                "consumptionUsage": 1329,
+                "generatedNetAmount": -364.3,
+                "generatedUsage": 714
+            }
+        ]
+    },
+    {
+        "account": "1500000000",
+        "contract": "1544444444",
+        "bills": [
+            {
+                "billIssued": "2018-07-13T00:00:00",
+                "newCharges": 99,
+                "totalDue": -125.22,
+                "dueDate": "2018-08-03T00:00:00",
+                "printDoc": "112144453",
+                "startDate": "2018-03-05T00:00:00",
+                "endDate": "2018-06-06T00:00:00",
+                "consumptionNetAmount": 312.14,
+                "consumptionUsage": 1329,
+                "generatedNetAmount": -364.3,
+                "generatedUsage": 714
+            }
+        ]
+    }
+]

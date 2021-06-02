@@ -1,0 +1,94 @@
+<div class="payment-assistance-plan-success">
+    <div class="payment-assistance-plan-success__loader" *ngIf="showLoader">
+        <agl-loader></agl-loader>
+    </div>
+
+    <div *ngIf="!showLoader">
+        <div class="payment-assistance-plan-success__banner-wrapper">
+            <agl-maui-confirmation-banner text="You've successfully setup an instalment plan"></agl-maui-confirmation-banner>
+        </div>
+        <agl-maui-container class="payment-assistance-plan-success__summary" [hasShadow]="true">
+            <div class="payment-assistance-plan-success__summary-body">
+                <div class="payment-assistance-plan-success__summary-body-table">
+                    <div>
+                        <agl-payment-assistance-plan-success-fuel-chip-header [fuelChipHeaderModel]="fuelChipHeaderModel"></agl-payment-assistance-plan-success-fuel-chip-header>
+                    </div>
+                    <div>
+                        <agl-payment-assistance-plan-success-summary [summaryModel]="summaryModel"></agl-payment-assistance-plan-success-summary>
+                    </div>
+                    <div class="payment-assistance-plan-success__summary-body-table-instalments">
+                        <agl-payment-assistance-plan-instalments [instalmentsModel]="instalmentsModel" [headerText]="'Upcoming Instalments'"></agl-payment-assistance-plan-instalments>
+                    </div>
+                    <div *ngIf="showMakeAPayment" class="payment-assistance-plan-success__summary-body-table-payment">
+                        <div>Your first payment is due today.</div>
+                        <agl-maui-button (clicked)="makeAPaymentClicked()" [loading]="showMakeAPaymentLoading">MAKE A PAYMENT</agl-maui-button>
+                    </div>
+                    <div class="payment-assistance-plan-success__summary-body-table-container">
+                        <div class="payment-assistance-plan-success__summary-body-table-label">
+                            Set yourself a reminder to keep track of your instalments.
+                        </div>
+                        <div class="payment-assistance-plan-success__calendar-container">
+                            <agl-maui-calendar-reminder [model]="calendarReminderModel" icsFileName="AGL-instalment-reminder" (calendarSelected)="calendarSelected($event)">
+                            </agl-maui-calendar-reminder>
+                        </div>
+                    </div>
+                    <div class="payment-assistance-plan-success__summary-body-chat-container">
+                        <div class="web-chat">
+                            <span class="web-chat-icon"></span>
+                            <agl-webchat #paymentAssistanceChat chatButtonId="LPPaymentAssistanceSuccess" [contentIsHostedInLivePerson]="false">
+                                <div agent-status-unresolved>
+                                    <div class="web-chat-title--unresolved-agent-status">
+                                        &nbsp;
+                                    </div>
+                                    <div class="web-chat-button--unresolved-agent-status">
+                                        &nbsp;
+                                    </div>
+                                </div>
+                                <div agent-offline>
+                                    <div class="web-chat-agent-offline-message">
+                                        It's important you pay your instalments to get back on track. If you need further assistance, call
+                                        <a href="tel:131 245">131 245</a>.
+                                    </div>
+                                    <div class="web-chat-agent-offline-message-bottom">
+                                        Calling from overseas? You can call us on
+                                        <a href="tel:+61386336000">+61 3 8633 6000</a>.
+                                    </div>
+                                </div>
+                                <div agent-online>
+                                    <div class="web-chat-button">
+                                        It's important you pay your instalments to get back on track. If you need further assistance,
+                                        <a (click)="paymentAssistanceChat.requestChat()">chat with us now</a> or call
+                                        <a href="tel:131 245">131 245</a>.
+                                    </div>
+                                </div>
+                            </agl-webchat>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </agl-maui-container>
+        <div *ngIf="hasEligibleFuelChips" class="payment-assistance-plan-success__fuel-chips">
+            <agl-payment-assistance-plan-success-fuel-chips [fuelChipsModel]="fuelChipsModel" (fuelChipSelected)="onFuelChipSelected($event)"></agl-payment-assistance-plan-success-fuel-chips>
+        </div>
+        <div *ngIf="showPromoTile()" [ngClass]="{
+                'payment-assistance-plan-success__banner-container--with-fuel-chips': hasEligibleFuelChips,
+                'payment-assistance-plan-success__banner-container--without-fuel-chips': !hasEligibleFuelChips
+            }">
+            <div class="payment-assistance-plan-success__banner">
+                <div class="payment-assistance-plan-success__banner-copy">
+                    <div class="payment-assistance-plan-success__banner-copy-header">{{promoBannerHeaderCopy}}</div>
+                    <div class="payment-assistance-plan-success__banner-copy-body">{{promoBannerBodyCopy}}</div>
+                    <div class="payment-assistance-plan-success__banner-copy-footer">
+                        <agl-link [target]="linkTarget.self" [href]="promoBannerLink(promoTileToBeDisplayed)" size="linkSize.large"><b>{{promoBannerFooterCopy}}</b></agl-link>
+                    </div>
+                </div>
+                <div [ngClass]="{'payment-assistance-plan-success__banner-ebilling-image' : promoTileToBeDisplayed === PromoTileType.eBilling,
+                    'payment-assistance-plan-success__banner-sms-pay-image' : promoTileToBeDisplayed === PromoTileType.smsPay}">&nbsp;</div>
+            </div>
+            <div class="payment-assistance-plan-success__banner-container-gradient">&nbsp;</div>
+        </div>
+        <div class="payment-assistance-plan-success__overview-button">
+             <agl-maui-button (clicked)="goToOverviewClicked()" type="secondary">GO TO OVERVIEW</agl-maui-button>
+        </div>
+    </div>
+</div>

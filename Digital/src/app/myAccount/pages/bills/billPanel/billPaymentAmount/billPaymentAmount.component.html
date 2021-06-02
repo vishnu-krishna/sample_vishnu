@@ -1,0 +1,53 @@
+<div id="bill-panel-amount" class="bill-panel-amount" *ngIf="!isDashboard">
+    <div id="bill-panel-amount-container" class="bill-panel-amount__value-container">
+        <div id="bill-panel-amount-dollar"
+             class="bill-panel-amount__currency"
+             [class.bill-panel-amount__red]="type.overdue"
+             [class.bill-panel-amount__black]="type.hasCredit">$
+        </div>
+        <div id="bill-panel-amount-value"
+             class="bill-panel-amount__value"
+             [class.bill-panel-amount__red]="type.overdue"
+             [class.bill-panel-amount__black]="type.hasCredit">{{paymentAmount | number:'.2-2' | aglExtractBeforeDecimal}}<span class="bill-panel-amount__decimal" *ngIf="!type.billSmoothingV2">{{paymentAmount | number:'.2-2' | aglExtractDecimal}}</span><span
+            class="bill-panel-amount__frequency" *ngIf="type.billSmoothingV2">{{billSmoothingFrequency}}</span>
+            <span *ngIf="type.hasCredit" class="bill-panel-amount--has-credit">{{creditText}}</span>
+        </div>
+    </div>
+    <div *ngIf="type.pendingPayment" class="bill-panel-amount__pending-payment">
+        <agl-alert
+            alertType="pending"
+            [heading]="alertMessages.paymentPendingHeading"
+            [body]="alertMessages.paymentPendingBody">
+        </agl-alert>
+    </div>
+    <agl-bill-breakdown [type]="type" [contract]="contract"></agl-bill-breakdown>
+    <agl-bill-payment-instalment-plan [contract]="contract"></agl-bill-payment-instalment-plan>
+    <div id="bill-panel-payment-button-container" class="bill-panel-amount__button-container">
+        <agl-bill-payment-button [type]="type" [contract]="contract" [address]="address"></agl-bill-payment-button>
+    </div>
+</div>
+
+<div id="bill-panel-not-default" class="bill-panel-amount" *ngIf="isDashboard">
+
+    <div id="bill-panel-amount-dollar" class="bill-panel-amount__currency" [class.bill-panel-amount__red]="type.overdue" [class.bill-panel-amount__black]="type.hasCredit">$
+    </div>
+    <div id="bill-panel-amount-value" class="bill-panel-amount__value" [class.bill-panel-amount__red]="type.overdue"
+         [class.bill-panel-amount__black]="type.hasCredit">{{paymentAmount | number:'.2-2' |
+        aglExtractBeforeDecimal}}<span class="bill-panel-amount__decimal" *ngIf="!type.billSmoothingV2">{{paymentAmount | number:'.2-2' | aglExtractDecimal}}</span><span
+            *ngIf="type.billSmoothingV2" class="bill-panel-amount__frequency">{{billSmoothingFrequency}}</span>
+        <agl-usage-tooltip *ngIf="type.billSmoothingV2" class="bill-panel-amount__tooltip"
+                           tooltipHtml="Prepayment and overdue amounts are not shown."></agl-usage-tooltip>
+        <span *ngIf="type.hasCredit" class="bill-panel-amount--has-credit">{{creditText}}</span>
+    </div>
+
+    <div *ngIf="type.overdue && !type.hasDebit && !contract.instalmentPlan">
+        <div id="bill-panel-bill-overdue-text" *ngIf="overdueByText" class="bill-panel-amount__overdue-text">
+            {{overdueByText}}
+        </div>
+    </div>
+    <div *ngIf="!isAmountOnly">
+        <div id="bill-panel-bill-issued" *ngIf="billIssuedIn" class="bill-panel-amount__next-bill">
+            {{billIssuedIn}}
+        </div>
+    </div>
+</div>

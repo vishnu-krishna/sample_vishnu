@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\settings\concession\services\concessionApplication.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/settings/concession/services/</a> concessionApplication.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">59.38% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>19/32</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">30% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">57.14% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>16/28</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Observer } from 'rxjs';
+&nbsp;
+import { ErrorApiModel } from './../../../../../shared/service/api.service';
+import { SaveConcessionRequest } from './../../../../services/concession/concessionApi.service';
+import { IConcessionApi } from '../../../../services/concession/concessionApi.service';
+import { Concession } from '../concession';
+&nbsp;
+<span class="fstat-no" title="function not covered" >export abstract class IConcessionApplicationService {</span>
+    public abstract submit(concession: Concession): Observable&lt;SubmissionResult&gt;;
+}
+&nbsp;
+export enum SubmissionResult {
+    Success,
+    InvalidCardFormat,
+    CardAlreadyInUse,
+    CardFromDifferentRegionId,
+    UnknownError
+}
+&nbsp;
+@Injectable()
+export class ConcessionApplicationService implements IConcessionApplicationService {
+    constructor(private <span class="cstat-no" title="statement not covered" >concessionApi: IConcessionApi<span class="fstat-no" title="function not covered" >)</span> {</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    public submit(concession: Concession<span class="fstat-no" title="function not covered" >): Observable&lt;SubmissionResult&gt; {</span></span>
+        let request = <span class="cstat-no" title="statement not covered" >new SaveConcessionRequest(concession.cardNumber,</span>
+                                                concession.selectedCard.issuerCode,
+                                                concession.selectedCard.cardCode,
+                                                concession.contractNumbers);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return new Observable&lt;SubmissionResult&gt;((observer: Observer&lt;SubmissionResult&gt;<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            this.concessionApi.saveConcession(concession.businessPartnerNumber, request)</span>
+                .subscribe((internalErrorErrorNumber: number<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+                    let result = <span class="cstat-no" title="statement not covered" >this.mapToSubmissionResult(internalErrorErrorNumber);</span>
+<span class="cstat-no" title="statement not covered" >                    observer.next(result);</span>
+<span class="cstat-no" title="statement not covered" >                    observer.complete();</span>
+                },
+                (err<span class="fstat-no" title="function not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    observer.next(SubmissionResult.UnknownError);</span>
+<span class="cstat-no" title="statement not covered" >                    observer.complete();</span>
+                });
+        });
+    }
+&nbsp;
+    private mapToSubmissionResult(internalErrorErrorNumber: number<span class="fstat-no" title="function not covered" >) {</span>
+        const errorMap = <span class="cstat-no" title="statement not covered" >{</span>
+            0: SubmissionResult.Success,
+            1: SubmissionResult.InvalidCardFormat,
+            2: SubmissionResult.CardAlreadyInUse,
+            3: SubmissionResult.CardFromDifferentRegionId
+        };
+        let result = <span class="cstat-no" title="statement not covered" >errorMap[internalErrorErrorNumber];</span>
+<span class="cstat-no" title="statement not covered" >        return result !== undefined ? result : SubmissionResult.UnknownError; </span>// check for undefined as one of the results (0/Success) is falsy
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

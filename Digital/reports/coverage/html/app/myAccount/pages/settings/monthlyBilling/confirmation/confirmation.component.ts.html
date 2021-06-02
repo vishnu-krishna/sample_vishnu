@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\pages\settings\monthlyBilling\confirmation\confirmation.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/pages/settings/monthlyBilling/confirmation/</a> confirmation.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">34.15% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>28/82</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">45.45% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>20/44</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.14% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.33% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>26/78</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* tslint:disable:no-access-missing-member */
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+&nbsp;
+import { Observable } from 'rxjs/Observable';
+&nbsp;
+import { MauiFuelChipState, MauiFuelChipFuelType, MauiFuelChipFuelContext, MauiSecondaryMessageStatusType } from '../../../../maui/fuelChip/index';
+import { MonthlyBillingService, MonthlyBillingReferrer } from '../../../../services/monthlyBilling.service';
+import { ContractMonthlyBillingModel } from '../../../../services/settings/model/contractMonthlyBillingModel';
+import { MonthlyBillingGetMonthlyBillingInfoForAccountTestData } from '../../../../../test/testingData/monthlyBilling/monthlyBilling.getMonthlyBillingInfoForAccount.testdata';
+import { AccountsTestData } from '../../../../../test/testingData/accounts.testdata';
+import { FuelType } from '../../../../services/ssmr.service';
+import { AccountViewModel, ContractViewModel } from '../../../../services/account.service';
+import { FuelChipContract, FuelChipContractAccountDetails } from '../../../../maui/fuelChip/fuelChip.component.model';
+import { AccountMonthlyBillingModel } from '../../../../services/settings/model/accountMonthlyBillingModel';
+import { BillingFrequencyType } from '../../../../services/settings/model/billingFrequencyType';
+import { TermsAndConditionsMonthlyBillingComponent } from '../chooseDate/monthlyBillingTermsAndConditions/monthlyBillingTermsAndConditions.component';
+import { MonthlyBillingRoutes } from '../monthlyBillingRoutes.const';
+import { FeatureFlagService } from '../../../../services/featureFlag.service';
+import { FeatureFlagTypes } from '../../../../services/featureFlag.constants';
+import { ApiService } from '../../../../../shared/service/api.service';
+import { AglValidators } from '../../../../../shared/validators/aglValidators';
+import { ConfigService } from '../../../../../shared/service/config.service';
+import { SurveyService, SurveyType } from '../../../../services/survey.service';
+&nbsp;
+declare let lpTag;
+&nbsp;
+@Component({
+    selector: 'agl-monthly-billing-confirmation',
+    template: require('./confirmation.component.html'),
+    styles: [ require('./confirmation.component.scss') ]
+})
+export class MonthlyBillingConfirmationComponent implements OnInit {
+    @ViewChild('termsAndConditons') public termsAndConditions: TermsAndConditionsMonthlyBillingComponent;
+&nbsp;
+    public billDate: string;
+    public <span class="cstat-no" title="statement not covered" >buttonText: string = 'Close';</span>
+    public buttonType: string;
+    public contractsNotOnFlexiMonthly: ContractMonthlyBillingModel[];
+    public currentAccount: AccountViewModel;
+    public fuelChipCurrentAccountDetails: FuelChipContractAccountDetails[];
+    public <span class="cstat-no" title="statement not covered" >fuelChipContracts: FuelChipContract[] = [];</span>
+    public <span class="cstat-no" title="statement not covered" >MauiFuelChipState = MauiFuelChipState;</span>
+    public <span class="cstat-no" title="statement not covered" >MauiFuelChipFuelType = MauiFuelChipFuelType;</span>
+    public <span class="cstat-no" title="statement not covered" >MauiFuelChipFuelContext = MauiFuelChipFuelContext;</span>
+    public <span class="cstat-no" title="statement not covered" >MauiSecondaryMessageStatusType = MauiSecondaryMessageStatusType;</span>
+&nbsp;
+    public selectedMonthlyBillingAccount: AccountMonthlyBillingModel;
+    public selectedMonthlyBillingContract: ContractMonthlyBillingModel;
+    public fuelTypeLowerCase: string;
+    public fuelTypeUpperCase: string;
+    public isSmartMeter: boolean;
+    public basicMeterMessage: string;
+    public isContactDetailsEnabled: boolean;
+    public ssmrMessage: string;
+    public aeoContactDetailsUrl: string;
+&nbsp;
+    constructor(
+        public <span class="cstat-no" title="statement not covered" >monthlyBillingService: MonthlyBillingService,</span>
+        public <span class="cstat-no" title="statement not covered" >apiService: ApiService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >featureFlagService: FeatureFlagService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >router: Router<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >configService: ConfigService<span class="branch-2 cbranch-no" title="branch not covered" >,</span></span>
+        public <span class="cstat-no" title="statement not covered" >surveyService: SurveyService<span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >,</span></span></span>
+    ) { }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    public ngOnInit() {</span></span>
+&nbsp;
+        // Save Monthly Billing Service values to local variables for binding
+<span class="cstat-no" title="statement not covered" >        this.currentAccount = this.monthlyBillingService.currentAccount;</span>
+<span class="cstat-no" title="statement not covered" >        this.selectedMonthlyBillingContract = this.monthlyBillingService.selectedMonthlyBillingContract;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.selectedMonthlyBillingAccount = this.monthlyBillingService.selectedMonthlyBillingAccount;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.fuelTypeUpperCase = this.selectedMonthlyBillingContract.contract.fuelType;</span>
+<span class="cstat-no" title="statement not covered" >        this.fuelTypeLowerCase = this.selectedMonthlyBillingContract.contract.fuelType.toLowerCase();</span>
+<span class="cstat-no" title="statement not covered" >        this.isSmartMeter = this.selectedMonthlyBillingContract.contract.isSmartMeter;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.billDate = this.monthlyBillingService.getOrdinal(this.selectedMonthlyBillingContract.preferredDayOfMonth);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.currentAccount.contracts.map((contract<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+            let fuelChipContract: FuelChipContract = <span class="cstat-no" title="statement not covered" >new FuelChipContract(contract.contractNumber, contract.address, MauiFuelChipFuelType[contract.fuelType], null);</span>
+<span class="cstat-no" title="statement not covered" >            this.fuelChipContracts.push(fuelChipContract);</span>
+        });
+        // Setup the fuelChipCurrentAccountDetails
+<span class="cstat-no" title="statement not covered" >        this.fuelChipCurrentAccountDetails = [</span>
+            new FuelChipContractAccountDetails(this.currentAccount.accountNumber, this.fuelChipContracts)
+        ];
+<span class="cstat-no" title="statement not covered" >        this.contractsNotOnFlexiMonthly = this.getContractsNotOnFlexiMonthly();</span>
+<span class="cstat-no" title="statement not covered" >        this.createButton();</span>
+        // AEO link for contact details
+<span class="cstat-no" title="statement not covered" >        this.aeoContactDetailsUrl = `${this.configService.current.aglSiteCoreWebsiteBaseUrl}/aeo/myaccount/update-details`;</span>
+<span class="cstat-no" title="statement not covered" >        Observable.forkJoin(</span>
+            this.featureFlagService.featureFlagged(FeatureFlagTypes.contactDetailsEnabled),
+            this.apiService.getContactDetail()
+        ).subscribe(([<span class="cstat-no" title="statement not covered" >contactEnabledFeatureFlagResult,</span> <span class="cstat-no" title="statement not covered" >contactDetails]<span class="fstat-no" title="function not covered" ></span>) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            this.isContactDetailsEnabled = contactEnabledFeatureFlagResult;</span>
+<span class="cstat-no" title="statement not covered" >            this.monthlyBillingService.hasValidMobileNumber(contactDetails);</span>
+        });
+    }
+&nbsp;
+    public contractClicked(contractDetails: ContractMonthlyBillingModel<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        this.monthlyBillingService.selectedMonthlyBillingContract = contractDetails;</span>
+<span class="cstat-no" title="statement not covered" >        this.router.navigate([MonthlyBillingRoutes.DatePicker]);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public createButton(): void {</span>
+        // one contract. normal flow
+<span class="cstat-no" title="statement not covered" >        if ((this.monthlyBillingService.monthlyBillingReferrer === MonthlyBillingReferrer.ManageAccount ||</span>
+            this.monthlyBillingService.monthlyBillingReferrer === MonthlyBillingReferrer.Billing)
+            &amp;&amp; !this.contractsNotOnFlexiMonthly.length
+        ) {
+<span class="cstat-no" title="statement not covered" >            this.buttonText = `CLOSE`;</span>
+        // deep link
+        } else <span class="cstat-no" title="statement not covered" >if ( this.monthlyBillingService.monthlyBillingReferrer !== MonthlyBillingReferrer.ManageAccount</span>
+                &amp;&amp;  this.monthlyBillingService.monthlyBillingReferrer !== MonthlyBillingReferrer.Billing
+        ) {
+<span class="cstat-no" title="statement not covered" >            this.buttonText = `GO TO OVERVIEW`;</span>
+            // multi contract
+<span class="cstat-no" title="statement not covered" >            if (this.monthlyBillingService.currentAccount.contracts.length &gt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >                this.buttonType = `secondary`;</span>
+            }
+        // default condition
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.buttonText = `NO THANKS, I'M DONE`;</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public getContractsNotOnFlexiMonthly(): ContractMonthlyBillingModel[] {</span>
+<span class="cstat-no" title="statement not covered" >        return this.selectedMonthlyBillingAccount.contractMonthlyBillingModels.filter((contractMBM<span class="fstat-no" title="function not covered" >) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            return contractMBM.frequency !== BillingFrequencyType.FlexibleMonthly &amp;&amp; contractMBM.setup.isEligible;</span>
+        });
+    }
+&nbsp;
+    public getFuelChipMessage(contractMonthlyBillingModel: ContractMonthlyBillingModel<span class="fstat-no" title="function not covered" >): string {</span>
+<span class="cstat-no" title="statement not covered" >        switch (contractMonthlyBillingModel.frequency) {</span>
+            case BillingFrequencyType.BiMonthly:
+<span class="cstat-no" title="statement not covered" >                return 'Your account is billed every two months.';</span>
+            case BillingFrequencyType.Monthly:
+<span class="cstat-no" title="statement not covered" >                return 'Your account is billed monthly.';</span>
+            case BillingFrequencyType.Quarterly:
+<span class="cstat-no" title="statement not covered" >                return 'Your account is billed quarterly.';</span>
+            default:
+<span class="cstat-no" title="statement not covered" >                return '';</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public onClickClose(): void {</span>
+<span class="cstat-no" title="statement not covered" >        this.showFeedbackSurvey();</span>
+        let entryPointUrl = <span class="cstat-no" title="statement not covered" >this.monthlyBillingService.getEntryPointUrl();</span>
+<span class="cstat-no" title="statement not covered" >        this.router.navigate([entryPointUrl]);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public onClickTermsAndConditions() {</span>
+<span class="cstat-no" title="statement not covered" >        this.termsAndConditions.showTermsAndConditions();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public get contractsNotOnFlexiMonthlyMessage() {</span>
+<span class="cstat-no" title="statement not covered" >        return `Would you like to switch your below account${(this.contractsNotOnFlexiMonthly.length &gt; 1 ? 's' : '')} to monthly billing?`;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public showFeedbackSurvey() {</span>
+<span class="cstat-no" title="statement not covered" >        this.surveyService.showFeedbackSurvey(SurveyType.MonthlyBilling);</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

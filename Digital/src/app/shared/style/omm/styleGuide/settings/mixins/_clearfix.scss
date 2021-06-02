@@ -1,0 +1,16 @@
+/**
+ * Clearfix
+ */
+
+@mixin cf {
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+.cf,
+.clearfix {
+    @include cf;
+}

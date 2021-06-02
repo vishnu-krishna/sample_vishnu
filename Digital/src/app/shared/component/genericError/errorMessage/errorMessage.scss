@@ -1,0 +1,59 @@
+@import '../../../../shared/style/omm/_omm_variables';
+@import '../../../../shared/style/omm/_omm_mixins';
+@import '../../../../shared/style/omm/_omm_animations';
+.agl-error-message {
+    animation-name: fadeInDown;
+    animation-duration: 500ms;
+    background-repeat: no-repeat;
+    background-position-x: calc(50% - 60px);
+    background-position-y: center;
+    text-align: center;
+
+    &__heading,
+    &__description {
+        color: $omm-white;
+
+        a {
+            color: $omm-light-blue;
+        }
+    }
+
+    &__icon {
+        margin-bottom: 30px;
+        width: 70px;
+        height: 70px;
+        @media #{$medium-and-down} {
+            margin-bottom: 15px;
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    &__heading {
+        font-size: 38px;
+        line-height: 1.2;
+        padding-bottom: 21px;
+        font-family: $headerStack;
+        @media #{$medium-and-down} {
+            font-size: 30px !important;
+        }
+    }
+
+    &__description {
+        font-size: 18px;
+        font-family: $bodyStack;
+        line-height: 1.71;
+        @media #{$small-and-down} {
+            font-size: 14px !important;
+            margin: 0% 7%;
+        }
+    }
+
+    @media #{$medium-and-down} {
+        background-position-x: center;
+        background-position-y: top;
+        background-size: 60px;
+        margin-left: 26px;
+        margin-right: 26px;
+    }
+}

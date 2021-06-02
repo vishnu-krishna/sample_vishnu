@@ -1,0 +1,18 @@
+{
+    "status": 200,
+    "headers": {},
+    "body": {
+        "hasMultipleBusinessPartners": false,
+        "businessPartners": [
+            {
+                "firstName": "Jay",
+                "lastName": "McDonald",
+                "businessPartnerNumber": "0901104104",
+                "phone": " ",
+                "mobile": "0407747554",
+                "email": "MCDONALD.JM12@GMAIL.COM",
+                "hasDateOfBirth": true
+            }
+        ]
+    }
+}

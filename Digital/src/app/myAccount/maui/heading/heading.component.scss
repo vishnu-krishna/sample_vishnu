@@ -1,0 +1,33 @@
+@import '../maui';
+
+@include maui-component-reset();
+
+:host {
+    text-align: center;
+    width: 100%;
+}
+
+.maui-heading {
+
+    &__main {
+        display: block;
+        font-family: $display-font-stack;
+        font-size: $display-font-size-alpha;
+        line-height: $line-height-heading;
+        @media #{$agl-layout-mobile} {
+            font-size: $display-font-size-gamma;
+        }
+    }
+
+    &__sub {
+        display: block;
+        margin-top: $space-03;
+        font-family: $body-font-stack;
+        font-size: $display-font-size-epsilon;
+        line-height: $line-height-long;
+        @media #{$agl-layout-mobile} {
+            font-size: $body-font-size-normal;
+            line-height: $line-height-short;
+        }
+    }
+}

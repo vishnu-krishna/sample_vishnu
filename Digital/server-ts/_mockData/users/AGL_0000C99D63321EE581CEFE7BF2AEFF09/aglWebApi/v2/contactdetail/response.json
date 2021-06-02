@@ -1,0 +1,18 @@
+{
+  "status": 200,
+  "headers": { },
+  "body": {
+    "hasMultipleBusinessPartners": false,
+    "businessPartners": [
+      {
+        "firstName": "PHILIP",
+        "lastName": "THONG",
+        "businessPartnerNumber": "0901955669",
+        "phone": "",
+        "mobile": "0455666999",
+        "email": null,
+        "hasDateOfBirth": true
+      }
+    ]
+  }
+}

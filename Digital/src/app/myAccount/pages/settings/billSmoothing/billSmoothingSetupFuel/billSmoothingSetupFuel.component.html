@@ -1,0 +1,7 @@
+ <agl-bill-smoothing-setup-fuel-item
+    *ngFor="let frequency of frequencies"
+    [frequency]="frequency"
+    [billSmoothingFuels]="fuelInfo"
+    [selectedFrequency]="selectedFrequency"
+    (notify)="onNotify($event)">
+</agl-bill-smoothing-setup-fuel-item>

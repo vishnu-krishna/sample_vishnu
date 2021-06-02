@@ -1,0 +1,39 @@
+{
+    "scenarios": [{
+        "context": {
+            "contractAccountNumber": 123456789,
+            "deliveryMethod": "Postal"
+        },
+        "outcome": {
+            "status": 200,
+            "body": {}
+        }
+    }, {
+        "context": {
+            "contractAccountNumber": 123456789,
+            "deliveryMethod": "Email"
+        },
+        "outcome": {
+            "status": 200,
+            "body": {}
+        }
+    }, {
+        "context": {
+            "contractAccountNumber": 987654321,
+            "deliveryMethod": "Postal"
+        },
+        "outcome": {
+            "status": 200,
+            "body": {}
+        }
+    }, {
+        "context": {
+            "contractAccountNumber": 987654321,
+            "deliveryMethod": "Email"
+        },
+        "outcome": {
+            "status": 200,
+            "body": {}
+        }
+    }]
+}

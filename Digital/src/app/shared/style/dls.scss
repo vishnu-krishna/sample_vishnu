@@ -1,0 +1,147 @@
+// sass-lint:disable-all
+@import 'variables';
+
+/** This file is for overrides **/
+// TODO: Remove importants
+.mat-raised-button {
+    font-weight: bold !important;
+    font-size: 14px !important;
+    font-family: $primary-font-stack !important;
+    letter-spacing: 1px !important;
+    box-shadow: $agl-button-shadow !important;
+
+    &:hover {
+        box-shadow: $agl-button-hover-shadow !important;
+        background-color: lighten($brand-bright, 6);
+    }
+
+
+    &[disabled] {
+        box-shadow: none !important;
+    }
+
+    &.is-loading {
+        background-image: url('svg/spinner--loading--button.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-color: rgba(0, 0, 0, 0.38) !important;
+        color: transparent;
+        box-shadow: none !important;
+        pointer-events: none;
+    }
+
+}
+
+.save-and-pay-checkbox {
+    label {
+        &.mat-checkbox-layout {
+            .mat-checkbox-label {
+                font-family: $secondary-font-stack !important;
+                font-weight: normal !important;
+                line-height: 18px !important;
+            }
+
+            .mat-checkbox-background {
+                border-radius: 4px;
+            }
+
+            .mat-checkbox-frame {
+                border-width: 1px;
+                border-radius: 4px;
+            }
+        }
+    }
+}
+
+// Radio Buttons
+.delete-pm {
+    .mat-radio-container {
+        position: static;
+        width: auto;
+        height: auto;
+    }
+    .mat-radio-label-content {
+        padding-left: 35px;
+        line-height: 20px;
+    }
+    .mat-radio-checked .mat-radio-label-content {
+        color: $brand-sky;
+    }
+    .mat-radio-button {
+        font-family: $secondary-font-stack;
+    }
+    .mat-radio-label {
+        font-weight: normal;
+        white-space: normal;
+        margin-bottom: 0;
+        position: relative;
+    }
+    .mat-radio-checked .mat-radio-outer-circle {
+        background-color: $brand-sky;
+    }
+    .mat-radio-checked .mat-radio-inner-circle {
+        transform: scale(0.34);
+        background-color: $brand-white;
+    }
+    .mat-radio-ripple {
+        display: none;
+    }
+}
+
+.agl-modal-body {
+    .modal-link {
+        color: $brand-sky;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $brand-sky-darker;
+        }
+    }
+}
+
+// Bill Smoothing Overrides
+.bs-setup-intro-panel {
+    .mat-menu-content {
+        padding: 0;
+
+        .mat-menu-item {
+            font-family: $secondary-font-stack;
+        }
+    }
+}
+
+.bs-input-dropdown {
+    .mat-select-placeholder,
+    .mat-select-value-text,
+    .mat-select-arrow {
+        color: $brand-sky;
+        font-family: $secondary-font-stack;
+    }
+
+    .mat-select-underline {
+        display: none;
+    }
+}
+
+.bs-list {
+    font-family: $secondary-font-stack;
+}
+
+.form-select-dropdowns {
+    width: 100%;
+    height: 45px;
+    font-size: 14px;
+    font-weight: normal;
+    border: 1px solid $brand-grey-g3;
+    border-radius: 4px;
+    background-color: $brand-white;
+    margin-right: 10px;
+
+    &.invalid {
+        border: 1px solid $brand-fire;
+    }
+}
+
+.mat-card {
+    font-family: $secondary-font-stack;
+}

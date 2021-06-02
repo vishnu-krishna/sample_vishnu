@@ -1,0 +1,68 @@
+@import './styleGuide/base/reset';
+@import './styleGuide/base/normalise';
+@import './styleGuide/settings/fonts';
+@import './styleGuide/settings/vars';
+@import './styleGuide/settings/mixins';
+@import './styleGuide/settings/utils';
+@import './styleGuide/vendor/materialize/variables';
+@import './styleGuide/vendor/materialize/grid';
+@import './styleGuide/typography';
+@import './styleGuide/structure';
+@import './omm_variables';
+@import './omm_helpers';
+@import './omm_mixins';
+@import './omm_animations';
+
+body {
+    font-family: $bodyStack;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: $omm-blue;
+    overflow-x: hidden;
+}
+
+.agl-omm {
+    &__page {
+        animation-name: slideInUp;
+        animation-duration: 1s;
+        height: 100vh;
+    }
+
+    &__separator {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        margin-bottom: 1vh;
+    }
+
+    &__button-container {
+        @media #{$medium-and-down} {
+            margin: 0;
+            position: fixed;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+
+            & .col {
+                padding: 0;
+            }
+        }
+    }
+
+    &__button {
+        cursor: pointer;
+        @media #{$large-and-up} {
+            margin: 2vh;
+        }
+        @media #{$medium-and-down} {
+            padding: 0;
+            width: 100%;
+            border-radius: 0;
+        }
+    }
+}
+
+.alpha {
+    font-family: $displayStack;
+    @media #{$medium-and-down} {
+        font-size: 26px;
+    }
+}

@@ -1,0 +1,15 @@
+[{
+	"contractNumber": 9162241313,
+	"isEligible": false,
+	"ineligibleReason": {
+		"message": "Energy Insights registration is not allowed for Product offering <XXX>",
+		"internal": {
+			"id": "ZIDM_ENERGY_INSIGHT",
+			"number": "029",
+			"description": "Jurisdiction &1 not eligible for Energy Insights registration"
+		}
+	},
+	"subscribedToMidBillEnergyBreakdown": false,
+    "subscribedToEndBillEnergyBreakdown": false,
+    "availableUsageBreakdownBillPeriods": []
+}]

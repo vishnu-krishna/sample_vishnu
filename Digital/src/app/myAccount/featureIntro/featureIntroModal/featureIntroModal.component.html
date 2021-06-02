@@ -1,0 +1,6 @@
+<div class="btn-close" (click)="dismissFeatureIntro(false)" *ngIf="showCloseBtn()" >
+    <span>&#x2715;</span>
+</div>
+<div class="feature-intros">
+    <agl-feature-intro *ngFor="let intro of featureIntros" [featureIntro]="intro" (dismissFeatureIntro)="dismissFeatureIntro($event)"></agl-feature-intro>
+</div>

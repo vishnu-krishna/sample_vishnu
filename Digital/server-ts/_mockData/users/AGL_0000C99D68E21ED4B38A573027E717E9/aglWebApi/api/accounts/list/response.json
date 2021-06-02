@@ -1,0 +1,79 @@
+{
+  "status": 200,
+  "headers": {},
+  "body": [
+    {
+      "number": "55920961",
+      "firstName": "NEVILLE",
+      "lastName": "Restricted",
+      "contracts": [
+        {
+          "address": "10 Lake Avenue|BARMERA SA 5345",
+          "accountNumber": "55920961",
+          "fuelType": "Electricity",
+          "nameId": "AGL_0000C99D68E21ED4B38A573027E717E9",
+          "number": "9035268363",
+          "planName": "Select 7%",
+          "inFlight": false,
+          "contractStatus": "",
+          "isRestricted": true,
+          "hasElectricVehicle": false,
+          "productId": "AGLMKTRE2415046",
+          "regionId": "SA"
+        },
+        {
+          "address": "10 Lake Avenue|BARMERA SA 5345",
+          "accountNumber": "55920961",
+          "fuelType": "Electricity",
+          "nameId": "AGL_0000C99D68E21ED4B38A573027E717E9",
+          "number": "9035268364",
+          "planName": "Select 7%",
+          "inFlight": false,
+          "contractStatus": "",
+          "isRestricted": true,
+          "hasElectricVehicle": false,
+          "productId": "AGLMKTRE2415046",
+          "regionId": "SA"
+        }
+      ]
+    },
+    {
+      "number": "56900087",
+      "firstName": "NEVILLE",
+      "lastName": "Restricted",
+      "contracts": [
+        {
+          "address": "26 Queen Elizabeth Drive|BARMERA SA 5345",
+          "accountNumber": "56900087",
+          "fuelType": "Electricity",
+          "nameId": "AGL_0000C99D68E21ED4B38A573027E717E9",
+          "number": "9036179378",
+          "planName": "Select 7%",
+          "inFlight": false,
+          "contractStatus": "",
+          "isRestricted": true,
+          "hasElectricVehicle": false
+        }
+      ]
+    },
+    {
+      "number": "56900088",
+      "firstName": "NEVILLE",
+      "lastName": "Restricted",
+      "contracts": [
+        {
+          "address": "26 Queen Elizabeth Drive|BARMERA SA 5345",
+          "accountNumber": "56900087",
+          "fuelType": "Electricity",
+          "nameId": "AGL_0000C99D68E21ED4B38A573027E717E9",
+          "number": "9036179374",
+          "planName": "Select 7%",
+          "inFlight": false,
+          "contractStatus": "",
+          "isRestricted": true,
+          "hasElectricVehicle": false
+        }
+      ]
+    }
+  ]
+}

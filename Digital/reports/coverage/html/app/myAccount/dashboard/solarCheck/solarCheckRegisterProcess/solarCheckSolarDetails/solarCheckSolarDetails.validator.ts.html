@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\myAccount\dashboard\solarCheck\solarCheckRegisterProcess\solarCheckSolarDetails\solarCheckSolarDetails.validator.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/myAccount/dashboard/solarCheck/solarCheckRegisterProcess/solarCheckSolarDetails/</a> solarCheckSolarDetails.validator.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">35.19% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>19/54</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/56</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.69% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.96% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>18/53</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
+import { FormControl } from '@angular/forms/src/model';
+import { SolarDetailsValidationConstants } from '../../../../../shared/globals/solarCheckConstants';
+&nbsp;
+import * as moment from 'moment';
+&nbsp;
+<span class="fstat-no" title="function not covered" >export class SolarDetailsValidator {</span>
+&nbsp;
+    public static currentYear: number = moment().year();
+    public static minSuggestedSystemSize: number = SolarDetailsValidationConstants.minSystemSize;
+    public static maxSuggestedSystemSize: number = SolarDetailsValidationConstants.maxSystemSize;
+&nbsp;
+    public static calculateSystemSizeRange(panelQuantity: any<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        if (panelQuantity === null || panelQuantity === undefined || isNaN(panelQuantity)) {</span>
+<span class="cstat-no" title="statement not covered" >            this.setSystemSizeRangeToDefault();</span>
+        } else {
+            let panelQuantityInt = <span class="cstat-no" title="statement not covered" >parseInt(panelQuantity, 10);</span>
+&nbsp;
+            let minSuggestedSystemSize = <span class="cstat-no" title="statement not covered" >+(SolarDetailsValidationConstants.minPanelSize * panelQuantityInt).toFixed(2);</span>
+<span class="cstat-no" title="statement not covered" >            SolarDetailsValidator.minSuggestedSystemSize = Math.max(minSuggestedSystemSize, SolarDetailsValidationConstants.minSystemSize);</span>
+&nbsp;
+            let maxSuggestedSystemSize = <span class="cstat-no" title="statement not covered" >+(SolarDetailsValidationConstants.maxPanelSize * panelQuantityInt).toFixed(2);</span>
+<span class="cstat-no" title="statement not covered" >            SolarDetailsValidator.maxSuggestedSystemSize = Math.min(maxSuggestedSystemSize, SolarDetailsValidationConstants.maxSystemSize);</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public static setSystemSizeRangeToDefault() {</span>
+<span class="cstat-no" title="statement not covered" >        SolarDetailsValidator.minSuggestedSystemSize = SolarDetailsValidationConstants.minSystemSize;</span>
+<span class="cstat-no" title="statement not covered" >        SolarDetailsValidator.maxSuggestedSystemSize = SolarDetailsValidationConstants.maxSystemSize;</span>
+    }
+&nbsp;
+    public static validatePanelQuantity(control: FormControl<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        if (control.value === '' || isNaN(parseInt(control.value, 10))) {</span>
+<span class="cstat-no" title="statement not covered" >            return { panelQuantityError: true };</span>
+        } else {
+            let valueAsInt = <span class="cstat-no" title="statement not covered" >parseInt(control.value, 10);</span>
+<span class="cstat-no" title="statement not covered" >            if (valueAsInt &gt;= SolarDetailsValidationConstants.minPanelQuantity &amp;&amp;</span>
+                valueAsInt &lt;= SolarDetailsValidationConstants.maxPanelQuantity) {
+<span class="cstat-no" title="statement not covered" >                return null;</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                return { panelQuantityError: true };</span>
+            }
+        }
+    }
+&nbsp;
+    public static validateSystemSize(control: FormControl<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        if (control.value === '' || isNaN(control.value)) {</span>
+<span class="cstat-no" title="statement not covered" >            return { systemSizeError: true };</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return parseFloat(control.value) &gt;= SolarDetailsValidator.minSuggestedSystemSize</span>
+                &amp;&amp; parseFloat(control.value) &lt;= SolarDetailsValidator.maxSuggestedSystemSize
+                ? null
+                : { systemSizeError: true };
+        }
+    }
+&nbsp;
+    public static validateInstallationYear(control: FormControl<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        return parseInt(control.value, 10) &gt;= SolarDetailsValidationConstants.minInstallationYear</span>
+            &amp;&amp; parseInt(control.value, 10) &lt;= SolarDetailsValidator.currentYear
+            ? null
+            : { installationYearError: true };
+    }
+    /*
+     * Evaluate's if input event's value is either a numeric character i.e. 0-9
+     * @param  {object} event Event from the front-end
+     * @return {bool}       boolean value
+     */
+    public static onlyNumericCharacters(event<span class="fstat-no" title="function not covered" >) {</span>
+        let charCode = <span class="cstat-no" title="statement not covered" >((typeof event.which === 'undefined') || event.which === 0) ? event.keyCode : event.which;</span>
+<span class="cstat-no" title="statement not covered" >        return ((charCode &gt;= 48 &amp;&amp; charCode &lt;= 57)</span>
+            || this.onlyNavigationCharacters(charCode)
+        );
+    }
+&nbsp;
+    /*
+     * Evaluate's if input event's value is either a numeric character i.e. 0-9, or decimal place character
+     * @param  {object} event Event from the front-end
+     * @return {bool}       boolean value
+     */
+    public static onlyDecimalOrNumericCharacters(event<span class="fstat-no" title="function not covered" >) {</span>
+        let charCode = <span class="cstat-no" title="statement not covered" >((typeof event.which === 'undefined') || event.which === 0) ? event.keyCode : event.which;</span>
+<span class="cstat-no" title="statement not covered" >        return (charCode === 46</span>
+            || (charCode &gt;= 48 &amp;&amp; charCode &lt;= 57)
+            || this.onlyNavigationCharacters(charCode)
+        );
+    }
+&nbsp;
+    /*
+     * Evaluate's if input event's value is a valid navigation character
+     * i.e. tab, backspace, delete or keypad (left, right, top, down)
+     * @param  {object} event Event from the front-end
+     * @return {bool}       boolean value
+     */
+    public static onlyNavigationCharacters(charCode<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        return (charCode === 9 // allow tab</span>
+            || charCode === 8 // allow backspace
+            || (charCode &gt;= 37 &amp;&amp; charCode &lt;= 39) // allow keypad characters
+        );
+    }
+&nbsp;
+    /*
+    * Change the value to integer, else if invalid then return null.
+    * @param  {object} event Event from the front-end
+    * @return {number}       Int Number when valid -for example 2 or 84, else null
+    */
+    public static convertToIntegerElseReset(event<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        if (event.target.value === '' || isNaN(parseInt(event.target.value, 10))) {</span>
+<span class="cstat-no" title="statement not covered" >            return event.target.value = null;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return event.target.value = parseInt(event.target.value, 10);</span>
+    }
+&nbsp;
+    /*
+     * Change the value to two decimal places, else if invalid then return null.
+     * @param  {object} event Event from the front-end
+     * @return {number}       Float Number to 2 decimal places when valid -for example 2.74 or 99.36 etc, else null
+     */
+    public static convertToTwoDecimalPlacesElseReset(event<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        if (event.target.value === '' || isNaN((event.target.value))) {</span>
+<span class="cstat-no" title="statement not covered" >            return event.target.value = null;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return event.target.value = SolarDetailsValidator.convertFloatToTwoDecimalPlaces(event.target.value);</span>
+    }
+&nbsp;
+    public static convertFloatToTwoDecimalPlaces(value<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        if (isNaN(value) || parseFloat(value) &lt; 0.01) {</span>
+<span class="cstat-no" title="statement not covered" >            return '0.00';</span>
+        }
+        let decimalRoundingMarginOfError = <span class="cstat-no" title="statement not covered" >0.0049;</span>
+        let parsedValue = <span class="cstat-no" title="statement not covered" >(parseFloat(value) - decimalRoundingMarginOfError).toFixed(2);</span>
+<span class="cstat-no" title="statement not covered" >        return parsedValue;</span>
+    }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 19 2018 19:37:05 GMT+1000 (AUS Eastern Standard Time)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>
